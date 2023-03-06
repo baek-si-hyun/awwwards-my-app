@@ -1,0 +1,48 @@
+@font-face {
+  font-family: "Apercu";
+  src: url("../url/Apercu\ Pro\ Regular.otf");
+}
+@font-face {
+  font-family: "ApercuL";
+  src: url("../url/Apercu\ Pro\ Light.otf");
+}
+
+@font-face {
+  font-family: "Exo2";
+  src: url("../url/Exo2-VariableFont_wght.ttf");
+}
+
+@font-face {
+  font-family: "Yasashii";
+  src: url("../url/YasashiiBold.ttf");
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("../url/Pretendard-Regular.otf");
+}
+
+@font-face {
+  font-family: "GothamMedium";
+  src: url("../url/GothamMedium.ttf");
+}
+@font-face {
+  font-family: "Helvetica";
+  src: url("../url/Helvetica Neue Medium Extended.ttf");
+}
+@font-face {
+  font-family: "ProductSans";
+  src: url("../url/ProductSans-Medium.ttf");
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../url/Roboto-Regular.ttf");
+}
+@font-face {
+  font-family: "NanumSquareRoundOTFR";
+  src: url("../url/NanumSquareRoundOTFR.otf");
+}
+@font-face {
+  font-family: "SourceSansPro";
+  src: url("../url/SourceSansPro-Regular.ttf");
+}
