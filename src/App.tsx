@@ -1,25 +1,52 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import styled from "styled-components";
+import { motion, useScroll } from "framer-motion";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Airbnb from "./pages/airbnb/Airbnb";
+import Coin from "./pages/coin/Coin";
+import Contact from "./pages/contact/Contact";
+import Faqs from "./pages/faqs/Faqs";
+import Main from "./pages/main/Main";
+import Kanban from "./pages/kanban/Kanban";
+import Myapp from "./pages/myapp/Myapp";
+import Netflix from "./pages/netflix/Netflix";
+import ScrollToTop from "./ScrollToTop";
+
+const Wapper = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const SctollBar = styled(motion.div)`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: rgb(255, 0, 0);
+  transform-origin: 0%;
+  z-index: 999999999;
+`;
 
 function App() {
+  const { scrollYProgress } = useScroll();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Wapper>
+      <SctollBar style={{ scaleX: scrollYProgress }} />
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
+        <ScrollToTop />
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="Netflix" element={<Netflix />} />
+          <Route path="Kanban" element={<Kanban />} />
+          <Route path="Coin" element={<Coin />} />
+          <Route path="Myapp" element={<Myapp />} />
+          <Route path="Airbnb" element={<Airbnb />} />
+          <Route path="FAQs" element={<Faqs />} />
+          <Route path="Contact" element={<Contact />} />
+        </Routes>
+      </BrowserRouter>
+    </Wapper>
   );
 }
 
