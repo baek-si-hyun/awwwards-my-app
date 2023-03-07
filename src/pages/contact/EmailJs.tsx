@@ -20,7 +20,7 @@ const Input = styled.input`
   height: 2.5vw;
   margin-bottom: 1rem;
   font-size: 18px;
-  font-family: "Apercu";
+  font-family: "Apercu", sans-serif;
   color: #222222;
   border: none;
   transition: border 0.3s ease-in-out 0s;
@@ -33,7 +33,7 @@ const Textarea = styled.textarea`
   height: 10rem;
   margin-bottom: 4vw;
   font-size: 18px;
-  font-family: "Apercu";
+  font-family: "Apercu", sans-serif;
   color: #222222;
   border: none;
   transition: all 0.3s ease-in-out 0s;

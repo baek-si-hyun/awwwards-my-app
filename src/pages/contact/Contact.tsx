@@ -43,7 +43,7 @@ const H2Box = styled.div`
   font-weight: bold;
 `;
 const H3Box = styled.div`
-  font-family: "ApercuL";
+  font-family: "ApercuL", sans-serif;
   line-height: 3;
 `;
 

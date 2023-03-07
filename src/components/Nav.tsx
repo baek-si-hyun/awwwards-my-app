@@ -2,7 +2,8 @@ import styled from "styled-components";
 import { useState, useEffect } from "react";
 import { useRecoilValue } from "recoil";
 import { pathList } from "../atom";
-import { IPosition, IRouterPosition } from "../interface/Interface";
+import { IMainPosition, IRouterPosition } from "../interface/Interface";
+import { DomApi } from "../services/DomApi";
 
 const Navi = styled.div`
   border-radius: 10px;
@@ -38,7 +39,7 @@ const NavBox = styled.ul`
   background-color: #3e3e3e;
 `;
 
-const NavItem = styled.li<{ position: IPosition }>`
+const NavItem = styled.li<{ mainPosition: IMainPosition }>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -49,23 +50,23 @@ const NavItem = styled.li<{ position: IPosition }>`
   :nth-child(1) {
     font-weight: 600;
     background-color: ${(props) =>
-      props.position.header ? "#d3d3d3" : "#3e3e3e"};
-    color: ${(props) => (props.position.header ? "#000" : "inherit")};
+      props.mainPosition.header ? "#d3d3d3" : "#3e3e3e"};
+    color: ${(props) => (props.mainPosition.header ? "#000" : "inherit")};
   }
   :nth-child(2) {
     background-color: ${(props) =>
-      props.position.projects ? "#d3d3d3" : "#3e3e3e"};
-    color: ${(props) => (props.position.projects ? "#000" : "inherit")};
+      props.mainPosition.projects ? "#d3d3d3" : "#3e3e3e"};
+    color: ${(props) => (props.mainPosition.projects ? "#000" : "inherit")};
   }
   :nth-child(3) {
     background-color: ${(props) =>
-      props.position.about ? "#d3d3d3" : "#3e3e3e"};
-    color: ${(props) => (props.position.about ? "#000" : "inherit")};
+      props.mainPosition.about ? "#d3d3d3" : "#3e3e3e"};
+    color: ${(props) => (props.mainPosition.about ? "#000" : "inherit")};
   }
   :nth-child(4) {
     background-color: ${(props) =>
-      props.position.schedule ? "#d3d3d3" : "#3e3e3e"};
-    color: ${(props) => (props.position.schedule ? "#000" : "inherit")};
+      props.mainPosition.schedule ? "#d3d3d3" : "#3e3e3e"};
+    color: ${(props) => (props.mainPosition.schedule ? "#000" : "inherit")};
   }
 `;
 
@@ -117,7 +118,6 @@ const VisitedSite = styled.div`
 
 function Nav() {
   const { pathname } = useRecoilValue(pathList);
-  console.log(pathname);
   const navHandler = (e: any) => {
     e.preventDefault();
     if (e.target.classList.contains("nav-item")) {
@@ -125,9 +125,8 @@ function Nav() {
       document.querySelector(id).scrollIntoView();
     }
   };
-
-  const [position, setPostion] = useState({
-    header: false,
+  const [mainPosition, setMainPosition] = useState({
+    header: true,
     projects: false,
     about: false,
     schedule: false,
@@ -138,89 +137,34 @@ function Nav() {
     about: false,
   });
   const getElementPostion = () => {
-    if (pathname === "/awwwards-my-app/" || "/awwwards-my-app") {
-      const header = document.getElementById("header") as HTMLDivElement;
-      const projects = document.getElementById("projects") as HTMLDivElement;
-      const about = document.getElementById("about") as HTMLDivElement;
-      const schedule = document.getElementById("schedule") as HTMLDivElement;
-      const scrollY = window.scrollY; // 스크롤 양
-
-      const headerPosition = Math.floor(
-        scrollY + header?.getBoundingClientRect().top
-      );
-      const projectPosition = Math.floor(
-        scrollY + projects?.getBoundingClientRect().top
-      );
-      const aboutPosition = Math.floor(
-        scrollY + about?.getBoundingClientRect().top
-      );
-      const schedlulePosition = Math.floor(
-        scrollY + schedule?.getBoundingClientRect().top
-      );
-
-      setPostion({
-        header: scrollY >= headerPosition && scrollY < projectPosition,
-        projects: scrollY >= projectPosition && scrollY < aboutPosition,
-        about: scrollY >= aboutPosition && scrollY < schedlulePosition,
-        schedule: scrollY >= schedlulePosition,
-      });
-    }
-    if (
-      pathname === "/Netflix" ||
-      "/Kanban" ||
-      "/Coin" ||
-      "/Myapp" ||
-      "/Airbnb"
-    ) {
-      const sotd = document.getElementById("sotd") as HTMLDivElement;
-      const fontColor = document.getElementById("fontColor") as HTMLDivElement;
-      const about = document.getElementById("about") as HTMLDivElement;
-      const scrollY = window.scrollY;
-
-      const sotdPosition = Math.floor(
-        scrollY + sotd?.getBoundingClientRect().top
-      );
-      const fontColorPosition = Math.floor(
-        scrollY + fontColor?.getBoundingClientRect().top
-      );
-      const aboutPosition = Math.floor(
-        scrollY + about?.getBoundingClientRect().top
-      );
-
-      setRouterPosition({
-        sotd: scrollY >= sotdPosition && scrollY < fontColorPosition,
-        fontColor:
-          scrollY >= fontColorPosition && scrollY < aboutPosition - 300,
-        about: scrollY >= aboutPosition - 300,
-      });
-    }
+    DomApi({ pathname, setMainPosition, setRouterPosition });
   };
   useEffect(() => {
     window.addEventListener("scroll", getElementPostion);
     return () => window.removeEventListener("scroll", getElementPostion);
-  }, [position]);
+  }, [mainPosition, routerPosition]);
   return (
     <Navi>
       <NavBoxLeft>W. Home</NavBoxLeft>
       <NavBoxInner>
         {pathname === "/" ? (
           <NavBox onClick={navHandler}>
-            <NavItem position={position}>
+            <NavItem mainPosition={mainPosition}>
               <Link href="#header" className="nav-item">
                 Home
               </Link>
             </NavItem>
-            <NavItem position={position}>
+            <NavItem mainPosition={mainPosition}>
               <Link href="#projects" className="nav-item">
                 Projects
               </Link>
             </NavItem>
-            <NavItem position={position}>
+            <NavItem mainPosition={mainPosition}>
               <Link href="#about" className="nav-item">
                 About
               </Link>
             </NavItem>
-            <NavItem position={position}>
+            <NavItem mainPosition={mainPosition}>
               <Link href="#schedule" className="nav-item">
                 Schedule
               </Link>

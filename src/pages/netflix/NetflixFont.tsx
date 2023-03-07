@@ -35,7 +35,7 @@ const Font = styled.li`
 `;
 
 const FontName = styled.div`
-  font-family: "Pretendard";
+  font-family: "Pretendard", sans-serif;
   font-size: 10vw;
   display: flex;
   align-items: center;
@@ -78,11 +78,11 @@ const FontDetail = styled.div`
   padding-bottom: 2vw;
 `;
 const FontTittle = styled.div`
-  font-family: "ApercuL";
+  font-family: "ApercuL", sans-serif;
   font-size: 13px;
 `;
 const FontDetailContent = styled.div`
-  font-family: "SourceSansPro";
+  font-family: "SourceSansPro", sans-serif;
   font-size: 15vw;
   text-align: center;
 `;
@@ -102,7 +102,7 @@ const ContentDiv = styled.div`
   font-size: 4vw;
   display: flex;
   flex-direction: column;
-  font-family: "SourceSansPro";
+  font-family: "SourceSansPro", sans-serif;
   gap: 1vw;
   span {
     line-height: 1.4;

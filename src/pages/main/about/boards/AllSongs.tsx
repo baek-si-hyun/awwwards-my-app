@@ -7,7 +7,7 @@ import {
 import styled from "styled-components";
 import React from "react";
 import { useRecoilState } from "recoil";
-import { all } from "../../../atom";
+import { all } from "../../../../atom";
 
 const Wrapper = styled.div`
   width: 90%;

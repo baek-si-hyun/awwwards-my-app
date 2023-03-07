@@ -1,7 +1,9 @@
+import { Dispatch, SetStateAction } from "react";
+
 export interface IPathname {
   pathname: string;
 }
-export interface IPosition {
+export interface IMainPosition {
   header: boolean;
   projects: boolean;
   about: boolean;
@@ -11,6 +13,11 @@ export interface IRouterPosition {
   sotd: boolean;
   fontColor: boolean;
   about: boolean;
+}
+export interface IDomApi {
+  pathname: string;
+  setMainPosition: Dispatch<SetStateAction<IMainPosition>>;
+  setRouterPosition: Dispatch<SetStateAction<IRouterPosition>>;
 }
 export interface IFaqs {
   id: string;

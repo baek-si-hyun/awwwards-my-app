@@ -26,7 +26,7 @@ const DescriptionText = styled.div`
   gap: 1vw;
 `;
 const TextTop = styled.div`
-  font-family: "ApercuL";
+  font-family: "ApercuL", sans-serif;
   font-size: 1vw;
 `;
 const TextBottom = styled.div`
@@ -48,7 +48,7 @@ const DescriptionProjectText = styled.div`
 const DescriptionProjectContent = styled.div`
   font-size: 1.2vw;
   line-height: 2;
-  font-family: "Pretendard";
+  font-family: "Pretendard", sans-serif;
   display: flex;
   gap: 4rem;
   word-break: keep-all;

@@ -17,7 +17,7 @@ const ColorInner = styled.div`
 `;
 const ColorText = styled.div`
   width: 15%;
-  font-family: "ApercuL";
+  font-family: "ApercuL", sans-serif;
   line-height: 1.4;
   font-size: 1vw;
   span {

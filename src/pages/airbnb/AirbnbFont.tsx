@@ -32,11 +32,11 @@ const Font = styled.li`
   padding: 20px 0;
   cursor: pointer;
   color: #a7a7a7;
-  font-family: "ApercuL";
+  font-family: "ApercuL", sans-serif;
 `;
 
 const choiceFont =
-  "border-bottom: 2px solid black;color:black;font-family:Apercu";
+  "border-bottom: 2px solid black;color:black;font-family:'Apercu', sans-serif";
 const Font1 = styled(Font)<{ toggle: number }>`
   ${(props) => (props.toggle === 0 ? choiceFont : "")}
 `;
@@ -60,7 +60,7 @@ const FontName = styled.div<{ toggle: number }>`
       ? "ProductSans"
       : props.toggle === 3
       ? "Roboto"
-      : "GothamMedium"};
+      : "GothamMedium"}, sans-serif;
   font-size: 10vw;
   display: flex;
   align-items: center;
@@ -100,7 +100,7 @@ const FontDetail = styled.div`
   padding-bottom: 2vw;
 `;
 const FontTittle = styled.div`
-  font-family: "ApercuL";
+  font-family: "ApercuL", sans-serif;
   font-size: 13px;
 `;
 const FontDetailContent = styled.div<{ toggle: number }>`
@@ -113,7 +113,7 @@ const FontDetailContent = styled.div<{ toggle: number }>`
       ? "ProductSans"
       : props.toggle === 3
       ? "Roboto"
-      : "GothamMedium"};
+      : "GothamMedium"}, sans-serif;
   font-size: 15vw;
   text-align: center;
 `;
@@ -142,7 +142,7 @@ const ContentDiv = styled.div<{ toggle: number }>`
       ? "ProductSans"
       : props.toggle === 3
       ? "Roboto"
-      : "GothamMedium"};
+      : "GothamMedium"}, sans-serif;
   gap: 1vw;
   span {
     line-height: 1.4;

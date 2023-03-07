@@ -30,7 +30,7 @@ const Text = styled.div`
   line-height: 1.3;
 `;
 const Ko = styled.div`
-  font-family: "Pretendard";
+  font-family: "Pretendard", sans-serif;
 `;
 const En = styled.div``;
 const Nav = styled.div`
@@ -69,7 +69,7 @@ const LinkBarUl = styled.ul`
 `;
 const LinkBarLi = styled.li``;
 const Links = styled.a`
-  font-family: "ApercuL";
+  font-family: "ApercuL", sans-serif;
   :hover {
     color: #757575;
   }

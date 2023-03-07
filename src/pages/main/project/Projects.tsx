@@ -199,7 +199,6 @@ function Projects({ id }: IId) {
               </TextBottom>
             </InnerBoxText>
           </Box>
-
           <Box to="/Kanban">
             <InnerBoxImg>
               <Img src={todo} />

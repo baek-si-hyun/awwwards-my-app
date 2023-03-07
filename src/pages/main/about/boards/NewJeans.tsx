@@ -7,7 +7,7 @@ import {
 import styled from "styled-components";
 import React from "react";
 import { useRecoilState } from "recoil";
-import { newJeans } from "../../../atom";
+import { newJeans } from "../../../../atom";
 
 const Wrapper = styled.div`
   width: 90%;

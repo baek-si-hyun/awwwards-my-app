@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { motion, useScroll } from "framer-motion";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Airbnb from "./pages/airbnb/Airbnb";
 import Coin from "./pages/coin/Coin";
 import Contact from "./pages/contact/Contact";
@@ -33,19 +33,17 @@ function App() {
   return (
     <Wapper>
       <SctollBar style={{ scaleX: scrollYProgress }} />
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
-        <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Main />} />
-          <Route path="Netflix" element={<Netflix />} />
-          <Route path="Kanban" element={<Kanban />} />
-          <Route path="Coin" element={<Coin />} />
-          <Route path="Myapp" element={<Myapp />} />
-          <Route path="Airbnb" element={<Airbnb />} />
-          <Route path="FAQs" element={<Faqs />} />
-          <Route path="Contact" element={<Contact />} />
-        </Routes>
-      </BrowserRouter>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="Netflix" element={<Netflix />} />
+        <Route path="Kanban" element={<Kanban />} />
+        <Route path="Coin" element={<Coin />} />
+        <Route path="Myapp" element={<Myapp />} />
+        <Route path="Airbnb" element={<Airbnb />} />
+        <Route path="FAQs" element={<Faqs />} />
+        <Route path="Contact" element={<Contact />} />
+      </Routes>
     </Wapper>
   );
 }

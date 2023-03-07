@@ -1,4 +1,5 @@
 import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
 import { RecoilRoot } from "recoil";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import { theme } from "./theme";
@@ -37,7 +38,7 @@ html{
 }
 body {
   line-height: 1;
-  font-family: "Apercu",sans-serif;
+  font-family: "Apercu","Pretendard",sans-serif;
   background-color: #f8f8f8;
   padding: 0;
 	color: ${(props) => props.theme.textColor};
@@ -72,10 +73,12 @@ const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
-  <RecoilRoot>
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <App />
-    </ThemeProvider>
-  </RecoilRoot>
+  <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <RecoilRoot>
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        <App />
+      </ThemeProvider>
+    </RecoilRoot>
+  </BrowserRouter>
 );

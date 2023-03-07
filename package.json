@@ -53,5 +53,8 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://baek-si-hyun.github.io/awwwards-my-app"
+  "homepage": "https://baek-si-hyun.github.io/awwwards-my-app",
+  "devDependencies": {
+    "@types/react-beautiful-dnd": "^13.1.3"
+  }
 }

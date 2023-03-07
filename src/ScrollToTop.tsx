@@ -5,6 +5,7 @@ import { pathSelector } from "./atom";
 
 export default function ScrollToTop() {
   const { pathname } = useLocation();
+  console.log(pathname);
   const path = useSetRecoilState(pathSelector);
   const pathCorrection = () => {
     path({ pathname });

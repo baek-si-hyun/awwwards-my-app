@@ -30,12 +30,12 @@ const FaqQ = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 30px 0;
-  font-family: "Pretendard";
+  font-family: "Pretendard", sans-serif;
   font-weight: bold;
 `;
 const FaqA = styled.div<{ list: IFaqs }>`
   overflow: hidden;
-  font-family: "Pretendard";
+  font-family: "Pretendard", sans-serif;
   transition: height 0.3s;
 `;
 const FaqA1 = styled(FaqA)`
