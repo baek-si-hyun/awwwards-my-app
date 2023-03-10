@@ -1,7 +1,6 @@
 import styled from "styled-components";
-import { IId } from "../../../interface/Interface";
+import { IId } from "../../../interface/interface";
 import Finally from "./Finally";
-
 import PastSchedule from "./PastSchedule";
 
 const Container = styled.div`
@@ -25,6 +24,11 @@ const TextBox = styled.div`
 const TextBoxTop = styled.div`
   margin-bottom: 2.1vw;
   font-size: 0.8vw;
+  @media (max-width: 768px) {
+    & {
+      font-size: 1.5vw;
+    }
+  }
 `;
 const TextBoxMiddle = styled.div`
   font-size: 9vw;
@@ -38,6 +42,12 @@ const TextBoxbottom = styled.div`
   margin-bottom: 6vw;
   font-size: 1.3vw;
   line-height: 1.4;
+  @media (max-width: 768px) {
+    & {
+      width: 80%;
+      font-size: 2.5vw;
+    }
+  }
 `;
 
 const ScheduleBox = styled.div`

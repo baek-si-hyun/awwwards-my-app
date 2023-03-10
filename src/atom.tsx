@@ -16,7 +16,7 @@ import maroon from "./assets/img/recommended_song/maroon.jpg";
 import yena from "./assets/img/recommended_song/yena.jpg";
 import star from "./assets/img/recommended_song/star.jpg";
 import sweater from "./assets/img/recommended_song/sweater.jpg";
-import { IPathname, Data } from "./interface/Interface";
+import { IPathname, Data } from "./interface/interface";
 
 export const pathList = atom<IPathname>({
   key: `pathList`,

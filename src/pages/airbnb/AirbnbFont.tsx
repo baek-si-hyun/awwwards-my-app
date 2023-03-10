@@ -1,36 +1,22 @@
 import styled from "styled-components";
 import { useState } from "react";
+import {
+  ChoiceDiv,
+  ChoiceUl,
+  ContentDivCommon,
+  FontContainer,
+  FontDetail,
+  FontDetailContentCommon,
+  FontLi,
+  FontNameText,
+  FontStyle,
+  FontTittle,
+  FontTop,
+  LettersNumbers,
+  Typography,
+} from "../../components/fontCommon";
 
-const FontContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
-const FontTop = styled.div`
-  display: flex;
-  gap: 4vw;
-  background: #f8f8f8;
-  background-image: linear-gradient(
-    to right,
-    rgb(34, 34, 34) 0 10%,
-    rgba(255, 255, 255, 0) 10%
-  );
-  background-position: bottom;
-  background-size: 8px 1px;
-  background-repeat: repeat-x;
-`;
-
-const Typography = styled.div`
-  padding: 20px 0;
-`;
-const ChoiceDiv = styled.div``;
-const ChoiceUl = styled.ul`
-  display: flex;
-  gap: 2vw;
-`;
-const Font = styled.li`
-  padding: 20px 0;
-  cursor: pointer;
+const Font = styled(FontLi)`
   color: #a7a7a7;
   font-family: "ApercuL", sans-serif;
 `;
@@ -50,103 +36,23 @@ const Font4 = styled(Font)<{ toggle: number }>`
   ${(props) => (props.toggle === 3 ? choiceFont : "")}
 `;
 
-const FontName = styled.div<{ toggle: number }>`
-  font-family: ${(props) =>
-    props.toggle === 0
-      ? "GothamMedium"
-      : props.toggle === 1
-      ? "Helvetica"
-      : props.toggle === 2
-      ? "ProductSans"
-      : props.toggle === 3
-      ? "Roboto"
-      : "GothamMedium"}, sans-serif;
-  font-size: 10vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: max(20px, 5vw) 0;
-  background: #f8f8f8;
-  background-image: linear-gradient(
-    to right,
-    rgb(34, 34, 34) 0 10%,
-    rgba(255, 255, 255, 0) 10%
-  );
-  background-position: bottom;
-  background-size: 8px 1px;
-  background-repeat: repeat-x;
+const propsToggle = `props.toggle === 0
+? "GothamMedium"
+: props.toggle === 1
+? "Helvetica"
+: props.toggle === 2
+? "ProductSans"
+: props.toggle === 3
+? "Roboto"
+: "GothamMedium"`;
+const FontName = styled(FontNameText)<{ toggle: number }>`
+  font-family: ${(props) => propsToggle}, sans-serif;
 `;
-
-const FontStyle = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  padding: 20px 0;
+const FontDetailContent = styled(FontDetailContentCommon)<{ toggle: number }>`
+  font-family: ${(props) => propsToggle}, sans-serif;
 `;
-const FontDetail = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 20px;
-  background: #f8f8f8;
-  background-image: linear-gradient(
-    to right,
-    rgb(34, 34, 34) 0 10%,
-    rgba(255, 255, 255, 0) 10%
-  );
-  background-position: bottom;
-  background-size: 8px 1px;
-  background-repeat: repeat-x;
-  padding-bottom: 2vw;
-`;
-const FontTittle = styled.div`
-  font-family: "ApercuL", sans-serif;
-  font-size: 13px;
-`;
-const FontDetailContent = styled.div<{ toggle: number }>`
-  font-family: ${(props) =>
-    props.toggle === 0
-      ? "GothamMedium"
-      : props.toggle === 1
-      ? "Helvetica"
-      : props.toggle === 2
-      ? "ProductSans"
-      : props.toggle === 3
-      ? "Roboto"
-      : "GothamMedium"}, sans-serif;
-  font-size: 15vw;
-  text-align: center;
-`;
-const LettersNumbers = styled.div`
-  background: #f8f8f8;
-  background-image: linear-gradient(
-    to right,
-    rgb(34, 34, 34) 0 10%,
-    rgba(255, 255, 255, 0) 10%
-  );
-  background-position: bottom;
-  background-size: 8px 1px;
-  background-repeat: repeat-x;
-  padding-bottom: 2vw;
-`;
-const ContentDiv = styled.div<{ toggle: number }>`
-  font-size: 4vw;
-  display: flex;
-  flex-direction: column;
-  font-family: ${(props) =>
-    props.toggle === 0
-      ? "GothamMedium"
-      : props.toggle === 1
-      ? "Helvetica"
-      : props.toggle === 2
-      ? "ProductSans"
-      : props.toggle === 3
-      ? "Roboto"
-      : "GothamMedium"}, sans-serif;
-  gap: 1vw;
-  span {
-    line-height: 1.4;
-  }
+const ContentDiv = styled(ContentDivCommon)<{ toggle: number }>`
+  font-family: ${(props) => propsToggle}, sans-serif;
 `;
 function AirbnbFont() {
   const [toggle, setToggle] = useState(0);
@@ -159,7 +65,6 @@ function AirbnbFont() {
   const ChangeToggle3 = () => {
     setToggle(2);
   };
-
   const ChangeToggle4 = () => {
     setToggle(3);
   };

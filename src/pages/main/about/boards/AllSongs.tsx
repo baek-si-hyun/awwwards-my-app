@@ -18,6 +18,11 @@ const Board = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
+  @media (max-width: 480px) {
+    & {
+      padding: 0px 20px;
+    }
+  }
 `;
 
 const Card = styled.div<{ isDragging: boolean }>`
@@ -26,7 +31,6 @@ const Card = styled.div<{ isDragging: boolean }>`
     props.isDragging ? "#1d1d1d" : "transparent"};
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  justify-content: space-around;
   align-items: center;
   font-size: 1vw;
   border-bottom: 1px solid #1d1d1d;
@@ -38,36 +42,45 @@ const Card = styled.div<{ isDragging: boolean }>`
   :hover {
     background-color: #1d1d1d;
   }
+  @media (max-width: 480px) {
+    & {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
 `;
 
-const ImgTittleBox = styled.div`
+const CardItem = styled.div`
   display: flex;
   align-items: center;
   gap: 7%;
+  line-height: 1.2;
+  :nth-child(2) {
+    padding-left: 20%;
+  }
+  :nth-child(3) {
+    padding-left: 20%;
+  }
+  @media (max-width: 768px) {
+    & {
+      text-overflow: ellipsis;
+    }
+  }
+  @media (max-width: 480px) {
+    & {
+      :last-child {
+        display: none;
+      }
+    }
+  }
 `;
 
 const ImgDiv = styled.div``;
 
 const Img = styled.img`
-  width: 100%;
+  width: clamp(20px, 2.5vw, 40px);
   object-fit: cover;
-  max-width: 40px;
 `;
-
 const Tittle = styled.div``;
-
-const Artist = styled.div`
-  padding-left: 20%;
-  white-space: nowrap;
-`;
-
-const Album = styled.div`
-  padding-left: 20%;
-  span {
-    white-space: nowrap;
-  }
-`;
-
 function AllSongs() {
   const [list, setList] = useRecoilState(all);
   const onDragEnd = ({ destination, source }: DropResult) => {
@@ -101,21 +114,21 @@ function AllSongs() {
                       {...magic.dragHandleProps}
                       {...magic.draggableProps}
                     >
-                      <ImgTittleBox>
+                      <CardItem>
                         <ImgDiv>
                           <Img src={all.img} />
                         </ImgDiv>
                         <Tittle>
                           <span>{all.tittle}</span>
                         </Tittle>
-                      </ImgTittleBox>
+                      </CardItem>
 
-                      <Artist>
+                      <CardItem>
                         <span>{all.artist}</span>
-                      </Artist>
-                      <Album>
+                      </CardItem>
+                      <CardItem>
                         <span>{all.album}</span>
-                      </Album>
+                      </CardItem>
                     </Card>
                   )}
                 </Draggable>

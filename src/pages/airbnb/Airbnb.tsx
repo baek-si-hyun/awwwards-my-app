@@ -57,6 +57,11 @@ const DescriptionProjectText = styled.div`
   font-size: 2vw;
   font-weight: bold;
   padding: 2vw 0;
+  @media (max-width: 480px) {
+    & {
+      font-size: 1.2rem;
+    }
+  }
 `;
 const DescriptionProjectContent = styled.div`
   font-size: 1.2vw;
@@ -69,6 +74,15 @@ const DescriptionProjectContent = styled.div`
   }
   div {
     width: 50%;
+  }
+  @media (max-width: 480px) {
+    & {
+      flex-direction: column;
+      gap: 0.5rem;
+      div {
+        width: 100%;
+      }
+    }
   }
 `;
 function Airbnb() {
@@ -137,7 +151,7 @@ function Airbnb() {
         </Description>
       </InnerContainer>
       <Footer />
-      <Nav/>
+      <Nav />
     </Container>
   );
 }

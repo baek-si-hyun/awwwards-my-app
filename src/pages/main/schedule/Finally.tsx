@@ -4,12 +4,22 @@ import lighthouse from "../../../assets/img/main_img/lighthouse.jpg";
 
 const Container = styled.div`
   width: 100%;
+  @media (max-width: 650px) {
+    & {
+      margin-top: 3rem;
+    }
+  }
 `;
 
 const FinallyInner = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2vw;
+  @media (max-width: 480px) {
+    & {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
 `;
 const FinallyH2 = styled.div`
   font-size: 3vw;
@@ -34,15 +44,25 @@ const FinallyTextEn = styled.div`
     line-height: 2;
     word-break: keep-all;
   }
+  @media (max-width: 650px) {
+    & {
+      display: none;
+    }
+  }
 `;
 const FinallyBox = styled.div``;
 const FinallyImgBox = styled.div`
   background-image: url(${lighthouse});
-  aspect-ratio: 4/3;
+  height: 100%;
   background-size: cover;
   border-radius: 20px;
   color: #fff;
   padding: 4vw 4vw 2vw 4vw;
+  @media (max-width: 480px) {
+    & {
+      height: 20rem;
+    }
+  }
 `;
 const FinallyBoxFlex = styled.div`
   display: flex;
@@ -55,6 +75,11 @@ const FinallyBoxText = styled.h3`
   line-height: 1.2;
   margin-bottom: 3vw;
   width: 50%;
+  @media (max-width: 480px) {
+    & {
+      font-size: 6vw;
+    }
+  }
 `;
 const MiniText = styled.h2`
   font-family: "ApercuL", sans-serif;
@@ -72,6 +97,14 @@ const ContactLink = styled(Link)`
     background-color: #f8f8f8;
     color: #000;
   }
+  @media (max-width: 650px) {
+    & {
+      width: 6rem;
+      padding: 0.8rem;
+      font-size: 0.7rem;
+      border-radius: 7px;
+    }
+  }
 `;
 const Qna = styled.div`
   display: flex;
@@ -80,11 +113,20 @@ const Qna = styled.div`
   gap: 5px;
   margin-top: 10vw;
   width: 100%;
+  @media (max-width: 650px) {
+    & {
+      font-size: 0.7rem;
+    }
+  }
+  @media (max-width: 480px) {
+    & {
+      margin-top: 6rem;
+    }
+  }
 `;
 const FAQsLink = styled(Link)`
   display: flex;
   flex-direction: column;
-
   span {
     background-color: #fff;
     width: 100%;

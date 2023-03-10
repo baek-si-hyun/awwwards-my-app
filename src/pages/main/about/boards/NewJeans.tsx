@@ -30,7 +30,8 @@ const Card = styled.div<{ isDragging: boolean }>`
   align-items: center;
   font-size: 1.1vw;
   border-bottom: 1px solid #1d1d1d;
-  transition: background-color 0.2s ease-in-out;
+  border-radius: ${(props) => (props.isDragging ? "10px" : "none")};
+  transition: background-color 0.2s ease-in-out, border-radius 0.2s ease-in-out;
   :last-child {
     border-bottom: none;
   }
@@ -39,29 +40,31 @@ const Card = styled.div<{ isDragging: boolean }>`
   }
 `;
 
-const ImgTittleBox = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 7%;
-`;
-
 const ImgDiv = styled.div``;
 
 const Img = styled.img`
-  width: 100%;
+  width: clamp(25px, 4vw, 60px);
   object-fit: cover;
 `;
 
+const CardItem = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 7%;
+  line-height: 1.2;
+  :nth-child(2) {
+    padding-left: 20%;
+  }
+  :nth-child(3) {
+    padding-left: 20%;
+  }
+  @media (max-width: 768px) {
+    & {
+      text-overflow: ellipsis;
+    }
+  }
+`;
 const Tittle = styled.div``;
-
-const Artist = styled.div`
-  padding-left: 20%;
-`;
-
-const Album = styled.div`
-  padding-left: 20%;
-`;
-
 function NewJeans() {
   const [list, setList] = useRecoilState(newJeans);
   const onDragEnd = ({ destination, source }: DropResult) => {
@@ -77,7 +80,7 @@ function NewJeans() {
     }
   };
   return (
-    <DragDropContext  onDragEnd={onDragEnd}>
+    <DragDropContext onDragEnd={onDragEnd}>
       <Wrapper>
         <Droppable droppableId="one">
           {(magic) => (
@@ -95,21 +98,21 @@ function NewJeans() {
                       {...magic.dragHandleProps}
                       {...magic.draggableProps}
                     >
-                      <ImgTittleBox>
+                      <CardItem>
                         <ImgDiv>
                           <Img src={newjeans.img} />
                         </ImgDiv>
                         <Tittle>
                           <span>{newjeans.tittle}</span>
                         </Tittle>
-                      </ImgTittleBox>
+                      </CardItem>
 
-                      <Artist>
+                      <CardItem>
                         <span>{newjeans.artist}</span>
-                      </Artist>
-                      <Album>
+                      </CardItem>
+                      <CardItem>
                         <span>{newjeans.album}</span>
-                      </Album>
+                      </CardItem>
                     </Card>
                   )}
                 </Draggable>

@@ -5,7 +5,6 @@ import MyappFont from "./MyappFont";
 import MyappColor from "./MyappColor";
 import Nav from "../../components/Nav";
 
-
 const Container = styled.div`
   width: 100%;
   height: 100%;
@@ -29,11 +28,21 @@ const DescriptionText = styled.div`
 const TextTop = styled.div`
   font-family: "ApercuL", sans-serif;
   font-size: 1vw;
+  @media (max-width: 480px) {
+    & {
+      font-size: 2vw;
+    }
+  }
 `;
 const TextBottom = styled.div`
   font-size: 3vw;
   font-weight: Bold;
   line-height: 1.2;
+  @media (max-width: 480px) {
+    & {
+      font-size: 5vw;
+    }
+  }
 `;
 
 const DescriptionFont = styled.div`
@@ -45,6 +54,11 @@ const DescriptionProjectText = styled.div`
   font-size: 2vw;
   font-weight: bold;
   padding: 2vw 0;
+  @media (max-width: 480px) {
+    & {
+      font-size: 1.2rem;
+    }
+  }
 `;
 const DescriptionProjectContent = styled.div`
   font-size: 1.2vw;
@@ -55,6 +69,15 @@ const DescriptionProjectContent = styled.div`
   word-break: keep-all;
   div {
     width: 50%;
+  }
+  @media (max-width: 480px) {
+    & {
+      flex-direction: column;
+      gap: 0.5rem;
+      div {
+        width: 100%;
+      }
+    }
   }
 `;
 function Myapp() {

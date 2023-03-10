@@ -7,6 +7,11 @@ const Container = styled.div`
   justify-content: center;
   gap: 3vw;
   padding: 8vw 2.7vw 3vw 2.7vw;
+  @media (max-width: 1024px) {
+    & {
+      padding: 8vw 2.7vw 9rem 2.7vw;
+    }
+  }
 `;
 const LogoBox = styled.div``;
 const Logo = styled.div``;
@@ -26,19 +31,32 @@ const TextAndNav = styled.div`
 const Text = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 0.5vw;
+  gap: 0.6rem;
   line-height: 1.3;
+  width: 60vw;
+  font-size: 1vw;
 `;
 const Ko = styled.div`
   font-family: "Pretendard", sans-serif;
 `;
-const En = styled.div``;
+const En = styled.div`
+  @media (max-width: 1024px) {
+    & {
+      display: none;
+    }
+  }
+`;
 const Nav = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 1vw;
   font-weight: bold;
+  @media (max-width: 768px) {
+    & {
+      font-size: 2vw;
+    }
+  }
 `;
 const Faqs = styled.div``;
 const Resume = styled.div`
@@ -61,6 +79,11 @@ const LinkBar = styled.div`
   font-size: 0.9rem;
   & > div {
     font-weight: bold;
+  }
+  @media (max-width: 768px) {
+    & {
+      font-size: 2vw;
+    }
   }
 `;
 const LinkBarUl = styled.ul`
@@ -113,7 +136,12 @@ function Footer() {
             <NavLink to="/Contact">Contact Me</NavLink>
           </Contact>
           <Resume>
-            <a href="">Resume</a>
+            <a
+              href="https://www.canva.com/design/DAFcx-92esU/mFPFWmdCEmeahY5B8e0vQw/view?utm_content=DAFcx-92esU&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink"
+              target="_blank"
+            >
+              Resume
+            </a>
           </Resume>
         </Nav>
       </TextAndNav>

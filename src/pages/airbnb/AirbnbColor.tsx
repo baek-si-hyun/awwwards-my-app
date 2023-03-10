@@ -1,63 +1,14 @@
 import styled from "styled-components";
-
-const ColorContainer = styled.div``;
-const ColorInner = styled.div`
-  display: flex;
-  flex-direction: column;
-  background: #f8f8f8;
-  background-image: linear-gradient(
-    to right,
-    rgb(34, 34, 34) 0 10%,
-    rgba(255, 255, 255, 0) 10%
-  );
-  background-position: bottom;
-  background-size: 8px 1px;
-  background-repeat: repeat-x;
-`;
-const ColorText = styled.div`
-  width: 15%;
-  font-family: "ApercuL", sans-serif;
-  line-height: 1.4;
-  font-size: 1vw;
-  span {
-    font-weight: Bold;
-  }
-`;
-const ColorCards = styled.div`
-  display: flex;
-  padding: 3vw 0;
-  justify-content: center;
-  align-items: center;
-`;
-const CardContainer = styled.div`
-  position: relative;
-  height: 580px;
-`;
-const Card = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 1.4vw 1.7vw 1vw 1.7vw;
-  width: 400px;
-  height: 580px;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 0;
-  background-color: #ff385c;
-  border-radius: 15px;
-  color: #fff;
-`;
-const CardTop = styled.div`
-  font-size: 1vw;
-  span {
-    font-weight: Bold;
-  }
-`;
-const CardBottom = styled.div`
-  text-align: end;
-  font-size: 8vw;
-`;
+import {
+  Card,
+  CardBottom,
+  CardContainer,
+  CardTop,
+  ColorCards,
+  ColorContainer,
+  ColorInner,
+  ColorText,
+} from "../../components/colorCommon";
 
 function AirbnbColor() {
   return (

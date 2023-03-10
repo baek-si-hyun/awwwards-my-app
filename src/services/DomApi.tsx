@@ -1,4 +1,4 @@
-import { IDomApi } from "../interface/Interface";
+import { IDomApi } from "../interface/interface";
 
 export const DomApi = ({
   pathname,

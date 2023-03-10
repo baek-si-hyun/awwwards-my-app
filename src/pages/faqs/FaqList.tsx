@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
-import { IFaqs } from "../../interface/Interface";
+import { IFaqs } from "../../interface/interface";
 
 const FaqsList = styled.ul`
   background-image: linear-gradient(
@@ -279,8 +279,8 @@ function FaqList() {
         <FaqA9 list={list[8]}>
           <Answer>
             <p>
-              솔직히 다까먹었습니다. 하지만 python같은 경우는 요즘 라이브러리
-              보면 다시 배우고는 싶네요
+              기본적인 문법은 사용하지만 다시 공부해야 합니다. python을 제외하면
+              다시 공부할 일이 없었으면 좋겠네요.
             </p>
           </Answer>
         </FaqA9>

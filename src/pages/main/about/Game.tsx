@@ -4,6 +4,7 @@ import { useState } from "react";
 import war from "../../../assets/img/main_img/war.jpg";
 import bdo from "../../../assets/img/main_img/bdo.jpg";
 import lol from "../../../assets/img/main_img/lol.jpg";
+import { gameName } from "../../../services/listData";
 
 const Container = styled.div`
   position: relative;
@@ -12,6 +13,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 `;
 
 const Box = styled(motion.div)<{ src: string }>`
@@ -23,9 +25,18 @@ const Box = styled(motion.div)<{ src: string }>`
   width: 100%;
   height: clamp(300px, 48vw, 1000px);
   border-radius: 13px;
-  overflow: hidden;
   z-index: 2;
-  clear: both;
+  @media (max-width: 480px) {
+    & {
+      width: 100%;
+      height: 85%;
+    }
+  }
+  @media (max-width: 429px) {
+    & {
+      height: 75%;
+    }
+  }
 `;
 
 const BoxText = styled(motion.div)<{ isboxhover: boolean }>`
@@ -42,19 +53,12 @@ const BoxText = styled(motion.div)<{ isboxhover: boolean }>`
     left: 6vw;
     bottom: 6vw;
   }
+  @media (max-width: 480px) {
+    & {
+      border-radius: 13px;
+    }
+  }
 `;
-
-const boxVariants = {
-  enter: (direction: boolean) => ({
-    x: direction ? -window.outerWidth : window.outerWidth,
-  }),
-  center: {
-    x: 0,
-  },
-  exit: (direction: boolean) => ({
-    x: direction ? window.outerWidth : -window.outerWidth,
-  }),
-};
 
 const PrevButton = styled.button`
   position: absolute;
@@ -76,6 +80,12 @@ const PrevButton = styled.button`
   :hover {
     span {
       text-shadow: 0px 0px 10px #fff;
+    }
+  }
+  @media (max-width: 480px) {
+    & {
+      width: 4rem;
+      height: 15%;
     }
   }
 `;
@@ -101,18 +111,31 @@ const NextButton = styled.button`
       text-shadow: 0px 0px 10px #fff;
     }
   }
+  @media (max-width: 480px) {
+    & {
+      width: 4rem;
+      right: 0%;
+      height: 15%;
+    }
+  }
 `;
+const boxVariants = {
+  enter: (direction: boolean) => ({
+    x: direction ? -window.outerWidth : window.outerWidth,
+  }),
+  center: {
+    x: 0,
+  },
+  exit: (direction: boolean) => ({
+    x: direction ? window.outerWidth : -window.outerWidth,
+  }),
+};
 
 function Game() {
   const [boxHover, setBoxHover] = useState(false);
   const [visible, setVisible] = useState(0);
   const [back, setBack] = useState(false);
   const src = [lol, war, bdo];
-  const text = [
-    "League of Legends (칼바람, 우르프)",
-    "War Thunder (밀덕 아님)",
-    "Black Desert (무 기약 휴식중)",
-  ];
   const nextPlease = () => {
     setBack(false);
     setVisible((prev) => (prev === 2 ? prev - 2 : prev + 1));
@@ -150,7 +173,7 @@ function Game() {
           }}
         >
           <BoxText isboxhover={boxHover}>
-            <span>{text[visible]}</span>
+            <span>{gameName[visible]}</span>
           </BoxText>
         </Box>
       </AnimatePresence>

@@ -12,12 +12,24 @@ const Container = styled.div`
   grid-template-columns: repeat(3, 1fr);
   gap: 1.4vw;
   clear: both;
+  @media (max-width: 650px) {
+    & {
+      width: 100%;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 3rem;
+    }
+  }
 `;
 const Sitebox = styled.div`
   width: clamp(200px, 30.6vw, 590px);
   display: flex;
   flex-direction: column;
   gap: 1.2vw;
+  @media (max-width: 650px) {
+    & {
+      width: 100%;
+    }
+  }
 `;
 const SiteImgBox = styled.div<{ url: string }>`
   aspect-ratio: 4/3;
@@ -29,6 +41,11 @@ const SiteImgBox = styled.div<{ url: string }>`
 const SiteTextBox = styled.div`
   display: flex;
   align-items: center;
+  @media (max-width: 650px) {
+    & {
+      gap: 1rem;
+    }
+  }
 `;
 
 const InnerFigure = styled.figure`
@@ -43,6 +60,16 @@ const InnerFigure = styled.figure`
       font-weight: bold;
       font-size: 1.3vw;
       border-bottom: 2px solid #b7b7b7;
+    }
+  }
+  @media (max-width: 650px) {
+    & {
+      gap: 1rem;
+      figcaption {
+        span {
+          font-size: 1.5rem;
+        }
+      }
     }
   }
 `;

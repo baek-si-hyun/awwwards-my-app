@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { motion } from "framer-motion";
 import coin from "../../../assets/img/main_img/coin.png";
 import myapp from "../../../assets/img/main_img/myapp.png";
 import todo from "../../../assets/img/main_img/todo.png";
@@ -8,10 +7,12 @@ import nomad from "../../../assets/img/main_img/nomadicon.png";
 import airbnb from "../../../assets/img/main_img/airbnb.png";
 import shb from "../../../assets/img/main_img/shbicon.png";
 import { Link } from "react-router-dom";
-import { IId } from "../../../interface/Interface";
+import { IId } from "../../../interface/interface";
+
 const Container = styled.div`
   width: 100%;
   height: 100%;
+  overflow: hidden;
 `;
 
 const InnerContainer = styled.div`
@@ -30,6 +31,11 @@ const TextBox = styled.div`
 const TextBoxTop = styled.div`
   margin-bottom: 2.1vw;
   font-size: 0.8vw;
+  @media (max-width: 768px) {
+    & {
+      font-size: 1.5vw;
+    }
+  }
 `;
 const TextBoxMiddle = styled.div`
   font-size: 9vw;
@@ -43,10 +49,21 @@ const TextBoxbottom = styled.div`
   margin-bottom: 6vw;
   font-size: 1.3vw;
   line-height: 1.4;
+  @media (max-width: 768px) {
+    & {
+      width: 80%;
+      font-size: 2.5vw;
+    }
+  }
 `;
-const GridBox = styled(motion.div)`
+const GridBox = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  @media (max-width: 768px) {
+    & {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
 `;
 
 const Box = styled(Link)`
@@ -92,9 +109,11 @@ const InnerBoxText = styled.div`
 const TextTop = styled.div``;
 const TextBottom = styled.div`
   line-height: 1.7;
-  h4 {
-    font-size: 1.3vw;
-    font-weight: lighter;
+  font-size: 1.3vw;
+  @media (max-width: 768px) {
+    & {
+      font-size: 2.5vw;
+    }
   }
 `;
 const TextBottomInner = styled.div`
@@ -105,15 +124,30 @@ const TextBottomInner = styled.div`
 const InnerFigure = styled.figure`
   display: flex;
   align-items: center;
+
   img {
-    margin: 0 0.3vw;
+    margin: 0 0.3rem;
     object-fit: cover;
+    width: 30px;
+    height: 30px;
+    border-radius: 20px;
+    @media (max-width: 480px) {
+      & {
+        width: 20px;
+        height: 20px;
+      }
+    }
   }
   figcaption {
     span {
       font-weight: 600;
-      font-size: 16px;
+      font-size: 1.2vw;
       border-bottom: 2px solid #b7b7b7;
+      @media (max-width: 768px) {
+        & {
+          font-size: 2vw;
+        }
+      }
     }
   }
 `;
@@ -124,6 +158,11 @@ const Visited = styled.div`
   width: 50%;
   display: flex;
   margin-top: 1vw;
+  @media (max-width: 480px) {
+    & {
+      width: 90%;
+    }
+  }
 `;
 
 const VisitedInner = styled.div`
@@ -177,10 +216,7 @@ function Projects({ id }: IId) {
                     <small>by</small>
                   </div>
                   <InnerFigure>
-                    <img
-                      src={nomad}
-                      style={{ width: 30, height: 30, borderRadius: 20 }}
-                    />
+                    <img src={nomad} />
                     <figcaption>
                       <span>Nomad Coders, SiHyun Baek</span>
                     </figcaption>
@@ -214,10 +250,7 @@ function Projects({ id }: IId) {
                     <small>by</small>
                   </div>
                   <InnerFigure>
-                    <img
-                      src={nomad}
-                      style={{ width: 30, height: 30, borderRadius: 20 }}
-                    />
+                    <img src={nomad} />
                     <figcaption>
                       <span>Nomad Coders, SiHyun Baek</span>
                     </figcaption>
@@ -252,10 +285,7 @@ function Projects({ id }: IId) {
                     <small>by</small>
                   </div>
                   <InnerFigure>
-                    <img
-                      src={nomad}
-                      style={{ width: 30, height: 30, borderRadius: 20 }}
-                    />
+                    <img src={nomad} />
                     <figcaption>
                       <span>Nomad Coders, SiHyun Baek</span>
                     </figcaption>
@@ -289,10 +319,7 @@ function Projects({ id }: IId) {
                     <small>by</small>
                   </div>
                   <InnerFigure>
-                    <img
-                      src={shb}
-                      style={{ width: 30, height: 30, borderRadius: 20 }}
-                    />
+                    <img src={shb} />
                     <figcaption>
                       <span>SiHyun Baek</span>
                     </figcaption>
@@ -326,10 +353,7 @@ function Projects({ id }: IId) {
                     <small>by</small>
                   </div>
                   <InnerFigure>
-                    <img
-                      src={shb}
-                      style={{ width: 30, height: 30, borderRadius: 20 }}
-                    />
+                    <img src={shb} />
                     <figcaption>
                       <span>SiHyun Baek, 4 others</span>
                     </figcaption>

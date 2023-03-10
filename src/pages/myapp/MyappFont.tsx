@@ -1,34 +1,22 @@
 import { useState } from "react";
 import styled from "styled-components";
+import {
+  ChoiceDiv,
+  ChoiceUl,
+  ContentDivCommon,
+  FontContainer,
+  FontDetail,
+  FontDetailContentCommon,
+  FontLi,
+  FontNameText,
+  FontStyle,
+  FontTittle,
+  FontTop,
+  LettersNumbers,
+  Typography,
+} from "../../components/fontCommon";
 
-const FontContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
-const FontTop = styled.div`
-  display: flex;
-  gap: 4vw;
-  background: #f8f8f8;
-  background-image: linear-gradient(
-    to right,
-    rgb(34, 34, 34) 0 10%,
-    rgba(255, 255, 255, 0) 10%
-  );
-  background-position: bottom;
-  background-size: 8px 1px;
-  background-repeat: repeat-x;
-`;
-
-const Typography = styled.div`
-  padding: 20px 0;
-`;
-const ChoiceDiv = styled.div``;
-const ChoiceUl = styled.ul`
-  display: flex;
-  gap: 2vw;
-`;
-const Font = styled.li`
+const Font = styled(FontLi)`
   padding: 20px 0;
   cursor: pointer;
   color: #a7a7a7;
@@ -46,98 +34,23 @@ const Font3 = styled(Font)<{ toggle: number }>`
   ${(props) => (props.toggle === 2 ? choiceFont : "")}
 `;
 
-const FontName = styled.div<{ toggle: number }>`
-  font-family: ${(props) =>
-    props.toggle === 0
-      ? "Yasashii"
-      : props.toggle === 1
-      ? "Exo2"
-      : props.toggle === 2
-      ? "NanumSquareRoundOTFR"
-      : ""},sans-serif;
-  font-size: 10vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: max(20px, 5vw) 0;
-  background: #f8f8f8;
-  background-image: linear-gradient(
-    to right,
-    rgb(34, 34, 34) 0 10%,
-    rgba(255, 255, 255, 0) 10%
-  );
-  background-position: bottom;
-  background-size: 8px 1px;
-  background-repeat: repeat-x;
+const propsToggle = `props.toggle === 0
+? "Yasashii"
+: props.toggle === 1
+? "Exo2"
+: props.toggle === 2
+? "NanumSquareRoundOTFR"
+: ""`;
+const FontName = styled(FontNameText)<{ toggle: number }>`
+  font-family: ${(props) => propsToggle}, sans-serif;
 `;
 
-const FontStyle = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  padding: 20px 0;
+const FontDetailContent = styled(FontDetailContentCommon)<{ toggle: number }>`
+  font-family: ${(props) => propsToggle}, sans-serif;
 `;
-const FontDetail = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 20px;
-  background: #f8f8f8;
-  background-image: linear-gradient(
-    to right,
-    rgb(34, 34, 34) 0 10%,
-    rgba(255, 255, 255, 0) 10%
-  );
-  background-position: bottom;
-  background-size: 8px 1px;
-  background-repeat: repeat-x;
-  padding-bottom: 2vw;
-`;
-const FontTittle = styled.div`
-  font-family: "ApercuL",sans-serif;
-  font-size: 13px;
-`;
-const FontDetailContent = styled.div<{ toggle: number }>`
-  font-family: ${(props) =>
-    props.toggle === 0
-      ? "Yasashii"
-      : props.toggle === 1
-      ? "Exo2"
-      : props.toggle === 2
-      ? "NanumSquareRoundOTFR"
-      : ""},sans-serif;
-  font-size: 15vw;
-  text-align: center;
-`;
-const LettersNumbers = styled.div`
-  background: #f8f8f8;
-  background-image: linear-gradient(
-    to right,
-    rgb(34, 34, 34) 0 10%,
-    rgba(255, 255, 255, 0) 10%
-  );
-  background-position: bottom;
-  background-size: 8px 1px;
-  background-repeat: repeat-x;
-  padding-bottom: 2vw;
-`;
-const ContentDiv = styled.div<{ toggle: number }>`
-  font-size: 4vw;
-  display: flex;
-  flex-direction: column;
-  font-family: ${(props) =>
-      props.toggle === 0
-        ? "Yasashii"
-        : props.toggle === 1
-        ? "Exo2"
-        : props.toggle === 2
-        ? "NanumSquareRoundOTFR"
-        : ""},
-    sans-serif;
-  gap: 1vw;
-  span {
-    line-height: 1.4;
-  }
+
+const ContentDiv = styled(ContentDivCommon)<{ toggle: number }>`
+  font-family: ${(props) => propsToggle}, sans-serif;
 `;
 
 function MyappFont() {

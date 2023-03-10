@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Marquee from "react-fast-marquee";
-import { IId } from "../../../interface/Interface";
+import { IId } from "../../../interface/interface";
 import shb from "../../../assets/img/main_img/shbicon.png";
 import HeaderMainImg from "./HeaderMainImg";
 
@@ -37,6 +37,11 @@ const MarqueeText = styled.div`
     font-family: "ApercuL", sans-serif;
     font-weight: lighter;
   }
+  @media (max-width: 768px) {
+    & {
+      font-size: 3vw;
+    }
+  }
 `;
 
 const TextBox = styled.div`
@@ -48,10 +53,21 @@ const TextBox = styled.div`
   justify-content: center;
   align-items: center;
   gap: 10px;
+  @media (max-width: 768px) {
+    & {
+      font-size: 2.5vw;
+    }
+  }
 `;
 const LogoImg = styled.img`
   width: 2vw;
   border-radius: 20px;
+  @media (max-width: 768px) {
+    & {
+      width: 4vw;
+      font-size: 2.5vw;
+    }
+  }
 `;
 
 function Header({ id }: IId) {

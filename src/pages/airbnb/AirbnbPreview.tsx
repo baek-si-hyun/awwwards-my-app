@@ -36,6 +36,11 @@ const TextBoxbottom = styled.div`
   justify-content: center;
   align-items: center;
   gap: 0.5vw;
+  @media (max-width: 640px) {
+    & {
+      width: 100%;
+    }
+  }
 `;
 const ImgBox = styled.div`
   position: relative;
@@ -43,10 +48,20 @@ const ImgBox = styled.div`
 const Img = styled.img`
   width: 1.7vw;
   border-radius: 20px;
+  @media (max-width: 640px) {
+    & {
+      width: 4.7vw;
+    }
+  }
 `;
 const ImgText = styled.div`
   font-size: 1.2vw;
   font-weight: Bold;
+  @media (max-width: 640px) {
+    & {
+      font-size: 3vw;
+    }
+  }
 `;
 const UnderLine = styled.span`
   position: absolute;
@@ -63,11 +78,31 @@ const Preview = styled.div`
   :first-child {
     background-color: #222222;
   }
+  @media (max-width: 768px) {
+    & {
+      border-radius: 10px;
+    }
+  }
+  @media (max-width: 480px) {
+    & {
+      border-radius: 7px;
+    }
+  }
 `;
 const PrevInner = styled.div`
   object-fit: cover;
   overflow: hidden;
   border-radius: 15px;
+  @media (max-width: 768px) {
+    & {
+      border-radius: 10px;
+    }
+  }
+  @media (max-width: 480px) {
+    & {
+      border-radius: 7px;
+    }
+  }
 `;
 const PreviewImg = styled.img`
   width: 100%;

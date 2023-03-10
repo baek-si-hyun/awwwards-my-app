@@ -41,6 +41,11 @@ const MusicTextBox = styled.div`
   h3 {
     font-size: 1vw;
     line-height: 1.4;
+    @media (max-width: 429px) {
+      & {
+        display: none;
+      }
+    }
   }
 `;
 const InnerMusicBox2 = styled.div`
