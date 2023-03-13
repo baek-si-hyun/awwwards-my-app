@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import Marquee from "react-fast-marquee";
 import { useState, useEffect } from "react";
-import { IId } from "../../../interface/interface";
 import shb from "../../../assets/img/main_img/shbicon.png";
 import HeaderMainImg from "./HeaderMainImg";
 import { resizeWidth } from "../../../atom";
@@ -62,7 +61,7 @@ const LogoImg = styled.img`
   border-radius: 100%;
 `;
 
-function Header({ id }: IId) {
+function Header() {
   const getResizeWidth = useRecoilValue(resizeWidth);
   const [speed, setSpeed] = useState(130);
   const graphMode = () => {
@@ -83,7 +82,7 @@ function Header({ id }: IId) {
     graphMode();
   }, [getResizeWidth]);
   return (
-    <Container id={id}>
+    <Container id="header">
       <InnerContainer>
         <Title>site of the day</Title>
         <Wrap>

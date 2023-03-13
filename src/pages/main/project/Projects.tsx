@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { IId } from "../../../interface/interface";
 import {
   Container,
   InnerContainer,
@@ -15,6 +14,7 @@ import MyappProject from "./MyappProject";
 import AirbnbProject from "./AirbnbProject";
 import { useRecoilValue } from "recoil";
 import { visited } from "../../../atom";
+
 const GridBox = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -24,10 +24,10 @@ const GridBox = styled.div`
     }
   }
 `;
-function Projects({ id }: IId) {
+function Projects() {
   const getvisited = useRecoilValue(visited);
   return (
-    <Container id={id}>
+    <Container id="projects">
       <InnerContainer>
         <TextBox>
           <TextBoxTop>

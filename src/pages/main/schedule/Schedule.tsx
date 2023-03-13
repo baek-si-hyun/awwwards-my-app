@@ -7,7 +7,6 @@ import {
   TextBoxbottom,
   TextBoxMiddle,
 } from "../../../components/mainCommon";
-import { IId } from "../../../interface/interface";
 import Finally from "./Finally";
 import PastSchedule from "./PastSchedule";
 
@@ -25,9 +24,9 @@ const TextBox2 = styled.div`
   font-size: 1.1vw;
   line-height: 1.4;
 `;
-function Schedule({ id }: IId) {
+function Schedule() {
   return (
-    <Container id={id}>
+    <Container id="schedule">
       <InnerContainer>
         <TextBox>
           <TextBoxTop>Si Hyun Baek</TextBoxTop>

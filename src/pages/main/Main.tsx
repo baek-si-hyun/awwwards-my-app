@@ -5,14 +5,13 @@ import Schedule from "./schedule/Schedule";
 import Footer from "../../components/Footer";
 import Nav from "../../components/Nav";
 
-
 function Main() {
   return (
     <>
-      <Header id="header" />
-      <Projects id="projects" />
-      <About id="about" />
-      <Schedule id="schedule" />
+      <Header />
+      <Projects />
+      <About />
+      <Schedule />
       <Nav />
       <Footer />
     </>

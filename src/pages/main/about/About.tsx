@@ -7,7 +7,6 @@ import {
   TextBoxbottom,
   TextBoxMiddle,
 } from "../../../components/mainCommon";
-import { IId } from "../../../interface/interface";
 import Game from "./Game";
 import Music from "./Music";
 import Site from "./Site";
@@ -33,9 +32,9 @@ const ExplanTextBox = styled.div`
   font-weight: bold;
 `;
 
-function About({ id }: IId) {
+function About() {
   return (
-    <Container id={id}>
+    <Container id="about">
       <InnerContainer>
         <TextBox>
           <TextBoxTop>Si Hyun Baek</TextBoxTop>
