@@ -21,7 +21,7 @@ const Container = styled.div`
   }
 `;
 const Sitebox = styled.div`
-  width: clamp(200px, 30.6vw, 590px);
+  width: 30.6vw;
   display: flex;
   flex-direction: column;
   gap: 1.2vw;
@@ -97,7 +97,7 @@ const SenterBox = styled.a`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 1vw 1.5vw;
+  padding: 1rem 1rem;
   background-color: #f8f8f8;
   display: flex;
   justify-content: center;

@@ -1,8 +1,11 @@
 import styled from "styled-components";
 import Marquee from "react-fast-marquee";
+import { useState, useEffect } from "react";
 import { IId } from "../../../interface/interface";
 import shb from "../../../assets/img/main_img/shbicon.png";
 import HeaderMainImg from "./HeaderMainImg";
+import { resizeWidth } from "../../../atom";
+import { useRecoilValue } from "recoil";
 
 const Container = styled.div`
   width: 100%;
@@ -37,7 +40,7 @@ const MarqueeText = styled.div`
     font-family: "ApercuL", sans-serif;
     font-weight: lighter;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 800px) {
     & {
       font-size: 3vw;
     }
@@ -46,37 +49,45 @@ const MarqueeText = styled.div`
 
 const TextBox = styled.div`
   text-align: center;
-  font-size: 1vw;
+  font-size: 1.5vw;
   margin: 3vw 0;
   font-weight: 600;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
-  @media (max-width: 768px) {
-    & {
-      font-size: 2.5vw;
-    }
-  }
+  gap: 1vw;
 `;
 const LogoImg = styled.img`
-  width: 2vw;
-  border-radius: 20px;
-  @media (max-width: 768px) {
-    & {
-      width: 4vw;
-      font-size: 2.5vw;
-    }
-  }
+  width: 2.5vw;
+  border-radius: 100%;
 `;
 
 function Header({ id }: IId) {
+  const getResizeWidth = useRecoilValue(resizeWidth);
+  const [speed, setSpeed] = useState(130);
+  const graphMode = () => {
+    if (getResizeWidth.resizeWidth > 1280) {
+      setSpeed(130);
+    }
+    if (getResizeWidth.resizeWidth <= 1280) {
+      setSpeed(90);
+    }
+    if (getResizeWidth.resizeWidth <= 768) {
+      setSpeed(60);
+    }
+    if (getResizeWidth.resizeWidth <= 429) {
+      setSpeed(40);
+    }
+  };
+  useEffect(() => {
+    graphMode();
+  }, [getResizeWidth]);
   return (
     <Container id={id}>
       <InnerContainer>
         <Title>site of the day</Title>
         <Wrap>
-          <Inner play={true} gradient={false} speed={130}>
+          <Inner play={true} gradient={false} speed={speed}>
             <MarqueeText>
               MY APP<span> — Site of the Day - </span>100
               <span> — Dec 25, 2022 — </span>MY APP

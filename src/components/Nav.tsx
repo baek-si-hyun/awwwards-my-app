@@ -1,14 +1,14 @@
 import styled from "styled-components";
 import { useState, useEffect } from "react";
-import { useRecoilValue } from "recoil";
-import { pathList } from "../atom";
+import { useRecoilValue, useSetRecoilState } from "recoil";
+import { pathList, resizeWidth } from "../atom";
 import { IMainPosition, IRouterPosition } from "../interface/interface";
 import { DomApi } from "../services/DomApi";
 
 const Navi = styled.div`
   border-radius: 10px;
   position: fixed;
-  bottom: 30px;
+  bottom: 2rem;
   left: 50%;
   transform: translateX(-50%);
   gap: 0.3rem;
@@ -228,24 +228,23 @@ const BugerLabel = styled.div`
 
 function Nav() {
   const [resize, setResize] = useState(window.innerWidth);
-  const handleResize = () => {
-    setResize(window.innerWidth);
-  };
+  const setResizeWidth = useSetRecoilState(resizeWidth);
   const [menuSwitch, setMenuSwitch] = useState(false);
   const bugerNavHandler = () => {
+    setResize(window.innerWidth);
     setMenuSwitch(!menuSwitch);
+    const resizeObject = { resizeWidth: resize };
+    setResizeWidth(resizeObject);
   };
   useEffect(() => {
-    window.addEventListener("resize", handleResize);
-    console.log(resize);
+    window.addEventListener("resize", bugerNavHandler);
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("resize", bugerNavHandler);
     };
   }, [resize]);
 
   const { pathname } = useRecoilValue(pathList);
   const navHandler = (e: any) => {
-    console.log(e);
     e.preventDefault();
     if (e.target.classList.contains("nav-item")) {
       const id = e.target.getAttribute("href");
@@ -266,6 +265,7 @@ function Nav() {
   const getElementPostion = () => {
     DomApi({ pathname, setMainPosition, setRouterPosition });
   };
+
   useEffect(() => {
     window.addEventListener("scroll", getElementPostion);
     return () => window.removeEventListener("scroll", getElementPostion);

@@ -8,7 +8,7 @@ import { gameName } from "../../../services/listData";
 
 const Container = styled.div`
   position: relative;
-  height: clamp(300px, 50vw, 1000px);
+  height: 50vw;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -23,7 +23,7 @@ const Box = styled(motion.div)<{ src: string }>`
   flex-direction: column;
   position: absolute;
   width: 100%;
-  height: clamp(300px, 48vw, 1000px);
+  height: 48vw;
   border-radius: 13px;
   z-index: 2;
   @media (max-width: 480px) {
@@ -43,8 +43,9 @@ const BoxText = styled(motion.div)<{ isboxhover: boolean }>`
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
   width: 100%;
   height: 100%;
+  border-radius: 13px;
   color: #fff;
-  font-size: 4vw;
+  font-size: 3vw;
   opacity: ${(props) => (props.isboxhover ? 1 : 0)};
   transition: all 0.3s ease-in-out;
   position: relative;
@@ -52,11 +53,6 @@ const BoxText = styled(motion.div)<{ isboxhover: boolean }>`
     position: absolute;
     left: 6vw;
     bottom: 6vw;
-  }
-  @media (max-width: 480px) {
-    & {
-      border-radius: 13px;
-    }
   }
 `;
 

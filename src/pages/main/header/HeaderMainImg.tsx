@@ -32,25 +32,31 @@ const InnerMotionBox = styled.div`
   height: 100%;
   display: grid;
   grid-template-rows: 1.7vw 5.8vw auto;
-  gap: 0.5rem;
+  gap: clamp(0.1rem, 1vw, 1rem);
 `;
 
 const MotionTop = styled.div`
   position: relative;
   overflow: hidden;
+  height: clamp(10px, 1.3vw, 41px);
 `;
 const MotionBottom = styled.div`
   position: relative;
   overflow: hidden;
+  height: clamp(30px, 6.2vw, 182px);
 `;
 const TopBox = styled(motion.div)`
-  font-size: 1.3vw;
+  font-size: clamp(10px, 1.3vw, 35px);
   position: absolute;
+  top: 0;
+  left: 0;
 `;
 const BottomBox = styled(motion.div)`
-  font-size: 5.3vw;
+  font-size: clamp(25px, 5.7vw, 165px);
   font-weight: Bold;
   position: absolute;
+  top: 0;
+  left: 0;
 `;
 function HeaderMainImg() {
   const topList = ["tools", "by", "Date"];
@@ -82,7 +88,6 @@ function HeaderMainImg() {
               </TopBox>
             </AnimatePresence>
           </MotionTop>
-
           <MotionBottom>
             <AnimatePresence>
               <BottomBox

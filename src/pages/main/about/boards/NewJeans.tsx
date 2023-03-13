@@ -43,7 +43,7 @@ const Card = styled.div<{ isDragging: boolean }>`
 const ImgDiv = styled.div``;
 
 const Img = styled.img`
-  width: clamp(25px, 4vw, 60px);
+  width: clamp(25px, 4vw, 128px);
   object-fit: cover;
 `;
 

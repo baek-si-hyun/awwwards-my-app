@@ -1,3 +1,4 @@
+import styled from "styled-components";
 import nomad from "../../assets/img/main_img/nomadicon.png";
 import kanban1 from "../../assets/img/project_img/projectkanban1.jpg";
 import kanban2 from "../../assets/img/project_img/projectkanban2.jpg";
@@ -19,9 +20,12 @@ import {
   UnderLine,
 } from "../../components/previewCommon";
 
+const DivBackground = styled(ColorDiv)`
+  background-color: #efefef;
+`;
 function KanbanPreview() {
   return (
-    <ColorDiv>
+    <DivBackground>
       <TextBox>
         <TextBoxTop>
           <h2>2022. 2. 1.</h2>
@@ -61,7 +65,7 @@ function KanbanPreview() {
           </PrevInner>
         </Preview>
       </PreviewContainer>
-    </ColorDiv>
+    </DivBackground>
   );
 }
 export default KanbanPreview;

@@ -1,4 +1,5 @@
 import { atom, selector } from "recoil";
+import { v1 } from "uuid";
 import omg from "./assets/img/newjeans_song/omg.jpg";
 import ditto from "./assets/img/newjeans_song/ditto.jpg";
 import stEp from "./assets/img/newjeans_song/1stEP.jpg";
@@ -16,14 +17,32 @@ import maroon from "./assets/img/recommended_song/maroon.jpg";
 import yena from "./assets/img/recommended_song/yena.jpg";
 import star from "./assets/img/recommended_song/star.jpg";
 import sweater from "./assets/img/recommended_song/sweater.jpg";
-import { IPathname, Data } from "./interface/interface";
-
+import { IPathname, Data, IResize, IVisited } from "./interface/interface";
+export const visited = atom<IVisited>({
+  key: `visited/${v1()}`,
+  default: {
+    airbnbToday: 0,
+    airbnbTotal: 0,
+    coinToday: 0,
+    coinTotal: 0,
+    kanbanToday: 0,
+    kanbanTotal: 0,
+    myappToday: 0,
+    myappTotal: 0,
+    netflixToday: 0,
+    netflixTotal: 0,
+  },
+});
+export const resizeWidth = atom<IResize>({
+  key: `resizeWidth/${v1()}`,
+  default: { resizeWidth: window.innerWidth },
+});
 export const pathList = atom<IPathname>({
-  key: `pathList`,
+  key: `pathList/${v1()}`,
   default: { pathname: "" },
 });
 export const pathSelector = selector<IPathname>({
-  key: "pathListCorrection",
+  key: `pathListCorrection/${v1()}`,
   get: ({ get }) => {
     const pathname = get(pathList);
     return pathname;
@@ -33,7 +52,7 @@ export const pathSelector = selector<IPathname>({
   },
 });
 export const all = atom<Data[]>({
-  key: `all`,
+  key: `all/${v1()}`,
   default: [
     {
       id: 10,
@@ -139,7 +158,7 @@ export const all = atom<Data[]>({
 });
 
 export const newJeans = atom<Data[]>({
-  key: `newJeans`,
+  key: `newJeans/${v1()}`,
   default: [
     {
       id: 0,

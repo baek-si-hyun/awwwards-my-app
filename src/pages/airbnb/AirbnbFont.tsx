@@ -36,23 +36,44 @@ const Font4 = styled(Font)<{ toggle: number }>`
   ${(props) => (props.toggle === 3 ? choiceFont : "")}
 `;
 
-const propsToggle = `props.toggle === 0
-? "GothamMedium"
-: props.toggle === 1
-? "Helvetica"
-: props.toggle === 2
-? "ProductSans"
-: props.toggle === 3
-? "Roboto"
-: "GothamMedium"`;
 const FontName = styled(FontNameText)<{ toggle: number }>`
-  font-family: ${(props) => propsToggle}, sans-serif;
+  font-family: ${(props) =>
+      props.toggle === 0
+        ? "GothamMedium"
+        : props.toggle === 1
+        ? "Helvetica"
+        : props.toggle === 2
+        ? "ProductSans"
+        : props.toggle === 3
+        ? "Roboto"
+        : "GothamMedium"},
+    sans-serif;
 `;
 const FontDetailContent = styled(FontDetailContentCommon)<{ toggle: number }>`
-  font-family: ${(props) => propsToggle}, sans-serif;
+  font-family: ${(props) =>
+      props.toggle === 0
+        ? "GothamMedium"
+        : props.toggle === 1
+        ? "Helvetica"
+        : props.toggle === 2
+        ? "ProductSans"
+        : props.toggle === 3
+        ? "Roboto"
+        : "GothamMedium"},
+    sans-serif;
 `;
 const ContentDiv = styled(ContentDivCommon)<{ toggle: number }>`
-  font-family: ${(props) => propsToggle}, sans-serif;
+  font-family: ${(props) =>
+      props.toggle === 0
+        ? "GothamMedium"
+        : props.toggle === 1
+        ? "Helvetica"
+        : props.toggle === 2
+        ? "ProductSans"
+        : props.toggle === 3
+        ? "Roboto"
+        : "GothamMedium"},
+    sans-serif;
 `;
 function AirbnbFont() {
   const [toggle, setToggle] = useState(0);

@@ -1,3 +1,4 @@
+import styled from "styled-components";
 import nomad from "../../assets/img/main_img/nomadicon.png";
 import coin2 from "../../assets/img/project_img/projectcoin1.jpg";
 import coin1 from "../../assets/img/project_img/projectcoin2.jpg";
@@ -19,9 +20,12 @@ import {
   UnderLine,
 } from "../../components/previewCommon";
 
+const DivBackground = styled(ColorDiv)`
+  background-color: #efefef;
+`;
 function CoinPreview() {
   return (
-    <ColorDiv>
+    <DivBackground>
       <TextBox>
         <TextBoxTop>
           <h2>2023. 1. 11.</h2>
@@ -61,7 +65,7 @@ function CoinPreview() {
           </PrevInner>
         </Preview>
       </PreviewContainer>
-    </ColorDiv>
+    </DivBackground>
   );
 }
 export default CoinPreview;

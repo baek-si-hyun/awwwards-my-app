@@ -1,3 +1,4 @@
+import styled from "styled-components";
 import shb from "../../assets/img/main_img/shbicon.png";
 import myapp1 from "../../assets/img/project_img/projectmyapp1.jpg";
 import myapp2 from "../../assets/img/project_img/projectmyapp2.jpg";
@@ -19,9 +20,13 @@ import {
   UnderLine,
 } from "../../components/previewCommon";
 
+const DivBackground = styled(ColorDiv)`
+  background-color: #e8ebe6;
+`;
+
 function MyappPreview() {
   return (
-    <ColorDiv>
+    <DivBackground>
       <TextBox>
         <TextBoxTop>
           <h2>2022. 12. 25.</h2>
@@ -61,7 +66,7 @@ function MyappPreview() {
           </PrevInner>
         </Preview>
       </PreviewContainer>
-    </ColorDiv>
+    </DivBackground>
   );
 }
 export default MyappPreview;

@@ -5,7 +5,6 @@ export const ColorDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #f7f1ef;
 `;
 
 export const TextBox = styled.div`

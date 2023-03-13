@@ -1,5 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useRecoilValue } from "recoil";
 import styled from "styled-components";
+import { resizeWidth } from "../../../atom";
 import { absoluteBoxData, date, rowData } from "../../../services/listData";
 
 const Container = styled.div`
@@ -137,7 +139,19 @@ const SimpleBox = styled.div`
   }
 `;
 function PastSchedule() {
-  const [graph, setGraph] = useState(true);
+  const [graph, setGraph] = useState(false);
+  const getResizeWidth = useRecoilValue(resizeWidth);
+  const graphMode = () => {
+    if (getResizeWidth.resizeWidth <= 900) {
+      setGraph(true);
+    }
+    if (getResizeWidth.resizeWidth > 900) {
+      setGraph(false);
+    }
+  };
+  useEffect(() => {
+    graphMode()
+  }, [getResizeWidth]);
   return (
     <Container>
       {graph ? (

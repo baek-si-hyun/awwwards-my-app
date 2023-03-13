@@ -1,55 +1,17 @@
 import styled from "styled-components";
+import {
+  Container,
+  InnerContainer,
+  TextBox,
+  TextBoxTop,
+  TextBoxbottom,
+  TextBoxMiddle,
+} from "../../../components/mainCommon";
 import { IId } from "../../../interface/interface";
 import Game from "./Game";
 import Music from "./Music";
 import Site from "./Site";
 
-const Container = styled.div`
-  width: 100%;
-  height: 100%;
-`;
-
-const InnerContainer = styled.div`
-  padding: 3vw 2.7vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-const TextBox = styled.div`
-  margin-top: 4vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-const TextBoxTop = styled.div`
-  margin-bottom: 2.1vw;
-  font-size: 0.8vw;
-  @media (max-width: 768px) {
-    & {
-      font-size: 1.5vw;
-    }
-  }
-`;
-const TextBoxMiddle = styled.div`
-  font-size: 9vw;
-  font-weight: bold;
-  text-transform: uppercase;
-`;
-const TextBoxbottom = styled.div`
-  text-align: center;
-  width: 20vw;
-  margin-top: 0.9vw;
-  margin-bottom: 6vw;
-  font-size: 1.3vw;
-  line-height: 1.4;
-  @media (max-width: 768px) {
-    & {
-      width: 80%;
-      font-size: 2.5vw;
-    }
-  }
-`;
 const SubTextBox = styled.div`
   width: 100%;
   text-align: left;

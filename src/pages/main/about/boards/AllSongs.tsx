@@ -77,7 +77,7 @@ const CardItem = styled.div`
 const ImgDiv = styled.div``;
 
 const Img = styled.img`
-  width: clamp(20px, 2.5vw, 40px);
+  width: clamp(20px, 2.5vw, 80px);
   object-fit: cover;
 `;
 const Tittle = styled.div``;

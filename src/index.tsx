@@ -1,7 +1,7 @@
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import { RecoilRoot } from "recoil";
-import { createGlobalStyle, ThemeProvider } from "styled-components";
+import styled, { createGlobalStyle, ThemeProvider } from "styled-components";
 import { theme } from "./theme";
 import "./assets/font/css/font.css";
 import App from "./App";
@@ -35,15 +35,16 @@ footer, header, hgroup, menu, nav, section {
 
 html{
   font-size: 100%;
-  scroll-behavior: smooth;
+  scroll-behavior: smooth; 
+
 }
 body {
   line-height: 1;
   font-family: "Apercu","Pretendard",sans-serif;
   background-color: #f8f8f8;
   padding: 0;
-	color: ${(props) => props.theme.textColor};
-  max-width: 1920px;
+	color: ${(props) => props.theme.textColor}; 
+  width: 100%;
 }
 ol, ul {
   list-style: none;
@@ -69,7 +70,6 @@ a {
   -webkit-font-smoothing: antialiased;
 }
 `;
-
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );

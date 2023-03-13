@@ -1,5 +1,23 @@
 import { Dispatch, SetStateAction } from "react";
 
+export interface IGetVisitedObject {
+  visited: IVisited;
+}
+export interface IVisited {
+  airbnbToday: number;
+  airbnbTotal: number;
+  coinToday: number;
+  coinTotal: number;
+  kanbanToday: number;
+  kanbanTotal: number;
+  myappToday: number;
+  myappTotal: number;
+  netflixToday: number;
+  netflixTotal: number;
+}
+export interface IResize {
+  resizeWidth: number;
+}
 export interface IPathname {
   pathname: string;
 }

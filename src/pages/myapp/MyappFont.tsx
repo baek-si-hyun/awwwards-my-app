@@ -34,23 +34,40 @@ const Font3 = styled(Font)<{ toggle: number }>`
   ${(props) => (props.toggle === 2 ? choiceFont : "")}
 `;
 
-const propsToggle = `props.toggle === 0
-? "Yasashii"
-: props.toggle === 1
-? "Exo2"
-: props.toggle === 2
-? "NanumSquareRoundOTFR"
-: ""`;
 const FontName = styled(FontNameText)<{ toggle: number }>`
-  font-family: ${(props) => propsToggle}, sans-serif;
+  font-family: ${(props) =>
+      props.toggle === 0
+        ? "Yasashii"
+        : props.toggle === 1
+        ? "Exo2"
+        : props.toggle === 2
+        ? "NanumSquareRoundOTFR"
+        : ""},
+    sans-serif;
 `;
 
 const FontDetailContent = styled(FontDetailContentCommon)<{ toggle: number }>`
-  font-family: ${(props) => propsToggle}, sans-serif;
+  font-family: ${(props) =>
+      props.toggle === 0
+        ? "Yasashii"
+        : props.toggle === 1
+        ? "Exo2"
+        : props.toggle === 2
+        ? "NanumSquareRoundOTFR"
+        : ""},
+    sans-serif;
 `;
 
 const ContentDiv = styled(ContentDivCommon)<{ toggle: number }>`
-  font-family: ${(props) => propsToggle}, sans-serif;
+  font-family: ${(props) =>
+      props.toggle === 0
+        ? "Yasashii"
+        : props.toggle === 1
+        ? "Exo2"
+        : props.toggle === 2
+        ? "NanumSquareRoundOTFR"
+        : ""},
+    sans-serif;
 `;
 
 function MyappFont() {
