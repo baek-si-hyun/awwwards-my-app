@@ -1,10 +1,12 @@
-export const gameName = [
+import { IAbsoluteBoxData, IrowData } from "../interface/interface";
+
+export const gameName: string[] = [
   "League of Legends (칼바람, 우르프)",
   "War Thunder (밀덕 아님)",
   "Black Desert (무 기약 휴식중)",
 ];
 
-export const rowData = [
+export const rowData: IrowData[] = [
   {
     id: 1,
     arr: [{ num: 0, text: "academy project" }],
@@ -43,7 +45,8 @@ export const rowData = [
     ],
   },
 ];
-export const absoluteBoxData = [
+
+export const absoluteBoxData: IAbsoluteBoxData[] = [
   {
     id: 1,
     text: "Institution training & Team Project",
@@ -58,7 +61,7 @@ export const absoluteBoxData = [
     text: "apply project",
   },
 ];
-export const date = [
+export const date: IAbsoluteBoxData[] = [
   { id: 1, text: "2022. 04 ~ 2022 .09" },
   { id: 2, text: "2022. 09 ~ 2023 .12" },
   { id: 3, text: "2022. 11 ~ 2023 .12" },

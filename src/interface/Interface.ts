@@ -48,6 +48,16 @@ export interface Data {
   artist: string;
   album: string;
 }
-export interface IId {
-  id: string;
+
+interface IrowDataArr {
+  num: number;
+  text: string;
+}
+export interface IrowData {
+  id: number;
+  arr: IrowDataArr[];
+}
+export interface IAbsoluteBoxData {
+  id: number;
+  text: string;
 }

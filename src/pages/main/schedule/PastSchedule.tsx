@@ -142,10 +142,10 @@ function PastSchedule() {
   const [graph, setGraph] = useState(false);
   const getResizeWidth = useRecoilValue(resizeWidth);
   const graphMode = () => {
-    if (getResizeWidth.resizeWidth <= 900) {
+    if (getResizeWidth.resizeWidth <= 1000) {
       setGraph(true);
     }
-    if (getResizeWidth.resizeWidth > 900) {
+    if (getResizeWidth.resizeWidth > 1000) {
       setGraph(false);
     }
   };

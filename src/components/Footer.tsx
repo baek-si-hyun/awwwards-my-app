@@ -149,18 +149,27 @@ function Footer() {
         <div>Contact: </div>
         <LinkBarUl>
           <LinkBarLi>
-            <Links href="https://github.com/baek-si-hyun">github</Links>
+            <Links href="https://github.com/baek-si-hyun" target="_blank">
+              github
+            </Links>
           </LinkBarLi>
           <LinkBarLi>
-            <Links href="https://www.instagram.com/b_2.19/">instagram</Links>
+            <Links href="https://www.instagram.com/b_2.19/" target="_blank">
+              instagram
+            </Links>
           </LinkBarLi>
           <LinkBarLi>
-            <Links href="https://www.facebook.com/profile.php?id=100007773606487">
+            <Links
+              href="https://www.facebook.com/profile.php?id=100007773606487"
+              target="_blank"
+            >
               facebook
             </Links>
           </LinkBarLi>
           <LinkBarLi>
-            <Links href="https://blog.naver.com/qortlgus100">blog</Links>
+            <Links href="https://blog.naver.com/qortlgus100" target="_blank">
+              blog
+            </Links>
           </LinkBarLi>
         </LinkBarUl>
       </LinkBar>

@@ -142,7 +142,7 @@ function Site() {
           onMouseOut={() => setHover(0)}
         >
           <HoverBox1 isHover={hover}>
-            <SenterBox href="https://www.awwwards.com/">
+            <SenterBox href="https://www.awwwards.com/" target="_blank">
               <span className="material-symbols-outlined">arrow_right_alt</span>
               &nbsp;
               <div>
@@ -177,7 +177,7 @@ function Site() {
           onMouseOut={() => setHover(0)}
         >
           <HoverBox2 isHover={hover}>
-            <SenterBox href="https://upbit.com/home">
+            <SenterBox href="https://upbit.com/home" target="_blank">
               <span className="material-symbols-outlined">arrow_right_alt</span>
               &nbsp;
               <div>
@@ -212,7 +212,7 @@ function Site() {
           onMouseOut={() => setHover(0)}
         >
           <HoverBox3 isHover={hover}>
-            <SenterBox href="https://www.binance.com/en">
+            <SenterBox href="https://www.binance.com/en" target="_blank">
               <span className="material-symbols-outlined">arrow_right_alt</span>
               &nbsp;
               <div>
