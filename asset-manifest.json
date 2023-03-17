@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/awwwards-my-app/static/css/main.b8cf3785.css",
-    "main.js": "/awwwards-my-app/static/js/main.a099ba4a.js",
+    "main.css": "/awwwards-my-app/static/css/main.05c417ed.css",
+    "main.js": "/awwwards-my-app/static/js/main.76182517.js",
     "static/media/projectnetflix1.jpg": "/awwwards-my-app/static/media/projectnetflix1.acff8fda7db1fd39b9b6.jpg",
     "static/media/projectnetflix2.jpg": "/awwwards-my-app/static/media/projectnetflix2.a62a9a244f045b4166fb.jpg",
     "static/media/projectmyapp3.jpg": "/awwwards-my-app/static/media/projectmyapp3.08fbff993725efb92ac6.jpg",
@@ -15,14 +15,18 @@
     "static/media/myapp.png": "/awwwards-my-app/static/media/myapp.25c20edcf74a32d71ac6.png",
     "static/media/lol.jpg": "/awwwards-my-app/static/media/lol.e74a489aaf08bc458b55.jpg",
     "static/media/airbnb.png": "/awwwards-my-app/static/media/airbnb.922941dcde3fa6cc8244.png",
+    "static/media/Pretendard-Regular.woff": "/awwwards-my-app/static/media/Pretendard-Regular.ab56c53f21ca6b32d15f.woff",
     "static/media/allsong.jpg": "/awwwards-my-app/static/media/allsong.33e617b53324988a81d5.jpg",
+    "static/media/Pretendard-Regular.woff2": "/awwwards-my-app/static/media/Pretendard-Regular.6090e6b5524796768e78.woff2",
     "static/media/projectmyapp2.jpg": "/awwwards-my-app/static/media/projectmyapp2.399764ef3cbd6946f681.jpg",
     "static/media/NanumSquareRoundOTFR.otf": "/awwwards-my-app/static/media/NanumSquareRoundOTFR.7c5a6c969e22084ac097.otf",
     "static/media/war.jpg": "/awwwards-my-app/static/media/war.2a137dcb113347e4cbe2.jpg",
+    "static/media/Apercu Pro Medium.otf": "/awwwards-my-app/static/media/Apercu Pro Medium.05d266db2197de0e13b0.otf",
     "static/media/Apercu Pro Light.otf": "/awwwards-my-app/static/media/Apercu Pro Light.673d7cb45c5fa169f15a.otf",
     "static/media/awwwardC.png": "/awwwards-my-app/static/media/awwwardC.2c1bf542d67d83107935.png",
     "static/media/Apercu Pro Regular.otf": "/awwwards-my-app/static/media/Apercu Pro Regular.c90f8890213c974793f9.otf",
     "static/media/newjeans.jpg": "/awwwards-my-app/static/media/newjeans.d95e8fa2ae8bd4879d4e.jpg",
+    "static/media/Apercu Pro Bold.otf": "/awwwards-my-app/static/media/Apercu Pro Bold.fe91e7b23d9dafe4c2d2.otf",
     "static/media/binanceC.png": "/awwwards-my-app/static/media/binanceC.d09616cdbfd0819c8920.png",
     "static/media/upbitC.png": "/awwwards-my-app/static/media/upbitC.88ef44acfd59692c7b9b.png",
     "static/media/Exo2-VariableFont_wght.ttf": "/awwwards-my-app/static/media/Exo2-VariableFont_wght.718ec91358aa7ee8083b.ttf",
@@ -43,22 +47,30 @@
     "static/media/projectkanban1.jpg": "/awwwards-my-app/static/media/projectkanban1.90028e7e0f3caa18de8f.jpg",
     "static/media/projectcoin1.jpg": "/awwwards-my-app/static/media/projectcoin1.8690e12bf09772383918.jpg",
     "static/media/YasashiiBold.ttf": "/awwwards-my-app/static/media/YasashiiBold.4499c1e08893e9219f98.ttf",
+    "static/media/ApercuPro-Medium.woff": "/awwwards-my-app/static/media/ApercuPro-Medium.3af8339b0372b66de242.woff",
+    "static/media/ApercuPro.woff": "/awwwards-my-app/static/media/ApercuPro.ffc6d61fa0a40a4c381d.woff",
+    "static/media/ApercuPro-Bold.woff": "/awwwards-my-app/static/media/ApercuPro-Bold.db1135d9f30c996b213b.woff",
     "static/media/iconpng.png": "/awwwards-my-app/static/media/iconpng.3b8fbb8b59a9e0c0e45b.png",
     "static/media/projectcoin3.jpg": "/awwwards-my-app/static/media/projectcoin3.12df03f5ae63872d5812.jpg",
     "static/media/coin.png": "/awwwards-my-app/static/media/coin.5a971117189af162e8a3.png",
+    "static/media/Apercu Light.woff": "/awwwards-my-app/static/media/Apercu Light.f9787cc8216e22de1214.woff",
     "static/media/lighthouse.jpg": "/awwwards-my-app/static/media/lighthouse.4388810af01fe5164c6a.jpg",
+    "static/media/ApercuPro-Medium.woff2": "/awwwards-my-app/static/media/ApercuPro-Medium.bf1f897bab0dc22805ca.woff2",
+    "static/media/Apercu Light.woff2": "/awwwards-my-app/static/media/Apercu Light.e44dee2a0839aafff2cd.woff2",
+    "static/media/ApercuPro.woff2": "/awwwards-my-app/static/media/ApercuPro.ee976d69dfabd0d49abd.woff2",
     "static/media/Helvetica Neue Medium Extended.ttf": "/awwwards-my-app/static/media/Helvetica Neue Medium Extended.372d58a9bf10285baebe.ttf",
+    "static/media/ApercuPro-Bold.woff2": "/awwwards-my-app/static/media/ApercuPro-Bold.7fbfd7d508c080196fbe.woff2",
     "static/media/awwwardicon.png": "/awwwards-my-app/static/media/awwwardicon.73f8600fa876b639b316.png",
     "static/media/binanceicon.png": "/awwwards-my-app/static/media/binanceicon.d02fd5a1a492fb7bcc9f.png",
     "static/media/upbiticon.png": "/awwwards-my-app/static/media/upbiticon.4064bc4102e646afee38.png",
     "static/media/smlie.jpg": "/awwwards-my-app/static/media/smlie.5608cd262b7dd6c523a2.jpg",
     "static/media/blue.jpg": "/awwwards-my-app/static/media/blue.0173d3b80b726c93c330.jpg",
     "index.html": "/awwwards-my-app/index.html",
-    "main.b8cf3785.css.map": "/awwwards-my-app/static/css/main.b8cf3785.css.map",
-    "main.a099ba4a.js.map": "/awwwards-my-app/static/js/main.a099ba4a.js.map"
+    "main.05c417ed.css.map": "/awwwards-my-app/static/css/main.05c417ed.css.map",
+    "main.76182517.js.map": "/awwwards-my-app/static/js/main.76182517.js.map"
   },
   "entrypoints": [
-    "static/css/main.b8cf3785.css",
-    "static/js/main.a099ba4a.js"
+    "static/css/main.05c417ed.css",
+    "static/js/main.76182517.js"
   ]
 }
