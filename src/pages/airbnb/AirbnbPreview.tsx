@@ -23,6 +23,9 @@ import {
 const DivBackground = styled(ColorDiv)`
   background-color: #f7f1ef;
 `;
+const PreviewChange = styled(Preview)`
+  background-color: #222222;
+`;
 
 function AirbnbPreview() {
   return (
@@ -45,26 +48,26 @@ function AirbnbPreview() {
         </TextBoxbottom>
       </TextBox>
       <PreviewContainer>
-        <Preview>
+        <PreviewChange>
           <PrevInner>
             <PreviewImg src={airbnb1} />
           </PrevInner>
-        </Preview>
-        <Preview>
+        </PreviewChange>
+        <PreviewChange>
           <PrevInner>
             <PreviewImg src={airbnb2} />
           </PrevInner>
-        </Preview>
-        <Preview>
+        </PreviewChange>
+        <PreviewChange>
           <PrevInner>
             <PreviewImg src={airbnb3} />
           </PrevInner>
-        </Preview>
-        <Preview>
+        </PreviewChange>
+        <PreviewChange>
           <PrevInner>
             <PreviewImg src={airbnb4} />
           </PrevInner>
-        </Preview>
+        </PreviewChange>
       </PreviewContainer>
     </DivBackground>
   );

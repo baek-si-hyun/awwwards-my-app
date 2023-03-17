@@ -20,7 +20,7 @@ const Font = styled(FontLi)`
   padding: 20px 0;
   cursor: pointer;
   color: #a7a7a7;
-  font-family: "ApercuL", sans-serif;
+  font-weight: 100;
 `;
 const choiceFont =
   "border-bottom: 2px solid black;color:black;font-family:'Apercu', sans-serif";

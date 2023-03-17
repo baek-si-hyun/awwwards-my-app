@@ -18,7 +18,7 @@ const Title = styled.h1`
   color: ${(props) => props.theme.textColor};
   text-transform: uppercase;
   text-align: center;
-  font-size: 12.7vw;
+  font-size: 12.31vw;
   font-weight: 700;
 `;
 const Wrap = styled.div`
@@ -36,8 +36,7 @@ const MarqueeText = styled.div`
   margin-right: 0.6vw;
   font-weight: Bold;
   span {
-    font-family: "ApercuL", sans-serif;
-    font-weight: lighter;
+    font-weight: 100;
   }
   @media (max-width: 800px) {
     & {

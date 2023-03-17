@@ -50,7 +50,7 @@ export const Img = styled.img`
 `;
 export const ImgText = styled.div`
   font-size: 1.2vw;
-  font-weight: Bold;
+  font-weight: 900;
   @media (max-width: 640px) {
     & {
       font-size: 3vw;

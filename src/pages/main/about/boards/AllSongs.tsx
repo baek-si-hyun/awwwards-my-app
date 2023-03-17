@@ -47,6 +47,11 @@ const Card = styled.div<{ isDragging: boolean }>`
       grid-template-columns: repeat(2, 1fr);
     }
   }
+  @media (max-width: 429px) {
+    & {
+      font-size: 0.6rem;
+    }
+  }
 `;
 
 const CardItem = styled.div`

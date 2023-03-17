@@ -19,10 +19,20 @@ const TextBox1 = styled.div`
   font-weight: Bold;
   line-height: 1.2;
   margin-bottom: 17px;
+  @media (max-width: 429px) {
+    & {
+      font-size: 1rem;
+    }
+  }
 `;
 const TextBox2 = styled.div`
   font-size: 1.1vw;
   line-height: 1.4;
+  @media (max-width: 429px) {
+    & {
+      font-size: 0.7rem;
+    }
+  }
 `;
 function Schedule() {
   return (

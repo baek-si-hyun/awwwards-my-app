@@ -23,6 +23,9 @@ import {
 const DivBackground = styled(ColorDiv)`
   background-color: #efefef;
 `;
+const PreviewChange = styled(Preview)`
+  background-color: #222222;
+`;
 function KanbanPreview() {
   return (
     <DivBackground>
@@ -44,26 +47,26 @@ function KanbanPreview() {
         </TextBoxbottom>
       </TextBox>
       <PreviewContainer>
-        <Preview>
+        <PreviewChange>
           <PrevInner>
             <PreviewImg src={kanban1} />
           </PrevInner>
-        </Preview>
-        <Preview>
+        </PreviewChange>
+        <PreviewChange>
           <PrevInner>
             <PreviewImg src={kanban2} />
           </PrevInner>
-        </Preview>
-        <Preview>
+        </PreviewChange>
+        <PreviewChange>
           <PrevInner>
             <PreviewImg src={kanban3} />
           </PrevInner>
-        </Preview>
-        <Preview>
+        </PreviewChange>
+        <PreviewChange>
           <PrevInner>
             <PreviewImg src={kanban4} />
           </PrevInner>
-        </Preview>
+        </PreviewChange>
       </PreviewContainer>
     </DivBackground>
   );

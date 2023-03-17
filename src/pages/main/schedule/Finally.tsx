@@ -31,6 +31,11 @@ const FinallyText = styled.div`
   justify-content: space-around;
   gap: 2vw;
   font-size: 1vw;
+  @media (max-width: 429px) {
+    & {
+      font-size: 0.5rem;
+    }
+  }
 `;
 const FinallyTextKo = styled.div`
   p {
@@ -82,7 +87,7 @@ const FinallyBoxText = styled.h3`
   }
 `;
 const MiniText = styled.h2`
-  font-family: "ApercuL", sans-serif;
+  font-weight: 100;
   margin-bottom: 1.5vw;
 `;
 

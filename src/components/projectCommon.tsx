@@ -87,7 +87,7 @@ export const Visited = styled.div`
   width: 50%;
   display: flex;
   margin-top: 1vw;
-  @media (max-width: 480px) {
+  @media (max-width: 1024px) {
     & {
       width: 90%;
     }
@@ -107,10 +107,20 @@ export const VisitedInner = styled.div`
 export const VisitedInnerTop = styled.div`
   font-size: 0.4vw;
   padding: 0.2vw 0;
+  @media (max-width: 429px) {
+    & {
+      font-size: 0.5rem;
+    }
+  }
 `;
 export const VisitedInnerBottom = styled.div`
   border-top: 1px solid black;
   font-size: 0.4vw;
   padding: 0.3vw 0;
-  font-weight: bold;
+  font-weight: 900;
+  @media (max-width: 429px) {
+    & {
+      font-size: 0.5rem;
+    }
+  }
 `;

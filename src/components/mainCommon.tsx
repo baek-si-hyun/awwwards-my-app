@@ -23,10 +23,15 @@ export const TextBoxTop = styled.div`
   margin-bottom: 2.1vw;
   font-size: 0.8vw;
   font-size: 1.5vw;
+  @media (max-width: 429px) {
+    & {
+      font-size: 0.5rem;
+    }
+  }
 `;
 export const TextBoxMiddle = styled.div`
   font-size: 9vw;
-  font-weight: bold;
+  font-weight: 900;
   text-transform: uppercase;
 `;
 export const TextBoxbottom = styled.div`
@@ -34,4 +39,9 @@ export const TextBoxbottom = styled.div`
   margin-top: 0.9vw;
   font-size: 1.3vw;
   line-height: 1.4;
+  @media (max-width: 429px) {
+    & {
+      font-size: 0.6rem;
+    }
+  }
 `;

@@ -21,7 +21,7 @@ const Row = styled.div`
   background-position: top;
   background-size: 8px 1px;
   background-repeat: repeat-x;
-  font-family: "ApercuL", sans-serif;
+  font-weight: 100;
   color: #4e4e4e;
   :last-child {
     div {

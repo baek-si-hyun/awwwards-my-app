@@ -4,6 +4,11 @@ import emailjs from "@emailjs/browser";
 
 const EmailJsContainer = styled.div`
   width: 32vw;
+  @media (max-width: 640px) {
+    & {
+      width: 100%;
+    }
+  }
 `;
 const Form = styled.form`
   display: flex;
@@ -16,8 +21,7 @@ const Label = styled.label`
   color: #a1a1a1;
 `;
 const Input = styled.input`
-  width: 32vw;
-  height: 2.5vw;
+  height: 3vw;
   margin-bottom: 1rem;
   font-size: 18px;
   font-family: "Apercu", sans-serif;
@@ -28,9 +32,24 @@ const Input = styled.input`
     border-bottom: 2px solid #e9e9e9;
     outline: none;
   }
+  @media (max-width: 1024px) {
+    & {
+      height: 4vw;
+    }
+  }
+  @media (max-width: 640px) {
+    & {
+      height: 6vw;
+    }
+  }
+  @media (max-width: 480px) {
+    & {
+      height: 8vw;
+    }
+  }
 `;
 const Textarea = styled.textarea`
-  height: 10rem;
+  height: 13rem;
   margin-bottom: 4vw;
   font-size: 18px;
   font-family: "Apercu", sans-serif;

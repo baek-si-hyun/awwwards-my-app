@@ -60,6 +60,11 @@ const InnerMusicBox2 = styled.div`
   p {
     font-size: 2.2vw;
     text-align: center;
+    @media (max-width: 429px) {
+      & {
+        font-size: 1rem;
+      }
+    }
   }
 `;
 
@@ -98,6 +103,11 @@ const InnerMusicBox4 = styled.div`
   p {
     font-size: 2.2vw;
     text-align: center;
+    @media (max-width: 429px) {
+      & {
+        font-size: 1rem;
+      }
+    }
   }
 `;
 

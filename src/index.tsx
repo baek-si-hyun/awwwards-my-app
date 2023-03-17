@@ -40,7 +40,7 @@ html{
 }
 body {
   line-height: 1;
-  font-family: "Apercu","Pretendard",sans-serif;
+  font-family: "Apercu",sans-serif;
   background-color: #f8f8f8;
   padding: 0;
 	color: ${(props) => props.theme.textColor}; 

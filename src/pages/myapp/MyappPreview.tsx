@@ -23,7 +23,9 @@ import {
 const DivBackground = styled(ColorDiv)`
   background-color: #e8ebe6;
 `;
-
+const PreviewChange = styled(Preview)`
+  background-color: #222222;
+`;
 function MyappPreview() {
   return (
     <DivBackground>
@@ -45,26 +47,26 @@ function MyappPreview() {
         </TextBoxbottom>
       </TextBox>
       <PreviewContainer>
-        <Preview>
+        <PreviewChange>
           <PrevInner>
             <PreviewImg src={myapp1} />
           </PrevInner>
-        </Preview>
-        <Preview>
+        </PreviewChange>
+        <PreviewChange>
           <PrevInner>
             <PreviewImg src={myapp2} />
           </PrevInner>
-        </Preview>
-        <Preview>
+        </PreviewChange>
+        <PreviewChange>
           <PrevInner>
             <PreviewImg src={myapp3} />
           </PrevInner>
-        </Preview>
-        <Preview>
+        </PreviewChange>
+        <PreviewChange>
           <PrevInner>
             <PreviewImg src={myapp4} />
           </PrevInner>
-        </Preview>
+        </PreviewChange>
       </PreviewContainer>
     </DivBackground>
   );

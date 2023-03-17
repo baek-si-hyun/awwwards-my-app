@@ -38,6 +38,11 @@ const Card = styled.div<{ isDragging: boolean }>`
   :hover {
     background-color: #1d1d1d;
   }
+  @media (max-width: 429px) {
+    & {
+      font-size: 0.6rem;
+    }
+  }
 `;
 
 const ImgDiv = styled.div``;

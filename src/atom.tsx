@@ -6,14 +6,14 @@ import stEp from "./assets/img/newjeans_song/1stEP.jpg";
 import adamjensen from "./assets/img/recommended_song/adamjensen.jpg";
 import ariana1 from "./assets/img/recommended_song/ariana1.jpg";
 import ariana2 from "./assets/img/recommended_song/ariana2.jpg";
-import ariana3 from "./assets/img/recommended_song/ariana3.jpg";
-import aura1 from "./assets/img/recommended_song/aura1.jpg";
-import aura2 from "./assets/img/recommended_song/aura2.jpg";
+import charlie from "./assets/img/recommended_song/charlie.jpg";
+import aura from "./assets/img/recommended_song/aura1.jpg";
+import smlie from "./assets/img/recommended_song/smlie.jpg";
 import jack from "./assets/img/recommended_song/jack.jpg";
 import taiverdes from "./assets/img/recommended_song/taiverdes.jpg";
 import week1 from "./assets/img/recommended_song/week1.jpg";
 import week2 from "./assets/img/recommended_song/week2.jpg";
-import maroon from "./assets/img/recommended_song/maroon.jpg";
+import blue from "./assets/img/recommended_song/blue.jpg";
 import yena from "./assets/img/recommended_song/yena.jpg";
 import star from "./assets/img/recommended_song/star.jpg";
 import sweater from "./assets/img/recommended_song/sweater.jpg";
@@ -56,7 +56,7 @@ export const all = atom<Data[]>({
   default: [
     {
       id: 10,
-      img: aura1,
+      img: aura,
       tittle: "Dead Girl! (Shake My Head)",
       artist: "Au/Ra",
       album: "Dead Girl! (Shake My Head) • 2021",
@@ -113,17 +113,17 @@ export const all = atom<Data[]>({
     },
     {
       id: 7,
-      img: ariana3,
-      tittle: "Boyfriend",
-      artist: "Ariana Grande 및 Social House",
-      album: "Boyfriend • 2019",
+      img: charlie,
+      tittle: "Done for Me(feat. Kehlani)",
+      artist: "Charlie Puth",
+      album: "Voicenotes",
     },
     {
       id: 8,
-      img: maroon,
-      tittle: "Beautiful Mistakes(feat. Megan Thee Stallion)",
-      artist: "Maroon 5",
-      album: "Beautiful Mistakes • 2021",
+      img: blue,
+      tittle: "BLUE CHECK(feat. Jay Park, Jessi)",
+      artist: "토이고 (toigo)",
+      album: "쇼미더머니 11 Episode 3 • 2022",
     },
     {
       id: 9,
@@ -135,10 +135,10 @@ export const all = atom<Data[]>({
 
     {
       id: 11,
-      img: aura2,
-      tittle: "Kicks",
-      artist: "Au/Ra",
-      album: "Outsiders • 2017",
+      img: smlie,
+      tittle: "Happy Face",
+      artist: "Jagwar Twin",
+      album: "Happy Face • 2020",
     },
     {
       id: 12,

@@ -24,6 +24,21 @@ const Faq = styled.li`
   background-position: bottom;
   background-size: 8px 1px;
   background-repeat: repeat-x;
+  @media (max-width: 1024px) {
+    & {
+      font-size: 1.5vw;
+    }
+  }
+  @media (max-width: 1024px) {
+    & {
+      font-size: 2vw;
+    }
+  }
+  @media (max-width: 480px) {
+    & {
+      font-size: 2.5vw;
+    }
+  }
 `;
 const FaqQ = styled.div`
   display: flex;
@@ -78,6 +93,12 @@ const Btn = styled.span`
     background-color: #222222;
     border-color: #222222;
     color: #fff;
+  }
+  @media (max-width: 480px) {
+    & {
+      font-size: 2.5vw;
+      padding: 8px 10px;
+    }
   }
 `;
 const Question = styled.div``;
@@ -219,7 +240,8 @@ function FaqList() {
           <Answer>
             <p>
               부정교합으로 인한 수술이 국비지원학원 수료후에 바로
-              예정되어있었고, 회복기간까지 필요하다보니 이제서야 하게 됐네요. +프론트공부
+              예정되어있었고, 회복기간까지 필요하다보니 이제서야 하게 됐네요.
+              +프론트공부
             </p>
           </Answer>
         </FaqA6>
@@ -278,9 +300,7 @@ function FaqList() {
         </FaqQ>
         <FaqA9 list={list[8]}>
           <Answer>
-            <p>
-              기본적인 문법은 사용하지만 다시 공부해야 합니다.
-            </p>
+            <p>기본적인 문법은 사용하지만 다시 공부해야 합니다.</p>
           </Answer>
         </FaqA9>
       </Faq>

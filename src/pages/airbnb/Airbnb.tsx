@@ -5,11 +5,20 @@ import AirbnbFont from "./AirbnbFont";
 import AirbnbColor from "./AirbnbColor";
 import Footer from "../../components/Footer";
 import Nav from "../../components/Nav";
+import {
+  Container,
+  Description,
+  DescriptionFont,
+  DescriptionProject,
+  DescriptionProjectContent,
+  DescriptionProjectText,
+  DescriptionText,
+  GuideText,
+  InnerContainer,
+  TextBottom,
+  TextTop,
+} from "../../components/routerPagesCommon";
 
-const Container = styled.div`
-  width: 100%;
-  height: 100%;
-`;
 const Inner = styled(Marquee)`
   display: flex;
   align-items: center;
@@ -17,74 +26,7 @@ const Inner = styled(Marquee)`
   overflow: hidden;
   background-color: #222;
 `;
-const GuideText = styled.div`
-  width: 100%;
-  font-size: 2rem;
-  padding: 1rem;
-  color: red;
-`;
-const InnerContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
 
-const Description = styled.div`
-  width: 100%;
-  padding: 5vw 2.7vw;
-`;
-const DescriptionText = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 1vw;
-`;
-const TextTop = styled.div`
-  font-family: "ApercuL", sans-serif;
-  font-size: 1vw;
-`;
-const TextBottom = styled.div`
-  font-size: 3vw;
-  font-weight: Bold;
-  line-height: 1.2;
-`;
-
-const DescriptionFont = styled.div`
-  margin: 4vw 0;
-`;
-
-const DescriptionProject = styled.div``;
-const DescriptionProjectText = styled.div`
-  font-size: 2vw;
-  font-weight: bold;
-  padding: 2vw 0;
-  @media (max-width: 480px) {
-    & {
-      font-size: 1.2rem;
-    }
-  }
-`;
-const DescriptionProjectContent = styled.div`
-  font-size: 1.2vw;
-  line-height: 2;
-  font-family: "Pretendard", sans-serif;
-  display: flex;
-  gap: 4rem;
-  word-break: keep-all;
-  :first-child {
-  }
-  div {
-    width: 50%;
-  }
-  @media (max-width: 480px) {
-    & {
-      flex-direction: column;
-      gap: 0.5rem;
-      div {
-        width: 100%;
-      }
-    }
-  }
-`;
 function Airbnb() {
   return (
     <Container id="sotd">

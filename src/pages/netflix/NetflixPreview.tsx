@@ -1,3 +1,4 @@
+import styled from "styled-components";
 import nomad from "../../assets/img/main_img/nomadicon.png";
 import nexflix1 from "../../assets/img/project_img/projectnetflix1.jpg";
 import nexflix2 from "../../assets/img/project_img/projectnetflix2.jpg";
@@ -16,7 +17,9 @@ import {
   TextBoxTop,
   UnderLine,
 } from "../../components/previewCommon";
-
+const PreviewChange = styled(Preview)`
+  background-color: #222222;
+`;
 function NetflixPreview() {
   return (
     <ColorDiv>
@@ -38,16 +41,16 @@ function NetflixPreview() {
         </TextBoxbottom>
       </TextBox>
       <PreviewContainer>
-        <Preview>
+        <PreviewChange>
           <PrevInner>
             <PreviewImg src={nexflix1} />
           </PrevInner>
-        </Preview>
-        <Preview>
+        </PreviewChange>
+        <PreviewChange>
           <PrevInner>
             <PreviewImg src={nexflix2} />
           </PrevInner>
-        </Preview>
+        </PreviewChange>
       </PreviewContainer>
     </ColorDiv>
   );

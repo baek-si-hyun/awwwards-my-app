@@ -35,6 +35,11 @@ const Text = styled.div`
   line-height: 1.3;
   width: 60vw;
   font-size: 1vw;
+  @media (max-width: 429px) {
+    & {
+      font-size: 0.5rem;
+    }
+  }
 `;
 const Ko = styled.div`
   font-family: "Pretendard", sans-serif;
@@ -51,7 +56,7 @@ const Nav = styled.div`
   flex-direction: column;
   justify-content: center;
   gap: 1vw;
-  font-weight: bold;
+  font-weight: 900;
   @media (max-width: 768px) {
     & {
       font-size: 2vw;
@@ -78,7 +83,7 @@ const LinkBar = styled.div`
   gap: 1vw;
   font-size: 0.9rem;
   & > div {
-    font-weight: bold;
+    font-weight: 900;
   }
   @media (max-width: 768px) {
     & {
@@ -92,7 +97,7 @@ const LinkBarUl = styled.ul`
 `;
 const LinkBarLi = styled.li``;
 const Links = styled.a`
-  font-family: "ApercuL", sans-serif;
+  font-weight: 100;
   :hover {
     color: #757575;
   }

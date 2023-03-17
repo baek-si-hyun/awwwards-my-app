@@ -34,7 +34,7 @@ const Box = styled(motion.div)<{ src: string }>`
   }
   @media (max-width: 429px) {
     & {
-      height: 75%;
+      height: 100%;
     }
   }
 `;

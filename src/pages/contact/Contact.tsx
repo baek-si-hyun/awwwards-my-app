@@ -35,6 +35,13 @@ const EmailJsContainer = styled.div`
   margin-top: 6vw;
   display: flex;
   gap: 10vw;
+  @media (max-width: 640px) {
+    & {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
 `;
 const Leftbox = styled.div``;
 const H2Box = styled.div`
@@ -43,8 +50,8 @@ const H2Box = styled.div`
   font-weight: bold;
 `;
 const H3Box = styled.div`
-  font-family: "ApercuL", sans-serif;
-  line-height: 3;
+  font-weight: 100;
+  line-height: 1.5;
 `;
 
 function Contact() {

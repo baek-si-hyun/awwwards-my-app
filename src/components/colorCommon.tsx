@@ -16,11 +16,11 @@ export const ColorInner = styled.div`
 `;
 export const ColorText = styled.div`
   width: 15%;
-  font-family: "ApercuL", sans-serif;
+  font-weight: lighter;
   line-height: 1.4;
   font-size: 1vw;
   span {
-    font-weight: Bold;
+    font-weight: 900;
   }
   @media (max-width: 480px) {
     & {
@@ -78,7 +78,7 @@ export const Card = styled.div`
 export const CardTop = styled.div`
   font-size: 1vw;
   span {
-    font-weight: Bold;
+    font-weight: 900;
   }
 `;
 export const CardBottom = styled.div`

@@ -76,7 +76,7 @@ export const FontDetail = styled.div`
   padding-bottom: 2vw;
 `;
 export const FontTittle = styled.div`
-  font-family: "ApercuL", sans-serif;
+  font-weight: 100;
   font-size: 13px;
   @media (max-width: 480px) {
     & {

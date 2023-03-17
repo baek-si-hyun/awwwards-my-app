@@ -18,7 +18,7 @@ import {
 
 const Font = styled(FontLi)`
   color: #a7a7a7;
-  font-family: "ApercuL", sans-serif;
+  font-weight: 100;
 `;
 
 const choiceFont =
