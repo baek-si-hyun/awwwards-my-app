@@ -17,6 +17,7 @@ import blue from "./assets/img/recommended_song/blue.jpg";
 import yena from "./assets/img/recommended_song/yena.jpg";
 import star from "./assets/img/recommended_song/star.jpg";
 import sweater from "./assets/img/recommended_song/sweater.jpg";
+import iu from "./assets/img/recommended_song/iu.jpg";
 import { IPathname, Data, IResize, IVisited } from "./interface/interface";
 export const visited = atom<IVisited>({
   key: `visited/${v1()}`,
@@ -117,6 +118,13 @@ export const all = atom<Data[]>({
       tittle: "Done for Me(feat. Kehlani)",
       artist: "Charlie Puth",
       album: "Voicenotes",
+    },
+    {
+      id: 14,
+      img: iu,
+      tittle: "에잇(feat. SUGA)",
+      artist: "아이유(IU)",
+      album: "에잇 • 2020",
     },
     {
       id: 8,

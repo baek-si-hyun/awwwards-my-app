@@ -53,7 +53,7 @@ function Airbnb() {
             <AirbnbFont />
             <AirbnbColor />
           </DescriptionFont>
-          <DescriptionProject id="about">
+          <DescriptionProject id="routerAbout">
             <DescriptionProjectText>
               <h3>About "Airbnb clone"</h3>
             </DescriptionProjectText>

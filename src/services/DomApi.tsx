@@ -40,7 +40,7 @@ export const DomApi = ({
   ) {
     const sotd = document.getElementById("sotd") as HTMLDivElement;
     const fontColor = document.getElementById("fontColor") as HTMLDivElement;
-    const about = document.getElementById("about") as HTMLDivElement;
+    const routerAbout = document.getElementById("routerAbout") as HTMLDivElement;
     const scrollY = window.scrollY;
 
     const sotdPosition = Math.floor(
@@ -50,13 +50,13 @@ export const DomApi = ({
       scrollY + fontColor?.getBoundingClientRect().top
     );
     const aboutPosition = Math.floor(
-      scrollY + about?.getBoundingClientRect().top
+      scrollY + routerAbout?.getBoundingClientRect().top
     );
 
     setRouterPosition({
       sotd: scrollY >= sotdPosition && scrollY < fontColorPosition,
       fontColor: scrollY >= fontColorPosition && scrollY < aboutPosition - 300,
-      about: scrollY >= aboutPosition - 300,
+      routerAbout: scrollY >= aboutPosition - 300,
     });
   }
 };

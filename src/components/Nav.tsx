@@ -125,8 +125,8 @@ const RouterNavItem = styled.li<{ routerPosition: IRouterPosition }>`
   }
   :nth-child(3) {
     background-color: ${(props) =>
-      props.routerPosition.about ? "#d3d3d3" : "#3e3e3e"};
-    color: ${(props) => (props.routerPosition.about ? "#000" : "inherit")};
+      props.routerPosition.routerAbout ? "#d3d3d3" : "#3e3e3e"};
+    color: ${(props) => (props.routerPosition.routerAbout ? "#000" : "inherit")};
   }
   @media (max-width: 320px) {
     & {
@@ -260,7 +260,7 @@ function Nav() {
   const [routerPosition, setRouterPosition] = useState({
     sotd: false,
     fontColor: false,
-    about: false,
+    routerAbout: false,
   });
   const getElementPostion = () => {
     DomApi({ pathname, setMainPosition, setRouterPosition });

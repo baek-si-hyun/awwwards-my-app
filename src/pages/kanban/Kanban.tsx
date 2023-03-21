@@ -35,7 +35,7 @@ function Kanban() {
             <KanbanFont />
             <KanbanColor />
           </DescriptionFont>
-          <DescriptionProject id="about">
+          <DescriptionProject id="routerAbout">
             <DescriptionProjectText>
               <h3>About "KanBan Board"</h3>
             </DescriptionProjectText>

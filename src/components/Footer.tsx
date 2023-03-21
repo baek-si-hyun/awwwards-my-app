@@ -117,7 +117,8 @@ function Footer() {
         <Text>
           <Ko>
             <p>
-              awwwards, YoutubeMusic의 디자인을 참고하였습니다.
+              awwwards, YoutubeMusic의 디자인을 참고하였고 구글 번역기의 도움을
+              받았습니다.
               <br />
               framer-motion, styled-components, react-beautiful-dnd,
               react-fast-marquee, usehooks-ts, recoil, @emailjs/browser 가
@@ -126,7 +127,8 @@ function Footer() {
           </Ko>
           <En>
             <p>
-              I referred to the design of awwwards and YoutubeMusic. <br />
+              I referred to the design of awwwards and YoutubeMusic and got help
+              from Google Translate. <br />
               framer-motion, styled-components, react-beautiful-dnd,
               react-fast-marquee, usehooks-ts, recoil, @emailjs/browser has been
               used

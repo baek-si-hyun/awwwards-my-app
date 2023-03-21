@@ -30,7 +30,7 @@ export interface IMainPosition {
 export interface IRouterPosition {
   sotd: boolean;
   fontColor: boolean;
-  about: boolean;
+  routerAbout: boolean;
 }
 export interface IDomApi {
   pathname: string;

@@ -280,9 +280,7 @@ function FaqList() {
         <FaqA8 list={list[7]}>
           <Answer>
             <p>
-              javascript, jquery, react, typescript가 있습니다만, typescript는
-              배운지도 별로 안됐고, 제가 맞게 사용하고있는 건지도 잘
-              모르겠네요... 일단 사용하며 배우는 중입니다.
+              javascript, jquery, react, typescript가 있습니다.
             </p>
           </Answer>
         </FaqA8>

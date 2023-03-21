@@ -34,7 +34,7 @@ function Netflix() {
             <NetflixFont />
             <NetflixColor />
           </DescriptionFont>
-          <DescriptionProject id="about">
+          <DescriptionProject id="routerAbout">
             <DescriptionProjectText>
               <h3>About "Netflix clone"</h3>
             </DescriptionProjectText>

@@ -35,7 +35,7 @@ function Myapp() {
             <MyappFont />
             <MyappColor />
           </DescriptionFont>
-          <DescriptionProject id="about">
+          <DescriptionProject id="routerAbout">
             <DescriptionProjectText>
               <h3>About "My app"</h3>
             </DescriptionProjectText>

@@ -35,7 +35,7 @@ function Coin() {
             <CoinFont />
             <CoinColor />
           </DescriptionFont>
-          <DescriptionProject id="about">
+          <DescriptionProject id="routerAbout">
             <DescriptionProjectText>
               <h3>About "Coin Market Cap"</h3>
             </DescriptionProjectText>
