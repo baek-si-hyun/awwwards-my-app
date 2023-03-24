@@ -65,7 +65,7 @@ a {
   color:inherit;
 }
 * {
-  box-sizing: border-box;
+  box-sizing: inherit;
   -webkit-font-smoothing: antialiased;
 }
 `;

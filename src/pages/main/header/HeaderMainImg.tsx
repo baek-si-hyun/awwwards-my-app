@@ -18,8 +18,6 @@ const HeaderImg = styled.img`
   position: absolute;
   top: -1vw;
   left: 0;
-  right: 0;
-  margin: 0 auto;
   width: 100%;
   object-fit: cover;
 `;
@@ -29,7 +27,6 @@ const MotionBox = styled.div`
 `;
 
 const InnerMotionBox = styled.div`
-  height: 100%;
   display: grid;
   grid-template-rows: 1.7vw 5.8vw auto;
   gap: clamp(0.1rem, 1vw, 1rem);

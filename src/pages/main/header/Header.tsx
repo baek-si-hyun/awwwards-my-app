@@ -8,7 +8,6 @@ import { useRecoilValue } from "recoil";
 
 const Container = styled.div`
   width: 100%;
-  height: 100%;
   background-color: #d7d7d7;
 `;
 const InnerContainer = styled.div`
