@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import Footer from "../../components/Footer";
 import MyappPreview from "./MyappPreview";
 import MyappFont from "./MyappFont";

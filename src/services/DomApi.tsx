@@ -5,7 +5,7 @@ export const DomApi = ({
   setMainPosition,
   setRouterPosition,
 }: IDomApi) => {
-  if (pathname === "/awwwards-my-app/" || "/awwwards-my-app") {
+  if (pathname === "/") {
     const header = document.getElementById("header") as HTMLDivElement;
     const projects = document.getElementById("projects") as HTMLDivElement;
     const about = document.getElementById("about") as HTMLDivElement;

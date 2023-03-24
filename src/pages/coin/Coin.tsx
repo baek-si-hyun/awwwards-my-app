@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import Footer from "../../components/Footer";
 import CoinPreview from "./CoinPreview";
 import CoinFont from "./CoinFont";
