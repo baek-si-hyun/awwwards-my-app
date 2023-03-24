@@ -1,7 +1,7 @@
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import { RecoilRoot } from "recoil";
-import styled, { createGlobalStyle, ThemeProvider } from "styled-components";
+import { createGlobalStyle, ThemeProvider } from "styled-components";
 import { theme } from "./theme";
 import "./assets/font/css/font.css";
 import App from "./App";
