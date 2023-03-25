@@ -56,11 +56,12 @@ export default function ScrollToTop() {
   };
   const getVisited = async () => {
     const data = await getDocs(usersCollectionRef);
-    const visitedData = data.docs.map((doc) => doc.data());
+    const visitedDataArr = data.docs.map((doc) => doc.data());
+    const [visitedData] = visitedDataArr
     const dbDoc = doc(db, "visited", "voY1RSJ3r8uY5XukEgol");
     const date = new Date();
     const todayDate = date.getDate();
-    if (todayDate !== visitedData[0].date) {
+    if (todayDate !== visitedData.date) {
       const newField = {
         airbnbToday: 0,
         coinToday: 0,
@@ -71,17 +72,18 @@ export default function ScrollToTop() {
       };
       await updateDoc(dbDoc, newField);
     }
+
     const newVisitedAtom = {
-      airbnbToday: visitedData[0].airbnbToday,
-      airbnbTotal: visitedData[0].airbnbTotal,
-      coinToday: visitedData[0].coinToday,
-      coinTotal: visitedData[0].coinTotal,
-      kanbanToday: visitedData[0].kanbanToday,
-      kanbanTotal: visitedData[0].kanbanTotal,
-      myappToday: visitedData[0].myappToday,
-      myappTotal: visitedData[0].myappTotal,
-      netflixToday: visitedData[0].netflixToday,
-      netflixTotal: visitedData[0].netflixTotal,
+      airbnbToday: visitedData.airbnbToday,
+      airbnbTotal: visitedData.airbnbTotal,
+      coinToday: visitedData.coinToday,
+      coinTotal: visitedData.coinTotal,
+      kanbanToday: visitedData.kanbanToday,
+      kanbanTotal: visitedData.kanbanTotal,
+      myappToday: visitedData.myappToday,
+      myappTotal: visitedData.myappTotal,
+      netflixToday: visitedData.netflixToday,
+      netflixTotal: visitedData.netflixTotal,
     };
     setVisit(() => newVisitedAtom);
   };
