@@ -17,9 +17,7 @@ import {
   TextBoxTop,
   UnderLine,
 } from "../../components/previewCommon";
-const PreviewChange = styled(Preview)`
-  background-color: #222222;
-`;
+
 function NetflixPreview() {
   return (
     <ColorDiv>
@@ -41,16 +39,16 @@ function NetflixPreview() {
         </TextBoxbottom>
       </TextBox>
       <PreviewContainer>
-        <PreviewChange>
+        <Preview>
           <PrevInner>
             <PreviewImg src={nexflix1} />
           </PrevInner>
-        </PreviewChange>
-        <PreviewChange>
+        </Preview>
+        <Preview>
           <PrevInner>
             <PreviewImg src={nexflix2} />
           </PrevInner>
-        </PreviewChange>
+        </Preview>
       </PreviewContainer>
     </ColorDiv>
   );

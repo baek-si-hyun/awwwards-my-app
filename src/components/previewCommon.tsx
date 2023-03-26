@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
 export const ColorDiv = styled.div`
-  padding: 3vw 2.7vw;
+width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 5vw 2.7vw;
 `;
 
 export const TextBox = styled.div`
@@ -68,10 +69,7 @@ export const PreviewContainer = styled.div`
 export const Preview = styled.div`
   padding: 4vw;
   border-radius: 15px;
-  background-color: #3e3e3e;
-  :first-child {
-    background-color: #222222;
-  }
+  background-color: #222;
   @media (max-width: 768px) {
     & {
       border-radius: 10px;

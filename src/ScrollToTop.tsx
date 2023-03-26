@@ -94,7 +94,7 @@ export default function ScrollToTop() {
       behavior: "auto",
     });
     getVisited();
-    pathCorrection();
+    pathCorrection()
   }, [pathname]);
   useEffect(() => {
     updateVisited(pathname);

@@ -14,6 +14,7 @@ import ScrollToTop from "./ScrollToTop";
 const Wapper = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100%;
 `;
 
 const SctollBar = styled(motion.div)`

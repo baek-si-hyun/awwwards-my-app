@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100%;
-  height: 100%;
+
 `;
 export const Inner = styled.div`
   display: flex;
@@ -24,8 +24,7 @@ export const InnerContainer = styled.div`
 `;
 
 export const Description = styled.div`
-  width: 100%;
-  padding: 5vw 2.7vw;
+  padding: 3vw 2.7vw;
 `;
 export const DescriptionText = styled.div`
   display: flex;

@@ -23,6 +23,9 @@ import {
 const DivBackground = styled(ColorDiv)`
   background-color: #efefef;
 `;
+const PreViewChange = styled(Preview)`
+  background-color: #3e3e3e;
+`;
 function CoinPreview() {
   return (
     <DivBackground>
@@ -44,26 +47,26 @@ function CoinPreview() {
         </TextBoxbottom>
       </TextBox>
       <PreviewContainer>
-        <Preview>
+        <PreViewChange>
           <PrevInner>
             <PreviewImg src={coin1} />
           </PrevInner>
-        </Preview>
-        <Preview>
+        </PreViewChange>
+        <PreViewChange>
           <PrevInner>
             <PreviewImg src={coin2} />
           </PrevInner>
-        </Preview>
-        <Preview>
+        </PreViewChange>
+        <PreViewChange>
           <PrevInner>
             <PreviewImg src={coin3} />
           </PrevInner>
-        </Preview>
-        <Preview>
+        </PreViewChange>
+        <PreViewChange>
           <PrevInner>
             <PreviewImg src={coin4} />
           </PrevInner>
-        </Preview>
+        </PreViewChange>
       </PreviewContainer>
     </DivBackground>
   );
