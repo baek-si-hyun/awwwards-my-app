@@ -1,8 +1,7 @@
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import { RecoilRoot } from "recoil";
-import { createGlobalStyle, ThemeProvider } from "styled-components";
-import { theme } from "./theme";
+import { createGlobalStyle } from "styled-components";
 import "./assets/font/css/font.css";
 import App from "./App";
 
@@ -42,7 +41,7 @@ body {
   font-family: "Apercu",sans-serif;
   background-color: #f8f8f8;
   padding: 0;
-	color: ${(props) => props.theme.textColor}; 
+	color: #222222;
   width: 100%;
 }
 ol, ul {
@@ -75,10 +74,8 @@ const root = ReactDOM.createRoot(
 root.render(
   <BrowserRouter basename={process.env.PUBLIC_URL}>
     <RecoilRoot>
-      <ThemeProvider theme={theme}>
         <GlobalStyle />
         <App />
-      </ThemeProvider>
     </RecoilRoot>
   </BrowserRouter>
 );
