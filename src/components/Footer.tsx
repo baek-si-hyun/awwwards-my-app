@@ -172,8 +172,11 @@ function Footer() {
             </Links>
           </LinkBarLi>
           <LinkBarLi>
-            <Links href="https://blog.naver.com/qortlgus100" target="_blank">
-              blog
+            <Links
+              href="https://careerly.co.kr/profiles/569272?utm_campaign=user-share"
+              target="_blank"
+            >
+              careerly
             </Links>
           </LinkBarLi>
         </LinkBarUl>
