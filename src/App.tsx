@@ -2,11 +2,11 @@ import styled from "styled-components";
 import { motion, useScroll } from "framer-motion";
 import { Route, Routes } from "react-router-dom";
 import Airbnb from "./pages/airbnb/Airbnb";
-import Coin from "./pages/coin/Coin";
 import Contact from "./pages/contact/Contact";
 import Faqs from "./pages/faqs/Faqs";
 import Main from "./pages/main/Main";
 import Kanban from "./pages/kanban/Kanban";
+import Coin from "./pages/coin/Coin";
 import Myapp from "./pages/myapp/Myapp";
 import Netflix from "./pages/netflix/Netflix";
 import ScrollToTop from "./ScrollToTop";
@@ -27,7 +27,6 @@ const SctollBar = styled(motion.div)`
   transform-origin: 0%;
   z-index: 999999999;
 `;
-
 function App() {
   const { scrollYProgress } = useScroll();
 

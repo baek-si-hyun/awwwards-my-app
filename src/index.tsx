@@ -1,10 +1,11 @@
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import { RecoilRoot } from "recoil";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { createGlobalStyle } from "styled-components";
 import "./assets/font/css/font.css";
 import App from "./App";
-
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 const GlobalStyle = createGlobalStyle`
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -71,11 +72,15 @@ a {
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
+const queryClient = new QueryClient();
 root.render(
   <BrowserRouter basename={process.env.PUBLIC_URL}>
     <RecoilRoot>
+      <QueryClientProvider client={queryClient}>
         <GlobalStyle />
         <App />
+        <ReactQueryDevtools />
+      </QueryClientProvider>
     </RecoilRoot>
   </BrowserRouter>
 );

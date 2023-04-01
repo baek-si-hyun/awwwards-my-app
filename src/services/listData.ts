@@ -1,9 +1,9 @@
 import { IAbsoluteBoxData, IrowData } from "../interface/interface";
 
 export const gameName: string[] = [
-  "League of Legends (칼바람, 우르프)",
-  "War Thunder (밀덕 X)",
-  "Black Desert (무 기약 휴식중)",
+  "League of Legends",
+  "War Thunder",
+  "Black Desert",
 ];
 
 export const rowData: IrowData[] = [

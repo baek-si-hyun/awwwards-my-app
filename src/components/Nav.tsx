@@ -325,7 +325,7 @@ function Nav() {
                     </Link>
                   </RouterNavItem>
                   <RouterNavItem routerPosition={routerPosition}>
-                    <Link href="#about" className="nav-item">
+                    <Link href="#routerAbout" className="nav-item">
                       About
                     </Link>
                   </RouterNavItem>
@@ -406,7 +406,7 @@ function Nav() {
                     </Link>
                   </RouterNavItem>
                   <RouterNavItem routerPosition={routerPosition}>
-                    <Link href="#about" className="nav-item">
+                    <Link href="#routerAbout" className="nav-item">
                       About
                     </Link>
                   </RouterNavItem>

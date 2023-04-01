@@ -152,7 +152,7 @@ function Finally() {
               clone code 100% exactly the same. So I added a bit of my
               creativity. How was it? coding It will soon be one year since you
               learned it. However, I decided to grow as a front-end developer.
-              It's been a little over 3 months since I decided to study. What I
+              It's been a little over 4 months since I decided to study. What I
               Learned While Studying Alone That growth is very slow. someone
               looking at my code No one giving feedback. and solving problems
               together I guess it's because there isn't. In that sense, seniors
@@ -166,7 +166,7 @@ function Finally() {
               제가 준비한 awwward clone은 여기까지입니다. 아예 똑같이 클론
               코딩하는건 식상해서 제 창의력?을 조금 첨가해 보았습니다.
               어떠셨나요? 코딩을 배운지는 곧 1년이 다 되어 가지만 프론트엔드
-              개발자로 성장하기로 마음먹고 공부한건 3개월이 좀 넘었네요. 혼자
+              개발자로 성장하기로 마음먹고 공부한건 4개월이 좀 넘었네요. 혼자
               공부하면서 느낀건 성장이 굉장히 더디다는 점입니다. 누군가가 제
               코드를 보고 피드백을 주는 사람도 없고, 함께 문제에 대한 이야기를
               하며 해결하는 것이 없다보니 그런거같네요. 그런 의미에서 이글을

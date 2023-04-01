@@ -1,3 +1,4 @@
+import { Outlet } from "react-router-dom";
 import styled from "styled-components";
 import {
   Container,
@@ -7,7 +8,9 @@ import {
   TextBoxbottom,
   TextBoxMiddle,
 } from "../../../components/mainCommon";
+import CoinList from "./CoinList";
 import Game from "./Game";
+
 import Music from "./Music";
 import Site from "./Site";
 
@@ -38,9 +41,10 @@ function About() {
       <InnerContainer>
         <TextBox>
           <TextBoxTop>Si Hyun Baek</TextBoxTop>
-          <TextBoxMiddle>about me</TextBoxMiddle>
-          <TextBoxbottom>Could be TMI...</TextBoxbottom>
+          <TextBoxMiddle>just dummy</TextBoxMiddle>
+          <TextBoxbottom>Place to practice</TextBoxbottom>
         </TextBox>
+        <CoinList />
         <SubTextBox>These are my favorite games.</SubTextBox>
         <Game />
         <SourceText>Source: Each game company site</SourceText>
