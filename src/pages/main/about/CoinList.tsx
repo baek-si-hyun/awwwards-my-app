@@ -102,7 +102,7 @@ const ApexChartDiv = styled.div`
   align-items: center;
   justify-content: flex-end;
 `;
-const ApexChart = styled(ReactApexChart)<{ change: string }>`
+const ApexChart = styled(ReactApexChart)`
   max-width: 164px;
   color: ${(props) =>
     props.change === "EVEN"
