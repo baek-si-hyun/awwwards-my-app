@@ -350,7 +350,7 @@ function CoinList() {
                           {
                             data:
                               data.historyArr.map((price) => ({
-                                x: price.timestamp * 1000,
+                                x: price.timestamp ,
                                 y: price.prev_closing_price,
                               })) ?? [],
                           },
