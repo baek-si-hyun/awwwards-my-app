@@ -19,7 +19,18 @@ const CoinListWrapper = styled.div`
   width: 100%;
 `;
 
-const WrapperInner = styled.div``;
+const WrapperInner = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const TableBox = styled.div`
+  @media (max-width: 1279px) {
+    & {
+      overflow-x: scroll;
+    }
+  }
+`;
 const ListTable = styled.table`
   width: 100%;
 `;
@@ -27,6 +38,9 @@ const Thead = styled.thead``;
 const Tbody = styled.tbody``;
 const Tr = styled.tr`
   border-bottom: 1px solid #e2e2e2;
+  :first-child {
+    border-top: 1px solid #e2e2e2;
+  }
 `;
 const NameTh = styled.th`
   text-align: start;
@@ -34,12 +48,34 @@ const NameTh = styled.th`
   padding: 10px;
   padding-left: 1vw;
   font-weight: 900;
+  position: sticky;
+  top: 0;
+  left: -2px;
+  z-index: 10;
+  background-color: #f8f8f8;
+  @media (max-width: 1279px) {
+    & {
+      ::before {
+        box-shadow: inset 10px 0 8px -8px rgba(0, 0, 0, 0.15);
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: -1px;
+        width: 30px;
+        transform: translateX(100%);
+        transition: box-shadow 0.3s;
+        content: "";
+        pointer-events: none;
+      }
+    }
+  }
 `;
 const Th = styled.th`
   text-align: end;
   vertical-align: middle;
   padding: 10px;
   font-weight: 900;
+  white-space: nowrap;
   :last-child {
     padding-right: 1vw;
   }
@@ -48,23 +84,46 @@ const Td = styled.td`
   text-align: end;
   vertical-align: middle;
   padding: 10px;
+  white-space: nowrap;
 `;
 const NameTd = styled.td`
   text-align: start;
   vertical-align: middle;
+  position: sticky;
+  top: 0;
+  left: -2px;
+  z-index: 10;
+  background-color: #f8f8f8;
+  @media (max-width: 1279px) {
+    & {
+      ::before {
+        box-shadow: inset 10px 0 8px -8px rgba(0, 0, 0, 0.15);
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: -1px;
+        width: 30px;
+        transform: translateX(100%);
+        transition: box-shadow 0.3s;
+        content: "";
+        pointer-events: none;
+      }
+    }
+  }
 `;
 const Namediv = styled.div`
   display: flex;
   align-items: center;
-  padding-left: 1vw;
+  padding: 10px;
+  font-weight: 900;
   div {
     display: flex;
     align-items: center;
     gap: 5px;
   }
   div span + span {
-    font-weight: 600;
     color: #808a9d;
+    font-weight: 600;
   }
 `;
 const TdNomalDiv = styled.div`
@@ -72,16 +131,9 @@ const TdNomalDiv = styled.div`
   flex-direction: column;
   justify-content: center;
 `;
-const TdFlexDiv = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-`;
-const TdChangeDiv = styled(TdFlexDiv)<{ change: string }>`
+const TdChangeDiv = styled(TdNomalDiv)<{ change: string }>`
   color: ${(props) =>
-    props.change === "EVEN"
-      ? "#222"
-      : props.change === "RISE"
+    props.change === "RISE"
       ? "#ea3943"
       : props.change === "FALL"
       ? " #16c784"
@@ -103,46 +155,50 @@ const ApexChartDiv = styled.div`
   justify-content: flex-end;
 `;
 const ApexChart = styled(ReactApexChart)`
-  max-width: 164px;
+  width: 164px;
   color: ${(props) =>
-    props.change === "EVEN"
-      ? "#222"
-      : props.change === "RISE"
+    props.change === "RISE"
       ? "#ea3943"
       : props.change === "FALL"
       ? " #16c784"
       : "#222"};
 `;
 const ColName = styled.col`
-  width: 17%;
+  width: 310;
   min-width: auto;
+  @media (max-width: 1279px) {
+    & {
+      box-shadow: 0px 0px 2px rgba(128, 138, 157, 0.12),
+        0px 0px 24px rgba(128, 138, 157, 0.14);
+    }
+  }
 `;
 const ColPrice = styled.col`
-  width: 10%;
+  width: 181px;
   min-width: auto;
 `;
 const ColChange1 = styled.col`
-  width: 11%;
+  width: 200px;
   min-width: auto;
 `;
 const ColChange2 = styled.col`
-  width: 13%;
+  width: 236px;
   min-width: auto;
 `;
 const ColVolume = styled.col`
-  width: 13%;
+  width: 236px;
   min-width: auto;
 `;
 const ColSupply = styled.col`
-  width: 13%;
+  width: 236px;
   min-width: auto;
 `;
 const ColCap = styled.col`
-  width: 13%;
+  width: 236px;
   min-width: auto;
 `;
 const ColChart = styled.col`
-  width: 10%;
+  width: 183px;
   min-width: auto;
 `;
 function CoinList() {
@@ -206,206 +262,208 @@ function CoinList() {
   return (
     <CoinListWrapper>
       <WrapperInner>
-        <ListTable>
-          <colgroup>
-            <ColName />
-            <ColPrice />
-            <ColChange1 />
-            <ColChange2 />
-            <ColVolume />
-            <ColSupply />
-            <ColCap />
-            <ColChart />
-          </colgroup>
-          <Thead>
-            <Tr>
-              <NameTh>
-                <span>Name</span>
-              </NameTh>
-              <Th>
-                <span>Price</span>
-              </Th>
-              <Th>
-                <span>Change(24h)</span>
-              </Th>
-              <Th>
-                <span>Volume Rate (24h)</span>
-              </Th>
-              <Th>
-                <span>Volume Price (24h)</span>
-              </Th>
-              <Th>
-                <span>Circulating Supply</span>
-              </Th>
-              <Th>
-                <span>Market Cap</span>
-              </Th>
-              <Th>
-                <span>Last 30 Days</span>
-              </Th>
-            </Tr>
-          </Thead>
-          <Tbody>
-            {mergeData &&
-              mergeData.map((data, index) => (
-                <Tr key={index}>
-                  <NameTd>
-                    <Namediv>
-                      <Img
-                        src={`https://static.upbit.com/logos/${data.market.substring(
-                          4
-                        )}.png`}
-                      />
-                      <div>
-                        <span>{data.english_name}</span>
-                        <span>{data.market.substring(4)}</span>
-                      </div>
-                    </Namediv>
-                  </NameTd>
-                  <Td>
-                    <TdNomalDiv>
-                      <span>
-                        ₩
-                        {data.trade_price
-                          .toFixed(0)
-                          .toString()
-                          .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-                      </span>
-                    </TdNomalDiv>
-                  </Td>
-                  <Td>
-                    <TdChangeDiv change={data.change}>
-                      <span>₩{data.change_price}</span>
-                      <span>
-                        {data.change === "EVEN" ? (
-                          <Icons className="material-symbols-outlined">
-                            check_indeterminate_small
-                          </Icons>
-                        ) : data.change === "RISE" ? (
-                          <Icons className="material-symbols-outlined">
-                            arrow_drop_up
-                          </Icons>
-                        ) : data.change === "FALL" ? (
-                          <Icons className="material-symbols-outlined">
-                            arrow_drop_down
-                          </Icons>
-                        ) : (
-                          <Icons className="material-symbols-outlined">
-                            trending_flat
-                          </Icons>
-                        )}
-                        {(data.change_rate * 100).toFixed(2)}%
-                      </span>
-                    </TdChangeDiv>
-                  </Td>
-                  <Td>
-                    <TdFlexDiv>
-                      <span>
-                        {data.acc_trade_volume_24h
-                          .toFixed(0)
-                          .toString()
-                          .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
-                        {data.market.substring(4)}
-                      </span>
-                    </TdFlexDiv>
-                  </Td>
-                  <Td>
-                    <TdFlexDiv>
-                      <span>
-                        ₩
-                        {data.acc_trade_price_24h
-                          .toFixed(0)
-                          .toString()
-                          .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-                      </span>
-                    </TdFlexDiv>
-                  </Td>
-                  <Td>
-                    <TdNomalDiv>
-                      <span>
-                        {data.supply
-                          .toString()
-                          .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
-                        {data.market.substring(4)}
-                      </span>
-                    </TdNomalDiv>
-                  </Td>
-                  <Td>
-                    <TdNomalDiv>
-                      <span>
-                        ₩
-                        {(data.supply * data.trade_price)
-                          .toFixed(0)
-                          .toString()
-                          .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-                      </span>
-                    </TdNomalDiv>
-                  </Td>
-                  <Td>
-                    <ApexChartDiv>
-                      <ApexChart
-                        change={data.change}
-                        type="line"
-                        series={[
-                          {
-                            data:
-                              data.historyArr.map((price) => ({
-                                x: price.timestamp ,
-                                y: price.prev_closing_price,
-                              })) ?? [],
-                          },
-                        ]}
-                        options={{
-                          chart: {
-                            type: "line",
-                            background: "transparent",
-                            zoom: { enabled: false },
-                            toolbar: {
+        <TableBox>
+          <ListTable>
+            <colgroup>
+              <ColName />
+              <ColPrice />
+              <ColChange1 />
+              <ColChange2 />
+              <ColVolume />
+              <ColSupply />
+              <ColCap />
+              <ColChart />
+            </colgroup>
+            <Thead>
+              <Tr>
+                <NameTh>
+                  <span>Name</span>
+                </NameTh>
+                <Th>
+                  <span>Price</span>
+                </Th>
+                <Th>
+                  <span>Change (24h)</span>
+                </Th>
+                <Th>
+                  <span>Volume Rate (24h)</span>
+                </Th>
+                <Th>
+                  <span>Volume Price (24h)</span>
+                </Th>
+                <Th>
+                  <span>Circulating Supply</span>
+                </Th>
+                <Th>
+                  <span>Market Cap</span>
+                </Th>
+                <Th>
+                  <span>Last 30 Days</span>
+                </Th>
+              </Tr>
+            </Thead>
+            <Tbody>
+              {mergeData &&
+                mergeData.map((data, index) => (
+                  <Tr key={index}>
+                    <NameTd>
+                      <Namediv>
+                        <Img
+                          src={`https://static.upbit.com/logos/${data.market.substring(
+                            4
+                          )}.png`}
+                        />
+                        <div>
+                          <span>{data.english_name}</span>
+                          <span>{data.market.substring(4)}</span>
+                        </div>
+                      </Namediv>
+                    </NameTd>
+                    <Td>
+                      <TdNomalDiv>
+                        <span>
+                          ₩
+                          {data.trade_price
+                            .toFixed(0)
+                            .toString()
+                            .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                        </span>
+                      </TdNomalDiv>
+                    </Td>
+                    <Td>
+                      <TdChangeDiv change={data.change}>
+                        <span>₩{data.change_price}</span>
+                        <span>
+                          {data.change === "EVEN" ? (
+                            <Icons className="material-symbols-outlined">
+                              check_indeterminate_small
+                            </Icons>
+                          ) : data.change === "RISE" ? (
+                            <Icons className="material-symbols-outlined">
+                              arrow_drop_up
+                            </Icons>
+                          ) : data.change === "FALL" ? (
+                            <Icons className="material-symbols-outlined">
+                              arrow_drop_down
+                            </Icons>
+                          ) : (
+                            <Icons className="material-symbols-outlined">
+                              trending_flat
+                            </Icons>
+                          )}
+                          {(data.change_rate * 100).toFixed(2)}%
+                        </span>
+                      </TdChangeDiv>
+                    </Td>
+                    <Td>
+                      <TdNomalDiv>
+                        <span>
+                          {data.acc_trade_volume_24h
+                            .toFixed(0)
+                            .toString()
+                            .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
+                          {data.market.substring(4)}
+                        </span>
+                      </TdNomalDiv>
+                    </Td>
+                    <Td>
+                      <TdNomalDiv>
+                        <span>
+                          ₩
+                          {data.acc_trade_price_24h
+                            .toFixed(0)
+                            .toString()
+                            .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                        </span>
+                      </TdNomalDiv>
+                    </Td>
+                    <Td>
+                      <TdNomalDiv>
+                        <span>
+                          {data.supply
+                            .toString()
+                            .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
+                          {data.market.substring(4)}
+                        </span>
+                      </TdNomalDiv>
+                    </Td>
+                    <Td>
+                      <TdNomalDiv>
+                        <span>
+                          ₩
+                          {(data.supply * data.trade_price)
+                            .toFixed(0)
+                            .toString()
+                            .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                        </span>
+                      </TdNomalDiv>
+                    </Td>
+                    <Td>
+                      <ApexChartDiv>
+                        <ApexChart
+                          change={data.change}
+                          type="line"
+                          series={[
+                            {
+                              data:
+                                data.historyArr.map((price) => ({
+                                  x: price.timestamp,
+                                  y: price.prev_closing_price,
+                                })) ?? [],
+                            },
+                          ]}
+                          options={{
+                            chart: {
+                              type: "line",
+                              background: "transparent",
+                              zoom: { enabled: false },
+                              toolbar: {
+                                show: false,
+                              },
+                              animations: {
+                                enabled: false,
+                              },
+                            },
+                            grid: {
                               show: false,
                             },
-                            animations: {
+                            legend: {
+                              show: false,
+                            },
+                            dataLabels: {
                               enabled: false,
                             },
-                          },
-                          grid: {
-                            show: false,
-                          },
-                          legend: {
-                            show: false,
-                          },
-                          dataLabels: {
-                            enabled: false,
-                          },
-                          labels: {
-                            show: false,
-                          },
-                          tooltip: {
-                            enabled: false,
-                          },
-                          markers: { size: 0 },
-                          stroke: { curve: "smooth", width: 2 },
-                          colors: [
-                            data.change === "RISE"
-                              ? "#ea3943"
-                              : data.change === "EVEN"
-                              ? "#222"
-                              : "#16c784",
-                          ],
-                          xaxis: {
-                            axisBorder: { show: false },
-                            axisTicks: { show: false },
-                            labels: { show: false },
-                            type: "datetime",
-                          },
-                          yaxis: { show: false },
-                        }}
-                      />
-                    </ApexChartDiv>
-                  </Td>
-                </Tr>
-              ))}
-          </Tbody>
-        </ListTable>
+                            labels: {
+                              show: false,
+                            },
+                            tooltip: {
+                              enabled: false,
+                            },
+                            markers: { size: 0 },
+                            stroke: { curve: "smooth", width: 3 },
+                            colors: [
+                              data.change === "RISE"
+                                ? "#ea3943"
+                                : data.change === "EVEN"
+                                ? "#222"
+                                : "#16c784",
+                            ],
+                            xaxis: {
+                              axisBorder: { show: false },
+                              axisTicks: { show: false },
+                              labels: { show: false },
+                              type: "datetime",
+                            },
+                            yaxis: { show: false },
+                          }}
+                        />
+                      </ApexChartDiv>
+                    </Td>
+                  </Tr>
+                ))}
+            </Tbody>
+          </ListTable>
+        </TableBox>
       </WrapperInner>
     </CoinListWrapper>
   );

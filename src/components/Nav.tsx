@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { pathList, resizeWidth } from "../atom";
 import { IMainPosition, IRouterPosition } from "../interface/interface";
-import { DomApi } from "../services/DomApi";
+import { DomApi } from "../services/domApi";
 
 const Navi = styled.div`
   border-radius: 10px;

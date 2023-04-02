@@ -44,8 +44,9 @@ function About() {
           <TextBoxMiddle>just dummy</TextBoxMiddle>
           <TextBoxbottom>Place to practice</TextBoxbottom>
         </TextBox>
+        <SubTextBox>CoinList using React Query.</SubTextBox>
         <CoinList />
-        <SubTextBox>These are my favorite games.</SubTextBox>
+        <ExplanTextBox>These are my favorite games.</ExplanTextBox>
         <Game />
         <SourceText>Source: Each game company site</SourceText>
         <ExplanTextBox>This is a frequently visited site.</ExplanTextBox>
