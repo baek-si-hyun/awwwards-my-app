@@ -117,19 +117,20 @@ function Footer() {
         <Text>
           <Ko>
             <p>
-              awwwards, YoutubeMusic의 디자인을 참고하였습니다.
+              awwwards, YoutubeMusic, coinmarketcap의 디자인을 참고하였습니다.
               <br />
-              framer-motion, styled-components, react-beautiful-dnd,
-              react-fast-marquee, usehooks-ts, recoil, @emailjs/browser 가
-              사용되었습니다.
+              framer-motion, styled-components, @tanstack/react-query,
+              react-beautiful-dnd, react-fast-marquee, usehooks-ts, recoil,
+              @emailjs/browser 가 사용되었습니다.
             </p>
           </Ko>
           <En>
             <p>
-              I referred to the design of awwwards and YoutubeMusic. <br />
-              framer-motion, styled-components, react-beautiful-dnd,
-              react-fast-marquee, usehooks-ts, recoil, @emailjs/browser has been
-              used
+              I referred to the designs of awwwards, YoutubeMusic, and
+              coinmarketcap. <br />
+              framer-motion, styled-components, @tanstack/react-query,
+              react-beautiful-dnd, react-fast-marquee, usehooks-ts, recoil,
+              @emailjs/browser has been used
             </p>
           </En>
         </Text>

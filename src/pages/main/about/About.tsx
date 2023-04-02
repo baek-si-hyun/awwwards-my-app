@@ -17,7 +17,7 @@ import Site from "./Site";
 const SubTextBox = styled.div`
   width: 100%;
   text-align: left;
-  margin: 3vw 0;
+  margin: 3vw 0px 5vw 0;
   font-size: 2.6vw;
   font-weight: bold;
 `;

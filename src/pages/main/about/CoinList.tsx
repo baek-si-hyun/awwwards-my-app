@@ -13,8 +13,9 @@ import {
   ICoins,
   ICoinTickers,
 } from "../../../interface/interface";
-import ReactApexChart from "react-apexcharts";
-
+import Colgroup from "./coinListTable/ColGroup";
+import Thead from "./coinListTable/Thead";
+import Chart from "./coinListTable/Chart";
 const CoinListWrapper = styled.div`
   width: 100%;
 `;
@@ -33,8 +34,9 @@ const TableBox = styled.div`
 `;
 const ListTable = styled.table`
   width: 100%;
+  font-weight: 900;
 `;
-const Thead = styled.thead``;
+
 const Tbody = styled.tbody``;
 const Tr = styled.tr`
   border-bottom: 1px solid #e2e2e2;
@@ -42,44 +44,7 @@ const Tr = styled.tr`
     border-top: 1px solid #e2e2e2;
   }
 `;
-const NameTh = styled.th`
-  text-align: start;
-  vertical-align: middle;
-  padding: 10px;
-  padding-left: 1vw;
-  font-weight: 900;
-  position: sticky;
-  top: 0;
-  left: -2px;
-  z-index: 10;
-  background-color: #f8f8f8;
-  @media (max-width: 1279px) {
-    & {
-      ::before {
-        box-shadow: inset 10px 0 8px -8px rgba(0, 0, 0, 0.15);
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: -1px;
-        width: 30px;
-        transform: translateX(100%);
-        transition: box-shadow 0.3s;
-        content: "";
-        pointer-events: none;
-      }
-    }
-  }
-`;
-const Th = styled.th`
-  text-align: end;
-  vertical-align: middle;
-  padding: 10px;
-  font-weight: 900;
-  white-space: nowrap;
-  :last-child {
-    padding-right: 1vw;
-  }
-`;
+
 const Td = styled.td`
   text-align: end;
   vertical-align: middle;
@@ -115,7 +80,6 @@ const Namediv = styled.div`
   display: flex;
   align-items: center;
   padding: 10px;
-  font-weight: 900;
   div {
     display: flex;
     align-items: center;
@@ -123,7 +87,6 @@ const Namediv = styled.div`
   }
   div span + span {
     color: #808a9d;
-    font-weight: 600;
   }
 `;
 const TdNomalDiv = styled.div`
@@ -145,61 +108,6 @@ const Icons = styled.span`
 const Img = styled.img`
   margin-right: 5px;
   max-width: 20px;
-`;
-const ApexChartDiv = styled.div`
-  max-width: 100%;
-  max-height: 53px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-`;
-const ApexChart = styled(ReactApexChart)`
-  width: 164px;
-  color: ${(props) =>
-    props.change === "RISE"
-      ? "#ea3943"
-      : props.change === "FALL"
-      ? " #16c784"
-      : "#222"};
-`;
-const ColName = styled.col`
-  width: 310;
-  min-width: auto;
-  @media (max-width: 1279px) {
-    & {
-      box-shadow: 0px 0px 2px rgba(128, 138, 157, 0.12),
-        0px 0px 24px rgba(128, 138, 157, 0.14);
-    }
-  }
-`;
-const ColPrice = styled.col`
-  width: 181px;
-  min-width: auto;
-`;
-const ColChange1 = styled.col`
-  width: 200px;
-  min-width: auto;
-`;
-const ColChange2 = styled.col`
-  width: 236px;
-  min-width: auto;
-`;
-const ColVolume = styled.col`
-  width: 236px;
-  min-width: auto;
-`;
-const ColSupply = styled.col`
-  width: 236px;
-  min-width: auto;
-`;
-const ColCap = styled.col`
-  width: 236px;
-  min-width: auto;
-`;
-const ColChart = styled.col`
-  width: 183px;
-  min-width: auto;
 `;
 function CoinList() {
   const [mergeData, setMergeData] = useState<ICoinListMerge[]>([]);
@@ -264,44 +172,8 @@ function CoinList() {
       <WrapperInner>
         <TableBox>
           <ListTable>
-            <colgroup>
-              <ColName />
-              <ColPrice />
-              <ColChange1 />
-              <ColChange2 />
-              <ColVolume />
-              <ColSupply />
-              <ColCap />
-              <ColChart />
-            </colgroup>
-            <Thead>
-              <Tr>
-                <NameTh>
-                  <span>Name</span>
-                </NameTh>
-                <Th>
-                  <span>Price</span>
-                </Th>
-                <Th>
-                  <span>Change (24h)</span>
-                </Th>
-                <Th>
-                  <span>Volume Rate (24h)</span>
-                </Th>
-                <Th>
-                  <span>Volume Price (24h)</span>
-                </Th>
-                <Th>
-                  <span>Circulating Supply</span>
-                </Th>
-                <Th>
-                  <span>Market Cap</span>
-                </Th>
-                <Th>
-                  <span>Last 30 Days</span>
-                </Th>
-              </Tr>
-            </Thead>
+            <Colgroup />
+            <Thead />
             <Tbody>
               {mergeData &&
                 mergeData.map((data, index) => (
@@ -399,65 +271,7 @@ function CoinList() {
                       </TdNomalDiv>
                     </Td>
                     <Td>
-                      <ApexChartDiv>
-                        <ApexChart
-                          change={data.change}
-                          type="line"
-                          series={[
-                            {
-                              data:
-                                data.historyArr.map((price) => ({
-                                  x: price.timestamp,
-                                  y: price.prev_closing_price,
-                                })) ?? [],
-                            },
-                          ]}
-                          options={{
-                            chart: {
-                              type: "line",
-                              background: "transparent",
-                              zoom: { enabled: false },
-                              toolbar: {
-                                show: false,
-                              },
-                              animations: {
-                                enabled: false,
-                              },
-                            },
-                            grid: {
-                              show: false,
-                            },
-                            legend: {
-                              show: false,
-                            },
-                            dataLabels: {
-                              enabled: false,
-                            },
-                            labels: {
-                              show: false,
-                            },
-                            tooltip: {
-                              enabled: false,
-                            },
-                            markers: { size: 0 },
-                            stroke: { curve: "smooth", width: 3 },
-                            colors: [
-                              data.change === "RISE"
-                                ? "#ea3943"
-                                : data.change === "EVEN"
-                                ? "#222"
-                                : "#16c784",
-                            ],
-                            xaxis: {
-                              axisBorder: { show: false },
-                              axisTicks: { show: false },
-                              labels: { show: false },
-                              type: "datetime",
-                            },
-                            yaxis: { show: false },
-                          }}
-                        />
-                      </ApexChartDiv>
+                      <Chart data={data}  />
                     </Td>
                   </Tr>
                 ))}
