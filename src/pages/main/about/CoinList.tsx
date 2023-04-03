@@ -49,15 +49,15 @@ const BtnBox = styled.div`
   align-items: center;
   justify-content: space-between;
   gap: 0.5vw;
-  margin-top: 2vw;
+  margin-top: 40px;
 `;
 const Btn = styled.button`
   font-family: "Apercu", sans-serif;
   font-weight: 600;
-  border-radius: 0.4vw;
-  font-size: 1vw;
+  border-radius: 7px;
+  font-size: 15px;
   cursor: pointer;
-  padding: 0.6vw 1.2vw;
+  padding: 10px 20px;
   transition: all 0.2s ease-in-out;
 `;
 const MoreBtn = styled(Btn)<{ more: boolean }>`
