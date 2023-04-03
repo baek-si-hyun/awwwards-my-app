@@ -44,7 +44,7 @@ export const Tr = styled.tr`
     border-top: 1px solid #e2e2e2;
   }
 `;
-const MoreBtnBox = styled.div`
+const BtnBox = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -184,7 +184,7 @@ function CoinList() {
             </tbody>
           </ListTable>
         </TableBox>
-        <MoreBtnBox>
+        <BtnBox>
           <div></div>
           <MoreBtn onClick={countHandler} disabled={more} more={more}>
             more
@@ -192,7 +192,7 @@ function CoinList() {
           <ResetBtn onClick={resetHandler} disabled={reset} reset={reset}>
             reset
           </ResetBtn>
-        </MoreBtnBox>
+        </BtnBox>
       </WrapperInner>
     </CoinListWrapper>
   );
