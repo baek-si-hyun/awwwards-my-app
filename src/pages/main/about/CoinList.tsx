@@ -50,6 +50,12 @@ const BtnBox = styled.div`
   justify-content: space-between;
   gap: 0.5vw;
   margin-top: 40px;
+  @media (max-width: 1050px) {
+    & {
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
 `;
 const Btn = styled.button`
   font-family: "Apercu", sans-serif;
