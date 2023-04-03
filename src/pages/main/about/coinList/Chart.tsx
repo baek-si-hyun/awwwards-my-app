@@ -4,7 +4,7 @@ import { ICoinListMerge } from "../../../../interface/interface";
 
 const ApexChartDiv = styled.div`
   max-width: 100%;
-  max-height: 53px;
+  max-height: 61px;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -14,9 +14,9 @@ const ApexChart = styled(ReactApexChart)`
   width: 164px;
   color: ${(props) =>
     props.change === "RISE"
-      ? "#ea3943"
+      ? "#c84a31"
       : props.change === "FALL"
-      ? " #16c784"
+      ? " #1261c4"
       : "#222"};
 `;
 function Chart({ data }: { data: ICoinListMerge }) {
@@ -65,10 +65,10 @@ function Chart({ data }: { data: ICoinListMerge }) {
           stroke: { curve: "smooth", width: 3 },
           colors: [
             data.change === "RISE"
-              ? "#ea3943"
+              ? "#c84a31"
               : data.change === "EVEN"
               ? "#222"
-              : "#16c784",
+              : "#1261c4",
           ],
           xaxis: {
             axisBorder: { show: false },

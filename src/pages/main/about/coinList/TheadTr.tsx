@@ -1,11 +1,7 @@
 import styled from "styled-components";
+import { Tr } from "../CoinList";
 
-const Tr = styled.tr`
-  border-bottom: 1px solid #e2e2e2;
-  :first-child {
-    border-top: 1px solid #e2e2e2;
-  }
-`;
+
 const NameTh = styled.th`
   text-align: start;
   vertical-align: middle;
@@ -45,34 +41,32 @@ const Th = styled.th`
 `;
 function Thead() {
   return (
-    <thead>
-      <Tr>
-        <NameTh>
-          <span>Name</span>
-        </NameTh>
-        <Th>
-          <span>Price</span>
-        </Th>
-        <Th>
-          <span>Change (24h)</span>
-        </Th>
-        <Th>
-          <span>Volume (24h)</span>
-        </Th>
-        <Th>
-          <span>Volume Price (24h)</span>
-        </Th>
-        <Th>
-          <span>Circulating Supply</span>
-        </Th>
-        <Th>
-          <span>Market Cap</span>
-        </Th>
-        <Th>
-          <span>Last 30 Days</span>
-        </Th>
-      </Tr>
-    </thead>
+    <Tr>
+      <NameTh>
+        <span>Name</span>
+      </NameTh>
+      <Th>
+        <span>Price</span>
+      </Th>
+      <Th>
+        <span>Change (24h)</span>
+      </Th>
+      <Th>
+        <span>Volume (24h)</span>
+      </Th>
+      <Th>
+        <span>Volume Price (24h)</span>
+      </Th>
+      <Th>
+        <span>Circulating Supply</span>
+      </Th>
+      <Th>
+        <span>Market Cap</span>
+      </Th>
+      <Th>
+        <span>Last 30 Days</span>
+      </Th>
+    </Tr>
   );
 }
 export default Thead;

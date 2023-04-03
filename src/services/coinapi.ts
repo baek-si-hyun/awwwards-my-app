@@ -28,6 +28,7 @@ export async function fetchCoinHistory(coinList: string[]) {
   }
   return results;
 }
+//무료 Supply api, market cap api 못찾겠다...
 export const circulatingSupply = [
   {
     id: "KRW-BTC",
