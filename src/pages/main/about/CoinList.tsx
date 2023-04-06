@@ -37,7 +37,6 @@ const ListTable = styled.table`
   width: 100%;
   font-weight: 900;
 `;
-
 export const Tr = styled.tr`
   border-bottom: 1px solid #e2e2e2;
   :first-child {
@@ -126,6 +125,7 @@ function CoinList() {
     () => fetchCoinTickers(coinList!),
     {
       enabled: !!coinList,
+
     }
   );
   const { isLoading, data: historyData } = useQuery<ICoinHistory[][]>(

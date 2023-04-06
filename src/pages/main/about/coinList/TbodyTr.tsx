@@ -3,7 +3,6 @@ import { ICoinListMerge } from "../../../../interface/interface";
 import { Tr } from "../CoinList";
 import Chart from "./Chart";
 
-
 const Td = styled.td`
   text-align: end;
   vertical-align: middle;
@@ -17,6 +16,7 @@ const NameTd = styled.td`
   text-align: start;
   vertical-align: middle;
   position: sticky;
+  position: -webkit-sticky;
   top: 0;
   left: -2px;
   z-index: 10;
@@ -90,10 +90,7 @@ function TrBox({ data, key }: { data: ICoinListMerge; key: number }) {
       <Td>
         <TdNomalDiv>
           <span>
-            ₩
-            {data.trade_price
-              .toString()
-              .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+            ₩{data.trade_price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
           </span>
         </TdNomalDiv>
       </Td>
