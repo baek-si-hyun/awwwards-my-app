@@ -148,7 +148,7 @@ const Card = styled(Cards)<{
   }
 `;
 
-function MyappColor({ projectData }: { projectData: IProjectsData }) {
+function ProjectColor({ projectData }: { projectData: IProjectsData }) {
   const [hover, sethover] = useState(false);
   return (
     <ColorContainer>
@@ -184,4 +184,4 @@ function MyappColor({ projectData }: { projectData: IProjectsData }) {
     </ColorContainer>
   );
 }
-export default MyappColor;
+export default ProjectColor;

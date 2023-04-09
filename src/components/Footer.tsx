@@ -160,6 +160,14 @@ function Footer() {
             </Links>
           </LinkBarLi>
           <LinkBarLi>
+            <Links
+              href="https://careerly.co.kr/profiles/569272?utm_campaign=user-share"
+              target="_blank"
+            >
+              careerly
+            </Links>
+          </LinkBarLi>
+          <LinkBarLi>
             <Links href="https://www.instagram.com/b_2.19/" target="_blank">
               instagram
             </Links>
@@ -170,14 +178,6 @@ function Footer() {
               target="_blank"
             >
               facebook
-            </Links>
-          </LinkBarLi>
-          <LinkBarLi>
-            <Links
-              href="https://careerly.co.kr/profiles/569272?utm_campaign=user-share"
-              target="_blank"
-            >
-              careerly
             </Links>
           </LinkBarLi>
         </LinkBarUl>

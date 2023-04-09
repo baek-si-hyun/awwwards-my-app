@@ -166,7 +166,7 @@ const ContentDiv = styled(ContentDivCommon)<{ toggle: number }>`
     sans-serif;
 `;
 
-function MyappFont({ projectData }: { projectData: IProjectsData }) {
+function ProjectFont({ projectData }: { projectData: IProjectsData }) {
   const [toggle, setToggle] = useState(0);
   const ChangeToggle1 = () => {
     setToggle(0);
@@ -234,4 +234,4 @@ function MyappFont({ projectData }: { projectData: IProjectsData }) {
     </FontContainer>
   );
 }
-export default MyappFont;
+export default ProjectFont;
