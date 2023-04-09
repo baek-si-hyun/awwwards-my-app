@@ -1,20 +1,116 @@
 import { useState } from "react";
 import styled from "styled-components";
-import {
-  ChoiceDiv,
-  ChoiceUl,
-  ContentDivCommon,
-  FontContainer,
-  FontDetail,
-  FontDetailContentCommon,
-  FontLi,
-  FontNameText,
-  FontStyle,
-  FontTittle,
-  FontTop,
-  LettersNumbers,
-  Typography,
-} from "../../components/fontCommon";
+import { IProjectsData } from "../../interface/interface";
+
+const FontContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const FontTop = styled.div`
+  display: flex;
+  gap: 4vw;
+  background: #f8f8f8;
+  background-image: linear-gradient(
+    to right,
+    rgb(34, 34, 34) 0 10%,
+    rgba(255, 255, 255, 0) 10%
+  );
+  background-position: bottom;
+  background-size: 8px 1px;
+  background-repeat: repeat-x;
+  @media (max-width: 480px) {
+    & {
+      font-size: 1vw;
+    }
+  }
+`;
+const FontLi = styled.li`
+  padding: 20px 0;
+  cursor: pointer;
+`;
+const FontNameText = styled.div`
+  font-size: 10vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: max(20px, 5vw) 0;
+  background: #f8f8f8;
+  background-image: linear-gradient(
+    to right,
+    rgb(34, 34, 34) 0 10%,
+    rgba(255, 255, 255, 0) 10%
+  );
+  background-position: bottom;
+  background-size: 8px 1px;
+  background-repeat: repeat-x;
+`;
+
+const Typography = styled.div`
+  padding: 20px 0;
+`;
+const ChoiceDiv = styled.div``;
+const ChoiceUl = styled.ul`
+  display: flex;
+  gap: 2vw;
+`;
+
+const FontStyle = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 20px 0;
+`;
+const FontDetail = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  background: #f8f8f8;
+  background-image: linear-gradient(
+    to right,
+    rgb(34, 34, 34) 0 10%,
+    rgba(255, 255, 255, 0) 10%
+  );
+  background-position: bottom;
+  background-size: 8px 1px;
+  background-repeat: repeat-x;
+  padding-bottom: 2vw;
+`;
+const FontTittle = styled.div`
+  font-weight: 100;
+  font-size: 13px;
+  @media (max-width: 480px) {
+    & {
+      font-size: 2vw;
+    }
+  }
+`;
+const LettersNumbers = styled.div`
+  background: #f8f8f8;
+  background-image: linear-gradient(
+    to right,
+    rgb(34, 34, 34) 0 10%,
+    rgba(255, 255, 255, 0) 10%
+  );
+  background-position: bottom;
+  background-size: 8px 1px;
+  background-repeat: repeat-x;
+  padding-bottom: 2vw;
+`;
+const FontDetailContentCommon = styled.div`
+  font-size: 15vw;
+  text-align: center;
+`;
+const ContentDivCommon = styled.div`
+  font-size: 4vw;
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+  span {
+    line-height: 1.4;
+  }
+`;
 
 const Font = styled(FontLi)`
   padding: 20px 0;
@@ -70,7 +166,7 @@ const ContentDiv = styled(ContentDivCommon)<{ toggle: number }>`
     sans-serif;
 `;
 
-function MyappFont() {
+function MyappFont({ projectData }: { projectData: IProjectsData }) {
   const [toggle, setToggle] = useState(0);
   const ChangeToggle1 = () => {
     setToggle(0);

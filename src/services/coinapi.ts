@@ -21,7 +21,7 @@ export async function fetchCoinHistory(coinList: string[]) {
   let results = [];
   for (let index = 0; index < coinList.length; index++) {
     const response = await fetch(
-      `https://api.upbit.com/v1/candles/days?market=${coinList[index]}&count=30&convertingPriceUnit=KRW`
+      `https://api.upbit.com/v1/candles/days?market=${coinList[index]}&count=200&convertingPriceUnit=KRW`
     );
     const json = await response.json();
     results.push(json);

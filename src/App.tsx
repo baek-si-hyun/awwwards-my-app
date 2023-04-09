@@ -1,14 +1,10 @@
 import styled from "styled-components";
 import { motion, useScroll } from "framer-motion";
 import { Route, Routes } from "react-router-dom";
-import Airbnb from "./pages/airbnb/Airbnb";
 import Contact from "./pages/contact/Contact";
 import Faqs from "./pages/faqs/Faqs";
 import Main from "./pages/main/Main";
-import Kanban from "./pages/kanban/Kanban";
-import Coin from "./pages/coin/Coin";
-import Myapp from "./pages/myapp/Myapp";
-import Netflix from "./pages/netflix/Netflix";
+import Myapp from "./pages/project_router/ProjectMain";
 import ScrollToTop from "./ScrollToTop";
 
 const Wapper = styled.div`
@@ -36,11 +32,7 @@ function App() {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path="Netflix" element={<Netflix />} />
-        <Route path="Kanban" element={<Kanban />} />
-        <Route path="Coin" element={<Coin />} />
-        <Route path="Myapp" element={<Myapp />} />
-        <Route path="Airbnb" element={<Airbnb />} />
+        <Route path=":projectId" element={<Myapp />} />
         <Route path="FAQs" element={<Faqs />} />
         <Route path="Contact" element={<Contact />} />
       </Routes>

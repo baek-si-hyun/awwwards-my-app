@@ -64,7 +64,7 @@ function Thead() {
         <span>Market Cap</span>
       </Th>
       <Th>
-        <span>Last 30 Days</span>
+        <span>Last 200 Days</span>
       </Th>
     </Tr>
   );

@@ -1,4 +1,17 @@
 import { Dispatch, SetStateAction } from "react";
+export interface IProjectsData {
+  date: string;
+  name: string;
+  thumbnail: string;
+  logo: string;
+  by: string;
+  img: string[];
+  fonts: string[];
+  fontsFamily: string[];
+  colors: string[];
+  ko: string;
+  en: string;
+}
 export interface ICoins {
   market: string;
   korean_name: string;
@@ -23,8 +36,8 @@ export interface ICoinListMerge {
   change_rate: number;
   acc_trade_price_24h: number;
   acc_trade_volume_24h: number;
-  historyArr : ICoinHistory[]
-  supply: number,
+  historyArr: ICoinHistory[];
+  supply: number;
 }
 export interface ICoinHistory {
   candle_date_time_kst: string;

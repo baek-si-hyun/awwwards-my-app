@@ -6,7 +6,7 @@ import {
   fetchCoinHistory,
   fetchCoins,
   fetchCoinTickers,
-} from "../../../services/coinapi";
+} from "../../../services/coinApi";
 import {
   ICoinHistory,
   ICoinListMerge,

@@ -7,13 +7,10 @@ import {
   TextBoxbottom,
   TextBoxMiddle,
 } from "../../../components/mainCommon";
-import NetflixProject from "./NetflixProject";
-import KanbanProject from "./KanbanProject";
-import CoinProject from "./CoinProject";
-import MyappProject from "./MyappProject";
-import AirbnbProject from "./AirbnbProject";
 import { useRecoilValue } from "recoil";
 import { visited } from "../../../atom";
+import ProjectsRouter from "./ProjectsLinkBox";
+
 
 const GridBox = styled.div`
   display: grid;
@@ -41,11 +38,7 @@ function Projects() {
           </TextBoxbottom>
         </TextBox>
         <GridBox>
-          <NetflixProject visited={getvisited} />
-          <KanbanProject visited={getvisited} />
-          <CoinProject visited={getvisited} />
-          <MyappProject visited={getvisited} />
-          <AirbnbProject visited={getvisited} />
+          <ProjectsRouter visited={getvisited} />
         </GridBox>
       </InnerContainer>
     </Container>
