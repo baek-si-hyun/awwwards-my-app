@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
+import { UnderLine } from "../../components/mainCommon";
 import { IProjectsData } from "../../interface/interface";
 
 const FontContainer = styled.div`
@@ -7,18 +8,10 @@ const FontContainer = styled.div`
   flex-direction: column;
 `;
 
-const FontTop = styled.div`
+const FontTop = styled(UnderLine)`
   display: flex;
   gap: 4vw;
-  background: #f8f8f8;
-  background-image: linear-gradient(
-    to right,
-    rgb(34, 34, 34) 0 10%,
-    rgba(255, 255, 255, 0) 10%
-  );
-  background-position: bottom;
-  background-size: 8px 1px;
-  background-repeat: repeat-x;
+
   @media (max-width: 480px) {
     & {
       font-size: 1vw;
@@ -41,20 +34,12 @@ const FontStyle = styled.div`
   gap: 20px;
   padding: 20px 0;
 `;
-const FontDetail = styled.div`
+const FontDetail = styled(UnderLine)`
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 20px;
-  background: #f8f8f8;
-  background-image: linear-gradient(
-    to right,
-    rgb(34, 34, 34) 0 10%,
-    rgba(255, 255, 255, 0) 10%
-  );
-  background-position: bottom;
-  background-size: 8px 1px;
-  background-repeat: repeat-x;
+ 
   padding-bottom: 2vw;
 `;
 const FontTittle = styled.div`
@@ -66,22 +51,13 @@ const FontTittle = styled.div`
     }
   }
 `;
-const LettersNumbers = styled.div`
-  background: #f8f8f8;
-  background-image: linear-gradient(
-    to right,
-    rgb(34, 34, 34) 0 10%,
-    rgba(255, 255, 255, 0) 10%
-  );
-  background-position: bottom;
-  background-size: 8px 1px;
-  background-repeat: repeat-x;
+const LettersNumbers = styled((UnderLine))`
   padding-bottom: 2vw;
 `;
 
 const choiceFont =
   "border-bottom: 2px solid black;color:black;font-family:'Apercu', sans-serif;font-weight: 900;";
-const Font = styled.div<{ toggle: number; index: number }>`
+const Font = styled.div<{ toggle: number; num: number }>`
   padding: 20px 0;
   cursor: pointer;
   color: #a7a7a7;
@@ -100,21 +76,12 @@ const Font = styled.div<{ toggle: number; index: number }>`
   }
 `;
 
-const FontName = styled.div<{ toggle: number; fontsData: string[] }>`
+const FontName = styled(UnderLine)<{ toggle: number; fontsData: string[] }>`
   font-size: 10vw;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: max(20px, 5vw) 0;
-  background: #f8f8f8;
-  background-image: linear-gradient(
-    to right,
-    rgb(34, 34, 34) 0 10%,
-    rgba(255, 255, 255, 0) 10%
-  );
-  background-position: bottom;
-  background-size: 8px 1px;
-  background-repeat: repeat-x;
   font-family: ${(props) =>
       props.toggle === 0
         ? props.fontsData[0]
@@ -192,8 +159,8 @@ function ProjectFont({ projectData }: { projectData: IProjectsData }) {
           <ToggleFont>
             {projectData.fonts.map((font, index) => (
               <Font
-                key={font}
-                index={index}
+                key={index}
+                num={index}
                 toggle={toggle}
                 onClick={() => ToggleBtn(index)}
               >

@@ -43,3 +43,14 @@ export const TextBoxbottom = styled.div`
     }
   }
 `;
+export const UnderLine = styled.div`
+  background: #f8f8f8;
+  background-image: linear-gradient(
+    to right,
+    rgb(34, 34, 34) 0 10%,
+    rgba(255, 255, 255, 0) 10%
+  );
+  background-position: bottom;
+  background-size: 8px 1px;
+  background-repeat: repeat-x;
+`;

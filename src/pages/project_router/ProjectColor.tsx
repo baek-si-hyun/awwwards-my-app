@@ -1,19 +1,11 @@
 import { useState } from "react";
 import styled from "styled-components";
+import { UnderLine } from "../../components/mainCommon";
 import { IProjectsData } from "../../interface/interface";
 const ColorContainer = styled.div``;
-const ColorInner = styled.div`
+const ColorInner = styled(UnderLine)`
   display: flex;
   flex-direction: column;
-  background: #f8f8f8;
-  background-image: linear-gradient(
-    to right,
-    rgb(34, 34, 34) 0 10%,
-    rgba(255, 255, 255, 0) 10%
-  );
-  background-position: bottom;
-  background-size: 8px 1px;
-  background-repeat: repeat-x;
 `;
 const ColorText = styled.div`
   width: 15%;

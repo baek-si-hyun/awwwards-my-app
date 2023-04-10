@@ -102,6 +102,7 @@ const PrevInner = styled.div`
 const PreviewImg = styled.img`
   width: 100%;
 `;
+
 function ProjectPreview({ projectData }: { projectData: IProjectsData }) {
   return (
     <PreviewContaier cardBgColorData={projectData.id}>

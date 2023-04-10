@@ -1,6 +1,6 @@
 import Header from "./header/Header";
 import Projects from "./project/Projects";
-import About from "./about/About";
+import Dummy from "./dummy/Dummy";
 import Schedule from "./schedule/Schedule";
 import Footer from "../../components/Footer";
 import Nav from "../../components/Nav";
@@ -11,7 +11,7 @@ function Main() {
     <>
       <Header />
       <Projects />
-      <About />
+      <Dummy />
       <Schedule />
       <Nav />
       <Footer />

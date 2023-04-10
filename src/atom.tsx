@@ -19,6 +19,7 @@ import star from "./assets/img/recommended_song/star.jpg";
 import sweater from "./assets/img/recommended_song/sweater.jpg";
 import iu from "./assets/img/recommended_song/iu.jpg";
 import { IPathname, Data, IResize, IVisited } from "./interface/interface";
+
 export const visited = atom<IVisited>({
   key: `visited/${v1()}`,
   default: {

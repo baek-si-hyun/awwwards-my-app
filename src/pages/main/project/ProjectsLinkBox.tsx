@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import {
-  IGetVisitedObject,
   IProjectsData,
   IVisited,
 } from "../../../interface/interface";

@@ -126,7 +126,8 @@ const RouterNavItem = styled.li<{ routerPosition: IRouterPosition }>`
   :nth-child(3) {
     background-color: ${(props) =>
       props.routerPosition.routerAbout ? "#d3d3d3" : "#3e3e3e"};
-    color: ${(props) => (props.routerPosition.routerAbout ? "#000" : "inherit")};
+    color: ${(props) =>
+      props.routerPosition.routerAbout ? "#000" : "inherit"};
   }
   @media (max-width: 320px) {
     & {
@@ -298,7 +299,7 @@ function Nav() {
                 </NavItem>
                 <NavItem mainPosition={mainPosition}>
                   <Link href="#about" className="nav-item">
-                    About
+                    Dummy
                   </Link>
                 </NavItem>
                 <NavItem mainPosition={mainPosition}>
@@ -332,25 +333,42 @@ function Nav() {
                 </NavBox>
                 <VisitedSite>
                   {pathname === "/Netflix" ? (
-                    <a href="https://baek-si-hyun.github.io/NFLXclone"target="_blank">
+                    <a
+                      href="https://baek-si-hyun.github.io/NFLXclone"
+                      target="_blank"
+                    >
                       Visited Site
                     </a>
                   ) : pathname === "/Kanban" ? (
-                    <a href="https://baek-si-hyun.github.io/todo-list/"target="_blank">
+                    <a
+                      href="https://baek-si-hyun.github.io/todo-list/"
+                      target="_blank"
+                    >
                       Visited Site
                     </a>
                   ) : pathname === "/Coin" ? (
-                    <a href="https://baek-si-hyun.github.io/coin-chart-app/"target="_blank">
+                    <a
+                      href="https://baek-si-hyun.github.io/coin-chart-app/"
+                      target="_blank"
+                    >
                       Visited Site
                     </a>
                   ) : pathname === "/Myapp" ? (
-                    <a href="https://baek-si-hyun.github.io/my-app/"target="_blank">
+                    <a
+                      href="https://baek-si-hyun.github.io/my-app/"
+                      target="_blank"
+                    >
                       Visited Site
                     </a>
                   ) : pathname === "/Airbnb" ? (
-                    <a href="http://3.39.97.123/pages"target="_blank">Visited Site</a>
+                    <a href="http://3.39.97.123/pages" target="_blank">
+                      Visited Site
+                    </a>
                   ) : (
-                    <a href="https://baek-si-hyun.github.io/awwwards-my-app/"target="_blank">
+                    <a
+                      href="https://baek-si-hyun.github.io/awwwards-my-app/"
+                      target="_blank"
+                    >
                       Visited Site
                     </a>
                   )}
@@ -379,7 +397,7 @@ function Nav() {
                 </NavItem>
                 <NavItem mainPosition={mainPosition}>
                   <Link href="#about" className="nav-item">
-                    About
+                    Dummy
                   </Link>
                 </NavItem>
                 <NavItem mainPosition={mainPosition}>
@@ -413,25 +431,42 @@ function Nav() {
                 </NavBox>
                 <VisitedSite>
                   {pathname === "/Netflix" ? (
-                    <a href="https://baek-si-hyun.github.io/NFLXclone"target="_blank">
+                    <a
+                      href="https://baek-si-hyun.github.io/NFLXclone"
+                      target="_blank"
+                    >
                       Visited Site
                     </a>
                   ) : pathname === "/Kanban" ? (
-                    <a href="https://baek-si-hyun.github.io/todo-list/"target="_blank">
+                    <a
+                      href="https://baek-si-hyun.github.io/todo-list/"
+                      target="_blank"
+                    >
                       Visited Site
                     </a>
                   ) : pathname === "/Coin" ? (
-                    <a href="https://baek-si-hyun.github.io/coin-chart-app/"target="_blank">
+                    <a
+                      href="https://baek-si-hyun.github.io/coin-chart-app/"
+                      target="_blank"
+                    >
                       Visited Site
                     </a>
                   ) : pathname === "/Myapp" ? (
-                    <a href="https://baek-si-hyun.github.io/my-app/"target="_blank">
+                    <a
+                      href="https://baek-si-hyun.github.io/my-app/"
+                      target="_blank"
+                    >
                       Visited Site
                     </a>
                   ) : pathname === "/Airbnb" ? (
-                    <a href="http://3.39.97.123/pages"target="_blank">Visited Site</a>
+                    <a href="http://3.39.97.123/pages" target="_blank">
+                      Visited Site
+                    </a>
                   ) : (
-                    <a href="https://baek-si-hyun.github.io/awwwards-my-app/"target="_blank">
+                    <a
+                      href="https://baek-si-hyun.github.io/awwwards-my-app/"
+                      target="_blank"
+                    >
                       Visited Site
                     </a>
                   )}

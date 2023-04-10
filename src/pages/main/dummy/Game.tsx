@@ -46,7 +46,7 @@ const BoxText = styled(motion.div)<{ isboxhover: boolean }>`
   border-radius: 13px;
   color: #fff;
   font-size: 3vw;
-  opacity: ${(props) => (props.isboxhover ? 1 : 0)};
+  opacity: ${(props) => (props.isboxhover ?  "1" : "0")};
   transition: all 0.3s ease-in-out;
   position: relative;
   span {
@@ -132,11 +132,11 @@ function Game() {
   const [visible, setVisible] = useState(0);
   const [back, setBack] = useState(false);
   const src = [lol, war, bdo];
-  const nextPlease = () => {
+  const nextBtn = () => {
     setBack(false);
     setVisible((prev) => (prev === 2 ? prev - 2 : prev + 1));
   };
-  const prevPlease = () => {
+  const prevBtn = () => {
     setBack(true);
     setVisible((prev) => (prev === 0 ? prev + 2 : prev - 1));
   };
@@ -162,9 +162,9 @@ function Game() {
           onDragEnd={(e, { offset, velocity }) => {
             const swipe = swipePower(offset.x, velocity.x);
             if (swipe < -1000) {
-              nextPlease();
+              nextBtn();
             } else if (swipe > 1000) {
-              prevPlease();
+              prevBtn();
             }
           }}
         >
@@ -173,10 +173,10 @@ function Game() {
           </BoxText>
         </Box>
       </AnimatePresence>
-      <PrevButton onClick={prevPlease}>
+      <PrevButton onClick={prevBtn}>
         <span className="material-symbols-outlined">arrow_back_ios</span>
       </PrevButton>
-      <NextButton onClick={nextPlease}>
+      <NextButton onClick={nextBtn}>
         <span className="material-symbols-outlined">arrow_forward_ios</span>
       </NextButton>
     </Container>
