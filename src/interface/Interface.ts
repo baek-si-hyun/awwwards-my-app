@@ -1,5 +1,6 @@
 import { Dispatch, SetStateAction } from "react";
 export interface IProjectsData {
+  id: string;
   date: string;
   name: string;
   thumbnail: string;
@@ -7,7 +8,6 @@ export interface IProjectsData {
   by: string;
   img: string[];
   fonts: string[];
-  fontsFamily: string[];
   colors: string[];
   ko: string;
   en: string;

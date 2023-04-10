@@ -1,12 +1,14 @@
 import styled from "styled-components";
 import { IProjectsData } from "../../interface/interface";
 
-const ColorDiv = styled.div`
+const PreviewContaier = styled.div<{ cardBgColorData: string }>`
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 5vw 2.7vw;
+  background-color: ${(props) =>
+    props.cardBgColorData === "Coin" ? "#3e3e3e" : "#efefef"};
 `;
 
 const TextBox = styled.div`
@@ -100,12 +102,9 @@ const PrevInner = styled.div`
 const PreviewImg = styled.img`
   width: 100%;
 `;
-const DivBackground = styled(ColorDiv)`
-  background-color: #e8ebe6;
-`;
-function MyappPreview({ projectData }: { projectData: IProjectsData }) {
+function ProjectPreview({ projectData }: { projectData: IProjectsData }) {
   return (
-    <DivBackground>
+    <PreviewContaier cardBgColorData={projectData.id}>
       <TextBox>
         <TextBoxTop>
           <h2>{projectData.date}</h2>
@@ -132,7 +131,7 @@ function MyappPreview({ projectData }: { projectData: IProjectsData }) {
           </Preview>
         ))}
       </PreviewContainer>
-    </DivBackground>
+    </PreviewContaier>
   );
 }
-export default MyappPreview;
+export default ProjectPreview;

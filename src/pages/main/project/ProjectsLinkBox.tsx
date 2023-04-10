@@ -131,7 +131,50 @@ const VisitedInnerBottom = styled.div`
     }
   }
 `;
-
+function VisitedBox({
+  visited,
+  data,
+}: {
+  visited: IVisited;
+  data: IProjectsData;
+}) {
+  return (
+    <Visited>
+      <VisitedInner>
+        <VisitedInnerTop>Visited Today</VisitedInnerTop>
+        <VisitedInnerBottom>
+          {data.id === "Netflix"
+            ? visited.netflixToday
+            : data.id === "Kanban"
+            ? visited.kanbanToday
+            : data.id === "Coin"
+            ? visited.coinToday
+            : data.id === "Myapp"
+            ? visited.myappToday
+            : data.id === "Airbnb"
+            ? visited.airbnbToday
+            : ""}
+        </VisitedInnerBottom>
+      </VisitedInner>
+      <VisitedInner>
+        <VisitedInnerTop>Total Visited</VisitedInnerTop>
+        <VisitedInnerBottom>
+          {data.id === "Netflix"
+            ? visited.netflixTotal
+            : data.id === "Kanban"
+            ? visited.kanbanTotal
+            : data.id === "Coin"
+            ? visited.coinTotal
+            : data.id === "Myapp"
+            ? visited.myappTotal
+            : data.id === "Airbnb"
+            ? visited.airbnbTotal
+            : ""}
+        </VisitedInnerBottom>
+      </VisitedInner>
+    </Visited>
+  );
+}
 function ProjectsLinkBox({ visited }: { visited: IVisited }) {
   return (
     <>
@@ -171,16 +214,7 @@ function ProjectsLinkBox({ visited }: { visited: IVisited }) {
                   </figcaption>
                 </InnerFigure>
               </TextBottomInner>
-              <Visited>
-                <VisitedInner>
-                  <VisitedInnerTop>Visited Today</VisitedInnerTop>
-                  <VisitedInnerBottom>{visited.kanbanToday}</VisitedInnerBottom>
-                </VisitedInner>
-                <VisitedInner>
-                  <VisitedInnerTop>Total Visited</VisitedInnerTop>
-                  <VisitedInnerBottom>{visited.kanbanTotal}</VisitedInnerBottom>
-                </VisitedInner>
-              </Visited>
+              <VisitedBox visited={visited} data={data} />
             </TextBottom>
           </InnerBoxText>
         </Box>

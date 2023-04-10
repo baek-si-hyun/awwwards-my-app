@@ -25,32 +25,12 @@ const FontTop = styled.div`
     }
   }
 `;
-const FontLi = styled.li`
-  padding: 20px 0;
-  cursor: pointer;
-`;
-const FontNameText = styled.div`
-  font-size: 10vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: max(20px, 5vw) 0;
-  background: #f8f8f8;
-  background-image: linear-gradient(
-    to right,
-    rgb(34, 34, 34) 0 10%,
-    rgba(255, 255, 255, 0) 10%
-  );
-  background-position: bottom;
-  background-size: 8px 1px;
-  background-repeat: repeat-x;
-`;
 
 const Typography = styled.div`
   padding: 20px 0;
 `;
-const ChoiceDiv = styled.div``;
-const ChoiceUl = styled.ul`
+const ToggleDiv = styled.div``;
+const ToggleFont = styled.div`
   display: flex;
   gap: 2vw;
 `;
@@ -98,11 +78,73 @@ const LettersNumbers = styled.div`
   background-repeat: repeat-x;
   padding-bottom: 2vw;
 `;
-const FontDetailContentCommon = styled.div`
+
+const choiceFont =
+  "border-bottom: 2px solid black;color:black;font-family:'Apercu', sans-serif;font-weight: 900;";
+const Font = styled.div<{ toggle: number; index: number }>`
+  padding: 20px 0;
+  cursor: pointer;
+  color: #a7a7a7;
+  font-weight: 100;
+  :nth-child(1) {
+    ${(props) => (props.toggle === 0 ? choiceFont : "")}
+  }
+  :nth-child(2) {
+    ${(props) => (props.toggle === 1 ? choiceFont : "")}
+  }
+  :nth-child(3) {
+    ${(props) => (props.toggle === 2 ? choiceFont : "")}
+  }
+  :nth-child(4) {
+    ${(props) => (props.toggle === 3 ? choiceFont : "")}
+  }
+`;
+
+const FontName = styled.div<{ toggle: number; fontsData: string[] }>`
+  font-size: 10vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: max(20px, 5vw) 0;
+  background: #f8f8f8;
+  background-image: linear-gradient(
+    to right,
+    rgb(34, 34, 34) 0 10%,
+    rgba(255, 255, 255, 0) 10%
+  );
+  background-position: bottom;
+  background-size: 8px 1px;
+  background-repeat: repeat-x;
+  font-family: ${(props) =>
+      props.toggle === 0
+        ? props.fontsData[0]
+        : props.toggle === 1
+        ? props.fontsData[1]
+        : props.toggle === 2
+        ? props.fontsData[2]
+        : props.toggle === 3
+        ? props.fontsData[3]
+        : ""},
+    sans-serif;
+`;
+
+const FontDetailContent = styled.div<{ toggle: number; fontsData: string[] }>`
   font-size: 15vw;
   text-align: center;
+  font-family: ${(props) =>
+      props.toggle === 0
+        ? props.fontsData[0]
+        : props.toggle === 1
+        ? props.fontsData[1]
+        : props.toggle === 2
+        ? props.fontsData[2]
+        : props.toggle === 3
+        ? props.fontsData[3]
+        : ""},
+    sans-serif;
 `;
-const ContentDivCommon = styled.div`
+
+const ContentDiv = styled.div<{ toggle: number; fontsData: string[] }>`
   font-size: 4vw;
   display: flex;
   flex-direction: column;
@@ -110,72 +152,34 @@ const ContentDivCommon = styled.div`
   span {
     line-height: 1.4;
   }
-`;
-
-const Font = styled(FontLi)`
-  padding: 20px 0;
-  cursor: pointer;
-  color: #a7a7a7;
-  font-weight: 100;
-`;
-const choiceFont =
-  "border-bottom: 2px solid black;color:black;font-family:'Apercu', sans-serif";
-const Font1 = styled(Font)<{ toggle: number }>`
-  ${(props) => (props.toggle === 0 ? choiceFont : "")}
-`;
-const Font2 = styled(Font)<{ toggle: number }>`
-  ${(props) => (props.toggle === 1 ? choiceFont : "")}
-`;
-const Font3 = styled(Font)<{ toggle: number }>`
-  ${(props) => (props.toggle === 2 ? choiceFont : "")}
-`;
-
-const FontName = styled(FontNameText)<{ toggle: number }>`
   font-family: ${(props) =>
       props.toggle === 0
-        ? "Yasashii"
+        ? props.fontsData[0]
         : props.toggle === 1
-        ? "Exo2"
+        ? props.fontsData[1]
         : props.toggle === 2
-        ? "NanumSquareRoundOTFR"
-        : ""},
-    sans-serif;
-`;
-
-const FontDetailContent = styled(FontDetailContentCommon)<{ toggle: number }>`
-  font-family: ${(props) =>
-      props.toggle === 0
-        ? "Yasashii"
-        : props.toggle === 1
-        ? "Exo2"
-        : props.toggle === 2
-        ? "NanumSquareRoundOTFR"
-        : ""},
-    sans-serif;
-`;
-
-const ContentDiv = styled(ContentDivCommon)<{ toggle: number }>`
-  font-family: ${(props) =>
-      props.toggle === 0
-        ? "Yasashii"
-        : props.toggle === 1
-        ? "Exo2"
-        : props.toggle === 2
-        ? "NanumSquareRoundOTFR"
+        ? props.fontsData[2]
+        : props.toggle === 3
+        ? props.fontsData[3]
         : ""},
     sans-serif;
 `;
 
 function ProjectFont({ projectData }: { projectData: IProjectsData }) {
   const [toggle, setToggle] = useState(0);
-  const ChangeToggle1 = () => {
-    setToggle(0);
-  };
-  const ChangeToggle2 = () => {
-    setToggle(1);
-  };
-  const ChangeToggle3 = () => {
-    setToggle(2);
+  const ToggleBtn = (index: number) => {
+    if (index === 0) {
+      setToggle(0);
+    }
+    if (index === 1) {
+      setToggle(1);
+    }
+    if (index === 2) {
+      setToggle(2);
+    }
+    if (index === 3) {
+      setToggle(3);
+    }
   };
 
   return (
@@ -184,29 +188,32 @@ function ProjectFont({ projectData }: { projectData: IProjectsData }) {
         <Typography>
           <span>Typography</span>
         </Typography>
-        <ChoiceDiv>
-          <ChoiceUl>
-            <Font1 toggle={toggle} onClick={ChangeToggle1}>
-              <span>Yasashii</span>
-            </Font1>
-            <Font2 toggle={toggle} onClick={ChangeToggle2}>
-              <span>Exo2</span>
-            </Font2>
-            <Font3 toggle={toggle} onClick={ChangeToggle3}>
-              <span>NanumSquareRound</span>
-            </Font3>
-          </ChoiceUl>
-        </ChoiceDiv>
+        <ToggleDiv>
+          <ToggleFont>
+            {projectData.fonts.map((font, index) => (
+              <Font
+                key={font}
+                index={index}
+                toggle={toggle}
+                onClick={() => ToggleBtn(index)}
+              >
+                <span>{font}</span>
+              </Font>
+            ))}
+          </ToggleFont>
+        </ToggleDiv>
       </FontTop>
-      <FontName toggle={toggle}>
+      <FontName toggle={toggle} fontsData={projectData.fonts}>
         <span>
           {toggle === 0
-            ? "YasashiiBold"
-            : toggle === 1
-            ? "Exo2 VariableFont"
-            : toggle === 2
-            ? `NanumSquare`
-            : ""}
+        ? projectData.fonts[0]
+        : toggle === 1
+        ? projectData.fonts[1]
+        : toggle === 2
+        ? projectData.fonts[2]
+        : toggle === 3
+        ? projectData.fonts[3]
+        : ""}
         </span>
       </FontName>
       <FontStyle>
@@ -214,7 +221,7 @@ function ProjectFont({ projectData }: { projectData: IProjectsData }) {
           <FontTittle>
             <h3>FONT DETAIL</h3>
           </FontTittle>
-          <FontDetailContent toggle={toggle}>
+          <FontDetailContent toggle={toggle} fontsData={projectData.fonts}>
             <span>AaBb</span>
           </FontDetailContent>
         </FontDetail>
@@ -222,7 +229,7 @@ function ProjectFont({ projectData }: { projectData: IProjectsData }) {
           <FontTittle>
             <h3>LETTERS + NUMBERS</h3>
           </FontTittle>
-          <ContentDiv toggle={toggle}>
+          <ContentDiv toggle={toggle} fontsData={projectData.fonts}>
             <span>
               Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv
               Ww Xx Yy Zz
