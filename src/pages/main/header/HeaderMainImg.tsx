@@ -69,7 +69,7 @@ function HeaderMainImg() {
   }, 6000);
   return (
     <Container>
-      <HeaderImg src={iconpng} />
+      <HeaderImg src={iconpng} alt="iconpng"/>
       <MotionBox>
         <InnerMotionBox>
           <MotionTop>

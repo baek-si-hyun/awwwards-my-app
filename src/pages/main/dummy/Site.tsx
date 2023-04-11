@@ -163,6 +163,7 @@ function Site() {
             <img
               src={awwwardicon}
               style={{ width: 30, height: 30, borderRadius: 20 }}
+              alt="awwwardicon"
             />
             <figcaption>
               <span>awwwards</span>
@@ -198,6 +199,7 @@ function Site() {
             <img
               src={upbiticon}
               style={{ width: 30, height: 30, borderRadius: 20 }}
+              alt="upbiticon"
             />
             <figcaption>
               <span>UPbit</span>
@@ -233,6 +235,7 @@ function Site() {
             <img
               src={binanceicon}
               style={{ width: 30, height: 30, borderRadius: 20 }}
+              alt="binanceicon"
             />
             <figcaption>
               <span>BINANCE</span>

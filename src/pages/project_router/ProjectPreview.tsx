@@ -1,14 +1,13 @@
 import styled from "styled-components";
 import { IProjectsData } from "../../interface/interface";
 
-const PreviewContaier = styled.div<{ cardBgColorData: string }>`
+const PreviewContaier = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 5vw 2.7vw;
-  background-color: ${(props) =>
-    props.cardBgColorData === "Coin" ? "#3e3e3e" : "#efefef"};
+  background-color: #efefef;
 `;
 
 const TextBox = styled.div`
@@ -69,10 +68,11 @@ const PreviewContainer = styled.div`
   flex-direction: column;
   gap: max(10px, 3vw);
 `;
-const Preview = styled.div`
+const Preview = styled.div<{ cardBgColorData: string }>`
   padding: 4vw;
   border-radius: 15px;
-  background-color: #222;
+  background-color: ${(props) =>
+    props.cardBgColorData === "CRYPTO TRACKER" ? "#3e3e3e" : "#222"};
   @media (max-width: 768px) {
     & {
       border-radius: 10px;
@@ -105,7 +105,7 @@ const PreviewImg = styled.img`
 
 function ProjectPreview({ projectData }: { projectData: IProjectsData }) {
   return (
-    <PreviewContaier cardBgColorData={projectData.id}>
+    <PreviewContaier >
       <TextBox>
         <TextBoxTop>
           <h2>{projectData.date}</h2>
@@ -125,7 +125,7 @@ function ProjectPreview({ projectData }: { projectData: IProjectsData }) {
       </TextBox>
       <PreviewContainer>
         {projectData.img.map((data) => (
-          <Preview>
+          <Preview cardBgColorData={projectData.name}>
             <PrevInner>
               <PreviewImg src={data} />
             </PrevInner>

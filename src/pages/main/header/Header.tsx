@@ -62,21 +62,22 @@ const LogoImg = styled.img`
 function Header() {
   const getResizeWidth = useRecoilValue(resizeWidth);
   const [speed, setSpeed] = useState(130);
-  const graphMode = () => {
-    if (getResizeWidth.resizeWidth > 1280) {
-      setSpeed(130);
-    }
-    if (getResizeWidth.resizeWidth <= 1280) {
-      setSpeed(90);
-    }
-    if (getResizeWidth.resizeWidth <= 768) {
-      setSpeed(60);
-    }
-    if (getResizeWidth.resizeWidth <= 429) {
-      setSpeed(40);
-    }
-  };
+
   useEffect(() => {
+    const graphMode = () => {
+      if (getResizeWidth.resizeWidth > 1280) {
+        setSpeed(130);
+      }
+      if (getResizeWidth.resizeWidth <= 1280) {
+        setSpeed(90);
+      }
+      if (getResizeWidth.resizeWidth <= 768) {
+        setSpeed(60);
+      }
+      if (getResizeWidth.resizeWidth <= 429) {
+        setSpeed(40);
+      }
+    };
     graphMode();
   }, [getResizeWidth]);
   return (

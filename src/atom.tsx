@@ -91,7 +91,6 @@ export const all = atom<Data[]>({
       artist: "Swedish House Mafia 및 The Weeknd",
       album: "Paradise Again • 2022",
     },
-
     {
       id: 4,
       img: adamjensen,
@@ -141,7 +140,6 @@ export const all = atom<Data[]>({
       artist: "YENA (최예나)",
       album: "ˣ‿ˣ (SMiLEY) • 2022",
     },
-
     {
       id: 11,
       img: smlie,

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useQuery } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
@@ -125,7 +126,6 @@ function CoinList() {
     () => fetchCoinTickers(coinList!),
     {
       enabled: !!coinList,
-
     }
   );
   const { isLoading, data: historyData } = useQuery<ICoinHistory[][]>(

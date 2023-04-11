@@ -126,7 +126,7 @@ function Footer() {
           </Ko>
           <En>
             <p>
-              I referred to the designs of awwwards, YoutubeMusic, and
+              I referred to the designs of awwwards, YoutubeMusic and
               coinmarketcap. <br />
               framer-motion, styled-components, @tanstack/react-query,
               react-beautiful-dnd, react-fast-marquee, usehooks-ts, recoil,
@@ -145,6 +145,7 @@ function Footer() {
             <a
               href="https://www.canva.com/design/DAFcx-92esU/mFPFWmdCEmeahY5B8e0vQw/view?utm_content=DAFcx-92esU&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink"
               target="_blank"
+              rel="noopener noreferrer"
             >
               Resume
             </a>

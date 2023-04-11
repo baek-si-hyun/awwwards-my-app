@@ -141,16 +141,16 @@ const SimpleBox = styled.div`
 function PastSchedule() {
   const [graph, setGraph] = useState(false);
   const getResizeWidth = useRecoilValue(resizeWidth);
-  const graphMode = () => {
-    if (getResizeWidth.resizeWidth <= 1000) {
-      setGraph(true);
-    }
-    if (getResizeWidth.resizeWidth > 1000) {
-      setGraph(false);
-    }
-  };
   useEffect(() => {
-    graphMode()
+    const graphMode = () => {
+      if (getResizeWidth.resizeWidth <= 1000) {
+        setGraph(true);
+      }
+      if (getResizeWidth.resizeWidth > 1000) {
+        setGraph(false);
+      }
+    };
+    graphMode();
   }, [getResizeWidth]);
   return (
     <Container>

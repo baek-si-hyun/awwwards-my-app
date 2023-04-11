@@ -3,7 +3,7 @@ import Footer from "../../components/Footer";
 import ProjectPreview from "./ProjectPreview";
 import ProjectFont from "./ProjectFont";
 import ProjectColor from "./ProjectColor";
-import Nav from "../../components/Nav";
+import Nav from "../../components/nav/Nav";
 import { useLocation } from "react-router-dom";
 
 const Container = styled.div`

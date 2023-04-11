@@ -1,9 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import {
-  IProjectsData,
-  IVisited,
-} from "../../../interface/interface";
+import { IProjectsData, IVisited } from "../../../interface/interface";
 
 import { projectsData } from "../../../services/listData";
 
@@ -194,7 +191,7 @@ function ProjectsLinkBox({ visited }: { visited: IVisited }) {
           key={data.id}
         >
           <InnerBoxImg>
-            <Img src={data.thumbnail} />
+            <Img src={data.thumbnail} alt="thumbnail" />
           </InnerBoxImg>
           <InnerBoxText>
             <TextTop>
@@ -207,7 +204,7 @@ function ProjectsLinkBox({ visited }: { visited: IVisited }) {
                   <small>by</small>
                 </div>
                 <InnerFigure>
-                  <img src={data.logo} />
+                  <img src={data.logo} alt="maker_logo" />
                   <figcaption>
                     <span>{data.by}</span>
                   </figcaption>
