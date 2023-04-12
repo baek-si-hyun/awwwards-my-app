@@ -116,6 +116,7 @@ function CoinList() {
   const [mergeData, setMergeData] = useState<ICoinListMerge[]>([]);
   const { data: nameData } = useQuery<ICoins[]>(["name"], () => fetchCoins(), {
     select: (data) => data.filter((data) => !data.market.indexOf("KRW")),
+    refetchOnWindowFocus: false,
   });
 
   const coinList = nameData
@@ -126,6 +127,7 @@ function CoinList() {
     () => fetchCoinTickers(coinList!),
     {
       enabled: !!coinList,
+      refetchOnWindowFocus: false,
     }
   );
   const { isLoading, data: historyData } = useQuery<ICoinHistory[][]>(
@@ -133,6 +135,7 @@ function CoinList() {
     () => fetchCoinHistory(coinList!),
     {
       enabled: !!tickerData,
+      refetchOnWindowFocus: false,
     }
   );
   const mergeFn = () => {

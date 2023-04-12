@@ -116,7 +116,6 @@ function NewJeans() {
                           <span>{newjeans.tittle}</span>
                         </Tittle>
                       </CardItem>
-
                       <CardItem>
                         <span>{newjeans.artist}</span>
                       </CardItem>

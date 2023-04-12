@@ -61,6 +61,5 @@
     "devDependencies": {
         "@types/react-beautiful-dnd": "^13.1.3",
         "@types/uuid": "^9.0.1"
-    },
-    "proxy": "https://api.upbit.com/v1"
+    }
 }

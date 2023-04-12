@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { UnderLine } from "../../components/mainCommon";
 import { IProjectsData } from "../../interface/interface";
 
@@ -39,7 +39,6 @@ const FontDetail = styled(UnderLine)`
   flex-direction: column;
   justify-content: center;
   gap: 20px;
- 
   padding-bottom: 2vw;
 `;
 const FontTittle = styled.div`
@@ -51,12 +50,16 @@ const FontTittle = styled.div`
     }
   }
 `;
-const LettersNumbers = styled((UnderLine))`
+const LettersNumbers = styled(UnderLine)`
   padding-bottom: 2vw;
 `;
 
-const choiceFont =
-  "border-bottom: 2px solid black;color:black;font-family:'Apercu', sans-serif;font-weight: 900;";
+const choiceFont = css`
+  border-bottom: 2px solid black;
+  color: black;
+  font-family: "Apercu", sans-serif;
+  font-weight: 900;
+`;
 const Font = styled.div<{ toggle: number; num: number }>`
   padding: 20px 0;
   cursor: pointer;
@@ -76,12 +79,7 @@ const Font = styled.div<{ toggle: number; num: number }>`
   }
 `;
 
-const FontName = styled(UnderLine)<{ toggle: number; fontsData: string[] }>`
-  font-size: 10vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: max(20px, 5vw) 0;
+const toggleFontFamily = css<{ toggle: number; fontsData: string[] }>`
   font-family: ${(props) =>
       props.toggle === 0
         ? props.fontsData[0]
@@ -94,21 +92,19 @@ const FontName = styled(UnderLine)<{ toggle: number; fontsData: string[] }>`
         : ""},
     sans-serif;
 `;
+const FontName = styled(UnderLine)<{ toggle: number; fontsData: string[] }>`
+  font-size: 10vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: max(20px, 5vw) 0;
+  ${toggleFontFamily}
+`;
 
 const FontDetailContent = styled.div<{ toggle: number; fontsData: string[] }>`
   font-size: 15vw;
   text-align: center;
-  font-family: ${(props) =>
-      props.toggle === 0
-        ? props.fontsData[0]
-        : props.toggle === 1
-        ? props.fontsData[1]
-        : props.toggle === 2
-        ? props.fontsData[2]
-        : props.toggle === 3
-        ? props.fontsData[3]
-        : ""},
-    sans-serif;
+  ${toggleFontFamily}
 `;
 
 const ContentDiv = styled.div<{ toggle: number; fontsData: string[] }>`
@@ -119,17 +115,7 @@ const ContentDiv = styled.div<{ toggle: number; fontsData: string[] }>`
   span {
     line-height: 1.4;
   }
-  font-family: ${(props) =>
-      props.toggle === 0
-        ? props.fontsData[0]
-        : props.toggle === 1
-        ? props.fontsData[1]
-        : props.toggle === 2
-        ? props.fontsData[2]
-        : props.toggle === 3
-        ? props.fontsData[3]
-        : ""},
-    sans-serif;
+  ${toggleFontFamily}
 `;
 
 function ProjectFont({ projectData }: { projectData: IProjectsData }) {
@@ -173,14 +159,14 @@ function ProjectFont({ projectData }: { projectData: IProjectsData }) {
       <FontName toggle={toggle} fontsData={projectData.fonts}>
         <span>
           {toggle === 0
-        ? projectData.fonts[0]
-        : toggle === 1
-        ? projectData.fonts[1]
-        : toggle === 2
-        ? projectData.fonts[2]
-        : toggle === 3
-        ? projectData.fonts[3]
-        : ""}
+            ? projectData.fonts[0]
+            : toggle === 1
+            ? projectData.fonts[1]
+            : toggle === 2
+            ? projectData.fonts[2]
+            : toggle === 3
+            ? projectData.fonts[3]
+            : ""}
         </span>
       </FontName>
       <FontStyle>
