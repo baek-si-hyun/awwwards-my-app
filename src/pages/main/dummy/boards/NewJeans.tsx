@@ -105,7 +105,12 @@ function NewJeans() {
                     >
                       <CardItem>
                         <ImgDiv>
-                          <Img src={newjeans.img} />
+                          <Img
+                            src={newjeans.img}
+                            alt="album_photo"
+                            loading="lazy"
+                            decoding="async"
+                          />
                         </ImgDiv>
                         <Tittle>
                           <span>{newjeans.tittle}</span>

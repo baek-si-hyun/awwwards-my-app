@@ -191,7 +191,7 @@ function ProjectsLinkBox({ visited }: { visited: IVisited }) {
           key={data.id}
         >
           <InnerBoxImg>
-            <Img src={data.thumbnail} alt="thumbnail" />
+            <Img src={data.thumbnail} alt="thumbnail" loading="lazy" decoding="async" />
           </InnerBoxImg>
           <InnerBoxText>
             <TextTop>
@@ -204,7 +204,7 @@ function ProjectsLinkBox({ visited }: { visited: IVisited }) {
                   <small>by</small>
                 </div>
                 <InnerFigure>
-                  <img src={data.logo} alt="maker_logo" />
+                  <img src={data.logo} alt="maker_logo" loading="lazy" decoding="async" />
                   <figcaption>
                     <span>{data.by}</span>
                   </figcaption>

@@ -115,7 +115,7 @@ function ProjectPreview({ projectData }: { projectData: IProjectsData }) {
         </TextBoxMiddle>
         <TextBoxbottom>
           <ImgBox>
-            <Img src={projectData.logo} />
+            <Img src={projectData.logo} alt="maker_logo" loading="lazy" decoding="async" />
           </ImgBox>
           <ImgText>
             <p>{projectData.by}</p>
@@ -127,7 +127,7 @@ function ProjectPreview({ projectData }: { projectData: IProjectsData }) {
         {projectData.img.map((data) => (
           <Preview cardBgColorData={projectData.name}>
             <PrevInner>
-              <PreviewImg src={data} />
+              <PreviewImg src={data} alt="preview" loading="lazy" decoding="async"/>
             </PrevInner>
           </Preview>
         ))}

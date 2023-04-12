@@ -74,8 +74,7 @@ export const NavBox = styled.ul`
     }
   }
 `;
-
-export const NavItem = styled.li<{ mainPosition: IMainPosition }>`
+const NavItemCommon = styled.li`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -83,6 +82,8 @@ export const NavItem = styled.li<{ mainPosition: IMainPosition }>`
   border-radius: 10px;
   overflow: hidden;
   transition: all 0.2s ease-in-out 0.5s;
+`;
+export const NavItem = styled(NavItemCommon)<{ mainPosition: IMainPosition }>`
   :nth-child(1) {
     font-weight: 600;
     background-color: ${(props) =>
@@ -106,14 +107,9 @@ export const NavItem = styled.li<{ mainPosition: IMainPosition }>`
   }
 `;
 
-export const RouterNavItem = styled.li<{ routerPosition: IRouterPosition }>`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid #4e4e4e;
-  border-radius: 10px;
-  overflow: hidden;
-  transition: all 0.2s ease-in-out 0.5s;
+export const RouterNavItem = styled(NavItemCommon)<{
+  routerPosition: IRouterPosition
+}>`
   :nth-child(1) {
     font-weight: 600;
     background-color: ${(props) =>
@@ -228,6 +224,39 @@ const BugerLabel = styled.div`
     margin: 1.5px 0;
   }
 `;
+
+function NavMode({
+  navHandler,
+  mainPosition,
+  routerPosition,
+  pathname,
+}: {
+  navHandler: any;
+  mainPosition: IMainPosition;
+  routerPosition: IRouterPosition;
+  pathname: string;
+}) {
+  return (
+    <>
+      {pathname === "/" ? (
+        <NavMainMode navHandler={navHandler} mainPosition={mainPosition} />
+      ) : pathname === "/Netflix" ||
+        "/Kanban" ||
+        "/Coin" ||
+        "/Myapp" ||
+        "/Airbnb" ? (
+        <NavRouterMode
+          pathname={pathname}
+          navHandler={navHandler}
+          routerPosition={routerPosition}
+        />
+      ) : (
+        ""
+      )}
+    </>
+  );
+}
+
 function Nav() {
   const [resize, setResize] = useState(window.innerWidth);
   const setResizeWidth = useSetRecoilState(resizeWidth);
@@ -263,7 +292,7 @@ function Nav() {
     about: false,
     schedule: false,
   });
-  
+
   const [routerPosition, setRouterPosition] = useState({
     sotd: false,
     fontColor: false,
@@ -283,7 +312,7 @@ function Nav() {
       {resize <= 768 ? (
         <BugerNav>
           <NavBoxLeft onClick={bugerNavToggle}>
-            <span>b. Home</span>
+            <span>B. Home</span>
             <BugerLabel>
               <span></span>
               <span></span>
@@ -291,48 +320,24 @@ function Nav() {
             </BugerLabel>
           </NavBoxLeft>
           <BugerInner menuSwitch={menuSwitch}>
-            {pathname === "/" ? (
-              <NavMainMode
-                navHandler={navHandler}
-                mainPosition={mainPosition}
-              />
-            ) : pathname === "/Netflix" ||
-              "/Kanban" ||
-              "/Coin" ||
-              "/Myapp" ||
-              "/Airbnb" ? (
-              <NavRouterMode
-                pathname={pathname}
-                navHandler={navHandler}
-                routerPosition={routerPosition}
-              />
-            ) : (
-              ""
-            )}
+            <NavMode
+              navHandler={navHandler}
+              mainPosition={mainPosition}
+              routerPosition={routerPosition}
+              pathname={pathname}
+            />
           </BugerInner>
         </BugerNav>
       ) : (
         <Navi>
           <NavBoxLeft>B. Home</NavBoxLeft>
           <NavBoxInner>
-            {pathname === "/" ? (
-              <NavMainMode
-                navHandler={navHandler}
-                mainPosition={mainPosition}
-              />
-            ) : pathname === "/Netflix" ||
-              "/Kanban" ||
-              "/Coin" ||
-              "/Myapp" ||
-              "/Airbnb" ? (
-              <NavRouterMode
-                pathname={pathname}
-                navHandler={navHandler}
-                routerPosition={routerPosition}
-              />
-            ) : (
-              ""
-            )}
+            <NavMode
+              navHandler={navHandler}
+              mainPosition={mainPosition}
+              routerPosition={routerPosition}
+              pathname={pathname}
+            />
           </NavBoxInner>
         </Navi>
       )}

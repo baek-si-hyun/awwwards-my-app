@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import lighthouse from "../../../assets/img/main_img/lighthouse.jpg";
+import lighthouse from "../../../assets/img/main_img/lighthouse.webp";
 
 const Container = styled.div`
   width: 100%;

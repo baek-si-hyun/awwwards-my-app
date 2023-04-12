@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { useState } from "react";
-import awwwardC from "../../../assets/img/main_img/awwwardC.png";
-import upbitC from "../../../assets/img/main_img/upbitC.png";
-import binanceC from "../../../assets/img/main_img/binanceC.png";
+import awwwardC from "../../../assets/img/main_img/awwwardC.webp";
+import upbitC from "../../../assets/img/main_img/upbitC.webp";
+import binanceC from "../../../assets/img/main_img/binanceC.webp";
 import awwwardicon from "../../../assets/img/main_img/awwwardicon.png";
 import upbiticon from "../../../assets/img/main_img/upbiticon.png";
 import binanceicon from "../../../assets/img/main_img/binanceicon.png";
@@ -164,6 +164,8 @@ function Site() {
               src={awwwardicon}
               style={{ width: 30, height: 30, borderRadius: 20 }}
               alt="awwwardicon"
+              loading="lazy"
+              decoding="async"
             />
             <figcaption>
               <span>awwwards</span>
@@ -200,6 +202,8 @@ function Site() {
               src={upbiticon}
               style={{ width: 30, height: 30, borderRadius: 20 }}
               alt="upbiticon"
+              loading="lazy"
+              decoding="async"
             />
             <figcaption>
               <span>UPbit</span>
@@ -236,6 +240,8 @@ function Site() {
               src={binanceicon}
               style={{ width: 30, height: 30, borderRadius: 20 }}
               alt="binanceicon"
+              loading="lazy"
+              decoding="async"
             />
             <figcaption>
               <span>BINANCE</span>

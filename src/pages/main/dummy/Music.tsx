@@ -116,7 +116,7 @@ function Music() {
     <MusicWrapper>
       <MusicBox>
         <InnerMusicBox1>
-          <MusicImg src={newjeans} />
+          <MusicImg src={newjeans} alt="newjeans" loading="lazy" decoding="async"/>
           <MusicTextBox>
             <div>
               <h2>NewJeans</h2>
@@ -141,7 +141,7 @@ function Music() {
           <NewJeans />
         </InnerMusicBox2>
         <InnerMusicBox3>
-          <MusicImg src={all} />
+          <MusicImg src={all} alt="famous artist" loading="lazy" decoding="async"/>
           <AllMusicTextBox>
             <div>
               <h2>"Subjective"</h2>

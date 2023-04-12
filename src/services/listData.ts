@@ -19,11 +19,11 @@ import airbnb1 from "../assets/img/project_img/projectairbnb1.jpg";
 import airbnb2 from "../assets/img/project_img/projectairbnb2.jpg";
 import airbnb3 from "../assets/img/project_img/projectairbnb3.jpg";
 import airbnb4 from "../assets/img/project_img/projectairbnb4.jpg";
-import airbnb from "../assets/img/main_img/airbnb.png";
-import coin from "../assets/img/main_img/coin.png";
-import todo from "../assets/img/main_img/todo.png";
-import myapp from "../assets/img/main_img/myapp.png";
-import netflix from "../assets/img/main_img/netflix.png";
+import airbnb from "../assets/img/main_img/airbnb.webp";
+import coin from "../assets/img/main_img/coin.webp";
+import todo from "../assets/img/main_img/todo.webp";
+import myapp from "../assets/img/main_img/myapp.webp";
+import netflix from "../assets/img/main_img/netflix.webp";
 export const projectsData = [
   {
     id: "Netflix",

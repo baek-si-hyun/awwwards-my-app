@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
-import war from "../../../assets/img/main_img/war.jpg";
-import bdo from "../../../assets/img/main_img/bdo.jpg";
-import lol from "../../../assets/img/main_img/lol.jpg";
+import war from "../../../assets/img/main_img/war.webp";
+import bdo from "../../../assets/img/main_img/bdo.webp";
+import lol from "../../../assets/img/main_img/lol.webp";
 import { gameName } from "../../../services/listData";
 
 const Container = styled.div`

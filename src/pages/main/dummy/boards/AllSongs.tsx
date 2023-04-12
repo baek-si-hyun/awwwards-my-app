@@ -121,7 +121,12 @@ function AllSongs() {
                     >
                       <CardItem>
                         <ImgDiv>
-                          <Img src={all.img} />
+                          <Img
+                            src={all.img}
+                            alt="album_photo"
+                            loading="lazy"
+                            decoding="async"
+                          />
                         </ImgDiv>
                         <Tittle>
                           <span>{all.tittle}</span>

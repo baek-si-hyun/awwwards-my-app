@@ -108,7 +108,7 @@ function Header() {
         </Wrap>
         <HeaderMainImg />
         <TextBox>
-          <LogoImg src={shb} />
+          <LogoImg src={shb} alt="maker_logo"/>
           <span>SiHyun-Baek initial logo</span>
         </TextBox>
       </InnerContainer>

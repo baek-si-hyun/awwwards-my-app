@@ -80,6 +80,9 @@ function TrBox({ data, key }: { data: ICoinListMerge; key: number }) {
             src={`https://static.upbit.com/logos/${data.market.substring(
               4
             )}.png`}
+            alt="coin_icon"
+            loading="lazy"
+            decoding="async"
           />
           <div>
             <span>{data.english_name}</span>
