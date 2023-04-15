@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/awwwards-my-app/static/css/main.05c417ed.css",
-    "main.js": "/awwwards-my-app/static/js/main.9bc48fac.js",
+    "main.js": "/awwwards-my-app/static/js/main.38c64e52.js",
     "static/media/projectnetflix1.jpg": "/awwwards-my-app/static/media/projectnetflix1.acff8fda7db1fd39b9b6.jpg",
     "static/media/projectnetflix2.jpg": "/awwwards-my-app/static/media/projectnetflix2.a62a9a244f045b4166fb.jpg",
     "static/media/projectmyapp3.jpg": "/awwwards-my-app/static/media/projectmyapp3.08fbff993725efb92ac6.jpg",
@@ -57,20 +57,20 @@
     "static/media/ApercuPro.woff2": "/awwwards-my-app/static/media/ApercuPro.ee976d69dfabd0d49abd.woff2",
     "static/media/Helvetica Neue Medium Extended.ttf": "/awwwards-my-app/static/media/Helvetica Neue Medium Extended.372d58a9bf10285baebe.ttf",
     "static/media/ApercuPro-Bold.woff2": "/awwwards-my-app/static/media/ApercuPro-Bold.7fbfd7d508c080196fbe.woff2",
+    "static/media/hypeboy_remix.jpg": "/awwwards-my-app/static/media/hypeboy_remix.b5e6e51a0f634d8583b0.jpg",
+    "static/media/omg_remix.jpg": "/awwwards-my-app/static/media/omg_remix.62a4edbec15f534089e1.jpg",
     "static/media/todo.webp": "/awwwards-my-app/static/media/todo.171d31156b6fd6b932cb.webp",
     "static/media/awwwardicon.png": "/awwwards-my-app/static/media/awwwardicon.73f8600fa876b639b316.png",
     "static/media/lighthouse.webp": "/awwwards-my-app/static/media/lighthouse.cd9dca04044d1d565c76.webp",
     "static/media/coin.webp": "/awwwards-my-app/static/media/coin.1119aca80786f6880b30.webp",
     "static/media/binanceicon.png": "/awwwards-my-app/static/media/binanceicon.d02fd5a1a492fb7bcc9f.png",
     "static/media/upbiticon.png": "/awwwards-my-app/static/media/upbiticon.4064bc4102e646afee38.png",
-    "static/media/smlie.jpg": "/awwwards-my-app/static/media/smlie.5608cd262b7dd6c523a2.jpg",
-    "static/media/blue.jpg": "/awwwards-my-app/static/media/blue.0173d3b80b726c93c330.jpg",
     "index.html": "/awwwards-my-app/index.html",
     "main.05c417ed.css.map": "/awwwards-my-app/static/css/main.05c417ed.css.map",
-    "main.9bc48fac.js.map": "/awwwards-my-app/static/js/main.9bc48fac.js.map"
+    "main.38c64e52.js.map": "/awwwards-my-app/static/js/main.38c64e52.js.map"
   },
   "entrypoints": [
     "static/css/main.05c417ed.css",
-    "static/js/main.9bc48fac.js"
+    "static/js/main.38c64e52.js"
   ]
 }
