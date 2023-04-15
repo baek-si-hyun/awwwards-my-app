@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/awwwards-my-app/static/css/main.05c417ed.css",
-    "main.js": "/awwwards-my-app/static/js/main.38c64e52.js",
+    "main.js": "/awwwards-my-app/static/js/main.3b619613.js",
     "static/media/projectnetflix1.jpg": "/awwwards-my-app/static/media/projectnetflix1.acff8fda7db1fd39b9b6.jpg",
     "static/media/projectnetflix2.jpg": "/awwwards-my-app/static/media/projectnetflix2.a62a9a244f045b4166fb.jpg",
     "static/media/projectmyapp3.jpg": "/awwwards-my-app/static/media/projectmyapp3.08fbff993725efb92ac6.jpg",
@@ -32,7 +32,9 @@
     "static/media/binanceC.webp": "/awwwards-my-app/static/media/binanceC.d1396b5a71bd04dfd5ba.webp",
     "static/media/SourceSansPro-Regular.ttf": "/awwwards-my-app/static/media/SourceSansPro-Regular.df87f53caf449a3b7572.ttf",
     "static/media/Roboto-Regular.ttf": "/awwwards-my-app/static/media/Roboto-Regular.fc2b5060f7accec5cf74.ttf",
+    "static/media/omg_remix.jpg": "/awwwards-my-app/static/media/omg_remix.151f08d7d8ddd33b7aeb.jpg",
     "static/media/ProductSans-Medium.ttf": "/awwwards-my-app/static/media/ProductSans-Medium.50b60017b2706bf654f4.ttf",
+    "static/media/hypeboy_remix.jpg": "/awwwards-my-app/static/media/hypeboy_remix.33652ae6663397f6e885.jpg",
     "static/media/projectairbnb3.jpg": "/awwwards-my-app/static/media/projectairbnb3.370c1508cc066df1d2ba.jpg",
     "static/media/GothamMedium.ttf": "/awwwards-my-app/static/media/GothamMedium.0a910c0b9d50be6aa3dc.ttf",
     "static/media/projectkanban4.jpg": "/awwwards-my-app/static/media/projectkanban4.a57ee8dd1f1d6295ebc6.jpg",
@@ -57,8 +59,6 @@
     "static/media/ApercuPro.woff2": "/awwwards-my-app/static/media/ApercuPro.ee976d69dfabd0d49abd.woff2",
     "static/media/Helvetica Neue Medium Extended.ttf": "/awwwards-my-app/static/media/Helvetica Neue Medium Extended.372d58a9bf10285baebe.ttf",
     "static/media/ApercuPro-Bold.woff2": "/awwwards-my-app/static/media/ApercuPro-Bold.7fbfd7d508c080196fbe.woff2",
-    "static/media/hypeboy_remix.jpg": "/awwwards-my-app/static/media/hypeboy_remix.b5e6e51a0f634d8583b0.jpg",
-    "static/media/omg_remix.jpg": "/awwwards-my-app/static/media/omg_remix.62a4edbec15f534089e1.jpg",
     "static/media/todo.webp": "/awwwards-my-app/static/media/todo.171d31156b6fd6b932cb.webp",
     "static/media/awwwardicon.png": "/awwwards-my-app/static/media/awwwardicon.73f8600fa876b639b316.png",
     "static/media/lighthouse.webp": "/awwwards-my-app/static/media/lighthouse.cd9dca04044d1d565c76.webp",
@@ -67,10 +67,10 @@
     "static/media/upbiticon.png": "/awwwards-my-app/static/media/upbiticon.4064bc4102e646afee38.png",
     "index.html": "/awwwards-my-app/index.html",
     "main.05c417ed.css.map": "/awwwards-my-app/static/css/main.05c417ed.css.map",
-    "main.38c64e52.js.map": "/awwwards-my-app/static/js/main.38c64e52.js.map"
+    "main.3b619613.js.map": "/awwwards-my-app/static/js/main.3b619613.js.map"
   },
   "entrypoints": [
     "static/css/main.05c417ed.css",
-    "static/js/main.38c64e52.js"
+    "static/js/main.3b619613.js"
   ]
 }
