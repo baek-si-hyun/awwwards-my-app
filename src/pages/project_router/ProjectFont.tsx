@@ -8,10 +8,10 @@ const FontContainer = styled.div`
   flex-direction: column;
 `;
 
-const FontTop = styled(UnderLine)`
+const FontTop = styled.div`
   display: flex;
   gap: 4vw;
-
+  ${UnderLine}
   @media (max-width: 480px) {
     & {
       font-size: 1vw;
@@ -34,24 +34,27 @@ const FontStyle = styled.div`
   gap: 20px;
   padding: 20px 0;
 `;
-const FontDetail = styled(UnderLine)`
+const FontDetail = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 20px;
   padding-bottom: 2vw;
+  ${UnderLine}
 `;
 const FontTittle = styled.div`
   font-weight: 100;
   font-size: 13px;
+
   @media (max-width: 480px) {
     & {
       font-size: 2vw;
     }
   }
 `;
-const LettersNumbers = styled(UnderLine)`
+const LettersNumbers = styled.div`
   padding-bottom: 2vw;
+  ${UnderLine}
 `;
 
 const choiceFont = css`
@@ -92,12 +95,13 @@ const toggleFontFamily = css<{ toggle: number; fontsData: string[] }>`
         : ""},
     sans-serif;
 `;
-const FontName = styled(UnderLine)<{ toggle: number; fontsData: string[] }>`
+const FontName = styled.div<{ toggle: number; fontsData: string[] }>`
   font-size: 10vw;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: max(20px, 5vw) 0;
+  ${UnderLine}
   ${toggleFontFamily}
 `;
 

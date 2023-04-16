@@ -105,7 +105,7 @@ const PreviewImg = styled.img`
 
 function ProjectPreview({ projectData }: { projectData: IProjectsData }) {
   return (
-    <PreviewContaier >
+    <PreviewContaier>
       <TextBox>
         <TextBoxTop>
           <h2>{projectData.date}</h2>

@@ -37,7 +37,8 @@ const DescriptionFont = styled.div`
   margin: 4vw 0;
 `;
 
-const DescriptionProject = styled.div``;
+const DescriptionProject = styled.div`
+`;
 const DescriptionProjectText = styled.div`
   font-size: 2vw;
   font-weight: 900;

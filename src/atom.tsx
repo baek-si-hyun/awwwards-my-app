@@ -3,17 +3,18 @@ import { v1 } from "uuid";
 import omg from "./assets/img/newjeans_song/omg.jpg";
 import ditto from "./assets/img/newjeans_song/ditto.jpg";
 import stEp from "./assets/img/newjeans_song/1stEP.jpg";
+import zero from "./assets/img/newjeans_song/zero.jpg";
 import adamjensen from "./assets/img/recommended_song/adamjensen.jpg";
 import ariana1 from "./assets/img/recommended_song/ariana1.jpg";
 import ariana2 from "./assets/img/recommended_song/ariana2.jpg";
 import charlie from "./assets/img/recommended_song/charlie.jpg";
 import aura from "./assets/img/recommended_song/aura1.jpg";
-import smlie from "./assets/img/recommended_song/smlie.jpg";
 import jack from "./assets/img/recommended_song/jack.jpg";
 import taiverdes from "./assets/img/recommended_song/taiverdes.jpg";
 import week1 from "./assets/img/recommended_song/week1.jpg";
 import week2 from "./assets/img/recommended_song/week2.jpg";
-import blue from "./assets/img/recommended_song/blue.jpg";
+import omgRemix from "./assets/img/recommended_song/omg_remix.jpg";
+import hypeboyRemix from "./assets/img/recommended_song/hypeboy_remix.jpg";
 import yena from "./assets/img/recommended_song/yena.jpg";
 import star from "./assets/img/recommended_song/star.jpg";
 import sweater from "./assets/img/recommended_song/sweater.jpg";
@@ -57,105 +58,106 @@ export const all = atom<Data[]>({
   key: `all/${v1()}`,
   default: [
     {
-      id: 10,
+      id: 0,
+      img: hypeboyRemix,
+      tittle: "Hype Boy(dylonmaycel rearranged)",
+      artist: "dylonmaycel",
+      album: "NewJeans 1st EP 'New Jeans'",
+    },
+    {
+      id: 1,
+      img: omgRemix,
+      tittle: "omg(Future Funk Remix)",
+      artist: "ZSunder",
+      album: "NewJeans'OMG'",
+    },
+    {
+      id: 2,
       img: aura,
       tittle: "Dead Girl! (Shake My Head)",
       artist: "Au/Ra",
       album: "Dead Girl! (Shake My Head) • 2021",
     },
     {
-      id: 0,
+      id: 3,
       img: taiverdes,
       tittle: "how deep?",
       artist: "Tai Verdes",
       album: "how deep? • 2022",
     },
     {
-      id: 1,
+      id: 4,
       img: jack,
       tittle: "First Class",
       artist: "Jack Harlow",
       album: "First Class • 2022",
     },
     {
-      id: 2,
+      id: 5,
       img: week1,
       tittle: "Heartless",
       artist: "The Weeknd",
       album: "After Hours • 2020",
     },
     {
-      id: 3,
+      id: 6,
       img: week2,
       tittle: "Moth To A Flame",
       artist: "Swedish House Mafia 및 The Weeknd",
       album: "Paradise Again • 2022",
     },
     {
-      id: 4,
+      id: 7,
       img: adamjensen,
       tittle: "I'm a Sucker for a Liar in a Red Dress",
       artist: "Adam Jensen",
       album: "I'm a Sucker for a Liar in a Red Dress • 2020",
     },
     {
-      id: 5,
+      id: 8,
       img: ariana1,
       tittle: "Wit It This Christmas",
       artist: "Ariana Grande",
       album: "Christmas & Chill • 2015",
     },
     {
-      id: 6,
+      id: 9,
       img: ariana2,
       tittle: "Daydreamin'",
       artist: "Ariana Grande",
       album: "Yours Truly • 2013",
     },
     {
-      id: 7,
+      id: 10,
       img: charlie,
       tittle: "Done for Me(feat. Kehlani)",
       artist: "Charlie Puth",
       album: "Voicenotes",
     },
     {
-      id: 14,
+      id: 11,
       img: iu,
       tittle: "에잇(feat. SUGA)",
       artist: "아이유(IU)",
       album: "에잇 • 2020",
     },
+
     {
-      id: 8,
-      img: blue,
-      tittle: "BLUE CHECK(feat. Jay Park, Jessi)",
-      artist: "토이고 (toigo)",
-      album: "쇼미더머니 11 Episode 3 • 2022",
-    },
-    {
-      id: 9,
+      id: 12,
       img: yena,
       tittle: "SMILEY(feat. BIBI)",
       artist: "YENA (최예나)",
       album: "ˣ‿ˣ (SMiLEY) • 2022",
     },
     {
-      id: 11,
-      img: smlie,
-      tittle: "Happy Face",
-      artist: "Jagwar Twin",
-      album: "Happy Face • 2020",
-    },
-    {
-      id: 12,
+      id: 13,
       img: star,
       tittle: "3LAU - Star Crossed (J3SH & LHB Remix)",
       artist: "T. S.",
       album: "2018",
     },
     {
-      id: 13,
+      id: 14,
       img: sweater,
       tittle: "Sweater Weather (Gaullin Remix)",
       artist: "The Neighbourhood",
@@ -177,27 +179,34 @@ export const newJeans = atom<Data[]>({
     { id: 1, img: ditto, tittle: "Ditto", artist: "NewJeans", album: "Ditto" },
     {
       id: 2,
+      img: zero,
+      tittle: "Zero",
+      artist: "NewJeans",
+      album: "Zero",
+    },
+    {
+      id: 3,
       img: stEp,
       tittle: "Hype Boy",
       artist: "NewJeans",
       album: "NewJeans 1st EP 'New Jeans'",
     },
     {
-      id: 3,
+      id: 4,
       img: stEp,
       tittle: "Attention",
       artist: "NewJeans",
       album: "NewJeans 1st EP 'New Jeans'",
     },
     {
-      id: 4,
+      id: 5,
       img: stEp,
       tittle: "Cookie",
       artist: "NewJeans",
       album: "NewJeans 1st EP 'New Jeans'",
     },
     {
-      id: 5,
+      id: 6,
       img: stEp,
       tittle: "Hurt",
       artist: "NewJeans",

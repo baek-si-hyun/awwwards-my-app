@@ -3,9 +3,10 @@ import styled from "styled-components";
 import { UnderLine } from "../../components/mainCommon";
 import { IProjectsData } from "../../interface/interface";
 const ColorContainer = styled.div``;
-const ColorInner = styled(UnderLine)`
+const ColorInner = styled.div`
   display: flex;
   flex-direction: column;
+  ${UnderLine}
 `;
 const ColorText = styled.div`
   width: 15%;

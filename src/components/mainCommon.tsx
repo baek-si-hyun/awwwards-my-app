@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 export const Container = styled.div`
   width: 100%;
 `;
@@ -43,7 +43,7 @@ export const TextBoxbottom = styled.div`
     }
   }
 `;
-export const UnderLine = styled.div`
+export const UnderLine = css`
   background: #f8f8f8;
   background-image: linear-gradient(
     to right,

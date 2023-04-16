@@ -99,15 +99,9 @@ export interface Data {
   album: string;
 }
 
-interface IrowDataArr {
-  num: number;
-  text: string;
-}
-export interface IrowData {
+export interface IScheduleData {
   id: number;
-  arr: IrowDataArr[];
-}
-export interface IAbsoluteBoxData {
-  id: number;
-  text: string;
+  text: string[];
+  absoluteBox: string;
+  date: string;
 }

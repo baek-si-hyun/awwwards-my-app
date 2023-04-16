@@ -1,38 +1,9 @@
 import styled from "styled-components";
 import Footer from "../../components/Footer";
+import { Container, InnerContainer, TextBox, TextBoxMiddle, TextBoxTop } from "../../components/mainCommon";
 import EmailJs from "./EmailJs";
 
-const Container = styled.div`
-  width: 100%;
-  height: 100%;
-`;
-
-const InnerContainer = styled.div`
-  padding: 3vw 2.7vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-const TextBox = styled.div`
-  margin-top: 4vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-const TextBoxTop = styled.div`
-  margin-bottom: 2.1vw;
-  font-size: 0.8vw;
-`;
-
-const TextBoxMiddle = styled.div`
-  font-size: 9vw;
-  font-weight: bold;
-  text-transform: uppercase;
-`;
 const EmailJsContainer = styled.div`
-  margin-top: 6vw;
   display: flex;
   gap: 10vw;
   @media (max-width: 640px) {

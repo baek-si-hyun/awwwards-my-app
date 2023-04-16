@@ -1,44 +1,32 @@
 export async function fetchCoins() {
-  try {
-    const response = await fetch(
-      `https://api.upbit.com/v1/market/all?isDetails=false`
-    );
-    return await response.json();
-  } catch (e) {
-    alert(e);
-  }
+  const response = await fetch(
+    `https://api.upbit.com/v1/market/all?isDetails=false`
+  );
+  return await response.json();
 }
 
 export async function fetchCoinTickers(coinList: string[]) {
-  try {
-    let results = [];
-    for (let index = 0; index < coinList.length; index++) {
-      const response = await fetch(
-        `https://api.upbit.com/v1/ticker?markets=${coinList[index]}`
-      );
-      const [json] = await response.json();
-      results.push(json);
-    }
-    return results;
-  } catch (e) {
-    alert(e);
+  let results = [];
+  for (let index = 0; index < coinList.length; index++) {
+    const response = await fetch(
+      `https://api.upbit.com/v1/ticker?markets=${coinList[index]}`
+    );
+    const [json] = await response.json();
+    results.push(json);
   }
+  return results;
 }
 
 export async function fetchCoinHistory(coinList: string[]) {
-  try {
-    let results = [];
-    for (let index = 0; index < coinList.length; index++) {
-      const response = await fetch(
-        `https://api.upbit.com/v1/candles/days?market=${coinList[index]}&count=200&convertingPriceUnit=KRW`
-      );
-      const json = await response.json();
-      results.push(json);
-    }
-    return results;
-  } catch (e) {
-    alert(e);
+  let results = [];
+  for (let index = 0; index < coinList.length; index++) {
+    const response = await fetch(
+      `https://api.upbit.com/v1/candles/days?market=${coinList[index]}&count=200&convertingPriceUnit=KRW`
+    );
+    const json = await response.json();
+    results.push(json);
   }
+  return results;
 }
 //무료 Supply api, market cap api 못찾겠다...
 export const circulatingSupply = [

@@ -58,7 +58,7 @@ export default function ScrollToTop() {
   const getVisited = async () => {
     const data = await getDocs(usersCollectionRef);
     const visitedDataArr = data.docs.map((doc) => doc.data());
-    const [visitedData] = visitedDataArr
+    const [visitedData] = visitedDataArr;
     const dbDoc = doc(db, "visited", "voY1RSJ3r8uY5XukEgol");
     const date = new Date();
     const todayDate = date.getDate();
@@ -92,10 +92,9 @@ export default function ScrollToTop() {
     window.scrollTo({
       top: 0,
       left: 0,
-      behavior: "auto",
     });
     getVisited();
-    pathCorrection()
+    pathCorrection();
   }, [pathname]);
   useEffect(() => {
     updateVisited(pathname);
