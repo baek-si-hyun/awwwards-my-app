@@ -109,7 +109,7 @@ function CoinList() {
   };
   const [more, setMore] = useState(false);
   const moreDisable = () => {
-    if (count === 110 || !mergeData) {
+    if (count === 110 || !tickerData) {
       setMore(() => true);
     } else {
       setMore(() => false);
