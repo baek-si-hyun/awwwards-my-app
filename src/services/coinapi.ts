@@ -1,3 +1,4 @@
+import { useQuery } from "@tanstack/react-query";
 export async function fetchCoins() {
   const response = await fetch(
     `https://api.upbit.com/v1/market/all?isDetails=false`
@@ -5,16 +6,47 @@ export async function fetchCoins() {
   return await response.json();
 }
 
-export async function fetchCoinTickers(coinList: string[]) {
-  let results = [];
-  for (let index = 0; index < coinList.length; index++) {
-    const response = await fetch(
-      `https://api.upbit.com/v1/ticker?markets=${coinList[index]}`
-    );
-    const [json] = await response.json();
-    results.push(json);
-  }
-  return results;
+export function useCoinTickers(coinList: string[]) {
+  const fetchCoinTickers = async () => {
+    const socket = new WebSocket(`ws://localhost:3001`);
+    let newArr: any[] = [];
+
+    socket.addEventListener("open", () => {
+      console.log("Connected to Server");
+      socket.send(JSON.stringify(coinList));
+    });
+
+    return new Promise<any[]>((resolve, reject) => {
+      socket.addEventListener("message", (message) => {
+        const jsonData = JSON.parse(message.data).messages;
+        const overlapIndex = newArr.findIndex(
+          (data) => data.code === jsonData[0].code
+        );
+        if (overlapIndex !== -1) {
+          newArr[overlapIndex] = jsonData[0];
+        } else {
+          newArr.push(...jsonData);
+        }
+        setInterval(() => {
+          resolve(newArr);
+        }, 1000);
+      });
+
+      socket.addEventListener("error", (error) => {
+        reject(error);
+      });
+    });
+  };
+
+  return useQuery<any[], Error>(
+    ["coinTickers", coinList],
+    () => fetchCoinTickers(),
+    {
+      enabled: !!coinList,
+      refetchInterval: 1000,
+      cacheTime: 1000,
+    }
+  );
 }
 
 export async function fetchCoinHistory(coinList: string[]) {
@@ -28,6 +60,7 @@ export async function fetchCoinHistory(coinList: string[]) {
   }
   return results;
 }
+
 //무료 Supply api, market cap api 못찾겠다...
 export const circulatingSupply = [
   {

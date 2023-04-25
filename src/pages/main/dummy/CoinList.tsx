@@ -6,7 +6,7 @@ import {
   circulatingSupply,
   fetchCoinHistory,
   fetchCoins,
-  fetchCoinTickers,
+  useCoinTickers,
 } from "../../../services/coinApi";
 import {
   ICoinHistory,
@@ -17,6 +17,8 @@ import {
 import Colgroup from "./coinList/ColGroup";
 import TheadTr from "./coinList/TheadTr";
 import TbodyTr from "./coinList/TbodyTr";
+import { constSelector } from "recoil";
+import React from "react";
 
 const CoinListWrapper = styled.div`
   width: 100%;
@@ -107,7 +109,7 @@ function CoinList() {
   };
   const [more, setMore] = useState(false);
   const moreDisable = () => {
-    if (count === 110 || !tickerData) {
+    if (count === 110 || !mergeData) {
       setMore(() => true);
     } else {
       setMore(() => false);
@@ -122,47 +124,17 @@ function CoinList() {
   const coinList = nameData
     ?.map((data) => data.market)
     .slice(count, count + 10);
-  const { data: tickerData } = useQuery<ICoinTickers[]>(
-    ["ticker", count],
-    () => fetchCoinTickers(coinList!),
-    {
-      enabled: !!coinList,
-      refetchOnWindowFocus: false,
-    }
+  const { isLoading: tickerLoading, data: tickerData } = useCoinTickers(
+    coinList!
   );
-  const { isLoading, data: historyData } = useQuery<ICoinHistory[][]>(
-    ["history", count],
-    () => fetchCoinHistory(coinList!),
-    {
-      enabled: !!tickerData,
-      refetchOnWindowFocus: false,
-    }
-  );
+  const { isLoading: historyLoading, data: historyData } = useQuery<
+    ICoinHistory[][]
+  >(["history", count], () => fetchCoinHistory(coinList!), {
+    enabled: !!coinList,
+    refetchOnWindowFocus: false,
+  });
   const mergeFn = () => {
-    const newTickerData = tickerData?.map((data) => data).flat();
-    let newArr: ICoinListMerge[] = [...mergeData];
-    nameData?.forEach((nameArr) => {
-      newTickerData?.forEach((tickerArr) => {
-        if (nameArr.market === tickerArr.market) {
-          circulatingSupply.forEach((supplyArr) => {
-            if (tickerArr.market === supplyArr.id) {
-              historyData?.forEach((historyArr) => {
-                if (tickerArr.market === historyArr[0].market) {
-                  let newObject = {
-                    ...nameArr,
-                    ...tickerArr,
-                    ...supplyArr,
-                    historyArr,
-                  };
-                  return newArr.push(newObject);
-                }
-              });
-            }
-          });
-        }
-      });
-    });
-    setMergeDataFn(newArr);
+    console.log(tickerData);
   };
 
   const setMergeDataFn = (newArr: ICoinListMerge[]) => {
@@ -170,12 +142,13 @@ function CoinList() {
   };
 
   useEffect(() => {
-    if (!isLoading) {
+    if (!tickerData) {
       mergeFn();
     }
     resetDisable();
     moreDisable();
-  }, [isLoading, count]);
+    console.log(tickerData);
+  }, [tickerData, count]);
   return (
     <CoinListWrapper>
       <WrapperInner>
@@ -206,4 +179,4 @@ function CoinList() {
     </CoinListWrapper>
   );
 }
-export default CoinList;
+export default React.memo(CoinList);

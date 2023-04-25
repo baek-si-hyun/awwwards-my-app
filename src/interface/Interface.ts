@@ -18,22 +18,27 @@ export interface ICoins {
   english_name: string;
 }
 export interface ICoinTickers {
-  market: string;
+  code: string;
   trade_price: number;
   change: string;
   change_price: number;
+  signed_change_price: number;
   change_rate: number;
+  signed_change_rate: number;
   acc_trade_price_24h: number;
   acc_trade_volume_24h: number;
 }
 export interface ICoinListMerge {
   market: string;
+  code: string;
   korean_name: string;
   english_name: string;
   trade_price: number;
   change: string;
   change_price: number;
+  signed_change_price: number;
   change_rate: number;
+  signed_change_rate: number;
   acc_trade_price_24h: number;
   acc_trade_volume_24h: number;
   historyArr: ICoinHistory[];
@@ -98,7 +103,6 @@ export interface Data {
   artist: string;
   album: string;
 }
-
 export interface IScheduleData {
   id: number;
   text: string[];

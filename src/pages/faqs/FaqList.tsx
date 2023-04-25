@@ -123,7 +123,6 @@ function FaqList() {
     let findIndex = list.findIndex((list) => list.id === id);
     let copiedItems = [...list];
     copiedItems[findIndex].value = !copiedItems[findIndex].value;
-    console.log(copiedItems);
     setList(copiedItems);
   };
   return (

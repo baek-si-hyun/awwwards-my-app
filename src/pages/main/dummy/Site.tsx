@@ -47,7 +47,6 @@ const SiteTextBox = styled.div`
     }
   }
 `;
-
 const InnerFigure = styled.figure`
   display: flex;
   align-items: center;
