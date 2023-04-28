@@ -1,4 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
+import { useState, useEffect } from "react";
+
 export async function fetchCoins() {
   const response = await fetch(
     `https://api.upbit.com/v1/market/all?isDetails=false`
@@ -7,18 +9,30 @@ export async function fetchCoins() {
 }
 
 export function useCoinTickers(coinList: string[]) {
-  const fetchCoinTickers = async () => {
-    const socket = new WebSocket(`ws://localhost:3001`);
-    let newArr: any[] = [];
+  const [socket, setSocket] = useState<WebSocket | null>(null);
 
-    socket.addEventListener("open", () => {
+  useEffect(() => {
+    const newSocket = new WebSocket(`ws://localhost:3001`);
+    setSocket(newSocket);
+
+    return () => {
+      newSocket.close();
+    };
+  }, []);
+
+  const fetchCoinTickers = async () => {
+    return new Promise<any[]>((resolve, reject) => {
+      if (!socket) {
+        reject(new Error("WebSocket is not connected"));
+        return;
+      }
+
       console.log("Connected to Server");
       socket.send(JSON.stringify(coinList));
-    });
-
-    return new Promise<any[]>((resolve, reject) => {
+      let newArr: any[] = [];
       socket.addEventListener("message", (message) => {
         const jsonData = JSON.parse(message.data).messages;
+
         const overlapIndex = newArr.findIndex(
           (data) => data.code === jsonData[0].code
         );

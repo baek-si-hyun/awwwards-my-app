@@ -3,7 +3,6 @@ import { useQuery } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import {
-  circulatingSupply,
   fetchCoinHistory,
   fetchCoins,
   useCoinTickers,
@@ -17,7 +16,6 @@ import {
 import Colgroup from "./coinList/ColGroup";
 import TheadTr from "./coinList/TheadTr";
 import TbodyTr from "./coinList/TbodyTr";
-import { constSelector } from "recoil";
 import React from "react";
 
 const CoinListWrapper = styled.div`
