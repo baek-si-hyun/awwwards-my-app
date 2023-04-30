@@ -1,6 +1,12 @@
 import styled from "styled-components";
 import ReactApexChart from "react-apexcharts";
-import { ICoinListMerge } from "../../../../interface/interface";
+import {
+  ICoinHistory,
+  ICoinListMerge,
+  ICoins,
+} from "../../../../interface/interface";
+import { useQuery } from "@tanstack/react-query";
+import { fetchCoinHistory } from "../../../../services/coinApi";
 
 const ApexChartDiv = styled.div`
   max-width: 100%;
@@ -19,67 +25,75 @@ const ApexChart = styled(ReactApexChart)`
       ? " #1261c4"
       : "#222"};
 `;
-function Chart({ data }: { data: ICoinListMerge }) {
+function Chart({
+  history,
+  change,
+}: {
+  history: ICoinHistory[];
+  change: string;
+}) {
   return (
-    <ApexChartDiv>
-      <ApexChart
-        change={data.change}
-        type="line"
-        series={[
-          {
-            data:
-              data.historyArr.map((price) => ({
-                x: price.timestamp,
-                y: price.prev_closing_price,
-              })) ?? [],
-          },
-        ]}
-        options={{
-          chart: {
-            type: "line",
-            background: "transparent",
-            zoom: { enabled: false },
-            toolbar: {
+    <>
+      <ApexChartDiv>
+        <ApexChart
+          change={change}
+          type="line"
+          series={[
+            {
+              data:
+                history.map((price) => ({
+                  x: price.timestamp,
+                  y: price.prev_closing_price,
+                })) ?? [],
+            },
+          ]}
+          options={{
+            chart: {
+              type: "line",
+              background: "transparent",
+              zoom: { enabled: false },
+              toolbar: {
+                show: false,
+              },
+              animations: {
+                enabled: false,
+              },
+            },
+            grid: {
               show: false,
             },
-            animations: {
+            legend: {
+              show: false,
+            },
+            dataLabels: {
               enabled: false,
             },
-          },
-          grid: {
-            show: false,
-          },
-          legend: {
-            show: false,
-          },
-          dataLabels: {
-            enabled: false,
-          },
-          labels: {
-            show: false,
-          },
-          tooltip: {
-            enabled: false,
-          },
-          markers: { size: 0 },
-          stroke: { curve: "smooth", width: 3 },
-          colors: [
-            data.change === "RISE"
-              ? "#c84a31"
-              : data.change === "EVEN"
-              ? "#222"
-              : "#1261c4",
-          ],
-          xaxis: {
-            axisBorder: { show: false },
-            axisTicks: { show: false },
-            labels: { show: false },
-            type: "datetime",
-          },
-          yaxis: { show: false },
-        }}
-      />
-    </ApexChartDiv>
+            labels: {
+              show: false,
+            },
+            tooltip: {
+              enabled: false,
+            },
+            markers: { size: 0 },
+            stroke: { curve: "smooth", width: 3 },
+            colors: [
+              change === "RISE"
+                ? "#c84a31"
+                : change === "EVEN"
+                ? "#222"
+                : "#1261c4",
+            ],
+            xaxis: {
+              axisBorder: { show: false },
+              axisTicks: { show: false },
+              labels: { show: false },
+              type: "datetime",
+            },
+            yaxis: { show: false },
+          }}
+        />
+      </ApexChartDiv>
+    </>
   );
 }
 export default Chart;

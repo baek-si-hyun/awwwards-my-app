@@ -23,7 +23,7 @@ export function useCoinTickers(coinList: string[]) {
   const fetchCoinTickers = async () => {
     return new Promise<any[]>((resolve, reject) => {
       if (!socket) {
-        reject(new Error("WebSocket is not connected"));
+        reject("WebSocket is not connected");
         return;
       }
 
@@ -32,7 +32,6 @@ export function useCoinTickers(coinList: string[]) {
       let newArr: any[] = [];
       socket.addEventListener("message", (message) => {
         const jsonData = JSON.parse(message.data).messages;
-
         const overlapIndex = newArr.findIndex(
           (data) => data.code === jsonData[0].code
         );

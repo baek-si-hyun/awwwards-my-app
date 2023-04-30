@@ -28,21 +28,19 @@ export interface ICoinTickers {
   acc_trade_price_24h: number;
   acc_trade_volume_24h: number;
 }
-export interface ICoinListMerge {
-  market: string;
+export interface ICoinTickers {
   code: string;
-  korean_name: string;
-  english_name: string;
   trade_price: number;
   change: string;
-  change_price: number;
-  signed_change_price: number;
-  change_rate: number;
-  signed_change_rate: number;
-  acc_trade_price_24h: number;
-  acc_trade_volume_24h: number;
+
+}
+export interface ICoinListMerge {
   historyArr: ICoinHistory[];
+  id: string;
   supply: number;
+  market: string;
+  korean_name: string;
+  english_name: string;
 }
 export interface ICoinHistory {
   candle_date_time_kst: string;
