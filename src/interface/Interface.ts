@@ -28,12 +28,6 @@ export interface ICoinTickers {
   acc_trade_price_24h: number;
   acc_trade_volume_24h: number;
 }
-export interface ICoinTickers {
-  code: string;
-  trade_price: number;
-  change: string;
-
-}
 export interface ICoinListMerge {
   historyArr: ICoinHistory[];
   id: string;

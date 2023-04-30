@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { useState, useEffect } from "react";
+import { ICoinTickers } from "../interface/interface";
 
 export async function fetchCoins() {
   const response = await fetch(
@@ -23,7 +24,7 @@ export function useCoinTickers(coinList: string[]) {
   const fetchCoinTickers = async () => {
     return new Promise<any[]>((resolve, reject) => {
       if (!socket) {
-        reject("WebSocket is not connected");
+        reject("The websocket connection is experiencing some delay.");
         return;
       }
 
@@ -42,7 +43,7 @@ export function useCoinTickers(coinList: string[]) {
         }
         setInterval(() => {
           resolve(newArr);
-        }, 1000);
+        }, 2000);
       });
 
       socket.addEventListener("error", (error) => {
@@ -51,13 +52,13 @@ export function useCoinTickers(coinList: string[]) {
     });
   };
 
-  return useQuery<any[], Error>(
+  return useQuery<ICoinTickers[], Error>(
     ["coinTickers", coinList],
     () => fetchCoinTickers(),
     {
       enabled: !!coinList,
-      refetchInterval: 1000,
-      cacheTime: 1000,
+      refetchInterval: 2000,
+      cacheTime: 2000,
     }
   );
 }

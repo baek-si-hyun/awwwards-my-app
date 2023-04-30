@@ -94,20 +94,20 @@ function CoinList() {
   const resetHandler = () => {
     setCount(() => 0);
   };
-  const [reset, setReset] = useState(false);
+  const [prev, setPrev] = useState(false);
   const resetDisable = () => {
     if (count === 0) {
-      setReset(() => true);
+      setPrev(() => true);
     } else {
-      setReset(() => false);
+      setPrev(() => false);
     }
   };
-  const [more, setMore] = useState(false);
+  const [next, setNext] = useState(false);
   const moreDisable = () => {
     if (count === 110) {
-      setMore(() => true);
+      setNext(() => true);
     } else {
-      setMore(() => false);
+      setNext(() => false);
     }
   };
 
@@ -120,12 +120,14 @@ function CoinList() {
     ?.map((data) => data.market)
     .slice(count, count + 10);
 
-  const { data: historyData } = useQuery<
-    ICoinHistory[][]
-  >(["history", count], () => fetchCoinHistory(coinList!), {
-    enabled: !!coinList,
-    refetchOnWindowFocus: false,
-  });
+  const { data: historyData } = useQuery<ICoinHistory[][]>(
+    ["history", count],
+    () => fetchCoinHistory(coinList!),
+    {
+      enabled: !!coinList,
+      refetchOnWindowFocus: false,
+    }
+  );
 
   const mergeFn = () => {
     let newArr: ICoinListMerge[] = [];
@@ -149,7 +151,6 @@ function CoinList() {
   };
   const setMergeDataFn = (newArr: ICoinListMerge[]) => {
     setMergeData(() => newArr);
-    console.log(mergeData);
   };
   useEffect(() => {
     if (historyData) {
@@ -175,12 +176,12 @@ function CoinList() {
           </ListTable>
         </TableBox>
         <BtnBox>
-          <MoreBtn onClick={countHandler} disabled={more} more={more}>
-            more
-          </MoreBtn>
-          <ResetBtn onClick={resetHandler} disabled={reset} reset={reset}>
-            reset
+          <ResetBtn onClick={resetHandler} disabled={prev} reset={prev}>
+            prev
           </ResetBtn>
+          <MoreBtn onClick={countHandler} disabled={next} more={next}>
+            next
+          </MoreBtn>
         </BtnBox>
       </WrapperInner>
     </CoinListWrapper>
