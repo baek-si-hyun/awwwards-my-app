@@ -45,86 +45,68 @@ export const Tr = styled.tr`
 const BtnBox = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 0.5vw;
   margin-top: 40px;
-  @media (max-width: 1050px) {
-    & {
-      flex-direction: column;
-      justify-content: center;
-    }
-  }
 `;
-const Btn = styled.button`
+const PageBtn = styled.button<{ selected: boolean }>`
   font-family: "Apercu", sans-serif;
   font-weight: 600;
+  border: none;
   border-radius: 7px;
   font-size: 15px;
   cursor: pointer;
-  padding: 10px 20px;
+  padding: 5px 10px;
   transition: all 0.2s ease-in-out;
-`;
-const MoreBtn = styled(Btn)<{ more: boolean }>`
-  background-color: #f8f8f8;
-  border: 2px solid ${(props) => (props.more === true ? "#e2e2e2" : "#222")};
-  color: ${(props) => (props.more === true ? "#e2e2e2" : "#222")};
-  :hover {
-    background-color: ${(props) => (props.more === true ? "#f8f8f8" : "#222")};
-    color: ${(props) => (props.more === true ? "#e2e2e2" : "#fff")};
-  }
-`;
-const ResetBtn = styled(Btn)<{ reset: boolean }>`
-  background-color: #f8f8f8;
-  border: 2px solid ${(props) => (props.reset === true ? "#e2e2e2" : "#222")};
-  color: ${(props) => (props.reset === true ? "#e2e2e2" : "#222")};
-  :hover {
-    background-color: ${(props) => (props.reset === true ? "#f8f8f8" : "#222")};
-    color: ${(props) => (props.reset === true ? "#e2e2e2" : "#fff")};
-  }
+  background-color: ${(props) => (props.selected ? "#333" : "transparent")};
+  color: ${(props) => (props.selected ? "#fff" : "#333")};
 `;
 function CoinList() {
-  const [count, setCount] = useState(0);
-  const countHandler = () => {
-    if (count <= 110) {
-      setCount((count) => count + 10);
-    } else {
-      return;
-    }
+  const [page, setPage] = useState(1);
+  const [count, setCount] = useState(10);
+  const [selectedPage, setSelectedPage] = useState(1);
+  const pageNation = (pageNum: number) => {
+    setPage(() => pageNum);
   };
-  const resetHandler = () => {
-    setCount(() => 0);
+  useEffect(() => {
+    updateCount(page);
+    setSelectedPage(page);
+  }, [page]);
+  const updateCount = (page: number) => {
+    setCount(() => page * 10);
   };
-  const [prev, setPrev] = useState(false);
-  const resetDisable = () => {
-    if (count === 0) {
-      setPrev(() => true);
-    } else {
-      setPrev(() => false);
+  const makePageBtn = () => {
+    const pageButtons = [];
+    for (let i = 1; i <= 12; i++) {
+      pageButtons.push(
+        <PageBtn
+          onClick={() => pageNation(i)}
+          key={i}
+          selected={i === selectedPage}
+        >
+          {i}
+        </PageBtn>
+      );
     }
-  };
-  const [next, setNext] = useState(false);
-  const moreDisable = () => {
-    if (count === 110) {
-      setNext(() => true);
-    } else {
-      setNext(() => false);
-    }
+    return pageButtons;
   };
 
   const [mergeData, setMergeData] = useState<ICoinListMerge[]>([]);
   const { data: nameData } = useQuery<ICoins[]>(["name"], () => fetchCoins(), {
     select: (data) => data.filter((data) => !data.market.indexOf("KRW")),
+    refetchOnMount: false,
     refetchOnWindowFocus: false,
   });
   const coinList = nameData
     ?.map((data) => data.market)
-    .slice(count, count + 10);
+    .slice(count - 10, count);
 
   const { data: historyData } = useQuery<ICoinHistory[][]>(
     ["history", count],
     () => fetchCoinHistory(coinList!),
     {
       enabled: !!coinList,
+      refetchOnMount: false,
       refetchOnWindowFocus: false,
     }
   );
@@ -149,6 +131,7 @@ function CoinList() {
     });
     setMergeDataFn(newArr);
   };
+
   const setMergeDataFn = (newArr: ICoinListMerge[]) => {
     setMergeData(() => newArr);
   };
@@ -156,9 +139,8 @@ function CoinList() {
     if (historyData) {
       mergeFn();
     }
-    resetDisable();
-    moreDisable();
   }, [historyData]);
+
   return (
     <CoinListWrapper>
       <WrapperInner>
@@ -175,14 +157,7 @@ function CoinList() {
             </tbody>
           </ListTable>
         </TableBox>
-        <BtnBox>
-          <ResetBtn onClick={resetHandler} disabled={prev} reset={prev}>
-            prev
-          </ResetBtn>
-          <MoreBtn onClick={countHandler} disabled={next} more={next}>
-            next
-          </MoreBtn>
-        </BtnBox>
+        <BtnBox>{makePageBtn()}</BtnBox>
       </WrapperInner>
     </CoinListWrapper>
   );
