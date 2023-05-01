@@ -13,7 +13,7 @@ export function useCoinTickers(coinList: string[]) {
   const [socket, setSocket] = useState<WebSocket | null>(null);
 
   useEffect(() => {
-    const newSocket = new WebSocket(`ws://localhost:3001`);
+    const newSocket = new WebSocket(`ws://localhost:3003/`);
     setSocket(newSocket);
 
     return () => {

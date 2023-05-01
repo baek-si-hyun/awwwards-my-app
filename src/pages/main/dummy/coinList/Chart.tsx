@@ -1,12 +1,6 @@
 import styled from "styled-components";
 import ReactApexChart from "react-apexcharts";
-import {
-  ICoinHistory,
-  ICoinListMerge,
-  ICoins,
-} from "../../../../interface/interface";
-import { useQuery } from "@tanstack/react-query";
-import { fetchCoinHistory } from "../../../../services/coinApi";
+import { ICoinHistory } from "../../../../interface/interface";
 
 const ApexChartDiv = styled.div`
   max-width: 100%;

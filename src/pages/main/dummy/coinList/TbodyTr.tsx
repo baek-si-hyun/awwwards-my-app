@@ -74,6 +74,14 @@ const Img = styled.img`
   max-width: 20px;
 `;
 
+const LoadingTr = styled.tr`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 3vw;
+  padding: 2vw;
+`;
+
 function TrBox({
   mergeData,
   coinList,
@@ -85,8 +93,7 @@ function TrBox({
 
   return (
     <>
-      {mergeData &&
-        tickerData &&
+      {mergeData && tickerData ? (
         mergeData.map((data, index) =>
           tickerData.map(
             (ticker) =>
@@ -198,7 +205,12 @@ function TrBox({
                 </Tr>
               )
           )
-        )}
+        )
+      ) : (
+        <LoadingTr>
+          <td>Loading...</td>
+        </LoadingTr>
+      )}
     </>
   );
 }

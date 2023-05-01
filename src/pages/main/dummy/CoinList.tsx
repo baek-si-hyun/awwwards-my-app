@@ -36,6 +36,7 @@ const ListTable = styled.table`
   width: 100%;
   font-weight: 900;
 `;
+
 export const Tr = styled.tr`
   border-bottom: 1px solid #e2e2e2;
   :first-child {
@@ -61,16 +62,15 @@ const PageBtn = styled.button<{ selected: boolean }>`
   background-color: ${(props) => (props.selected ? "#333" : "transparent")};
   color: ${(props) => (props.selected ? "#fff" : "#333")};
 `;
+
 function CoinList() {
   const [page, setPage] = useState(1);
   const [count, setCount] = useState(10);
-  const [selectedPage, setSelectedPage] = useState(1);
   const pageNation = (pageNum: number) => {
     setPage(() => pageNum);
   };
   useEffect(() => {
     updateCount(page);
-    setSelectedPage(page);
   }, [page]);
   const updateCount = (page: number) => {
     setCount(() => page * 10);
@@ -79,11 +79,7 @@ function CoinList() {
     const pageButtons = [];
     for (let i = 1; i <= 12; i++) {
       pageButtons.push(
-        <PageBtn
-          onClick={() => pageNation(i)}
-          key={i}
-          selected={i === selectedPage}
-        >
+        <PageBtn onClick={() => pageNation(i)} key={i} selected={i === page}>
           {i}
         </PageBtn>
       );
