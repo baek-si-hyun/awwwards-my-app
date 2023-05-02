@@ -80,6 +80,10 @@ const LoadingTr = styled.tr`
   align-items: center;
   font-size: 3vw;
   padding: 2vw;
+  @media (max-width: 768px) {
+    padding: 40vw 2vw;
+    font-size: 6vw;
+  }
 `;
 
 function TrBox({

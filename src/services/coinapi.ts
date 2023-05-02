@@ -28,7 +28,6 @@ export function useCoinTickers(coinList: string[]) {
         return;
       }
 
-      console.log("Connected to Server");
       socket.send(JSON.stringify(coinList));
       let newArr: any[] = [];
       socket.addEventListener("message", (message) => {
@@ -43,7 +42,7 @@ export function useCoinTickers(coinList: string[]) {
         }
         setInterval(() => {
           resolve(newArr);
-        }, 2000);
+        }, 1000);
       });
 
       socket.addEventListener("error", (error) => {
@@ -57,8 +56,8 @@ export function useCoinTickers(coinList: string[]) {
     () => fetchCoinTickers(),
     {
       enabled: !!coinList,
-      refetchInterval: 2000,
-      cacheTime: 2000,
+      refetchInterval: 1000,
+      cacheTime: 1000,
     }
   );
 }

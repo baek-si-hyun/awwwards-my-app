@@ -43,7 +43,10 @@ function About() {
           <TextBoxMiddle>just dummy</TextBoxMiddle>
           <TextBoxbottom>Place to practice</TextBoxbottom>
         </TextBox>
-        <SubTextBox>CoinList using React Query.</SubTextBox>
+        <SubTextBox>
+          Using WebSockets and React Query. (mobile X)
+          <br />
+        </SubTextBox>
         <CoinList />
         <ExplanTextBox>These are my favorite games.</ExplanTextBox>
         <Game />
