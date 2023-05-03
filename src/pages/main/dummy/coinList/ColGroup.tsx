@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const ColName = styled.col`
-  width: 310;
+  width: 310px;
   min-width: auto;
   @media (max-width: 1279px) {
     & {
@@ -14,15 +14,15 @@ const ColPrice = styled.col`
   width: 181px;
   min-width: auto;
 `;
-const ColChange1 = styled.col`
+const ColChange = styled.col`
   width: 200px;
   min-width: auto;
 `;
-const ColChange2 = styled.col`
+const ColVolume = styled.col`
   width: 236px;
   min-width: auto;
 `;
-const ColVolume = styled.col`
+const ColVolumePrice = styled.col`
   width: 236px;
   min-width: auto;
 `;
@@ -43,9 +43,9 @@ function Colgroup() {
     <colgroup>
       <ColName />
       <ColPrice />
-      <ColChange1 />
-      <ColChange2 />
+      <ColChange />
       <ColVolume />
+      <ColVolumePrice />
       <ColSupply />
       <ColCap />
       <ColChart />

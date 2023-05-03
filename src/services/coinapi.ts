@@ -16,9 +16,7 @@ export function useCoinTickers(coinList: string[]) {
     const newSocket = new WebSocket(`ws://localhost:3003/`);
     setSocket(newSocket);
 
-    return () => {
-      newSocket.close();
-    };
+
   }, []);
 
   const fetchCoinTickers = async () => {
@@ -44,7 +42,6 @@ export function useCoinTickers(coinList: string[]) {
           resolve(newArr);
         }, 1000);
       });
-
       socket.addEventListener("error", (error) => {
         reject(error);
       });
