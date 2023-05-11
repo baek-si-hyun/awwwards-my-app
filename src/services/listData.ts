@@ -23,7 +23,53 @@ import coin from "../assets/img/main_img/coin.webp";
 import todo from "../assets/img/main_img/todo.webp";
 import myapp from "../assets/img/main_img/myapp.webp";
 import netflix from "../assets/img/main_img/netflix.webp";
-import { IScheduleData } from "../interface/interface";
+import { IQnaLists, IScheduleData } from "../interface/interface";
+
+export const qnaLists: IQnaLists[] = [
+  {
+    question: "국비지원학원을 다니기 전엔 무엇을 하셧나요?",
+    answer: "다리 조인트 교체 및 설치 노동을 했습니다.",
+  },
+  {
+    question: "국비지원학원을 다니게 된 계기가 있나요?",
+    answer:
+      "효율적이고 빠르게 취업하고 싶어하는 저에게 군대 동기가 추천해주었습니다.",
+  },
+  {
+    question: "대학을 안나온? 못나온? 이유가 있나요?",
+    answer:
+      "대학을 나올정도의 성적은 되었지만 대학에 대해 굉장히 부정적이어서 가지 않았습니다.",
+  },
+  {
+    question: "고졸 문제는 어떻게 해결하실 건가요?",
+    answer:
+      "취업 후 제가 회사에 민폐 끼치질 않을 정도의 실력되면 사이버대학으로 졸업장을 취득할거같습니다.",
+  },
+  {
+    question: "대학에 관심이 없었다면 왜 특성화고에 가지 않았나요?",
+    answer:
+      "부모님의 반대가 매우 심했습니다. 개발자라는 직업도 마찬가지 였지만 지금은 설득에 성공했습니다.",
+  },
+  {
+    question: "국비지원학원 끝난지가 좀 됐는데 왜 지금 구직활동을 하시나요?",
+    answer:
+      "부정교합으로 인한 수술이 국비지원학원 수료후에 바로 예정되어있었고, 회복기간까지 필요하다보니 이제서야 하게 됐네요. +프론트공부",
+  },
+  {
+    question: "프론트엔드에 개발자가 되기로 마음먹은 이유가 있나요?",
+    answer:
+      "팀 프로젝트를 진행하며 백, 프론트 둘다 해보니 프론트엔드 쪽이 백엔드보다 잘맞는거같아서 마음 먹었습니다.",
+  },
+  {
+    question: "사용할줄 아는 언어, 라이브러리, 프레임워크는 뭔가요?",
+    answer: "javascript, jquery, react, typescript가 있습니다.",
+  },
+  {
+    question: "java, spring, python, DB도 배웠다던데 사용 할줄 아시나요?",
+    answer: "기본적인 문법은 사용하지만 다시 공부해야 합니다.",
+  },
+];
+
 export const projectsData = [
   {
     id: "Netflix",

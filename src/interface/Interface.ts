@@ -101,3 +101,8 @@ export interface IScheduleData {
   absoluteBox: string;
   date: string;
 }
+
+export interface IQnaLists {
+  question: string;
+  answer: string;
+}

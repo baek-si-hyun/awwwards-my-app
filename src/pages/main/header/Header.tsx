@@ -14,7 +14,6 @@ const InnerContainer = styled.div`
   padding: 3vw 2.7vw;
 `;
 const Title = styled.h1`
-  color: ${(props) => props.theme.textColor};
   text-transform: uppercase;
   text-align: center;
   font-size: 12.31vw;

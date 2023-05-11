@@ -13,10 +13,19 @@ export function useCoinTickers(coinList: string[]) {
   const [socket, setSocket] = useState<WebSocket | null>(null);
 
   useEffect(() => {
-    const newSocket = new WebSocket(`ws://localhost:3003/`);
+    const newSocket = new WebSocket(`ws://localhost:3001/`);
     setSocket(newSocket);
-
-
+    const handleSocket = () => {
+      setTimeout(() => {
+        setSocket(new WebSocket(`ws://localhost:3001/`));
+      }, 5000);
+    };
+    newSocket.addEventListener("error", handleSocket);
+    newSocket.addEventListener("close", handleSocket);
+    return () => {
+      newSocket.removeEventListener("error", handleSocket);
+      newSocket.removeEventListener("close", handleSocket);
+    };
   }, []);
 
   const fetchCoinTickers = async () => {

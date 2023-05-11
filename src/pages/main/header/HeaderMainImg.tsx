@@ -66,7 +66,7 @@ function HeaderMainImg() {
     if (visible === 2) {
       setVisible(0);
     }
-  }, 6000);
+  }, 4000);
   return (
     <Container>
       <HeaderImg src={iconpng} alt="headerimg"/>

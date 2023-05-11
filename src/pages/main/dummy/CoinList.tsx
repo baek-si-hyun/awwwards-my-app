@@ -107,27 +107,25 @@ function CoinList() {
     }
   );
 
-  const mergeFn = () => {
+  const mergeFn = async () => {
     let newArr: ICoinListMerge[] = [];
-    nameData?.forEach((nameArr) => {
-      circulatingSupply.forEach((supplyArr) => {
-        if (nameArr.market === supplyArr.id) {
-          historyData?.forEach((historyArr) => {
-            if (nameArr.market === historyArr[0].market) {
-              let newObject = {
-                ...nameArr,
-                ...supplyArr,
-                historyArr,
-              };
-              return newArr.push(newObject);
-            }
-          });
+    await Promise.all(
+      nameData!.map(async (nameArr) => {
+        const supplyArr = circulatingSupply.find(
+          (supply) => supply.id === nameArr.market
+        );
+        if (supplyArr) {
+          const historyArr = historyData!.find(
+            (history) => history[0].market === nameArr.market
+          );
+          if (historyArr) {
+            let newObject = { ...nameArr, ...supplyArr, historyArr };
+            newArr.push(newObject);
+          }
         }
-      });
-    });
-    setMergeDataFn(newArr);
+      })
+    ).then(() => setMergeDataFn(newArr));
   };
-
   const setMergeDataFn = (newArr: ICoinListMerge[]) => {
     setMergeData(() => newArr);
   };
