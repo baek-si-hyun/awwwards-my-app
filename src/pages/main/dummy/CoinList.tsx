@@ -124,11 +124,9 @@ function CoinList() {
           }
         }
       })
-    ).then(() => setMergeDataFn(newArr));
+    ).then(() => setMergeData(() => newArr));
   };
-  const setMergeDataFn = (newArr: ICoinListMerge[]) => {
-    setMergeData(() => newArr);
-  };
+  
   useEffect(() => {
     if (historyData) {
       mergeFn();
