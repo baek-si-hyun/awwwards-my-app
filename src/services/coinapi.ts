@@ -13,11 +13,11 @@ export function useCoinTickers(coinList: string[]) {
   const [socket, setSocket] = useState<WebSocket | null>(null);
 
   useEffect(() => {
-    const newSocket = new WebSocket(`ws://localhost:3001/`);
+    const newSocket = new WebSocket(`ws://localhost:3003/`);
     setSocket(newSocket);
     const handleSocket = () => {
       setTimeout(() => {
-        setSocket(new WebSocket(`ws://localhost:3001/`));
+        setSocket(new WebSocket(`ws://localhost:3003/`));
       }, 5000);
     };
     newSocket.addEventListener("error", handleSocket);
@@ -29,14 +29,13 @@ export function useCoinTickers(coinList: string[]) {
   }, []);
 
   const fetchCoinTickers = async () => {
-    return new Promise<any[]>((resolve, reject) => {
+    let newArr: any[] = [];
+    await new Promise((resolve, reject) => {
       if (!socket) {
         reject("The websocket connection is experiencing some delay.");
         return;
       }
-
       socket.send(JSON.stringify(coinList));
-      let newArr: any[] = [];
       socket.addEventListener("message", (message) => {
         const jsonData = JSON.parse(message.data).messages;
         const overlapIndex = newArr.findIndex(
@@ -54,7 +53,8 @@ export function useCoinTickers(coinList: string[]) {
       socket.addEventListener("error", (error) => {
         reject(error);
       });
-    });
+    })
+    return newArr
   };
 
   return useQuery<ICoinTickers[], Error>(
