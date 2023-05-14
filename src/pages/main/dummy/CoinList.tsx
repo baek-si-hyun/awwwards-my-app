@@ -14,7 +14,7 @@ import {
 } from "../../../interface/interface";
 import Colgroup from "./coinList/ColGroup";
 import TheadTr from "./coinList/TheadTr";
-import TbodyTr from "./coinList/TbodyTr";
+import TbodyTr from "./coinList/Tbody/TbodyTr";
 
 const CoinListWrapper = styled.div`
   width: 100%;
@@ -126,7 +126,7 @@ function CoinList() {
       })
     ).then(() => setMergeData(() => newArr));
   };
-  
+
   useEffect(() => {
     if (historyData) {
       mergeFn();
@@ -144,7 +144,11 @@ function CoinList() {
             </thead>
             <tbody>
               {mergeData && coinList && (
-                <TbodyTr coinList={coinList} mergeData={mergeData} />
+                <TbodyTr
+                  coinList={coinList}
+                  mergeData={mergeData}
+                  count={count}
+                />
               )}
             </tbody>
           </ListTable>

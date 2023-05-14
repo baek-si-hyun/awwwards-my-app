@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { useState, useEffect } from "react";
-import { ICoinTickers } from "../interface/interface";
+import { ICoinSocketTickers } from "../interface/interface";
 
 export async function fetchCoins() {
   const response = await fetch(
@@ -8,58 +8,82 @@ export async function fetchCoins() {
   );
   return await response.json();
 }
+export async function fetchCoinTickers(coinList: string[]) {
+  let results = [];
+  for (let index = 0; index < coinList.length; index++) {
+    const response = await fetch(
+      `https://api.upbit.com/v1/ticker?markets=${coinList[index]}`
+    );
+    const [json] = await response.json();
+    results.push(json);
+  }
+  return results;
+}
 
-export function useCoinTickers(coinList: string[]) {
+export function useCoinTickersSocket(coinList: string[]) {
   const [socket, setSocket] = useState<WebSocket | null>(null);
 
   useEffect(() => {
-    const newSocket = new WebSocket(`ws://localhost:3003/`);
-    setSocket(newSocket);
+    const upbitSocket = new WebSocket("wss://api.upbit.com/websocket/v1");
+    setSocket(upbitSocket);
     const handleSocket = () => {
       setTimeout(() => {
-        setSocket(new WebSocket(`ws://localhost:3003/`));
+        setSocket(new WebSocket("wss://api.upbit.com/websocket/v1"));
       }, 5000);
     };
-    newSocket.addEventListener("error", handleSocket);
-    newSocket.addEventListener("close", handleSocket);
+    upbitSocket.addEventListener("open", () => {
+      const subscribeMsg = [
+        { ticket: "UNIQUE_TICKET" },
+        { type: "ticker", codes: coinList },
+      ];
+      upbitSocket.send(JSON.stringify(subscribeMsg));
+    });
+    upbitSocket.addEventListener("error", handleSocket);
+    upbitSocket.addEventListener("close", handleSocket);
     return () => {
-      newSocket.removeEventListener("error", handleSocket);
-      newSocket.removeEventListener("close", handleSocket);
+      upbitSocket.removeEventListener("error", handleSocket);
+      upbitSocket.removeEventListener("close", handleSocket);
     };
-  }, []);
+  }, [coinList]);
 
-  const fetchCoinTickers = async () => {
+  const fetchCoinTickersSocket = async () => {
     let newArr: any[] = [];
     await new Promise((resolve, reject) => {
       if (!socket) {
         reject("The websocket connection is experiencing some delay.");
         return;
       }
-      socket.send(JSON.stringify(coinList));
+
       socket.addEventListener("message", (message) => {
-        const jsonData = JSON.parse(message.data).messages;
-        const overlapIndex = newArr.findIndex(
-          (data) => data.code === jsonData[0].code
-        );
-        if (overlapIndex !== -1) {
-          newArr[overlapIndex] = jsonData[0];
-        } else {
-          newArr.push(...jsonData);
-        }
-        setInterval(() => {
-          resolve(newArr);
-        }, 1000);
+        const fileReader = new FileReader();
+        fileReader.readAsText(message.data);
+        fileReader.onload = () => {
+          if (fileReader.result !== null) {
+            const jsonData = JSON.parse(fileReader.result as string);
+            const overlapIndex = newArr.findIndex(
+              (data) => data.code === jsonData.code
+            );
+            if (overlapIndex !== -1) {
+              newArr[overlapIndex] = jsonData;
+            } else {
+              newArr = [...newArr, jsonData];
+            }
+            resolve(newArr);
+          }
+        };
       });
+
       socket.addEventListener("error", (error) => {
         reject(error);
       });
-    })
-    return newArr
+    });
+
+    return newArr;
   };
 
-  return useQuery<ICoinTickers[], Error>(
+  return useQuery<ICoinSocketTickers[]>(
     ["coinTickers", coinList],
-    () => fetchCoinTickers(),
+    () => fetchCoinTickersSocket(),
     {
       enabled: !!coinList,
       refetchInterval: 1000,

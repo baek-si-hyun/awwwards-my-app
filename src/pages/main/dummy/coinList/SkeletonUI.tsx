@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Tr } from "../CoinList";
-import { Namediv } from "./TbodyTr";
+import { Namediv } from "./Tbody/TbodyTr";
 
 const TdFixed = styled.td`
   padding: 3.5px;

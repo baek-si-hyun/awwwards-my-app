@@ -56,7 +56,7 @@ export const DomApi = ({
     setRouterPosition({
       sotd: scrollY >= sotdPosition && scrollY < fontColorPosition,
       fontColor: scrollY >= fontColorPosition && scrollY < aboutPosition - 300,
-      routerAbout: scrollY >= aboutPosition - 300,
+      routerAbout: scrollY >= aboutPosition - 300
     });
   }
 };
