@@ -47,7 +47,7 @@ export function useCoinTickersSocket(coinList: string[]) {
   }, [coinList]);
 
   const fetchCoinTickersSocket = async () => {
-    let newArr: any[] = [];
+    let newArr: ICoinSocketTickers[] = [];
     await new Promise((resolve, reject) => {
       if (!socket) {
         reject("The websocket connection is experiencing some delay.");
@@ -60,19 +60,11 @@ export function useCoinTickersSocket(coinList: string[]) {
         fileReader.onload = () => {
           if (fileReader.result !== null) {
             const jsonData = JSON.parse(fileReader.result as string);
-            const overlapIndex = newArr.findIndex(
-              (data) => data.code === jsonData.code
-            );
-            if (overlapIndex !== -1) {
-              newArr[overlapIndex] = jsonData;
-            } else {
-              newArr = [...newArr, jsonData];
-            }
+            newArr = [jsonData];
             resolve(newArr);
           }
         };
       });
-
       socket.addEventListener("error", (error) => {
         reject(error);
       });
