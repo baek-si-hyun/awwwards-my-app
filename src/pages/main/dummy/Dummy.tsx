@@ -20,7 +20,6 @@ const SubTextBox = styled.div`
   font-size: 2.6vw;
   font-weight: bold;
   span {
-
     font-size: 1.5vw;
     font-family: "Pretendard", sans-serif;
   }
@@ -49,7 +48,7 @@ function About() {
           <TextBoxbottom>Place to practice</TextBoxbottom>
         </TextBox>
         <SubTextBox>
-          Using WebSockets and React Query.
+          Combination of REST, Websocket and React-Query
           <br />
           <span>
             직접 웹소켓서버를 운영하고 싶었지만 유지비용 문제로 <br />

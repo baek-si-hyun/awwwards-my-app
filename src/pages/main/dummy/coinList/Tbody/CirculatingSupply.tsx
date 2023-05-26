@@ -25,7 +25,7 @@ const CirculatingSupply = ({
       <TdNomalDiv>
         <span>
           ₩
-          {(supply || 0 * price || 0)
+          {(supply * price || 0)
             .toFixed(0)
             .toString()
             .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}

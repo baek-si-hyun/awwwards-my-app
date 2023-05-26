@@ -23,8 +23,7 @@ const ChangePrice = ({
       "EVEN"
     )?.change!;
     const changeRate: number = tickerList.find(
-      (ticker) => ticker.market === coinName && ticker,
-      0
+      (ticker) => ticker.market === coinName && ticker,0
     )?.change_rate!;
     return (
       <TdChangeDiv change={change || "EVEN"}>
@@ -41,7 +40,7 @@ const ChangePrice = ({
           ) : (
             <Icons className="material-symbols-outlined">trending_flat</Icons>
           )}
-          {(changeRate || 0 * 100).toFixed(2)}%
+          {(changeRate * 100 || 0).toFixed(2)}%
         </span>
       </TdChangeDiv>
     );

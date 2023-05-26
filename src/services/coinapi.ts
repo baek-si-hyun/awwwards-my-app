@@ -396,7 +396,7 @@ export const circulatingSupply = [
   },
   {
     id: "KRW-TON",
-    supply: 1221401181,
+    supply: 38587479,
   },
   {
     id: "KRW-SXP",

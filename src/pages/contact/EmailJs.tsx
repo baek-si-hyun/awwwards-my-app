@@ -32,6 +32,7 @@ const Input = styled.input`
     border-bottom: 2px solid #e9e9e9;
     outline: none;
   }
+
   @media (max-width: 1024px) {
     & {
       height: 4vw;
@@ -67,16 +68,18 @@ function EmailJs() {
     e.preventDefault();
     emailjs
       .sendForm(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",
-        form.currentTarget,
-        "YOUR_USER_ID"
+        "service_6ve891d",
+        "template_on7gvsv",
+        form.current,
+        "GPN2QNExB1LNIobJ6"
       )
       .then(
         (result) => {
+          alert("전송 되었습니다");
           console.log(result.text);
         },
         (error) => {
+          alert("실패 하였습니다.");
           console.log(error.text);
         }
       );
