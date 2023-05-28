@@ -113,7 +113,7 @@ export interface IScheduleData {
   date: string;
 }
 
-export interface IQnaLists {
-  question: string;
-  answer: string;
+export interface IFaqsLists {
+  faqs_question: string;
+  faqs_answer: string;
 }

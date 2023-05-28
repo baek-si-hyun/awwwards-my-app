@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
-import { qnaLists } from "../../services/listData";
-import { JSX } from "react/jsx-runtime";
+import { fetchFaqs } from "../../services/listData";
+import { IFaqsLists } from "../../interface/interface";
 
 const FaqsList = styled.ul`
   background-image: linear-gradient(
@@ -80,17 +80,25 @@ const Question = styled.div``;
 const Answer = styled.div`
   margin-top: 10px;
 `;
-
 function FaqList() {
   const [listNum, setListNum] = useState(-1);
-  const makeQnAList = () => {
-    let newQnaList: JSX.Element[] = [];
-    qnaLists.forEach((data, i) => {
-      newQnaList.push(
+  const [faqList, setFaqList] = useState<IFaqsLists[]>([]);
+  useEffect(() => {
+    const getFaqs = async () => {
+      const faqs = await fetchFaqs();
+      setFaqList(() => faqs);
+    };
+    getFaqs();
+  }, []);
+
+  const makeFaqList = () => {
+    let newFaqList: JSX.Element[] = [];
+    faqList.forEach((data, i) => {
+      newFaqList.push(
         <Faq key={i}>
           <FaqQ>
             <Question>
-              <p>{data.question}</p>
+              <p>{data.faqs_question}</p>
             </Question>
             <BtnBox>
               <Btn onClick={() => setListNum(i === listNum ? -1 : i)}>
@@ -100,15 +108,15 @@ function FaqList() {
           </FaqQ>
           <FaqA selected={i === listNum}>
             <Answer>
-              <p>{data.answer}</p>
+              <p>{data.faqs_answer}</p>
             </Answer>
           </FaqA>
         </Faq>
       );
     });
-    return newQnaList;
+    return newFaqList;
   };
 
-  return <FaqsList>{makeQnAList()}</FaqsList>;
+  return <FaqsList>{makeFaqList()}</FaqsList>;
 }
 export default FaqList;
