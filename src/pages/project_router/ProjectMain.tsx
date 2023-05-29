@@ -74,6 +74,7 @@ const DescriptionProjectContent = styled.div`
 
 function ProjectMain() {
   const { state } = useLocation();
+  console.log(state)
   return (
     <Container id="sotd">
       <InnerContainer>
@@ -88,8 +89,8 @@ function ProjectMain() {
             </TextBottom>
           </DescriptionText>
           <DescriptionFont>
-            <ProjectFont projectData={state} />
-            <ProjectColor projectData={state} />
+            <ProjectFont fonts={state.fonts} />
+            <ProjectColor colors={state.colors} />
           </DescriptionFont>
           <DescriptionProject id="routerAbout">
             <DescriptionProjectText>

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { IProjectsData } from "../../interface/interface";
+import { IProjectData } from "../../interface/interface";
 
 const PreviewContaier = styled.div`
   width: 100%;
@@ -103,7 +103,7 @@ const PreviewImg = styled.img`
   width: 100%;
 `;
 
-function ProjectPreview({ projectData }: { projectData: IProjectsData }) {
+function ProjectPreview({ projectData }: { projectData: IProjectData }) {
   return (
     <PreviewContaier>
       <TextBox>
@@ -115,7 +115,12 @@ function ProjectPreview({ projectData }: { projectData: IProjectsData }) {
         </TextBoxMiddle>
         <TextBoxbottom>
           <ImgBox>
-            <Img src={projectData.logo} alt="maker_logo" loading="lazy" decoding="async" />
+            <Img
+              src={projectData.logo}
+              alt="maker_logo"
+              loading="lazy"
+              decoding="async"
+            />
           </ImgBox>
           <ImgText>
             <p>{projectData.by}</p>
@@ -124,8 +129,8 @@ function ProjectPreview({ projectData }: { projectData: IProjectsData }) {
         </TextBoxbottom>
       </TextBox>
       <PreviewContainer>
-        {projectData.img.map((data) => (
-          <Preview cardBgColorData={projectData.name}>
+        {projectData.imgs.map((data, index) => (
+          <Preview cardBgColorData={projectData.name} key={index}>
             <PrevInner>
               <PreviewImg src={data} alt="preview" loading="lazy" decoding="async"/>
             </PrevInner>

@@ -117,6 +117,6 @@ function FaqList() {
     return newFaqList;
   };
 
-  return <FaqsList>{makeFaqList()}</FaqsList>;
+  return <><FaqsList>{makeFaqList()}</FaqsList><div>{test?.name}</div></>;
 }
 export default FaqList;

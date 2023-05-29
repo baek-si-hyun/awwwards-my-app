@@ -1,17 +1,5 @@
 import { Dispatch, SetStateAction } from "react";
-export interface IProjectsData {
-  id: string;
-  date: string;
-  name: string;
-  thumbnail: string;
-  logo: string;
-  by: string;
-  img: string[];
-  fonts: string[];
-  colors: string[];
-  ko: string;
-  en: string;
-}
+
 export interface ICoins {
   market: string;
   korean_name: string;
@@ -116,4 +104,30 @@ export interface IScheduleData {
 export interface IFaqsLists {
   faqs_question: string;
   faqs_answer: string;
+}
+export interface IProjectsData {
+  projects_code: string;
+  projects_name: string;
+  projects_date: string;
+  projects_thumbnail: string;
+  projects_logo: string;
+  projects_by: string;
+  projects_prev_img: string[];
+  projects_font: string[];
+  projects_color: string[];
+  projects_ko: string;
+  projects_en: string;
+}
+export interface IProjectData {
+  id: string;
+  date: string;
+  name: string;
+  thumbnail: string;
+  logo: string;
+  by: string;
+  imgs: string[]
+  fonts: string[];
+  colors: string[];
+  ko: string;
+  en: string;
 }

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 import { UnderLine } from "../../components/mainCommon";
-import { IProjectsData } from "../../interface/interface";
+
 const ColorContainer = styled.div``;
 const ColorInner = styled.div`
   display: flex;
@@ -141,27 +141,26 @@ const Card = styled(Cards)<{
   }
 `;
 
-function ProjectColor({ projectData }: { projectData: IProjectsData }) {
+function ProjectColor({ colors }: { colors: string[] }) {
   const [hover, sethover] = useState(false);
   return (
     <ColorContainer>
       <ColorInner>
         <ColorText>
           <h3>
-            This website uses a color palette of{" "}
-            <span>{projectData.colors.length}</span>
+            This website uses a color palette of <span>{colors.length}</span>
             colors
           </h3>
         </ColorText>
         <ColorCards>
           <CardContainer>
-            {projectData.colors.map((data) => (
+            {colors.map((data) => (
               <Card
                 onMouseOver={() => sethover(true)}
                 onMouseOut={() => sethover(false)}
                 isHover={hover}
                 colorData={data}
-                colorDataLength={projectData.colors.length}
+                colorDataLength={colors.length}
               >
                 <CardTop isHover={hover}>
                   <p>

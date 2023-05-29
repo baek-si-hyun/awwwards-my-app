@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { scheduleData } from "../../../services/listData";
+import { schedule } from "../../../services/listData";
 import { useEffect, useState } from "react";
 import { useRecoilValue } from "recoil";
 import { resizeWidth } from "../../../atom";
@@ -133,8 +133,8 @@ function PastSchedule() {
       <Schedule>
         {graph ? (
           <>
-            {scheduleData.map((scheduleData) => (
-              <Row>
+            {schedule.map((scheduleData, scheduleIndex) => (
+              <Row key={scheduleIndex}>
                 <Box>{scheduleData.text[0]}</Box>
                 <Box>{scheduleData.absoluteBox}</Box>
                 <Box>{scheduleData.date}</Box>
@@ -143,10 +143,10 @@ function PastSchedule() {
           </>
         ) : (
           <>
-            {scheduleData.map((scheduleData) => (
-              <Row>
-                {scheduleData.text.map((data) => (
-                  <Box>{data}</Box>
+            {schedule.map((scheduleData, scheduleIndex) => (
+              <Row key={scheduleIndex}>
+                {scheduleData.text.map((data, index) => (
+                  <Box key={index}>{data}</Box>
                 ))}
                 <AbsoluteBox indexNum={scheduleData.id}>
                   {scheduleData.absoluteBox}

@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { IProjectsData, IVisited } from "../../../interface/interface";
-
-import { projectsData } from "../../../services/listData";
+import { fetchProjects } from "../../../services/listData";
+import { useEffect, useState } from "react";
 
 const Box = styled(Link)`
   display: flex;
@@ -129,25 +129,26 @@ const VisitedInnerBottom = styled.div`
 `;
 function VisitedBox({
   visited,
-  data,
+  name,
 }: {
   visited: IVisited;
-  data: IProjectsData;
+  name: string;
 }) {
+
   return (
     <Visited>
       <VisitedInner>
         <VisitedInnerTop>Visited Today</VisitedInnerTop>
         <VisitedInnerBottom>
-          {data.id === "Netflix"
+          {name === "Netflix"
             ? visited.netflixToday
-            : data.id === "Kanban"
+            : name === "Kanban"
             ? visited.kanbanToday
-            : data.id === "Coin"
+            : name === "Coin"
             ? visited.coinToday
-            : data.id === "Myapp"
+            : name === "Myapp"
             ? visited.myappToday
-            : data.id === "Airbnb"
+            : name === "Airbnb"
             ? visited.airbnbToday
             : ""}
         </VisitedInnerBottom>
@@ -155,15 +156,15 @@ function VisitedBox({
       <VisitedInner>
         <VisitedInnerTop>Total Visited</VisitedInnerTop>
         <VisitedInnerBottom>
-          {data.id === "Netflix"
+          {name === "Netflix"
             ? visited.netflixTotal
-            : data.id === "Kanban"
+            : name === "Kanban"
             ? visited.kanbanTotal
-            : data.id === "Coin"
+            : name === "Coin"
             ? visited.coinTotal
-            : data.id === "Myapp"
+            : name === "Myapp"
             ? visited.myappTotal
-            : data.id === "Airbnb"
+            : name === "Airbnb"
             ? visited.airbnbTotal
             : ""}
         </VisitedInnerBottom>
@@ -172,45 +173,63 @@ function VisitedBox({
   );
 }
 function ProjectsLinkBox({ visited }: { visited: IVisited }) {
+  const [projectList, setProjectList] = useState<IProjectsData[]>([]);
+  useEffect(() => {
+    const getProjects = async () => {
+      const projects = await fetchProjects();
+      setProjectList(() => projects);
+    };
+    getProjects();
+  }, []);
   return (
     <>
-      {projectsData.map((data) => (
+      {projectList.map((data) => (
         <Box
-          to={`/${data.id}`}
+          to={`/${data.projects_code}`}
           state={{
-            date: data.date,
-            name: data.name,
-            logo: data.logo,
-            by: data.by,
-            img: data.img,
-            fonts: data.fonts,
-            colors: data.colors,
-            ko: data.ko,
-            en: data.en,
+            date: data.projects_date,
+            name: data.projects_name,
+            logo: data.projects_logo,
+            by: data.projects_by,
+            imgs :data.projects_prev_img,
+            fonts: data.projects_font,
+            colors: data.projects_color,
+            ko: data.projects_ko,
+            en: data.projects_en,
           }}
-          key={data.id}
+          key={data.projects_code}
         >
           <InnerBoxImg>
-            <Img src={data.thumbnail} alt="thumbnail" loading="lazy" decoding="async" />
+            <Img
+              src={data.projects_thumbnail}
+              alt="thumbnail"
+              loading="lazy"
+              decoding="async"
+            />
           </InnerBoxImg>
           <InnerBoxText>
             <TextTop>
-              <p>{data.date}</p>
+              <p>{data.projects_date}</p>
             </TextTop>
             <TextBottom>
-              <h4>{data.name}</h4>
+              <h4>{data.projects_name}</h4>
               <TextBottomInner>
                 <div>
                   <small>by</small>
                 </div>
                 <InnerFigure>
-                  <img src={data.logo} alt="maker_logo" loading="lazy" decoding="async" />
+                  <img
+                    src={data.projects_logo}
+                    alt="maker_logo"
+                    loading="lazy"
+                    decoding="async"
+                  />
                   <figcaption>
-                    <span>{data.by}</span>
+                    <span>{data.projects_by}</span>
                   </figcaption>
                 </InnerFigure>
               </TextBottomInner>
-              <VisitedBox visited={visited} data={data} />
+              <VisitedBox visited={visited} name={data.projects_code} />
             </TextBottom>
           </InnerBoxText>
         </Box>

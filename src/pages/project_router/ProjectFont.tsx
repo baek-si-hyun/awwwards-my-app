@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styled, { css } from "styled-components";
 import { UnderLine } from "../../components/mainCommon";
-import { IProjectsData } from "../../interface/interface";
+
 
 const FontContainer = styled.div`
   display: flex;
@@ -122,7 +122,7 @@ const ContentDiv = styled.div<{ toggle: number; fontsData: string[] }>`
   ${toggleFontFamily}
 `;
 
-function ProjectFont({ projectData }: { projectData: IProjectsData }) {
+function ProjectFont({ fonts }: { fonts: string[] }) {
   const [toggle, setToggle] = useState(0);
   const ToggleBtn = (index: number) => {
     if (index === 0) {
@@ -147,7 +147,7 @@ function ProjectFont({ projectData }: { projectData: IProjectsData }) {
         </Typography>
         <ToggleDiv>
           <ToggleFont>
-            {projectData.fonts.map((font, index) => (
+            {fonts.map((font, index) => (
               <Font
                 key={index}
                 num={index}
@@ -160,16 +160,16 @@ function ProjectFont({ projectData }: { projectData: IProjectsData }) {
           </ToggleFont>
         </ToggleDiv>
       </FontTop>
-      <FontName toggle={toggle} fontsData={projectData.fonts}>
+      <FontName toggle={toggle} fontsData={fonts}>
         <span>
           {toggle === 0
-            ? projectData.fonts[0]
+            ? fonts[0]
             : toggle === 1
-            ? projectData.fonts[1]
+            ? fonts[1]
             : toggle === 2
-            ? projectData.fonts[2]
+            ? fonts[2]
             : toggle === 3
-            ? projectData.fonts[3]
+            ? fonts[3]
             : ""}
         </span>
       </FontName>
@@ -178,7 +178,7 @@ function ProjectFont({ projectData }: { projectData: IProjectsData }) {
           <FontTittle>
             <h3>FONT DETAIL</h3>
           </FontTittle>
-          <FontDetailContent toggle={toggle} fontsData={projectData.fonts}>
+          <FontDetailContent toggle={toggle} fontsData={fonts}>
             <span>AaBb</span>
           </FontDetailContent>
         </FontDetail>
@@ -186,7 +186,7 @@ function ProjectFont({ projectData }: { projectData: IProjectsData }) {
           <FontTittle>
             <h3>LETTERS + NUMBERS</h3>
           </FontTittle>
-          <ContentDiv toggle={toggle} fontsData={projectData.fonts}>
+          <ContentDiv toggle={toggle} fontsData={fonts}>
             <span>
               Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv
               Ww Xx Yy Zz
