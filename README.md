@@ -1,46 +1,35 @@
-# Getting Started with Create React App
+# awwwards-my-app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## awwwards-my-app 간단한 설명
 
-## Available Scripts
+### 만들게 된 이유
+이것 저것 공부하며 만든 프로젝트들이 어느새 5개가 되었습니다.
+awwward 웹사이트를 구경하던중 
+내가 만든 프로젝트들을 이렇게 웹 전시장처럼 만들어 놓으면 단순히 취업 목적이 아닌 
+재미와 자기개발 모두 챙길수 있을거란 생각이 들었습니다.
+그리고 제가 만든 프로젝트를 보실 인사담당자분들과 지인분들도 
+일일히 프로젝트 하나하나 링크 눌러가며 보지않고 편하게 볼수 있을거라 생각해
+만들게 되었습니다. 
 
-In the project directory, you can run:
+### 특징
+1. 설계와 디자인을 모두 하기에는 많이 버거웠기에 클론 코딩 느낌으로 진행했습니다.
+   하지만 똑같이 클론코딩하면 재미없을거 같아서 부분부분 제가 만들고 싶은대로 만들었습니다.
+2. 그동안 코딩을 배우면서 '나도 저런거 한번 해보고 싶다'라고 생각 했던것들을 기억해 두었다가
+   하나씩 만들어서 적용 시켜보고 있습니다. 최근에 만든 코인리스트도 평소에 코인마켓캡을 보며
+   '웹소켓으로 코인 리스트 만들어보고 싶다!' 해서 만들게 되었습니다.
+3. 기존 awwwards 사이트를 클론코딩하면 외부 사이트 링크를 주렁주렁 달기보다는
+   그냥 저를 소개하는 느낌으로 만든게 몇개 있습니다. TMI일수 있습니다.
 
-### `npm start`
+### 지금은 뭘하고 있을까
+지금은 rest api를 만들어보고 있습니다. 항상 rest api를 받아쓰는 입장에서 
+어떻게 만드는지, 저도 만들수 있는지 궁금했습니다.
+그리고 프론트엔드 개발자라고 프론트라는 틀을 정해두는건 별로 좋지 않아 보였습니다.
+물론 본업은 충실히 해야겠지만....
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### 사용한 스킬들
+<span><img src="https://img.shields.io/badge/html5-#E34F26?style=flat-square&logo=html5&logoColor=white"/></span>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
