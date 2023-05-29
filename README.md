@@ -41,15 +41,12 @@ awwward 웹사이트를 구경하던중
 <span><img src="https://img.shields.io/badge/figma-F24E1E?style=flat-square&logo=figma&logoColor=white"/></span>
 <span><img src="https://img.shields.io/badge/windows-0078D6?style=flat-square&logo=windows&logoColor=white"/></span>
 
-원래는 업비트 웹소켓을 한번 가공해서 제공해줄 웹소켓 서버 만들려고 했는데 배포 비용 문제로 포기하고
+<span><img src="https://img.shields.io/badge/nodejs-339933?style=flat-square&logo=nodedotjs&logoColor=white"/></span> : 원래는 업비트 웹소켓을 한번 가공해서 제공해줄 웹소켓 서버 만들려고 했는데 배포 비용 문제로 포기하고
 방향을 바꿔 rest api를 만들어 보고있습니다.
-<span><img src="https://img.shields.io/badge/nodejs-339933?style=flat-square&logo=nodedotjs&logoColor=white"/></span>
 
-현재 rest api 만들면서 사용중 입니다. 옛날에 배웠던거 최대한 기억해 내는중
-<span><img src="https://img.shields.io/badge/mysql-4479A1?style=flat-square&logo=mysql&logoColor=white"/></span>
+<span><img src="https://img.shields.io/badge/mysql-4479A1?style=flat-square&logo=mysql&logoColor=white"/></span> : 현재 rest api 만들면서 사용중 입니다. 옛날에 배웠던거 최대한 기억해 내는중
 
-조회수 보고싶은 맘에 crud중 read와 update만 인터넷 보고 급하게 배웠습니다. mysql로 바꿀 예정
-<span><img src="https://img.shields.io/badge/firebase-FFCA28?style=flat-square&logo=firebase&logoColor=white"/></span>
+<span><img src="https://img.shields.io/badge/firebase-FFCA28?style=flat-square&logo=firebase&logoColor=white"/></span> : 조회수 보고싶은 맘에 crud중 read와 update만 인터넷 보고 급하게 배웠습니다. mysql로 바꿀 예정
 
 
 
