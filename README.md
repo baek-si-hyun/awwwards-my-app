@@ -50,10 +50,12 @@ awwward 웹사이트를 구경하던중 <br/>
 
 <span><img src="https://img.shields.io/badge/firebase-FFCA28?style=flat-square&logo=firebase&logoColor=white"/></span> : 조회수 보고싶은 맘에 crud중 read와 update만 인터넷 보고 급하게 배웠습니다. mysql로 바꿀 예정
 
-
-
-
-
-
+### 참고한 사이트들
+- https://www.awwwards.com/
+- https://music.youtube.com/
+- https://coinmarketcap.com/ko/
+- https://upbit.com/home
+- https://henriheymans.com/
+- https://wanderful.index.studio/en/
 
 
