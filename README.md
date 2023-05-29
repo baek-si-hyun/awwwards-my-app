@@ -32,13 +32,18 @@ awwward 웹사이트를 구경하던중
 <span><img src="https://img.shields.io/badge/css3-1572B6?style=flat-square&logo=css3&logoColor=white"/></span>
 <span><img src="https://img.shields.io/badge/styledcomponents-DB7093?style=flat-square&logo=styledcomponents&logoColor=white"/></span>
 <span><img src="https://img.shields.io/badge/javascript-F7DF1E?style=flat-square&logo=javascript&logoColor=white"/></span>
-<span><img src="https://img.shields.io/badge/nodedotjs-E34F26?style=flat-square&logo=nodejs&logoColor=white"/></span>
+<span><img src="https://img.shields.io/badge/nodejs-339933?style=flat-square&logo=nodedotjs&logoColor=white"/></span>
 <span><img src="https://img.shields.io/badge/typescript-3178C6?style=flat-square&logo=typescript&logoColor=white"/></span>
 <span><img src="https://img.shields.io/badge/react-61DAFB?style=flat-square&logo=react&logoColor=white"/></span>
 <span><img src="https://img.shields.io/badge/reactquery-FF4154?style=flat-square&logo=reactquery&logoColor=white"/></span>
-<span><img src="https://img.shields.io/badge/windows-0078D6?style=flat-square&logo=windows&logoColor=white"/></span>
+<span><img src="https://img.shields.io/badge/git-F05032?style=flat-square&logo=git&logoColor=white"/></span>
+<span><img src="https://img.shields.io/badge/github-181717?style=flat-square&logo=github&logoColor=white"/></span>
 <span><img src="https://img.shields.io/badge/visualstudiocode-007ACC?style=flat-square&logo=visualstudiocode&logoColor=white"/></span>
 <span><img src="https://img.shields.io/badge/figma-F24E1E?style=flat-square&logo=figma&logoColor=white"/></span>
+<span><img src="https://img.shields.io/badge/windows-0078D6?style=flat-square&logo=windows&logoColor=white"/></span>
+
+
+
 
 
 
