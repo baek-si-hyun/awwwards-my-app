@@ -27,7 +27,7 @@ awwward 웹사이트를 구경하던중
 물론 본업은 충실히 해야겠지만....
 
 ### 사용한 스킬들
-<span><img src="https://img.shields.io/badge/html5-#E34F26?style=flat-square&logo=html5&logoColor=white"/></span>
+<span><img src="https://img.shields.io/badge/html5-E34F26?style=flat-square&logo=html5&logoColor=white"/></span>
 
 
 
