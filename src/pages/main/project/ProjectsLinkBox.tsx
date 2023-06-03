@@ -192,8 +192,8 @@ function ProjectsLinkBox({ visited }: { visited: IVisited }) {
             logo: data.projects_logo,
             by: data.projects_by,
             imgs :data.projects_prev_img,
-            fonts: data.projects_font,
-            colors: data.projects_color,
+            fonts: data.projects_fonts,
+            colors: data.projects_colors,
             ko: data.projects_ko,
             en: data.projects_en,
           }}

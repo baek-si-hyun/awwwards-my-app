@@ -13,12 +13,13 @@ import jack from "./assets/img/recommended_song/jack.jpg";
 import taiverdes from "./assets/img/recommended_song/taiverdes.jpg";
 import week1 from "./assets/img/recommended_song/week1.jpg";
 import week2 from "./assets/img/recommended_song/week2.jpg";
-import omgRemix from "./assets/img/recommended_song/omg_remix.jpg";
+import aespa from "./assets/img/recommended_song/aespa.jpg";
 import hypeboyRemix from "./assets/img/recommended_song/hypeboy_remix.jpg";
 import yena from "./assets/img/recommended_song/yena.jpg";
 import star from "./assets/img/recommended_song/star.jpg";
 import sweater from "./assets/img/recommended_song/sweater.jpg";
 import iu from "./assets/img/recommended_song/iu.jpg";
+import lesserafim from "./assets/img/recommended_song/lesserafim.jpg";
 import { IPathname, Data, IResize, IVisited } from "./interface/interface";
 
 export const visited = atom<IVisited>({
@@ -66,76 +67,84 @@ export const all = atom<Data[]>({
     },
     {
       id: 1,
-      img: omgRemix,
-      tittle: "omg(Future Funk Remix)",
-      artist: "ZSunder",
-      album: "NewJeans'OMG'",
+      img: aespa,
+      tittle: "Thirsty",
+      artist: "aespa",
+      album: "MY WORLD - The 3rd Mini Album • 2023'",
     },
     {
       id: 2,
+      img: lesserafim,
+      tittle: "Impurities",
+      artist: "LE SSERAFIM",
+      album: "ANTIFRAGILE • 2022",
+
+    },
+    {
+      id: 3,
       img: aura,
       tittle: "Dead Girl! (Shake My Head)",
       artist: "Au/Ra",
       album: "Dead Girl! (Shake My Head) • 2021",
     },
     {
-      id: 3,
+      id: 4,
       img: taiverdes,
       tittle: "how deep?",
       artist: "Tai Verdes",
       album: "how deep? • 2022",
     },
     {
-      id: 4,
+      id: 5,
       img: jack,
       tittle: "First Class",
       artist: "Jack Harlow",
       album: "First Class • 2022",
     },
     {
-      id: 5,
+      id: 6,
       img: week1,
       tittle: "Heartless",
       artist: "The Weeknd",
       album: "After Hours • 2020",
     },
     {
-      id: 6,
+      id: 7,
       img: week2,
       tittle: "Moth To A Flame",
       artist: "Swedish House Mafia 및 The Weeknd",
       album: "Paradise Again • 2022",
     },
     {
-      id: 7,
+      id: 8,
       img: adamjensen,
       tittle: "I'm a Sucker for a Liar in a Red Dress",
       artist: "Adam Jensen",
       album: "I'm a Sucker for a Liar in a Red Dress • 2020",
     },
     {
-      id: 8,
+      id: 9,
       img: ariana1,
       tittle: "Wit It This Christmas",
       artist: "Ariana Grande",
       album: "Christmas & Chill • 2015",
     },
     {
-      id: 9,
+      id: 10,
       img: ariana2,
       tittle: "Daydreamin'",
       artist: "Ariana Grande",
       album: "Yours Truly • 2013",
     },
     {
-      id: 10,
+      id: 11,
       img: charlie,
       tittle: "Done for Me(feat. Kehlani)",
       artist: "Charlie Puth",
       album: "Voicenotes",
     },
     {
-      id: 11,
+      id: 12,
       img: iu,
       tittle: "에잇(feat. SUGA)",
       artist: "아이유(IU)",
@@ -143,21 +152,21 @@ export const all = atom<Data[]>({
     },
 
     {
-      id: 12,
+      id: 13,
       img: yena,
       tittle: "SMILEY(feat. BIBI)",
       artist: "YENA (최예나)",
       album: "ˣ‿ˣ (SMiLEY) • 2022",
     },
     {
-      id: 13,
+      id: 14,
       img: star,
       tittle: "3LAU - Star Crossed (J3SH & LHB Remix)",
       artist: "T. S.",
       album: "2018",
     },
     {
-      id: 14,
+      id: 15,
       img: sweater,
       tittle: "Sweater Weather (Gaullin Remix)",
       artist: "The Neighbourhood",

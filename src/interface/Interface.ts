@@ -113,8 +113,8 @@ export interface IProjectsData {
   projects_logo: string;
   projects_by: string;
   projects_prev_img: string[];
-  projects_font: string[];
-  projects_color: string[];
+  projects_fonts: string[];
+  projects_colors: string[];
   projects_ko: string;
   projects_en: string;
 }

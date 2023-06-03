@@ -1,12 +1,12 @@
 import { IScheduleData } from "../interface/interface";
 
 export async function fetchFaqs() {
-  const response = await fetch(`http://localhost:4000/api/faqs`);
+  const response = await fetch(`http://localhost:5000/api/faqs`);
   return await response.json();
 }
 
 export async function fetchProjects() {
-  const response = await fetch(`http://localhost:4000/api/projects`);
+  const response = await fetch(`http://localhost:5000/api/projects`);
   return await response.json();
 }
 
