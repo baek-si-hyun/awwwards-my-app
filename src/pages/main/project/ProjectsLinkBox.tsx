@@ -177,7 +177,6 @@ function ProjectsLinkBox() {
   const [projectList, setProjectList] = useState<IProjectsData[]>([]);
   const [visitedData, setVisitedData] = useState<IVisited[]>([
     {
-      visited_awwwards_total: 0,
       visited_airbnb_today: 0,
       visited_airbnb_total: 0,
       visited_coin_today: 0,

@@ -50,7 +50,6 @@ export interface IGetVisitedObject {
   visited: IVisited;
 }
 export interface IVisited {
-  visited_awwwards_total: number;
   visited_airbnb_today: number;
   visited_airbnb_total: number;
   visited_coin_today: number;

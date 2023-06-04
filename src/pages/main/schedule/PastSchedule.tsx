@@ -16,10 +16,10 @@ const Container = styled.div`
 `;
 
 const Row = styled.div`
-  width: 1816.3px;
+  width: 2295px;
   position: relative;
   display: grid;
-  grid-template-columns: repeat(11, minmax(161.47px, auto));
+  grid-template-columns: 200px repeat(13, 161px);
   grid-template-rows: clamp(60px, 5vw, 100px);
   background-image: linear-gradient(
     to right,
@@ -57,7 +57,6 @@ const Box = styled.div`
   background-size: 1px 8px;
   justify-content: center;
   &:first-child {
-    width: 200px;
     justify-content: flex-start;
     @media (max-width: 1000px) {
       & {
@@ -97,15 +96,14 @@ const AbsoluteBox = styled.div<{ indexNum: number }>`
   ${(props) => props.indexNum === 3 && "left:1172px;gap:55px;"};
   ${(props) => props.indexNum === 4 && "left:1332px;gap:55px;"};
   ${(props) => props.indexNum === 5 && "left:1495px;gap:55px;"};
-  ${(props) => props.indexNum === 6 && "left:1495px;gap:170px;"};
-  ${(props) => props.indexNum === 7 && "display: none"};
+  ${(props) => props.indexNum === 6 && "left:1495px;gap:550px;"};
+  ${(props) => props.indexNum === 7 && "left:1700px;gap:70px;"};
+  ${(props) => props.indexNum === 8 && "left:1860px;gap:150px;"};
+  ${(props) => props.indexNum === 9 && "left:1900px;gap:110px;"}
+  ${(props) => props.indexNum === 10 && "display: none;"}
 `;
 const Schedule = styled.div`
-  @media (max-width: 1919px) {
-    & {
-      overflow-x: scroll;
-    }
-  }
+  overflow-x: scroll;
 `;
 const InnerBox = styled.div`
   display: flex;

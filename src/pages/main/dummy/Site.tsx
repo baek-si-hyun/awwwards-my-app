@@ -2,10 +2,10 @@ import styled from "styled-components";
 import { useState } from "react";
 import awwwardC from "../../../assets/img/main_img/awwwardC.webp";
 import upbitC from "../../../assets/img/main_img/upbitC.webp";
-import binanceC from "../../../assets/img/main_img/binanceC.webp";
+import investingC from "../../../assets/img/main_img/investingC.webp";
 import awwwardicon from "../../../assets/img/main_img/awwwardicon.png";
 import upbiticon from "../../../assets/img/main_img/upbiticon.png";
-import binanceicon from "../../../assets/img/main_img/binanceicon.png";
+import investingicon from "../../../assets/img/main_img/investingicon.png";
 
 const Container = styled.div`
   display: grid;
@@ -212,7 +212,7 @@ function Site() {
       </Sitebox>
       <Sitebox>
         <SiteImgBox
-          url={binanceC}
+          url={investingC}
           onMouseOver={() => setHover(3)}
           onMouseOut={() => setHover(0)}
         >
@@ -236,7 +236,7 @@ function Site() {
           </div>
           <InnerFigure>
             <img
-              src={binanceicon}
+              src={investingicon}
               style={{ width: 30, height: 30, borderRadius: 20 }}
               alt="binanceicon"
               loading="lazy"

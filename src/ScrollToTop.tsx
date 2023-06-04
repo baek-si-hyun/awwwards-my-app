@@ -1,4 +1,4 @@
-import  { useEffect } from "react";
+import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 function ScrollToTop() {
@@ -6,13 +6,12 @@ function ScrollToTop() {
 
   console.log(pathname);
 
-
   useEffect(() => {
     window.scrollTo({
       top: 0,
       left: 0,
     });
-    const sendDataToBackend = async () => {
+    const sendData = async () => {
       const data = { pathname: pathname };
       try {
         const response = await fetch("http://localhost:5000/api/visited", {
@@ -22,17 +21,12 @@ function ScrollToTop() {
           },
           body: JSON.stringify(data),
         });
-    
-        if (response.ok) {
-          console.log("Data sent successfully!");
-        } else {
-          console.error("Failed to send data.");
-        }
+        console.log(response.ok);
       } catch (error) {
         console.error(error);
       }
     };
-    sendDataToBackend();
+    sendData();
   }, [pathname]);
 
   return null;
