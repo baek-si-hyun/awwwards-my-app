@@ -7,8 +7,6 @@ import {
   TextBoxbottom,
   TextBoxMiddle,
 } from "../../../components/mainCommon";
-import { useRecoilValue } from "recoil";
-import { visited } from "../../../atom";
 import ProjectsRouter from "./ProjectsLinkBox";
 
 
@@ -22,7 +20,6 @@ const GridBox = styled.div`
   }
 `;
 function Projects() {
-  const getvisited = useRecoilValue(visited);
   return (
     <Container id="projects">
       <InnerContainer>
@@ -38,7 +35,7 @@ function Projects() {
           </TextBoxbottom>
         </TextBox>
         <GridBox>
-          <ProjectsRouter visited={getvisited} />
+          <ProjectsRouter/>
         </GridBox>
       </InnerContainer>
     </Container>

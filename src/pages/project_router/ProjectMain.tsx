@@ -74,7 +74,6 @@ const DescriptionProjectContent = styled.div`
 
 function ProjectMain() {
   const { state } = useLocation();
-  console.log(state)
   return (
     <Container id="sotd">
       <InnerContainer>

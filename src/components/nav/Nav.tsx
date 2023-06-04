@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useState, useEffect, useCallback } from "react";
 import { useRecoilValue, useSetRecoilState } from "recoil";
+import { useLocation } from "react-router-dom";
 import { pathList, resizeWidth } from "../../atom";
 import { IMainPosition, IRouterPosition } from "../../interface/interface";
 import { DomApi } from "../../services/domApi";
@@ -108,7 +109,7 @@ export const NavItem = styled(NavItemCommon)<{ mainPosition: IMainPosition }>`
 `;
 
 export const RouterNavItem = styled(NavItemCommon)<{
-  routerPosition: IRouterPosition
+  routerPosition: IRouterPosition;
 }>`
   :nth-child(1) {
     font-weight: 600;
@@ -258,6 +259,7 @@ function NavMode({
 }
 
 function Nav() {
+  const { pathname } = useLocation();
   const [resize, setResize] = useState(window.innerWidth);
   const setResizeWidth = useSetRecoilState(resizeWidth);
   const [menuSwitch, setMenuSwitch] = useState(false);
@@ -275,8 +277,6 @@ function Nav() {
       window.removeEventListener("resize", bugerNavToggle);
     };
   }, [bugerNavToggle, resize]);
-
-  const { pathname } = useRecoilValue(pathList);
 
   const navHandler = (e: any) => {
     e.preventDefault();

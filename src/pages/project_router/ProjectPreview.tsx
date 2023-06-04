@@ -129,13 +129,21 @@ function ProjectPreview({ projectData }: { projectData: IProjectData }) {
         </TextBoxbottom>
       </TextBox>
       <PreviewContainer>
-        {projectData.imgs.map((data, index) => (
-          <Preview cardBgColorData={projectData.name} key={index}>
-            <PrevInner>
-              <PreviewImg src={data} alt="preview" loading="lazy" decoding="async"/>
-            </PrevInner>
-          </Preview>
-        ))}
+        {projectData.imgs.map(
+          (data, index) =>
+            data && (
+              <Preview cardBgColorData={projectData.name} key={index}>
+                <PrevInner>
+                  <PreviewImg
+                    src={data}
+                    alt="preview"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </PrevInner>
+              </Preview>
+            )
+        )}
       </PreviewContainer>
     </PreviewContaier>
   );

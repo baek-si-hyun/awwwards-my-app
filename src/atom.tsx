@@ -20,23 +20,8 @@ import star from "./assets/img/recommended_song/star.jpg";
 import sweater from "./assets/img/recommended_song/sweater.jpg";
 import iu from "./assets/img/recommended_song/iu.jpg";
 import lesserafim from "./assets/img/recommended_song/lesserafim.jpg";
-import { IPathname, Data, IResize, IVisited } from "./interface/interface";
+import { IPathname, Data, IResize } from "./interface/interface";
 
-export const visited = atom<IVisited>({
-  key: `visited/${v1()}`,
-  default: {
-    airbnbToday: 0,
-    airbnbTotal: 0,
-    coinToday: 0,
-    coinTotal: 0,
-    kanbanToday: 0,
-    kanbanTotal: 0,
-    myappToday: 0,
-    myappTotal: 0,
-    netflixToday: 0,
-    netflixTotal: 0,
-  },
-});
 export const resizeWidth = atom<IResize>({
   key: `resizeWidth/${v1()}`,
   default: { resizeWidth: window.innerWidth },

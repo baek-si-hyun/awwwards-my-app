@@ -36,7 +36,7 @@ footer, header, hgroup, menu, nav, section {
 
 html{
   font-size: 100%;
-  scroll-behavior: smooth; 
+  scroll-behavior: smooth;
 }
 body {
   line-height: 1;

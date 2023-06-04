@@ -10,6 +10,10 @@ export async function fetchProjects() {
   return await response.json();
 }
 
+export async function fetchVistited() {
+  const response = await fetch(`http://localhost:5000/api/visited`);
+  return await response.json();
+}
 
 export const gameName: string[] = [
   "League of Legends",

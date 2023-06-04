@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { IProjectsData, IVisited } from "../../../interface/interface";
-import { fetchProjects } from "../../../services/listData";
+import { fetchProjects, fetchVistited } from "../../../services/listData";
 import { useEffect, useState } from "react";
 
 const Box = styled(Link)`
@@ -128,12 +128,13 @@ const VisitedInnerBottom = styled.div`
   }
 `;
 function VisitedBox({
-  visited,
+  visitedData,
   name,
 }: {
-  visited: IVisited;
+  visitedData: IVisited[];
   name: string;
 }) {
+  const [visited] = visitedData;
 
   return (
     <Visited>
@@ -141,15 +142,15 @@ function VisitedBox({
         <VisitedInnerTop>Visited Today</VisitedInnerTop>
         <VisitedInnerBottom>
           {name === "Netflix"
-            ? visited.netflixToday
+            ? visited.visited_netflix_today
             : name === "Kanban"
-            ? visited.kanbanToday
+            ? visited.visited_kanban_today
             : name === "Coin"
-            ? visited.coinToday
+            ? visited.visited_coin_today
             : name === "Myapp"
-            ? visited.myappToday
+            ? visited.visited_myapp_today
             : name === "Airbnb"
-            ? visited.airbnbToday
+            ? visited.visited_airbnb_today
             : ""}
         </VisitedInnerBottom>
       </VisitedInner>
@@ -157,29 +158,49 @@ function VisitedBox({
         <VisitedInnerTop>Total Visited</VisitedInnerTop>
         <VisitedInnerBottom>
           {name === "Netflix"
-            ? visited.netflixTotal
+            ? visited.visited_netflix_total
             : name === "Kanban"
-            ? visited.kanbanTotal
+            ? visited.visited_kanban_total
             : name === "Coin"
-            ? visited.coinTotal
+            ? visited.visited_coin_total
             : name === "Myapp"
-            ? visited.myappTotal
+            ? visited.visited_myapp_total
             : name === "Airbnb"
-            ? visited.airbnbTotal
+            ? visited.visited_airbnb_total
             : ""}
         </VisitedInnerBottom>
       </VisitedInner>
     </Visited>
   );
 }
-function ProjectsLinkBox({ visited }: { visited: IVisited }) {
+function ProjectsLinkBox() {
   const [projectList, setProjectList] = useState<IProjectsData[]>([]);
+  const [visitedData, setVisitedData] = useState<IVisited[]>([
+    {
+      visited_awwwards_total: 0,
+      visited_airbnb_today: 0,
+      visited_airbnb_total: 0,
+      visited_coin_today: 0,
+      visited_coin_total: 0,
+      visited_kanban_today: 0,
+      visited_kanban_total: 0,
+      visited_myapp_today: 0,
+      visited_myapp_total: 0,
+      visited_netflix_today: 0,
+      visited_netflix_total: 0,
+    },
+  ]);
   useEffect(() => {
     const getProjects = async () => {
       const projects = await fetchProjects();
       setProjectList(() => projects);
     };
+    const getVisited = async () => {
+      const visited = await fetchVistited();
+      setVisitedData(() => visited);
+    };
     getProjects();
+    getVisited();
   }, []);
   return (
     <>
@@ -191,7 +212,7 @@ function ProjectsLinkBox({ visited }: { visited: IVisited }) {
             name: data.projects_name,
             logo: data.projects_logo,
             by: data.projects_by,
-            imgs :data.projects_prev_img,
+            imgs: data.projects_prev_img,
             fonts: data.projects_fonts,
             colors: data.projects_colors,
             ko: data.projects_ko,
@@ -229,7 +250,7 @@ function ProjectsLinkBox({ visited }: { visited: IVisited }) {
                   </figcaption>
                 </InnerFigure>
               </TextBottomInner>
-              <VisitedBox visited={visited} name={data.projects_code} />
+              <VisitedBox visitedData={visitedData} name={data.projects_code} />
             </TextBottom>
           </InnerBoxText>
         </Box>

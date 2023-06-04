@@ -50,16 +50,17 @@ export interface IGetVisitedObject {
   visited: IVisited;
 }
 export interface IVisited {
-  airbnbToday: number;
-  airbnbTotal: number;
-  coinToday: number;
-  coinTotal: number;
-  kanbanToday: number;
-  kanbanTotal: number;
-  myappToday: number;
-  myappTotal: number;
-  netflixToday: number;
-  netflixTotal: number;
+  visited_awwwards_total: number;
+  visited_airbnb_today: number;
+  visited_airbnb_total: number;
+  visited_coin_today: number;
+  visited_coin_total: number;
+  visited_kanban_today: number;
+  visited_kanban_total: number;
+  visited_myapp_today: number;
+  visited_myapp_total: number;
+  visited_netflix_today: number;
+  visited_netflix_total: number;
 }
 export interface IResize {
   resizeWidth: number;
