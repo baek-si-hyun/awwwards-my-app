@@ -5,7 +5,7 @@
 ### 만들게 된 이유
 이것 저것 공부하며 만든 프로젝트들이 어느새 5개가 되었습니다.<br/>
 awwward 웹사이트를 구경하던중 <br/>
-내가 만든 프로젝트들을 이렇게 웹 전시장처럼 만들어 놓으면 단순히 취업 목적이 아닌 <br/>
+제가 만든 프로젝트들을 이렇게 웹 전시장처럼 만들어 놓으면 단순히 취업 목적이 아닌 <br/>
 재미와 자기개발 모두 챙길수 있을거란 생각이 들었습니다.<br/>
 그리고 제가 만든 프로젝트를 보실 인사담당자분들과 지인분들도 <br/>
 일일히 프로젝트 하나하나 링크 눌러가며 보지않고 편하게 볼수 있을거라 생각해<br/>
@@ -17,13 +17,13 @@ awwward 웹사이트를 구경하던중 <br/>
 2. 그동안 코딩을 배우면서 '나도 저런거 한번 해보고 싶다'라고 생각 했던것들을 기억해 두었다가<br/>
    하나씩 만들어서 적용 시켜보고 있습니다. 최근에 만든 코인리스트도 평소에 코인마켓캡을 보며<br/>
    '웹소켓으로 코인 리스트 만들어보고 싶다!' 해서 만들게 되었습니다.<br/>
-3. 기존 awwwards 사이트를 클론코딩하면 외부 사이트 링크를 주렁주렁 달기보다는<br/>
+3. 기존 awwwards 사이트를 클론코딩하며 외부 사이트 링크를 주렁주렁 달기보다는<br/>
    그냥 저를 소개하는 느낌으로 만든게 몇개 있습니다. TMI일수 있습니다.<br/>
 
 ### 지금은 뭘하고 있을까
 지금은 rest api를 만들어보고 있습니다. 항상 rest api를 받아쓰는 입장에서 <br/>
 어떻게 만드는지, 저도 만들수 있는지 궁금했습니다.<br/>
-그리고 프론트엔드 개발자라고 프론트라는 틀을 정해두는건 별로 좋지 않아 보였습니다.<br/>
+그리고 프론트엔드 개발자도 백엔드를 알아야 협업에서 더 도움이 될거라생각했습니다.<br/>
 물론 본업은 충실히 해야겠지만....<br/>
 
 ### 사용한 스킬들
@@ -41,7 +41,7 @@ awwward 웹사이트를 구경하던중 <br/>
 <span><img src="https://img.shields.io/badge/figma-F24E1E?style=flat-square&logo=figma&logoColor=white"/></span>
 <span><img src="https://img.shields.io/badge/windows-0078D6?style=flat-square&logo=windows&logoColor=white"/></span>
 
-<span><img src="https://img.shields.io/badge/jest-C21325?style=flat-square&logo=jest&logoColor=white"/></span> : 판단 miss로 웹사이트 다만들고 배웠습니다. 앞으로 jest를 사용하며 코딩해보겠습니다.
+<span><img src="https://img.shields.io/badge/jest-C21325?style=flat-square&logo=jest&logoColor=white"/></span> : 판단미스로 웹사이트 다만들고 배웠습니다. 앞으로 jest로 테스트하며 코딩해보겠습니다.
 
 <span><img src="https://img.shields.io/badge/nodejs-339933?style=flat-square&logo=nodedotjs&logoColor=white"/></span> : 원래는 업비트 웹소켓을 한번 가공해서 제공해줄 정말 간단한 웹소켓 서버 만들었었는데 배포 비용 문제로 포기하고
  http통신으로 방향을 바꿔 rest api를 만들어 보고있습니다.
