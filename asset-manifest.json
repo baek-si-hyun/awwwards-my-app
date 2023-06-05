@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/awwwards-my-app/static/css/main.05c417ed.css",
-    "main.js": "/awwwards-my-app/static/js/main.1f0fcc3f.js",
+    "main.js": "/awwwards-my-app/static/js/main.70ed7eb0.js",
     "static/media/Pretendard-Regular.otf": "/awwwards-my-app/static/media/Pretendard-Regular.de88013f2ea98a04dede.otf",
     "static/media/Pretendard-Regular.woff": "/awwwards-my-app/static/media/Pretendard-Regular.ab56c53f21ca6b32d15f.woff",
     "static/media/lol.webp": "/awwwards-my-app/static/media/lol.618fced02408b80a3ee7.webp",
@@ -43,10 +43,10 @@
     "static/media/upbiticon.png": "/awwwards-my-app/static/media/upbiticon.4064bc4102e646afee38.png",
     "index.html": "/awwwards-my-app/index.html",
     "main.05c417ed.css.map": "/awwwards-my-app/static/css/main.05c417ed.css.map",
-    "main.1f0fcc3f.js.map": "/awwwards-my-app/static/js/main.1f0fcc3f.js.map"
+    "main.70ed7eb0.js.map": "/awwwards-my-app/static/js/main.70ed7eb0.js.map"
   },
   "entrypoints": [
     "static/css/main.05c417ed.css",
-    "static/js/main.1f0fcc3f.js"
+    "static/js/main.70ed7eb0.js"
   ]
 }
