@@ -64,7 +64,7 @@ function NavRouterMode({
           </a>
         ) : pathname === "/Airbnb" ? (
           <a
-            href="http://3.39.97.123/pages"
+            href="http://54.180.169.128/pages"
             target="_blank"
             rel="noopener noreferrer"
           >

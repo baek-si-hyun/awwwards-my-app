@@ -2,6 +2,9 @@ import { IScheduleData } from "../interface/interface";
 
 export async function fetchFaqs() {
   const response = await fetch(`https://port-0-awwwards-ec2-server-7xwyjq992lliithryh.sel4.cloudtype.app/api/faqs`);
+  if(response.ok){
+    
+  }
   return await response.json();
 }
 

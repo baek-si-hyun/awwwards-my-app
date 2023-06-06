@@ -109,7 +109,7 @@ function CoinList() {
 
   const mergeFn = async () => {
     let newArr: ICoinListMerge[] = [];
-    await Promise.all(
+    Promise.all(
       nameData!.map(async (nameArr) => {
         const supplyArr = circulatingSupply.find(
           (supply) => supply.id === nameArr.market
@@ -131,7 +131,7 @@ function CoinList() {
     if (historyData) {
       mergeFn();
     }
-  }, [historyData]);
+  }, [coinList]);
 
   return (
     <CoinListWrapper>
