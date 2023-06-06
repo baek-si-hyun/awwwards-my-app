@@ -1,17 +1,17 @@
 import { IScheduleData } from "../interface/interface";
 
 export async function fetchFaqs() {
-  const response = await fetch(`http://localhost:5000/api/faqs`);
+  const response = await fetch(`https://port-0-awwwards-ec2-server-7xwyjq992lliithryh.sel4.cloudtype.app/api/faqs`);
   return await response.json();
 }
 
 export async function fetchProjects() {
-  const response = await fetch(`http://localhost:5000/api/projects`);
+  const response = await fetch(`https://port-0-awwwards-ec2-server-7xwyjq992lliithryh.sel4.cloudtype.app/api/projects`);
   return await response.json();
 }
 
 export async function fetchVistited() {
-  const response = await fetch(`http://localhost:5000/api/visited`);
+  const response = await fetch(`https://port-0-awwwards-ec2-server-7xwyjq992lliithryh.sel4.cloudtype.app/api/visited`);
   return await response.json();
 }
 

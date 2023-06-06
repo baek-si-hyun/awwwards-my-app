@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { useState, useEffect, useCallback } from "react";
-import { useRecoilValue, useSetRecoilState } from "recoil";
+import { useSetRecoilState } from "recoil";
 import { useLocation } from "react-router-dom";
-import { pathList, resizeWidth } from "../../atom";
+import { resizeWidth } from "../../atom";
 import { IMainPosition, IRouterPosition } from "../../interface/interface";
 import { DomApi } from "../../services/domApi";
 import NavRouterMode from "./NavRouterMode";

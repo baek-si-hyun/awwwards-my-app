@@ -22,26 +22,13 @@ import iu from "./assets/img/recommended_song/iu.jpg";
 import lesserafim from "./assets/img/recommended_song/lesserafim.jpg";
 import stayc from "./assets/img/recommended_song/stayc.jpg";
 import alltimelow from "./assets/img/recommended_song/alltimelow.jpg";
-import { IPathname, Data, IResize } from "./interface/interface";
+import {  Data, IResize } from "./interface/interface";
 
 export const resizeWidth = atom<IResize>({
   key: `resizeWidth/${v1()}`,
   default: { resizeWidth: window.innerWidth },
 });
-export const pathList = atom<IPathname>({
-  key: `pathList/${v1()}`,
-  default: { pathname: "" },
-});
-export const pathSelector = selector<IPathname>({
-  key: `pathListCorrection/${v1()}`,
-  get: ({ get }) => {
-    const pathname = get(pathList);
-    return pathname;
-  },
-  set: ({ set }, newPath) => {
-    set(pathList, newPath);
-  },
-});
+
 export const all = atom<Data[]>({
   key: `all/${v1()}`,
   default: [

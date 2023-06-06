@@ -3,9 +3,6 @@ import { useLocation } from "react-router-dom";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
-
-  console.log(pathname);
-
   useEffect(() => {
     window.scrollTo({
       top: 0,
@@ -14,14 +11,21 @@ function ScrollToTop() {
     const sendData = async () => {
       const data = { pathname: pathname };
       try {
-        const response = await fetch("http://localhost:5000/api/visited", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data),
-        });
-        console.log(response.ok);
+        const response = await fetch(
+          "https://port-0-awwwards-ec2-server-7xwyjq992lliithryh.sel4.cloudtype.app/api/visited",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+          }
+        );
+        if(response.ok){
+              console.log('ok')
+        }else{
+          console.log('failed')
+        }
       } catch (error) {
         console.error(error);
       }

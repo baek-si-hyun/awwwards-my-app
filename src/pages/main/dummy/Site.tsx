@@ -217,7 +217,7 @@ function Site() {
           onMouseOut={() => setHover(0)}
         >
           <HoverBox3 isHover={hover}>
-            <SenterBox href="https://www.binance.com/en" target="_blank">
+            <SenterBox href="https://kr.investing.com/" target="_blank">
               <span className="material-symbols-outlined">arrow_right_alt</span>
               &nbsp;
               <div>
@@ -226,7 +226,7 @@ function Site() {
             </SenterBox>
             <BottomBox>
               <BottomBoxTop>WEBSITE</BottomBoxTop>
-              <BottomBoxBottom>BINANCE</BottomBoxBottom>
+              <BottomBoxBottom>INVESTING</BottomBoxBottom>
             </BottomBox>
           </HoverBox3>
         </SiteImgBox>
@@ -243,7 +243,7 @@ function Site() {
               decoding="async"
             />
             <figcaption>
-              <span>BINANCE</span>
+              <span>INVESTING</span>
             </figcaption>
           </InnerFigure>
         </SiteTextBox>
