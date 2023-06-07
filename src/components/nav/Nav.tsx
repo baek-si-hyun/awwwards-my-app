@@ -4,7 +4,7 @@ import { useSetRecoilState } from "recoil";
 import { useLocation } from "react-router-dom";
 import { resizeWidth } from "../../atom";
 import { IMainPosition, IRouterPosition } from "../../interface/interface";
-import { DomApi } from "../../services/domApi";
+import { domApi } from "../../services/domApi";
 import NavRouterMode from "./NavRouterMode";
 import NavMainMode from "./NavMainMode";
 
@@ -301,7 +301,7 @@ function Nav() {
 
   useEffect(() => {
     const getElementPostion = () => {
-      DomApi({ pathname, setMainPosition, setRouterPosition });
+      domApi({ pathname, setMainPosition, setRouterPosition });
     };
     window.addEventListener("scroll", getElementPostion);
     return () => window.removeEventListener("scroll", getElementPostion);

@@ -21,10 +21,10 @@ function ScrollToTop() {
             body: JSON.stringify(data),
           }
         );
-        if(response.ok){
-              console.log('ok')
-        }else{
-          console.log('failed')
+        if (response.ok) {
+          console.log("ok");
+        } else {
+          console.log("failed");
         }
       } catch (error) {
         console.error(error);

@@ -1,6 +1,6 @@
 import { IDomApi } from "../interface/interface";
 
-export const DomApi = ({
+export const domApi = ({
   pathname,
   setMainPosition,
   setRouterPosition,

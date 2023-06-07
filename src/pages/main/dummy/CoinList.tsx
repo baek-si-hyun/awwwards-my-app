@@ -131,7 +131,7 @@ function CoinList() {
     if (historyData) {
       mergeFn();
     }
-  }, [coinList]);
+  }, [historyData]);
 
   return (
     <CoinListWrapper>

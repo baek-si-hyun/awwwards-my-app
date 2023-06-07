@@ -124,8 +124,8 @@ export const schedule: IScheduleData[] = [
       "",
       "",
     ],
-    absoluteBox: "apply project",
-    date: "2023. 02 ~ 2023. 03",
+    absoluteBox: "Project creation and maintenance",
+    date: "2023. 02 ~ 2023. 06",
   },
   {
     id: 7,
