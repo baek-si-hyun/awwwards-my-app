@@ -141,7 +141,9 @@ function VisitedBox({
       <VisitedInner>
         <VisitedInnerTop>Visited Today</VisitedInnerTop>
         <VisitedInnerBottom>
-          {name === "Netflix"
+          {name === "Awwwards"
+            ? visited.visited_awwwards_today
+            :name === "Netflix"
             ? visited.visited_netflix_today
             : name === "Kanban"
             ? visited.visited_kanban_today
@@ -157,7 +159,9 @@ function VisitedBox({
       <VisitedInner>
         <VisitedInnerTop>Total Visited</VisitedInnerTop>
         <VisitedInnerBottom>
-          {name === "Netflix"
+          {name === "Awwwards"
+            ? visited.visited_awwwards_total
+            :name === "Netflix"
             ? visited.visited_netflix_total
             : name === "Kanban"
             ? visited.visited_kanban_total

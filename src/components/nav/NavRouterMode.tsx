@@ -30,7 +30,15 @@ function NavRouterMode({
         </RouterNavItem>
       </NavBox>
       <VisitedSite>
-        {pathname === "/Netflix" ? (
+        {pathname === "/Awwwards" ? (
+          <a
+            href="https://baek-si-hyun.github.io/awwwards-my-app/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Visited Site
+          </a>
+        ) :pathname === "/Netflix" ? (
           <a
             href="https://baek-si-hyun.github.io/NFLXclone"
             target="_blank"
