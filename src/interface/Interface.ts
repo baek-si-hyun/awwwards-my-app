@@ -50,6 +50,8 @@ export interface IGetVisitedObject {
   visited: IVisited;
 }
 export interface IVisited {
+  visited_awwwards_today: number;
+  visited_awwwards_total: number;
   visited_airbnb_today: number;
   visited_airbnb_total: number;
   visited_coin_today: number;
@@ -125,7 +127,7 @@ export interface IProjectData {
   thumbnail: string;
   logo: string;
   by: string;
-  imgs: string[]
+  imgs: string[];
   fonts: string[];
   colors: string[];
   ko: string;
