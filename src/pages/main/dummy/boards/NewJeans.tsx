@@ -8,6 +8,7 @@ import styled from "styled-components";
 import React from "react";
 import { useRecoilState } from "recoil";
 import { newJeans } from "../../../../atom";
+import MusicSet, { ButtonDiv, ControllBtn } from "./MusicSet";
 
 const Wrapper = styled.div`
   width: 90%;
@@ -37,6 +38,12 @@ const Card = styled.div<{ isDragging: boolean }>`
   }
   :hover {
     background-color: #1d1d1d;
+    ${ButtonDiv} {
+      opacity: 0.9;
+    }
+    ${ControllBtn} {
+      opacity: 1;
+    }
   }
   @media (max-width: 429px) {
     & {
@@ -45,7 +52,9 @@ const Card = styled.div<{ isDragging: boolean }>`
   }
 `;
 
-const ImgDiv = styled.div``;
+const ImgDiv = styled.div`
+  position: relative;
+`;
 
 const Img = styled.img`
   width: clamp(25px, 4vw, 128px);
@@ -56,12 +65,12 @@ const CardItem = styled.div`
   display: flex;
   align-items: center;
   gap: 7%;
-  line-height: 1.2;
   :nth-child(2) {
     padding-left: 20%;
   }
   :nth-child(3) {
     padding-left: 20%;
+    
   }
   @media (max-width: 768px) {
     & {
@@ -85,53 +94,56 @@ function NewJeans() {
     }
   };
   return (
-    <DragDropContext onDragEnd={onDragEnd}>
-      <Wrapper>
-        <Droppable droppableId="one">
-          {(magic) => (
-            <Board ref={magic.innerRef} {...magic.droppableProps}>
-              {list.map((newjeans, index) => (
-                <Draggable
-                  key={newjeans.tittle}
-                  draggableId={newjeans.tittle}
-                  index={index}
-                >
-                  {(magic, snapshot) => (
-                    <Card
-                      isDragging={snapshot.isDragging}
-                      ref={magic.innerRef}
-                      {...magic.dragHandleProps}
-                      {...magic.draggableProps}
-                    >
-                      <CardItem>
-                        <ImgDiv>
-                          <Img
-                            src={newjeans.img}
-                            alt="album_photo"
-                            loading="lazy"
-                            decoding="async"
-                          />
-                        </ImgDiv>
-                        <Tittle>
-                          <span>{newjeans.tittle}</span>
-                        </Tittle>
-                      </CardItem>
-                      <CardItem>
-                        <span>{newjeans.artist}</span>
-                      </CardItem>
-                      <CardItem>
-                        <span>{newjeans.album}</span>
-                      </CardItem>
-                    </Card>
-                  )}
-                </Draggable>
-              ))}
-              {magic.placeholder}
-            </Board>
-          )}
-        </Droppable>
-      </Wrapper>
-    </DragDropContext>
+    <>
+      <DragDropContext onDragEnd={onDragEnd}>
+        <Wrapper>
+          <Droppable droppableId="one">
+            {(magic) => (
+              <Board ref={magic.innerRef} {...magic.droppableProps}>
+                {list.map((newjeans, index) => (
+                  <Draggable
+                    key={newjeans.tittle}
+                    draggableId={newjeans.tittle}
+                    index={index}
+                  >
+                    {(provided, snapshot) => (
+                      <Card
+                        isDragging={snapshot.isDragging}
+                        ref={provided.innerRef}
+                        {...provided.dragHandleProps}
+                        {...provided.draggableProps}
+                      >
+                        <CardItem>
+                          <ImgDiv>
+                            <Img
+                              src={newjeans.img}
+                              alt="album_photo"
+                              loading="lazy"
+                              decoding="async"
+                            />
+                            <MusicSet videoId={newjeans.videoId} />
+                          </ImgDiv>
+                          <Tittle>
+                            <span>{newjeans.tittle}</span>
+                          </Tittle>
+                        </CardItem>
+                        <CardItem>
+                          <span>{newjeans.artist}</span>
+                        </CardItem>
+                        <CardItem>
+                          <span>{newjeans.album}</span>
+                        </CardItem>
+                      </Card>
+                    )}
+                  </Draggable>
+                ))}
+                {magic.placeholder}
+              </Board>
+            )}
+          </Droppable>
+        </Wrapper>
+      </DragDropContext>
+    </>
   );
 }
 

@@ -44,7 +44,7 @@ function About() {
           <TextBoxbottom>Place to practice</TextBoxbottom>
         </TextBox>
         <SubTextBox>
-          Combination of REST, Websocket and React-Query
+          Combination of HTTP, Websocket and React-Query
         </SubTextBox>
         <CoinList />
         <ExplanTextBox>These are my favorite games.</ExplanTextBox>

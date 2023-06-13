@@ -143,11 +143,11 @@ function Footer() {
           </Contact>
           <Resume>
             <a
-              href="https://www.canva.com/design/DAFcx-92esU/mFPFWmdCEmeahY5B8e0vQw/view?utm_content=DAFcx-92esU&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink"
+              href="https://drive.google.com/uc?id=1M7YYapzZK-8wH-oA86anqAD_INk8N8RZ"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Resume
+              Description
             </a>
           </Resume>
         </Nav>

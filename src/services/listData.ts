@@ -76,7 +76,7 @@ export const schedule: IScheduleData[] = [
   {
     id: 3,
     text: [
-      "COIN market cap",
+      "CRYPTO Tracker",
       "",
       "",
       "",

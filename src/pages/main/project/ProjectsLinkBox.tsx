@@ -2,7 +2,8 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { IProjectsData, IVisited } from "../../../interface/interface";
 import { fetchProjects, fetchVistited } from "../../../services/listData";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useQuery } from "@tanstack/react-query";
 
 const Box = styled(Link)`
   display: flex;
@@ -143,7 +144,7 @@ function VisitedBox({
         <VisitedInnerBottom>
           {name === "Awwwards"
             ? visited.visited_awwwards_today
-            :name === "Netflix"
+            : name === "Netflix"
             ? visited.visited_netflix_today
             : name === "Kanban"
             ? visited.visited_kanban_today
@@ -161,7 +162,7 @@ function VisitedBox({
         <VisitedInnerBottom>
           {name === "Awwwards"
             ? visited.visited_awwwards_total
-            :name === "Netflix"
+            : name === "Netflix"
             ? visited.visited_netflix_total
             : name === "Kanban"
             ? visited.visited_kanban_total
@@ -178,88 +179,85 @@ function VisitedBox({
   );
 }
 function ProjectsLinkBox() {
-  const [projectList, setProjectList] = useState<IProjectsData[]>([]);
-  const [visitedData, setVisitedData] = useState<IVisited[]>([
+
+  const { data: projectData } = useQuery<IProjectsData[]>(
+    ["project"],
+    () => fetchProjects(),
     {
-      visited_awwwards_today: 0,
-      visited_awwwards_total: 0,
-      visited_airbnb_today: 0,
-      visited_airbnb_total: 0,
-      visited_coin_today: 0,
-      visited_coin_total: 0,
-      visited_kanban_today: 0,
-      visited_kanban_total: 0,
-      visited_myapp_today: 0,
-      visited_myapp_total: 0,
-      visited_netflix_today: 0,
-      visited_netflix_total: 0,
-    },
-  ]);
+      refetchOnMount: false,
+      refetchOnWindowFocus: false,
+    }
+  );
+  const { data: visitedData, refetch } = useQuery<IVisited[]>(
+    ["visited"],
+    () => fetchVistited(),
+    {
+      refetchOnMount: false,
+      refetchOnWindowFocus: false,
+    }
+  );
   useEffect(() => {
-    const getProjects = async () => {
-      const projects = await fetchProjects();
-      setProjectList(() => projects);
-    };
-    const getVisited = async () => {
-      const visited = await fetchVistited();
-      setVisitedData(() => visited);
-    };
-    getProjects();
-    getVisited();
-  }, []);
+    refetch();
+  }, [refetch]);
+
   return (
     <>
-      {projectList.map((data) => (
-        <Box
-          to={`/${data.projects_code}`}
-          state={{
-            date: data.projects_date,
-            name: data.projects_name,
-            logo: data.projects_logo,
-            by: data.projects_by,
-            imgs: data.projects_prev_img,
-            fonts: data.projects_fonts,
-            colors: data.projects_colors,
-            ko: data.projects_ko,
-            en: data.projects_en,
-          }}
-          key={data.projects_code}
-        >
-          <InnerBoxImg>
-            <Img
-              src={data.projects_thumbnail}
-              alt="thumbnail"
-              loading="lazy"
-              decoding="async"
-            />
-          </InnerBoxImg>
-          <InnerBoxText>
-            <TextTop>
-              <p>{data.projects_date}</p>
-            </TextTop>
-            <TextBottom>
-              <h4>{data.projects_name}</h4>
-              <TextBottomInner>
-                <div>
-                  <small>by</small>
-                </div>
-                <InnerFigure>
-                  <img
-                    src={data.projects_logo}
-                    alt="maker_logo"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <figcaption>
-                    <span>{data.projects_by}</span>
-                  </figcaption>
-                </InnerFigure>
-              </TextBottomInner>
-              <VisitedBox visitedData={visitedData} name={data.projects_code} />
-            </TextBottom>
-          </InnerBoxText>
-        </Box>
-      ))}
+      {projectData &&
+        visitedData &&
+        projectData.map((data) => (
+          <Box
+            to={`/${data.projects_code}`}
+            state={{
+              date: data.projects_date,
+              name: data.projects_name,
+              logo: data.projects_logo,
+              by: data.projects_by,
+              imgs: data.projects_prev_img,
+              fonts: data.projects_fonts,
+              colors: data.projects_colors,
+              ko: data.projects_ko,
+              en: data.projects_en,
+            }}
+            key={data.projects_code}
+          >
+            <InnerBoxImg>
+              <Img
+                src={data.projects_thumbnail}
+                alt="thumbnail"
+                loading="lazy"
+                decoding="async"
+              />
+            </InnerBoxImg>
+            <InnerBoxText>
+              <TextTop>
+                <p>{data.projects_date}</p>
+              </TextTop>
+              <TextBottom>
+                <h4>{data.projects_name}</h4>
+                <TextBottomInner>
+                  <div>
+                    <small>by</small>
+                  </div>
+                  <InnerFigure>
+                    <img
+                      src={data.projects_logo}
+                      alt="maker_logo"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <figcaption>
+                      <span>{data.projects_by}</span>
+                    </figcaption>
+                  </InnerFigure>
+                </TextBottomInner>
+                <VisitedBox
+                  visitedData={visitedData}
+                  name={data.projects_code}
+                />
+              </TextBottom>
+            </InnerBoxText>
+          </Box>
+        ))}
     </>
   );
 }

@@ -95,6 +95,12 @@ export interface Data {
   tittle: string;
   artist: string;
   album: string;
+  videoId: string;
+}
+export interface IVideo {
+  videoId: string;
+  playing: boolean;
+  videoUrl: string;
 }
 export interface IScheduleData {
   id: number;
