@@ -29,8 +29,12 @@ export const resizeWidth = atom<IResize>({
   default: { resizeWidth: window.innerWidth },
 });
 export const youtubeVideo = atom<IVideo>({
-  key: `resizeWidth/${v1()}`,
+  key: `youtubeVideo/${v1()}`,
   default: { videoId: "", playing: false, videoUrl: "" },
+});
+export const playingVideo = atom({
+  key: `playingVideo/${v1()}`,
+  default: { playingVideoData: ""},
 });
 export const all = atom<Data[]>({
   key: `all/${v1()}`,
