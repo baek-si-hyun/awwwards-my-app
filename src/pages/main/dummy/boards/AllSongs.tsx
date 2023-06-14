@@ -5,7 +5,7 @@ import {
   DropResult,
 } from "react-beautiful-dnd";
 import styled from "styled-components";
-import React, { useState } from "react";
+import React from "react";
 import { useRecoilState } from "recoil";
 import { all } from "../../../../atom";
 import MusicSet, { ButtonDiv, ControllBtn } from "./MusicSet";
@@ -135,7 +135,7 @@ function AllSongs() {
                             loading="lazy"
                             decoding="async"
                           />
-                          <MusicSet videoId={all.videoId} />
+                          <MusicSet videoUrl={all.videoUrl} />
                         </ImgDiv>
                         <Tittle>
                           <span>{all.tittle}</span>

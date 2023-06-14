@@ -2,9 +2,11 @@ import styled from "styled-components";
 import newjeans from "../../../assets/img/main_img/newjeans.jpg";
 import NewJeans from "./boards/NewJeans";
 import AllSongs from "./boards/AllSongs";
-import all from "../../../assets/img/recommended_song/allsong.jpg";
+import allsongs from "../../../assets/img/recommended_song/allsong.jpg";
 import MusicPlayer from "./boards/MusicPlayer";
-
+import { all, newJeans, youtubeVideo } from "../../../atom";
+import { useRecoilValue } from "recoil";
+import React, { useEffect, useState } from "react";
 const MusicWrapper = styled.div`
   width: 100%;
 `;
@@ -113,9 +115,26 @@ const InnerMusicBox4 = styled.div`
 `;
 
 function Music() {
+  const newJeansVideoList = useRecoilValue(newJeans);
+  const allVideoList = useRecoilValue(all);
+  const margeVideoList = newJeansVideoList.concat(allVideoList);
+  const videoList = margeVideoList.map((item) => item.videoUrl);
+  const { videoUrl } = useRecoilValue(youtubeVideo);
+  const [playList, setPlayList] = useState<string[]>([""]);
+
+  useEffect(() => {
+    const findIndex = videoList.findIndex((url) => url === videoUrl);
+    let newList;
+    if (findIndex !== -1) {
+      newList = videoList.slice(findIndex);
+    } else {
+      newList = [""];
+    }
+    setPlayList(newList);
+  }, [videoUrl]);
   return (
     <MusicWrapper>
-      <MusicPlayer />
+      <MusicPlayer playList={playList} />
       <MusicBox>
         <InnerMusicBox1>
           <MusicImg
@@ -140,7 +159,7 @@ function Music() {
         </InnerMusicBox1>
         <InnerMusicBox2>
           <div>
-            <p>"an easy song to listen to"</p>
+            <p>"You can listen to recommended songs."</p>
           </div>
           <div>
             <p>Recommended List</p>
@@ -149,7 +168,7 @@ function Music() {
         </InnerMusicBox2>
         <InnerMusicBox3>
           <MusicImg
-            src={all}
+            src={allsongs}
             alt="famous artist"
             loading="lazy"
             decoding="async"
@@ -170,4 +189,4 @@ function Music() {
     </MusicWrapper>
   );
 }
-export default Music;
+export default React.memo(Music);

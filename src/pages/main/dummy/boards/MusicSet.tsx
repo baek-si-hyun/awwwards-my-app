@@ -1,7 +1,8 @@
 import styled from "styled-components";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { playingVideo, youtubeVideo } from "../../../../atom";
+import { Data } from "../../../../interface/interface";
 
 export const ButtonDiv = styled.div<{ isPlaying: boolean }>`
   position: absolute;
@@ -32,28 +33,41 @@ export const ControllBtn = styled.button<{ isPlaying: boolean }>`
   }
 `;
 
-function MusicSet({ videoId }: { videoId: string }) {
+function MusicSet({ videoUrl }: { videoUrl: string }) {
   const [isPlaying, setIsPlaying] = useState(false);
   const setVideoData = useSetRecoilState(youtubeVideo);
-  const togglePlay = () => {
-    const videoUrl = `https://www.youtube.com/embed/${videoId}`;
-    setVideoData((videoData) => {
-      videoData = {
-        videoId: videoId,
-        playing: !isPlaying,
+  const { playingVideoData } = useRecoilValue(playingVideo);
+
+  const togglePlay = async () => {
+    try {
+      const newIsPlaying = !isPlaying;
+
+      setIsPlaying(newIsPlaying);
+
+      await new Promise<void>((resolve) => {
+        resolve();
+      });
+
+      setVideoData({
+        playing: newIsPlaying,
         videoUrl: videoUrl,
-      };
-      return videoData;
-    });
-    setIsPlaying((isPlaying) => !isPlaying);
+      });
+    } catch (error) {
+      console.error("Error occurred:", error);
+    }
   };
 
-  const { playingVideoData } = useRecoilValue(playingVideo);
   useEffect(() => {
-    if (videoId !== playingVideoData) {
-      setIsPlaying(() => false);
+    console.log(playingVideoData)
+    if (videoUrl !== playingVideoData) {
+      setIsPlaying(false);
+    }
+    if (videoUrl === playingVideoData) {
+      setIsPlaying(true);
+
     }
   }, [playingVideoData]);
+
   return (
     <>
       <ButtonDiv isPlaying={isPlaying}>
