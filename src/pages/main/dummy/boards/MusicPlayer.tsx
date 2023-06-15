@@ -1,27 +1,32 @@
-import { useRef, useEffect } from "react";
+import { useEffect, useState } from "react";
+import ReactPlayer from "react-player";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { playingVideo, youtubeVideo } from "../../../../atom";
-import ReactPlayer from "react-player/youtube";
 
-function MusicPlayer() {
-  const playerRef = useRef(null);
-  const { videoId, playing, videoUrl } = useRecoilValue(youtubeVideo);
+function MusicPlayer({ playList }: { playList: string[] }) {
+  const [index, setIndex] = useState(0);
   const setPlayingVideoId = useSetRecoilState(playingVideo);
+  const { playing } = useRecoilValue(youtubeVideo);
+  const handleVideoEnded = () => {
+    setIndex((index) => index + 1);
+  };
   useEffect(() => {
-    setPlayingVideoId((playingVideoId) => {
-      playingVideoId = { playingVideoData: videoId };
-      return playingVideoId;
-    });
-  }, [setPlayingVideoId, videoId]);
+    setIndex(() => 0);
+    setPlayingVideoId({ playingVideoData: playList[0] });
+  }, [playList]);
+  useEffect(() => {
+    setPlayingVideoId({ playingVideoData: playList[index] });
+  }, [index, setPlayingVideoId, playing]);
+
   return (
     <div>
       <ReactPlayer
-        ref={playerRef}
-        url={videoUrl}
+        url={playList[index]}
         width="0"
         height="0"
         playing={playing}
         controls
+        onEnded={() => handleVideoEnded()}
       />
     </div>
   );

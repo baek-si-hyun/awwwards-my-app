@@ -30,11 +30,11 @@ export const resizeWidth = atom<IResize>({
 });
 export const youtubeVideo = atom<IVideo>({
   key: `youtubeVideo/${v1()}`,
-  default: { videoId: "", playing: false, videoUrl: "" },
+  default: { playing: false, videoUrl: "" },
 });
 export const playingVideo = atom({
   key: `playingVideo/${v1()}`,
-  default: { playingVideoData: ""},
+  default: { playingVideoData: "" },
 });
 export const all = atom<Data[]>({
   key: `all/${v1()}`,
@@ -45,7 +45,7 @@ export const all = atom<Data[]>({
       tittle: "Hype Boy(dylonmaycel rearranged)",
       artist: "dylonmaycel",
       album: "NewJeans 1st EP 'New Jeans'",
-      videoId: "fAp8dr_fPJY",
+      videoUrl: "https://www.youtube.com/embed/fAp8dr_fPJY",
     },
     {
       id: 1,
@@ -53,7 +53,7 @@ export const all = atom<Data[]>({
       tittle: "Thirsty",
       artist: "aespa",
       album: "MY WORLD - The 3rd Mini Album • 2023'",
-      videoId: "Ysz8_LZL52c",
+      videoUrl: "https://www.youtube.com/embed/Ysz8_LZL52c",
     },
     {
       id: 2,
@@ -61,7 +61,7 @@ export const all = atom<Data[]>({
       tittle: "Impurities",
       artist: "LE SSERAFIM",
       album: "ANTIFRAGILE • 2022",
-      videoId: "-uZcrLYNwfE",
+      videoUrl: "https://www.youtube.com/embed/-uZcrLYNwfE",
     },
     {
       id: 3,
@@ -69,7 +69,7 @@ export const all = atom<Data[]>({
       tittle: "Poppy",
       artist: "STAYC(스테이씨)",
       album: "Teddy Bear",
-      videoId: "sN1ZGLIqy4g",
+      videoUrl: "https://www.youtube.com/embed/sN1ZGLIqy4g",
     },
     {
       id: 4,
@@ -77,7 +77,7 @@ export const all = atom<Data[]>({
       tittle: "Dead Girl! (Shake My Head)",
       artist: "Au/Ra",
       album: "Dead Girl! (Shake My Head) • 2021",
-      videoId: "Z0pUhjAYbm8",
+      videoUrl: "https://www.youtube.com/embed/Z0pUhjAYbm8",
     },
     {
       id: 5,
@@ -85,7 +85,7 @@ export const all = atom<Data[]>({
       tittle: "how deep?",
       artist: "Tai Verdes",
       album: "how deep? • 2022",
-      videoId: "9M8fEfJTV1k",
+      videoUrl: "https://www.youtube.com/embed/9M8fEfJTV1k",
     },
     {
       id: 6,
@@ -93,7 +93,7 @@ export const all = atom<Data[]>({
       tittle: "First Class",
       artist: "Jack Harlow",
       album: "First Class • 2022",
-      videoId: "5CVrij8tcP8",
+      videoUrl: "https://www.youtube.com/embed/5CVrij8tcP8",
     },
     {
       id: 7,
@@ -101,7 +101,7 @@ export const all = atom<Data[]>({
       tittle: "Heartless",
       artist: "The Weeknd",
       album: "After Hours • 2020",
-      videoId: "bayAxoXJOyQ",
+      videoUrl: "https://www.youtube.com/embed/-uj9b9JCIJM",
     },
     {
       id: 8,
@@ -109,7 +109,7 @@ export const all = atom<Data[]>({
       tittle: "Moth To A Flame",
       artist: "Swedish House Mafia 및 The Weeknd",
       album: "Paradise Again • 2022",
-      videoId: "WbzmQcFLPE8",
+      videoUrl: "https://www.youtube.com/embed/WbzmQcFLPE8",
     },
     {
       id: 9,
@@ -117,7 +117,7 @@ export const all = atom<Data[]>({
       tittle: "I'm a Sucker for a Liar in a Red Dress",
       artist: "Adam Jensen",
       album: "I'm a Sucker for a Liar in a Red Dress • 2020",
-      videoId: "HyvP-frWgGE",
+      videoUrl: "https://www.youtube.com/embed/HyvP-frWgGE",
     },
     {
       id: 10,
@@ -125,7 +125,7 @@ export const all = atom<Data[]>({
       tittle: "Wit It This Christmas",
       artist: "Ariana Grande",
       album: "Christmas & Chill • 2015",
-      videoId: "El79WQpXyPQ",
+      videoUrl: "https://www.youtube.com/embed/El79WQpXyPQ",
     },
     {
       id: 11,
@@ -133,7 +133,7 @@ export const all = atom<Data[]>({
       tittle: "Daydreamin'",
       artist: "Ariana Grande",
       album: "Yours Truly • 2013",
-      videoId: "eLQMGYHVJ_I",
+      videoUrl: "https://www.youtube.com/embed/eLQMGYHVJ_I",
     },
     {
       id: 12,
@@ -141,7 +141,7 @@ export const all = atom<Data[]>({
       tittle: "Done for Me(feat. Kehlani)",
       artist: "Charlie Puth",
       album: "Voicenotes",
-      videoId: "3tYajkHNK58",
+      videoUrl: "https://www.youtube.com/embed/3tYajkHNK58",
     },
     {
       id: 13,
@@ -149,7 +149,7 @@ export const all = atom<Data[]>({
       tittle: "에잇(feat. SUGA)",
       artist: "아이유(IU)",
       album: "에잇 • 2020",
-      videoId: "LFiffwrhLn8",
+      videoUrl: "https://www.youtube.com/embed/LFiffwrhLn8",
     },
 
     {
@@ -158,7 +158,7 @@ export const all = atom<Data[]>({
       tittle: "SMILEY(feat. BIBI)",
       artist: "YENA (최예나)",
       album: "ˣ‿ˣ (SMiLEY) • 2022",
-      videoId: "wr-YgbXiQQM",
+      videoUrl: "https://www.youtube.com/embed/wr-YgbXiQQM",
     },
     {
       id: 15,
@@ -166,7 +166,7 @@ export const all = atom<Data[]>({
       tittle: "Tome-Bomb",
       artist: "All Time Low",
       album: "Dirty Work",
-      videoId: "AJF8h5ty-vA",
+      videoUrl: "https://www.youtube.com/embed/AJF8h5ty-vA",
     },
     {
       id: 16,
@@ -174,7 +174,7 @@ export const all = atom<Data[]>({
       tittle: "3LAU - Star Crossed (J3SH & LHB Remix)",
       artist: "T. S.",
       album: "2018",
-      videoId: "1dtVbJy3eHU",
+      videoUrl: "https://www.youtube.com/embed/1dtVbJy3eHU",
     },
     {
       id: 17,
@@ -182,7 +182,7 @@ export const all = atom<Data[]>({
       tittle: "Sweater Weather (Gaullin Remix)",
       artist: "The Neighbourhood",
       album: "House Nation",
-      videoId: "6iPDdCJ1lEM",
+      videoUrl: "https://www.youtube.com/embed/6iPDdCJ1lEM",
     },
   ],
 });
@@ -196,7 +196,7 @@ export const newJeans = atom<Data[]>({
       tittle: "OMG",
       artist: "NewJeans",
       album: "NewJeans'OMG'",
-      videoId: "sVTy_wmn5SU",
+      videoUrl: "https://www.youtube.com/embed/sVTy_wmn5SU",
     },
     {
       id: 1,
@@ -204,7 +204,7 @@ export const newJeans = atom<Data[]>({
       tittle: "Ditto",
       artist: "NewJeans",
       album: "Ditto",
-      videoId: "HtbnfBFIJls",
+      videoUrl: "https://www.youtube.com/embed/HtbnfBFIJls",
     },
     {
       id: 2,
@@ -212,7 +212,7 @@ export const newJeans = atom<Data[]>({
       tittle: "Zero",
       artist: "NewJeans",
       album: "Zero",
-      videoId: "FWTG5wuVLuI",
+      videoUrl: "https://www.youtube.com/embed/FWTG5wuVLuI",
     },
     {
       id: 3,
@@ -220,7 +220,7 @@ export const newJeans = atom<Data[]>({
       tittle: "Hype Boy",
       artist: "NewJeans",
       album: "NewJeans 1st EP 'New Jeans'",
-      videoId: "T--6HBX2K4g",
+      videoUrl: "https://www.youtube.com/embed/T--6HBX2K4g",
     },
     {
       id: 4,
@@ -228,7 +228,7 @@ export const newJeans = atom<Data[]>({
       tittle: "Attention",
       artist: "NewJeans",
       album: "NewJeans 1st EP 'New Jeans'",
-      videoId: "o8RkbHv2_a0",
+      videoUrl: "https://www.youtube.com/embed/o8RkbHv2_a0",
     },
     {
       id: 5,
@@ -236,7 +236,7 @@ export const newJeans = atom<Data[]>({
       tittle: "Cookie",
       artist: "NewJeans",
       album: "NewJeans 1st EP 'New Jeans'",
-      videoId: "1pUCsbK35JA",
+      videoUrl: "https://www.youtube.com/embed/1pUCsbK35JA",
     },
     {
       id: 6,
@@ -244,7 +244,7 @@ export const newJeans = atom<Data[]>({
       tittle: "Hurt",
       artist: "NewJeans",
       album: "NewJeans 1st EP 'New Jeans'",
-      videoId: "qoK934-VghI",
+      videoUrl: "https://www.youtube.com/embed/qoK934-VghI",
     },
   ],
 });

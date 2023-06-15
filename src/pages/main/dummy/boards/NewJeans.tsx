@@ -70,7 +70,6 @@ const CardItem = styled.div`
   }
   :nth-child(3) {
     padding-left: 20%;
-    
   }
   @media (max-width: 768px) {
     & {
@@ -121,7 +120,7 @@ function NewJeans() {
                               loading="lazy"
                               decoding="async"
                             />
-                            <MusicSet videoId={newjeans.videoId} />
+                            <MusicSet videoUrl={newjeans.videoUrl} />
                           </ImgDiv>
                           <Tittle>
                             <span>{newjeans.tittle}</span>
