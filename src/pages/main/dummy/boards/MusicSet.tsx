@@ -1,8 +1,8 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import styled from "styled-components";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { playingVideo, youtubeVideo } from "../../../../atom";
-import { Data } from "../../../../interface/interface";
 
 export const ButtonDiv = styled.div<{ isPlaying: boolean }>`
   position: absolute;
@@ -31,7 +31,7 @@ export const ControllBtn = styled.button<{ isPlaying: boolean }>`
     color: #fff;
     font-size: clamp(1.5vw, 2vw, 60px);
   }
-`;
+`
 
 function MusicSet({ videoUrl }: { videoUrl: string }) {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -41,9 +41,7 @@ function MusicSet({ videoUrl }: { videoUrl: string }) {
   const togglePlay = async () => {
     try {
       const newIsPlaying = !isPlaying;
-
       setIsPlaying(newIsPlaying);
-
       await new Promise<void>((resolve) => {
         resolve();
       });
@@ -58,13 +56,11 @@ function MusicSet({ videoUrl }: { videoUrl: string }) {
   };
 
   useEffect(() => {
-    console.log(playingVideoData)
     if (videoUrl !== playingVideoData) {
       setIsPlaying(false);
     }
     if (videoUrl === playingVideoData) {
       setIsPlaying(true);
-
     }
   }, [playingVideoData]);
 

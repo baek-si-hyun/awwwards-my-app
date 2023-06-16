@@ -95,7 +95,7 @@ export interface Data {
   tittle: string;
   artist: string;
   album: string;
-  videoUrl: string;
+  url: string;
 }
 export interface IVideo {
   playing: boolean;

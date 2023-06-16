@@ -26,7 +26,7 @@ const Board = styled.div`
   }
 `;
 
-const Card = styled.div<{ isDragging: boolean }>`
+export const Card = styled.div<{ isDragging: boolean }>`
   padding: 10px 2vw;
   background-color: ${(props) =>
     props.isDragging ? "#1d1d1d" : "transparent"};
@@ -93,6 +93,7 @@ const Img = styled.img`
   width: clamp(20px, 2.5vw, 80px);
 `;
 const Tittle = styled.div``;
+
 function AllSongs() {
   const [list, setList] = useRecoilState(all);
   const onDragEnd = ({ destination, source }: DropResult) => {
@@ -135,7 +136,7 @@ function AllSongs() {
                             loading="lazy"
                             decoding="async"
                           />
-                          <MusicSet videoUrl={all.videoUrl} />
+                          <MusicSet videoUrl={all.url} />
                         </ImgDiv>
                         <Tittle>
                           <span>{all.tittle}</span>

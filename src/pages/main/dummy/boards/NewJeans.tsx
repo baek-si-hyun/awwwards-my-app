@@ -78,6 +78,7 @@ const CardItem = styled.div`
   }
 `;
 const Tittle = styled.div``;
+
 function NewJeans() {
   const [list, setList] = useRecoilState(newJeans);
   const onDragEnd = ({ destination, source }: DropResult) => {
@@ -120,7 +121,7 @@ function NewJeans() {
                               loading="lazy"
                               decoding="async"
                             />
-                            <MusicSet videoUrl={newjeans.videoUrl} />
+                            <MusicSet videoUrl={newjeans.url} />
                           </ImgDiv>
                           <Tittle>
                             <span>{newjeans.tittle}</span>
