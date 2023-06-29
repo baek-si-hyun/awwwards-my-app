@@ -31,28 +31,21 @@ export const ControllBtn = styled.button<{ isPlaying: boolean }>`
     color: #fff;
     font-size: clamp(1.5vw, 2vw, 60px);
   }
-`
+`;
 
 function MusicSet({ videoUrl }: { videoUrl: string }) {
   const [isPlaying, setIsPlaying] = useState(false);
   const setVideoData = useSetRecoilState(youtubeVideo);
   const { playingVideoData } = useRecoilValue(playingVideo);
 
-  const togglePlay = async () => {
-    try {
-      const newIsPlaying = !isPlaying;
-      setIsPlaying(newIsPlaying);
-      await new Promise<void>((resolve) => {
-        resolve();
-      });
+  const togglePlay = () => {
+    const newIsPlaying = !isPlaying;
+    setIsPlaying(newIsPlaying);
 
-      setVideoData({
-        playing: newIsPlaying,
-        videoUrl: videoUrl,
-      });
-    } catch (error) {
-      console.error("Error occurred:", error);
-    }
+    setVideoData({
+      playing: newIsPlaying,
+      videoUrl: videoUrl,
+    });
   };
 
   useEffect(() => {

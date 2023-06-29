@@ -16,10 +16,10 @@ const Container = styled.div`
 `;
 
 const Row = styled.div`
-  width: 2295px;
+  width: 163.5rem;
   position: relative;
   display: grid;
-  grid-template-columns: 200px repeat(13, 161px);
+  grid-template-columns: 200px repeat(15, 161px);
   grid-template-rows: clamp(60px, 5vw, 100px);
   background-image: linear-gradient(
     to right,
@@ -78,6 +78,7 @@ const Box = styled.div`
 const AbsoluteBox = styled.div<{ indexNum: number }>`
   font-weight: lighter;
   font-size: 1rem;
+  white-space : nowrap;
   padding: clamp(5px, 0.7vw, 15px);
   border-radius: 7px;
   background-color: #222222;
@@ -100,7 +101,9 @@ const AbsoluteBox = styled.div<{ indexNum: number }>`
   ${(props) => props.indexNum === 7 && "left:1700px;gap:70px;"};
   ${(props) => props.indexNum === 8 && "left:1860px;gap:150px;"};
   ${(props) => props.indexNum === 9 && "left:1900px;gap:110px;"}
-  ${(props) => props.indexNum === 10 && "display: none;"}
+  ${(props) =>
+    props.indexNum === 10 && "left:2200px;gap:200px;background-color:#7e0303;"}
+  ${(props) => props.indexNum === 11 && "display: none;"}
 `;
 const Schedule = styled.div`
   overflow-x: scroll;

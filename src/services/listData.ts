@@ -1,20 +1,25 @@
 import { IScheduleData } from "../interface/interface";
 
 export async function fetchFaqs() {
-  const response = await fetch(`https://port-0-awwwards-ec2-server-7xwyjq992lliithryh.sel4.cloudtype.app/api/faqs`);
-  if(response.ok){
-    
+  const response = await fetch(
+    `https://port-0-awwwards-ec2-server-7xwyjq992lliithryh.sel4.cloudtype.app/api/faqs`
+  );
+  if (response.ok) {
   }
   return await response.json();
 }
 
 export async function fetchProjects() {
-  const response = await fetch(`https://port-0-awwwards-ec2-server-7xwyjq992lliithryh.sel4.cloudtype.app/api/projects`);
+  const response = await fetch(
+    `https://port-0-awwwards-ec2-server-7xwyjq992lliithryh.sel4.cloudtype.app/api/projects`
+  );
   return await response.json();
 }
 
 export async function fetchVistited() {
-  const response = await fetch(`https://port-0-awwwards-ec2-server-7xwyjq992lliithryh.sel4.cloudtype.app/api/visited`);
+  const response = await fetch(
+    `https://port-0-awwwards-ec2-server-7xwyjq992lliithryh.sel4.cloudtype.app/api/visited`
+  );
   return await response.json();
 }
 
@@ -29,6 +34,8 @@ export const schedule: IScheduleData[] = [
     id: 0,
     text: [
       "academy project",
+      "",
+      "",
       "",
       "",
       "",
@@ -63,13 +70,32 @@ export const schedule: IScheduleData[] = [
       "",
       "",
       "",
+      "",
+      "",
     ],
     absoluteBox: "Surgery & Recovery",
     date: "2022. 09 ~ 2022. 12",
   },
   {
     id: 2,
-    text: ["My app", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+    text: [
+      "My app",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+    ],
     absoluteBox: "Project",
     date: "2022. 11 ~ 2022. 12",
   },
@@ -90,19 +116,55 @@ export const schedule: IScheduleData[] = [
       "",
       "",
       "",
+      "",
+      "",
     ],
     absoluteBox: "Project",
     date: "2022. 12 ~ 2023. 01",
   },
   {
     id: 4,
-    text: ["KANBAN Borad", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+    text: [
+      "KANBAN Borad",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+    ],
     absoluteBox: "Project",
     date: "2023. 01 ~ 2023. 02",
   },
   {
     id: 5,
-    text: ["NETFLIX clone", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+    text: [
+      "NETFLIX clone",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+    ],
     absoluteBox: "Project",
     date: "2023. 01 ~ 2023. 02",
   },
@@ -123,19 +185,55 @@ export const schedule: IScheduleData[] = [
       "",
       "",
       "",
+      "",
+      "",
     ],
     absoluteBox: "Project creation and maintenance",
     date: "2023. 02 ~ 2023. 06",
   },
   {
     id: 7,
-    text: ["javascript", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+    text: [
+      "javascript",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+    ],
     absoluteBox: "study",
     date: "2023. 03 ~ 2023. 04",
   },
   {
     id: 8,
-    text: ["nodejs", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+    text: [
+      "nodejs",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+    ],
     absoluteBox: "study",
     date: "2023. 04 ~ 2023. 05",
   },
@@ -156,12 +254,37 @@ export const schedule: IScheduleData[] = [
       "",
       "",
       "",
+      "",
+      "",
     ],
     absoluteBox: "study",
     date: "2023. 04 ~ 2023. 05",
   },
   {
     id: 10,
+    text: [
+      "VisualCoin",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+    ],
+    absoluteBox: "team project proceeding",
+    date: "2023. 06 ~ ",
+  },
+  {
+    id: 11,
     text: [
       "",
       "2022. 6",
@@ -177,6 +300,8 @@ export const schedule: IScheduleData[] = [
       "2023. 4",
       "2023. 5",
       "2023. 6",
+      "2023. 7",
+      "2023. 8",
     ],
     absoluteBox: "",
     date: "",

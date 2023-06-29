@@ -19,7 +19,7 @@ function MusicPlayer({
   const handleVideoEnded = () => {
     setIndex((index) => index + 1);
   };
-
+  
   useEffect(() => {
     setIndex(() => playingIndex);
   }, [playList]);
@@ -33,8 +33,8 @@ function MusicPlayer({
     <div>
       <ReactPlayer
         url={play}
-        width="0"
-        height="0"
+        width="300"
+        height="300"
         playing={playing}
         controls
         onEnded={() => handleVideoEnded()}

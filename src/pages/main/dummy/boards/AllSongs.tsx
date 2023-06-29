@@ -142,7 +142,6 @@ function AllSongs() {
                           <span>{all.tittle}</span>
                         </Tittle>
                       </CardItem>
-
                       <CardItem>
                         <span>{all.artist}</span>
                       </CardItem>

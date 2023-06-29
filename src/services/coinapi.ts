@@ -67,16 +67,13 @@ export function useCoinTickersSocket(coinList: string[]) {
       }
 
       socket.addEventListener("message", (message) => {
-        const fileReader = new FileReader();
-        fileReader.readAsText(message.data);
-        fileReader.onload = () => {
-          if (fileReader.result !== null) {
-            const jsonData = JSON.parse(fileReader.result as string);
-            newArr = [jsonData];
-            resolve(newArr);
-          }
-        };
+        message.data.text().then((text: string) => {
+          const jsonData = JSON.parse(text);
+          newArr = [jsonData];
+          resolve(newArr);
+        });
       });
+
       socket.addEventListener("error", (error) => {
         reject(error);
       });
@@ -95,8 +92,6 @@ export function useCoinTickersSocket(coinList: string[]) {
     }
   );
 }
-
-
 
 //무료 Supply api, market cap api 못찾겠다...
 export const circulatingSupply = [
