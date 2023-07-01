@@ -1,16 +1,15 @@
 import styled from "styled-components";
+import Contact from "./pages/contact/Contact";
+import Faqs from "./pages/faqs/Faqs";
+import Main from "./pages/main/Main";
+import Myapp from "./pages/project_router/ProjectMain";
+import ScrollToTop from "./ScrollToTop";
+import MusicPlayer from "./pages/main/dummy/boards/MusicPlayer";
+import { useEffect, useState } from "react";
 import { motion, useScroll } from "framer-motion";
 import { Route, Routes } from "react-router-dom";
-import ScrollToTop from "./ScrollToTop";
 import { useRecoilValue } from "recoil";
-import { useEffect, useState } from "react";
 import { all, newJeans, playingVideo, youtubeVideo } from "./atom";
-import { Suspense, lazy } from "react";
-const MusicPlayer = lazy(() => import("./pages/main/dummy/boards/MusicPlayer"));
-const Contact = lazy(() => import("./pages/contact/Contact"));
-const Faqs = lazy(() => import("./pages/faqs/Faqs"));
-const Main = lazy(() => import("./pages/main/Main"));
-const Myapp = lazy(() => import("./pages/project_router/ProjectMain"));
 
 const Wapper = styled.div`
   display: flex;
@@ -59,15 +58,13 @@ function App() {
     <Wapper>
       <SctollBar style={{ scaleX: scrollYProgress }} />
       <ScrollToTop />
-      <Suspense fallback={<div></div>}>
-        <MusicPlayer playList={playList} playingIndex={playingIndex} />
-        <Routes>
-          <Route path="/" element={<Main />} />
-          <Route path=":projectId" element={<Myapp />} />
-          <Route path="FAQs" element={<Faqs />} />
-          <Route path="Contact" element={<Contact />} />
-        </Routes>
-      </Suspense>
+      <MusicPlayer playList={playList} playingIndex={playingIndex} />
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path=":projectId" element={<Myapp />} />
+        <Route path="FAQs" element={<Faqs />} />
+        <Route path="Contact" element={<Contact />} />
+      </Routes>
     </Wapper>
   );
 }
