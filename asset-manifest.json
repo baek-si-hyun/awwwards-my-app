@@ -1,7 +1,14 @@
 {
   "files": {
     "main.css": "/awwwards-my-app/static/css/main.05c417ed.css",
-    "main.js": "/awwwards-my-app/static/js/main.8b746b45.js",
+    "main.js": "/awwwards-my-app/static/js/main.1ee961dc.js",
+    "static/js/201.f61228dc.chunk.js": "/awwwards-my-app/static/js/201.f61228dc.chunk.js",
+    "static/js/581.7ff7bb4a.chunk.js": "/awwwards-my-app/static/js/581.7ff7bb4a.chunk.js",
+    "static/js/69.71b1133d.chunk.js": "/awwwards-my-app/static/js/69.71b1133d.chunk.js",
+    "static/js/499.4f563311.chunk.js": "/awwwards-my-app/static/js/499.4f563311.chunk.js",
+    "static/js/404.2756cfbe.chunk.js": "/awwwards-my-app/static/js/404.2756cfbe.chunk.js",
+    "static/js/351.6d6f0e02.chunk.js": "/awwwards-my-app/static/js/351.6d6f0e02.chunk.js",
+    "static/js/196.c6c03952.chunk.js": "/awwwards-my-app/static/js/196.c6c03952.chunk.js",
     "static/media/Pretendard-Regular.otf": "/awwwards-my-app/static/media/Pretendard-Regular.de88013f2ea98a04dede.otf",
     "static/media/Pretendard-Regular.woff": "/awwwards-my-app/static/media/Pretendard-Regular.ab56c53f21ca6b32d15f.woff",
     "static/media/lol.webp": "/awwwards-my-app/static/media/lol.618fced02408b80a3ee7.webp",
@@ -43,10 +50,17 @@
     "static/media/upbiticon.png": "/awwwards-my-app/static/media/upbiticon.4064bc4102e646afee38.png",
     "index.html": "/awwwards-my-app/index.html",
     "main.05c417ed.css.map": "/awwwards-my-app/static/css/main.05c417ed.css.map",
-    "main.8b746b45.js.map": "/awwwards-my-app/static/js/main.8b746b45.js.map"
+    "main.1ee961dc.js.map": "/awwwards-my-app/static/js/main.1ee961dc.js.map",
+    "201.f61228dc.chunk.js.map": "/awwwards-my-app/static/js/201.f61228dc.chunk.js.map",
+    "581.7ff7bb4a.chunk.js.map": "/awwwards-my-app/static/js/581.7ff7bb4a.chunk.js.map",
+    "69.71b1133d.chunk.js.map": "/awwwards-my-app/static/js/69.71b1133d.chunk.js.map",
+    "499.4f563311.chunk.js.map": "/awwwards-my-app/static/js/499.4f563311.chunk.js.map",
+    "404.2756cfbe.chunk.js.map": "/awwwards-my-app/static/js/404.2756cfbe.chunk.js.map",
+    "351.6d6f0e02.chunk.js.map": "/awwwards-my-app/static/js/351.6d6f0e02.chunk.js.map",
+    "196.c6c03952.chunk.js.map": "/awwwards-my-app/static/js/196.c6c03952.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.05c417ed.css",
-    "static/js/main.8b746b45.js"
+    "static/js/main.1ee961dc.js"
   ]
 }
