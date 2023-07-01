@@ -263,7 +263,7 @@ export const schedule: IScheduleData[] = [
   {
     id: 10,
     text: [
-      "VisualCoin",
+      "VisualCoin project",
       "",
       "",
       "",
@@ -280,7 +280,7 @@ export const schedule: IScheduleData[] = [
       "",
       "",
     ],
-    absoluteBox: "team project proceeding",
+    absoluteBox: "Team Project proceeding",
     date: "2023. 06 ~ ",
   },
   {
