@@ -13,6 +13,7 @@ export const ButtonDiv = styled.div<{ isPlaying: boolean }>`
   height: 96%;
   background-color: #000000;
   transition: opacity 0.2s ease-in-out;
+  will-change: opacity;
 `;
 export const ControllBtn = styled.button<{ isPlaying: boolean }>`
   width: 100%;
@@ -20,6 +21,7 @@ export const ControllBtn = styled.button<{ isPlaying: boolean }>`
   padding: 0;
   opacity: ${(props) => (props.isPlaying === true ? 1 : 0)};
   transition: opacity 0.2s ease-in-out;
+  will-change: opacity;
   background: none;
   border: none;
   outline: none;

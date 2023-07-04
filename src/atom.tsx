@@ -18,7 +18,7 @@ import hypeboyRemix from "./assets/img/recommended_song/hypeboy_remix.jpg";
 import yena from "./assets/img/recommended_song/yena.jpg";
 import star from "./assets/img/recommended_song/star.jpg";
 import sweater from "./assets/img/recommended_song/sweater.jpg";
-import iu from "./assets/img/recommended_song/iu.jpg";
+import triple from "./assets/img/recommended_song/iu.jpg";
 import lesserafim from "./assets/img/recommended_song/lesserafim.jpg";
 import stayc from "./assets/img/recommended_song/stayc.jpg";
 import alltimelow from "./assets/img/recommended_song/alltimelow.jpg";
@@ -35,6 +35,67 @@ export const youtubeVideo = atom<IVideo>({
 export const playingVideo = atom({
   key: `playingVideo/${v1()}`,
   default: { playingVideoData: "" },
+});
+export const newJeans = atom<Data[]>({
+  key: `newJeans/${v1()}`,
+  default: [
+    {
+      id: 0,
+      img: omg,
+      tittle: "OMG",
+      artist: "NewJeans",
+      album: "NewJeans'OMG'",
+      url: "https://www.youtube.com/embed/sVTy_wmn5SU",
+    },
+    {
+      id: 1,
+      img: ditto,
+      tittle: "Ditto",
+      artist: "NewJeans",
+      album: "Ditto",
+      url: "https://www.youtube.com/embed/HtbnfBFIJls",
+    },
+    {
+      id: 2,
+      img: zero,
+      tittle: "Zero",
+      artist: "NewJeans",
+      album: "Zero",
+      url: "https://www.youtube.com/embed/FWTG5wuVLuI",
+    },
+    {
+      id: 3,
+      img: stEp,
+      tittle: "Hype Boy",
+      artist: "NewJeans",
+      album: "NewJeans 1st EP 'New Jeans'",
+      url: "https://www.youtube.com/embed/T--6HBX2K4g",
+    },
+    {
+      id: 4,
+      img: stEp,
+      tittle: "Attention",
+      artist: "NewJeans",
+      album: "NewJeans 1st EP 'New Jeans'",
+      url: "https://www.youtube.com/embed/o8RkbHv2_a0",
+    },
+    {
+      id: 5,
+      img: stEp,
+      tittle: "Cookie",
+      artist: "NewJeans",
+      album: "NewJeans 1st EP 'New Jeans'",
+      url: "https://www.youtube.com/embed/1pUCsbK35JA",
+    },
+    {
+      id: 6,
+      img: stEp,
+      tittle: "Hurt",
+      artist: "NewJeans",
+      album: "NewJeans 1st EP 'New Jeans'",
+      url: "https://www.youtube.com/embed/qoK934-VghI",
+    },
+  ],
 });
 export const all = atom<Data[]>({
   key: `all/${v1()}`,
@@ -145,11 +206,11 @@ export const all = atom<Data[]>({
     },
     {
       id: 13,
-      img: iu,
-      tittle: "에잇(feat. SUGA)",
-      artist: "아이유(IU)",
-      album: "에잇 • 2020",
-      url: "https://www.youtube.com/embed/LFiffwrhLn8",
+      img: triple,
+      tittle: "Jubël - Triple A (feat. NLE Choppa)",
+      artist: "Jubël",
+      album: "Triple A • 2023",
+      url: "https://www.youtube.com/embed/N3Xbg-Hrc8s",
     },
 
     {
@@ -183,68 +244,6 @@ export const all = atom<Data[]>({
       artist: "The Neighbourhood",
       album: "House Nation",
       url: "https://www.youtube.com/embed/6iPDdCJ1lEM",
-    },
-  ],
-});
-
-export const newJeans = atom<Data[]>({
-  key: `newJeans/${v1()}`,
-  default: [
-    {
-      id: 0,
-      img: omg,
-      tittle: "OMG",
-      artist: "NewJeans",
-      album: "NewJeans'OMG'",
-      url: "https://www.youtube.com/embed/sVTy_wmn5SU",
-    },
-    {
-      id: 1,
-      img: ditto,
-      tittle: "Ditto",
-      artist: "NewJeans",
-      album: "Ditto",
-      url: "https://www.youtube.com/embed/HtbnfBFIJls",
-    },
-    {
-      id: 2,
-      img: zero,
-      tittle: "Zero",
-      artist: "NewJeans",
-      album: "Zero",
-      url: "https://www.youtube.com/embed/FWTG5wuVLuI",
-    },
-    {
-      id: 3,
-      img: stEp,
-      tittle: "Hype Boy",
-      artist: "NewJeans",
-      album: "NewJeans 1st EP 'New Jeans'",
-      url: "https://www.youtube.com/embed/T--6HBX2K4g",
-    },
-    {
-      id: 4,
-      img: stEp,
-      tittle: "Attention",
-      artist: "NewJeans",
-      album: "NewJeans 1st EP 'New Jeans'",
-      url: "https://www.youtube.com/embed/o8RkbHv2_a0",
-    },
-    {
-      id: 5,
-      img: stEp,
-      tittle: "Cookie",
-      artist: "NewJeans",
-      album: "NewJeans 1st EP 'New Jeans'",
-      url: "https://www.youtube.com/embed/1pUCsbK35JA",
-    },
-    {
-      id: 6,
-      img: stEp,
-      tittle: "Hurt",
-      artist: "NewJeans",
-      album: "NewJeans 1st EP 'New Jeans'",
-      url: "https://www.youtube.com/embed/qoK934-VghI",
     },
   ],
 });

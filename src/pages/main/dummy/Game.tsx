@@ -46,7 +46,8 @@ const BoxText = styled(motion.div)<{ isboxhover: boolean }>`
   border-radius: 13px;
   color: #fff;
   font-size: 3vw;
-  opacity: ${(props) => (props.isboxhover ?  "1" : "0")};
+  opacity: ${(props) => (props.isboxhover ? "1" : "0")};
+  will-change: opacity;
   transition: all 0.3s ease-in-out;
   position: relative;
   span {
@@ -72,6 +73,7 @@ const PrevButton = styled.button`
     font-size: 40px;
     color: #fff;
     transition: text-shadow 0.2s ease-in-out;
+    will-change: text-shadow;
   }
   :hover {
     span {
@@ -101,6 +103,7 @@ const NextButton = styled.button`
     font-size: 40px;
     color: #fff;
     transition: text-shadow 0.2s ease-in-out;
+    will-change: text-shadow;
   }
   :hover {
     span {

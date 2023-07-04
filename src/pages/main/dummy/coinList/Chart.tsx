@@ -18,6 +18,7 @@ const ApexChart = styled(ReactApexChart)`
       : props.change === "FALL"
       ? " #1261c4"
       : "#222"};
+  will-change: color;
 `;
 function Chart({
   history,

@@ -104,6 +104,7 @@ const SenterBox = styled.a`
   border-radius: 10px;
   overflow: hidden;
   transition: all 0.2s ease-in-out;
+  will-change: background-color, color;
   :hover {
     background-color: #3e3e3e;
     color: #fff;

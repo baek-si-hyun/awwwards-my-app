@@ -61,6 +61,7 @@ const PageBtn = styled.button<{ selected: boolean }>`
   transition: all 0.2s ease-in-out;
   background-color: ${(props) => (props.selected ? "#333" : "transparent")};
   color: ${(props) => (props.selected ? "#fff" : "#333")};
+  will-change: background-color, color;
 `;
 
 function CoinList() {

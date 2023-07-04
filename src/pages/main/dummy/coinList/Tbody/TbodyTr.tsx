@@ -78,6 +78,7 @@ export const TdChangeDiv = styled(TdNomalDiv)<{ change: string }>`
       : props.change === "FALL"
       ? "#1261c4"
       : "#222"};
+  will-change: color;
 `;
 export const Icons = styled.span`
   vertical-align: middle;
@@ -126,7 +127,7 @@ function TrBox({
       );
     }
   }, [tickerHttpData, tickerSocketData]);
-  
+
   const makeSkeleton = () => {
     const skeletons = [];
     for (let i = 1; i <= 10; i++) {

@@ -37,6 +37,7 @@ export const Card = styled.div<{ isDragging: boolean }>`
   border-bottom: 1px solid #1d1d1d;
   border-radius: ${(props) => (props.isDragging ? "10px" : "none")};
   transition: background-color 0.2s ease-in-out, border-radius 0.2s ease-in-out;
+  will-change: background-color, border-radius;
   :last-child {
     border-bottom: none;
   }

@@ -52,8 +52,9 @@ const FaqQ = styled.div`
 const FaqA = styled.div<{ selected: boolean }>`
   overflow: hidden;
   font-family: "Pretendard", sans-serif;
-  transition: height 0.3s;
   height: ${(props) => (props.selected ? "3rem" : "0")};
+  transition: height 0.3s;
+  will-change: height;
 `;
 const BtnBox = styled.div``;
 const Btn = styled.span`
@@ -64,6 +65,7 @@ const Btn = styled.span`
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease-in-out 0s;
+  will-change: background-color, border-color, color;
   :hover {
     background-color: #222222;
     border-color: #222222;
@@ -117,6 +119,10 @@ function FaqList() {
     return newFaqList;
   };
 
-  return <><FaqsList>{makeFaqList()}</FaqsList></>;
+  return (
+    <>
+      <FaqsList>{makeFaqList()}</FaqsList>
+    </>
+  );
 }
 export default FaqList;

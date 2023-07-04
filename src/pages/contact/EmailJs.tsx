@@ -28,6 +28,7 @@ const Input = styled.input`
   color: #222222;
   border: none;
   transition: border 0.3s ease-in-out 0s;
+  will-change: border;
   :focus {
     border-bottom: 2px solid #e9e9e9;
     outline: none;
@@ -57,6 +58,7 @@ const Textarea = styled.textarea`
   color: #222222;
   border: none;
   transition: all 0.3s ease-in-out 0s;
+  will-change: border;
   :focus {
     border-bottom: 2px solid #e9e9e9;
     outline: none;

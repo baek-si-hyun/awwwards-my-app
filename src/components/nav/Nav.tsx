@@ -85,6 +85,7 @@ const NavItemCommon = styled.li`
   transition: all 0.2s ease-in-out 0.5s;
 `;
 export const NavItem = styled(NavItemCommon)<{ mainPosition: IMainPosition }>`
+  will-change: background-color, color;
   :nth-child(1) {
     font-weight: 600;
     background-color: ${(props) =>
@@ -111,6 +112,7 @@ export const NavItem = styled(NavItemCommon)<{ mainPosition: IMainPosition }>`
 export const RouterNavItem = styled(NavItemCommon)<{
   routerPosition: IRouterPosition;
 }>`
+  will-change: background-color, color;
   :nth-child(1) {
     font-weight: 600;
     background-color: ${(props) =>
@@ -138,6 +140,7 @@ export const Link = styled.a`
   padding: 1rem;
   white-space: nowrap;
   transition: background-color 0.2s ease-in-out;
+  will-change: background-color;
   :hover {
     background-color: rgba(255, 255, 255, 0.1);
   }
@@ -200,7 +203,7 @@ const BugerNav = styled.div`
 `;
 const BugerInner = styled.div<{ menuSwitch: boolean }>`
   display: ${(props) => (props.menuSwitch ? "flex" : "none")};
-
+  will-change: display;
   @media (max-width: 320px) {
     & {
       width: 100%;

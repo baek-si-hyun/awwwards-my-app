@@ -29,7 +29,6 @@ const SctollBar = styled(motion.div)`
 `;
 function App() {
   const { scrollYProgress } = useScroll();
-  //최적화 예정
   const newJeansVideoList = useRecoilValue(newJeans);
   const allVideoList = useRecoilValue(all);
   const { videoUrl } = useRecoilValue(youtubeVideo);
