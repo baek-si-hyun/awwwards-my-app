@@ -72,7 +72,6 @@ const InnerFigure = styled.figure`
     }
   }
 `;
-
 const HoverBox = styled.div`
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
   position: relative;
@@ -90,7 +89,6 @@ const HoverBox2 = styled(HoverBox)<{ isHover: number }>`
 const HoverBox3 = styled(HoverBox)<{ isHover: number }>`
   opacity: ${(props) => (props.isHover === 3 ? 1 : 0)};
 `;
-
 const SenterBox = styled.a`
   position: absolute;
   top: 50%;
@@ -122,7 +120,6 @@ const BottomBox = styled.div`
   bottom: 8%;
   color: #fff;
 `;
-
 const BottomBoxTop = styled.div`
   font-weight: lighter;
 `;

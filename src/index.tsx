@@ -1,10 +1,12 @@
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import { RecoilRoot } from "recoil";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { createGlobalStyle } from "styled-components";
 import "./assets/font/css/font.css";
 import App from "./App";
+import { Provider } from "react-redux";
+import store from "./redux/store";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 const GlobalStyle = createGlobalStyle`
@@ -78,8 +80,10 @@ root.render(
   <BrowserRouter basename={process.env.PUBLIC_URL}>
     <RecoilRoot>
       <QueryClientProvider client={queryClient}>
-        <GlobalStyle />
-        <App />
+        <Provider store={store}>
+          <GlobalStyle />
+          <App />
+        </Provider>
         <ReactQueryDevtools />
       </QueryClientProvider>
     </RecoilRoot>

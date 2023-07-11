@@ -159,18 +159,7 @@ function Game() {
           animate="center"
           exit="exit"
           onMouseOver={() => setBoxHover(true)}
-          onMouseOut={() => setBoxHover(false)}
-          drag="x"
-          dragConstraints={{ left: 0, right: 0 }}
-          onDragEnd={(e, { offset, velocity }) => {
-            const swipe = swipePower(offset.x, velocity.x);
-            if (swipe < -1000) {
-              nextBtn();
-            } else if (swipe > 1000) {
-              prevBtn();
-            }
-          }}
-        >
+          onMouseOut={() => setBoxHover(false)}        >
           <BoxText isboxhover={boxHover}>
             <span>{gameName[visible]}</span>
           </BoxText>

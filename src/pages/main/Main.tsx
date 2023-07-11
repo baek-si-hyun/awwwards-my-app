@@ -3,7 +3,7 @@ const Header = lazy(() => import("./header/Header"));
 const Projects = lazy(() => import("./project/Projects"));
 const Dummy = lazy(() => import("./dummy/Dummy"));
 const Schedule = lazy(() => import("./schedule/Schedule"));
-const Footer = lazy(() => import("../../components/Footer"));
+const Footer = lazy(() => import("../../components/footer/Footer"));
 const Nav = lazy(() => import("../../components/nav/Nav"));
 
 function Main() {

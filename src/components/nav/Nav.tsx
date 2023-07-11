@@ -7,6 +7,8 @@ import { IMainPosition, IRouterPosition } from "../../interface/interface";
 import { domApi } from "../../services/domApi";
 import NavRouterMode from "./NavRouterMode";
 import NavMainMode from "./NavMainMode";
+import { useDispatch } from "react-redux";
+import { resizeRedux } from "../../redux/slices/resizeWidthSlice";
 
 const Navi = styled.div`
   border-radius: 10px;
@@ -264,15 +266,16 @@ function NavMode({
 function Nav() {
   const { pathname } = useLocation();
   const [resize, setResize] = useState(window.innerWidth);
+  const dispatch = useDispatch();
   const setResizeWidth = useSetRecoilState(resizeWidth);
   const [menuSwitch, setMenuSwitch] = useState(false);
 
   const bugerNavToggle = useCallback(() => {
-    setResize(window.innerWidth);
+    const currentResize = window.innerWidth;
+    setResize(currentResize);
     setMenuSwitch(!menuSwitch);
-    const resizeObject = { resizeWidth: resize };
-    setResizeWidth(resizeObject);
-  }, [menuSwitch, resize, setResizeWidth]);
+    dispatch(resizeRedux(currentResize));
+  }, [menuSwitch, dispatch]);
 
   useEffect(() => {
     window.addEventListener("resize", bugerNavToggle);

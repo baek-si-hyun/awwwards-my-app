@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Footer from "../../components/Footer";
+import Footer from "../../components/footer/Footer";
 import ProjectPreview from "./ProjectPreview";
 import ProjectFont from "./ProjectFont";
 import ProjectColor from "./ProjectColor";
@@ -37,8 +37,7 @@ const DescriptionFont = styled.div`
   margin: 4vw 0;
 `;
 
-const DescriptionProject = styled.div`
-`;
+const DescriptionProject = styled.div``;
 const DescriptionProjectText = styled.div`
   font-size: 2vw;
   font-weight: 900;

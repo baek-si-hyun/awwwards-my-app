@@ -1,6 +1,12 @@
 import styled from "styled-components";
-import Footer from "../../components/Footer";
-import { Container, InnerContainer, TextBox, TextBoxMiddle, TextBoxTop } from "../../components/mainCommon";
+import Footer from "../../components/footer/Footer";
+import {
+  Container,
+  InnerContainer,
+  TextBox,
+  TextBoxMiddle,
+  TextBoxTop,
+} from "../main/common/mainItem";
 import EmailJs from "./EmailJs";
 
 const EmailJsContainer = styled.div`

@@ -54,17 +54,18 @@ function App() {
   }, [playingVideoData, allVideoList, newJeansVideoList]);
 
   return (
-    <Wapper>
-      <SctollBar style={{ scaleX: scrollYProgress }} />
-      <ScrollToTop />
-      <MusicPlayer playList={playList} playingIndex={playingIndex} />
-      <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path=":projectId" element={<Myapp />} />
-        <Route path="FAQs" element={<Faqs />} />
-        <Route path="Contact" element={<Contact />} />
-      </Routes>
-    </Wapper>
+      <Wapper>
+        <SctollBar style={{ scaleX: scrollYProgress }} />
+        <ScrollToTop />
+        <MusicPlayer playList={playList} playingIndex={playingIndex} />
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path=":projectId" element={<Myapp />} />
+          <Route path="FAQs" element={<Faqs />} />
+          <Route path="Contact" element={<Contact />} />
+        </Routes>
+      </Wapper>
+
   );
 }
 

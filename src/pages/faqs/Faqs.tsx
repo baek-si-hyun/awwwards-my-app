@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Footer from "../../components/Footer";
+import Footer from "../../components/footer/Footer";
 import FaqList from "./FaqList";
 
 const Container = styled.div`

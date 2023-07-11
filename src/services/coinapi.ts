@@ -34,7 +34,6 @@ export async function fetchCoinHistory(coinList: string[]) {
 
 export function useCoinTickersSocket(coinList: string[]) {
   const [socket, setSocket] = useState<WebSocket | null>(null);
-
   useEffect(() => {
     const upbitSocket = new WebSocket("wss://api.upbit.com/websocket/v1");
     setSocket(upbitSocket);

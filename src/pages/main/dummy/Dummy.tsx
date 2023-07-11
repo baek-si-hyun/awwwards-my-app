@@ -6,7 +6,7 @@ import {
   TextBoxTop,
   TextBoxbottom,
   TextBoxMiddle,
-} from "../../../components/mainCommon";
+} from "../common/mainItem";
 import CoinList from "./CoinList";
 import Game from "./Game";
 
@@ -43,9 +43,7 @@ function About() {
           <TextBoxMiddle>just dummy</TextBoxMiddle>
           <TextBoxbottom>Place to practice</TextBoxbottom>
         </TextBox>
-        <SubTextBox>
-          Combination of HTTP, Websocket and React-Query
-        </SubTextBox>
+        <SubTextBox>Combination of HTTP, Websocket and React-Query</SubTextBox>
         <CoinList />
         <ExplanTextBox>These are my favorite games.</ExplanTextBox>
         <Game />

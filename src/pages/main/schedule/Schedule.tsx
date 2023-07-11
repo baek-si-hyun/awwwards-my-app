@@ -6,7 +6,7 @@ import {
   TextBoxTop,
   TextBoxbottom,
   TextBoxMiddle,
-} from "../../../components/mainCommon";
+} from "../common/mainItem";
 import Finally from "./Finally";
 import PastSchedule from "./PastSchedule";
 

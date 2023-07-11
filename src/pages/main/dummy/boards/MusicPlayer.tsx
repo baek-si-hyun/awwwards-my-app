@@ -33,8 +33,8 @@ function MusicPlayer({
     <div>
       <ReactPlayer
         url={play}
-        width="300"
-        height="300"
+        width="0"
+        height="0"
         playing={playing}
         controls
         onEnded={() => handleVideoEnded()}
