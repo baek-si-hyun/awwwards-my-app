@@ -6,6 +6,7 @@ import Myapp from "./pages/project_router/ProjectMain";
 import ScrollToTop from "./ScrollToTop";
 import { motion, useScroll } from "framer-motion";
 import { Route, Routes } from "react-router-dom";
+import MusicPlayer from "./pages/main/dummy/boards/MusicPlayer";
 
 
 const Wapper = styled.div`
@@ -30,6 +31,7 @@ function App() {
   return (
     <Wapper>
       <SctollBar style={{ scaleX: scrollYProgress }} />
+      <MusicPlayer />
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Main />} />

@@ -3,8 +3,7 @@ import newjeans from "../../../assets/img/main_img/newjeans.jpg";
 import NewJeans from "./boards/NewJeans";
 import AllSongs from "./boards/FeaturedSong";
 import allsongs from "../../../assets/img/recommended_song/allsong.jpg";
-import MusicPlayer from "./boards/MusicPlayer";
-import React from 'react'
+
 const MusicWrapper = styled.div`
   width: 100%;
 `;
@@ -137,7 +136,6 @@ function Music() {
             </div>
           </MusicTextBox>
         </InnerMusicBox1>
-        <MusicPlayer />
         <InnerMusicBox2>
           <div>
             <p>"You can listen to recommended songs."</p>
@@ -170,4 +168,4 @@ function Music() {
     </MusicWrapper>
   );
 }
-export default React.memo(Music);
+export default Music;
