@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { schedule } from "../../../services/listData";
 import { useEffect, useState } from "react";
-import { useRecoilValue } from "recoil";
-import { resizeWidth } from "../../../atom";
+import { useSelector } from "react-redux";
+import { IResize } from "../../../interface/interface";
 
 const Container = styled.div`
   padding: 6vw 0;
@@ -117,13 +117,17 @@ const Span = styled.span`
 `;
 function PastSchedule() {
   const [graph, setGraph] = useState(false);
-  const getResizeWidth = useRecoilValue(resizeWidth);
+  const getResizeWidth = useSelector(
+    ({ resizeWidthSlice }: { resizeWidthSlice: IResize }) => {
+      return resizeWidthSlice.resizeWidth;
+    }
+  );
   useEffect(() => {
     const graphMode = () => {
-      if (getResizeWidth.resizeWidth <= 1000) {
+      if (getResizeWidth <= 1000) {
         setGraph(true);
       }
-      if (getResizeWidth.resizeWidth > 1000) {
+      if (getResizeWidth > 1000) {
         setGraph(false);
       }
     };

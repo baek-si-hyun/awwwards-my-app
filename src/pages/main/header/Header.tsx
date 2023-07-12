@@ -3,8 +3,8 @@ import Marquee from "react-fast-marquee";
 import { useState, useEffect } from "react";
 import shb from "../../../assets/img/main_img/shbicon.png";
 import HeaderMainImg from "./HeaderMainImg";
-import { resizeWidth } from "../../../atom";
-import { useRecoilValue } from "recoil";
+import { useSelector } from "react-redux";
+import { IResize } from "../../../interface/interface";
 
 const Container = styled.div`
   width: 100%;
@@ -59,21 +59,25 @@ const LogoImg = styled.img`
 `;
 
 function Header() {
-  const getResizeWidth = useRecoilValue(resizeWidth);
+  const getResizeWidth = useSelector(
+    ({ resizeWidthSlice }: { resizeWidthSlice: IResize }) => {
+      return resizeWidthSlice.resizeWidth;
+    }
+  );
   const [speed, setSpeed] = useState(130);
 
   useEffect(() => {
     const graphMode = () => {
-      if (getResizeWidth.resizeWidth > 1280) {
+      if (getResizeWidth > 1280) {
         setSpeed(130);
       }
-      if (getResizeWidth.resizeWidth <= 1280) {
+      if (getResizeWidth <= 1280) {
         setSpeed(90);
       }
-      if (getResizeWidth.resizeWidth <= 768) {
+      if (getResizeWidth <= 768) {
         setSpeed(60);
       }
-      if (getResizeWidth.resizeWidth <= 429) {
+      if (getResizeWidth <= 429) {
         setSpeed(40);
       }
     };
@@ -107,7 +111,7 @@ function Header() {
         </Wrap>
         <HeaderMainImg />
         <TextBox>
-          <LogoImg src={shb} alt="maker_logo"/>
+          <LogoImg src={shb} alt="maker_logo" />
           <span>SiHyun-Baek initial logo</span>
         </TextBox>
       </InnerContainer>

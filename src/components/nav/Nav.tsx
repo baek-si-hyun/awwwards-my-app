@@ -1,8 +1,6 @@
 import styled from "styled-components";
 import { useState, useEffect, useCallback } from "react";
-import { useSetRecoilState } from "recoil";
 import { useLocation } from "react-router-dom";
-import { resizeWidth } from "../../atom";
 import { IMainPosition, IRouterPosition } from "../../interface/interface";
 import { domApi } from "../../services/domApi";
 import NavRouterMode from "./NavRouterMode";
@@ -267,7 +265,6 @@ function Nav() {
   const { pathname } = useLocation();
   const [resize, setResize] = useState(window.innerWidth);
   const dispatch = useDispatch();
-  const setResizeWidth = useSetRecoilState(resizeWidth);
   const [menuSwitch, setMenuSwitch] = useState(false);
 
   const bugerNavToggle = useCallback(() => {

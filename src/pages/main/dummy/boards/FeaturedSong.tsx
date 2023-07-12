@@ -6,9 +6,11 @@ import {
 } from "react-beautiful-dnd";
 import styled from "styled-components";
 import React from "react";
-import { useRecoilState } from "recoil";
-import { all } from "../../../../atom";
 import MusicSet, { ButtonDiv, ControllBtn } from "./MusicSet";
+import { useSelector } from "react-redux";
+import { IFeaturedListData } from "../../../../interface/imusic";
+import { useDispatch } from "react-redux";
+import { featuredRedux } from "../../../../redux/slices/featuredListSlice";
 
 const Wrapper = styled.div`
   width: 90%;
@@ -96,17 +98,20 @@ const Img = styled.img`
 const Tittle = styled.div``;
 
 function AllSongs() {
-  const [list, setList] = useRecoilState(all);
+  const featuredList = useSelector(
+    ({ featuredListSlice }: { featuredListSlice: IFeaturedListData }) => {
+      return featuredListSlice.featuredList;
+    }
+  );
+  const dispatch = useDispatch();
   const onDragEnd = ({ destination, source }: DropResult) => {
     if (!destination) return;
     if (destination) {
-      setList((allList) => {
-        const copyList = [...allList];
-        const taskObj = copyList[source.index];
-        copyList.splice(source.index, 1);
-        copyList.splice(destination?.index, 0, taskObj);
-        return copyList;
-      });
+      const copyList = [...featuredList];
+      const taskObj = copyList[source.index];
+      copyList.splice(source.index, 1);
+      copyList.splice(destination?.index, 0, taskObj);
+      dispatch(featuredRedux(copyList));
     }
   };
 
@@ -116,7 +121,7 @@ function AllSongs() {
         <Droppable droppableId="one">
           {(magic) => (
             <Board ref={magic.innerRef} {...magic.droppableProps}>
-              {list.map((all, index) => (
+              {featuredList.map((all, index) => (
                 <Draggable
                   key={all.tittle}
                   draggableId={all.tittle}

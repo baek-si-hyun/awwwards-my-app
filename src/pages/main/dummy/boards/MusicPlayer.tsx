@@ -1,43 +1,72 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import ReactPlayer from "react-player";
-import { useRecoilValue, useSetRecoilState } from "recoil";
-import { playingVideo, youtubeVideo } from "../../../../atom";
+import { shallowEqual, useSelector } from "react-redux";
+import {
+  IFeaturedListData,
+  INewjeansListData,
+  IPlayList,
+  IVideoInfo,
+} from "../../../../interface/imusic";
+import { useDispatch } from "react-redux";
+import { videoInfoRedux } from "../../../../redux/slices/playingVideoInfoSlice";
 
-function MusicPlayer({
-  playList,
-  playingIndex,
-}: {
-  playList: string[];
-  playingIndex: number;
-}) {
+function MusicPlayer() {
+  const videoInfo = useSelector(
+    (state: { playingVideoInfoSlice: IVideoInfo }) => {
+      const { playingVideoInfoSlice } = state;
+      return playingVideoInfoSlice.videoInfo;
+    },
+    shallowEqual
+  );
   const [index, setIndex] = useState(0);
-  const setPlayingVideoId = useSetRecoilState(playingVideo);
-  const { playing } = useRecoilValue(youtubeVideo);
-  const [play, setPlay] = useState("");
+  const [playList, setPlayList] = useState<IPlayList[]>([
+    { id: 0, img: "", tittle: "", artist: "", album: "", url: "" },
+  ]);
+  const newList = useSelector(
+    (state: {
+      newJeansListSlice: INewjeansListData;
+      featuredListSlice: IFeaturedListData;
+    }) => {
+      const { newJeansListSlice, featuredListSlice } = state;
+      const newArr = [
+        ...newJeansListSlice.newjeansList,
+        ...featuredListSlice.featuredList,
+      ];
+      return newArr;
+    },
+    shallowEqual
+  );
 
-  const handleVideoEnded = () => {
+  const onEnded = () => {
     setIndex((index) => index + 1);
   };
-  
-  useEffect(() => {
-    setIndex(() => playingIndex);
-  }, [playList]);
 
   useEffect(() => {
-    setPlay(playList[index]);
-    setPlayingVideoId({ playingVideoData: playList[index] });
-  }, [index, setIndex]);
+    const findIndex = newList.findIndex(
+      (item) => item.url === videoInfo.videoUrl
+    );
+    setIndex(findIndex);
+    setPlayList(newList);
+  }, [newList, videoInfo]);
 
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(
+      videoInfoRedux({
+        playing: videoInfo.playing,
+        videoUrl: playList[index]?.url,
+      })
+    );
+  }, [dispatch, index, playList]);
   return (
     <div>
       <ReactPlayer
-        url={play}
+        url={playList[index]?.url}
         width="0"
         height="0"
-        playing={playing}
+        playing={videoInfo.playing}
         controls
-        onEnded={() => handleVideoEnded()}
+        onEnded={() => onEnded()}
       />
     </div>
   );

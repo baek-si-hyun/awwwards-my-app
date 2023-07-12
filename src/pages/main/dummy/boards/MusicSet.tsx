@@ -1,8 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import styled from "styled-components";
 import { useEffect, useState } from "react";
-import { useRecoilValue, useSetRecoilState } from "recoil";
-import { playingVideo, youtubeVideo } from "../../../../atom";
+import { shallowEqual, useDispatch, useSelector } from "react-redux";
+import { videoInfoRedux } from "../../../../redux/slices/playingVideoInfoSlice";
+import { IVideoInfo } from "../../../../interface/imusic";
 
 export const ButtonDiv = styled.div<{ isPlaying: boolean }>`
   position: absolute;
@@ -37,40 +38,37 @@ export const ControllBtn = styled.button<{ isPlaying: boolean }>`
 
 function MusicSet({ videoUrl }: { videoUrl: string }) {
   const [isPlaying, setIsPlaying] = useState(false);
-  const setVideoData = useSetRecoilState(youtubeVideo);
-  const { playingVideoData } = useRecoilValue(playingVideo);
-
-  const togglePlay = () => {
-    const newIsPlaying = !isPlaying;
-    setIsPlaying(newIsPlaying);
-
-    setVideoData({
-      playing: newIsPlaying,
-      videoUrl: videoUrl,
-    });
+  const dispatch = useDispatch();
+  const toggle = () => {
+    const playing = !isPlaying;
+    setIsPlaying(playing);
+    dispatch(videoInfoRedux({ playing, videoUrl }));
   };
-
+  const videoInfo = useSelector(
+    (state: { playingVideoInfoSlice: IVideoInfo }) => {
+      const { playingVideoInfoSlice } = state;
+      return playingVideoInfoSlice.videoInfo;
+    },
+    shallowEqual
+  );
   useEffect(() => {
-    if (videoUrl !== playingVideoData) {
+    if (videoInfo.videoUrl === videoUrl) {
+      setIsPlaying(videoInfo.playing);
+    }
+    if (videoInfo.videoUrl !== videoUrl) {
       setIsPlaying(false);
     }
-    if (videoUrl === playingVideoData) {
-      setIsPlaying(true);
-    }
-  }, [playingVideoData]);
-
+  }, [videoInfo, toggle]);
   return (
-    <>
-      <ButtonDiv isPlaying={isPlaying}>
-        <ControllBtn onClick={togglePlay} isPlaying={isPlaying}>
-          {isPlaying ? (
-            <span className="material-symbols-rounded">pause</span>
-          ) : (
-            <span className="material-symbols-rounded">play_arrow</span>
-          )}
-        </ControllBtn>
-      </ButtonDiv>
-    </>
+    <ButtonDiv isPlaying={isPlaying}>
+      <ControllBtn onClick={() => toggle()} isPlaying={isPlaying}>
+        {isPlaying ? (
+          <span className="material-symbols-rounded">pause</span>
+        ) : (
+          <span className="material-symbols-rounded">play_arrow</span>
+        )}
+      </ControllBtn>
+    </ButtonDiv>
   );
 }
 
