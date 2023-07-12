@@ -29,6 +29,3 @@ export interface IPlayList {
 export interface IVideoInfo {
   videoInfo: { playing: boolean; videoUrl: string };
 }
-export interface IUrl {
-  url: string;
-}
