@@ -1,8 +1,9 @@
 import styled from "styled-components";
 import newjeans from "../../../assets/img/main_img/newjeans.jpg";
 import NewJeans from "./boards/NewJeans";
-import AllSongs from "./boards/FeaturedSong";
+import FeaturedSong from "./boards/FeaturedSong";
 import allsongs from "../../../assets/img/recommended_song/allsong.jpg";
+import MusicPlayBox from "../../../components/music_player/MusicPlayBox";
 
 const MusicWrapper = styled.div`
   width: 100%;
@@ -162,7 +163,7 @@ function Music() {
           <div>
             <p>Recommended List</p>
           </div>
-          <AllSongs />
+          <FeaturedSong />
         </InnerMusicBox4>
       </MusicBox>
     </MusicWrapper>

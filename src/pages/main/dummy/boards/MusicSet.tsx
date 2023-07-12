@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import { videoInfoRedux } from "../../../../redux/slices/playingVideoInfoSlice";
 import { IVideoInfo } from "../../../../interface/imusic";
+import { controllerVisibleRedux } from "../../../../redux/slices/controllerVisibleSlice";
 
 export const ButtonDiv = styled.div<{ isPlaying: boolean }>`
   position: absolute;
@@ -39,18 +40,26 @@ export const ControllBtn = styled.button<{ isPlaying: boolean }>`
 function MusicSet({ videoUrl }: { videoUrl: string }) {
   const [isPlaying, setIsPlaying] = useState(false);
   const dispatch = useDispatch();
-  const toggle = () => {
-    const playing = !isPlaying;
-    setIsPlaying(playing);
-    dispatch(videoInfoRedux({ playing, videoUrl }));
-  };
   const videoInfo = useSelector(
     (state: { playingVideoInfoSlice: IVideoInfo }) => {
-      const { playingVideoInfoSlice } = state;
-      return playingVideoInfoSlice.videoInfo;
+      return state.playingVideoInfoSlice.videoInfo;
     },
     shallowEqual
   );
+  const toggle = () => {
+    const playing = !isPlaying;
+    setIsPlaying(playing);
+    dispatch(
+      videoInfoRedux({
+        playing: playing,
+        videoUrl: videoUrl,
+        img: videoInfo.img,
+        tittle: videoInfo.tittle,
+        artist: videoInfo.artist,
+      })
+    );
+    dispatch(controllerVisibleRedux(true));
+  };
   useEffect(() => {
     if (videoInfo.videoUrl === videoUrl) {
       setIsPlaying(videoInfo.playing);
@@ -58,7 +67,8 @@ function MusicSet({ videoUrl }: { videoUrl: string }) {
     if (videoInfo.videoUrl !== videoUrl) {
       setIsPlaying(false);
     }
-  }, [videoInfo, toggle]);
+  }, [videoInfo, videoUrl]);
+
   return (
     <ButtonDiv isPlaying={isPlaying}>
       <ControllBtn onClick={() => toggle()} isPlaying={isPlaying}>

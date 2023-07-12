@@ -97,7 +97,7 @@ const Img = styled.img`
 `;
 const Tittle = styled.div``;
 
-function AllSongs() {
+function FeaturedSong() {
   const featuredList = useSelector(
     ({ featuredListSlice }: { featuredListSlice: IFeaturedListData }) => {
       return featuredListSlice.featuredList;
@@ -167,4 +167,4 @@ function AllSongs() {
   );
 }
 
-export default React.memo(AllSongs);
+export default React.memo(FeaturedSong);

@@ -7,12 +7,15 @@ import ScrollToTop from "./ScrollToTop";
 import { motion, useScroll } from "framer-motion";
 import { Route, Routes } from "react-router-dom";
 import MusicPlayer from "./pages/main/dummy/boards/MusicPlayer";
-
+import MusicPlayBox from "./components/music_player/MusicPlayBox";
+import { shallowEqual, useSelector } from "react-redux";
+import { IControllerVisible } from "./interface/imusic";
 
 const Wapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
+  position: relative;
 `;
 
 const SctollBar = styled(motion.div)`
@@ -27,12 +30,13 @@ const SctollBar = styled(motion.div)`
 `;
 function App() {
   const { scrollYProgress } = useScroll();
-  
+
   return (
     <Wapper>
       <SctollBar style={{ scaleX: scrollYProgress }} />
       <MusicPlayer />
       <ScrollToTop />
+      <MusicPlayBox />
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path=":projectId" element={<Myapp />} />

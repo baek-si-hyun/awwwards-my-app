@@ -27,5 +27,17 @@ export interface IPlayList {
   url: string;
 }
 export interface IVideoInfo {
-  videoInfo: { playing: boolean; videoUrl: string };
+  videoInfo: {
+    playing: boolean;
+    videoUrl: string;
+    img: string;
+    tittle: string;
+    artist: string;
+  };
+}
+export interface IIndex {
+  index: number;
+}
+export interface IControllerVisible {
+  visible: boolean;
 }
