@@ -1,11 +1,11 @@
 {
   "files": {
     "main.css": "/awwwards-my-app/static/css/main.05c417ed.css",
-    "main.js": "/awwwards-my-app/static/js/main.36bbd8c9.js",
+    "main.js": "/awwwards-my-app/static/js/main.bf9e01c5.js",
     "static/js/201.4723d724.chunk.js": "/awwwards-my-app/static/js/201.4723d724.chunk.js",
     "static/js/581.2d1c426c.chunk.js": "/awwwards-my-app/static/js/581.2d1c426c.chunk.js",
-    "static/js/550.8a1922f4.chunk.js": "/awwwards-my-app/static/js/550.8a1922f4.chunk.js",
-    "static/js/499.c56a0810.chunk.js": "/awwwards-my-app/static/js/499.c56a0810.chunk.js",
+    "static/js/550.99901e10.chunk.js": "/awwwards-my-app/static/js/550.99901e10.chunk.js",
+    "static/js/499.9c3009c3.chunk.js": "/awwwards-my-app/static/js/499.9c3009c3.chunk.js",
     "static/js/404.adf15e62.chunk.js": "/awwwards-my-app/static/js/404.adf15e62.chunk.js",
     "static/js/351.eb2e75e8.chunk.js": "/awwwards-my-app/static/js/351.eb2e75e8.chunk.js",
     "static/js/30.5359c3ed.chunk.js": "/awwwards-my-app/static/js/30.5359c3ed.chunk.js",
@@ -50,17 +50,17 @@
     "static/media/upbiticon.png": "/awwwards-my-app/static/media/upbiticon.4064bc4102e646afee38.png",
     "index.html": "/awwwards-my-app/index.html",
     "main.05c417ed.css.map": "/awwwards-my-app/static/css/main.05c417ed.css.map",
-    "main.36bbd8c9.js.map": "/awwwards-my-app/static/js/main.36bbd8c9.js.map",
+    "main.bf9e01c5.js.map": "/awwwards-my-app/static/js/main.bf9e01c5.js.map",
     "201.4723d724.chunk.js.map": "/awwwards-my-app/static/js/201.4723d724.chunk.js.map",
     "581.2d1c426c.chunk.js.map": "/awwwards-my-app/static/js/581.2d1c426c.chunk.js.map",
-    "550.8a1922f4.chunk.js.map": "/awwwards-my-app/static/js/550.8a1922f4.chunk.js.map",
-    "499.c56a0810.chunk.js.map": "/awwwards-my-app/static/js/499.c56a0810.chunk.js.map",
+    "550.99901e10.chunk.js.map": "/awwwards-my-app/static/js/550.99901e10.chunk.js.map",
+    "499.9c3009c3.chunk.js.map": "/awwwards-my-app/static/js/499.9c3009c3.chunk.js.map",
     "404.adf15e62.chunk.js.map": "/awwwards-my-app/static/js/404.adf15e62.chunk.js.map",
     "351.eb2e75e8.chunk.js.map": "/awwwards-my-app/static/js/351.eb2e75e8.chunk.js.map",
     "30.5359c3ed.chunk.js.map": "/awwwards-my-app/static/js/30.5359c3ed.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.05c417ed.css",
-    "static/js/main.36bbd8c9.js"
+    "static/js/main.bf9e01c5.js"
   ]
 }
