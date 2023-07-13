@@ -97,7 +97,6 @@ function CoinList() {
   const coinList = nameData
     ?.map((data) => data.market)
     .slice(count - 10, count);
-
   const { data: historyData } = useQuery<ICoinHistory[][]>(
     ["history", count],
     () => fetchCoinHistory(coinList!),

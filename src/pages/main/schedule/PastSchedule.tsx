@@ -97,13 +97,13 @@ const AbsoluteBox = styled.div<{ indexNum: number }>`
   ${(props) => props.indexNum === 3 && "left:1172px;gap:55px;"};
   ${(props) => props.indexNum === 4 && "left:1332px;gap:55px;"};
   ${(props) => props.indexNum === 5 && "left:1495px;gap:55px;"};
-  ${(props) => props.indexNum === 6 && "left:1495px;gap:450px;"};
+  ${(props) => props.indexNum === 6 && "left:1495px;gap:600px;"};
   ${(props) => props.indexNum === 7 && "left:1700px;gap:70px;"};
   ${(props) => props.indexNum === 8 && "left:1860px;gap:150px;"};
-  ${(props) => props.indexNum === 9 && "left:1900px;gap:110px;"}
+  ${(props) => props.indexNum === 9 && "left:1900px;gap:110px;"};
   ${(props) =>
-    props.indexNum === 10 && "left:2200px;gap:200px;background-color:#7e0303;"}
-  ${(props) => props.indexNum === 11 && "display: none;"}
+    props.indexNum === 10 && "left:2200px;gap:200px;background-color:#7e0303;"};
+  ${(props) => props.indexNum === 11 && "display: none;"};
 `;
 const Schedule = styled.div`
   overflow-x: scroll;

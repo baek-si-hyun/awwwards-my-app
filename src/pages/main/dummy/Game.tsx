@@ -143,9 +143,6 @@ function Game() {
     setBack(true);
     setVisible((prev) => (prev === 0 ? prev + 2 : prev - 1));
   };
-  const swipePower = (offset: number, velocity: number) => {
-    return Math.abs(offset) * velocity;
-  };
   return (
     <Container>
       <AnimatePresence mode="wait" custom={back} initial={false}>

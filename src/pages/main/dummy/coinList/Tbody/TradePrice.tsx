@@ -25,6 +25,6 @@ const TradePrice = ({
       </TdNomalDiv>
     );
   }
-  return <TdNomalDiv></TdNomalDiv>;
+  return <></>;
 };
 export default TradePrice;

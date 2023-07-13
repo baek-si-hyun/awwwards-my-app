@@ -3,7 +3,6 @@ import newjeans from "../../../assets/img/main_img/newjeans.jpg";
 import NewJeans from "./boards/NewJeans";
 import FeaturedSong from "./boards/FeaturedSong";
 import allsongs from "../../../assets/img/recommended_song/allsong.jpg";
-import MusicPlayBox from "../../../components/music_player/MusicPlayBox";
 
 const MusicWrapper = styled.div`
   width: 100%;
@@ -133,6 +132,8 @@ function Music() {
                 민희진이 프로듀서로 나서서 발굴한
                 <br /> 걸그룹이다. 2022년 8월 18일 《엠카운트다운》에서 데뷔
                 3주만에 첫 1위를 차지하였다.
+                <br />
+                출처 - 유튜브 뮤직
               </h3>
             </div>
           </MusicTextBox>

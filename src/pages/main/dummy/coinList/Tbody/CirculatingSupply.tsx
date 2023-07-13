@@ -33,6 +33,6 @@ const CirculatingSupply = ({
       </TdNomalDiv>
     );
   }
-  return <TdNomalDiv></TdNomalDiv>;
+  return <></>;
 };
 export default CirculatingSupply;

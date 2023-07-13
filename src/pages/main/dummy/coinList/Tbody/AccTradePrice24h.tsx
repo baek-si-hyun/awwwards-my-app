@@ -26,7 +26,7 @@ const AccTradePrice24h = ({
       </TdNomalDiv>
     );
   }
-  return <TdNomalDiv></TdNomalDiv>;
+  return <></>;
 };
 
 export default AccTradePrice24h;
