@@ -1,18 +1,16 @@
 {
   "files": {
     "main.css": "/awwwards-my-app/static/css/main.05c417ed.css",
-    "main.js": "/awwwards-my-app/static/js/main.bf9e01c5.js",
+    "main.js": "/awwwards-my-app/static/js/main.09c0ea69.js",
     "static/js/201.4723d724.chunk.js": "/awwwards-my-app/static/js/201.4723d724.chunk.js",
     "static/js/581.2d1c426c.chunk.js": "/awwwards-my-app/static/js/581.2d1c426c.chunk.js",
-    "static/js/550.99901e10.chunk.js": "/awwwards-my-app/static/js/550.99901e10.chunk.js",
+    "static/js/466.a1809452.chunk.js": "/awwwards-my-app/static/js/466.a1809452.chunk.js",
     "static/js/499.9c3009c3.chunk.js": "/awwwards-my-app/static/js/499.9c3009c3.chunk.js",
     "static/js/404.adf15e62.chunk.js": "/awwwards-my-app/static/js/404.adf15e62.chunk.js",
     "static/js/351.eb2e75e8.chunk.js": "/awwwards-my-app/static/js/351.eb2e75e8.chunk.js",
-    "static/js/30.5359c3ed.chunk.js": "/awwwards-my-app/static/js/30.5359c3ed.chunk.js",
+    "static/js/936.d0d6b52c.chunk.js": "/awwwards-my-app/static/js/936.d0d6b52c.chunk.js",
     "static/media/Pretendard-Regular.otf": "/awwwards-my-app/static/media/Pretendard-Regular.de88013f2ea98a04dede.otf",
     "static/media/Pretendard-Regular.woff": "/awwwards-my-app/static/media/Pretendard-Regular.ab56c53f21ca6b32d15f.woff",
-    "static/media/lol.webp": "/awwwards-my-app/static/media/lol.618fced02408b80a3ee7.webp",
-    "static/media/bdo.webp": "/awwwards-my-app/static/media/bdo.003095255b21b6cb1e1b.webp",
     "static/media/allsong.jpg": "/awwwards-my-app/static/media/allsong.33e617b53324988a81d5.jpg",
     "static/media/Pretendard-Regular.woff2": "/awwwards-my-app/static/media/Pretendard-Regular.6090e6b5524796768e78.woff2",
     "static/media/NanumSquareRoundOTFR.otf": "/awwwards-my-app/static/media/NanumSquareRoundOTFR.7c5a6c969e22084ac097.otf",
@@ -21,7 +19,6 @@
     "static/media/Apercu Pro Regular.otf": "/awwwards-my-app/static/media/Apercu Pro Regular.c90f8890213c974793f9.otf",
     "static/media/newjeans.jpg": "/awwwards-my-app/static/media/newjeans.d95e8fa2ae8bd4879d4e.jpg",
     "static/media/Apercu Pro Bold.otf": "/awwwards-my-app/static/media/Apercu Pro Bold.fe91e7b23d9dafe4c2d2.otf",
-    "static/media/war.webp": "/awwwards-my-app/static/media/war.326f9319f3e1d3d48403.webp",
     "static/media/awwwardC.webp": "/awwwards-my-app/static/media/awwwardC.1af13187a3fd750cad21.webp",
     "static/media/Exo2-VariableFont_wght.ttf": "/awwwards-my-app/static/media/Exo2-VariableFont_wght.718ec91358aa7ee8083b.ttf",
     "static/media/upbitC.webp": "/awwwards-my-app/static/media/upbitC.59dcfca8fba42094c60c.webp",
@@ -29,7 +26,6 @@
     "static/media/Roboto-Regular.ttf": "/awwwards-my-app/static/media/Roboto-Regular.fc2b5060f7accec5cf74.ttf",
     "static/media/investingC.webp": "/awwwards-my-app/static/media/investingC.0c8b3fb1686610392fd2.webp",
     "static/media/ProductSans-Medium.ttf": "/awwwards-my-app/static/media/ProductSans-Medium.50b60017b2706bf654f4.ttf",
-    "static/media/hypeboy_remix.jpg": "/awwwards-my-app/static/media/hypeboy_remix.33652ae6663397f6e885.jpg",
     "static/media/GothamMedium.ttf": "/awwwards-my-app/static/media/GothamMedium.0a910c0b9d50be6aa3dc.ttf",
     "static/media/sweater.jpg": "/awwwards-my-app/static/media/sweater.937fda092d2c92dfc33b.jpg",
     "static/media/star.jpg": "/awwwards-my-app/static/media/star.c5166d051c1226ce6000.jpg",
@@ -50,17 +46,17 @@
     "static/media/upbiticon.png": "/awwwards-my-app/static/media/upbiticon.4064bc4102e646afee38.png",
     "index.html": "/awwwards-my-app/index.html",
     "main.05c417ed.css.map": "/awwwards-my-app/static/css/main.05c417ed.css.map",
-    "main.bf9e01c5.js.map": "/awwwards-my-app/static/js/main.bf9e01c5.js.map",
+    "main.09c0ea69.js.map": "/awwwards-my-app/static/js/main.09c0ea69.js.map",
     "201.4723d724.chunk.js.map": "/awwwards-my-app/static/js/201.4723d724.chunk.js.map",
     "581.2d1c426c.chunk.js.map": "/awwwards-my-app/static/js/581.2d1c426c.chunk.js.map",
-    "550.99901e10.chunk.js.map": "/awwwards-my-app/static/js/550.99901e10.chunk.js.map",
+    "466.a1809452.chunk.js.map": "/awwwards-my-app/static/js/466.a1809452.chunk.js.map",
     "499.9c3009c3.chunk.js.map": "/awwwards-my-app/static/js/499.9c3009c3.chunk.js.map",
     "404.adf15e62.chunk.js.map": "/awwwards-my-app/static/js/404.adf15e62.chunk.js.map",
     "351.eb2e75e8.chunk.js.map": "/awwwards-my-app/static/js/351.eb2e75e8.chunk.js.map",
-    "30.5359c3ed.chunk.js.map": "/awwwards-my-app/static/js/30.5359c3ed.chunk.js.map"
+    "936.d0d6b52c.chunk.js.map": "/awwwards-my-app/static/js/936.d0d6b52c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.05c417ed.css",
-    "static/js/main.bf9e01c5.js"
+    "static/js/main.09c0ea69.js"
   ]
 }
