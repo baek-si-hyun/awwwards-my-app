@@ -6,7 +6,7 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   gap: 3vw;
-  padding: 8vw 2.7vw 3vw 2.7vw;
+  padding: 8vw 2.7vw 8vw 2.7vw;
   @media (max-width: 1024px) {
     & {
       padding: 8vw 2.7vw 9rem 2.7vw;

@@ -184,7 +184,7 @@ const featuredListSlice = createSlice({
         tittle: "Leave Before You Love Me",
         artist: "Marshmello 및 Jonas Brothers",
         album: "Leave Before You Love Me • 2021",
-        url: "https://www.youtube.com/embed/vptQ2hGAD8",
+        url: "https://www.youtube.com/embed/-vptQ2hGAD8",
       },
       {
         id: 20,
@@ -224,7 +224,7 @@ const featuredListSlice = createSlice({
         tittle: "톡톡(TOK TOK)(feat.SOYA)",
         artist: "마이티 마우스",
         album: "Mighty Fresh • 2011",
-        url: "https://www.youtube.com/embed/X_p5WqZBleo",
+        url: "https://www.youtube.com/embed/Tc0Cdl38CXY",
       },
       {
         id: 25,
@@ -254,7 +254,7 @@ const featuredListSlice = createSlice({
         id: 28,
         img: zedd,
         tittle: "Starving(feat. Zedd(제드))",
-        artist: "Hailee Steinfeld(헤일리 스타인펠드) 및 그레이",
+        artist: "헤일리 스타인펠드 및 그레이",
         album: "Starving • 2016",
         url: "https://www.youtube.com/embed/bV_Qff_c87w",
       },
