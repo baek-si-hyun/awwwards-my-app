@@ -8,8 +8,6 @@ import {
   TextBoxMiddle,
 } from "../common/mainItem";
 import CoinList from "./CoinList";
-import Game from "./Game";
-
 import Music from "./Music";
 import Site from "./Site";
 
@@ -45,8 +43,6 @@ function About() {
         </TextBox>
         <SubTextBox>Combination of HTTP, Websocket and React-Query</SubTextBox>
         <CoinList />
-        <ExplanTextBox>These are my favorite games.</ExplanTextBox>
-        <Game />
         <SourceText>Source: Each game company site</SourceText>
         <ExplanTextBox>This is a frequently visited site.</ExplanTextBox>
         <Site />
