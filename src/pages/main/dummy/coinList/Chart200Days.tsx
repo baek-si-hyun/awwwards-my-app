@@ -2,8 +2,8 @@ import {
   ICoinHistory,
   ICoinHttpTickers,
   ICoinSocketTickers,
-} from "../../../../../interface/interface";
-import Chart from "../Chart";
+} from "../../../../interface/icoin";
+import Chart from "./Chart";
 
 const Chart200Days = ({
   coinName,

@@ -6,7 +6,7 @@ import {
   TextBox,
   TextBoxMiddle,
   TextBoxTop,
-} from "../main/common/mainItem";
+} from "../main/common/mainCommon";
 import EmailJs from "./EmailJs";
 
 const EmailJsContainer = styled.div`

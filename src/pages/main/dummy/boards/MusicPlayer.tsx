@@ -21,7 +21,7 @@ function MusicPlayer() {
     shallowEqual
   );
   const [playList, setPlayList] = useState<IPlayList[]>([
-    { id: 0, img: "", tittle: "", artist: "", album: "", url: "" },
+    { id: 0, img: "", title: "", artist: "", album: "", url: "" },
   ]);
   const newList = useSelector(
     (state: {
@@ -64,7 +64,7 @@ function MusicPlayer() {
         playing: videoInfo.playing,
         videoUrl: playList[playIndex]?.url,
         img: playList[playIndex]?.img,
-        tittle: playList[playIndex]?.tittle,
+        title: playList[playIndex]?.title,
         artist: playList[playIndex]?.artist,
       })
     );

@@ -7,14 +7,10 @@ import {
   fetchCoinHistory,
   fetchCoins,
 } from "../../../services/coinApi";
-import {
-  ICoinHistory,
-  ICoinListMerge,
-  ICoins,
-} from "../../../interface/interface";
 import Colgroup from "./coinList/ColGroup";
 import TheadTr from "./coinList/TheadTr";
-import TbodyTr from "./coinList/Tbody/TbodyTr";
+import TbodyTr from "./coinList/TbodyTr";
+import { ICoinHistory, ICoinListMerge, ICoins } from "../../../interface/icoin";
 
 const CoinListWrapper = styled.div`
   width: 100%;

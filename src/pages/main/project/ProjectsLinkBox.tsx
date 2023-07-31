@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { IProjectsData, IVisited } from "../../../interface/interface";
+import { IProjectsData, IVisited } from "../../../interface/iproject";
 import { fetchProjects, fetchVistited } from "../../../services/listData";
 import { useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
@@ -179,7 +179,6 @@ function VisitedBox({
   );
 }
 function ProjectsLinkBox() {
-
   const { data: projectData } = useQuery<IProjectsData[]>(
     ["project"],
     () => fetchProjects(),

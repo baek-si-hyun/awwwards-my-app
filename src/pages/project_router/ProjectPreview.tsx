@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { IProjectData } from "../../interface/interface";
+import { IProjectData } from "../../interface/iproject";
 
 const PreviewContaier = styled.div`
   width: 100%;

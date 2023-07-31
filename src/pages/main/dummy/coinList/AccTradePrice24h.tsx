@@ -1,7 +1,7 @@
 import {
   ICoinHttpTickers,
   ICoinSocketTickers,
-} from "../../../../../interface/interface";
+} from "../../../../interface/icoin";
 import { TdNomalDiv } from "./TbodyTr";
 
 const AccTradePrice24h = ({

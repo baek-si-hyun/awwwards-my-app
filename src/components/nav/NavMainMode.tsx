@@ -1,13 +1,13 @@
-import { IMainPosition } from "../../interface/interface";
+import { IMainPosition } from "../../interface/iproject";
 import { Link, NavBox, NavItem } from "./Nav";
 
 function NavMainMode({
-    navHandler,
-    mainPosition,
-  }: {
-    navHandler: any;
-    mainPosition: IMainPosition;
-  }) {
+  navHandler,
+  mainPosition,
+}: {
+  navHandler: any;
+  mainPosition: IMainPosition;
+}) {
   return (
     <NavBox onClick={navHandler}>
       <NavItem mainPosition={mainPosition}>

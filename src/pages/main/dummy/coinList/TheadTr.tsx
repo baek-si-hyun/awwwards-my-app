@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { Tr } from "../CoinList";
 
-
 const NameTh = styled.th`
   text-align: start;
   vertical-align: middle;

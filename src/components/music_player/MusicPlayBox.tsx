@@ -89,7 +89,7 @@ function MusicPlayBox() {
         playing: !videoInfo.playing,
         videoUrl: videoInfo.videoUrl,
         img: videoInfo.img,
-        tittle: videoInfo.tittle,
+        title: videoInfo.title,
         artist: videoInfo.artist,
       })
     );
@@ -123,7 +123,7 @@ function MusicPlayBox() {
           <Img src={videoInfo?.img} />
           <InfoControlBox>
             <Info>
-              {videoInfo?.tittle} - {videoInfo.artist}
+              {videoInfo?.title} - {videoInfo.artist}
             </Info>
             <Control>
               <Prev>

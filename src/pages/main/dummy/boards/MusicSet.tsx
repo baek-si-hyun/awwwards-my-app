@@ -54,7 +54,7 @@ function MusicSet({ videoUrl }: { videoUrl: string }) {
         playing: playing,
         videoUrl: videoUrl,
         img: videoInfo.img,
-        tittle: videoInfo.tittle,
+        title: videoInfo.title,
         artist: videoInfo.artist,
       })
     );

@@ -7,7 +7,7 @@ const playingVideoInfoSlice = createSlice({
       playing: false,
       videoUrl: "",
       img: "",
-      tittle: "",
+      title: "",
       artist: "",
     },
   },

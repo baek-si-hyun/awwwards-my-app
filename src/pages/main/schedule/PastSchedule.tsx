@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { schedule } from "../../../services/listData";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { IResize } from "../../../interface/interface";
+import { IResize } from "../../../interface/iproject";
 
 const Container = styled.div`
   padding: 6vw 0;
@@ -78,7 +78,7 @@ const Box = styled.div`
 const AbsoluteBox = styled.div<{ indexNum: number }>`
   font-weight: lighter;
   font-size: 1rem;
-  white-space : nowrap;
+  white-space: nowrap;
   padding: clamp(5px, 0.7vw, 15px);
   border-radius: 7px;
   background-color: #222222;

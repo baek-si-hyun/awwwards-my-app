@@ -34,7 +34,7 @@ const featuredListSlice = createSlice({
       {
         id: 1,
         img: tiktok,
-        tittle: "TiK ToK(feat. Liinii)",
+        title: "TiK ToK(feat. Liinii)",
         artist: "Helion 및 Olympis",
         album: "TiK ToK • 2020",
         url: "https://www.youtube.com/embed/2mOMCDiC5pw",
@@ -42,7 +42,7 @@ const featuredListSlice = createSlice({
       {
         id: 2,
         img: sweater,
-        tittle: "Sweater Weather (Gaullin Remix)",
+        title: "Sweater Weather (Gaullin Remix)",
         artist: "The Neighbourhood",
         album: "House Nation",
         url: "https://www.youtube.com/embed/6iPDdCJ1lEM",
@@ -50,7 +50,7 @@ const featuredListSlice = createSlice({
       {
         id: 3,
         img: reminder,
-        tittle: "Reminder",
+        title: "Reminder",
         artist: "2Scratch & Young Jae",
         album: "Reminder • 2019",
         url: "https://www.youtube.com/embed/NiRDlWJ11AA",
@@ -58,7 +58,7 @@ const featuredListSlice = createSlice({
       {
         id: 4,
         img: post1,
-        tittle: "Motley Crew",
+        title: "Motley Crew",
         artist: "Post Malone",
         album: "Motley Crew • 2021",
         url: "https://www.youtube.com/embed/9Aaom1TZ52g",
@@ -66,7 +66,7 @@ const featuredListSlice = createSlice({
       {
         id: 5,
         img: weeknd1,
-        tittle: "Heartless",
+        title: "Heartless",
         artist: "The Weeknd",
         album: "After Hours • 2020",
         url: "https://www.youtube.com/embed/-uj9b9JCIJM",
@@ -74,7 +74,7 @@ const featuredListSlice = createSlice({
       {
         id: 6,
         img: weeknd2,
-        tittle: "Moth To A Flame",
+        title: "Moth To A Flame",
         artist: "Swedish House Mafia 및 The Weeknd",
         album: "Paradise Again • 2022",
         url: "https://www.youtube.com/embed/WbzmQcFLPE8",
@@ -83,7 +83,7 @@ const featuredListSlice = createSlice({
       {
         id: 7,
         img: weeknd3,
-        tittle: "Party Monster",
+        title: "Party Monster",
         artist: "The Weeknd",
         album: "Starboy • 2016",
         url: "https://www.youtube.com/embed/j9Hije4z6O4",
@@ -91,7 +91,7 @@ const featuredListSlice = createSlice({
       {
         id: 8,
         img: post2,
-        tittle: "On the Road(feat. Meek Mill, 릴 베이비)",
+        title: "On the Road(feat. Meek Mill, 릴 베이비)",
         artist: "Post Malone",
         album: "Hollywood's Bleeding • 2019",
         url: "https://www.youtube.com/embed/yw_ShLNyHTk",
@@ -99,7 +99,7 @@ const featuredListSlice = createSlice({
       {
         id: 9,
         img: weeknd1,
-        tittle: "After Hours",
+        title: "After Hours",
         artist: "The Weeknd",
         album: "After Hours • 2020",
         url: "https://www.youtube.com/embed/ygTZZpVkmKg",
@@ -107,7 +107,7 @@ const featuredListSlice = createSlice({
       {
         id: 10,
         img: mindme1,
-        tittle: "Might Be(feat. Emmi)",
+        title: "Might Be(feat. Emmi)",
         artist: "Mindme",
         album: "Change • 2019",
         url: "https://www.youtube.com/embed/xmlcDsDFouQ",
@@ -115,7 +115,7 @@ const featuredListSlice = createSlice({
       {
         id: 11,
         img: mindme2,
-        tittle: "Get Me out of Here(feat. 밀바)",
+        title: "Get Me out of Here(feat. 밀바)",
         artist: "Mindme",
         album: "Get Me out of Here • 2020",
         url: "https://www.youtube.com/embed/FtmaQLZ65_I",
@@ -123,7 +123,7 @@ const featuredListSlice = createSlice({
       {
         id: 12,
         img: blaeker,
-        tittle: "More Of My Life(feat. 자슬린 에드가)",
+        title: "More Of My Life(feat. 자슬린 에드가)",
         artist: "BLAEKER",
         album: "More Of My Life • 2019",
         url: "https://www.youtube.com/embed/j3qxWRfaPfY",
@@ -131,7 +131,7 @@ const featuredListSlice = createSlice({
       {
         id: 13,
         img: xg,
-        tittle: "SHOOTING STAR",
+        title: "SHOOTING STAR",
         artist: "XG",
         album: "SHOOTING STAR • 2023",
         url: "https://www.youtube.com/embed/BHuwkHd0j4w",
@@ -139,7 +139,7 @@ const featuredListSlice = createSlice({
       {
         id: 14,
         img: xg,
-        tittle: "LEFT RIGHT",
+        title: "LEFT RIGHT",
         artist: "XG",
         album: "SHOOTING STAR • 2023",
         url: "https://www.youtube.com/embed/Yj-LoyPitFU",
@@ -147,7 +147,7 @@ const featuredListSlice = createSlice({
       {
         id: 15,
         img: bibi,
-        tittle: "사장님 도박은 재미로 하셔야 합니다",
+        title: "사장님 도박은 재미로 하셔야 합니다",
         artist: "비비(BIBI)",
         album: "사장님 도박은 재미로 하셔야 합니다 • 2020",
         url: "https://www.youtube.com/embed/xwUFywmH5t4",
@@ -156,7 +156,7 @@ const featuredListSlice = createSlice({
       {
         id: 16,
         img: trndsttr,
-        tittle: "Trndsttr (Lucian Remix)",
+        title: "Trndsttr (Lucian Remix)",
         artist: "Black Coast 및 M. Maggie",
         album: "Trndsttr (Lucian Remix) • 2016",
         url: "https://www.youtube.com/embed/vBdnfyfBSKg",
@@ -165,7 +165,7 @@ const featuredListSlice = createSlice({
       {
         id: 17,
         img: girls,
-        tittle: "완벽한 시대 Summer Night",
+        title: "완벽한 시대 Summer Night",
         artist: "소녀시대",
         album: "FOREVER 1 - The 7th Album • 2022",
         url: "https://www.youtube.com/embed/1BeMGup6HKw",
@@ -173,7 +173,7 @@ const featuredListSlice = createSlice({
       {
         id: 18,
         img: iu,
-        tittle: "에잇(feat. SUGA )",
+        title: "에잇(feat. SUGA )",
         artist: "아이유(IU)",
         album: "에잇 • 2020",
         url: "https://www.youtube.com/embed/LFiffwrhLn8",
@@ -181,7 +181,7 @@ const featuredListSlice = createSlice({
       {
         id: 19,
         img: marshmello,
-        tittle: "Leave Before You Love Me",
+        title: "Leave Before You Love Me",
         artist: "Marshmello 및 Jonas Brothers",
         album: "Leave Before You Love Me • 2021",
         url: "https://www.youtube.com/embed/-vptQ2hGAD8",
@@ -189,7 +189,7 @@ const featuredListSlice = createSlice({
       {
         id: 20,
         img: triple,
-        tittle: "Jubël - Triple A (feat. NLE Choppa)",
+        title: "Jubël - Triple A (feat. NLE Choppa)",
         artist: "Jubël",
         album: "Triple A • 2023",
         url: "https://www.youtube.com/embed/N3Xbg-Hrc8s",
@@ -197,7 +197,7 @@ const featuredListSlice = createSlice({
       {
         id: 21,
         img: beam,
-        tittle: "Beam (Dannic Mix)",
+        title: "Beam (Dannic Mix)",
         artist: "Mako feat. Angel Taylor",
         album: "Beam (Dannic Mix) • 2013",
         url: "https://www.youtube.com/embed/Og5ovhUbw3g",
@@ -205,7 +205,7 @@ const featuredListSlice = createSlice({
       {
         id: 22,
         img: joy,
-        tittle: "안녕",
+        title: "안녕",
         artist: "조이(JOY)",
         album: "안녕 • 2021",
         url: "https://www.youtube.com/embed/6tD58fV-v14",
@@ -213,7 +213,7 @@ const featuredListSlice = createSlice({
       {
         id: 23,
         img: sakthree,
-        tittle: "다시 여기 바닷가",
+        title: "다시 여기 바닷가",
         artist: "싹쓰리 (유두래곤&린다G&비룡)",
         album: "다시 여기 바닷가 • 2020",
         url: "https://www.youtube.com/embed/vIfIzA9xHxI",
@@ -221,7 +221,7 @@ const featuredListSlice = createSlice({
       {
         id: 24,
         img: toktok,
-        tittle: "톡톡(TOK TOK)(feat.SOYA)",
+        title: "톡톡(TOK TOK)(feat.SOYA)",
         artist: "마이티 마우스",
         album: "Mighty Fresh • 2011",
         url: "https://www.youtube.com/embed/Tc0Cdl38CXY",
@@ -229,7 +229,7 @@ const featuredListSlice = createSlice({
       {
         id: 25,
         img: lesserafim,
-        tittle: "No-Return (Into the unknown)",
+        title: "No-Return (Into the unknown)",
         artist: "LE SSERAFIM",
         album: "UNFORGIVEN • 2023",
         url: "https://www.youtube.com/embed/wrRu7R7eEBo",
@@ -237,7 +237,7 @@ const featuredListSlice = createSlice({
       {
         id: 26,
         img: phoenix,
-        tittle: "Phoenix",
+        title: "Phoenix",
         artist: "Netrum & Halvorsen",
         album: "NCS10 Release • 2022",
         url: "https://www.youtube.com/embed/yH88qRmgkGI",
@@ -245,7 +245,7 @@ const featuredListSlice = createSlice({
       {
         id: 27,
         img: yeu5,
-        tittle: "Yêu 5 (Remix)",
+        title: "Yêu 5 (Remix)",
         artist: "Rhymastic",
         album: "Yêu 5 (Remix) • 2020",
         url: "https://www.youtube.com/embed/aVMlPZDxd5U",
@@ -253,7 +253,7 @@ const featuredListSlice = createSlice({
       {
         id: 28,
         img: zedd,
-        tittle: "Starving(feat. Zedd(제드))",
+        title: "Starving(feat. Zedd(제드))",
         artist: "헤일리 스타인펠드 및 그레이",
         album: "Starving • 2016",
         url: "https://www.youtube.com/embed/bV_Qff_c87w",
@@ -261,7 +261,7 @@ const featuredListSlice = createSlice({
       {
         id: 29,
         img: star,
-        tittle: "3LAU - Star Crossed (J3SH & LHB Remix)",
+        title: "3LAU - Star Crossed (J3SH & LHB Remix)",
         artist: "T. S.",
         album: "2018",
         url: "https://www.youtube.com/embed/1dtVbJy3eHU",

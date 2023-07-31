@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { fetchFaqs } from "../../services/listData";
-import { IFaqsLists } from "../../interface/interface";
+import { IFaqsLists } from "../../interface/iproject";
 
 const FaqsList = styled.ul`
   background-image: linear-gradient(

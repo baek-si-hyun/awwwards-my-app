@@ -4,12 +4,10 @@ import Faqs from "./pages/faqs/Faqs";
 import Main from "./pages/main/Main";
 import Myapp from "./pages/project_router/ProjectMain";
 import ScrollToTop from "./ScrollToTop";
-import { motion, useScroll } from "framer-motion";
+import {motion, useScroll } from "framer-motion";
 import { Route, Routes } from "react-router-dom";
 import MusicPlayer from "./pages/main/dummy/boards/MusicPlayer";
 import MusicPlayBox from "./components/music_player/MusicPlayBox";
-import { shallowEqual, useSelector } from "react-redux";
-import { IControllerVisible } from "./interface/imusic";
 
 const Wapper = styled.div`
   display: flex;

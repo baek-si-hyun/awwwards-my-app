@@ -1,4 +1,4 @@
-import { IRouterPosition } from "../../interface/interface";
+import { IRouterPosition } from "../../interface/iproject";
 import { NavBox, RouterNavItem, Link, VisitedSite } from "./Nav";
 
 function NavRouterMode({
@@ -38,7 +38,7 @@ function NavRouterMode({
           >
             Visited Site
           </a>
-        ) :pathname === "/Netflix" ? (
+        ) : pathname === "/Netflix" ? (
           <a
             href="https://baek-si-hyun.github.io/NFLXclone"
             target="_blank"

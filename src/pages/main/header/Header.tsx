@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import shb from "../../../assets/img/main_img/shbicon.png";
 import HeaderMainImg from "./HeaderMainImg";
 import { useSelector } from "react-redux";
-import { IResize } from "../../../interface/interface";
+import { IResize } from "../../../interface/iproject";
 
 const Container = styled.div`
   width: 100%;

@@ -12,7 +12,7 @@ const newJeansListSlice = createSlice({
       {
         id: 1,
         img: omg,
-        tittle: "OMG",
+        title: "OMG",
         artist: "NewJeans",
         album: "NewJeans'OMG'",
         url: "https://www.youtube.com/embed/sVTy_wmn5SU",
@@ -20,7 +20,7 @@ const newJeansListSlice = createSlice({
       {
         id: 2,
         img: ditto,
-        tittle: "Ditto",
+        title: "Ditto",
         artist: "NewJeans",
         album: "Ditto",
         url: "https://www.youtube.com/embed/HtbnfBFIJls",
@@ -28,7 +28,7 @@ const newJeansListSlice = createSlice({
       {
         id: 3,
         img: zero,
-        tittle: "Zero",
+        title: "Zero",
         artist: "NewJeans",
         album: "Zero",
         url: "https://www.youtube.com/embed/FWTG5wuVLuI",
@@ -36,7 +36,7 @@ const newJeansListSlice = createSlice({
       {
         id: 4,
         img: stEp,
-        tittle: "Hype Boy",
+        title: "Hype Boy",
         artist: "NewJeans",
         album: "NewJeans 1st EP 'New Jeans'",
         url: "https://www.youtube.com/embed/T--6HBX2K4g",
@@ -44,7 +44,7 @@ const newJeansListSlice = createSlice({
       {
         id: 5,
         img: stEp,
-        tittle: "Attention",
+        title: "Attention",
         artist: "NewJeans",
         album: "NewJeans 1st EP 'New Jeans'",
         url: "https://www.youtube.com/embed/o8RkbHv2_a0",
@@ -52,7 +52,7 @@ const newJeansListSlice = createSlice({
       {
         id: 6,
         img: stEp,
-        tittle: "Cookie",
+        title: "Cookie",
         artist: "NewJeans",
         album: "NewJeans 1st EP 'New Jeans'",
         url: "https://www.youtube.com/embed/1pUCsbK35JA",
@@ -60,7 +60,7 @@ const newJeansListSlice = createSlice({
       {
         id: 7,
         img: stEp,
-        tittle: "Hurt",
+        title: "Hurt",
         artist: "NewJeans",
         album: "NewJeans 1st EP 'New Jeans'",
         url: "https://www.youtube.com/embed/qoK934-VghI",
@@ -68,18 +68,26 @@ const newJeansListSlice = createSlice({
       {
         id: 8,
         img: supershy,
-        tittle: "Super Shy",
+        title: "Super Shy",
         artist: "NewJeans",
         album: "NewJeans 'Super Shy'",
         url: "https://www.youtube.com/embed/v8gMZJqdIzU",
       },
-            {
+      {
         id: 9,
         img: supershy,
-        tittle: "New Jeans",
+        title: "New Jeans",
         artist: "NewJeans",
         album: "NewJeans 'Super Shy'",
         url: "https://www.youtube.com/embed/QyDQbeMIxSk",
+      },
+      {
+        id: 10,
+        img: supershy,
+        title: "ETA",
+        artist: "NewJeans",
+        album: "NewJeans 'Get Up'",
+        url: "https://www.youtube.com/embed/jrbknDTFLog",
       },
     ],
   },

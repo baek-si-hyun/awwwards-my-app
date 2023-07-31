@@ -119,8 +119,8 @@ function Footer() {
             <p>
               awwwards, YoutubeMusic, coinmarketcap의 디자인을 참고하였습니다.
               <br />
-              framer-motion, styled-components, @tanstack/react-query,
-              react-beautiful-dnd, react-fast-marquee, usehooks-ts, recoil,
+              redux-toolkit, styled-components, @tanstack/react-query,
+              react-beautiful-dnd, react-fast-marquee, 
               @emailjs/browser 가 사용되었습니다.
             </p>
           </Ko>
@@ -128,9 +128,9 @@ function Footer() {
             <p>
               I referred to the designs of awwwards, YoutubeMusic and
               coinmarketcap. <br />
-              framer-motion, styled-components, @tanstack/react-query,
-              react-beautiful-dnd, react-fast-marquee, usehooks-ts, recoil,
-              @emailjs/browser has been used
+              redux-toolkit, styled-components, @tanstack/react-query,
+              react-beautiful-dnd, react-fast-marquee, 
+              @emailjs/browser has been used.
             </p>
           </En>
         </Text>

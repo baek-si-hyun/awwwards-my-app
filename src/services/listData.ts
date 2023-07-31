@@ -1,4 +1,4 @@
-import { IScheduleData } from "../interface/interface";
+import { IScheduleData } from "../interface/iproject";
 
 export async function fetchFaqs() {
   const response = await fetch(

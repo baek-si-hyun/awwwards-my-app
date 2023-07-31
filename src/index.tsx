@@ -1,6 +1,5 @@
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
-import { RecoilRoot } from "recoil";
 import { createGlobalStyle } from "styled-components";
 import "./assets/font/css/font.css";
 import App from "./App";
@@ -78,14 +77,12 @@ const root = ReactDOM.createRoot(
 const queryClient = new QueryClient();
 root.render(
   <BrowserRouter basename={process.env.PUBLIC_URL}>
-    <RecoilRoot>
-      <QueryClientProvider client={queryClient}>
-        <Provider store={store}>
-          <GlobalStyle />
-          <App />
-        </Provider>
-        <ReactQueryDevtools />
-      </QueryClientProvider>
-    </RecoilRoot>
+    <QueryClientProvider client={queryClient}>
+      <Provider store={store}>
+        <GlobalStyle />
+        <App />
+      </Provider>
+      <ReactQueryDevtools />
+    </QueryClientProvider>
   </BrowserRouter>
 );

@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { useState, useEffect } from "react";
-import { ICoinSocketTickers } from "../interface/interface";
+import { ICoinSocketTickers } from "../interface/icoin";
+
 
 export async function fetchCoins() {
   const response = await fetch(

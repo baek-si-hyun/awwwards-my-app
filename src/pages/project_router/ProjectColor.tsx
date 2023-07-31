@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
-import { UnderLine } from "../main/common/mainItem";
+import { UnderLine } from "../main/common/mainCommon";
 
 const ColorContainer = styled.div``;
 const ColorInner = styled.div`

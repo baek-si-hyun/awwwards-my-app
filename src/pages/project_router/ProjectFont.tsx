@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styled, { css } from "styled-components";
-import { UnderLine } from "../main/common/mainItem";
+import { UnderLine } from "../main/common/mainCommon";
 
 const FontContainer = styled.div`
   display: flex;
@@ -41,7 +41,7 @@ const FontDetail = styled.div`
   padding-bottom: 2vw;
   ${UnderLine}
 `;
-const FontTittle = styled.div`
+const FontTitle = styled.div`
   font-weight: 100;
   font-size: 13px;
 
@@ -174,17 +174,17 @@ function ProjectFont({ fonts }: { fonts: string[] }) {
       </FontName>
       <FontStyle>
         <FontDetail>
-          <FontTittle>
+          <FontTitle>
             <h3>FONT DETAIL</h3>
-          </FontTittle>
+          </FontTitle>
           <FontDetailContent toggle={toggle} fontsData={fonts}>
             <span>AaBb</span>
           </FontDetailContent>
         </FontDetail>
         <LettersNumbers>
-          <FontTittle>
+          <FontTitle>
             <h3>LETTERS + NUMBERS</h3>
-          </FontTittle>
+          </FontTitle>
           <ContentDiv toggle={toggle} fontsData={fonts}>
             <span>
               Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv

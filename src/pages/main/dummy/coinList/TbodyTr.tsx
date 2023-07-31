@@ -1,15 +1,12 @@
 import styled from "styled-components";
-import {
-  ICoinListMerge,
-  ICoinHttpTickers,
-} from "../../../../../interface/interface";
-import { Tr } from "../../CoinList";
+import { ICoinHttpTickers, ICoinListMerge } from "../../../../interface/icoin";
+import { Tr } from "../CoinList";
 import {
   fetchCoinTickers,
   useCoinTickersSocket,
-} from "../../../../../services/coinApi";
+} from "../../../../services/coinApi";
 import React, { useEffect, useState } from "react";
-import SkeletonUI from "../SkeletonUI";
+import SkeletonUI from "./SkeletonUI";
 import { useQuery } from "@tanstack/react-query";
 import TradePrice from "./TradePrice";
 import ChangePrice from "./ChangePrice";

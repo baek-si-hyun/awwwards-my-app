@@ -6,80 +6,22 @@ import {
 } from "react-beautiful-dnd";
 import styled from "styled-components";
 import React from "react";
-import MusicSet, { ButtonDiv, ControllBtn } from "./MusicSet";
+import MusicSet from "./MusicSet";
 import { useDispatch, useSelector } from "react-redux";
 import { INewjeansListData } from "../../../../interface/imusic";
 import { newJeansRedux } from "../../../../redux/slices/newJeansListSlice";
-
-const Wrapper = styled.div`
-  width: 90%;
-`;
-const Board = styled.div`
-  padding: 0px 40px;
-  background-color: transparent;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-`;
-
-const Card = styled.div<{ isDragging: boolean }>`
-  padding: 10px 2.5vw;
-  background-color: ${(props) =>
-    props.isDragging ? "#1d1d1d" : "transparent"};
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  justify-content: space-around;
-  align-items: center;
-  font-size: 1.1vw;
-  border-bottom: 1px solid #1d1d1d;
-  border-radius: ${(props) => (props.isDragging ? "10px" : "none")};
-  transition: background-color 0.2s ease-in-out, border-radius 0.2s ease-in-out;
-  will-change: background-color, border-radius;
-  :last-child {
-    border-bottom: none;
-  }
-  :hover {
-    background-color: #1d1d1d;
-    ${ButtonDiv} {
-      opacity: 0.9;
-    }
-    ${ControllBtn} {
-      opacity: 1;
-    }
-  }
-  @media (max-width: 429px) {
-    & {
-      font-size: 0.6rem;
-    }
-  }
-`;
-
-const ImgDiv = styled.div`
-  position: relative;
-`;
+import {
+  Board,
+  Wrapper,
+  Card,
+  CardItem,
+  ImgDiv,
+  Title,
+} from "./common/boardsCommon";
 
 const Img = styled.img`
   width: clamp(25px, 4vw, 128px);
-  object-fit: cover;
 `;
-
-const CardItem = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 7%;
-  :nth-child(2) {
-    padding-left: 20%;
-  }
-  :nth-child(3) {
-    padding-left: 20%;
-  }
-  @media (max-width: 768px) {
-    & {
-      text-overflow: ellipsis;
-    }
-  }
-`;
-const Tittle = styled.div``;
 
 function NewJeans() {
   const newjeansList = useSelector(
@@ -107,8 +49,8 @@ function NewJeans() {
             <Board ref={magic.innerRef} {...magic.droppableProps}>
               {newjeansList.map((newjeans, index) => (
                 <Draggable
-                  key={newjeans.tittle}
-                  draggableId={newjeans.tittle}
+                  key={newjeans.title}
+                  draggableId={newjeans.title}
                   index={index}
                 >
                   {(provided, snapshot) => (
@@ -128,9 +70,9 @@ function NewJeans() {
                           />
                           <MusicSet videoUrl={newjeans.url} />
                         </ImgDiv>
-                        <Tittle>
-                          <span>{newjeans.tittle}</span>
-                        </Tittle>
+                        <Title>
+                          <span>{newjeans.title}</span>
+                        </Title>
                       </CardItem>
                       <CardItem>
                         <span>{newjeans.artist}</span>

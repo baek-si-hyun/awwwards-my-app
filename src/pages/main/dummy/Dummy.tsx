@@ -6,7 +6,7 @@ import {
   TextBoxTop,
   TextBoxbottom,
   TextBoxMiddle,
-} from "../common/mainItem";
+} from "../common/mainCommon";
 import CoinList from "./CoinList";
 import Music from "./Music";
 import Site from "./Site";
