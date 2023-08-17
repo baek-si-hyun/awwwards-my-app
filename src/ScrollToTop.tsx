@@ -12,7 +12,7 @@ function ScrollToTop() {
       const data = { pathname: pathname };
       try {
         const response = await fetch(
-          "https://port-0-awwwards-ec2-server-7xwyjq992lliithryh.sel4.cloudtype.app/api/visited",
+          "https://port-0-awwwards-ec2-server-eu1k2lllevrzc8.sel3.cloudtype.app/api/visited",
           {
             method: "POST",
             headers: {

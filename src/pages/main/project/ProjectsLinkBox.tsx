@@ -4,180 +4,111 @@ import { IProjectsData, IVisited } from "../../../interface/iproject";
 import { fetchProjects, fetchVistited } from "../../../services/listData";
 import { useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
+import VisitedBox from "./VisitedBox";
 
-const Box = styled(Link)`
+const BoxContainer = styled.div`
   display: flex;
-  gap: 2vw;
-  padding: 2vw 0px;
-  border-bottom: 1px black;
-  transition: background-color 0.2s ease-in-out;
-  background-image: linear-gradient(
-    to right,
-    rgb(34, 34, 34, 1) 0 10%,
-    rgba(255, 255, 255, 0) 10%
-  );
-  background-position: bottom;
-  background-size: 8px 1px;
-  background-repeat: repeat-x;
-  cursor: pointer;
-  :hover {
-    background-color: #eaeaea;
-  }
+  flex-direction: column;
+  justify-content: center;
 `;
 
-const InnerBoxImg = styled.div`
-  flex: 1;
-  overflow: hidden;
+const Box = styled(Link)`
+  position: relative;
+  border-radius: 15px;
+  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+`;
+
+const ImgBox = styled.div`
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 `;
 const Img = styled.img`
   aspect-ratio: 4/3;
-  width: 90%;
+  width: 100%;
+  border-radius: 15px;
   object-fit: cover;
-  border-radius: 10px;
 `;
-const InnerBoxText = styled.div`
-  width: 50%;
-  padding: 0 10px;
+const HoverBox = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 3;
+  border-radius: 15px;
+  color: #fff;
+  opacity: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 1));
+  will-change: opacity, background;
+  transition: opacity 0.2s ease-in-out;
+  :hover {
+    opacity: 1;
+  }
 `;
 
-const TextTop = styled.div``;
-const TextBottom = styled.div`
-  line-height: 1.7;
-  font-size: 1.3vw;
+const IconBox = styled.div`
+  display: flex;
+  gap: 0.3rem;
+  @media (max-width: 440px) {
+    & {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+`;
+const TextBox = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  font-size: 1.1vw;
+  span {
+    font-weight: bold;
+  }
   @media (max-width: 768px) {
     & {
       font-size: 2.5vw;
     }
   }
 `;
-const TextBottomInner = styled.div`
+const By = styled.div`
   display: flex;
   align-items: center;
+  small {
+    font-weight: 100;
+  }
 `;
 
-const InnerFigure = styled.figure`
+const InnerSpan = styled.span`
   display: flex;
   align-items: center;
-
   img {
     margin: 0 0.3rem;
     object-fit: fill;
-    width: 2vw;
-    height: 2vw;
+    width: 1.8vw;
+    height: 1.8vw;
     border-radius: 100%;
     @media (max-width: 480px) {
       & {
-        width: 20px;
-        height: 20px;
+        width: 18px;
+        height: 18px;
       }
     }
   }
-  figcaption {
-    span {
-      font-weight: 600;
-      border-bottom: 2px solid #b7b7b7;
-    }
+  span {
+    font-weight: 600;
+    border-bottom: 2px solid #b7b7b7;
   }
 `;
-
-const Visited = styled.div`
-  border: 1px solid black;
-  border-radius: 5px;
-  width: 50%;
-  display: flex;
-  margin-top: 1vw;
-  @media (max-width: 1024px) {
-    & {
-      width: 90%;
-    }
-  }
+const Icon = styled.img`
+  fill: #fff;
 `;
-
-const VisitedInner = styled.div`
-  display: flex;
-  text-align: center;
-  flex-direction: column;
-  flex: 1;
-  :first-child {
-    border-right: 1px solid black;
-  }
-`;
-
-const VisitedInnerTop = styled.div`
-  font-size: 0.4vw;
-  padding: 0.2vw 0;
-  @media (max-width: 429px) {
-    & {
-      font-size: 0.5rem;
-    }
-  }
-`;
-const VisitedInnerBottom = styled.div`
-  border-top: 1px solid black;
-  font-size: 0.4vw;
-  padding: 0.3vw 0;
-  font-weight: 900;
-  @media (max-width: 429px) {
-    & {
-      font-size: 0.5rem;
-    }
-  }
-`;
-function VisitedBox({
-  visitedData,
-  name,
-}: {
-  visitedData: IVisited[];
-  name: string;
-}) {
-  const [visited] = visitedData;
-
-  return (
-    <Visited>
-      <VisitedInner>
-        <VisitedInnerTop>Visited Today</VisitedInnerTop>
-        <VisitedInnerBottom>
-          {name === "Awwwards"
-            ? visited.visited_awwwards_today
-            : name === "Netflix"
-            ? visited.visited_netflix_today
-            : name === "Kanban"
-            ? visited.visited_kanban_today
-            : name === "Coin"
-            ? visited.visited_coin_today
-            : name === "Myapp"
-            ? visited.visited_myapp_today
-            : name === "Airbnb"
-            ? visited.visited_airbnb_today
-            : ""}
-        </VisitedInnerBottom>
-      </VisitedInner>
-      <VisitedInner>
-        <VisitedInnerTop>Total Visited</VisitedInnerTop>
-        <VisitedInnerBottom>
-          {name === "Awwwards"
-            ? visited.visited_awwwards_total
-            : name === "Netflix"
-            ? visited.visited_netflix_total
-            : name === "Kanban"
-            ? visited.visited_kanban_total
-            : name === "Coin"
-            ? visited.visited_coin_total
-            : name === "Myapp"
-            ? visited.visited_myapp_total
-            : name === "Airbnb"
-            ? visited.visited_airbnb_total
-            : ""}
-        </VisitedInnerBottom>
-      </VisitedInner>
-    </Visited>
-  );
-}
 function ProjectsLinkBox() {
   const { data: projectData } = useQuery<IProjectsData[]>(
     ["project"],
@@ -204,58 +135,66 @@ function ProjectsLinkBox() {
       {projectData &&
         visitedData &&
         projectData.map((data) => (
-          <Box
-            to={`/${data.projects_code}`}
-            state={{
-              date: data.projects_date,
-              name: data.projects_name,
-              logo: data.projects_logo,
-              by: data.projects_by,
-              imgs: data.projects_prev_img,
-              fonts: data.projects_fonts,
-              colors: data.projects_colors,
-              ko: data.projects_ko,
-              en: data.projects_en,
-            }}
-            key={data.projects_code}
-          >
-            <InnerBoxImg>
-              <Img
-                src={data.projects_thumbnail}
-                alt="thumbnail"
-                loading="lazy"
-                decoding="async"
-              />
-            </InnerBoxImg>
-            <InnerBoxText>
-              <TextTop>
-                <p>{data.projects_date}</p>
-              </TextTop>
-              <TextBottom>
-                <h4>{data.projects_name}</h4>
-                <TextBottomInner>
-                  <div>
-                    <small>by</small>
-                  </div>
-                  <InnerFigure>
-                    <img
-                      src={data.projects_logo}
-                      alt="maker_logo"
-                      loading="lazy"
-                      decoding="async"
+          <BoxContainer>
+            <Box
+              to={`/${data.projects_code}`}
+              state={{
+                date: data.projects_date,
+                name: data.projects_name,
+                logo: data.projects_logo,
+                by: data.projects_by,
+                imgs: data.projects_prev_img,
+                fonts: data.projects_fonts,
+                colors: data.projects_colors,
+                ko: data.projects_ko,
+                en: data.projects_en,
+              }}
+              key={data.projects_code}
+            >
+              <ImgBox>
+                <Img
+                  src={data.projects_thumbnail}
+                  alt="thumbnail"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </ImgBox>
+              <HoverBox>
+                <span>{data.projects_name}</span>
+                <span>{data.projects_date}</span>
+                <IconBox>
+                  {data.projects_tools.map((data) => (
+                    <Icon
+                      height="35"
+                      width="35"
+                      src={`https://cdn.simpleicons.org/${data}/white/false`}
                     />
-                    <figcaption>
-                      <span>{data.projects_by}</span>
-                    </figcaption>
-                  </InnerFigure>
-                </TextBottomInner>
+                  ))}
+                </IconBox>
+
                 <VisitedBox
                   visitedData={visitedData}
                   name={data.projects_code}
                 />
-              </TextBottom>
-            </InnerBoxText>
-          </Box>
+              </HoverBox>
+            </Box>
+            <TextBox>
+              <By>
+                <div>
+                  <small>by</small>
+                </div>
+                <InnerSpan>
+                  <img
+                    src={data.projects_logo}
+                    alt="maker_logo"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <span>{data.projects_by}</span>
+                </InnerSpan>
+              </By>
+            </TextBox>
+          </BoxContainer>
         ))}
     </>
   );

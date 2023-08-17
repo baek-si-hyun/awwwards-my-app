@@ -30,7 +30,15 @@ function NavRouterMode({
         </RouterNavItem>
       </NavBox>
       <VisitedSite>
-        {pathname === "/Awwwards" ? (
+        {pathname === "/visual-coin" ? (
+          <a
+            href="https://baek-si-hyun.github.io/BPCproject"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Visited Site
+          </a>
+        ) : pathname === "/carrot-market" ? (
           <a
             href="https://baek-si-hyun.github.io/awwwards-my-app/"
             target="_blank"
@@ -38,15 +46,15 @@ function NavRouterMode({
           >
             Visited Site
           </a>
-        ) : pathname === "/Netflix" ? (
+        ) : pathname === "/awwwards" ? (
           <a
-            href="https://baek-si-hyun.github.io/NFLXclone"
+            href="https://baek-si-hyun.github.io/awwwards-my-app/"
             target="_blank"
             rel="noopener noreferrer"
           >
             Visited Site
           </a>
-        ) : pathname === "/Kanban" ? (
+        ) : pathname === "/kanban" ? (
           <a
             href="https://baek-si-hyun.github.io/todo-list/"
             target="_blank"
@@ -54,7 +62,7 @@ function NavRouterMode({
           >
             Visited Site
           </a>
-        ) : pathname === "/Coin" ? (
+        ) : pathname === "/coin" ? (
           <a
             href="https://baek-si-hyun.github.io/coin-chart-app/"
             target="_blank"
@@ -62,7 +70,7 @@ function NavRouterMode({
           >
             Visited Site
           </a>
-        ) : pathname === "/Myapp" ? (
+        ) : pathname === "/myapp" ? (
           <a
             href="https://baek-si-hyun.github.io/my-app/"
             target="_blank"
@@ -70,7 +78,7 @@ function NavRouterMode({
           >
             Visited Site
           </a>
-        ) : pathname === "/Airbnb" ? (
+        ) : pathname === "/airbnb" ? (
           <a
             href="http://54.180.169.128/pages"
             target="_blank"
@@ -78,15 +86,7 @@ function NavRouterMode({
           >
             Visited Site
           </a>
-        ) : (
-          <a
-            href="https://baek-si-hyun.github.io/awwwards-my-app/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Visited Site
-          </a>
-        )}
+        ) : null}
       </VisitedSite>
     </>
   );

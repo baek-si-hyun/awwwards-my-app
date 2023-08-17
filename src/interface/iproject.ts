@@ -4,6 +4,10 @@ export interface IGetVisitedObject {
   visited: IVisited;
 }
 export interface IVisited {
+  visited_visaulcoin_today: number;
+  visited_visaulcoin_total: number;
+  visited_carrotmarket_today: number;
+  visited_carrotmarket_total: number;
   visited_awwwards_today: number;
   visited_awwwards_total: number;
   visited_airbnb_today: number;
@@ -51,13 +55,14 @@ export interface IScheduleData {
 }
 
 export interface IFaqsLists {
-  faqs_question: string;
-  faqs_answer: string;
+  q: string;
+  a: string;
 }
 export interface IProjectsData {
   projects_code: string;
   projects_name: string;
   projects_date: string;
+  projects_tools: string[];
   projects_thumbnail: string;
   projects_logo: string;
   projects_by: string;

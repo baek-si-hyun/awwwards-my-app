@@ -2,7 +2,6 @@ import { useQuery } from "@tanstack/react-query";
 import { useState, useEffect } from "react";
 import { ICoinSocketTickers } from "../interface/icoin";
 
-
 export async function fetchCoins() {
   const response = await fetch(
     `https://api.upbit.com/v1/market/all?isDetails=false`
@@ -394,6 +393,10 @@ export const circulatingSupply = [
   {
     id: "KRW-LINK",
     supply: 538099970,
+  },
+  {
+    id: "KRW-SEI",
+    supply: 1800000000,
   },
   {
     id: "KRW-XTZ",

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import { fetchFaqs } from "../../services/listData";
 import { IFaqsLists } from "../../interface/iproject";
+import { faqList } from "../../services/listData";
 
 const FaqsList = styled.ul`
   background-image: linear-gradient(
@@ -84,15 +84,6 @@ const Answer = styled.div`
 `;
 function FaqList() {
   const [listNum, setListNum] = useState(-1);
-  const [faqList, setFaqList] = useState<IFaqsLists[]>([]);
-  useEffect(() => {
-    const getFaqs = async () => {
-      const faqs = await fetchFaqs();
-      setFaqList(() => faqs);
-    };
-    getFaqs();
-  }, []);
-
   const makeFaqList = () => {
     let newFaqList: JSX.Element[] = [];
     faqList.forEach((data, i) => {
@@ -100,7 +91,7 @@ function FaqList() {
         <Faq key={i}>
           <FaqQ>
             <Question>
-              <p>{data.faqs_question}</p>
+              <p>{data.q}</p>
             </Question>
             <BtnBox>
               <Btn onClick={() => setListNum(i === listNum ? -1 : i)}>
@@ -110,7 +101,7 @@ function FaqList() {
           </FaqQ>
           <FaqA selected={i === listNum}>
             <Answer>
-              <p>{data.faqs_answer}</p>
+              <p>{data.a}</p>
             </Answer>
           </FaqA>
         </Faq>

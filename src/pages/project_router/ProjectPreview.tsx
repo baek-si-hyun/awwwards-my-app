@@ -103,6 +103,25 @@ const PreviewImg = styled.img`
   width: 100%;
 `;
 
+function CreatePreview(imgs: string[], name: string): JSX.Element {
+  return (
+    <>
+      {imgs.map((data, index) => (
+        <Preview cardBgColorData={name} key={index}>
+          <PrevInner>
+            <PreviewImg
+              src={data}
+              alt="preview"
+              loading="lazy"
+              decoding="async"
+            />
+          </PrevInner>
+        </Preview>
+      ))}
+    </>
+  );
+}
+
 function ProjectPreview({ projectData }: { projectData: IProjectData }) {
   return (
     <PreviewContaier>
@@ -129,21 +148,7 @@ function ProjectPreview({ projectData }: { projectData: IProjectData }) {
         </TextBoxbottom>
       </TextBox>
       <PreviewContainer>
-        {projectData.imgs.map(
-          (data, index) =>
-            data && (
-              <Preview cardBgColorData={projectData.name} key={index}>
-                <PrevInner>
-                  <PreviewImg
-                    src={data}
-                    alt="preview"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </PrevInner>
-              </Preview>
-            )
-        )}
+        {CreatePreview(projectData.imgs, projectData.name)}
       </PreviewContainer>
     </PreviewContaier>
   );
