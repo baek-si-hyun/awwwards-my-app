@@ -1,10 +1,10 @@
 {
   "files": {
     "main.css": "/awwwards-my-app/static/css/main.05c417ed.css",
-    "main.js": "/awwwards-my-app/static/js/main.5db32dba.js",
-    "static/js/201.7b33e36d.chunk.js": "/awwwards-my-app/static/js/201.7b33e36d.chunk.js",
-    "static/js/258.bbbc3c6f.chunk.js": "/awwwards-my-app/static/js/258.bbbc3c6f.chunk.js",
-    "static/js/399.0517d632.chunk.js": "/awwwards-my-app/static/js/399.0517d632.chunk.js",
+    "main.js": "/awwwards-my-app/static/js/main.e7bb9261.js",
+    "static/js/201.771fe098.chunk.js": "/awwwards-my-app/static/js/201.771fe098.chunk.js",
+    "static/js/258.652e693c.chunk.js": "/awwwards-my-app/static/js/258.652e693c.chunk.js",
+    "static/js/399.93bc4f3e.chunk.js": "/awwwards-my-app/static/js/399.93bc4f3e.chunk.js",
     "static/js/499.6f866624.chunk.js": "/awwwards-my-app/static/js/499.6f866624.chunk.js",
     "static/js/404.e13ce7cc.chunk.js": "/awwwards-my-app/static/js/404.e13ce7cc.chunk.js",
     "static/js/351.c0960cc5.chunk.js": "/awwwards-my-app/static/js/351.c0960cc5.chunk.js",
@@ -46,10 +46,10 @@
     "static/media/upbiticon.png": "/awwwards-my-app/static/media/upbiticon.4064bc4102e646afee38.png",
     "index.html": "/awwwards-my-app/index.html",
     "main.05c417ed.css.map": "/awwwards-my-app/static/css/main.05c417ed.css.map",
-    "main.5db32dba.js.map": "/awwwards-my-app/static/js/main.5db32dba.js.map",
-    "201.7b33e36d.chunk.js.map": "/awwwards-my-app/static/js/201.7b33e36d.chunk.js.map",
-    "258.bbbc3c6f.chunk.js.map": "/awwwards-my-app/static/js/258.bbbc3c6f.chunk.js.map",
-    "399.0517d632.chunk.js.map": "/awwwards-my-app/static/js/399.0517d632.chunk.js.map",
+    "main.e7bb9261.js.map": "/awwwards-my-app/static/js/main.e7bb9261.js.map",
+    "201.771fe098.chunk.js.map": "/awwwards-my-app/static/js/201.771fe098.chunk.js.map",
+    "258.652e693c.chunk.js.map": "/awwwards-my-app/static/js/258.652e693c.chunk.js.map",
+    "399.93bc4f3e.chunk.js.map": "/awwwards-my-app/static/js/399.93bc4f3e.chunk.js.map",
     "499.6f866624.chunk.js.map": "/awwwards-my-app/static/js/499.6f866624.chunk.js.map",
     "404.e13ce7cc.chunk.js.map": "/awwwards-my-app/static/js/404.e13ce7cc.chunk.js.map",
     "351.c0960cc5.chunk.js.map": "/awwwards-my-app/static/js/351.c0960cc5.chunk.js.map",
@@ -57,6 +57,6 @@
   },
   "entrypoints": [
     "static/css/main.05c417ed.css",
-    "static/js/main.5db32dba.js"
+    "static/js/main.e7bb9261.js"
   ]
 }
