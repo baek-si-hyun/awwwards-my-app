@@ -50,6 +50,11 @@ const HoverBox = styled.div`
   :hover {
     opacity: 1;
   }
+  @media (max-width: 1024px) {
+    & {
+      opacity: 1;
+    }
+  }
 `;
 
 const IconBox = styled.div`
@@ -66,14 +71,16 @@ const TextBox = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 0;
-  font-size: 1.1vw;
-  span {
-    font-weight: bold;
-  }
-  @media (max-width: 768px) {
+  padding: 0.5rem 0 1rem 0;
+  font-size: 1.5rem;
+  @media (max-width: 1024px) {
     & {
-      font-size: 2.5vw;
+      font-size: 2vw;
+    }
+  }
+  @media (max-width: 650px) {
+    & {
+      font-size: 3.5vw;
     }
   }
 `;
@@ -91,18 +98,18 @@ const InnerSpan = styled.span`
   img {
     margin: 0 0.3rem;
     object-fit: fill;
-    width: 1.8vw;
-    height: 1.8vw;
+    width: 2rem;
+    height: 2rem;
     border-radius: 100%;
     @media (max-width: 480px) {
       & {
-        width: 18px;
-        height: 18px;
+        width: 32px;
+        height: 32px;
       }
     }
   }
   span {
-    font-weight: 600;
+    font-weight: bold;
     border-bottom: 2px solid #b7b7b7;
   }
 `;
@@ -134,8 +141,8 @@ function ProjectsLinkBox() {
     <>
       {projectData &&
         visitedData &&
-        projectData.map((data) => (
-          <BoxContainer>
+        projectData.map((data, index) => (
+          <BoxContainer key={index}>
             <Box
               to={`/${data.projects_code}`}
               state={{
@@ -149,7 +156,6 @@ function ProjectsLinkBox() {
                 ko: data.projects_ko,
                 en: data.projects_en,
               }}
-              key={data.projects_code}
             >
               <ImgBox>
                 <Img
@@ -163,11 +169,12 @@ function ProjectsLinkBox() {
                 <span>{data.projects_name}</span>
                 <span>{data.projects_date}</span>
                 <IconBox>
-                  {data.projects_tools.map((data) => (
+                  {data.projects_tools.map((iconData, iconIndex) => (
                     <Icon
+                      key={iconIndex}
                       height="35"
                       width="35"
-                      src={`https://cdn.simpleicons.org/${data}/white/false`}
+                      src={`https://cdn.simpleicons.org/${iconData}/white/false`}
                     />
                   ))}
                 </IconBox>

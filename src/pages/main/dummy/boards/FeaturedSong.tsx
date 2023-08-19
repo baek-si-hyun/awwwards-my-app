@@ -21,7 +21,7 @@ import {
 } from "./common/boardsCommon";
 
 const Img = styled.img`
-  width: clamp(20px, 2.5vw, 80px);
+  width: clamp(40px, 2.5vw, 80px);
 `;
 
 function FeaturedSong() {

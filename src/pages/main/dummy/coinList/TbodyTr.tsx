@@ -63,12 +63,10 @@ export const Namediv = styled.div`
     color: #808a9d;
   }
 `;
-export const TdNomalDiv = styled.div`
+
+export const TdChangeDiv = styled.div<{ change: string }>`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-`;
-export const TdChangeDiv = styled(TdNomalDiv)<{ change: string }>`
   color: ${(props) =>
     props.change === "RISE"
       ? "#c84a31"
@@ -184,14 +182,10 @@ function TrBox({
                 />
               </Td>
               <Td>
-                <TdNomalDiv>
-                  <span>
-                    {data.supply
-                      .toString()
-                      .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
-                    {data.market.substring(4)}
-                  </span>
-                </TdNomalDiv>
+                <span>
+                  {data.supply.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
+                  {data.market.substring(4)}
+                </span>
               </Td>
               <Td>
                 <CirculatingSupply

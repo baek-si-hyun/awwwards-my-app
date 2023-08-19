@@ -12,14 +12,23 @@ const Container = styled.div`
   position: relative;
   display: flex;
   align-items: flex-end;
+  @media (max-width: 650px) {
+    & {
+      aspect-ratio: 4/3;
+    }
+  }
 `;
 
 const HeaderImg = styled.img`
   position: absolute;
-  top: -1vw;
   left: 0;
   width: 100%;
   object-fit: cover;
+  @media (max-width: 650px) {
+    & {
+      aspect-ratio: 4/3;
+    }
+  }
 `;
 const MotionBox = styled.div`
   width: 100%;
@@ -69,7 +78,7 @@ function HeaderMainImg() {
   }, 4000);
   return (
     <Container>
-      <HeaderImg src={iconpng} alt="headerimg"/>
+      <HeaderImg src={iconpng} alt="headerimg" />
       <MotionBox>
         <InnerMotionBox>
           <MotionTop>

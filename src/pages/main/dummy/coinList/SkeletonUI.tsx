@@ -12,7 +12,7 @@ const TdFixed = styled.td`
   }
 `;
 
-const TdNomalDivFixed = styled.td`
+const TdNomalDivFixed = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;

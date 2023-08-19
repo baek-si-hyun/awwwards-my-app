@@ -41,7 +41,7 @@ export const Card = styled.div<{ isDragging: boolean }>`
       opacity: 1;
     }
   }
-  @media (max-width: 480px) {
+  @media (max-width: 650px) {
     & {
       grid-template-columns: repeat(2, 1fr);
     }
@@ -65,16 +65,16 @@ export const CardItem = styled.div`
   }
   @media (max-width: 768px) {
     & {
-      text-overflow: ellipsis;
     }
   }
-  @media (max-width: 480px) {
+  @media (max-width: 650px) {
     & {
       :last-child {
         display: none;
       }
     }
   }
+
 `;
 
 export const ImgDiv = styled.div`

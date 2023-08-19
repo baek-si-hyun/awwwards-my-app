@@ -2,7 +2,6 @@ import {
   ICoinHttpTickers,
   ICoinSocketTickers,
 } from "../../../../interface/icoin";
-import { TdNomalDiv } from "./TbodyTr";
 
 const AccTradePrice24h = ({
   coinName,
@@ -21,9 +20,7 @@ const AccTradePrice24h = ({
       .replace(/\B(?=(\d{3})+(?!\d))/g, ",")!;
 
     return (
-      <TdNomalDiv>
         <span>₩{accTradePrice24h || 0}</span>
-      </TdNomalDiv>
     );
   }
   return <></>;

@@ -21,7 +21,14 @@ function MusicPlayer() {
     shallowEqual
   );
   const [playList, setPlayList] = useState<IPlayList[]>([
-    { id: 0, img: "", title: "", artist: "", album: "", url: "" },
+    {
+      id: 0,
+      img: "",
+      title: "",
+      artist: "",
+      album: "",
+      url: "https://www.youtube.com/embed/sVTy_wmn5SU",
+    },
   ]);
   const newList = useSelector(
     (state: {

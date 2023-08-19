@@ -7,6 +7,7 @@ import NavRouterMode from "./NavRouterMode";
 import NavMainMode from "./NavMainMode";
 import { useDispatch } from "react-redux";
 import { resizeRedux } from "../../redux/slices/resizeWidthSlice";
+import MusicPlayBox from "../music_player/MusicPlayBox";
 
 const Navi = styled.div`
   border-radius: 10px;
@@ -22,7 +23,7 @@ const Navi = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 10;
+  z-index: 999;
   @media (max-width: 800px) {
     & {
       font-size: 0.7rem;
@@ -36,13 +37,9 @@ const NavBoxLeft = styled.div`
   background-color: #222222;
   color: #fff;
   white-space: nowrap;
+  display: flex;
+  align-items: center;
   @media (max-width: 768px) {
-    & {
-      display: flex;
-      align-items: center;
-    }
-  }
-  @media (max-width: 429px) {
     & {
       width: 100%;
       justify-content: center;
@@ -52,129 +49,6 @@ const NavBoxLeft = styled.div`
 const NavBoxInner = styled.div`
   display: flex;
 `;
-
-export const NavBox = styled.ul`
-  border-radius: 10px;
-  display: flex;
-  gap: 0.3rem;
-  padding: 0.4rem;
-  background-color: #3e3e3e;
-  @media (max-width: 800px) {
-    & {
-      padding: 0.3rem;
-    }
-  }
-  @media (max-width: 320px) {
-    & {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      width: 100%;
-      justify-content: center;
-      align-items: center;
-      height: 70px;
-    }
-  }
-`;
-const NavItemCommon = styled.li`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid #4e4e4e;
-  border-radius: 10px;
-  overflow: hidden;
-  transition: all 0.2s ease-in-out 0.5s;
-`;
-export const NavItem = styled(NavItemCommon)<{ mainPosition: IMainPosition }>`
-  will-change: background-color, color;
-  :nth-child(1) {
-    font-weight: 600;
-    background-color: ${(props) =>
-      props.mainPosition.header ? "#d3d3d3" : "#3e3e3e"};
-    color: ${(props) => (props.mainPosition.header ? "#000" : "inherit")};
-  }
-  :nth-child(2) {
-    background-color: ${(props) =>
-      props.mainPosition.projects ? "#d3d3d3" : "#3e3e3e"};
-    color: ${(props) => (props.mainPosition.projects ? "#000" : "inherit")};
-  }
-  :nth-child(3) {
-    background-color: ${(props) =>
-      props.mainPosition.about ? "#d3d3d3" : "#3e3e3e"};
-    color: ${(props) => (props.mainPosition.about ? "#000" : "inherit")};
-  }
-  :nth-child(4) {
-    background-color: ${(props) =>
-      props.mainPosition.schedule ? "#d3d3d3" : "#3e3e3e"};
-    color: ${(props) => (props.mainPosition.schedule ? "#000" : "inherit")};
-  }
-`;
-
-export const RouterNavItem = styled(NavItemCommon)<{
-  routerPosition: IRouterPosition;
-}>`
-  will-change: background-color, color;
-  :nth-child(1) {
-    font-weight: 600;
-    background-color: ${(props) =>
-      props.routerPosition.sotd ? "#d3d3d3" : "#3e3e3e"};
-    color: ${(props) => (props.routerPosition.sotd ? "#000" : "inherit")};
-  }
-  :nth-child(2) {
-    background-color: ${(props) =>
-      props.routerPosition.fontColor ? "#d3d3d3" : "#3e3e3e"};
-    color: ${(props) => (props.routerPosition.fontColor ? "#000" : "inherit")};
-  }
-  :nth-child(3) {
-    background-color: ${(props) =>
-      props.routerPosition.routerAbout ? "#d3d3d3" : "#3e3e3e"};
-    color: ${(props) =>
-      props.routerPosition.routerAbout ? "#000" : "inherit"};
-  }
-  @media (max-width: 320px) {
-    & {
-      height: 100%;
-    }
-  }
-`;
-export const Link = styled.a`
-  padding: 1rem;
-  white-space: nowrap;
-  transition: background-color 0.2s ease-in-out;
-  will-change: background-color;
-  :hover {
-    background-color: rgba(255, 255, 255, 0.1);
-  }
-  @media (max-width: 800px) {
-    & {
-      padding: 1.15rem 0.5rem;
-    }
-  }
-  @media (max-width: 640px) {
-    & {
-      padding: 1.1rem 0.5rem;
-    }
-  }
-`;
-export const VisitedSite = styled.div`
-  border: none;
-  color: #000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-left: 0.4rem;
-  border-radius: 10px;
-  background-color: #ff602c;
-  white-space: nowrap;
-  a {
-    padding: 1.4rem 1rem;
-  }
-  @media (max-width: 320px) {
-    & {
-      width: 100%;
-    }
-  }
-`;
-
 const BugerNav = styled.div`
   border-radius: 10px;
   position: fixed;
@@ -190,9 +64,10 @@ const BugerNav = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 10;
-  @media (max-width: 429px) {
+  @media (max-width: 768px) {
     & {
       flex-direction: column;
+      gap: 0;
     }
   }
   @media (max-width: 320px) {
@@ -204,6 +79,11 @@ const BugerNav = styled.div`
 const BugerInner = styled.div<{ menuSwitch: boolean }>`
   display: ${(props) => (props.menuSwitch ? "flex" : "none")};
   will-change: display;
+  @media (max-width: 768px) {
+    & {
+      flex-direction: column-reverse;
+    }
+  }
   @media (max-width: 320px) {
     & {
       width: 100%;
@@ -312,7 +192,7 @@ function Nav() {
 
   return (
     <>
-      {resize <= 768 ? (
+      {resize <= 1000 ? (
         <BugerNav>
           <NavBoxLeft onClick={bugerNavToggle}>
             <span>B. Home</span>
@@ -329,6 +209,7 @@ function Nav() {
               routerPosition={routerPosition}
               pathname={pathname}
             />
+            <MusicPlayBox />
           </BugerInner>
         </BugerNav>
       ) : (

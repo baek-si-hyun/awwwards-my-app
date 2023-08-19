@@ -8,7 +8,7 @@ const Nav = lazy(() => import("../../components/nav/Nav"));
 
 function Main() {
   return (
-    <Suspense fallback={<div></div>}>
+    <Suspense fallback={<></>}>
       <Header />
       <Projects />
       <Dummy />

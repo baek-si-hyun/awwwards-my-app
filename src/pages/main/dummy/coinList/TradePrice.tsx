@@ -2,7 +2,6 @@ import {
   ICoinHttpTickers,
   ICoinSocketTickers,
 } from "../../../../interface/icoin";
-import { TdNomalDiv } from "./TbodyTr";
 
 const TradePrice = ({
   coinName,
@@ -19,11 +18,7 @@ const TradePrice = ({
       ?.trade_price.toString()
       .replace(/\B(?=(\d{3})+(?!\d))/g, ",")!;
 
-    return (
-      <TdNomalDiv>
-        <span>₩{price || 0}</span>
-      </TdNomalDiv>
-    );
+    return <span>₩{price || 0}</span>;
   }
   return <></>;
 };

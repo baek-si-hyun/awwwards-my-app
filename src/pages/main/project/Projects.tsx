@@ -7,7 +7,7 @@ import {
   TextBoxbottom,
   TextBoxMiddle,
 } from "../common/mainCommon";
-import ProjectsRouter from "./ProjectsLinkBox";
+import ProjectsLinkBox from "./ProjectsLinkBox";
 
 const GridBox = styled.div`
   display: grid;
@@ -35,7 +35,7 @@ function Projects() {
           </TextBoxbottom>
         </TextBox>
         <GridBox>
-          <ProjectsRouter />
+          <ProjectsLinkBox />
         </GridBox>
       </InnerContainer>
     </Container>

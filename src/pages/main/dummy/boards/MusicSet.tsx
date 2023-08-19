@@ -33,7 +33,7 @@ export const ControllBtn = styled.button<{ isPlaying: boolean }>`
   cursor: pointer;
   span {
     color: #fff;
-    font-size: clamp(1.5vw, 2vw, 60px);
+    font-size: clamp(30px, 2vw, 60px);
   }
 `;
 

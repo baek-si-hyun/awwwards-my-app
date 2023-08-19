@@ -1,5 +1,5 @@
 import { IMainPosition } from "../../interface/iproject";
-import { Link, NavBox, NavItem } from "./Nav";
+import { NavBox, NavItem, Link } from "./common/navCommon";
 
 function NavMainMode({
   navHandler,

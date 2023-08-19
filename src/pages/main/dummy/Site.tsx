@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { useState } from "react";
 import awwwardC from "../../../assets/img/main_img/awwwardC.webp";
 import upbitC from "../../../assets/img/main_img/upbitC.webp";
 import investingC from "../../../assets/img/main_img/investingC.webp";
@@ -31,13 +30,16 @@ const Sitebox = styled.div`
     }
   }
 `;
+
 const SiteImgBox = styled.div<{ url: string }>`
   aspect-ratio: 4/3;
   border-radius: 15px;
   background-image: url(${(props) => props.url});
   background-size: cover;
   overflow: hidden;
+  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.15);
 `;
+
 const SiteTextBox = styled.div`
   display: flex;
   align-items: center;
@@ -47,6 +49,7 @@ const SiteTextBox = styled.div`
     }
   }
 `;
+
 const InnerFigure = styled.figure`
   display: flex;
   align-items: center;
@@ -72,6 +75,7 @@ const InnerFigure = styled.figure`
     }
   }
 `;
+
 const HoverBox = styled.div`
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
   position: relative;
@@ -79,22 +83,23 @@ const HoverBox = styled.div`
   flex-direction: column;
   height: 100%;
   transition: all 0.3s ease-in-out;
+  opacity: 0;
+  :hover {
+    opacity: 1;
+  }
+  @media (max-width: 1024px) {
+    & {
+      opacity: 1;
+    }
+  }
 `;
-const HoverBox1 = styled(HoverBox)<{ isHover: number }>`
-  opacity: ${(props) => (props.isHover === 1 ? 1 : 0)};
-`;
-const HoverBox2 = styled(HoverBox)<{ isHover: number }>`
-  opacity: ${(props) => (props.isHover === 2 ? 1 : 0)};
-`;
-const HoverBox3 = styled(HoverBox)<{ isHover: number }>`
-  opacity: ${(props) => (props.isHover === 3 ? 1 : 0)};
-`;
+
 const SenterBox = styled.a`
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 1rem 1rem;
+  padding: 1vw 1vw;
   background-color: #f8f8f8;
   display: flex;
   justify-content: center;
@@ -103,12 +108,21 @@ const SenterBox = styled.a`
   overflow: hidden;
   transition: all 0.2s ease-in-out;
   will-change: background-color, color;
+  font-size: 0.8vw;
   :hover {
     background-color: #3e3e3e;
     color: #fff;
   }
-  a {
-    font-size: 0.85vw;
+  @media (max-width: 1024px) {
+    & {
+      opacity: 1;
+    }
+  }
+  @media (max-width: 650px) {
+    & {
+      font-size: 1rem;
+      padding: 1rem 1rem;
+    }
   }
 `;
 const BottomBox = styled.div`
@@ -122,23 +136,29 @@ const BottomBox = styled.div`
 `;
 const BottomBoxTop = styled.div`
   font-weight: lighter;
+  @media (max-width: 650px) {
+    & {
+      font-size: 3vw;
+   
+    }
+  }
 `;
 const BottomBoxBottom = styled.div`
   font-size: 1.5vw;
   font-weight: 500;
+  @media (max-width: 650px) {
+    & {
+      font-size: 5vw;
+    }
+  }
 `;
 
 function Site() {
-  const [hover, setHover] = useState(0);
   return (
     <Container>
       <Sitebox>
-        <SiteImgBox
-          url={awwwardC}
-          onMouseOver={() => setHover(1)}
-          onMouseOut={() => setHover(0)}
-        >
-          <HoverBox1 isHover={hover}>
+        <SiteImgBox url={awwwardC}>
+          <HoverBox>
             <SenterBox href="https://www.awwwards.com/" target="_blank">
               <span className="material-symbols-outlined">arrow_right_alt</span>
               &nbsp;
@@ -150,7 +170,7 @@ function Site() {
               <BottomBoxTop>WEBSITE</BottomBoxTop>
               <BottomBoxBottom>awwwards</BottomBoxBottom>
             </BottomBox>
-          </HoverBox1>
+          </HoverBox>
         </SiteImgBox>
         <SiteTextBox>
           <div>
@@ -171,12 +191,8 @@ function Site() {
         </SiteTextBox>
       </Sitebox>
       <Sitebox>
-        <SiteImgBox
-          url={upbitC}
-          onMouseOver={() => setHover(2)}
-          onMouseOut={() => setHover(0)}
-        >
-          <HoverBox2 isHover={hover}>
+        <SiteImgBox url={upbitC}>
+          <HoverBox>
             <SenterBox href="https://upbit.com/home" target="_blank">
               <span className="material-symbols-outlined">arrow_right_alt</span>
               &nbsp;
@@ -188,7 +204,7 @@ function Site() {
               <BottomBoxTop>WEBSITE</BottomBoxTop>
               <BottomBoxBottom>UPbit</BottomBoxBottom>
             </BottomBox>
-          </HoverBox2>
+          </HoverBox>
         </SiteImgBox>
         <SiteTextBox>
           <div>
@@ -209,12 +225,8 @@ function Site() {
         </SiteTextBox>
       </Sitebox>
       <Sitebox>
-        <SiteImgBox
-          url={investingC}
-          onMouseOver={() => setHover(3)}
-          onMouseOut={() => setHover(0)}
-        >
-          <HoverBox3 isHover={hover}>
+        <SiteImgBox url={investingC}>
+          <HoverBox>
             <SenterBox href="https://kr.investing.com/" target="_blank">
               <span className="material-symbols-outlined">arrow_right_alt</span>
               &nbsp;
@@ -226,7 +238,7 @@ function Site() {
               <BottomBoxTop>WEBSITE</BottomBoxTop>
               <BottomBoxBottom>INVESTING</BottomBoxBottom>
             </BottomBox>
-          </HoverBox3>
+          </HoverBox>
         </SiteImgBox>
         <SiteTextBox>
           <div>

@@ -2,7 +2,6 @@ import {
   ICoinHttpTickers,
   ICoinSocketTickers,
 } from "../../../../interface/icoin";
-import { TdNomalDiv } from "./TbodyTr";
 
 const CirculatingSupply = ({
   coinName,
@@ -22,7 +21,6 @@ const CirculatingSupply = ({
     )?.trade_price!;
 
     return (
-      <TdNomalDiv>
         <span>
           ₩
           {(supply * price || 0)
@@ -30,7 +28,6 @@ const CirculatingSupply = ({
             .toString()
             .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
         </span>
-      </TdNomalDiv>
     );
   }
   return <></>;

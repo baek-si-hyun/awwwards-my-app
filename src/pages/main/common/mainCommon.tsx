@@ -11,7 +11,7 @@ export const InnerContainer = styled.div`
 `;
 
 export const TextBox = styled.div`
-  margin-top: 4vw;
+  margin-top: 6rem;
   margin-bottom: 6vw;
   display: flex;
   flex-direction: column;
@@ -23,7 +23,7 @@ export const TextBoxTop = styled.div`
   font-size: 1.5vw;
   @media (max-width: 429px) {
     & {
-      font-size: 0.5rem;
+      font-size: 1rem;
     }
   }
 `;
@@ -31,6 +31,11 @@ export const TextBoxMiddle = styled.div`
   font-size: 9vw;
   font-weight: 900;
   text-transform: uppercase;
+  @media (max-width: 429px) {
+    & {
+      font-size: 3rem;
+    }
+  }
 `;
 export const TextBoxbottom = styled.div`
   text-align: center;
@@ -39,7 +44,7 @@ export const TextBoxbottom = styled.div`
   line-height: 1.4;
   @media (max-width: 429px) {
     & {
-      font-size: 0.6rem;
+      font-size: 0.8rem;
     }
   }
 `;

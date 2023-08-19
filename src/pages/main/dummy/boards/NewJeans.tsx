@@ -20,7 +20,7 @@ import {
 } from "./common/boardsCommon";
 
 const Img = styled.img`
-  width: clamp(25px, 4vw, 128px);
+  width: clamp(40px, 4vw, 128px);
 `;
 
 function NewJeans() {

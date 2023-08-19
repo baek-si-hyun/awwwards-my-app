@@ -11,14 +11,13 @@ const MusicPlayBoxContainer = styled.div<{ isVisible: boolean }>`
   align-items: center;
   gap: 0.3rem;
   position: fixed;
-  bottom: 2rem;
-  will-change: bottom;
   right: 2.7%;
+  bottom: 2rem;
   border-radius: 10px;
   padding: 0.3rem;
   background-color: rgba(0, 0, 0, 0.7);
   color: #fff;
-  z-index: 10;
+  z-index: 999;
   animation: fadeInUp 0.3s forwards;
   @keyframes fadeInUp {
     0% {
@@ -28,9 +27,18 @@ const MusicPlayBoxContainer = styled.div<{ isVisible: boolean }>`
       transform: translateY(0);
     }
   }
-  @media (max-width: 1079px) {
+  @media (max-width: 1024px) {
     & {
-      display: none;
+      position: static;
+      animation: none;
+    }
+  }
+  @media (max-width: 768px) {
+    & {
+      width: 100%;
+      justify-content: space-between;
+      padding-right: 1rem;
+      background-color: transparent;
     }
   }
 `;

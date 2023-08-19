@@ -22,8 +22,13 @@ const FinallyInner = styled.div`
   }
 `;
 const FinallyH2 = styled.div`
-  font-size: 3vw;
+  font-size: 3rem;
   font-weight: bold;
+  @media (max-width: 768px) {
+    & {
+      font-size: 2rem;
+    }
+  }
 `;
 const FinallyText = styled.div`
   display: flex;

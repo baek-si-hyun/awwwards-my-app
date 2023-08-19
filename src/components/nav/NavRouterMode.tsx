@@ -1,5 +1,5 @@
 import { IRouterPosition } from "../../interface/iproject";
-import { NavBox, RouterNavItem, Link, VisitedSite } from "./Nav";
+import { NavBox, RouterNavItem, Link, VisitedSite } from "./common/navCommon";
 
 function NavRouterMode({
   navHandler,

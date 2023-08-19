@@ -38,15 +38,6 @@ const MusicTextBox = styled.div`
     font-size: 2vw;
     margin-bottom: 1vw;
   }
-  h3 {
-    font-size: 1vw;
-    line-height: 1.4;
-    @media (max-width: 650px) {
-      & {
-        display: none;
-      }
-    }
-  }
 `;
 const InnerMusicBox2 = styled.div`
   border: 1px solid black;
@@ -125,16 +116,6 @@ function Music() {
           <MusicTextBox>
             <div>
               <h2>NewJeans</h2>
-              <h3>
-                NewJeans는 2022년 7월 22일에 데뷔한 대한민국의 5인조 걸
-                그룹으로, 소속사는 HYBE 산하의 레이블인
-                <br /> ADOR이다. SM 엔터테인먼트 디렉터 출신으로 HYBE에 영입된
-                민희진이 프로듀서로 나서서 발굴한
-                <br /> 걸그룹이다. 2022년 8월 18일 《엠카운트다운》에서 데뷔
-                3주만에 첫 1위를 차지하였다.
-                <br />
-                출처 - 유튜브 뮤직
-              </h3>
             </div>
           </MusicTextBox>
         </InnerMusicBox1>
@@ -154,11 +135,7 @@ function Music() {
             loading="lazy"
             decoding="async"
           />
-          <AllMusicTextBox>
-            <div>
-              <h2>"Subjective"</h2>
-            </div>
-          </AllMusicTextBox>
+          <AllMusicTextBox />
         </InnerMusicBox3>
         <InnerMusicBox4>
           <div>

@@ -31,6 +31,16 @@ const TableBox = styled.div`
 const ListTable = styled.table`
   width: 100%;
   font-weight: 900;
+  @media (max-width: 650px) {
+    & {
+      font-size: 2.3vw;
+    }
+  }
+  @media (max-width: 480px) {
+    & {
+      font-size: 3vw;
+    }
+  }
 `;
 
 export const Tr = styled.tr`

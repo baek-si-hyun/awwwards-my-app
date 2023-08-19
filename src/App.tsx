@@ -4,10 +4,12 @@ import Faqs from "./pages/faqs/Faqs";
 import Main from "./pages/main/Main";
 import Myapp from "./pages/project_router/ProjectMain";
 import ScrollToTop from "./ScrollToTop";
-import {motion, useScroll } from "framer-motion";
+import { motion, useScroll } from "framer-motion";
 import { Route, Routes } from "react-router-dom";
 import MusicPlayer from "./pages/main/dummy/boards/MusicPlayer";
 import MusicPlayBox from "./components/music_player/MusicPlayBox";
+import { useSelector } from "react-redux";
+import { IResize } from "./interface/iproject";
 
 const Wapper = styled.div`
   display: flex;
@@ -28,13 +30,17 @@ const SctollBar = styled(motion.div)`
 `;
 function App() {
   const { scrollYProgress } = useScroll();
-
+  const getResizeWidth = useSelector(
+    ({ resizeWidthSlice }: { resizeWidthSlice: IResize }) => {
+      return resizeWidthSlice.resizeWidth;
+    }
+  );
   return (
     <Wapper>
       <SctollBar style={{ scaleX: scrollYProgress }} />
       <MusicPlayer />
       <ScrollToTop />
-      <MusicPlayBox />
+      {getResizeWidth >= 1000 ? <MusicPlayBox /> : null}
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path=":projectId" element={<Myapp />} />

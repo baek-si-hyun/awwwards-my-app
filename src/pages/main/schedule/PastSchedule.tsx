@@ -16,10 +16,10 @@ const Container = styled.div`
 `;
 
 const Row = styled.div`
-  width: 163.5rem;
+  width: 185.5rem;
   position: relative;
   display: grid;
-  grid-template-columns: 200px repeat(15, 161px);
+  grid-template-columns: 200px repeat(17, 161px);
   grid-template-rows: clamp(60px, 5vw, 100px);
   background-image: linear-gradient(
     to right,
@@ -47,6 +47,7 @@ const Row = styled.div`
 const Box = styled.div`
   display: flex;
   align-items: center;
+  text-align: center;
   background-image: linear-gradient(
     to bottom,
     rgb(34, 34, 34) 0 10%,
@@ -69,6 +70,7 @@ const Box = styled.div`
       width: 100%;
       padding: 2vw;
       white-space: wrap;
+      font-size: 2vw;
       :last-child {
         background-image: none;
       }
@@ -96,11 +98,12 @@ const AbsoluteBox = styled.div<{ indexNum: number }>`
   ${(props) => props.indexNum === 2 && "left:1010px;gap:55px;"};
   ${(props) => props.indexNum === 3 && "left:1172px;gap:55px;"};
   ${(props) => props.indexNum === 4 && "left:1332px;gap:55px;"};
-  ${(props) => props.indexNum === 5 && "left:1495px;gap:55px;"};
-  ${(props) => props.indexNum === 6 && "left:1495px;gap:600px;"};
-  ${(props) => props.indexNum === 7 && "left:1700px;gap:70px;"};
-  ${(props) => props.indexNum === 8 && "left:1860px;gap:150px;"};
-  ${(props) => props.indexNum === 9 && "left:1900px;gap:110px;"};
+  ${(props) => props.indexNum === 5 && "left:1495px;gap:600px;"};
+  ${(props) => props.indexNum === 6 && "left:1700px;gap:70px;"};
+  ${(props) => props.indexNum === 7 && "left:1860px;gap:150px;"};
+  ${(props) => props.indexNum === 8 && "left:1900px;gap:110px;"};
+  ${(props) =>
+    props.indexNum === 9 && "left:2200px;gap:200px;background-color:#7e0303;"};
   ${(props) =>
     props.indexNum === 10 && "left:2200px;gap:200px;background-color:#7e0303;"};
   ${(props) => props.indexNum === 11 && "display: none;"};
