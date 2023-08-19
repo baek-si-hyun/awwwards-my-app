@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { useState, useEffect, useCallback } from "react";
 import { useLocation } from "react-router-dom";
 import { IMainPosition, IRouterPosition } from "../../interface/iproject";
@@ -9,21 +9,25 @@ import { useDispatch } from "react-redux";
 import { resizeRedux } from "../../redux/slices/resizeWidthSlice";
 import MusicPlayBox from "../music_player/MusicPlayBox";
 
+const common = css`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.3rem;
+  font-size: 0.9rem;
+  z-index: 999;
+`;
+
 const Navi = styled.div`
   border-radius: 10px;
   position: fixed;
   bottom: 2rem;
   left: 50%;
   transform: translateX(-50%);
-  gap: 0.3rem;
-  padding: 0.3rem;
-  font-size: 0.9rem;
   color: #a7a79d;
   background-color: rgba(0, 0, 0, 0.7);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 999;
+  ${common}
   @media (max-width: 800px) {
     & {
       font-size: 0.7rem;
@@ -55,15 +59,9 @@ const BugerNav = styled.div`
   bottom: 30px;
   left: 50%;
   transform: translateX(-50%);
-  gap: 0.3rem;
-  padding: 0.3rem;
-  font-size: 0.9rem;
+  ${common}
   color: #a7a79d;
   background-color: rgba(0, 0, 0, 0.7);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 10;
   @media (max-width: 768px) {
     & {
       flex-direction: column;

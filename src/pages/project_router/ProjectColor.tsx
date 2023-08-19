@@ -1,8 +1,8 @@
 import { useState } from "react";
 import styled from "styled-components";
-import { UnderLine } from "../main/common/mainCommon";
+import { UnderLine } from "../common/mainCommon";
 
-const ColorContainer = styled.div``;
+const Container = styled.div``;
 const ColorInner = styled.div`
   display: flex;
   flex-direction: column;
@@ -144,7 +144,7 @@ const Card = styled(Cards)<{
 function ProjectColor({ colors }: { colors: string[] }) {
   const [hover, sethover] = useState(false);
   return (
-    <ColorContainer>
+    <Container>
       <ColorInner>
         <ColorText>
           <h3>
@@ -163,9 +163,9 @@ function ProjectColor({ colors }: { colors: string[] }) {
                 colorDataLength={colors.length}
               >
                 <CardTop isHover={hover}>
-                  <p>
+                  <span>
                     <span>HEX</span>&nbsp;{data}
-                  </p>
+                  </span>
                 </CardTop>
                 <CardBottom>Aa</CardBottom>
               </Card>
@@ -173,7 +173,7 @@ function ProjectColor({ colors }: { colors: string[] }) {
           </CardContainer>
         </ColorCards>
       </ColorInner>
-    </ColorContainer>
+    </Container>
   );
 }
 export default ProjectColor;

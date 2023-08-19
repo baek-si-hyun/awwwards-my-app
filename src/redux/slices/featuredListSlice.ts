@@ -150,7 +150,7 @@ const featuredListSlice = createSlice({
         title: "사장님 도박은 재미로 하셔야 합니다",
         artist: "비비(BIBI)",
         album: "사장님 도박은 재미로 하셔야 합니다 • 2020",
-        url: "https://www.youtube.com/embed/xwUFywmH5t4",
+        url: "https://www.youtube.com/embed/7pC3cdeeqm4",
       },
 
       {

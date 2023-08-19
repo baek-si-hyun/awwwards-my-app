@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styled, { css } from "styled-components";
-import { UnderLine } from "../main/common/mainCommon";
+import { UnderLine } from "../common/mainCommon";
 
 const FontContainer = styled.div`
   display: flex;
@@ -62,6 +62,21 @@ const choiceFont = css`
   font-family: "Apercu", sans-serif;
   font-weight: 900;
 `;
+
+const common = css<{ toggle: number; fontsData: string[] }>`
+  font-family: ${(props) =>
+      props.toggle === 0
+        ? props.fontsData[0]
+        : props.toggle === 1
+        ? props.fontsData[1]
+        : props.toggle === 2
+        ? props.fontsData[2]
+        : props.toggle === 3
+        ? props.fontsData[3]
+        : ""},
+    sans-serif;
+`;
+
 const Font = styled.div<{ toggle: number; num: number }>`
   padding: 20px 0;
   cursor: pointer;
@@ -81,36 +96,23 @@ const Font = styled.div<{ toggle: number; num: number }>`
   }
 `;
 
-const toggleFontFamily = css<{ toggle: number; fontsData: string[] }>`
-  font-family: ${(props) =>
-      props.toggle === 0
-        ? props.fontsData[0]
-        : props.toggle === 1
-        ? props.fontsData[1]
-        : props.toggle === 2
-        ? props.fontsData[2]
-        : props.toggle === 3
-        ? props.fontsData[3]
-        : ""},
-    sans-serif;
-`;
-const FontName = styled.div<{ toggle: number; fontsData: string[] }>`
+const FontName = styled.div`
   font-size: 10vw;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: max(20px, 5vw) 0;
   ${UnderLine}
-  ${toggleFontFamily}
+  ${common}
 `;
 
-const FontDetailContent = styled.div<{ toggle: number; fontsData: string[] }>`
+const FontDetailContent = styled.div`
   font-size: 15vw;
   text-align: center;
-  ${toggleFontFamily}
+  ${common}
 `;
 
-const ContentDiv = styled.div<{ toggle: number; fontsData: string[] }>`
+const ContentDiv = styled.div`
   font-size: 4vw;
   display: flex;
   flex-direction: column;
@@ -118,25 +120,17 @@ const ContentDiv = styled.div<{ toggle: number; fontsData: string[] }>`
   span {
     line-height: 1.4;
   }
-  ${toggleFontFamily}
+  ${common}
 `;
 
 function ProjectFont({ fonts }: { fonts: string[] }) {
   const [toggle, setToggle] = useState(0);
+
   const ToggleBtn = (index: number) => {
-    if (index === 0) {
-      setToggle(0);
-    }
-    if (index === 1) {
-      setToggle(1);
-    }
-    if (index === 2) {
-      setToggle(2);
-    }
-    if (index === 3) {
-      setToggle(3);
-    }
+    setToggle(() => index);
   };
+
+  const selectedFont = fonts[toggle];
 
   return (
     <FontContainer>
@@ -160,17 +154,7 @@ function ProjectFont({ fonts }: { fonts: string[] }) {
         </ToggleDiv>
       </FontTop>
       <FontName toggle={toggle} fontsData={fonts}>
-        <span>
-          {toggle === 0
-            ? fonts[0]
-            : toggle === 1
-            ? fonts[1]
-            : toggle === 2
-            ? fonts[2]
-            : toggle === 3
-            ? fonts[3]
-            : ""}
-        </span>
+        <span>{selectedFont}</span>
       </FontName>
       <FontStyle>
         <FontDetail>

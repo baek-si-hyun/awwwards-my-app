@@ -1,30 +1,16 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import styled from "styled-components";
-import { IFaqsLists } from "../../interface/iproject";
 import { faqList } from "../../services/listData";
+import { UnderLine } from "../common/mainCommon";
 
 const FaqsList = styled.ul`
-  background-image: linear-gradient(
-    to right,
-    rgb(34, 34, 34) 0 10%,
-    rgba(255, 255, 255, 0) 10%
-  );
-  background-position: top;
-  background-size: 8px 1px;
-  background-repeat: repeat-x;
+  ${UnderLine}
 `;
 const Faq = styled.li`
   display: flex;
   flex-direction: column;
   font-size: 1vw;
-  background-image: linear-gradient(
-    to right,
-    rgb(34, 34, 34) 0 10%,
-    rgba(255, 255, 255, 0) 10%
-  );
-  background-position: bottom;
-  background-size: 8px 1px;
-  background-repeat: repeat-x;
+  ${UnderLine}
   @media (max-width: 1024px) {
     & {
       font-size: 1.5vw;
@@ -56,7 +42,6 @@ const FaqA = styled.div<{ selected: boolean }>`
   transition: height 0.3s;
   will-change: height;
 `;
-const BtnBox = styled.div``;
 const Btn = styled.span`
   border: 1px solid black;
   border-radius: 7px;
@@ -93,11 +78,9 @@ function FaqList() {
             <Question>
               <p>{data.q}</p>
             </Question>
-            <BtnBox>
-              <Btn onClick={() => setListNum(i === listNum ? -1 : i)}>
-                View More
-              </Btn>
-            </BtnBox>
+            <Btn onClick={() => setListNum(i === listNum ? -1 : i)}>
+              View More
+            </Btn>
           </FaqQ>
           <FaqA selected={i === listNum}>
             <Answer>

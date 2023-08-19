@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { IProjectData } from "../../interface/iproject";
 
 const PreviewContaier = styled.div`
@@ -68,58 +68,37 @@ const PreviewContainer = styled.div`
   flex-direction: column;
   gap: max(10px, 3vw);
 `;
-const Preview = styled.div<{ cardBgColorData: string }>`
-  padding: 4vw;
+const common = css`
   border-radius: 15px;
-  background-color: ${(props) =>
-    props.cardBgColorData === "CRYPTO TRACKER" ? "#3e3e3e" : "#222"};
   @media (max-width: 768px) {
-    & {
-      border-radius: 10px;
-    }
+    border-radius: 10px;
   }
   @media (max-width: 480px) {
-    & {
-      border-radius: 7px;
-    }
+    border-radius: 7px;
   }
+`;
+const Preview = styled.div<{ cardBgColorData: string }>`
+  padding: 4vw;
+  background-color: ${(props) =>
+    props.cardBgColorData === "CRYPTO TRACKER" ? "#3e3e3e" : "#222"};
+  ${common}
 `;
 const PrevInner = styled.div`
   object-fit: cover;
   overflow: hidden;
-  border-radius: 15px;
-  @media (max-width: 768px) {
-    & {
-      border-radius: 10px;
-    }
-  }
-  @media (max-width: 480px) {
-    & {
-      border-radius: 7px;
-    }
-  }
+  ${common}
 `;
 const PreviewImg = styled.img`
   width: 100%;
 `;
-
-function CreatePreview(imgs: string[], name: string): JSX.Element {
-  return (
-    <>
-      {imgs.map((data, index) => (
-        <Preview cardBgColorData={name} key={index}>
-          <PrevInner>
-            <PreviewImg
-              src={data}
-              alt="preview"
-              loading="lazy"
-              decoding="async"
-            />
-          </PrevInner>
-        </Preview>
-      ))}
-    </>
-  );
+function CreatePreview(imgs: string[], name: string): JSX.Element[] {
+  return imgs.map((data, index) => (
+    <Preview cardBgColorData={name} key={index}>
+      <PrevInner>
+        <PreviewImg src={data} alt="preview" loading="lazy" decoding="async" />
+      </PrevInner>
+    </Preview>
+  ));
 }
 
 function ProjectPreview({ projectData }: { projectData: IProjectData }) {
@@ -153,4 +132,5 @@ function ProjectPreview({ projectData }: { projectData: IProjectData }) {
     </PreviewContaier>
   );
 }
+
 export default ProjectPreview;

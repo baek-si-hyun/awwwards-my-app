@@ -6,7 +6,7 @@ import {
   TextBoxTop,
   TextBoxbottom,
   TextBoxMiddle,
-} from "../common/mainCommon";
+} from "../../common/mainCommon";
 import ProjectsLinkBox from "./ProjectsLinkBox";
 
 const GridBox = styled.div`

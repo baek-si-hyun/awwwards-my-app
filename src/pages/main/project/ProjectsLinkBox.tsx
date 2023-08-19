@@ -1,15 +1,19 @@
 import { Link } from "react-router-dom";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { IProjectsData, IVisited } from "../../../interface/iproject";
 import { fetchProjects, fetchVistited } from "../../../services/listData";
 import { useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import VisitedBox from "./VisitedBox";
 
-const BoxContainer = styled.div`
+const common = css`
   display: flex;
   flex-direction: column;
   justify-content: center;
+`;
+
+const BoxContainer = styled.div`
+  ${common};
 `;
 
 const Box = styled(Link)`
@@ -30,9 +34,7 @@ const Img = styled.img`
   object-fit: cover;
 `;
 const HoverBox = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  ${common};
   align-items: center;
   gap: 1rem;
   width: 100%;
@@ -40,7 +42,6 @@ const HoverBox = styled.div`
   position: absolute;
   left: 0;
   top: 0;
-  z-index: 3;
   border-radius: 15px;
   color: #fff;
   opacity: 0;

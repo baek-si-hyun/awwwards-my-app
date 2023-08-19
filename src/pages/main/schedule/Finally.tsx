@@ -97,7 +97,7 @@ const MiniText = styled.h2`
 `;
 
 const ContactLink = styled(Link)`
-  border: 1px solid white;
+  border: 1px solid #fff;
   border-radius: 10px;
   padding: 2rem;
   width: 11rem;

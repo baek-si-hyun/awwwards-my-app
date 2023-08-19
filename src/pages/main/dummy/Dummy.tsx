@@ -6,7 +6,7 @@ import {
   TextBoxTop,
   TextBoxbottom,
   TextBoxMiddle,
-} from "../common/mainCommon";
+} from "../../common/mainCommon";
 import CoinList from "./CoinList";
 import Music from "./Music";
 import Site from "./Site";
@@ -41,7 +41,7 @@ function About() {
           <TextBoxMiddle>just dummy</TextBoxMiddle>
           <TextBoxbottom>Place to practice</TextBoxbottom>
         </TextBox>
-        <SubTextBox>Combination of HTTP, Websocket and React-Query</SubTextBox>
+        <SubTextBox>Combination of UPBIT Websocket, React-Query</SubTextBox>
         <CoinList />
         <SourceText>Source: Each game company site</SourceText>
         <ExplanTextBox>This is a frequently visited site.</ExplanTextBox>

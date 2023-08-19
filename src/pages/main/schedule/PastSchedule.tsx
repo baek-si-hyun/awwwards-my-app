@@ -78,8 +78,6 @@ const Box = styled.div`
   }
 `;
 const AbsoluteBox = styled.div<{ indexNum: number }>`
-  font-weight: lighter;
-  font-size: 1rem;
   white-space: nowrap;
   padding: clamp(5px, 0.7vw, 15px);
   border-radius: 7px;
@@ -115,9 +113,7 @@ const InnerBox = styled.div`
   display: flex;
   align-items: center;
 `;
-const Span = styled.span`
-  vertical-align: bottom;
-`;
+
 function PastSchedule() {
   const [graph, setGraph] = useState(false);
   const getResizeWidth = useSelector(
@@ -159,7 +155,7 @@ function PastSchedule() {
                 <AbsoluteBox indexNum={scheduleData.id}>
                   {scheduleData.absoluteBox}
                   <InnerBox>
-                    <Span className="material-symbols-outlined">schedule</Span>
+                    <span className="material-symbols-outlined">schedule</span>
                   </InnerBox>
                 </AbsoluteBox>
               </Row>

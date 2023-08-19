@@ -33,9 +33,6 @@ const HeaderImg = styled.img`
 const MotionBox = styled.div`
   width: 100%;
   padding: 1vw 3vw;
-`;
-
-const InnerMotionBox = styled.div`
   display: grid;
   grid-template-rows: 1.7vw 5.8vw auto;
   gap: clamp(0.1rem, 1vw, 1rem);
@@ -69,45 +66,38 @@ function HeaderMainImg() {
   const bottomList = ["Figma", "Si Hyun Baek", "2022. 12. 28."];
   const [visible, setVisible] = useState(0);
   useInterval(() => {
-    if (visible !== 2) {
-      setVisible(visible + 1);
-    }
-    if (visible === 2) {
-      setVisible(0);
-    }
+    setVisible((visible) => (visible + 1) % 3);
   }, 4000);
   return (
     <Container>
       <HeaderImg src={iconpng} alt="headerimg" />
       <MotionBox>
-        <InnerMotionBox>
-          <MotionTop>
-            <AnimatePresence>
-              <TopBox
-                key={visible}
-                transition={{ type: "tween", duration: 0.5 }}
-                initial={{ y: 50, opacity: 1 }}
-                animate={{ y: 0, opacity: 1 }}
-                exit={{ y: -50, opacity: 0 }}
-              >
-                {topList[visible]}
-              </TopBox>
-            </AnimatePresence>
-          </MotionTop>
-          <MotionBottom>
-            <AnimatePresence>
-              <BottomBox
-                key={visible}
-                transition={{ type: "tween", duration: 0.5 }}
-                initial={{ y: 100, opacity: 1 }}
-                animate={{ y: 0, opacity: 1 }}
-                exit={{ y: -100, opacity: 0 }}
-              >
-                {bottomList[visible]}
-              </BottomBox>
-            </AnimatePresence>
-          </MotionBottom>
-        </InnerMotionBox>
+        <MotionTop>
+          <AnimatePresence>
+            <TopBox
+              key={visible}
+              transition={{ type: "tween", duration: 0.5 }}
+              initial={{ y: 50, opacity: 1 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: -50, opacity: 0 }}
+            >
+              {topList[visible]}
+            </TopBox>
+          </AnimatePresence>
+        </MotionTop>
+        <MotionBottom>
+          <AnimatePresence>
+            <BottomBox
+              key={visible}
+              transition={{ type: "tween", duration: 0.5 }}
+              initial={{ y: 100, opacity: 1 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: -100, opacity: 0 }}
+            >
+              {bottomList[visible]}
+            </BottomBox>
+          </AnimatePresence>
+        </MotionBottom>
       </MotionBox>
     </Container>
   );

@@ -96,10 +96,10 @@ function ProjectMain() {
             </DescriptionProjectText>
             <DescriptionProjectContent>
               <div>
-                <p>{state.ko}</p>
+                <span>{state.ko}</span>
               </div>
               <div>
-                <p>{state.en}</p>
+                <span>{state.en}</span>
               </div>
             </DescriptionProjectContent>
           </DescriptionProject>
