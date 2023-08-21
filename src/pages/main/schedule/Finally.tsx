@@ -62,7 +62,7 @@ const FinallyTextEn = styled.div`
 `;
 const FinallyBox = styled.div``;
 const FinallyImgBox = styled.div`
-  background-image: url(${lighthouse});
+  background-image: url("https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/9f46ed70-6445-4648-3402-8b8df827ed00/public");
   height: 100%;
   background-size: cover;
   border-radius: 20px;

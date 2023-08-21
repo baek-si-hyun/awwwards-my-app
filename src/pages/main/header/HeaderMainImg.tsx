@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { useState } from "react";
-import iconpng from "../../../assets/img/main_img/iconpng.png";
 import { AnimatePresence, motion } from "framer-motion";
 import { useInterval } from "usehooks-ts";
 
@@ -70,7 +69,12 @@ function HeaderMainImg() {
   }, 4000);
   return (
     <Container>
-      <HeaderImg src={iconpng} alt="headerimg" />
+      <HeaderImg
+        src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/6509b68f-1d66-4538-8286-1da5d6680500/public"
+        alt="headerimg"
+        loading="lazy"
+        decoding="async"
+      />
       <MotionBox>
         <MotionTop>
           <AnimatePresence>

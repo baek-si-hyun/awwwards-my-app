@@ -1,10 +1,4 @@
 import styled from "styled-components";
-import awwwardC from "../../../assets/img/main_img/awwwardC.webp";
-import upbitC from "../../../assets/img/main_img/upbitC.webp";
-import investingC from "../../../assets/img/main_img/investingC.webp";
-import awwwardicon from "../../../assets/img/main_img/awwwardicon.png";
-import upbiticon from "../../../assets/img/main_img/upbiticon.png";
-import investingicon from "../../../assets/img/main_img/investingicon.png";
 
 const Container = styled.div`
   display: grid;
@@ -31,14 +25,20 @@ const Sitebox = styled.div`
   }
 `;
 
-const SiteImgBox = styled.div<{ url: string }>`
+const SiteImgBox = styled.div`
+position: relative;
   aspect-ratio: 4/3;
   border-radius: 15px;
-  background-image: url(${(props) => props.url});
-  background-size: cover;
   overflow: hidden;
   box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.15);
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
 `;
+
+const SiteImg = styled.img``;
 
 const SiteTextBox = styled.div`
   display: flex;
@@ -139,7 +139,6 @@ const BottomBoxTop = styled.div`
   @media (max-width: 650px) {
     & {
       font-size: 3vw;
-   
     }
   }
 `;
@@ -157,7 +156,13 @@ function Site() {
   return (
     <Container>
       <Sitebox>
-        <SiteImgBox url={awwwardC}>
+        <SiteImgBox>
+          <img
+            src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/e80d2483-5516-4d36-dea9-b2622a4d0e00/public"
+            alt="awwwards"
+            loading="lazy"
+            decoding="async"
+          />
           <HoverBox>
             <SenterBox href="https://www.awwwards.com/" target="_blank">
               <span className="material-symbols-outlined">arrow_right_alt</span>
@@ -178,7 +183,7 @@ function Site() {
           </div>
           <InnerFigure>
             <img
-              src={awwwardicon}
+              src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/e1f7fdb0-746c-4598-7dd0-c37a0b344d00/icon"
               style={{ width: 30, height: 30, borderRadius: 20 }}
               alt="awwwardicon"
               loading="lazy"
@@ -191,7 +196,13 @@ function Site() {
         </SiteTextBox>
       </Sitebox>
       <Sitebox>
-        <SiteImgBox url={upbitC}>
+        <SiteImgBox>
+          <SiteImg
+            src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/0b467ebf-f1d9-46f9-37d9-e4b9c08ac600/public"
+            alt="upbit"
+            loading="lazy"
+            decoding="async"
+          />
           <HoverBox>
             <SenterBox href="https://upbit.com/home" target="_blank">
               <span className="material-symbols-outlined">arrow_right_alt</span>
@@ -212,7 +223,7 @@ function Site() {
           </div>
           <InnerFigure>
             <img
-              src={upbiticon}
+              src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/aaca2829-bf16-4dfc-1bcd-d50e53b57a00/icon"
               style={{ width: 30, height: 30, borderRadius: 20 }}
               alt="upbiticon"
               loading="lazy"
@@ -225,7 +236,13 @@ function Site() {
         </SiteTextBox>
       </Sitebox>
       <Sitebox>
-        <SiteImgBox url={investingC}>
+        <SiteImgBox>
+          <SiteImg
+            src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/d8446547-c0c4-4aa5-aace-5592214d5700/public"
+            alt="investing"
+            loading="lazy"
+            decoding="async"
+          />
           <HoverBox>
             <SenterBox href="https://kr.investing.com/" target="_blank">
               <span className="material-symbols-outlined">arrow_right_alt</span>
@@ -246,9 +263,9 @@ function Site() {
           </div>
           <InnerFigure>
             <img
-              src={investingicon}
+              src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/a5badb6f-87f1-4735-072d-9c270ab6ea00/icon"
               style={{ width: 30, height: 30, borderRadius: 20 }}
-              alt="binanceicon"
+              alt="investingicon"
               loading="lazy"
               decoding="async"
             />

@@ -12,7 +12,7 @@ export const ButtonDiv = styled.div<{ isPlaying: boolean }>`
   top: 0;
   left: 0;
   width: 100%;
-  height: 96%;
+  height: 100%;
   background-color: #000000;
   transition: opacity 0.2s ease-in-out;
   will-change: opacity;

@@ -1,8 +1,7 @@
 import styled from "styled-components";
-import newjeans from "../../../assets/img/main_img/newjeans.jpg";
 import NewJeans from "./boards/NewJeans";
 import FeaturedSong from "./boards/FeaturedSong";
-import allsongs from "../../../assets/img/recommended_song/allsong.jpg";
+
 
 const MusicWrapper = styled.div`
   width: 100%;
@@ -108,7 +107,7 @@ function Music() {
       <MusicBox>
         <InnerMusicBox1>
           <MusicImg
-            src={newjeans}
+            src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/ee6e50a8-17dd-458b-29e3-ad794eeca500/public"
             alt="newjeans"
             loading="lazy"
             decoding="async"
@@ -130,7 +129,7 @@ function Music() {
         </InnerMusicBox2>
         <InnerMusicBox3>
           <MusicImg
-            src={allsongs}
+            src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/f204c79a-26ad-4cb8-5018-c779d6a93200/public"
             alt="famous artist"
             loading="lazy"
             decoding="async"

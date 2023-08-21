@@ -176,6 +176,9 @@ function ProjectsLinkBox() {
                       height="35"
                       width="35"
                       src={`https://cdn.simpleicons.org/${iconData}/white/false`}
+                      alt={iconData}
+                      loading="lazy"
+                      decoding="async"
                     />
                   ))}
                 </IconBox>

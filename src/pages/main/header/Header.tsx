@@ -111,7 +111,12 @@ function Header() {
         </Wrap>
         <HeaderMainImg />
         <TextBox>
-          <LogoImg src={shb} alt="maker_logo" />
+          <LogoImg
+            src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/09e9189a-ee66-4858-4e6a-b9da9e26e700/icon"
+            alt="maker_logo"
+            loading="lazy"
+            decoding="async"
+          />
           <span>SiHyun-Baek initial logo</span>
         </TextBox>
       </InnerContainer>
