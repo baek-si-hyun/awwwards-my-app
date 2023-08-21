@@ -60,7 +60,7 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://baek-si-hyun.github.io/awwwards-my-app",
+  "homepage": ".",
   "devDependencies": {
     "@babel/core": "^7.21.8",
     "@babel/preset-env": "^7.21.5",
