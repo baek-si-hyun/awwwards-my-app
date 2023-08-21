@@ -32,7 +32,7 @@ function NavRouterMode({
       <VisitedSite>
         {pathname === "/visual-coin" ? (
           <a
-            href="https://baek-si-hyun.github.io/BPCproject"
+            href="https://baek-si-hyun.github.io/visual-coin"
             target="_blank"
             rel="noopener noreferrer"
           >

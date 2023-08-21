@@ -2,15 +2,15 @@
 import { useQuery } from "@tanstack/react-query";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import Colgroup from "./coinList/ColGroup";
+import TheadTr from "./coinList/TheadTr";
+import TbodyTr from "./coinList/TbodyTr";
+import { ICoinHistory, ICoinListMerge, ICoins } from "../../../interface/icoin";
 import {
   circulatingSupply,
   fetchCoinHistory,
   fetchCoins,
 } from "../../../services/coinApi";
-import Colgroup from "./coinList/ColGroup";
-import TheadTr from "./coinList/TheadTr";
-import TbodyTr from "./coinList/TbodyTr";
-import { ICoinHistory, ICoinListMerge, ICoins } from "../../../interface/icoin";
 
 const CoinListWrapper = styled.div`
   width: 100%;
