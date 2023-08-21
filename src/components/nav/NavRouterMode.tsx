@@ -40,7 +40,7 @@ function NavRouterMode({
           </a>
         ) : pathname === "/carrot-market" ? (
           <a
-            href="https://baek-si-hyun.github.io/awwwards-my-app/"
+            href="https://carrot-market-sooty.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
           >
