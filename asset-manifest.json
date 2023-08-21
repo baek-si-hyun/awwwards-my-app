@@ -1,10 +1,10 @@
 {
   "files": {
     "main.css": "/awwwards-my-app/static/css/main.05c417ed.css",
-    "main.js": "/awwwards-my-app/static/js/main.90cbedb3.js",
+    "main.js": "/awwwards-my-app/static/js/main.47576877.js",
     "static/js/201.5e4cf8c6.chunk.js": "/awwwards-my-app/static/js/201.5e4cf8c6.chunk.js",
     "static/js/258.688b5253.chunk.js": "/awwwards-my-app/static/js/258.688b5253.chunk.js",
-    "static/js/399.1509db70.chunk.js": "/awwwards-my-app/static/js/399.1509db70.chunk.js",
+    "static/js/399.2a385d2c.chunk.js": "/awwwards-my-app/static/js/399.2a385d2c.chunk.js",
     "static/js/499.c7251a47.chunk.js": "/awwwards-my-app/static/js/499.c7251a47.chunk.js",
     "static/js/404.e13ce7cc.chunk.js": "/awwwards-my-app/static/js/404.e13ce7cc.chunk.js",
     "static/js/351.c0960cc5.chunk.js": "/awwwards-my-app/static/js/351.c0960cc5.chunk.js",
@@ -46,10 +46,10 @@
     "static/media/upbiticon.png": "/awwwards-my-app/static/media/upbiticon.4064bc4102e646afee38.png",
     "index.html": "/awwwards-my-app/index.html",
     "main.05c417ed.css.map": "/awwwards-my-app/static/css/main.05c417ed.css.map",
-    "main.90cbedb3.js.map": "/awwwards-my-app/static/js/main.90cbedb3.js.map",
+    "main.47576877.js.map": "/awwwards-my-app/static/js/main.47576877.js.map",
     "201.5e4cf8c6.chunk.js.map": "/awwwards-my-app/static/js/201.5e4cf8c6.chunk.js.map",
     "258.688b5253.chunk.js.map": "/awwwards-my-app/static/js/258.688b5253.chunk.js.map",
-    "399.1509db70.chunk.js.map": "/awwwards-my-app/static/js/399.1509db70.chunk.js.map",
+    "399.2a385d2c.chunk.js.map": "/awwwards-my-app/static/js/399.2a385d2c.chunk.js.map",
     "499.c7251a47.chunk.js.map": "/awwwards-my-app/static/js/499.c7251a47.chunk.js.map",
     "404.e13ce7cc.chunk.js.map": "/awwwards-my-app/static/js/404.e13ce7cc.chunk.js.map",
     "351.c0960cc5.chunk.js.map": "/awwwards-my-app/static/js/351.c0960cc5.chunk.js.map",
@@ -57,6 +57,6 @@
   },
   "entrypoints": [
     "static/css/main.05c417ed.css",
-    "static/js/main.90cbedb3.js"
+    "static/js/main.47576877.js"
   ]
 }
