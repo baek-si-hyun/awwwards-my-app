@@ -48,7 +48,7 @@ function NavRouterMode({
           </a>
         ) : pathname === "/awwwards" ? (
           <a
-            href="https://baek-si-hyun.github.io/awwwards-my-app/"
+            href="https://drive.google.com/file/d/1JCT2iSVsRXvQD6mQYQDc-bEAjf2I85HV/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
           >

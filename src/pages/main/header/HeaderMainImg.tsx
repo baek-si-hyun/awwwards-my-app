@@ -66,7 +66,7 @@ function HeaderMainImg() {
   const [visible, setVisible] = useState(0);
   useInterval(() => {
     setVisible((visible) => (visible + 1) % 3);
-  }, 4000);
+  }, 6000);
   return (
     <Container>
       <HeaderImg
@@ -80,7 +80,7 @@ function HeaderMainImg() {
           <AnimatePresence>
             <TopBox
               key={visible}
-              transition={{ type: "tween", duration: 0.5 }}
+              transition={{ type: "tween", duration: 0.4 }}
               initial={{ y: 50, opacity: 1 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: -50, opacity: 0 }}
@@ -93,7 +93,7 @@ function HeaderMainImg() {
           <AnimatePresence>
             <BottomBox
               key={visible}
-              transition={{ type: "tween", duration: 0.5 }}
+              transition={{ type: "tween", duration: 0.4 }}
               initial={{ y: 100, opacity: 1 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: -100, opacity: 0 }}

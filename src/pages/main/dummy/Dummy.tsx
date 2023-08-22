@@ -43,7 +43,6 @@ function About() {
         </TextBox>
         <SubTextBox>Combination of UPBIT Websocket, React-Query</SubTextBox>
         <CoinList />
-        <SourceText>Source: Each game company site</SourceText>
         <ExplanTextBox>This is a frequently visited site.</ExplanTextBox>
         <Site />
         <SourceText>Source: Captured from each company site</SourceText>

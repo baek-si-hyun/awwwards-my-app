@@ -26,7 +26,7 @@ const Sitebox = styled.div`
 `;
 
 const SiteImgBox = styled.div`
-position: relative;
+  position: relative;
   aspect-ratio: 4/3;
   border-radius: 15px;
   overflow: hidden;
@@ -78,12 +78,16 @@ const InnerFigure = styled.figure`
 
 const HoverBox = styled.div`
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
-  position: relative;
   display: flex;
   flex-direction: column;
+  width: 100%;
   height: 100%;
   transition: all 0.3s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
   opacity: 0;
+  z-index: 99;
   :hover {
     opacity: 1;
   }
@@ -158,7 +162,7 @@ function Site() {
       <Sitebox>
         <SiteImgBox>
           <img
-            src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/e80d2483-5516-4d36-dea9-b2622a4d0e00/public"
+            src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/49cd31ba-6549-4f5c-823e-06ee522be100/public"
             alt="awwwards"
             loading="lazy"
             decoding="async"

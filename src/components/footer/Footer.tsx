@@ -132,8 +132,8 @@ function Footer() {
             <NavLink to="/Contact">Contact Me</NavLink>
           </Contact>
           <Resume>
-            <a
-              href="https://drive.google.com/uc?id=1M7YYapzZK-8wH-oA86anqAD_INk8N8RZ"
+            <a 
+              href="https://drive.google.com/file/d/1JCT2iSVsRXvQD6mQYQDc-bEAjf2I85HV/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
             >

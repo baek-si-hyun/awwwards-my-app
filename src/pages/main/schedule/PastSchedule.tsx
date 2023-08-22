@@ -93,9 +93,9 @@ const AbsoluteBox = styled.div<{ indexNum: number }>`
     "left:210px;gap:270px;background-color:#aaeec4;color:#000;"};
   ${(props) =>
     props.indexNum === 1 && "left:760px;gap:300px;background-color:#502bd8;"};
-  ${(props) => props.indexNum === 2 && "left:1010px;gap:55px;"};
-  ${(props) => props.indexNum === 3 && "left:1172px;gap:55px;"};
-  ${(props) => props.indexNum === 4 && "left:1332px;gap:55px;"};
+  ${(props) => props.indexNum === 2 && "left:1060px;gap:155px;"};
+  ${(props) => props.indexNum === 3 && "left:1200px;gap:35px;"};
+  ${(props) => props.indexNum === 4 && "left:1332px;gap:60px;"};
   ${(props) => props.indexNum === 5 && "left:1495px;gap:600px;"};
   ${(props) => props.indexNum === 6 && "left:1700px;gap:70px;"};
   ${(props) => props.indexNum === 7 && "left:1860px;gap:150px;"};
