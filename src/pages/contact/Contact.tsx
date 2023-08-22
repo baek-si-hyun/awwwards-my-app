@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Footer from "../../components/footer/Footer";
 import {
   Container,
-  InnerContainer,
+  Inner,
   TextBox,
   TextBoxMiddle,
   TextBoxTop,
@@ -34,7 +34,7 @@ const H3Box = styled.div`
 function Contact() {
   return (
     <Container>
-      <InnerContainer>
+      <Inner>
         <TextBox>
           <TextBoxTop>Contact me</TextBoxTop>
           <TextBoxMiddle>get in touch</TextBoxMiddle>
@@ -58,7 +58,7 @@ function Contact() {
           </Leftbox>
           <EmailJs />
         </EmailJsContainer>
-      </InnerContainer>
+      </Inner>
       <Footer />
     </Container>
   );

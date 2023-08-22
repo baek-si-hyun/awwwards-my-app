@@ -2,7 +2,7 @@ import { useState } from "react";
 import styled, { css } from "styled-components";
 import { UnderLine } from "../common/mainCommon";
 
-const FontContainer = styled.div`
+const Container = styled.div`
   display: flex;
   flex-direction: column;
 `;
@@ -133,7 +133,7 @@ function ProjectFont({ fonts }: { fonts: string[] }) {
   const selectedFont = fonts[toggle];
 
   return (
-    <FontContainer>
+    <Container>
       <FontTop>
         <Typography>
           <span>Typography</span>
@@ -178,7 +178,7 @@ function ProjectFont({ fonts }: { fonts: string[] }) {
           </ContentDiv>
         </LettersNumbers>
       </FontStyle>
-    </FontContainer>
+    </Container>
   );
 }
 export default ProjectFont;

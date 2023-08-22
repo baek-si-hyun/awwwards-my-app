@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { ButtonDiv, ControllBtn } from "../MusicSet";
 
-export const Wrapper = styled.div`
+export const Container = styled.div`
   width: 90%;
 `;
 export const Board = styled.div`
@@ -74,7 +74,6 @@ export const CardItem = styled.div`
       }
     }
   }
-
 `;
 
 export const ImgDiv = styled.div`

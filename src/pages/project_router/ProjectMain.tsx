@@ -9,7 +9,7 @@ import { useLocation } from "react-router-dom";
 const Container = styled.div`
   width: 100%;
 `;
-const InnerContainer = styled.div`
+const Inner = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -75,7 +75,7 @@ function ProjectMain() {
   const { state } = useLocation();
   return (
     <Container id="sotd">
-      <InnerContainer>
+      <Inner>
         <ProjectPreview projectData={state} />
         <Description id="fontColor">
           <DescriptionText>
@@ -104,7 +104,7 @@ function ProjectMain() {
             </DescriptionProjectContent>
           </DescriptionProject>
         </Description>
-      </InnerContainer>
+      </Inner>
       <Footer />
       <Nav />
     </Container>

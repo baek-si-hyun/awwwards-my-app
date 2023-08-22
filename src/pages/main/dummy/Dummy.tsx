@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import {
   Container,
-  InnerContainer,
+  Inner,
   TextBox,
   TextBoxTop,
   TextBoxbottom,
@@ -35,7 +35,7 @@ const ExplanTextBox = styled.div`
 function About() {
   return (
     <Container id="about">
-      <InnerContainer>
+      <Inner>
         <TextBox>
           <TextBoxTop>Si Hyun Baek</TextBoxTop>
           <TextBoxMiddle>just dummy</TextBoxMiddle>
@@ -48,7 +48,7 @@ function About() {
         <SourceText>Source: Captured from each company site</SourceText>
         <ExplanTextBox>Songs I've been listening to lately</ExplanTextBox>
         <Music />
-      </InnerContainer>
+      </Inner>
     </Container>
   );
 }

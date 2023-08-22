@@ -12,7 +12,7 @@ const common = css`
   justify-content: center;
 `;
 
-const BoxContainer = styled.div`
+const Container = styled.div`
   ${common};
 `;
 
@@ -143,7 +143,7 @@ function ProjectsLinkBox() {
       {projectData &&
         visitedData &&
         projectData.map((data, index) => (
-          <BoxContainer key={index}>
+          <Container key={index}>
             <Box
               to={`/${data.projects_code}`}
               state={{
@@ -205,7 +205,7 @@ function ProjectsLinkBox() {
                 </InnerSpan>
               </By>
             </TextBox>
-          </BoxContainer>
+          </Container>
         ))}
     </>
   );

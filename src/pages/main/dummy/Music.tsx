@@ -3,10 +3,10 @@ import NewJeans from "./boards/NewJeans";
 import FeaturedSong from "./boards/FeaturedSong";
 
 
-const MusicWrapper = styled.div`
+const Container = styled.div`
   width: 100%;
 `;
-const MusicBox = styled.div`
+const Inner = styled.div`
   width: 100%;
   border-radius: 20px 20px 0 0;
   overflow: hidden;
@@ -103,8 +103,8 @@ const InnerMusicBox4 = styled.div`
 
 function Music() {
   return (
-    <MusicWrapper>
-      <MusicBox>
+    <Container>
+      <Inner>
         <InnerMusicBox1>
           <MusicImg
             src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/ee6e50a8-17dd-458b-29e3-ad794eeca500/public"
@@ -142,8 +142,8 @@ function Music() {
           </div>
           <FeaturedSong />
         </InnerMusicBox4>
-      </MusicBox>
-    </MusicWrapper>
+      </Inner>
+    </Container>
   );
 }
 export default Music;

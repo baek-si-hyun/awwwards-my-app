@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 
-const EmailJsContainer = styled.div`
+const Container = styled.div`
   width: 32vw;
   @media (max-width: 640px) {
     & {
@@ -87,7 +87,7 @@ function EmailJs() {
       );
   };
   return (
-    <EmailJsContainer>
+    <Container>
       <Form ref={form} onSubmit={sendEmail}>
         <Label>Name</Label>
         <Input type="text" name="user_name" />
@@ -106,7 +106,7 @@ function EmailJs() {
           value="SEND MESSAGE"
         />
       </Form>
-    </EmailJsContainer>
+    </Container>
   );
 }
 export default EmailJs;

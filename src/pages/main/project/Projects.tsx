@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import {
   Container,
-  InnerContainer,
+  Inner,
   TextBox,
   TextBoxTop,
   TextBoxbottom,
@@ -22,7 +22,7 @@ const GridBox = styled.div`
 function Projects() {
   return (
     <Container id="projects">
-      <InnerContainer>
+      <Inner>
         <TextBox>
           <TextBoxTop>
             <h2>Si Hyun Baek</h2>
@@ -37,7 +37,7 @@ function Projects() {
         <GridBox>
           <ProjectsLinkBox />
         </GridBox>
-      </InnerContainer>
+      </Inner>
     </Container>
   );
 }

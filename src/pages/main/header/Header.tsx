@@ -9,7 +9,7 @@ const Container = styled.div`
   width: 100%;
   background-color: #d7d7d7;
 `;
-const InnerContainer = styled.div`
+const Inner = styled.div`
   padding: 3vw 2.7vw;
 `;
 const Title = styled.h1`
@@ -21,7 +21,7 @@ const Title = styled.h1`
 const Wrap = styled.div`
   margin: 1.5vw 0;
 `;
-const Inner = styled(Marquee)`
+const InnerWrap = styled(Marquee)`
   display: flex;
   align-items: center;
   justify-items: center;
@@ -84,10 +84,10 @@ function Header() {
   }, [getResizeWidth]);
   return (
     <Container id="header">
-      <InnerContainer>
+      <Inner>
         <Title>site of the day</Title>
         <Wrap>
-          <Inner play={true} gradient={false} speed={speed}>
+          <InnerWrap play={true} gradient={false} speed={speed}>
             <MarqueeText>
               MY APP<span> — Site of the Day - </span>100
               <span> — Dec 25, 2022 — </span>MY APP
@@ -106,7 +106,7 @@ function Header() {
               <span> — Site of the Day - </span>100
               <span> — Dec 25, 2022 — </span>
             </MarqueeText>
-          </Inner>
+          </InnerWrap>
         </Wrap>
         <HeaderMainImg />
         <TextBox>
@@ -118,7 +118,7 @@ function Header() {
           />
           <span>SiHyun-Baek initial logo</span>
         </TextBox>
-      </InnerContainer>
+      </Inner>
     </Container>
   );
 }

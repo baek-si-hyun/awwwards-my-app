@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { faqList } from "../../services/listData";
 import { UnderLine } from "../common/mainCommon";
 
-const FaqsList = styled.ul`
+const Container = styled.ul`
   ${UnderLine}
 `;
 const Faq = styled.li`
@@ -95,7 +95,7 @@ function FaqList() {
 
   return (
     <>
-      <FaqsList>{makeFaqList()}</FaqsList>
+      <Container>{makeFaqList()}</Container>
     </>
   );
 }

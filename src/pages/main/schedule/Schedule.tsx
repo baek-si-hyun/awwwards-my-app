@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import {
   Container,
-  InnerContainer,
+  Inner,
   TextBox,
   TextBoxTop,
   TextBoxbottom,
@@ -37,7 +37,7 @@ const TextBox2 = styled.div`
 function Schedule() {
   return (
     <Container id="schedule">
-      <InnerContainer>
+      <Inner>
         <TextBox>
           <TextBoxTop>Si Hyun Baek</TextBoxTop>
           <TextBoxMiddle>past schedule</TextBoxMiddle>
@@ -64,7 +64,7 @@ function Schedule() {
           <PastSchedule />
         </ScheduleBox>
         <Finally />
-      </InnerContainer>
+      </Inner>
     </Container>
   );
 }

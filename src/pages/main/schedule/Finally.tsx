@@ -10,7 +10,7 @@ const Container = styled.div`
   }
 `;
 
-const FinallyInner = styled.div`
+const Inner = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2vw;
@@ -145,7 +145,7 @@ const FAQsLink = styled(Link)`
 function Finally() {
   return (
     <Container>
-      <FinallyInner>
+      <Inner>
         <FinallyText>
           <FinallyH2>
             <h2>Finally</h2>
@@ -198,7 +198,7 @@ function Finally() {
             </Qna>
           </FinallyImgBox>
         </FinallyBox>
-      </FinallyInner>
+      </Inner>
     </Container>
   );
 }

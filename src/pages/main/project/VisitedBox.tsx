@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { IVisited } from "../../../interface/iproject";
 
-const Visited = styled.div`
+const Container = styled.div`
   width: 50%;
   display: flex;
   margin-top: 1vw;
@@ -12,7 +12,7 @@ const Visited = styled.div`
   }
 `;
 
-const VisitedInner = styled.div`
+const Inner = styled.div`
   display: flex;
   text-align: center;
   flex-direction: column;
@@ -52,8 +52,8 @@ function VisitedBox({
 }) {
   const [visited] = visitedData;
   return (
-    <Visited>
-      <VisitedInner>
+    <Container>
+      <Inner>
         <VisitedInnerTop>Visited Today</VisitedInnerTop>
         <VisitedInnerBottom>
           {name === "visual-coin"
@@ -72,8 +72,8 @@ function VisitedBox({
             ? visited.visited_airbnb_today
             : null}
         </VisitedInnerBottom>
-      </VisitedInner>
-      <VisitedInner>
+      </Inner>
+      <Inner>
         <VisitedInnerTop>Total Visited</VisitedInnerTop>
         <VisitedInnerBottom>
           {name === "visual-coin"
@@ -92,8 +92,8 @@ function VisitedBox({
             ? visited.visited_airbnb_total
             : null}
         </VisitedInnerBottom>
-      </VisitedInner>
-    </Visited>
+      </Inner>
+    </Container>
   );
 }
 export default VisitedBox;

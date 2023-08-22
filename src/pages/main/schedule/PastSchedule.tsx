@@ -106,7 +106,7 @@ const AbsoluteBox = styled.div<{ indexNum: number }>`
     props.indexNum === 10 && "left:2200px;gap:200px;background-color:#7e0303;"};
   ${(props) => props.indexNum === 11 && "display: none;"};
 `;
-const Schedule = styled.div`
+const Inner = styled.div`
   overflow-x: scroll;
 `;
 const InnerBox = styled.div`
@@ -134,7 +134,7 @@ function PastSchedule() {
   }, [getResizeWidth]);
   return (
     <Container>
-      <Schedule>
+      <Inner>
         {graph ? (
           <>
             {schedule.map((scheduleData, scheduleIndex) => (
@@ -162,7 +162,7 @@ function PastSchedule() {
             ))}
           </>
         )}
-      </Schedule>
+      </Inner>
     </Container>
   );
 }

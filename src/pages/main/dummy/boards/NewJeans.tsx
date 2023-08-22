@@ -12,7 +12,7 @@ import { INewjeansListData } from "../../../../interface/imusic";
 import { newJeansRedux } from "../../../../redux/slices/newJeansListSlice";
 import {
   Board,
-  Wrapper,
+  Container,
   Card,
   CardItem,
   ImgDiv,
@@ -43,7 +43,7 @@ function NewJeans() {
 
   return (
     <DragDropContext onDragEnd={onDragEnd}>
-      <Wrapper>
+      <Container>
         <Droppable droppableId="one">
           {(magic) => (
             <Board ref={magic.innerRef} {...magic.droppableProps}>
@@ -88,7 +88,7 @@ function NewJeans() {
             </Board>
           )}
         </Droppable>
-      </Wrapper>
+      </Container>
     </DragDropContext>
   );
 }

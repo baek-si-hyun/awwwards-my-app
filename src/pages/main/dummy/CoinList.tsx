@@ -12,11 +12,11 @@ import {
   fetchCoins,
 } from "../../../services/coinApi";
 
-const CoinListWrapper = styled.div`
+const Container = styled.div`
   width: 100%;
 `;
 
-const WrapperInner = styled.div`
+const Inner = styled.div`
   display: flex;
   flex-direction: column;
 `;
@@ -140,8 +140,8 @@ function CoinList() {
   }, [historyData]);
 
   return (
-    <CoinListWrapper>
-      <WrapperInner>
+    <Container>
+      <Inner>
         <TableBox>
           <ListTable>
             <Colgroup />
@@ -160,8 +160,8 @@ function CoinList() {
           </ListTable>
         </TableBox>
         <BtnBox>{makePageBtn()}</BtnBox>
-      </WrapperInner>
-    </CoinListWrapper>
+      </Inner>
+    </Container>
   );
 }
 export default React.memo(CoinList);

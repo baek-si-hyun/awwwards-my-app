@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { videoInfoRedux } from "../../redux/slices/playingVideoInfoSlice";
 import { controlRedux } from "../../redux/slices/controlPlayListSlice";
 
-const MusicPlayBoxContainer = styled.div<{ isVisible: boolean }>`
+const Container = styled.div<{ isVisible: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -127,7 +127,7 @@ function MusicPlayBox() {
   return (
     <>
       {visible && (
-        <MusicPlayBoxContainer isVisible={visible}>
+        <Container isVisible={visible}>
           <Img src={videoInfo?.img} />
           <InfoControlBox>
             <Info>
@@ -157,7 +157,7 @@ function MusicPlayBox() {
               </Next>
             </Control>
           </InfoControlBox>
-        </MusicPlayBoxContainer>
+        </Container>
       )}
     </>
   );

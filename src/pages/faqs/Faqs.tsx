@@ -7,7 +7,7 @@ const Container = styled.div`
   height: 100%;
 `;
 
-const InnerContainer = styled.div`
+const Inner = styled.div`
   padding: 3vw 2.7vw;
   display: flex;
   flex-direction: column;
@@ -39,7 +39,7 @@ const FaqsBox = styled.div`
 function Faqs() {
   return (
     <Container>
-      <InnerContainer>
+      <Inner>
         <TextBox>
           <TextBoxMiddle>FAQS</TextBoxMiddle>
           <TextBoxbottom>
@@ -50,7 +50,7 @@ function Faqs() {
         <FaqsBox>
           <FaqList />
         </FaqsBox>
-      </InnerContainer>
+      </Inner>
       <Footer />
     </Container>
   );

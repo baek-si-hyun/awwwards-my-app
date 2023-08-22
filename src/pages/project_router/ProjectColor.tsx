@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { UnderLine } from "../common/mainCommon";
 
 const Container = styled.div``;
-const ColorInner = styled.div`
+const Inner = styled.div`
   display: flex;
   flex-direction: column;
   ${UnderLine}
@@ -145,7 +145,7 @@ function ProjectColor({ colors }: { colors: string[] }) {
   const [hover, sethover] = useState(false);
   return (
     <Container>
-      <ColorInner>
+      <Inner>
         <ColorText>
           <h3>
             This website uses a color palette of <span>{colors.length}</span>
@@ -172,7 +172,7 @@ function ProjectColor({ colors }: { colors: string[] }) {
             ))}
           </CardContainer>
         </ColorCards>
-      </ColorInner>
+      </Inner>
     </Container>
   );
 }

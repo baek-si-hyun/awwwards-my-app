@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 import { IProjectData } from "../../interface/iproject";
 
-const PreviewContaier = styled.div`
+const Contaier = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -10,7 +10,7 @@ const PreviewContaier = styled.div`
   background-color: #efefef;
 `;
 
-const TextBox = styled.div`
+const Inner = styled.div`
   margin-top: 4vw;
   display: flex;
   flex-direction: column;
@@ -103,8 +103,8 @@ function CreatePreview(imgs: string[], name: string): JSX.Element[] {
 
 function ProjectPreview({ projectData }: { projectData: IProjectData }) {
   return (
-    <PreviewContaier>
-      <TextBox>
+    <Contaier>
+      <Inner>
         <TextBoxTop>
           <h2>{projectData.date}</h2>
         </TextBoxTop>
@@ -125,11 +125,11 @@ function ProjectPreview({ projectData }: { projectData: IProjectData }) {
             <UnderLine></UnderLine>
           </ImgText>
         </TextBoxbottom>
-      </TextBox>
+      </Inner>
       <PreviewContainer>
         {CreatePreview(projectData.imgs, projectData.name)}
       </PreviewContainer>
-    </PreviewContaier>
+    </Contaier>
   );
 }
 

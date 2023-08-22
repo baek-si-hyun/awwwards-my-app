@@ -3,7 +3,7 @@ export const Container = styled.div`
   width: 100%;
 `;
 
-export const InnerContainer = styled.div`
+export const Inner = styled.div`
   padding: 3vw 2.7vw;
   display: flex;
   flex-direction: column;

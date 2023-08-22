@@ -13,7 +13,7 @@ import { useDispatch } from "react-redux";
 import { featuredRedux } from "../../../../redux/slices/featuredListSlice";
 import {
   Board,
-  Wrapper,
+  Container,
   Card,
   CardItem,
   ImgDiv,
@@ -44,7 +44,7 @@ function FeaturedSong() {
 
   return (
     <DragDropContext onDragEnd={onDragEnd}>
-      <Wrapper>
+      <Container>
         <Droppable droppableId="one">
           {(magic) => (
             <Board ref={magic.innerRef} {...magic.droppableProps}>
@@ -89,7 +89,7 @@ function FeaturedSong() {
             </Board>
           )}
         </Droppable>
-      </Wrapper>
+      </Container>
     </DragDropContext>
   );
 }
