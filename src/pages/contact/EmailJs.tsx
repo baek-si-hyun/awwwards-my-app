@@ -64,16 +64,21 @@ const Textarea = styled.textarea`
     outline: none;
   }
 `;
+interface iinaisd {
+  service: string | undefined;
+  template: string | undefined;
+  key: string | undefined;
+}
 function EmailJs() {
   const form = useRef() as any;
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     emailjs
       .sendForm(
-        "service_6ve891d",
-        "template_on7gvsv",
+        `${process.env.REACT_APP_SERVICE_ID}`,
+        `${process.env.REACT_APP_TEMPLATE_ID}`,
         form.current,
-        "GPN2QNExB1LNIobJ6"
+        `${process.env.REACT_APP_API_KEYS}`
       )
       .then(
         (result) => {

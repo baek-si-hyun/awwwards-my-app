@@ -96,14 +96,14 @@ const AbsoluteBox = styled.div<{ indexNum: number }>`
   ${(props) => props.indexNum === 2 && "left:1060px;gap:155px;"};
   ${(props) => props.indexNum === 3 && "left:1200px;gap:35px;"};
   ${(props) => props.indexNum === 4 && "left:1332px;gap:60px;"};
-  ${(props) => props.indexNum === 5 && "left:1495px;gap:600px;"};
+  ${(props) => props.indexNum === 5 && "left:1495px;gap:420px;"};
   ${(props) => props.indexNum === 6 && "left:1700px;gap:70px;"};
   ${(props) => props.indexNum === 7 && "left:1860px;gap:150px;"};
   ${(props) => props.indexNum === 8 && "left:1900px;gap:110px;"};
   ${(props) =>
-    props.indexNum === 9 && "left:2200px;gap:200px;background-color:#7e0303;"};
+    props.indexNum === 9 && "left:2350px;gap:150px;background-color:#7e0303;"};
   ${(props) =>
-    props.indexNum === 10 && "left:2200px;gap:200px;background-color:#7e0303;"};
+    props.indexNum === 10 && "left:2200px;gap:500px;background-color:#7e0303;"};
   ${(props) => props.indexNum === 11 && "display: none;"};
 `;
 const Inner = styled.div`

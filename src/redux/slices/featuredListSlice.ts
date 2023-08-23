@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-    
+
 const featuredListSlice = createSlice({
   name: "featuredListSlice",
   initialState: {
@@ -58,7 +58,6 @@ const featuredListSlice = createSlice({
         album: "Paradise Again • 2022",
         url: "https://www.youtube.com/embed/WbzmQcFLPE8",
       },
-
       {
         id: 7,
         img:
@@ -134,31 +133,29 @@ const featuredListSlice = createSlice({
       {
         id: 15,
         img:
+          "https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/5f8cf9ae-0829-4a7a-0101-7aeebe909a00/music",
+        title: "Impurities",
+        artist: "LE SSERAFIM",
+        album: "ANTIFRAGILE • 2022",
+        url: "https://www.youtube.com/embed/-uZcrLYNwfE",
+      },
+      {
+        id: 16,
+        img:
+          "https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/291b27d3-26ff-47fb-7f02-772240607800/music",
+        title: "Thirsty",
+        artist: "aespa",
+        album: "MY WORLD - The 3rd Mini Album • 2023",
+        url: "https://www.youtube.com/embed/Ysz8_LZL52c",
+      },
+      {
+        id: 17,
+        img:
           "https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/9e3b960d-b511-493c-10f5-cef12ed4c500/music",
         title: "사장님 도박은 재미로 하셔야 합니다",
         artist: "비비(BIBI)",
         album: "사장님 도박은 재미로 하셔야 합니다 • 2020",
         url: "https://www.youtube.com/embed/7pC3cdeeqm4",
-      },
-
-      {
-        id: 16,
-        img:
-          "https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/cdb3964e-ede2-4634-a5ce-a3fe1b892100/music",
-        title: "Trndsttr (Lucian Remix)",
-        artist: "Black Coast 및 M. Maggie",
-        album: "Trndsttr (Lucian Remix) • 2016",
-        url: "https://www.youtube.com/embed/vBdnfyfBSKg",
-      },
-
-      {
-        id: 17,
-        img:
-          "https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/51655026-3d54-4b43-9d90-6438fcb59400/music",
-        title: "완벽한 시대 Summer Night",
-        artist: "소녀시대",
-        album: "FOREVER 1 - The 7th Album • 2022",
-        url: "https://www.youtube.com/embed/1BeMGup6HKw",
       },
       {
         id: 18,
