@@ -1,7 +1,5 @@
-import {
-  ICoinHttpTickers,
-  ICoinSocketTickers,
-} from "../../../../interface/icoin";
+import { ICoinHttpTickers, ICoinSocketTickers } from "../../../interface/icoin";
+
 
 const CirculatingSupply = ({
   coinName,
@@ -21,13 +19,13 @@ const CirculatingSupply = ({
     )?.trade_price!;
 
     return (
-        <span>
-          ₩
-          {(supply * price || 0)
-            .toFixed(0)
-            .toString()
-            .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-        </span>
+      <span>
+        ₩
+        {(supply * price || 0)
+          .toFixed(0)
+          .toString()
+          .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+      </span>
     );
   }
   return <></>;

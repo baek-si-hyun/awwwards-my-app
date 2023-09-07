@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Tr } from "../CoinList";
+import { Tr } from "./CoinList";
 import { Namediv } from "./TbodyTr";
 
 const TdFixed = styled.td`

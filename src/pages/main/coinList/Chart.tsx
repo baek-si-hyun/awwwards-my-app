@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import ReactApexChart from "react-apexcharts";
-import { ICoinHistory } from "../../../../interface/icoin";
+import { ICoinHistory } from "../../../interface/icoin";
+
 const ApexChartDiv = styled.div`
   max-width: 100%;
   max-height: 61px;

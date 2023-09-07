@@ -2,9 +2,10 @@
 import styled from "styled-components";
 import { useEffect, useState } from "react";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
-import { videoInfoRedux } from "../../../../redux/slices/playingVideoInfoSlice";
-import { IVideoInfo } from "../../../../interface/imusic";
-import { controllerVisibleRedux } from "../../../../redux/slices/controllerVisibleSlice";
+import { IVideoInfo } from "../../../interface/imusic";
+import { videoInfoRedux } from "../../../redux/slices/playingVideoInfoSlice";
+import { controllerVisibleRedux } from "../../../redux/slices/controllerVisibleSlice";
+
 
 export const ButtonDiv = styled.div<{ isPlaying: boolean }>`
   position: absolute;

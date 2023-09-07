@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { TextBox, TextBoxMiddle, TextBoxbottom } from "../../common/mainCommon";
 
 const Container = styled.div`
   display: grid;
@@ -159,6 +160,10 @@ const BottomBoxBottom = styled.div`
 function Site() {
   return (
     <Container>
+      <TextBox>
+        <TextBoxMiddle>just dummy</TextBoxMiddle>
+        <TextBoxbottom>Place to practice</TextBoxbottom>
+      </TextBox>
       <Sitebox>
         <SiteImgBox>
           <img

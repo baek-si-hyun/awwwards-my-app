@@ -1,7 +1,4 @@
-import {
-  ICoinHttpTickers,
-  ICoinSocketTickers,
-} from "../../../../interface/icoin";
+import { ICoinHttpTickers, ICoinSocketTickers } from "../../../interface/icoin";
 
 const AccTradePrice24h = ({
   coinName,
@@ -19,9 +16,7 @@ const AccTradePrice24h = ({
       .toString()
       .replace(/\B(?=(\d{3})+(?!\d))/g, ",")!;
 
-    return (
-        <span>₩{accTradePrice24h || 0}</span>
-    );
+    return <span>₩{accTradePrice24h || 0}</span>;
   }
   return <></>;
 };

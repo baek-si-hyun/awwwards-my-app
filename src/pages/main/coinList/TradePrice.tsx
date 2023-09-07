@@ -1,7 +1,4 @@
-import {
-  ICoinHttpTickers,
-  ICoinSocketTickers,
-} from "../../../../interface/icoin";
+import { ICoinHttpTickers, ICoinSocketTickers } from "../../../interface/icoin";
 
 const TradePrice = ({
   coinName,

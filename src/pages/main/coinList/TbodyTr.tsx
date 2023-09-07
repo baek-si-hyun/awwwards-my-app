@@ -1,10 +1,5 @@
 import styled from "styled-components";
-import { ICoinHttpTickers, ICoinListMerge } from "../../../../interface/icoin";
-import { Tr } from "../CoinList";
-import {
-  fetchCoinTickers,
-  useCoinTickersSocket,
-} from "../../../../services/coinApi";
+import { Tr } from "./CoinList";
 import React, { useEffect, useState } from "react";
 import SkeletonUI from "./SkeletonUI";
 import { useQuery } from "@tanstack/react-query";
@@ -14,6 +9,8 @@ import CirculatingSupply from "./CirculatingSupply";
 import AccTradePrice24h from "./AccTradePrice24h";
 import AccTradeVolume24h from "./AccTradeVolume24h";
 import Chart200Days from "./Chart200Days";
+import { ICoinHttpTickers, ICoinListMerge } from "../../../interface/icoin";
+import { fetchCoinTickers, useCoinTickersSocket } from "../../../services/coinApi";
 
 export const Td = styled.td`
   text-align: end;

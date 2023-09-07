@@ -40,7 +40,15 @@
   font-family: "Yasashii";
   src: url("../url/YasashiiBold.ttf") format("truetype");
 }
-
+@font-face {
+  font-family: "Suisse";
+  src: url("https://db.onlinewebfonts.com/t/17241fb9c2ffb3ec11eba762e771435f.eot");
+  src: url("https://db.onlinewebfonts.com/t/17241fb9c2ffb3ec11eba762e771435f.eot?#iefix")format("embedded-opentype"),
+  url("https://db.onlinewebfonts.com/t/17241fb9c2ffb3ec11eba762e771435f.woff2")format("woff2"),
+  url("https://db.onlinewebfonts.com/t/17241fb9c2ffb3ec11eba762e771435f.woff")format("woff"),
+  url("https://db.onlinewebfonts.com/t/17241fb9c2ffb3ec11eba762e771435f.ttf")format("truetype"),
+  url("https://db.onlinewebfonts.com/t/17241fb9c2ffb3ec11eba762e771435f.svg#Suisse Int'l Book")format("svg");
+}
 @font-face {
   font-family: "Pretendard";
   font-style: normal;

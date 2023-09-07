@@ -106,8 +106,6 @@ function Footer() {
         <Text>
           <Ko>
             <span>
-              awwwards, YoutubeMusic, coinmarketcap의 디자인을 참고하였습니다.
-              <br />
               redux-toolkit, styled-components, @tanstack/react-query 가
               사용되었습니다. 영어는 번역기의 도움을 받았으며, <br />
               상업적인 목적이 아닌 취업 목적의 프로젝트임을 알려드립니다.
@@ -115,8 +113,6 @@ function Footer() {
           </Ko>
           <En>
             <span>
-              I referred to the designs of awwwards, YoutubeMusic and
-              coinmarketcap. <br />
               redux-toolkit, styled-components, @tanstack/react-query used.
               English was helped by a translator, <br />
               and we inform you that this project is for employment purposes,

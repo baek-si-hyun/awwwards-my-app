@@ -8,16 +8,13 @@ import styled from "styled-components";
 import React from "react";
 import MusicSet from "./MusicSet";
 import { useDispatch, useSelector } from "react-redux";
-import { INewjeansListData } from "../../../../interface/imusic";
-import { newJeansRedux } from "../../../../redux/slices/newJeansListSlice";
-import {
-  Board,
-  Container,
-  Card,
-  CardItem,
-  ImgDiv,
-  Title,
-} from "./common/boardsCommon";
+import { INewjeansListData } from "../../../interface/imusic";
+import { newJeansRedux } from "../../../redux/slices/newJeansListSlice";
+import { Board, Card, CardItem, ImgDiv, Title } from "./common/boardsCommon";
+
+const Container = styled.div`
+  width: 100%;
+`;
 
 const Img = styled.img`
   width: clamp(40px, 4vw, 128px);

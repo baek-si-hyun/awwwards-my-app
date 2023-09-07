@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import { IResize } from "../../../interface/iproject";
 
 const Container = styled.div`
-  padding: 6vw 0;
+  padding: 1vw 0 6vw 0;
   display: flex;
   justify-content: center;
   @media (max-width: 1000px) {

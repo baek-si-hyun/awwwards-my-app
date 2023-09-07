@@ -1,19 +1,20 @@
 import styled from "styled-components";
-import NewJeans from "./boards/NewJeans";
-import FeaturedSong from "./boards/FeaturedSong";
-
+import NewJeans from "./NewJeans";
+import FeaturedSong from "./FeaturedSong";
+import { TextBox, TextBoxMiddle, TextBoxbottom } from "../../common/mainCommon";
 
 const Container = styled.div`
   width: 100%;
+  padding: 7vw 0;
 `;
 const Inner = styled.div`
   width: 100%;
-  border-radius: 20px 20px 0 0;
-  overflow: hidden;
 `;
 
 const InnerMusicBox1 = styled.div`
   position: relative;
+  border-radius: 4.5rem 4.5rem 0 0;
+  overflow: hidden;
 `;
 const MusicImg = styled.img`
   width: 100%;
@@ -47,6 +48,7 @@ const InnerMusicBox2 = styled.div`
   align-items: center;
   gap: 7vw;
   color: #fff;
+  font-family: "Pretendard", sans-serif;
   p {
     font-size: 2.2vw;
     text-align: center;
@@ -84,7 +86,7 @@ const AllMusicTextBox = styled.div`
 const InnerMusicBox4 = styled.div`
   background: #000;
   padding: 8vw 0;
-  border-radius: 0 0 20px 20px;
+  border-radius: 0 0 4.5rem 4.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -105,6 +107,12 @@ function Music() {
   return (
     <Container>
       <Inner>
+        <TextBox>
+          <TextBoxMiddle>Music List</TextBoxMiddle>
+          <TextBoxbottom>
+            사이트를 보시면서 음악을 감상할 수 있습니다.
+          </TextBoxbottom>
+        </TextBox>
         <InnerMusicBox1>
           <MusicImg
             src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/ee6e50a8-17dd-458b-29e3-ad794eeca500/public"
@@ -120,10 +128,10 @@ function Music() {
         </InnerMusicBox1>
         <InnerMusicBox2>
           <div>
-            <p>"You can listen to recommended songs."</p>
+            <p>순서대로 자동재생됩니다. 제가 추천하는 노래를 들어보세요.</p>
           </div>
           <div>
-            <p>Recommended List</p>
+            <p>재생 순서를 바꾸셔도 좋습니다.</p>
           </div>
           <NewJeans />
         </InnerMusicBox2>

@@ -64,11 +64,7 @@ const Textarea = styled.textarea`
     outline: none;
   }
 `;
-interface iinaisd {
-  service: string | undefined;
-  template: string | undefined;
-  key: string | undefined;
-}
+
 function EmailJs() {
   const form = useRef() as any;
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {

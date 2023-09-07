@@ -1,7 +1,5 @@
-import {
-  ICoinHttpTickers,
-  ICoinSocketTickers,
-} from "../../../../interface/icoin";
+
+import { ICoinHttpTickers, ICoinSocketTickers } from "../../../interface/icoin";
 import { Icons, TdChangeDiv } from "./TbodyTr";
 
 const ChangePrice = ({
@@ -23,7 +21,8 @@ const ChangePrice = ({
       "EVEN"
     )?.change!;
     const changeRate: number = tickerList.find(
-      (ticker) => ticker.market === coinName && ticker,0
+      (ticker) => ticker.market === coinName && ticker,
+      0
     )?.change_rate!;
     return (
       <TdChangeDiv change={change || "EVEN"}>

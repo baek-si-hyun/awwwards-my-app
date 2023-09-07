@@ -1,7 +1,5 @@
-import {
-  ICoinHttpTickers,
-  ICoinSocketTickers,
-} from "../../../../interface/icoin";
+import { ICoinHttpTickers, ICoinSocketTickers } from "../../../interface/icoin";
+
 
 const AccTradeVolume24h = ({
   coinName,
@@ -20,9 +18,9 @@ const AccTradeVolume24h = ({
       .replace(/\B(?=(\d{3})+(?!\d))/g, ",")!;
 
     return (
-        <span>
-          {accTradeVolume24h || 0} {coinName.substring(4) || ""}
-        </span>
+      <span>
+        {accTradeVolume24h || 0} {coinName.substring(4) || ""}
+      </span>
     );
   }
   return <></>;

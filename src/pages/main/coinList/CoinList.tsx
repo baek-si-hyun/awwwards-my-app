@@ -2,18 +2,20 @@
 import { useQuery } from "@tanstack/react-query";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import Colgroup from "./coinList/ColGroup";
-import TheadTr from "./coinList/TheadTr";
-import TbodyTr from "./coinList/TbodyTr";
-import { ICoinHistory, ICoinListMerge, ICoins } from "../../../interface/icoin";
+import Colgroup from "./ColGroup";
+import TheadTr from "./TheadTr";
+import TbodyTr from "./TbodyTr";
 import {
   circulatingSupply,
   fetchCoinHistory,
   fetchCoins,
 } from "../../../services/coinApi";
+import { ICoinHistory, ICoinListMerge, ICoins } from "../../../interface/icoin";
+import { TextBox, TextBoxMiddle, TextBoxbottom } from "../../common/mainCommon";
 
 const Container = styled.div`
   width: 100%;
+  padding: 7vw 2.7vw;
 `;
 
 const Inner = styled.div`
@@ -140,8 +142,14 @@ function CoinList() {
   }, [historyData]);
 
   return (
-    <Container>
+    <Container id="about">
       <Inner>
+        <TextBox>
+          <TextBoxMiddle>CoinList</TextBoxMiddle>
+          <TextBoxbottom>
+            Combination of UPBIT Websocket, React-Query
+          </TextBoxbottom>
+        </TextBox>
         <TableBox>
           <ListTable>
             <Colgroup />

@@ -3,7 +3,6 @@ import {
   Container,
   Inner,
   TextBox,
-  TextBoxTop,
   TextBoxbottom,
   TextBoxMiddle,
 } from "../../common/mainCommon";
@@ -24,14 +23,11 @@ function Projects() {
     <Container id="projects">
       <Inner>
         <TextBox>
-          <TextBoxTop>
-            <h2>Si Hyun Baek</h2>
-          </TextBoxTop>
           <TextBoxMiddle>
             <h3>projects</h3>
           </TextBoxMiddle>
           <TextBoxbottom>
-            <span>Projects are constantly improving!</span>
+            지금까지 공부하며 만든 프로젝트들입니다.
           </TextBoxbottom>
         </TextBox>
         <GridBox>

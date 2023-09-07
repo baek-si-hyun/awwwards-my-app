@@ -2,16 +2,16 @@
 import { useEffect, useState } from "react";
 import ReactPlayer from "react-player";
 import { shallowEqual, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import {
   IFeaturedListData,
   IIndex,
   INewjeansListData,
   IPlayList,
   IVideoInfo,
-} from "../../../../interface/imusic";
-import { useDispatch } from "react-redux";
-import { videoInfoRedux } from "../../../../redux/slices/playingVideoInfoSlice";
-import { controlRedux } from "../../../../redux/slices/controlPlayListSlice";
+} from "../../../interface/imusic";
+import { controlRedux } from "../../../redux/slices/controlPlayListSlice";
+import { videoInfoRedux } from "../../../redux/slices/playingVideoInfoSlice";
 
 function MusicPlayer() {
   const videoInfo = useSelector(

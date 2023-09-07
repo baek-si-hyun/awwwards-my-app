@@ -8,17 +8,11 @@ import styled from "styled-components";
 import React from "react";
 import MusicSet from "./MusicSet";
 import { useSelector } from "react-redux";
-import { IFeaturedListData } from "../../../../interface/imusic";
 import { useDispatch } from "react-redux";
-import { featuredRedux } from "../../../../redux/slices/featuredListSlice";
-import {
-  Board,
-  Container,
-  Card,
-  CardItem,
-  ImgDiv,
-  Title,
-} from "./common/boardsCommon";
+import { IFeaturedListData } from "../../../interface/imusic";
+import { featuredRedux } from "../../../redux/slices/featuredListSlice";
+import { Container } from "../../common/mainCommon";
+import { Board, Card, CardItem, ImgDiv, Title } from "./common/boardsCommon";
 
 const Img = styled.img`
   width: clamp(40px, 2.5vw, 80px);

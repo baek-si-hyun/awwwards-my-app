@@ -28,9 +28,10 @@ export const TextBoxTop = styled.div`
   }
 `;
 export const TextBoxMiddle = styled.div`
-  font-size: 9vw;
-  font-weight: 900;
+  text-align: center;
+  font-size: 7rem;
   text-transform: uppercase;
+  font-weight: 600;
   @media (max-width: 429px) {
     & {
       font-size: 3rem;
@@ -38,10 +39,10 @@ export const TextBoxMiddle = styled.div`
   }
 `;
 export const TextBoxbottom = styled.div`
-  text-align: center;
   margin-top: 0.9vw;
   font-size: 1.3vw;
   line-height: 1.4;
+  font-family: "Pretendard", sans-serif;
   @media (max-width: 429px) {
     & {
       font-size: 0.8rem;
