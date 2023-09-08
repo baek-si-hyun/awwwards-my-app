@@ -1,14 +1,15 @@
 {
   "files": {
-    "main.css": "/awwwards-my-app/static/css/main.05c417ed.css",
-    "main.js": "/awwwards-my-app/static/js/main.2c977dbb.js",
-    "static/js/281.667ec591.chunk.js": "/awwwards-my-app/static/js/281.667ec591.chunk.js",
-    "static/js/258.2b9727a6.chunk.js": "/awwwards-my-app/static/js/258.2b9727a6.chunk.js",
-    "static/js/958.fe2146aa.chunk.js": "/awwwards-my-app/static/js/958.fe2146aa.chunk.js",
-    "static/js/642.81c3b958.chunk.js": "/awwwards-my-app/static/js/642.81c3b958.chunk.js",
+    "main.css": "/awwwards-my-app/static/css/main.898e901c.css",
+    "main.js": "/awwwards-my-app/static/js/main.eb55cd5d.js",
+    "static/js/673.15761b96.chunk.js": "/awwwards-my-app/static/js/673.15761b96.chunk.js",
+    "static/js/258.ee44872a.chunk.js": "/awwwards-my-app/static/js/258.ee44872a.chunk.js",
+    "static/js/79.f699cc1c.chunk.js": "/awwwards-my-app/static/js/79.f699cc1c.chunk.js",
+    "static/js/768.53abb398.chunk.js": "/awwwards-my-app/static/js/768.53abb398.chunk.js",
+    "static/js/642.e24bc147.chunk.js": "/awwwards-my-app/static/js/642.e24bc147.chunk.js",
     "static/js/404.e13ce7cc.chunk.js": "/awwwards-my-app/static/js/404.e13ce7cc.chunk.js",
-    "static/js/351.c0960cc5.chunk.js": "/awwwards-my-app/static/js/351.c0960cc5.chunk.js",
-    "static/js/936.e8dcff03.chunk.js": "/awwwards-my-app/static/js/936.e8dcff03.chunk.js",
+    "static/js/418.2a504b1e.chunk.js": "/awwwards-my-app/static/js/418.2a504b1e.chunk.js",
+    "static/js/496.d73d6094.chunk.js": "/awwwards-my-app/static/js/496.d73d6094.chunk.js",
     "static/media/Pretendard-Regular.otf": "/awwwards-my-app/static/media/Pretendard-Regular.de88013f2ea98a04dede.otf",
     "static/media/Pretendard-Regular.woff": "/awwwards-my-app/static/media/Pretendard-Regular.ab56c53f21ca6b32d15f.woff",
     "static/media/Pretendard-Regular.woff2": "/awwwards-my-app/static/media/Pretendard-Regular.6090e6b5524796768e78.woff2",
@@ -33,18 +34,19 @@
     "static/media/Helvetica Neue Medium Extended.ttf": "/awwwards-my-app/static/media/Helvetica Neue Medium Extended.372d58a9bf10285baebe.ttf",
     "static/media/ApercuPro-Bold.woff2": "/awwwards-my-app/static/media/ApercuPro-Bold.7fbfd7d508c080196fbe.woff2",
     "index.html": "/awwwards-my-app/index.html",
-    "main.05c417ed.css.map": "/awwwards-my-app/static/css/main.05c417ed.css.map",
-    "main.2c977dbb.js.map": "/awwwards-my-app/static/js/main.2c977dbb.js.map",
-    "281.667ec591.chunk.js.map": "/awwwards-my-app/static/js/281.667ec591.chunk.js.map",
-    "258.2b9727a6.chunk.js.map": "/awwwards-my-app/static/js/258.2b9727a6.chunk.js.map",
-    "958.fe2146aa.chunk.js.map": "/awwwards-my-app/static/js/958.fe2146aa.chunk.js.map",
-    "642.81c3b958.chunk.js.map": "/awwwards-my-app/static/js/642.81c3b958.chunk.js.map",
+    "main.898e901c.css.map": "/awwwards-my-app/static/css/main.898e901c.css.map",
+    "main.eb55cd5d.js.map": "/awwwards-my-app/static/js/main.eb55cd5d.js.map",
+    "673.15761b96.chunk.js.map": "/awwwards-my-app/static/js/673.15761b96.chunk.js.map",
+    "258.ee44872a.chunk.js.map": "/awwwards-my-app/static/js/258.ee44872a.chunk.js.map",
+    "79.f699cc1c.chunk.js.map": "/awwwards-my-app/static/js/79.f699cc1c.chunk.js.map",
+    "768.53abb398.chunk.js.map": "/awwwards-my-app/static/js/768.53abb398.chunk.js.map",
+    "642.e24bc147.chunk.js.map": "/awwwards-my-app/static/js/642.e24bc147.chunk.js.map",
     "404.e13ce7cc.chunk.js.map": "/awwwards-my-app/static/js/404.e13ce7cc.chunk.js.map",
-    "351.c0960cc5.chunk.js.map": "/awwwards-my-app/static/js/351.c0960cc5.chunk.js.map",
-    "936.e8dcff03.chunk.js.map": "/awwwards-my-app/static/js/936.e8dcff03.chunk.js.map"
+    "418.2a504b1e.chunk.js.map": "/awwwards-my-app/static/js/418.2a504b1e.chunk.js.map",
+    "496.d73d6094.chunk.js.map": "/awwwards-my-app/static/js/496.d73d6094.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.05c417ed.css",
-    "static/js/main.2c977dbb.js"
+    "static/css/main.898e901c.css",
+    "static/js/main.eb55cd5d.js"
   ]
 }
