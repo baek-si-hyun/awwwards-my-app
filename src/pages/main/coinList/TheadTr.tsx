@@ -29,6 +29,10 @@ const NameTh = styled.th`
   }
 `;
 const Th = styled.th`
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  background-color: #f8f8f8;
   text-align: end;
   vertical-align: middle;
   padding: 10px;

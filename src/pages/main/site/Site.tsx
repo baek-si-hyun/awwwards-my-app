@@ -2,17 +2,11 @@ import styled from "styled-components";
 import { TextBox, TextBoxMiddle, TextBoxbottom } from "../../common/mainCommon";
 
 const Container = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-direction: column;
+  padding: 6vw 2.7vw 2.7vw 2.7vw;
   gap: 1.4vw;
   clear: both;
-  @media (max-width: 650px) {
-    & {
-      width: 100%;
-      grid-template-columns: repeat(1, 1fr);
-      gap: 3rem;
-    }
-  }
 `;
 const Sitebox = styled.div`
   width: 30.6vw;
@@ -36,6 +30,18 @@ const SiteImgBox = styled.div`
     width: 100%;
     height: 100%;
     object-fit: fill;
+  }
+`;
+
+const FlexBox = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  @media (max-width: 650px) {
+    & {
+      width: 100%;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 3rem;
+    }
   }
 `;
 
@@ -161,129 +167,139 @@ function Site() {
   return (
     <Container>
       <TextBox>
-        <TextBoxMiddle>just dummy</TextBoxMiddle>
-        <TextBoxbottom>Place to practice</TextBoxbottom>
+        <TextBoxMiddle>reference site</TextBoxMiddle>
+        <TextBoxbottom>
+          프로젝트를 제작하며 참고한 사이트들 입니다.
+        </TextBoxbottom>
       </TextBox>
-      <Sitebox>
-        <SiteImgBox>
-          <img
-            src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/49cd31ba-6549-4f5c-823e-06ee522be100/public"
-            alt="awwwards"
-            loading="lazy"
-            decoding="async"
-          />
-          <HoverBox>
-            <SenterBox href="https://www.awwwards.com/" target="_blank">
-              <span className="material-symbols-outlined">arrow_right_alt</span>
-              &nbsp;
-              <div>
-                <span>Visit Site</span>
-              </div>
-            </SenterBox>
-            <BottomBox>
-              <BottomBoxTop>WEBSITE</BottomBoxTop>
-              <BottomBoxBottom>awwwards</BottomBoxBottom>
-            </BottomBox>
-          </HoverBox>
-        </SiteImgBox>
-        <SiteTextBox>
-          <div>
-            <small>by</small>
-          </div>
-          <InnerFigure>
+      <FlexBox>
+        <Sitebox>
+          <SiteImgBox>
             <img
-              src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/e1f7fdb0-746c-4598-7dd0-c37a0b344d00/icon"
-              style={{ width: 30, height: 30, borderRadius: 20 }}
-              alt="awwwardicon"
+              src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/49cd31ba-6549-4f5c-823e-06ee522be100/public"
+              alt="awwwards"
               loading="lazy"
               decoding="async"
             />
-            <figcaption>
-              <span>awwwards</span>
-            </figcaption>
-          </InnerFigure>
-        </SiteTextBox>
-      </Sitebox>
-      <Sitebox>
-        <SiteImgBox>
-          <SiteImg
-            src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/0b467ebf-f1d9-46f9-37d9-e4b9c08ac600/public"
-            alt="upbit"
-            loading="lazy"
-            decoding="async"
-          />
-          <HoverBox>
-            <SenterBox href="https://upbit.com/home" target="_blank">
-              <span className="material-symbols-outlined">arrow_right_alt</span>
-              &nbsp;
-              <div>
-                <span>Visit Site</span>
-              </div>
-            </SenterBox>
-            <BottomBox>
-              <BottomBoxTop>WEBSITE</BottomBoxTop>
-              <BottomBoxBottom>UPbit</BottomBoxBottom>
-            </BottomBox>
-          </HoverBox>
-        </SiteImgBox>
-        <SiteTextBox>
-          <div>
-            <small>by</small>
-          </div>
-          <InnerFigure>
-            <img
-              src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/aaca2829-bf16-4dfc-1bcd-d50e53b57a00/icon"
-              style={{ width: 30, height: 30, borderRadius: 20 }}
-              alt="upbiticon"
+            <HoverBox>
+              <SenterBox href="https://www.awwwards.com/" target="_blank">
+                <span className="material-symbols-outlined">
+                  arrow_right_alt
+                </span>
+                &nbsp;
+                <div>
+                  <span>Visit Site</span>
+                </div>
+              </SenterBox>
+              <BottomBox>
+                <BottomBoxTop>WEBSITE</BottomBoxTop>
+                <BottomBoxBottom>awwwards</BottomBoxBottom>
+              </BottomBox>
+            </HoverBox>
+          </SiteImgBox>
+          <SiteTextBox>
+            <div>
+              <small>by</small>
+            </div>
+            <InnerFigure>
+              <img
+                src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/e1f7fdb0-746c-4598-7dd0-c37a0b344d00/icon"
+                style={{ width: 30, height: 30, borderRadius: 20 }}
+                alt="awwwardicon"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>
+                <span>awwwards</span>
+              </figcaption>
+            </InnerFigure>
+          </SiteTextBox>
+        </Sitebox>
+        <Sitebox>
+          <SiteImgBox>
+            <SiteImg
+              src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/0b467ebf-f1d9-46f9-37d9-e4b9c08ac600/public"
+              alt="upbit"
               loading="lazy"
               decoding="async"
             />
-            <figcaption>
-              <span>UPbit</span>
-            </figcaption>
-          </InnerFigure>
-        </SiteTextBox>
-      </Sitebox>
-      <Sitebox>
-        <SiteImgBox>
-          <SiteImg
-            src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/d8446547-c0c4-4aa5-aace-5592214d5700/public"
-            alt="investing"
-            loading="lazy"
-            decoding="async"
-          />
-          <HoverBox>
-            <SenterBox href="https://kr.investing.com/" target="_blank">
-              <span className="material-symbols-outlined">arrow_right_alt</span>
-              &nbsp;
-              <div>
-                <span>Visit Site</span>
-              </div>
-            </SenterBox>
-            <BottomBox>
-              <BottomBoxTop>WEBSITE</BottomBoxTop>
-              <BottomBoxBottom>INVESTING</BottomBoxBottom>
-            </BottomBox>
-          </HoverBox>
-        </SiteImgBox>
-        <SiteTextBox>
-          <div>
-            <small>by</small>
-          </div>
-          <InnerFigure>
-            <img
-              src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/a5badb6f-87f1-4735-072d-9c270ab6ea00/icon"
-              style={{ width: 30, height: 30, borderRadius: 20 }}
-              alt="investingicon"
+            <HoverBox>
+              <SenterBox href="https://upbit.com/home" target="_blank">
+                <span className="material-symbols-outlined">
+                  arrow_right_alt
+                </span>
+                &nbsp;
+                <div>
+                  <span>Visit Site</span>
+                </div>
+              </SenterBox>
+              <BottomBox>
+                <BottomBoxTop>WEBSITE</BottomBoxTop>
+                <BottomBoxBottom>UPbit</BottomBoxBottom>
+              </BottomBox>
+            </HoverBox>
+          </SiteImgBox>
+          <SiteTextBox>
+            <div>
+              <small>by</small>
+            </div>
+            <InnerFigure>
+              <img
+                src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/aaca2829-bf16-4dfc-1bcd-d50e53b57a00/icon"
+                style={{ width: 30, height: 30, borderRadius: 20 }}
+                alt="upbiticon"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>
+                <span>UPbit</span>
+              </figcaption>
+            </InnerFigure>
+          </SiteTextBox>
+        </Sitebox>
+        <Sitebox>
+          <SiteImgBox>
+            <SiteImg
+              src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/b55e5689-87bc-4c9d-5ab6-f151077beb00/public"
+              alt="investing"
               loading="lazy"
               decoding="async"
             />
-            <figcaption>
-              <span>INVESTING</span>
-            </figcaption>
-          </InnerFigure>
-        </SiteTextBox>
-      </Sitebox>
+            <HoverBox>
+              <SenterBox href="https://coinmarketcap.com/ko/" target="_blank">
+                <span className="material-symbols-outlined">
+                  arrow_right_alt
+                </span>
+                &nbsp;
+                <div>
+                  <span>Visit Site</span>
+                </div>
+              </SenterBox>
+              <BottomBox>
+                <BottomBoxTop>WEBSITE</BottomBoxTop>
+                <BottomBoxBottom>CoinMarketCap</BottomBoxBottom>
+              </BottomBox>
+            </HoverBox>
+          </SiteImgBox>
+          <SiteTextBox>
+            <div>
+              <small>by</small>
+            </div>
+            <InnerFigure>
+              <img
+                src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/00f10618-d1f1-42ce-0ede-651abcd38200/icon"
+                style={{ width: 30, height: 30, borderRadius: 20 }}
+                alt="investingicon"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>
+                <span>CoinMarketCap</span>
+              </figcaption>
+            </InnerFigure>
+          </SiteTextBox>
+        </Sitebox>
+      </FlexBox>
     </Container>
   );
 }

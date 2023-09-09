@@ -28,9 +28,9 @@ export interface IPathname {
   pathname: string;
 }
 export interface IMainPosition {
-  header: boolean;
+  home: boolean;
   projects: boolean;
-  about: boolean;
+  music: boolean;
   schedule: boolean;
 }
 export interface IRouterPosition {

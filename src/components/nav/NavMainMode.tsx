@@ -11,18 +11,18 @@ function NavMainMode({
   return (
     <NavBox onClick={navHandler}>
       <NavItem mainPosition={mainPosition}>
-        <Link href="#header" className="nav-item">
-          Home
+        <Link href="#home" className="nav-item">
+        home
         </Link>
       </NavItem>
       <NavItem mainPosition={mainPosition}>
         <Link href="#projects" className="nav-item">
-          Projects
+        Projects
         </Link>
       </NavItem>
       <NavItem mainPosition={mainPosition}>
-        <Link href="#about" className="nav-item">
-          Dummy
+        <Link href="#music" className="nav-item">
+          Music
         </Link>
       </NavItem>
       <NavItem mainPosition={mainPosition}>

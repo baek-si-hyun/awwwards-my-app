@@ -16,10 +16,10 @@ const Container = styled.div`
 `;
 
 const Row = styled.div`
-  width: 185.5rem;
+  width: 203.9rem;
   position: relative;
   display: grid;
-  grid-template-columns: 200px repeat(17, 161px);
+  grid-template-columns: 200px repeat(19, 161px);
   grid-template-rows: clamp(60px, 5vw, 100px);
   background-image: linear-gradient(
     to right,
@@ -101,10 +101,14 @@ const AbsoluteBox = styled.div<{ indexNum: number }>`
   ${(props) => props.indexNum === 7 && "left:1860px;gap:150px;"};
   ${(props) => props.indexNum === 8 && "left:1900px;gap:110px;"};
   ${(props) =>
-    props.indexNum === 9 && "left:2350px;gap:150px;background-color:#7e0303;"};
+    props.indexNum === 9 && "left:2350px;gap:150px;background-color:#077e03;"};
   ${(props) =>
-    props.indexNum === 10 && "left:2200px;gap:500px;background-color:#7e0303;"};
-  ${(props) => props.indexNum === 11 && "display: none;"};
+    props.indexNum === 10 && "left:2200px;gap:140px;background-color:#ca0101;"};
+  ${(props) =>
+    props.indexNum === 11 && "left:2620px;gap:150px;background-color:#077e03;"};
+  ${(props) =>
+    props.indexNum === 12 && "left:2620px;gap:60px;background-color:#077e03;"};
+  ${(props) => props.indexNum === 13 && "display: none;"};
 `;
 const Inner = styled.div`
   overflow-x: scroll;

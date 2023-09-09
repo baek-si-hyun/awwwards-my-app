@@ -4,7 +4,7 @@ export const Container = styled.div`
 `;
 
 export const Inner = styled.div`
-  padding: 3vw 2.7vw;
+  padding: 3vw 2.7vw 6vw 2.7vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,9 +29,14 @@ export const TextBoxTop = styled.div`
 `;
 export const TextBoxMiddle = styled.div`
   text-align: center;
-  font-size: 7rem;
+  font-size: 6vw;
   text-transform: uppercase;
   font-weight: 600;
+  @media (max-width: 650px) {
+    & {
+      font-size: 3rem;
+    }
+  }
   @media (max-width: 429px) {
     & {
       font-size: 3rem;
@@ -40,9 +45,15 @@ export const TextBoxMiddle = styled.div`
 `;
 export const TextBoxbottom = styled.div`
   margin-top: 0.9vw;
+  text-align: center;
   font-size: 1.3vw;
-  line-height: 1.4;
+  line-height: 2;
   font-family: "Pretendard", sans-serif;
+  @media (max-width: 650px) {
+    & {
+      font-size: 1rem;
+    }
+  }
   @media (max-width: 429px) {
     & {
       font-size: 0.8rem;

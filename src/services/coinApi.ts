@@ -86,8 +86,8 @@ export function useCoinTickersSocket(coinList: string[]) {
     () => fetchCoinTickersSocket(),
     {
       enabled: !!coinList,
-      refetchInterval: 500,
-      cacheTime: 500,
+      refetchInterval: 1000,
+      cacheTime: 1000,
     }
   );
 }

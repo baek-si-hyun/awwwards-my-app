@@ -50,6 +50,7 @@ const NavBoxLeft = styled.div`
     }
   }
 `;
+
 const NavBoxInner = styled.div`
   display: flex;
 `;
@@ -168,9 +169,9 @@ function Nav() {
   };
 
   const [mainPosition, setMainPosition] = useState({
-    header: true,
+    home: true,
     projects: false,
-    about: false,
+    music: false,
     schedule: false,
   });
 

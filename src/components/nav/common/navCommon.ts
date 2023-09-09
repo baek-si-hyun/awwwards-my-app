@@ -79,10 +79,9 @@ export const Link = styled.a`
 export const NavItem = styled(NavItemCommon)<{ mainPosition: IMainPosition }>`
   will-change: background-color, color;
   :nth-child(1) {
-    font-weight: 600;
     background-color: ${(props) =>
-      props.mainPosition.header ? "#d3d3d3" : "#3e3e3e"};
-    color: ${(props) => (props.mainPosition.header ? "#000" : "inherit")};
+      props.mainPosition.home ? "#d3d3d3" : "#3e3e3e"};
+    color: ${(props) => (props.mainPosition.home ? "#000" : "inherit")};
   }
   :nth-child(2) {
     background-color: ${(props) =>
@@ -91,8 +90,8 @@ export const NavItem = styled(NavItemCommon)<{ mainPosition: IMainPosition }>`
   }
   :nth-child(3) {
     background-color: ${(props) =>
-      props.mainPosition.about ? "#d3d3d3" : "#3e3e3e"};
-    color: ${(props) => (props.mainPosition.about ? "#000" : "inherit")};
+      props.mainPosition.music ? "#d3d3d3" : "#3e3e3e"};
+    color: ${(props) => (props.mainPosition.music ? "#000" : "inherit")};
   }
   :nth-child(4) {
     background-color: ${(props) =>

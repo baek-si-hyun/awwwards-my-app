@@ -50,9 +50,9 @@ const InnerMusicBox2 = styled.div`
   color: #fff;
   font-family: "Pretendard", sans-serif;
   p {
-    font-size: 2.2vw;
+    font-size: 2vw;
     text-align: center;
-    @media (max-width: 429px) {
+    @media (max-width: 430px) {
       & {
         font-size: 1rem;
       }
@@ -103,16 +103,31 @@ const InnerMusicBox4 = styled.div`
   }
 `;
 
+const StickyTextBox = styled(TextBox)`
+  position: sticky;
+  top: 0;
+  z-index: -8888;
+`;
 function Music() {
   return (
-    <Container>
+    <Container id="music">
       <Inner>
-        <TextBox>
+        <StickyTextBox>
           <TextBoxMiddle>Music List</TextBoxMiddle>
           <TextBoxbottom>
+            <br />
             사이트를 보시면서 음악을 감상할 수 있습니다.
+            <br />
+            <br />
+            최근에 제일 핫한 "뉴진스"와 제 취향의 노래들입니다.
+            <br />
+            <br />
+            뮤직 리스트는 위에서 부터 차례대로 재생됩니다.
+            <br />
+            <br />
+            재생 순서를 바꾸실수 있습니다.
           </TextBoxbottom>
-        </TextBox>
+        </StickyTextBox>
         <InnerMusicBox1>
           <MusicImg
             src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/ee6e50a8-17dd-458b-29e3-ad794eeca500/public"
@@ -128,10 +143,10 @@ function Music() {
         </InnerMusicBox1>
         <InnerMusicBox2>
           <div>
-            <p>순서대로 자동재생됩니다. 제가 추천하는 노래를 들어보세요.</p>
+            <p>너무 시끄럽지 않은 노래들로 준비했습니다.</p>
           </div>
           <div>
-            <p>재생 순서를 바꾸셔도 좋습니다.</p>
+            <p>제가 추천하는 노래를 들어보세요.</p>
           </div>
           <NewJeans />
         </InnerMusicBox2>

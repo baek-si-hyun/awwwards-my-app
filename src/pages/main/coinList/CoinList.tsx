@@ -15,7 +15,8 @@ import { TextBox, TextBoxMiddle, TextBoxbottom } from "../../common/mainCommon";
 
 const Container = styled.div`
   width: 100%;
-  padding: 7vw 2.7vw;
+  padding: 4vw 2.7vw 7vw 2.7vw;
+  background-color: #f8f8f8;
 `;
 
 const Inner = styled.div`
@@ -33,6 +34,7 @@ const TableBox = styled.div`
 const ListTable = styled.table`
   width: 100%;
   font-weight: 900;
+
   @media (max-width: 650px) {
     & {
       font-size: 2.3vw;
@@ -142,7 +144,7 @@ function CoinList() {
   }, [historyData]);
 
   return (
-    <Container id="about">
+    <Container>
       <Inner>
         <TextBox>
           <TextBoxMiddle>CoinList</TextBoxMiddle>

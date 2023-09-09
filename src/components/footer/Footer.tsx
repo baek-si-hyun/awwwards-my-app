@@ -1,25 +1,32 @@
 import styled from "styled-components";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { UnderLine } from "../../pages/common/mainCommon";
+import { useSelector } from "react-redux";
+import { IResize } from "../../interface/iproject";
+import Marquee from "react-fast-marquee";
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 3vw;
-  padding: 8vw 2.7vw 8vw 2.7vw;
+  padding: 8vw 0 8vw 0;
+  background-color: #f8f8f8;
+  border-radius: 30px 30px 0 0;
+  box-shadow: 0 0 3rem rgba(0, 0, 0, 0.1);
   @media (max-width: 1024px) {
     & {
-      padding: 8vw 2.7vw 9rem 2.7vw;
+      padding: 6vw 2.7vw 9rem 2.7vw;
     }
   }
 `;
-const Logo = styled.div``;
+const Logo = styled.div`
+  padding: 0 2.7vw 0 2.7vw;
+`;
 const TextAndNav = styled.div`
   display: flex;
   gap: 10vw;
-  ${UnderLine}
-  padding-bottom: 3vw;
+  padding: 0 2.7vw 1vw 2.7vw;
 `;
 const Text = styled.div`
   display: flex;
@@ -28,7 +35,7 @@ const Text = styled.div`
   line-height: 1.3;
   width: 60vw;
   font-size: 1vw;
-  @media (max-width: 429px) {
+  @media (max-width: 430px) {
     & {
       font-size: 0.5rem;
     }
@@ -43,6 +50,15 @@ const En = styled.div`
       display: none;
     }
   }
+`;
+const Wrap = styled.div``;
+const InnerWrap = styled(Marquee)`
+
+  color: #af2f00;
+  padding: 0.5rem 0;
+`;
+const MarqueeText = styled.div`
+  overflow: hidden;
 `;
 const Nav = styled.div`
   display: flex;
@@ -74,6 +90,7 @@ const LinkBar = styled.div`
   justify-content: flex-end;
   gap: 1vw;
   font-size: 0.9rem;
+  padding: 0 2.7vw 0 2.7vw;
   & > div {
     font-weight: 900;
   }
@@ -95,6 +112,30 @@ const LinkItem = styled.a`
 `;
 
 function Footer() {
+  const getResizeWidth = useSelector(
+    ({ resizeWidthSlice }: { resizeWidthSlice: IResize }) => {
+      return resizeWidthSlice.resizeWidth;
+    }
+  );
+  const [speed, setSpeed] = useState(130);
+
+  useEffect(() => {
+    const graphMode = () => {
+      if (getResizeWidth > 1280) {
+        setSpeed(130);
+      }
+      if (getResizeWidth <= 1280) {
+        setSpeed(90);
+      }
+      if (getResizeWidth <= 768) {
+        setSpeed(60);
+      }
+      if (getResizeWidth <= 429) {
+        setSpeed(40);
+      }
+    };
+    graphMode();
+  }, [getResizeWidth]);
   return (
     <Container>
       <Logo>
@@ -128,7 +169,7 @@ function Footer() {
             <NavLink to="/Contact">Contact Me</NavLink>
           </Contact>
           <Resume>
-            <a 
+            <a
               href="https://drive.google.com/file/d/1JCT2iSVsRXvQD6mQYQDc-bEAjf2I85HV/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
@@ -138,6 +179,28 @@ function Footer() {
           </Resume>
         </Nav>
       </TextAndNav>
+      <Wrap>
+        <InnerWrap play={true} gradient={false} speed={speed}>
+          <MarqueeText>
+            MY APP<span> — Site of the Day - </span>100
+            <span> — Dec 25, 2022 — </span>MY APP
+            <span> — Site of the Day - </span>100
+            <span> — Dec 25, 2022 — </span>
+          </MarqueeText>
+          <MarqueeText>
+            MY APP<span> — Site of the Day - </span>100
+            <span> — Dec 25, 2022 — </span>MY APP
+            <span> — Site of the Day - </span>100
+            <span> — Dec 25, 2022 — </span>
+          </MarqueeText>
+          <MarqueeText>
+            MY APP<span> — Site of the Day - </span>100
+            <span> — Dec 25, 2022 — </span>MY APP
+            <span> — Site of the Day - </span>100
+            <span> — Dec 25, 2022 — </span>
+          </MarqueeText>
+        </InnerWrap>
+      </Wrap>
       <LinkBar>
         <div>Contact: </div>
         <LinkBarUl>

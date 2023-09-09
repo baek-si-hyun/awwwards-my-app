@@ -6,28 +6,23 @@ export const domApi = ({
   setRouterPosition,
 }: IDomApi) => {
   if (pathname === "/") {
-    const header = document.getElementById("header") as HTMLDivElement;
     const projects = document.getElementById("projects") as HTMLDivElement;
-    const about = document.getElementById("about") as HTMLDivElement;
+    const music = document.getElementById("music") as HTMLDivElement;
     const schedule = document.getElementById("schedule") as HTMLDivElement;
     const scrollY = window.scrollY;
-    const headerPosition = Math.floor(
-      scrollY + header?.getBoundingClientRect().top
-    );
     const projectPosition = Math.floor(
       scrollY + projects?.getBoundingClientRect().top
     );
-    const aboutPosition = Math.floor(
-      scrollY + about?.getBoundingClientRect().top
+    const musicPosition = Math.floor(
+      scrollY + music?.getBoundingClientRect().top
     );
     const schedlulePosition = Math.floor(
       scrollY + schedule?.getBoundingClientRect().top
     );
-
     setMainPosition({
-      header: scrollY >= headerPosition && scrollY < projectPosition,
-      projects: scrollY >= projectPosition && scrollY < aboutPosition,
-      about: scrollY >= aboutPosition && scrollY < schedlulePosition,
+      home: scrollY < projectPosition,
+      projects: scrollY >= projectPosition && scrollY < musicPosition,
+      music: scrollY >= musicPosition && scrollY < schedlulePosition,
       schedule: scrollY >= schedlulePosition,
     });
   }

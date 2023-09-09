@@ -10,13 +10,17 @@ import AccTradePrice24h from "./AccTradePrice24h";
 import AccTradeVolume24h from "./AccTradeVolume24h";
 import Chart200Days from "./Chart200Days";
 import { ICoinHttpTickers, ICoinListMerge } from "../../../interface/icoin";
-import { fetchCoinTickers, useCoinTickersSocket } from "../../../services/coinApi";
+import {
+  fetchCoinTickers,
+  useCoinTickersSocket,
+} from "../../../services/coinApi";
 
 export const Td = styled.td`
   text-align: end;
   vertical-align: middle;
   padding: 10px;
   white-space: nowrap;
+
   :last-child {
     padding: 0px;
   }
