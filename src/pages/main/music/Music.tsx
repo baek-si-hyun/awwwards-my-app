@@ -5,7 +5,7 @@ import { TextBox, TextBoxMiddle, TextBoxbottom } from "../../common/mainCommon";
 
 const Container = styled.div`
   width: 100%;
-  padding: 7vw 0;
+  padding-top: 3vw;
 `;
 const Inner = styled.div`
   width: 100%;
@@ -13,7 +13,7 @@ const Inner = styled.div`
 
 const InnerMusicBox1 = styled.div`
   position: relative;
-  border-radius: 4.5rem 4.5rem 0 0;
+  border-radius: 5vw 5vw 0 0;
   overflow: hidden;
 `;
 const MusicImg = styled.img`
@@ -85,8 +85,7 @@ const AllMusicTextBox = styled.div`
 `;
 const InnerMusicBox4 = styled.div`
   background: #000;
-  padding: 8vw 0;
-  border-radius: 0 0 4.5rem 4.5rem;
+  padding: 8vw 0 20rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;

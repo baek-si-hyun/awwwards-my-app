@@ -8,16 +8,19 @@ function NavMainMode({
   navHandler: any;
   mainPosition: IMainPosition;
 }) {
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
   return (
     <NavBox onClick={navHandler}>
       <NavItem mainPosition={mainPosition}>
-        <Link href="#home" className="nav-item">
-        home
+        <Link href="#home" className="nav-item" onClick={scrollToTop}>
+          home
         </Link>
       </NavItem>
       <NavItem mainPosition={mainPosition}>
         <Link href="#projects" className="nav-item">
-        Projects
+          Projects
         </Link>
       </NavItem>
       <NavItem mainPosition={mainPosition}>

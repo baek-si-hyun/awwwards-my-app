@@ -15,7 +15,9 @@ import { TextBox, TextBoxMiddle, TextBoxbottom } from "../../common/mainCommon";
 
 const Container = styled.div`
   width: 100%;
-  padding: 4vw 2.7vw 7vw 2.7vw;
+  margin-top: -10rem;
+  padding: 4vw 2.7vw 10vw 2.7vw;
+  border-radius: 5vw;
   background-color: #f8f8f8;
 `;
 

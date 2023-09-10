@@ -8,7 +8,6 @@ const CoinList = lazy(() => import("./coinList/CoinList"));
 const Schedule = lazy(() => import("./schedule/Schedule"));
 const Footer = lazy(() => import("../../components/footer/Footer"));
 const Nav = lazy(() => import("../../components/nav/Nav"));
-const Div = styled.div``;
 function Main() {
   return (
     <Suspense fallback={<></>}>
