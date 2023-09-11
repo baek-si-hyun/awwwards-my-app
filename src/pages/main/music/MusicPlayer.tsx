@@ -14,12 +14,6 @@ import { controlRedux } from "../../../redux/slices/controlPlayListSlice";
 import { videoInfoRedux } from "../../../redux/slices/playingVideoInfoSlice";
 
 function MusicPlayer() {
-  const videoInfo = useSelector(
-    (state: { playingVideoInfoSlice: IVideoInfo }) => {
-      return state.playingVideoInfoSlice.videoInfo;
-    },
-    shallowEqual
-  );
   const [playList, setPlayList] = useState<IPlayList[]>([
     {
       id: 0,
@@ -30,6 +24,12 @@ function MusicPlayer() {
       url: "https://www.youtube.com/embed/sVTy_wmn5SU",
     },
   ]);
+  const videoInfo = useSelector(
+    (state: { playingVideoInfoSlice: IVideoInfo }) => {
+      return state.playingVideoInfoSlice.videoInfo;
+    },
+    shallowEqual
+  );
   const newList = useSelector(
     (state: {
       newJeansListSlice: INewjeansListData;
@@ -68,7 +68,7 @@ function MusicPlayer() {
   useEffect(() => {
     dispatch(
       videoInfoRedux({
-        playing: videoInfo.playing,
+        ...videoInfo,
         videoUrl: playList[playIndex]?.url,
         img: playList[playIndex]?.img,
         title: playList[playIndex]?.title,

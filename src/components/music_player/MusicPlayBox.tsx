@@ -94,11 +94,12 @@ function MusicPlayBox() {
   const toggle = () => {
     dispatch(
       videoInfoRedux({
+        ...videoInfo,
         playing: !videoInfo.playing,
-        videoUrl: videoInfo.videoUrl,
-        img: videoInfo.img,
-        title: videoInfo.title,
-        artist: videoInfo.artist,
+        // videoUrl: videoInfo.videoUrl,
+        // img: videoInfo.img,
+        // title: videoInfo.title,
+        // artist: videoInfo.artist,
       })
     );
   };

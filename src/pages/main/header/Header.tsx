@@ -1,17 +1,12 @@
 import styled from "styled-components";
-import { useState, useEffect, useRef } from "react";
 
-const Container = styled.div<{ blurValue: number; opacityValue: number }>`
+const Container = styled.div`
   width: 100%;
   background: url("https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/1fe4bbdc-2b82-4598-e76f-53fd4d9a5400/avatar")
     repeat;
   position: sticky;
   top: 0;
-  z-index: -9999;
-  filter: ${(props) => `blur(${props.blurValue}px)`};
-  opacity: ${(props) => props.opacityValue};
-  transition: opacity 0s ease-in-out, filter 0s ease-in-out;
-  will-change: opacity, filter;
+  z-index: -1;
 `;
 
 const Inner = styled.div`
@@ -59,7 +54,6 @@ const Title = styled.span`
 const SubTitle = styled.span`
   font-family: "Suisse", sans-serif;
   font-size: 3vw;
-  color: #af2f00;
   @media (max-width: 430px) {
     & {
       font-size: 5vw;
@@ -154,45 +148,12 @@ const Img = styled.img`
     }
   }
 `;
-
-const ColorImg = styled(Img)`
-  box-shadow: 0 0 5rem #ff4400;
-  z-index: 3;
-  @media (max-width: 430px) {
-    & {
-      box-shadow: 0 0 2rem #ff4400;
-    }
-  }
+const ColorShadowImg = styled(Img)`
+  box-shadow: 0 0 3rem rgba(255, 255, 255, 1);
 `;
 function Header() {
-  const [blurValue, setBlurValue] = useState(0);
-  const [opacityValue, setOpacityValue] = useState(1);
-  const headerRef = useRef<HTMLDivElement | null>(null);
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPercentage =
-        window.scrollY /
-        (document.documentElement.scrollHeight - window.innerHeight);
-      const maxBlur = 100;
-      const newBlurValue = Math.min(scrollPercentage * maxBlur, 7);
-      const maxOpacity = 0.01;
-      const newOpacityValue = Math.max(maxOpacity / scrollPercentage, 0.08);
-      setBlurValue(newBlurValue);
-      setOpacityValue(newOpacityValue);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   return (
-    <Container
-      id="home"
-      ref={headerRef}
-      blurValue={blurValue}
-      opacityValue={opacityValue}
-    >
+    <Container id="home">
       <Inner>
         <LeftBox>
           <Title>
@@ -218,8 +179,8 @@ function Header() {
             />
           </ItemBox>
           <ItemBox>
-            <ColorImg
-              src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/8c6ec1ba-c816-4fdf-3102-996cab814100/header"
+            <ColorShadowImg
+              src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/b4554793-5094-4e3d-68b4-b470fc07f700/header"
               alt="headerimg"
               loading="lazy"
               decoding="async"

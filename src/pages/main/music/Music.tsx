@@ -6,15 +6,29 @@ import { TextBox, TextBoxMiddle, TextBoxbottom } from "../../common/mainCommon";
 const Container = styled.div`
   width: 100%;
   padding-top: 3vw;
+  background-color: #fff;
+  border-radius: 5vw 5vw 0 0;
+  margin-top: -6rem;
+  z-index: 2;
+  box-shadow: 0 0 3rem rgba(0, 0, 0, 0.5);
 `;
 const Inner = styled.div`
   width: 100%;
 `;
+const StickyTextBox = styled(TextBox)`
+  position: sticky;
+  top: 0;
+`;
 
-const InnerMusicBox1 = styled.div`
-  position: relative;
+const MusicContainer = styled.div`
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
   border-radius: 5vw 5vw 0 0;
   overflow: hidden;
+`;
+const RelativeBox = styled.div`
+  position: relative;
 `;
 const MusicImg = styled.img`
   width: 100%;
@@ -33,80 +47,21 @@ const MusicTextBox = styled.div`
     left: 5%;
     bottom: 10%;
   }
-  h2 {
+  p {
     font-weight: bold;
     font-size: 2vw;
     margin-bottom: 1vw;
   }
 `;
-const InnerMusicBox2 = styled.div`
-  border: 1px solid black;
-  background: #000;
-  padding: 8vw 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 7vw;
-  color: #fff;
-  font-family: "Pretendard", sans-serif;
-  p {
-    font-size: 2vw;
-    text-align: center;
-    @media (max-width: 430px) {
-      & {
-        font-size: 1rem;
-      }
-    }
-  }
-`;
 
-const InnerMusicBox3 = styled.div`
-  position: relative;
-`;
-const AllMusicTextBox = styled.div`
-  width: 100%;
-  height: 100%;
+const AllMusicTextBox = styled(MusicTextBox)`
   background: linear-gradient(
     rgba(0, 0, 0, 1) 0%,
     rgba(0, 0, 0, 0.5) 50%,
     rgba(0, 0, 0, 1) 100%
   );
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: #fff;
-  h2 {
-    font-weight: lighter;
-    font-size: 2.2vw;
-  }
-`;
-const InnerMusicBox4 = styled.div`
-  background: #000;
-  padding: 8vw 0 20rem 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 7vw;
-  color: #fff;
-  p {
-    font-size: 2.2vw;
-    text-align: center;
-    @media (max-width: 429px) {
-      & {
-        font-size: 1rem;
-      }
-    }
-  }
 `;
 
-const StickyTextBox = styled(TextBox)`
-  position: sticky;
-  top: 0;
-  z-index: -8888;
-`;
 function Music() {
   return (
     <Container id="music">
@@ -127,43 +82,36 @@ function Music() {
             재생 순서를 바꾸실수 있습니다.
           </TextBoxbottom>
         </StickyTextBox>
-        <InnerMusicBox1>
-          <MusicImg
-            src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/ee6e50a8-17dd-458b-29e3-ad794eeca500/public"
-            alt="newjeans"
-            loading="lazy"
-            decoding="async"
-          />
-          <MusicTextBox>
-            <div>
-              <h2>NewJeans</h2>
-            </div>
-          </MusicTextBox>
-        </InnerMusicBox1>
-        <InnerMusicBox2>
-          <div>
-            <p>너무 시끄럽지 않은 노래들로 준비했습니다.</p>
-          </div>
-          <div>
-            <p>제가 추천하는 노래를 들어보세요.</p>
-          </div>
+        <MusicContainer>
+          <RelativeBox>
+            <MusicImg
+              src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/ee6e50a8-17dd-458b-29e3-ad794eeca500/public"
+              alt="newjeans"
+              loading="lazy"
+              decoding="async"
+            />
+            <MusicTextBox>
+              <div>
+                <p>NewJeans</p>
+              </div>
+            </MusicTextBox>
+          </RelativeBox>
           <NewJeans />
-        </InnerMusicBox2>
-        <InnerMusicBox3>
-          <MusicImg
-            src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/f204c79a-26ad-4cb8-5018-c779d6a93200/public"
-            alt="famous artist"
-            loading="lazy"
-            decoding="async"
-          />
-          <AllMusicTextBox />
-        </InnerMusicBox3>
-        <InnerMusicBox4>
-          <div>
-            <p>Recommended List</p>
-          </div>
+          <RelativeBox>
+            <MusicImg
+              src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/f204c79a-26ad-4cb8-5018-c779d6a93200/public"
+              alt="famous artist"
+              loading="lazy"
+              decoding="async"
+            />
+            <AllMusicTextBox>
+              <div>
+                <p>Recommended List</p>
+              </div>
+            </AllMusicTextBox>
+          </RelativeBox>
           <FeaturedSong />
-        </InnerMusicBox4>
+        </MusicContainer>
       </Inner>
     </Container>
   );

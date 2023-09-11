@@ -22,6 +22,13 @@ export interface IVideoInfo {
     artist: string;
   };
 }
+export interface IVideoInfoRedux {
+  playing: boolean;
+  videoUrl: string;
+  img: string;
+  title: string;
+  artist: string;
+}
 export interface IIndex {
   index: number;
 }

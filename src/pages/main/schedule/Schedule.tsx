@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import {
-  Container,
   Inner,
   TextBox,
   TextBoxMiddle,
@@ -9,6 +8,15 @@ import {
 import Finally from "./Finally";
 import PastSchedule from "./PastSchedule";
 
+export const Container = styled.div`
+  width: 100%;
+  margin-top: -7rem;
+  background-color: #f6feff;
+  border-radius: 5vw 5vw 0 0;
+  padding: 3vw 0 13vw 0;
+  z-index: 5;
+  box-shadow: 0 0 3rem rgba(0, 0, 0, 0.1);
+`;
 const ScheduleBox = styled.div`
   width: 100%;
 `;

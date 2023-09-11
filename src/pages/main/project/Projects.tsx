@@ -1,12 +1,20 @@
 import styled from "styled-components";
 import {
-  Container,
   Inner,
   TextBox,
   TextBoxbottom,
   TextBoxMiddle,
 } from "../../common/mainCommon";
 import ProjectsLinkBox from "./ProjectsLinkBox";
+
+const Container = styled.div`
+  width: 100%;
+  background-color: #fff;
+  padding: 1vw 0 13vw 0;
+  border-radius: 5vw;
+  z-index: 1;
+  box-shadow: 0 0 3rem rgba(0, 0, 0, 0.5);
+`;
 
 const GridBox = styled.div`
   display: grid;

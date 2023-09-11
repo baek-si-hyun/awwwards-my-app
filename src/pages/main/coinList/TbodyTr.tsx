@@ -99,7 +99,7 @@ function TrBox({
     {
       enabled: !!coinList,
       refetchOnMount: false,
-      refetchOnWindowFocus: false,
+      refetchOnWindowFocus: true,
     }
   );
   const { data: tickerSocketData } = useCoinTickersSocket(coinList!);

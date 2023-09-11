@@ -15,10 +15,16 @@ import { TextBox, TextBoxMiddle, TextBoxbottom } from "../../common/mainCommon";
 
 const Container = styled.div`
   width: 100%;
-  margin-top: -10rem;
-  padding: 4vw 2.7vw 10vw 2.7vw;
-  border-radius: 5vw;
+  margin-top: -5rem;
+  padding: 4vw 2.7vw 15vw 2.7vw;
+  border-radius: 5vw 5vw 0 0;
   background-color: #f8f8f8;
+  z-index: 4;
+  @media (max-width: 1050px) {
+    & {
+      padding-bottom: 12rem;
+    }
+  }
 `;
 
 const Inner = styled.div`

@@ -1,15 +1,17 @@
 import styled, { css } from "styled-components";
+
 export const Container = styled.div`
   width: 100%;
+  background-color: #fff;
+  border-radius: 5vw 5vw 0 0;
+  padding: 3vw 0 13vw 0;
 `;
-
 export const Inner = styled.div`
   padding: 3vw 2.7vw 6vw 2.7vw;
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
-
 export const TextBox = styled.div`
   margin-top: 6rem;
   margin-bottom: 6vw;

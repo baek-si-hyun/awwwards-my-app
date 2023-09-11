@@ -4,10 +4,19 @@ import { TextBox, TextBoxMiddle, TextBoxbottom } from "../../common/mainCommon";
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 6vw 2.7vw 2.7vw 2.7vw;
   gap: 1.4vw;
-  clear: both;
+  padding: 8vw 2.7vw 15vw 2.7vw;
+  margin-top: -5rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  z-index: 0;
+  backdrop-filter: blur(10px);
+  @media (max-width: 1050px) {
+    & {
+      padding-bottom: 12rem;
+    }
+  }
 `;
+
 const Sitebox = styled.div`
   width: 30.6vw;
   display: flex;
@@ -68,7 +77,7 @@ const InnerFigure = styled.figure`
     span {
       font-weight: bold;
       font-size: 1.3vw;
-      border-bottom: 2px solid #b7b7b7;
+      border-bottom: 2px solid #222;
     }
   }
   @media (max-width: 650px) {
@@ -162,7 +171,6 @@ const BottomBoxBottom = styled.div`
     }
   }
 `;
-
 function Site() {
   return (
     <Container>

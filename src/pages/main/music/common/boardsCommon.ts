@@ -2,7 +2,11 @@ import styled from "styled-components";
 import { ButtonDiv, ControllBtn } from "../MusicSet";
 
 export const Container = styled.div`
-  width: 90%;
+  width: 100%;
+  padding: 8vw 0 15vw 0;
+  background-color: #000;
+  color: #fff;
+  z-index: 3;
 `;
 export const Board = styled.div`
   padding: 0px 40px;

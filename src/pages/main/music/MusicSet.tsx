@@ -6,7 +6,6 @@ import { IVideoInfo } from "../../../interface/imusic";
 import { videoInfoRedux } from "../../../redux/slices/playingVideoInfoSlice";
 import { controllerVisibleRedux } from "../../../redux/slices/controllerVisibleSlice";
 
-
 export const ButtonDiv = styled.div<{ isPlaying: boolean }>`
   position: absolute;
   opacity: ${(props) => (props.isPlaying === true ? 0.9 : 0)};
@@ -52,11 +51,9 @@ function MusicSet({ videoUrl }: { videoUrl: string }) {
     setIsPlaying(playing);
     dispatch(
       videoInfoRedux({
+        ...videoInfo,
         playing: playing,
         videoUrl: videoUrl,
-        img: videoInfo.img,
-        title: videoInfo.title,
-        artist: videoInfo.artist,
       })
     );
     dispatch(controllerVisibleRedux(true));

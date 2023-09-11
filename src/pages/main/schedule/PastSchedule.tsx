@@ -30,7 +30,7 @@ const Row = styled.div`
   background-size: 8px 1px;
   background-repeat: repeat-x;
   font-weight: 100;
-  color: #4e4e4e;
+  /* color: #4e4e4e; */
   :last-child {
     div {
       background-image: none;

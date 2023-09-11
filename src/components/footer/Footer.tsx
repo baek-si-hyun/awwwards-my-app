@@ -10,10 +10,12 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   gap: 3vw;
-  padding: 8vw 0 8vw 0;
+  margin-top: -6rem;
+  padding: 5vw 0 7vw 0;
+  z-index: 6;
   background-color: #f8f8f8;
   border-radius: 30px 30px 0 0;
-  box-shadow: 0 0 3rem rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 3rem rgba(0, 0, 0, 0.3);
   @media (max-width: 1024px) {
     & {
       padding: 6vw 2.7vw 9rem 2.7vw;
@@ -53,12 +55,15 @@ const En = styled.div`
 `;
 const Wrap = styled.div``;
 const InnerWrap = styled(Marquee)`
-
   color: #af2f00;
   padding: 0.5rem 0;
+  font-weight: lighter;
 `;
 const MarqueeText = styled.div`
   overflow: hidden;
+  span {
+    font-weight: bold;
+  }
 `;
 const Nav = styled.div`
   display: flex;
@@ -182,22 +187,28 @@ function Footer() {
       <Wrap>
         <InnerWrap play={true} gradient={false} speed={speed}>
           <MarqueeText>
-            MY APP<span> — Site of the Day - </span>100
-            <span> — Dec 25, 2022 — </span>MY APP
-            <span> — Site of the Day - </span>100
-            <span> — Dec 25, 2022 — </span>
+            {" "}
+            Thank you for watching - <span>SiHyun Baek</span> - portfolio -{" "}
+            <span>2023</span> - Thank you for watching -{" "}
+            <span>SiHyun Baek</span> - portfolio - <span>2023</span> - Thank you
+            for watching - <span>SiHyun Baek</span> - portfolio -{" "}
+            <span>2023</span> -{" "}
           </MarqueeText>
           <MarqueeText>
-            MY APP<span> — Site of the Day - </span>100
-            <span> — Dec 25, 2022 — </span>MY APP
-            <span> — Site of the Day - </span>100
-            <span> — Dec 25, 2022 — </span>
+            {" "}
+            Thank you for watching - <span>SiHyun Baek</span> - portfolio -{" "}
+            <span>2023</span> - Thank you for watching -{" "}
+            <span>SiHyun Baek</span> - portfolio - <span>2023</span> - Thank you
+            for watching - <span>SiHyun Baek</span> - portfolio -{" "}
+            <span>2023</span> -{" "}
           </MarqueeText>
           <MarqueeText>
-            MY APP<span> — Site of the Day - </span>100
-            <span> — Dec 25, 2022 — </span>MY APP
-            <span> — Site of the Day - </span>100
-            <span> — Dec 25, 2022 — </span>
+            {" "}
+            Thank you for watching - <span>SiHyun Baek</span> - portfolio -{" "}
+            <span>2023</span> - Thank you for watching -{" "}
+            <span>SiHyun Baek</span> - portfolio - <span>2023</span> - Thank you
+            for watching - <span>SiHyun Baek</span> - portfolio -{" "}
+            <span>2023</span> -{" "}
           </MarqueeText>
         </InnerWrap>
       </Wrap>

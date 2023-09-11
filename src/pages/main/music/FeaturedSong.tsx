@@ -11,9 +11,22 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { IFeaturedListData } from "../../../interface/imusic";
 import { featuredRedux } from "../../../redux/slices/featuredListSlice";
-import { Container } from "../../common/mainCommon";
-import { Board, Card, CardItem, ImgDiv, Title } from "./common/boardsCommon";
+import {
+  Board,
+  Card,
+  CardItem,
+  Container,
+  ImgDiv,
+  Title,
+} from "./common/boardsCommon";
 
+const FeaturedContainer = styled(Container)`
+  @media (max-width: 1050px) {
+    & {
+      padding-bottom: 12rem;
+    }
+  }
+`;
 const Img = styled.img`
   width: clamp(40px, 2.5vw, 80px);
 `;
@@ -38,7 +51,7 @@ function FeaturedSong() {
 
   return (
     <DragDropContext onDragEnd={onDragEnd}>
-      <Container>
+      <FeaturedContainer>
         <Droppable droppableId="one">
           {(magic) => (
             <Board ref={magic.innerRef} {...magic.droppableProps}>
@@ -83,7 +96,7 @@ function FeaturedSong() {
             </Board>
           )}
         </Droppable>
-      </Container>
+      </FeaturedContainer>
     </DragDropContext>
   );
 }

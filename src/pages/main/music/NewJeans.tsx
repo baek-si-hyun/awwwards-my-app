@@ -10,11 +10,14 @@ import MusicSet from "./MusicSet";
 import { useDispatch, useSelector } from "react-redux";
 import { INewjeansListData } from "../../../interface/imusic";
 import { newJeansRedux } from "../../../redux/slices/newJeansListSlice";
-import { Board, Card, CardItem, ImgDiv, Title } from "./common/boardsCommon";
-
-const Container = styled.div`
-  width: 100%;
-`;
+import {
+  Board,
+  Card,
+  CardItem,
+  Container,
+  ImgDiv,
+  Title,
+} from "./common/boardsCommon";
 
 const Img = styled.img`
   width: clamp(40px, 4vw, 128px);
