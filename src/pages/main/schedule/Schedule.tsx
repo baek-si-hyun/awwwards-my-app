@@ -8,7 +8,7 @@ import {
 import Finally from "./Finally";
 import PastSchedule from "./PastSchedule";
 
-export const Container = styled.div`
+const Container = styled.div`
   width: 100%;
   margin-top: -7rem;
   background-color: #f6feff;

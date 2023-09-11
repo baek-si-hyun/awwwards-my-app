@@ -55,7 +55,6 @@ const En = styled.div`
 `;
 const Wrap = styled.div``;
 const InnerWrap = styled(Marquee)`
-  color: #af2f00;
   padding: 0.5rem 0;
   font-weight: lighter;
 `;

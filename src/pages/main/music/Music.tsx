@@ -26,6 +26,7 @@ const MusicContainer = styled.div`
   flex-direction: column;
   border-radius: 5vw 5vw 0 0;
   overflow: hidden;
+  box-shadow: 0 0 3rem rgba(0, 0, 0, 0.5);
 `;
 const RelativeBox = styled.div`
   position: relative;

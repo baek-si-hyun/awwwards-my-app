@@ -14,6 +14,7 @@ const Container = styled.div`
   border-radius: 5vw;
   z-index: 1;
   box-shadow: 0 0 3rem rgba(0, 0, 0, 0.5);
+  margin-top: -1rem;
 `;
 
 const GridBox = styled.div`

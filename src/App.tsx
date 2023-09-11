@@ -17,7 +17,7 @@ const Wapper = styled.div`
   width: 100%;
 `;
 
-const SctollBar = styled(motion.div)`
+const ScrollBar = styled(motion.div)`
   position: fixed;
   top: 0;
   left: 0;
@@ -36,7 +36,7 @@ function App() {
   );
   return (
     <Wapper>
-      <SctollBar style={{ scaleX: scrollYProgress }} />
+      <ScrollBar style={{ scaleX: scrollYProgress }} />
       <MusicPlayer />
       <ScrollToTop />
       {getResizeWidth >= 1000 ? <MusicPlayBox /> : null}
