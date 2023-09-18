@@ -1,13 +1,13 @@
 import { Suspense, lazy } from "react";
 import Site from "./site/Site";
-import styled from "styled-components";
-const Header = lazy(() => import("./header/Header"));
+import Header from "./header/Header";
+import Schedule from "./schedule/Schedule";
+import Nav from "../../components/nav/Nav";
+import Footer from "../../components/footer/Footer";
 const Projects = lazy(() => import("./project/Projects"));
 const Music = lazy(() => import("./music/Music"));
 const CoinList = lazy(() => import("./coinList/CoinList"));
-const Schedule = lazy(() => import("./schedule/Schedule"));
-const Footer = lazy(() => import("../../components/footer/Footer"));
-const Nav = lazy(() => import("../../components/nav/Nav"));
+
 function Main() {
   return (
     <Suspense fallback={<></>}>
@@ -23,3 +23,12 @@ function Main() {
   );
 }
 export default Main;
+
+
+
+
+
+
+
+
+

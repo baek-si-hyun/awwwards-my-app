@@ -4,8 +4,8 @@ export interface IGetVisitedObject {
   visited: IVisited;
 }
 export interface IVisited {
-  visited_visaulcoin_today: number;
-  visited_visaulcoin_total: number;
+  visited_projecthouse_today: number;
+  visited_projecthouse_total: number;
   visited_carrotmarket_today: number;
   visited_carrotmarket_total: number;
   visited_awwwards_today: number;

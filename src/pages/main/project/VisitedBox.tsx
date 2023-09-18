@@ -57,7 +57,7 @@ function VisitedBox({
         <VisitedInnerTop>Visited Today</VisitedInnerTop>
         <VisitedInnerBottom>
           {name === "visual-coin"
-            ? visited.visited_visaulcoin_today
+            ? visited.visited_projecthouse_today
             : name === "carrot-market"
             ? visited.visited_carrotmarket_today
             : name === "awwwards"
@@ -77,7 +77,7 @@ function VisitedBox({
         <VisitedInnerTop>Total Visited</VisitedInnerTop>
         <VisitedInnerBottom>
           {name === "visual-coin"
-            ? visited.visited_visaulcoin_total
+            ? visited.visited_projecthouse_total
             : name === "carrot-market"
             ? visited.visited_carrotmarket_total
             : name === "awwwards"

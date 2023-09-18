@@ -30,9 +30,9 @@ function NavRouterMode({
         </RouterNavItem>
       </NavBox>
       <VisitedSite>
-        {pathname === "/visual-coin" ? (
+        {pathname === "/project-house" ? (
           <a
-            href="https://baek-si-hyun.github.io/visual-coin"
+            href="https://baek-si-hyun.github.io/project-house"
             target="_blank"
             rel="noopener noreferrer"
           >

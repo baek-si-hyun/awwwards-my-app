@@ -1,22 +1,27 @@
 import styled from "styled-components";
 import Footer from "../../components/footer/Footer";
 import {
-  Container,
   Inner,
   TextBox,
   TextBoxMiddle,
   TextBoxTop,
 } from "../common/mainCommon";
 import EmailJs from "./EmailJs";
+const Container = styled.div`
+  width: 100%;
+  background-color: #fff;
+`;
 
 const EmailJsContainer = styled.div`
   display: flex;
   gap: 10vw;
-  @media (max-width: 640px) {
+  padding-bottom: 13vw;
+  @media (max-width: 650px) {
     & {
       display: flex;
       flex-direction: column;
       align-items: center;
+      padding-bottom: 15rem;
     }
   }
 `;

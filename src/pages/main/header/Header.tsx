@@ -35,7 +35,7 @@ const LeftBox = styled.div`
   justify-content: space-between;
   @media (max-width: 430px) {
     & {
-      gap: 25rem;
+      gap: 20rem;
     }
   }
 `;

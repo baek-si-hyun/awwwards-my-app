@@ -100,7 +100,7 @@ function Music() {
           <NewJeans />
           <RelativeBox>
             <MusicImg
-              src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/f204c79a-26ad-4cb8-5018-c779d6a93200/public"
+              src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/d755ca11-f3a2-4bb5-f9c1-321964a57b00/public"
               alt="famous artist"
               loading="lazy"
               decoding="async"

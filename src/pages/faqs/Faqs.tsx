@@ -4,7 +4,6 @@ import FaqList from "./FaqList";
 
 const Container = styled.div`
   width: 100%;
-  height: 100%;
 `;
 
 const Inner = styled.div`
@@ -12,6 +11,12 @@ const Inner = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 20vw;
+  @media (max-width: 650px) {
+    & {
+      padding-bottom: 20rem
+    }
+  }
 `;
 
 const TextBox = styled.div`

@@ -171,6 +171,11 @@ const BottomBoxBottom = styled.div`
     }
   }
 `;
+const LogoImg = styled.img`
+  width: 30px;
+  height: 30px;
+  border-radius: 20px;
+`;
 function Site() {
   return (
     <Container>
@@ -183,7 +188,7 @@ function Site() {
       <FlexBox>
         <Sitebox>
           <SiteImgBox>
-            <img
+            <SiteImg
               src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/49cd31ba-6549-4f5c-823e-06ee522be100/public"
               alt="awwwards"
               loading="lazy"
@@ -210,9 +215,8 @@ function Site() {
               <small>by</small>
             </div>
             <InnerFigure>
-              <img
+              <LogoImg
                 src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/e1f7fdb0-746c-4598-7dd0-c37a0b344d00/icon"
-                style={{ width: 30, height: 30, borderRadius: 20 }}
                 alt="awwwardicon"
                 loading="lazy"
                 decoding="async"
@@ -226,8 +230,8 @@ function Site() {
         <Sitebox>
           <SiteImgBox>
             <SiteImg
-              src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/0b467ebf-f1d9-46f9-37d9-e4b9c08ac600/public"
-              alt="upbit"
+              src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/089bbc9a-4241-44ab-90a2-5702bbe90d00/public"
+              alt="youtubeMusic"
               loading="lazy"
               decoding="async"
             />
@@ -243,7 +247,7 @@ function Site() {
               </SenterBox>
               <BottomBox>
                 <BottomBoxTop>WEBSITE</BottomBoxTop>
-                <BottomBoxBottom>UPbit</BottomBoxBottom>
+                <BottomBoxBottom>YoutubeMusic</BottomBoxBottom>
               </BottomBox>
             </HoverBox>
           </SiteImgBox>
@@ -252,15 +256,14 @@ function Site() {
               <small>by</small>
             </div>
             <InnerFigure>
-              <img
-                src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/aaca2829-bf16-4dfc-1bcd-d50e53b57a00/icon"
-                style={{ width: 30, height: 30, borderRadius: 20 }}
-                alt="upbiticon"
+              <LogoImg
+                src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/7aa1d7a9-d1ec-478e-e06c-25204d9b0000/icon"
+                alt="youtubeMusicicon"
                 loading="lazy"
                 decoding="async"
               />
               <figcaption>
-                <span>UPbit</span>
+                <span>YoutubeMusic</span>
               </figcaption>
             </InnerFigure>
           </SiteTextBox>
@@ -269,7 +272,7 @@ function Site() {
           <SiteImgBox>
             <SiteImg
               src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/b55e5689-87bc-4c9d-5ab6-f151077beb00/public"
-              alt="investing"
+              alt="coinMarketCap"
               loading="lazy"
               decoding="async"
             />
@@ -294,10 +297,9 @@ function Site() {
               <small>by</small>
             </div>
             <InnerFigure>
-              <img
+              <LogoImg
                 src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/00f10618-d1f1-42ce-0ede-651abcd38200/icon"
-                style={{ width: 30, height: 30, borderRadius: 20 }}
-                alt="investingicon"
+                alt="coinMarketCapIcon"
                 loading="lazy"
                 decoding="async"
               />

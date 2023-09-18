@@ -121,7 +121,7 @@ function CoinList() {
     {
       enabled: !!coinList,
       refetchOnMount: false,
-      refetchOnWindowFocus: false,
+      refetchOnWindowFocus: true,
     }
   );
 

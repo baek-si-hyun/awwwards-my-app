@@ -16,9 +16,16 @@ const Container = styled.div`
   background-color: #f8f8f8;
   border-radius: 30px 30px 0 0;
   box-shadow: 0 0 3rem rgba(0, 0, 0, 0.3);
+  font-size: 1vw;
+
   @media (max-width: 1024px) {
     & {
       padding: 6vw 2.7vw 9rem 2.7vw;
+    }
+  }
+  @media (max-width: 430px) {
+    & {
+      font-size: 0.5rem;
     }
   }
 `;
@@ -36,12 +43,6 @@ const Text = styled.div`
   gap: 0.6rem;
   line-height: 1.3;
   width: 60vw;
-  font-size: 1vw;
-  @media (max-width: 430px) {
-    & {
-      font-size: 0.5rem;
-    }
-  }
 `;
 const Ko = styled.div`
   font-family: "Pretendard", sans-serif;

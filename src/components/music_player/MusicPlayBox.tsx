@@ -96,10 +96,6 @@ function MusicPlayBox() {
       videoInfoRedux({
         ...videoInfo,
         playing: !videoInfo.playing,
-        // videoUrl: videoInfo.videoUrl,
-        // img: videoInfo.img,
-        // title: videoInfo.title,
-        // artist: videoInfo.artist,
       })
     );
   };
@@ -118,10 +114,10 @@ function MusicPlayBox() {
     }
   };
   const next = () => {
-    if (index < 36) {
+    if (index < 33) {
       const setIndex = index + 1;
       dispatch(controlRedux(setIndex));
-    } else if (index >= 36) {
+    } else if (index >= 33) {
       dispatch(controlRedux(0));
     }
   };
