@@ -13,6 +13,7 @@ const Inner = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 20rem;
 `;
 
 const Description = styled.div`

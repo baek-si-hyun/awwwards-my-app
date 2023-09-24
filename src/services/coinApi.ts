@@ -88,6 +88,7 @@ export function useCoinTickersSocket(coinList: string[]) {
       enabled: !!coinList,
       refetchInterval: 1000,
       cacheTime: 1000,
+      refetchOnWindowFocus: false,
     }
   );
 }

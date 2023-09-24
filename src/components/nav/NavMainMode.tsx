@@ -15,7 +15,7 @@ function NavMainMode({
     <NavBox onClick={navHandler}>
       <NavItem mainPosition={mainPosition}>
         <Link href="#home" className="nav-item" onClick={scrollToTop}>
-          home
+          Home
         </Link>
       </NavItem>
       <NavItem mainPosition={mainPosition}>

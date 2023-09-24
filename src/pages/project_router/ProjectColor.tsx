@@ -154,13 +154,14 @@ function ProjectColor({ colors }: { colors: string[] }) {
         </ColorText>
         <ColorCards>
           <CardContainer>
-            {colors.map((data) => (
+            {colors.map((data, index) => (
               <Card
                 onMouseOver={() => sethover(true)}
                 onMouseOut={() => sethover(false)}
                 isHover={hover}
                 colorData={data}
                 colorDataLength={colors.length}
+                key={index}
               >
                 <CardTop isHover={hover}>
                   <span>

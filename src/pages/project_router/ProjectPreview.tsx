@@ -91,15 +91,6 @@ const PrevInner = styled.div`
 const PreviewImg = styled.img`
   width: 100%;
 `;
-function CreatePreview(imgs: string[], name: string): JSX.Element[] {
-  return imgs.map((data, index) => (
-    <Preview cardBgColorData={name} key={index}>
-      <PrevInner>
-        <PreviewImg src={data} alt="preview" loading="lazy" decoding="async" />
-      </PrevInner>
-    </Preview>
-  ));
-}
 
 function ProjectPreview({ projectData }: { projectData: IProjectData }) {
   return (
@@ -127,7 +118,20 @@ function ProjectPreview({ projectData }: { projectData: IProjectData }) {
         </TextBoxbottom>
       </Inner>
       <PreviewContainer>
-        {CreatePreview(projectData.imgs, projectData.name)}
+        {projectData.imgs.map((data: string, index: number) =>
+          data ? (
+            <Preview cardBgColorData={projectData.name} key={index}>
+              <PrevInner>
+                <PreviewImg
+                  src={data}
+                  alt="preview"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </PrevInner>
+            </Preview>
+          ) : null
+        )}
       </PreviewContainer>
     </Contaier>
   );
