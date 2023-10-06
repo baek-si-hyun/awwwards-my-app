@@ -110,14 +110,14 @@ function MusicPlayBox() {
       const setIndex = index - 1;
       dispatch(controlRedux(setIndex));
     } else if (index <= 0) {
-      dispatch(controlRedux(36));
+      dispatch(controlRedux(27));
     }
   };
   const next = () => {
-    if (index < 33) {
+    if (index < 27) {
       const setIndex = index + 1;
       dispatch(controlRedux(setIndex));
-    } else if (index >= 33) {
+    } else if (index >= 27) {
       dispatch(controlRedux(0));
     }
   };

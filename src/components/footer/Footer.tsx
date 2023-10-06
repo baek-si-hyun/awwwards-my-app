@@ -175,7 +175,7 @@ function Footer() {
           </Contact>
           <Resume>
             <a
-              href="https://drive.google.com/file/d/1JCT2iSVsRXvQD6mQYQDc-bEAjf2I85HV/view?usp=sharing"
+              href="https://drive.google.com/file/d/1k3z0Juk50mcl7OIIrfIktsi8PiC15FMO/view?usp=drive_link"
               target="_blank"
               rel="noopener noreferrer"
             >

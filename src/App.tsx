@@ -4,7 +4,6 @@ import Faqs from "./pages/faqs/Faqs";
 import Main from "./pages/main/Main";
 import Myapp from "./pages/project_router/ProjectMain";
 import ScrollToTop from "./ScrollToTop";
-import { motion, useScroll } from "framer-motion";
 import { Route, Routes } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { IResize } from "./interface/iproject";
@@ -17,18 +16,7 @@ const Wapper = styled.div`
   width: 100%;
 `;
 
-const ScrollBar = styled(motion.div)`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background: rgb(255, 0, 0);
-  transform-origin: 0%;
-  z-index: 999999999;
-`;
 function App() {
-  const { scrollYProgress } = useScroll();
   const getResizeWidth = useSelector(
     ({ resizeWidthSlice }: { resizeWidthSlice: IResize }) => {
       return resizeWidthSlice.resizeWidth;
@@ -36,7 +24,6 @@ function App() {
   );
   return (
     <Wapper>
-      <ScrollBar style={{ scaleX: scrollYProgress }} />
       <MusicPlayer />
       <ScrollToTop />
       {getResizeWidth >= 1000 ? <MusicPlayBox /> : null}
