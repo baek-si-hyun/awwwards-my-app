@@ -21,7 +21,8 @@ const StickyTextBox = styled(TextBox)`
 `;
 
 const MusicContainer = styled.div`
-  z-index: 3;
+  position: relative;
+  z-index: 10;
   display: flex;
   flex-direction: column;
   border-radius: 5vw 5vw 0 0;
@@ -104,7 +105,7 @@ function Music() {
               alt="famous artist"
               loading="lazy"
               decoding="async"
-              style={{height:"45rem"}}
+              style={{ height: "45rem" }}
             />
             <AllMusicTextBox>
               <div>
