@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { ICoinSocketTickers } from "../interface/icoin";
 
 export async function fetchCoins() {
@@ -34,28 +34,31 @@ export async function fetchCoinHistory(coinList: string[]) {
 
 export function useCoinTickersSocket(coinList: string[]) {
   const [socket, setSocket] = useState<WebSocket | null>(null);
-  useEffect(() => {
+  const connectWS = () => {
     const upbitSocket = new WebSocket("wss://api.upbit.com/websocket/v1");
-    setSocket(upbitSocket);
-    const handleSocket = () => {
-      setTimeout(() => {
-        setSocket(new WebSocket("wss://api.upbit.com/websocket/v1"));
-      }, 5000);
-    };
-    upbitSocket.addEventListener("open", () => {
+    setSocket(() => upbitSocket);
+    upbitSocket.addEventListener("error", (error) => {
+      console.error("WebSocket error:", error);
+      connectWS(); 
+    });
+    upbitSocket.addEventListener("close", () => {
+      console.log("WebSocket connection closed");
+      connectWS(); 
+    });
+  };
+  useEffect(() => {
+    connectWS();
+  }, []);
+  useEffect(() => {
+    if (!socket) return;
+    socket.addEventListener("open", () => {
       const subscribeMsg = [
         { ticket: "UNIQUE_TICKET" },
         { type: "ticker", codes: coinList },
       ];
-      upbitSocket.send(JSON.stringify(subscribeMsg));
+      socket.send(JSON.stringify(subscribeMsg));
     });
-    upbitSocket.addEventListener("error", handleSocket);
-    upbitSocket.addEventListener("close", handleSocket);
-    return () => {
-      upbitSocket.removeEventListener("error", handleSocket);
-      upbitSocket.removeEventListener("close", handleSocket);
-    };
-  }, [coinList]);
+  }, [coinList, socket]);
 
   const fetchCoinTickersSocket = async () => {
     let newArr: ICoinSocketTickers[] = [];
@@ -64,7 +67,6 @@ export function useCoinTickersSocket(coinList: string[]) {
         reject("The websocket connection is experiencing some delay.");
         return;
       }
-
       socket.addEventListener("message", (message) => {
         message.data.text().then((text: string) => {
           const jsonData = JSON.parse(text);
@@ -72,12 +74,7 @@ export function useCoinTickersSocket(coinList: string[]) {
           resolve(newArr);
         });
       });
-
-      socket.addEventListener("error", (error) => {
-        reject(error);
-      });
     });
-
     return newArr;
   };
 
