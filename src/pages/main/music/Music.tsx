@@ -21,7 +21,8 @@ const StickyTextBox = styled(TextBox)`
 `;
 
 const MusicContainer = styled.div`
-  z-index: 3;
+  position: relative;
+  z-index: 10;
   display: flex;
   flex-direction: column;
   border-radius: 5vw 5vw 0 0;
@@ -100,14 +101,15 @@ function Music() {
           <NewJeans />
           <RelativeBox>
             <MusicImg
-              src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/d755ca11-f3a2-4bb5-f9c1-321964a57b00/public"
+              src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/cf6bc677-4cb6-4df4-1209-b5366f14c300/public"
               alt="famous artist"
               loading="lazy"
               decoding="async"
+              style={{ height: "45rem" }}
             />
             <AllMusicTextBox>
               <div>
-                <p>Recommended List</p>
+                <p>너무 미리 메리 크리스마스</p>
               </div>
             </AllMusicTextBox>
           </RelativeBox>

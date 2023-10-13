@@ -80,7 +80,7 @@ function NavRouterMode({
           </a>
         ) : pathname === "/airbnb" ? (
           <a
-            href="http://54.180.169.128:8080/pages"
+            href="https://drive.google.com/file/d/1I445jnO3_rn8myR253FWO54psB6kRiuO/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
           >

@@ -5,7 +5,6 @@ import { fetchProjects, fetchVistited } from "../../../services/listData";
 import { useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import VisitedBox from "./VisitedBox";
-
 const common = css`
   display: flex;
   flex-direction: column;
@@ -114,9 +113,7 @@ const InnerSpan = styled.span`
     border-bottom: 2px solid #b7b7b7;
   }
 `;
-const Icon = styled.img`
-  fill: #fff;
-`;
+const Icon = styled.img``;
 function ProjectsLinkBox() {
   const { data: projectData } = useQuery<IProjectsData[]>(
     ["project"],
