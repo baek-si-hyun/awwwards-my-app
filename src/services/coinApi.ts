@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import { ICoinSocketTickers } from "../interface/icoin";
 
 export async function fetchCoins() {
@@ -39,18 +39,18 @@ export function useCoinTickersSocket(coinList: string[]) {
     setSocket(() => upbitSocket);
     upbitSocket.addEventListener("error", (error) => {
       console.error("WebSocket error:", error);
-      connectWS(); 
+      connectWS();
     });
     upbitSocket.addEventListener("close", () => {
       console.log("WebSocket connection closed");
-      connectWS(); 
+      connectWS();
     });
   };
   useEffect(() => {
-    connectWS();
-  }, []);
-  useEffect(() => {
-    if (!socket) return;
+    if (!socket) {
+      connectWS();
+      return;
+    }
     socket.addEventListener("open", () => {
       const subscribeMsg = [
         { ticket: "UNIQUE_TICKET" },
