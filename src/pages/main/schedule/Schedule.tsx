@@ -8,13 +8,14 @@ import {
 import Finally from "./Finally";
 import PastSchedule from "./PastSchedule";
 
-const Container = styled.div`
+const Container = styled.section`
   width: 100%;
   margin-top: -7rem;
   background-color: #f6feff;
   border-radius: 5vw 5vw 0 0;
   padding: 3vw 0 13vw 0;
-  z-index: 5;
+  position: relative;
+  z-index: 4;
   box-shadow: 0 0 3rem rgba(0, 0, 0, 0.1);
 `;
 const ScheduleBox = styled.div`

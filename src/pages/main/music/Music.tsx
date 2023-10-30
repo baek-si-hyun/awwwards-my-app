@@ -3,13 +3,14 @@ import NewJeans from "./NewJeans";
 import FeaturedSong from "./FeaturedSong";
 import { TextBox, TextBoxMiddle, TextBoxbottom } from "../../common/mainCommon";
 
-const Container = styled.div`
+const Container = styled.section`
   width: 100%;
   padding-top: 3vw;
   background-color: #fff;
   border-radius: 5vw 5vw 0 0;
   margin-top: -6rem;
-  z-index: 2;
+  position: relative;
+  z-index: 1;
   box-shadow: 0 0 3rem rgba(0, 0, 0, 0.5);
 `;
 const Inner = styled.div`
@@ -22,7 +23,7 @@ const StickyTextBox = styled(TextBox)`
 
 const MusicContainer = styled.div`
   position: relative;
-  z-index: 10;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   border-radius: 5vw 5vw 0 0;

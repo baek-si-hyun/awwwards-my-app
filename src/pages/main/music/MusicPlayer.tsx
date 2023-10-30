@@ -77,7 +77,7 @@ function MusicPlayer() {
     );
   }, [dispatch, playIndex, playList]);
   return (
-    <div>
+    <article>
       <ReactPlayer
         url={playList[playIndex]?.url}
         width="0"
@@ -86,7 +86,7 @@ function MusicPlayer() {
         controls
         onEnded={() => onEnded()}
       />
-    </div>
+    </article>
   );
 }
 

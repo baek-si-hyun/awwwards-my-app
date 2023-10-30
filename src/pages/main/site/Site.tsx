@@ -1,14 +1,15 @@
 import styled from "styled-components";
 import { TextBox, TextBoxMiddle, TextBoxbottom } from "../../common/mainCommon";
 
-const Container = styled.div`
+const Container = styled.section`
   display: flex;
   flex-direction: column;
   gap: 1.4vw;
   padding: 8vw 2.7vw 15vw 2.7vw;
   margin-top: -5rem;
   background-color: rgba(255, 255, 255, 0.7);
-  z-index: 0;
+  position: relative;
+  z-index: -1;
   backdrop-filter: blur(10px);
   @media (max-width: 1050px) {
     & {

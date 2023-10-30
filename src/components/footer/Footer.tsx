@@ -5,14 +5,15 @@ import { useSelector } from "react-redux";
 import { IResize } from "../../interface/iproject";
 import Marquee from "react-fast-marquee";
 
-const Container = styled.div`
+const Container = styled.footer`
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 3vw;
   margin-top: -6rem;
   padding: 5vw 0 7vw 0;
-  z-index: 6;
+  position: relative;
+  z-index: 5;
   background-color: #f8f8f8;
   border-radius: 30px 30px 0 0;
   box-shadow: 0 0 3rem rgba(0, 0, 0, 0.3);

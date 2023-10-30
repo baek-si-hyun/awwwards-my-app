@@ -12,23 +12,16 @@ function Main() {
   return (
     <Suspense fallback={<></>}>
       <Header />
-      <Projects />
-      <Site />
-      <Music />
-      <CoinList />
-      <Schedule />
+      <main>
+        <Projects />
+        <Site />
+        <Music />
+        <CoinList />
+        <Schedule />
+      </main>
       <Nav />
       <Footer />
     </Suspense>
   );
 }
 export default Main;
-
-
-
-
-
-
-
-
-
