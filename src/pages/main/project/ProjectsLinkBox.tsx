@@ -13,6 +13,7 @@ const common = css`
 
 const Container = styled.div`
   ${common};
+  gap: 1.2vw;
 `;
 
 const Box = styled(Link)`
@@ -71,7 +72,7 @@ const TextBox = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem 0 1rem 0;
+  padding: 0 0 2rem 0;
   font-size: 1.5rem;
   @media (max-width: 1024px) {
     & {
@@ -179,7 +180,6 @@ function ProjectsLinkBox() {
                     />
                   ))}
                 </IconBox>
-
                 <VisitedBox
                   visitedData={visitedData}
                   name={data.projects_code}

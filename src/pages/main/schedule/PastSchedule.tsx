@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { schedule } from "../../../services/listData";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import { IResize } from "../../../interface/iproject";
 
@@ -107,7 +107,7 @@ const AbsoluteBox = styled.div<{ indexNum: number }>`
   ${(props) =>
     props.indexNum === 11 && "left:2620px;gap:150px;background-color:#077e03;"};
   ${(props) =>
-    props.indexNum === 12 && "left:2620px;gap:60px;background-color:#077e03;"};
+    props.indexNum === 12 && "left:2620px;gap:300px;background-color:#077e03;"};
   ${(props) => props.indexNum === 13 && "display: none;"};
 `;
 const Inner = styled.div`
@@ -136,6 +136,7 @@ function PastSchedule() {
     };
     graphMode();
   }, [getResizeWidth]);
+
   return (
     <Container>
       <Inner>
