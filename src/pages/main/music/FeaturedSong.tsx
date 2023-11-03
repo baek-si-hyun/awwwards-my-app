@@ -5,11 +5,10 @@ import {
   DropResult,
 } from "react-beautiful-dnd";
 import styled from "styled-components";
-import React from "react";
+import React, { useCallback } from "react";
 import MusicSet from "./MusicSet";
-import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { IFeaturedListData } from "../../../interface/imusic";
+import { IFeaturedListData, IPlayList } from "../../../interface/imusic";
 import { featuredRedux } from "../../../redux/slices/featuredListSlice";
 import {
   Board,
@@ -19,6 +18,7 @@ import {
   ImgDiv,
   Title,
 } from "./common/boardsCommon";
+import { useMySelector } from "../../../libs/useMySelector";
 
 const FeaturedContainer = styled(Container)`
   @media (max-width: 1050px) {
@@ -32,22 +32,24 @@ const Img = styled.img`
 `;
 
 function FeaturedSong() {
-  const featuredList = useSelector(
-    ({ featuredListSlice }: { featuredListSlice: IFeaturedListData }) => {
-      return featuredListSlice.featuredList;
-    }
+  const featuredList = useMySelector(
+    ({ featuredListSlice }: { featuredListSlice: IFeaturedListData }) =>
+      featuredListSlice.featuredList
   );
   const dispatch = useDispatch();
-  const onDragEnd = ({ destination, source }: DropResult) => {
-    if (!destination) return;
-    if (destination) {
-      const copyList = [...featuredList];
-      const taskObj = copyList[source.index];
-      copyList.splice(source.index, 1);
-      copyList.splice(destination?.index, 0, taskObj);
-      dispatch(featuredRedux(copyList));
-    }
-  };
+  const onDragEnd = useCallback(
+    ({ destination, source }: DropResult) => {
+      if (!destination) return;
+      if (destination) {
+        const copyList = [...featuredList];
+        const taskObj = copyList[source.index];
+        copyList.splice(source.index, 1);
+        copyList.splice(destination?.index, 0, taskObj);
+        dispatch(featuredRedux(copyList));
+      }
+    },
+    [dispatch, featuredList]
+  );
 
   return (
     <DragDropContext onDragEnd={onDragEnd}>
@@ -55,10 +57,10 @@ function FeaturedSong() {
         <Droppable droppableId="one">
           {(magic) => (
             <Board ref={magic.innerRef} {...magic.droppableProps}>
-              {featuredList.map((all, index) => (
+              {featuredList.map((featured: IPlayList, index: number) => (
                 <Draggable
-                  key={all.title}
-                  draggableId={all.title}
+                  key={featured.title}
+                  draggableId={featured.title}
                   index={index}
                 >
                   {(magic, snapshot) => (
@@ -71,22 +73,22 @@ function FeaturedSong() {
                       <CardItem>
                         <ImgDiv>
                           <Img
-                            src={all.img}
+                            src={featured.img}
                             alt="album_photo"
                             loading="lazy"
                             decoding="async"
                           />
-                          <MusicSet videoUrl={all.url} />
+                          <MusicSet videoUrl={featured.url} />
                         </ImgDiv>
                         <Title>
-                          <span>{all.title}</span>
+                          <span>{featured.title}</span>
                         </Title>
                       </CardItem>
                       <CardItem>
-                        <span>{all.artist}</span>
+                        <span>{featured.artist}</span>
                       </CardItem>
                       <CardItem>
-                        <span>{all.album}</span>
+                        <span>{featured.album}</span>
                       </CardItem>
                     </Card>
                   )}

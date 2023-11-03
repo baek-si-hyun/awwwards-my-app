@@ -5,10 +5,10 @@ import {
   DropResult,
 } from "react-beautiful-dnd";
 import styled from "styled-components";
-import React from "react";
+import React, { useCallback } from "react";
 import MusicSet from "./MusicSet";
-import { useDispatch, useSelector } from "react-redux";
-import { INewjeansListData } from "../../../interface/imusic";
+import { useDispatch } from "react-redux";
+import { INewjeansListData, IPlayList } from "../../../interface/imusic";
 import { newJeansRedux } from "../../../redux/slices/newJeansListSlice";
 import {
   Board,
@@ -18,28 +18,31 @@ import {
   ImgDiv,
   Title,
 } from "./common/boardsCommon";
+import { useMySelector } from "../../../libs/useMySelector";
 
 const Img = styled.img`
   width: clamp(40px, 4vw, 128px);
 `;
 
 function NewJeans() {
-  const newjeansList = useSelector(
-    ({ newJeansListSlice }: { newJeansListSlice: INewjeansListData }) => {
-      return newJeansListSlice.newjeansList;
-    }
+  const newjeansList = useMySelector(
+    ({ newJeansListSlice }: { newJeansListSlice: INewjeansListData }) =>
+      newJeansListSlice.newjeansList
   );
   const dispatch = useDispatch();
-  const onDragEnd = ({ destination, source }: DropResult) => {
-    if (!destination) return;
-    if (destination) {
-      const copyList = [...newjeansList];
-      const taskObj = copyList[source.index];
-      copyList.splice(source.index, 1);
-      copyList.splice(destination?.index, 0, taskObj);
-      dispatch(newJeansRedux(copyList));
-    }
-  };
+  const onDragEnd = useCallback(
+    ({ destination, source }: DropResult) => {
+      if (!destination) return;
+      if (destination) {
+        const copyList = [...newjeansList];
+        const taskObj = copyList[source.index];
+        copyList.splice(source.index, 1);
+        copyList.splice(destination?.index, 0, taskObj);
+        dispatch(newJeansRedux(copyList));
+      }
+    },
+    [dispatch, newjeansList]
+  );
 
   return (
     <DragDropContext onDragEnd={onDragEnd}>
@@ -47,7 +50,7 @@ function NewJeans() {
         <Droppable droppableId="one">
           {(magic) => (
             <Board ref={magic.innerRef} {...magic.droppableProps}>
-              {newjeansList.map((newjeans, index) => (
+              {newjeansList.map((newjeans : IPlayList, index : number) => (
                 <Draggable
                   key={newjeans.title}
                   draggableId={newjeans.title}

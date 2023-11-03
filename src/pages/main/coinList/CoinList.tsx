@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useQuery } from "@tanstack/react-query";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import styled from "styled-components";
 import Colgroup from "./ColGroup";
 import TheadTr from "./TheadTr";
@@ -126,7 +126,7 @@ function CoinList() {
     }
   );
 
-  const mergeFn = async () => {
+  const mergeFn = useCallback(async () => {
     let newArr: ICoinListMerge[] = [];
     await Promise.all(
       nameData!.map(async (nameArr) => {
@@ -144,7 +144,7 @@ function CoinList() {
         }
       })
     ).then(() => setMergeData(() => newArr));
-  };
+  },[coinList])
 
   useEffect(() => {
     if (historyData) {

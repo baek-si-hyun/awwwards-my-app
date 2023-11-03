@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { schedule } from "../../../services/listData";
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
 import { IResize } from "../../../interface/iproject";
+import { useMySelector } from "../../../libs/useMySelector";
 
 const Container = styled.div`
   padding: 1vw 0 6vw 0;
@@ -120,10 +120,9 @@ const InnerBox = styled.div`
 
 function PastSchedule() {
   const [graph, setGraph] = useState(false);
-  const getResizeWidth = useSelector(
-    ({ resizeWidthSlice }: { resizeWidthSlice: IResize }) => {
-      return resizeWidthSlice.resizeWidth;
-    }
+  const getResizeWidth = useMySelector(
+    ({ resizeWidthSlice }: { resizeWidthSlice: IResize }) =>
+      resizeWidthSlice.resizeWidth
   );
   useEffect(() => {
     const graphMode = () => {

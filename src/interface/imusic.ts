@@ -13,15 +13,6 @@ export interface INewjeansListData {
 export interface IFeaturedListData {
   featuredList: IPlayList[];
 }
-export interface IVideoInfo {
-  videoInfo: {
-    playing: boolean;
-    videoUrl: string;
-    img: string;
-    title: string;
-    artist: string;
-  };
-}
 export interface IVideoInfoRedux {
   playing: boolean;
   videoUrl: string;
@@ -29,6 +20,11 @@ export interface IVideoInfoRedux {
   title: string;
   artist: string;
 }
+
+export interface IVideoInfo {
+  videoInfo: IVideoInfoRedux;
+}
+
 export interface IIndex {
   index: number;
 }
