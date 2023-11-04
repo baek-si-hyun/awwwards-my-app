@@ -84,7 +84,7 @@ export const Img = styled.img`
   max-width: 20px;
 `;
 
-function TrBox({
+function TbodyTr({
   mergeData,
   coinList,
   count,
@@ -210,4 +210,4 @@ function TrBox({
     </>
   );
 }
-export default React.memo(TrBox);
+export default React.memo(TbodyTr);

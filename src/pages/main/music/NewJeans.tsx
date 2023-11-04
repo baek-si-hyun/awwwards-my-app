@@ -5,7 +5,7 @@ import {
   DropResult,
 } from "react-beautiful-dnd";
 import styled from "styled-components";
-import React, { useCallback } from "react";
+import React from "react";
 import MusicSet from "./MusicSet";
 import { useDispatch } from "react-redux";
 import { INewjeansListData, IPlayList } from "../../../interface/imusic";
@@ -30,19 +30,16 @@ function NewJeans() {
       newJeansListSlice.newjeansList
   );
   const dispatch = useDispatch();
-  const onDragEnd = useCallback(
-    ({ destination, source }: DropResult) => {
-      if (!destination) return;
-      if (destination) {
-        const copyList = [...newjeansList];
-        const taskObj = copyList[source.index];
-        copyList.splice(source.index, 1);
-        copyList.splice(destination?.index, 0, taskObj);
-        dispatch(newJeansRedux(copyList));
-      }
-    },
-    [dispatch, newjeansList]
-  );
+  const onDragEnd = ({ destination, source }: DropResult) => {
+    if (!destination) return;
+    if (destination) {
+      const copyList = [...newjeansList];
+      const taskObj = copyList[source.index];
+      copyList.splice(source.index, 1);
+      copyList.splice(destination?.index, 0, taskObj);
+      dispatch(newJeansRedux(copyList));
+    }
+  }
 
   return (
     <DragDropContext onDragEnd={onDragEnd}>

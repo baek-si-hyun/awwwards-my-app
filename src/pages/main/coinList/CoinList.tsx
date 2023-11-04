@@ -113,9 +113,11 @@ function CoinList() {
     refetchOnMount: false,
     refetchOnWindowFocus: false,
   });
+
   const coinList = nameData
     ?.map((data) => data.market)
     .slice(count - 10, count);
+
   const { data: historyData } = useQuery<ICoinHistory[][]>(
     ["history", count],
     () => fetchCoinHistory(coinList!),
@@ -144,7 +146,7 @@ function CoinList() {
         }
       })
     ).then(() => setMergeData(() => newArr));
-  },[coinList])
+  }, [coinList]);
 
   useEffect(() => {
     if (historyData) {
