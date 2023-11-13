@@ -1,10 +1,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import styled from "styled-components";
 import { useEffect, useState } from "react";
-import { shallowEqual, useDispatch, useSelector } from "react-redux";
+import {  useDispatch } from "react-redux";
 import { IVideoInfo } from "../../../interface/imusic";
 import { videoInfoRedux } from "../../../redux/slices/playingVideoInfoSlice";
 import { controllerVisibleRedux } from "../../../redux/slices/controllerVisibleSlice";
+import { useMySelector } from "../../../libs/useMySelector";
 
 export const ButtonDiv = styled.div<{ isPlaying: boolean }>`
   position: absolute;
@@ -40,11 +41,9 @@ export const ControllBtn = styled.button<{ isPlaying: boolean }>`
 function MusicSet({ videoUrl }: { videoUrl: string }) {
   const [isPlaying, setIsPlaying] = useState(false);
   const dispatch = useDispatch();
-  const videoInfo = useSelector(
-    (state: { playingVideoInfoSlice: IVideoInfo }) => {
-      return state.playingVideoInfoSlice.videoInfo;
-    },
-    shallowEqual
+  const videoInfo = useMySelector(
+    (state: { playingVideoInfoSlice: IVideoInfo }) =>
+      state.playingVideoInfoSlice.videoInfo
   );
   const toggle = () => {
     const playing = !isPlaying;

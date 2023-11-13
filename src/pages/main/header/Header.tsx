@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Container = styled.div`
+const Container = styled.header`
   width: 100%;
   background: url("https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/1fe4bbdc-2b82-4598-e76f-53fd4d9a5400/avatar")
     repeat;

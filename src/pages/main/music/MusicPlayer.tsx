@@ -1,7 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import ReactPlayer from "react-player";
-import { shallowEqual, useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import {
   IFeaturedListData,
@@ -12,6 +11,7 @@ import {
 } from "../../../interface/imusic";
 import { controlRedux } from "../../../redux/slices/controlPlayListSlice";
 import { videoInfoRedux } from "../../../redux/slices/playingVideoInfoSlice";
+import { useMySelector } from "../../../libs/useMySelector";
 
 function MusicPlayer() {
   const [playList, setPlayList] = useState<IPlayList[]>([
@@ -24,13 +24,11 @@ function MusicPlayer() {
       url: "https://www.youtube.com/embed/sVTy_wmn5SU",
     },
   ]);
-  const videoInfo = useSelector(
-    (state: { playingVideoInfoSlice: IVideoInfo }) => {
-      return state.playingVideoInfoSlice.videoInfo;
-    },
-    shallowEqual
+  const videoInfo = useMySelector(
+    (state: { playingVideoInfoSlice: IVideoInfo }) =>
+      state.playingVideoInfoSlice.videoInfo
   );
-  const newList = useSelector(
+  const newList = useMySelector(
     (state: {
       newJeansListSlice: INewjeansListData;
       featuredListSlice: IFeaturedListData;
@@ -40,14 +38,11 @@ function MusicPlayer() {
         ...state.featuredListSlice.featuredList,
       ];
       return newArr;
-    },
-    shallowEqual
+    }
   );
-  const index = useSelector(
-    ({ controlPlayListSlice }: { controlPlayListSlice: IIndex }) => {
-      return controlPlayListSlice?.index;
-    },
-    shallowEqual
+  const index = useMySelector(
+    ({ controlPlayListSlice }: { controlPlayListSlice: IIndex }) =>
+      controlPlayListSlice?.index
   );
   const onEnded = () => {
     const setIndex = index + 1;
@@ -59,7 +54,7 @@ function MusicPlayer() {
   }, [index]);
   useEffect(() => {
     const findIndex = newList.findIndex(
-      (item) => item.url === videoInfo.videoUrl
+      (item: { url: string; }) => item.url === videoInfo.videoUrl
     );
     dispatch(controlRedux(findIndex));
     setPlayList(newList);
@@ -77,7 +72,7 @@ function MusicPlayer() {
     );
   }, [dispatch, playIndex, playList]);
   return (
-    <div>
+    <article>
       <ReactPlayer
         url={playList[playIndex]?.url}
         width="0"
@@ -86,7 +81,7 @@ function MusicPlayer() {
         controls
         onEnded={() => onEnded()}
       />
-    </div>
+    </article>
   );
 }
 

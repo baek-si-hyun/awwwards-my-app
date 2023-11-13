@@ -42,7 +42,7 @@ const Th = styled.th`
     padding-right: 1vw;
   }
 `;
-function Thead() {
+function TheadTr() {
   return (
     <Tr>
       <NameTh>
@@ -72,4 +72,4 @@ function Thead() {
     </Tr>
   );
 }
-export default Thead;
+export default TheadTr;

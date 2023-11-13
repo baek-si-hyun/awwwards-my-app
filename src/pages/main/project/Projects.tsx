@@ -7,7 +7,7 @@ import {
 } from "../../common/mainCommon";
 import ProjectsLinkBox from "./ProjectsLinkBox";
 
-const Container = styled.div`
+const Container = styled.section`
   width: 100%;
   background-color: #fff;
   padding: 1vw 0 13vw 0;

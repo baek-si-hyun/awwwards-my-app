@@ -19,7 +19,7 @@ const common = css`
   z-index: 999;
 `;
 
-const Navi = styled.div`
+const Navi = styled.nav`
   border-radius: 10px;
   position: fixed;
   bottom: 2rem;

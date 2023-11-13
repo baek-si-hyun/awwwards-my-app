@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useQuery } from "@tanstack/react-query";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import styled from "styled-components";
 import Colgroup from "./ColGroup";
 import TheadTr from "./TheadTr";
@@ -13,13 +13,14 @@ import {
 import { ICoinHistory, ICoinListMerge, ICoins } from "../../../interface/icoin";
 import { TextBox, TextBoxMiddle, TextBoxbottom } from "../../common/mainCommon";
 
-const Container = styled.div`
+const Container = styled.section`
   width: 100%;
   margin-top: -5rem;
   padding: 4vw 2.7vw 15vw 2.7vw;
   border-radius: 5vw 5vw 0 0;
   background-color: #f8f8f8;
-  z-index: 4;
+  position: relative;
+  z-index: 3;
   @media (max-width: 1050px) {
     & {
       padding-bottom: 12rem;
@@ -112,9 +113,11 @@ function CoinList() {
     refetchOnMount: false,
     refetchOnWindowFocus: false,
   });
+
   const coinList = nameData
     ?.map((data) => data.market)
     .slice(count - 10, count);
+
   const { data: historyData } = useQuery<ICoinHistory[][]>(
     ["history", count],
     () => fetchCoinHistory(coinList!),
@@ -125,7 +128,7 @@ function CoinList() {
     }
   );
 
-  const mergeFn = async () => {
+  const mergeFn = useCallback(async () => {
     let newArr: ICoinListMerge[] = [];
     await Promise.all(
       nameData!.map(async (nameArr) => {
@@ -143,7 +146,7 @@ function CoinList() {
         }
       })
     ).then(() => setMergeData(() => newArr));
-  };
+  }, [coinList]);
 
   useEffect(() => {
     if (historyData) {

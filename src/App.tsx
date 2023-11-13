@@ -10,12 +10,6 @@ import { IResize } from "./interface/iproject";
 import MusicPlayer from "./pages/main/music/MusicPlayer";
 import MusicPlayBox from "./components/music_player/MusicPlayBox";
 
-const Wapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-`;
-
 function App() {
   const getResizeWidth = useSelector(
     ({ resizeWidthSlice }: { resizeWidthSlice: IResize }) => {
@@ -23,7 +17,7 @@ function App() {
     }
   );
   return (
-    <Wapper>
+    <>
       <MusicPlayer />
       <ScrollToTop />
       {getResizeWidth >= 1000 ? <MusicPlayBox /> : null}
@@ -33,7 +27,7 @@ function App() {
         <Route path="FAQs" element={<Faqs />} />
         <Route path="Contact" element={<Contact />} />
       </Routes>
-    </Wapper>
+    </>
   );
 }
 

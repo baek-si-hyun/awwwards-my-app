@@ -1,9 +1,9 @@
-import { shallowEqual, useSelector } from "react-redux";
 import styled from "styled-components";
 import { IControllerVisible, IIndex, IVideoInfo } from "../../interface/imusic";
 import { useDispatch } from "react-redux";
 import { videoInfoRedux } from "../../redux/slices/playingVideoInfoSlice";
 import { controlRedux } from "../../redux/slices/controlPlayListSlice";
+import { useMySelector } from "../../libs/useMySelector";
 
 const Container = styled.div<{ isVisible: boolean }>`
   display: flex;
@@ -78,17 +78,13 @@ const ControllBtn = styled.div`
 `;
 
 function MusicPlayBox() {
-  const visible = useSelector(
-    (state: { controllerVisibleSlice: IControllerVisible }) => {
-      return state.controllerVisibleSlice.visible;
-    },
-    shallowEqual
+  const visible = useMySelector(
+    (state: { controllerVisibleSlice: IControllerVisible }) =>
+      state.controllerVisibleSlice.visible
   );
-  const videoInfo = useSelector(
-    (state: { playingVideoInfoSlice: IVideoInfo }) => {
-      return state.playingVideoInfoSlice.videoInfo;
-    },
-    shallowEqual
+  const videoInfo = useMySelector(
+    (state: { playingVideoInfoSlice: IVideoInfo }) =>
+      state.playingVideoInfoSlice.videoInfo
   );
   const dispatch = useDispatch();
   const toggle = () => {
@@ -99,11 +95,9 @@ function MusicPlayBox() {
       })
     );
   };
-  const index = useSelector(
-    ({ controlPlayListSlice }: { controlPlayListSlice: IIndex }) => {
-      return controlPlayListSlice?.index;
-    },
-    shallowEqual
+  const index = useMySelector(
+    ({ controlPlayListSlice }: { controlPlayListSlice: IIndex }) =>
+      controlPlayListSlice?.index
   );
   const prev = () => {
     if (index > 0) {

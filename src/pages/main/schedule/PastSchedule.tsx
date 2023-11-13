@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { schedule } from "../../../services/listData";
-import { useEffect, useRef, useState } from "react";
-import { useSelector } from "react-redux";
+import { useEffect, useState } from "react";
 import { IResize } from "../../../interface/iproject";
+import { useMySelector } from "../../../libs/useMySelector";
 
 const Container = styled.div`
   padding: 1vw 0 6vw 0;
@@ -101,7 +101,7 @@ const AbsoluteBox = styled.div<{ indexNum: number }>`
   ${(props) => props.indexNum === 7 && "left:1860px;gap:150px;"};
   ${(props) => props.indexNum === 8 && "left:1900px;gap:110px;"};
   ${(props) =>
-    props.indexNum === 9 && "left:2350px;gap:330px;background-color:#077e03;"};
+    props.indexNum === 9 && "left:2350px;gap:410px;background-color:#077e03;"};
   ${(props) =>
     props.indexNum === 10 && "left:2200px;gap:140px;background-color:#ca0101;"};
   ${(props) =>
@@ -120,10 +120,9 @@ const InnerBox = styled.div`
 
 function PastSchedule() {
   const [graph, setGraph] = useState(false);
-  const getResizeWidth = useSelector(
-    ({ resizeWidthSlice }: { resizeWidthSlice: IResize }) => {
-      return resizeWidthSlice.resizeWidth;
-    }
+  const getResizeWidth = useMySelector(
+    ({ resizeWidthSlice }: { resizeWidthSlice: IResize }) =>
+      resizeWidthSlice.resizeWidth
   );
   useEffect(() => {
     const graphMode = () => {
