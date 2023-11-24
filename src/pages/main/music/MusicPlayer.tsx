@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import {
   IFeaturedListData,
   IIndex,
-  INewjeansListData,
+  ILoLChampionsListData,
   IPlayList,
   IVideoInfo,
 } from "../../../interface/imusic";
@@ -21,20 +21,32 @@ function MusicPlayer() {
       title: "",
       artist: "",
       album: "",
-      url: "https://www.youtube.com/embed/sVTy_wmn5SU",
+      url: "https://www.youtube.com/embed/4Q46xYqUwZQ",
     },
   ]);
   const videoInfo = useMySelector(
     (state: { playingVideoInfoSlice: IVideoInfo }) =>
       state.playingVideoInfoSlice.videoInfo
   );
+  // const newList = useMySelector(
+  //   (state: {
+  //     newJeansListSlice: INewjeansListData;
+  //     featuredListSlice: IFeaturedListData;
+  //   }) => {
+  //     const newArr = [
+  //       ...state.newJeansListSlice.newjeansList,
+  //       ...state.featuredListSlice.featuredList,
+  //     ];
+  //     return newArr;
+  //   }
+  // );
   const newList = useMySelector(
     (state: {
-      newJeansListSlice: INewjeansListData;
+      lolChampionsListSlice: ILoLChampionsListData;
       featuredListSlice: IFeaturedListData;
     }) => {
       const newArr = [
-        ...state.newJeansListSlice.newjeansList,
+        ...state.lolChampionsListSlice.lolChampionsList,
         ...state.featuredListSlice.featuredList,
       ];
       return newArr;
@@ -54,7 +66,7 @@ function MusicPlayer() {
   }, [index]);
   useEffect(() => {
     const findIndex = newList.findIndex(
-      (item: { url: string; }) => item.url === videoInfo.videoUrl
+      (item: { url: string }) => item.url === videoInfo.videoUrl
     );
     dispatch(controlRedux(findIndex));
     setPlayList(newList);
