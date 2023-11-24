@@ -2,6 +2,7 @@ import styled from "styled-components";
 import NewJeans from "./NewJeans";
 import FeaturedSong from "./FeaturedSong";
 import { TextBox, TextBoxMiddle, TextBoxbottom } from "../../common/mainCommon";
+import LoLChampions from "./LoLChampions";
 
 const Container = styled.section`
   width: 100%;
@@ -48,12 +49,22 @@ const MusicTextBox = styled.div`
   div {
     position: absolute;
     left: 5%;
-    bottom: 10%;
+    bottom: 0;
+  }
+  h2 {
+    font-weight: bold;
+    font-size: 2.5vw;
+    margin-bottom: 1vw;
   }
   p {
-    font-weight: bold;
-    font-size: 2vw;
-    margin-bottom: 1vw;
+    font-size: 1.2vw;
+  }
+  @media (max-width: 650px) {
+    & {
+      p {
+        font-size: 2vw;
+      }
+    }
   }
 `;
 
@@ -63,6 +74,9 @@ const AllMusicTextBox = styled(MusicTextBox)`
     rgba(0, 0, 0, 0.5) 50%,
     rgba(0, 0, 0, 1) 100%
   );
+  div {
+    bottom: 10%;
+  }
 `;
 
 function Music() {
@@ -88,18 +102,23 @@ function Music() {
         <MusicContainer>
           <RelativeBox>
             <MusicImg
-              src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/ee6e50a8-17dd-458b-29e3-ad794eeca500/public"
+              src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/f5b351a9-0651-45a5-1941-6a03f1756100/public"
               alt="newjeans"
               loading="lazy"
               decoding="async"
             />
             <MusicTextBox>
               <div>
-                <p>NewJeans</p>
+                <h2>T1</h2>
+                <p>
+                  FAKER 7년의 침묵 끝, 세계 최초 LOL World Championship 4번째
+                  우승
+                </p>
               </div>
             </MusicTextBox>
           </RelativeBox>
-          <NewJeans />
+          <LoLChampions />
+          {/* <NewJeans /> */}
           <RelativeBox>
             <MusicImg
               src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/cf6bc677-4cb6-4df4-1209-b5366f14c300/public"

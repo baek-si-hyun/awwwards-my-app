@@ -9,7 +9,9 @@ export interface IPlayList {
 export interface INewjeansListData {
   newjeansList: IPlayList[];
 }
-
+export interface ILoLChampionsListData {
+  lolChampionsList: IPlayList[];
+}
 export interface IFeaturedListData {
   featuredList: IPlayList[];
 }
