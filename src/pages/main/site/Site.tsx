@@ -9,7 +9,7 @@ const Container = styled.section`
   margin-top: -5rem;
   background-color: rgba(255, 255, 255, 0.7);
   position: relative;
-  z-index: -1;
+  z-index: 0;
   backdrop-filter: blur(10px);
   @media (max-width: 1050px) {
     & {

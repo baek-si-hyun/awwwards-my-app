@@ -1,9 +1,11 @@
 import styled from "styled-components";
-import NewJeans from "./NewJeans";
+import { useState, useEffect, useRef } from "react";
+import { useInView } from "react-intersection-observer";
+// import NewJeans from "./NewJeans";
 import FeaturedSong from "./FeaturedSong";
 import { TextBox, TextBoxMiddle, TextBoxbottom } from "../../common/mainCommon";
 import LoLChampions from "./LoLChampions";
-
+import t1video from "../../../assets/video/t1video.mp4";
 const Container = styled.section`
   width: 100%;
   padding-top: 3vw;
@@ -37,6 +39,52 @@ const RelativeBox = styled.div`
 const MusicImg = styled.img`
   width: 100%;
   object-fit: cover;
+`;
+const MusicVideo = styled.div<{ inView: boolean }>`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  object-fit: cover;
+  opacity: ${(props) => (props.inView ? 1 : 0)};
+  transition: opacity 0.3s 1.5s ease-in-out;
+  position: absolute;
+  left: 0;
+  top: -0.2rem;
+  @media (max-width: 1600px) {
+    & {
+      top: -5rem;
+    }
+  }
+  @media (max-width: 1550px) {
+    & {
+      top: -6rem;
+    }
+  }
+  @media (max-width: 1440px) {
+    & {
+      top: -9rem;
+    }
+  }
+  @media (max-width: 1366px) {
+    & {
+      top: -8rem;
+    }
+  }
+  @media (max-width: 1280px) {
+    & {
+      top: -9rem;
+    }
+  }
+  @media (max-width: 1024px) {
+    & {
+      top: -12rem;
+    }
+  }
+  @media (max-width: 768px) {
+    & {
+      top: -16rem;
+    }
+  }
 `;
 const MusicTextBox = styled.div`
   width: 100%;
@@ -80,8 +128,9 @@ const AllMusicTextBox = styled(MusicTextBox)`
 `;
 
 function Music() {
+  const { ref, inView, entry } = useInView();
   return (
-    <Container id="music">
+    <Container id="music" ref={ref}>
       <Inner>
         <StickyTextBox>
           <TextBoxMiddle>Music List</TextBoxMiddle>
@@ -90,7 +139,7 @@ function Music() {
             사이트를 보시면서 음악을 감상할 수 있습니다.
             <br />
             <br />
-            최근에 제일 핫한 "뉴진스"와 제 취향의 노래들입니다.
+            최근에 제일 핫한 "롤챔스"와 크리스마스 노래들입니다.
             <br />
             <br />
             뮤직 리스트는 위에서 부터 차례대로 재생됩니다.
@@ -107,6 +156,27 @@ function Music() {
               loading="lazy"
               decoding="async"
             />
+            <MusicVideo inView={inView}>
+              <video
+                controls={false}
+                autoPlay={true}
+                loop={true}
+                muted={true}
+              >
+                <source src={t1video} type="video/mp4"></source>
+              </video>
+              {/* <ReactPlayer
+                url="https://youtu.be/5skJdz6IgSg"
+                width="100vw"
+                height="803px"
+                playing={inView}
+                muted={true}
+                controls={false}
+                light={false}
+                pip={false}
+                loop={true}
+              /> */}
+            </MusicVideo>
             <MusicTextBox>
               <div>
                 <h2>T1</h2>
