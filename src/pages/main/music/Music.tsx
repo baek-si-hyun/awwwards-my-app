@@ -44,47 +44,14 @@ const MusicVideo = styled.div<{ inView: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
-  object-fit: cover;
   opacity: ${(props) => (props.inView ? 1 : 0)};
   transition: opacity 0.3s 1.5s ease-in-out;
   position: absolute;
   left: 0;
   top: -0.2rem;
-  @media (max-width: 1600px) {
-    & {
-      top: -5rem;
-    }
-  }
-  @media (max-width: 1550px) {
-    & {
-      top: -6rem;
-    }
-  }
-  @media (max-width: 1440px) {
-    & {
-      top: -9rem;
-    }
-  }
-  @media (max-width: 1366px) {
-    & {
-      top: -8rem;
-    }
-  }
-  @media (max-width: 1280px) {
-    & {
-      top: -9rem;
-    }
-  }
-  @media (max-width: 1024px) {
-    & {
-      top: -12rem;
-    }
-  }
-  @media (max-width: 768px) {
-    & {
-      top: -16rem;
-    }
-  }
+`;
+const Video = styled.video`
+  width: 100%;
 `;
 const MusicTextBox = styled.div`
   width: 100%;
@@ -157,25 +124,9 @@ function Music() {
               decoding="async"
             />
             <MusicVideo inView={inView}>
-              <video
-                controls={false}
-                autoPlay={true}
-                loop={true}
-                muted={true}
-              >
+              <Video controls={false} autoPlay={true} loop={true} muted={true}>
                 <source src={t1video} type="video/mp4"></source>
-              </video>
-              {/* <ReactPlayer
-                url="https://youtu.be/5skJdz6IgSg"
-                width="100vw"
-                height="803px"
-                playing={inView}
-                muted={true}
-                controls={false}
-                light={false}
-                pip={false}
-                loop={true}
-              /> */}
+              </Video>
             </MusicVideo>
             <MusicTextBox>
               <div>

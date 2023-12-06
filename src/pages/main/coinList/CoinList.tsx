@@ -12,6 +12,7 @@ import {
 } from "../../../services/coinApi";
 import { ICoinHistory, ICoinListMerge, ICoins } from "../../../interface/icoin";
 import { TextBox, TextBoxMiddle, TextBoxbottom } from "../../common/mainCommon";
+import useCoinNames from "../../../libs/useCoinNames";
 
 const Container = styled.section`
   width: 100%;
@@ -108,11 +109,7 @@ function CoinList() {
   };
 
   const [mergeData, setMergeData] = useState<ICoinListMerge[]>([]);
-  const { data: nameData } = useQuery<ICoins[]>(["name"], () => fetchCoins(), {
-    select: (data) => data.filter((data) => !data.market.indexOf("KRW")),
-    refetchOnMount: false,
-    refetchOnWindowFocus: false,
-  });
+  const { nameData } = useCoinNames(true);
 
   const coinList = nameData
     ?.map((data) => data.market)
@@ -153,7 +150,6 @@ function CoinList() {
       mergeFn();
     }
   }, [historyData]);
-
   return (
     <Container>
       <Inner>

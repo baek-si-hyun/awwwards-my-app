@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Footer from "../../components/footer/Footer";
 import FaqList from "./FaqList";
 
 const Container = styled.div`
@@ -56,7 +55,6 @@ function Faqs() {
           <FaqList />
         </FaqsBox>
       </Inner>
-      <Footer />
     </Container>
   );
 }

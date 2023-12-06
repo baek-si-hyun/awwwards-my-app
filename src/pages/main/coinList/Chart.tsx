@@ -14,9 +14,9 @@ const ApexChart = styled(ReactApexChart)`
   width: 164px;
   color: ${(props) =>
     props.change === "RISE"
-      ? "#c84a31"
+      ? "#089981"
       : props.change === "FALL"
-      ? " #1261c4"
+      ? " #F23645"
       : "#222"};
   will-change: color;
 `;
@@ -73,10 +73,10 @@ function Chart({
             stroke: { curve: "smooth", width: 3 },
             colors: [
               change === "RISE"
-                ? "#c84a31"
+                ? "#089981"
                 : change === "EVEN"
                 ? "#222"
-                : "#1261c4",
+                : "#F23645",
             ],
             xaxis: {
               axisBorder: { show: false },

@@ -14,6 +14,25 @@ import {
   fetchCoinTickers,
   useCoinTickersSocket,
 } from "../../../services/coinApi";
+import { Link } from "react-router-dom";
+
+const GoDetail = styled(Link)`
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  &:hover {
+    background-color: #dadada;
+    border-radius: 5px;
+  }
+  div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  div span + span {
+    color: #808a9d;
+  }
+`;
 
 export const Td = styled.td`
   text-align: end;
@@ -51,28 +70,15 @@ const NameTd = styled.td`
     }
   }
 `;
-export const Namediv = styled.div`
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  div {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-  }
-  div span + span {
-    color: #808a9d;
-  }
-`;
 
 export const TdChangeDiv = styled.div<{ change: string }>`
   display: flex;
   flex-direction: column;
   color: ${(props) =>
     props.change === "RISE"
-      ? "#c84a31"
+      ? "#089981"
       : props.change === "FALL"
-      ? "#1261c4"
+      ? "#F23645"
       : "#222"};
   will-change: color;
 `;
@@ -112,11 +118,11 @@ function TbodyTr({
     if (tickerSocketData) {
       setTickerList(
         tickerHttpData?.map((httpData) => {
-          const supplyArr = tickerSocketData.find(
+          const coinDataArr = tickerSocketData.find(
             (socketData) => httpData.market === socketData.code
           );
-          if (supplyArr) {
-            return { ...httpData, ...supplyArr };
+          if (coinDataArr) {
+            return { ...httpData, ...coinDataArr };
           }
           return httpData;
         }) || []
@@ -138,7 +144,10 @@ function TbodyTr({
         ? mergeData.map((data, index) => (
             <Tr key={index}>
               <NameTd>
-                <Namediv>
+                <GoDetail
+                  to={`/coin-detail/UPBIT:${data.market.substring(4)}KRW`}
+                  state={mergeData}
+                >
                   <Img
                     src={`https://static.upbit.com/logos/${data.market.substring(
                       4
@@ -151,7 +160,7 @@ function TbodyTr({
                     <span>{data.english_name}</span>
                     <span>{data.market.substring(4)}</span>
                   </div>
-                </Namediv>
+                </GoDetail>
               </NameTd>
               <Td>
                 <TradePrice
@@ -197,12 +206,14 @@ function TbodyTr({
                 />
               </Td>
               <Td>
-                <Chart200Days
-                  coinName={data.market}
-                  history={data.historyArr}
-                  tickerList={tickerList}
-                  tickerSocketData={tickerSocketData}
-                />
+                {data.historyArr && (
+                  <Chart200Days
+                    coinName={data.market}
+                    history={data.historyArr}
+                    tickerList={tickerList}
+                    tickerSocketData={tickerSocketData}
+                  />
+                )}
               </Td>
             </Tr>
           ))

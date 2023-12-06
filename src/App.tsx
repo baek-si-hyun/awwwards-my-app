@@ -9,7 +9,10 @@ import { useSelector } from "react-redux";
 import { IResize } from "./interface/iproject";
 import MusicPlayer from "./pages/main/music/MusicPlayer";
 import MusicPlayBox from "./components/music_player/MusicPlayBox";
-
+import Footer from "./components/footer/Footer";
+import Nav from "./components/nav/Nav";
+import { Suspense, lazy } from "react";
+const CoinDetail = lazy(() => import("./pages/coin_detail/CoinDetail"));
 function App() {
   const getResizeWidth = useSelector(
     ({ resizeWidthSlice }: { resizeWidthSlice: IResize }) => {
@@ -17,17 +20,20 @@ function App() {
     }
   );
   return (
-    <>
+    <Suspense fallback={<></>}>
       <MusicPlayer />
       <ScrollToTop />
       {getResizeWidth >= 1000 ? <MusicPlayBox /> : null}
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path=":projectId" element={<Myapp />} />
-        <Route path="FAQs" element={<Faqs />} />
-        <Route path="Contact" element={<Contact />} />
+        <Route path="faqs" element={<Faqs />} />
+        <Route path="contact" element={<Contact />} />
+        <Route path="coin-detail/:coinId" element={<CoinDetail />} />
       </Routes>
-    </>
+      <Nav />
+      <Footer />
+    </Suspense>
   );
 }
 
