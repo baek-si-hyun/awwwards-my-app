@@ -13,7 +13,6 @@ import {
 import { ICoinHistory, ICoinListMerge, ICoins } from "../../../interface/icoin";
 import { TextBox, TextBoxMiddle, TextBoxbottom } from "../../common/mainCommon";
 import useCoinNames from "../../../libs/useCoinNames";
-
 const Container = styled.section`
   width: 100%;
   margin-top: -5rem;
@@ -28,12 +27,10 @@ const Container = styled.section`
     }
   }
 `;
-
 const Inner = styled.div`
   display: flex;
   flex-direction: column;
 `;
-
 const TableBox = styled.div`
   @media (max-width: 1279px) {
     & {
@@ -44,7 +41,6 @@ const TableBox = styled.div`
 const ListTable = styled.table`
   width: 100%;
   font-weight: 900;
-
   @media (max-width: 650px) {
     & {
       font-size: 2.3vw;
@@ -56,7 +52,6 @@ const ListTable = styled.table`
     }
   }
 `;
-
 export const Tr = styled.tr`
   border-bottom: 1px solid #e2e2e2;
   :first-child {
@@ -83,7 +78,6 @@ const PageBtn = styled.button<{ selected: boolean }>`
   color: ${(props) => (props.selected ? "#fff" : "#333")};
   will-change: background-color, color;
 `;
-
 function CoinList() {
   const [page, setPage] = useState(1);
   const [count, setCount] = useState(10);
@@ -108,48 +102,6 @@ function CoinList() {
     return pageButtons;
   };
 
-  const [mergeData, setMergeData] = useState<ICoinListMerge[]>([]);
-  const { nameData } = useCoinNames(true);
-
-  const coinList = nameData
-    ?.map((data) => data.market)
-    .slice(count - 10, count);
-
-  const { data: historyData } = useQuery<ICoinHistory[][]>(
-    ["history", count],
-    () => fetchCoinHistory(coinList!),
-    {
-      enabled: !!coinList,
-      refetchOnMount: false,
-      refetchOnWindowFocus: true,
-    }
-  );
-
-  const mergeFn = useCallback(async () => {
-    let newArr: ICoinListMerge[] = [];
-    await Promise.all(
-      nameData!.map(async (nameArr) => {
-        const supplyArr = circulatingSupply.find(
-          (supply) => supply.id === nameArr.market
-        );
-        if (supplyArr) {
-          const historyArr = historyData!.find(
-            (history) => history[0].market === nameArr.market
-          );
-          if (historyArr) {
-            let newObject = { ...nameArr, ...supplyArr, historyArr };
-            newArr.push(newObject);
-          }
-        }
-      })
-    ).then(() => setMergeData(() => newArr));
-  }, [coinList]);
-
-  useEffect(() => {
-    if (historyData) {
-      mergeFn();
-    }
-  }, [historyData]);
   return (
     <Container>
       <Inner>
@@ -166,13 +118,7 @@ function CoinList() {
               <TheadTr />
             </thead>
             <tbody>
-              {mergeData && coinList && (
-                <TbodyTr
-                  coinList={coinList}
-                  mergeData={mergeData}
-                  count={count}
-                />
-              )}
+              <TbodyTr count={count} />
             </tbody>
           </ListTable>
         </TableBox>

@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { ICoinSocketTickers } from "../interface/icoin";
 
 export async function fetchCoins() {
@@ -31,10 +31,10 @@ export async function fetchCoinHistory(coinList: string[]) {
   }
   return results;
 }
-
-export function useCoinTickersSocket(coinList: string[]) {
+export const useCoinTickersSocket = (coinList: string[]) => {
   const [socket, setSocket] = useState<WebSocket | null>(null);
-  const connectWS = () => {
+
+  const connectWS = useCallback(() => {
     const upbitSocket = new WebSocket("wss://api.upbit.com/websocket/v1");
     setSocket(() => upbitSocket);
     upbitSocket.addEventListener("error", (error) => {
@@ -42,10 +42,10 @@ export function useCoinTickersSocket(coinList: string[]) {
       connectWS();
     });
     upbitSocket.addEventListener("close", () => {
-      console.log("WebSocket connection closed");
       connectWS();
     });
-  };
+  }, []);
+
   useEffect(() => {
     if (!socket) {
       connectWS();
@@ -58,9 +58,9 @@ export function useCoinTickersSocket(coinList: string[]) {
       ];
       socket.send(JSON.stringify(subscribeMsg));
     });
-  }, [coinList, socket]);
+  }, [coinList, socket, connectWS]);
 
-  const fetchCoinTickersSocket = async () => {
+  const fetchCoinTickersSocket = useCallback(async () => {
     let newArr: ICoinSocketTickers[] = [];
     await new Promise((resolve, reject) => {
       if (!socket) {
@@ -76,11 +76,11 @@ export function useCoinTickersSocket(coinList: string[]) {
       });
     });
     return newArr;
-  };
+  }, [socket]);
 
   return useQuery<ICoinSocketTickers[]>(
     ["coinTickers", coinList],
-    () => fetchCoinTickersSocket(),
+    fetchCoinTickersSocket,
     {
       enabled: !!coinList,
       refetchInterval: 500,
@@ -88,7 +88,7 @@ export function useCoinTickersSocket(coinList: string[]) {
       refetchOnWindowFocus: false,
     }
   );
-}
+};
 
 //무료 Supply api, market cap api 못찾겠다...
 export const circulatingSupply = [
