@@ -1,10 +1,5 @@
 import styled from "styled-components";
-import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { IResize } from "../../interface/iproject";
-import Marquee from "react-fast-marquee";
-
 const Container = styled.footer`
   display: flex;
   flex-direction: column;
@@ -55,17 +50,7 @@ const En = styled.div`
     }
   }
 `;
-const Wrap = styled.div``;
-const InnerWrap = styled(Marquee)`
-  padding: 0.5rem 0;
-  font-weight: lighter;
-`;
-const MarqueeText = styled.div`
-  overflow: hidden;
-  span {
-    font-weight: bold;
-  }
-`;
+
 const Nav = styled.div`
   display: flex;
   flex-direction: column;
@@ -118,30 +103,6 @@ const LinkItem = styled.a`
 `;
 
 function Footer() {
-  const getResizeWidth = useSelector(
-    ({ resizeWidthSlice }: { resizeWidthSlice: IResize }) => {
-      return resizeWidthSlice.resizeWidth;
-    }
-  );
-  const [speed, setSpeed] = useState(130);
-
-  useEffect(() => {
-    const graphMode = () => {
-      if (getResizeWidth > 1280) {
-        setSpeed(130);
-      }
-      if (getResizeWidth <= 1280) {
-        setSpeed(90);
-      }
-      if (getResizeWidth <= 768) {
-        setSpeed(60);
-      }
-      if (getResizeWidth <= 429) {
-        setSpeed(40);
-      }
-    };
-    graphMode();
-  }, [getResizeWidth]);
   return (
     <Container>
       <Logo>
@@ -185,34 +146,6 @@ function Footer() {
           </Resume>
         </Nav>
       </TextAndNav>
-      <Wrap>
-        <InnerWrap play={true} gradient={false} speed={speed}>
-          <MarqueeText>
-            {" "}
-            Thank you for watching - <span>SiHyun Baek</span> - portfolio -{" "}
-            <span>2023</span> - Thank you for watching -{" "}
-            <span>SiHyun Baek</span> - portfolio - <span>2023</span> - Thank you
-            for watching - <span>SiHyun Baek</span> - portfolio -{" "}
-            <span>2023</span> -{" "}
-          </MarqueeText>
-          <MarqueeText>
-            {" "}
-            Thank you for watching - <span>SiHyun Baek</span> - portfolio -{" "}
-            <span>2023</span> - Thank you for watching -{" "}
-            <span>SiHyun Baek</span> - portfolio - <span>2023</span> - Thank you
-            for watching - <span>SiHyun Baek</span> - portfolio -{" "}
-            <span>2023</span> -{" "}
-          </MarqueeText>
-          <MarqueeText>
-            {" "}
-            Thank you for watching - <span>SiHyun Baek</span> - portfolio -{" "}
-            <span>2023</span> - Thank you for watching -{" "}
-            <span>SiHyun Baek</span> - portfolio - <span>2023</span> - Thank you
-            for watching - <span>SiHyun Baek</span> - portfolio -{" "}
-            <span>2023</span> -{" "}
-          </MarqueeText>
-        </InnerWrap>
-      </Wrap>
       <LinkBar>
         <div>Contact: </div>
         <LinkBarUl>

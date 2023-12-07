@@ -2,39 +2,22 @@ import styled from "styled-components";
 import { Tr } from "./CoinList";
 import React, { useEffect, useState } from "react";
 import SkeletonUI from "./SkeletonUI";
-import { useQuery } from "@tanstack/react-query";
 import TradePrice from "./TradePrice";
 import ChangePrice from "./ChangePrice";
 import CirculatingSupply from "./CirculatingSupply";
 import AccTradePrice24h from "./AccTradePrice24h";
 import AccTradeVolume24h from "./AccTradeVolume24h";
 import Chart200Days from "./Chart200Days";
-import { ICoinHttpTickers, ICoinListMerge } from "../../../interface/icoin";
-import {
-  fetchCoinTickers,
-  useCoinTickersSocket,
-} from "../../../services/coinApi";
-
-export const Namediv = styled.div`
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  div {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-  }
-  div span + span {
-    color: #808a9d;
-  }
-`;
+import { ICoinHttpTickers } from "../../../interface/icoin";
+import { useCoinTickersSocket } from "../../../services/coinApi";
+import useCoinNames from "../../../libs/useCoinNames";
+import useCoinListData from "../../../libs/useCoinListData";
 
 export const Td = styled.td`
   text-align: end;
   vertical-align: middle;
   padding: 10px;
   white-space: nowrap;
-
   :last-child {
     padding: 0px;
   }
@@ -65,15 +48,27 @@ const NameTd = styled.td`
     }
   }
 `;
-
+export const Namediv = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  div span + span {
+    color: #808a9d;
+  }
+`;
 export const TdChangeDiv = styled.div<{ change: string }>`
   display: flex;
   flex-direction: column;
   color: ${(props) =>
     props.change === "RISE"
-      ? "#089981"
+      ? "#c84a31"
       : props.change === "FALL"
-      ? "#F23645"
+      ? "#1261c4"
       : "#222"};
   will-change: color;
 `;
@@ -85,46 +80,31 @@ export const Img = styled.img`
   max-width: 20px;
 `;
 
-function TbodyTr({
-  mergeData,
-  coinList,
-  count,
-}: {
-  mergeData: ICoinListMerge[];
-  coinList: string[];
-  count: number;
-}) {
-  const { data: tickerHttpData } = useQuery<ICoinHttpTickers[]>(
-    ["ticker", count],
-    () => fetchCoinTickers(coinList!),
-    {
-      enabled: !!coinList,
-      refetchOnMount: false,
-      refetchOnWindowFocus: true,
-    }
-  );
+function TbodyTr({ count }: { count: number }) {
+  const { nameData } = useCoinNames(true);
+  const coinList = nameData
+    ?.map((data) => data.market)
+    .slice(count - 10, count);
+  const { data: mergeData } = useCoinListData(count, coinList, nameData);
   const { data: tickerSocketData } = useCoinTickersSocket(coinList!);
-
   const [tickerList, setTickerList] = useState<ICoinHttpTickers[]>(
-    tickerHttpData || []
+    mergeData || []
   );
-
   useEffect(() => {
     if (tickerSocketData) {
       setTickerList(
-        tickerHttpData?.map((httpData) => {
-          const coinDataArr = tickerSocketData.find(
+        mergeData?.map((httpData) => {
+          const arr = tickerSocketData.find(
             (socketData) => httpData.market === socketData.code
           );
-          if (coinDataArr) {
-            return { ...httpData, ...coinDataArr };
+          if (arr) {
+            return { ...httpData, ...arr };
           }
           return httpData;
         }) || []
       );
     }
-  }, [tickerHttpData, tickerSocketData]);
-
+  }, [mergeData, tickerSocketData]);
   const makeSkeleton = () => {
     const skeletons = [];
     for (let i = 1; i <= 10; i++) {
@@ -132,10 +112,9 @@ function TbodyTr({
     }
     return skeletons;
   };
-
   return (
     <>
-      {mergeData && tickerSocketData && tickerHttpData && tickerList
+      {mergeData && tickerList && tickerSocketData
         ? mergeData.map((data, index) => (
             <Tr key={index}>
               <NameTd>
@@ -168,7 +147,6 @@ function TbodyTr({
                   tickerSocketData={tickerSocketData}
                 />
               </Td>
-
               <Td>
                 <AccTradeVolume24h
                   coinName={data.market}

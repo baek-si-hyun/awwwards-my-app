@@ -73,10 +73,10 @@ function Chart({
             stroke: { curve: "smooth", width: 3 },
             colors: [
               change === "RISE"
-                ? "#089981"
+              ? "#c84a31"
                 : change === "EVEN"
                 ? "#222"
-                : "#F23645",
+                : "#1261c4",
             ],
             xaxis: {
               axisBorder: { show: false },
