@@ -16,8 +16,6 @@ export interface ICoinHttpTickers {
 }
 export interface ICoinSocketTickers {
   code: string;
-  high_price: number;
-  low_price: number;
   trade_price: number;
   change: string;
   change_price: number;

@@ -14,16 +14,11 @@ import {
   fetchCoinTickers,
   useCoinTickersSocket,
 } from "../../../services/coinApi";
-import { Link } from "react-router-dom";
 
-const GoDetail = styled(Link)`
+export const Namediv = styled.div`
   display: flex;
   align-items: center;
   padding: 10px;
-  &:hover {
-    background-color: #dadada;
-    border-radius: 5px;
-  }
   div {
     display: flex;
     align-items: center;
@@ -144,10 +139,7 @@ function TbodyTr({
         ? mergeData.map((data, index) => (
             <Tr key={index}>
               <NameTd>
-                <GoDetail
-                  to={`/coin-detail/UPBIT:${data.market.substring(4)}KRW`}
-                  state={mergeData}
-                >
+                <Namediv>
                   <Img
                     src={`https://static.upbit.com/logos/${data.market.substring(
                       4
@@ -160,7 +152,7 @@ function TbodyTr({
                     <span>{data.english_name}</span>
                     <span>{data.market.substring(4)}</span>
                   </div>
-                </GoDetail>
+                </Namediv>
               </NameTd>
               <Td>
                 <TradePrice
