@@ -1,9 +1,7 @@
 import styled from "styled-components";
-import Footer from "../../components/footer/Footer";
 import ProjectPreview from "./ProjectPreview";
 import ProjectFont from "./ProjectFont";
 import ProjectColor from "./ProjectColor";
-import Nav from "../../components/nav/Nav";
 import { useLocation } from "react-router-dom";
 
 const Container = styled.div`
@@ -106,8 +104,6 @@ function ProjectMain() {
           </DescriptionProject>
         </Description>
       </Inner>
-      <Footer />
-      <Nav />
     </Container>
   );
 }

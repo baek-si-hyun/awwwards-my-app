@@ -1,7 +1,10 @@
 import styled from "styled-components";
 import { Tr } from "./CoinList";
-import { Namediv } from "./TbodyTr";
-
+const Namediv = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 10px;
+`;
 const TdFixed = styled.td`
   padding: 3.5px;
   text-align: end;

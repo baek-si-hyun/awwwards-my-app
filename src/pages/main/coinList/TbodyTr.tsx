@@ -15,6 +15,20 @@ import {
   useCoinTickersSocket,
 } from "../../../services/coinApi";
 
+export const Namediv = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  div span + span {
+    color: #808a9d;
+  }
+`;
+
 export const Td = styled.td`
   text-align: end;
   vertical-align: middle;
@@ -51,28 +65,15 @@ const NameTd = styled.td`
     }
   }
 `;
-export const Namediv = styled.div`
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  div {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-  }
-  div span + span {
-    color: #808a9d;
-  }
-`;
 
 export const TdChangeDiv = styled.div<{ change: string }>`
   display: flex;
   flex-direction: column;
   color: ${(props) =>
     props.change === "RISE"
-      ? "#c84a31"
+      ? "#089981"
       : props.change === "FALL"
-      ? "#1261c4"
+      ? "#F23645"
       : "#222"};
   will-change: color;
 `;
@@ -112,11 +113,11 @@ function TbodyTr({
     if (tickerSocketData) {
       setTickerList(
         tickerHttpData?.map((httpData) => {
-          const supplyArr = tickerSocketData.find(
+          const coinDataArr = tickerSocketData.find(
             (socketData) => httpData.market === socketData.code
           );
-          if (supplyArr) {
-            return { ...httpData, ...supplyArr };
+          if (coinDataArr) {
+            return { ...httpData, ...coinDataArr };
           }
           return httpData;
         }) || []
@@ -197,12 +198,14 @@ function TbodyTr({
                 />
               </Td>
               <Td>
-                <Chart200Days
-                  coinName={data.market}
-                  history={data.historyArr}
-                  tickerList={tickerList}
-                  tickerSocketData={tickerSocketData}
-                />
+                {data.historyArr && (
+                  <Chart200Days
+                    coinName={data.market}
+                    history={data.historyArr}
+                    tickerList={tickerList}
+                    tickerSocketData={tickerSocketData}
+                  />
+                )}
               </Td>
             </Tr>
           ))

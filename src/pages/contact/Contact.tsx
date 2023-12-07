@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Footer from "../../components/footer/Footer";
 import {
   Inner,
   TextBox,
@@ -64,7 +63,6 @@ function Contact() {
           <EmailJs />
         </EmailJsContainer>
       </Inner>
-      <Footer />
     </Container>
   );
 }

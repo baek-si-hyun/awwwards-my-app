@@ -1,8 +1,11 @@
 import styled from "styled-components";
-import NewJeans from "./NewJeans";
+import { useState, useEffect, useRef } from "react";
+import { useInView } from "react-intersection-observer";
+// import NewJeans from "./NewJeans";
 import FeaturedSong from "./FeaturedSong";
 import { TextBox, TextBoxMiddle, TextBoxbottom } from "../../common/mainCommon";
-
+import LoLChampions from "./LoLChampions";
+import t1video from "../../../assets/video/t1video.mp4";
 const Container = styled.section`
   width: 100%;
   padding-top: 3vw;
@@ -37,6 +40,19 @@ const MusicImg = styled.img`
   width: 100%;
   object-fit: cover;
 `;
+const MusicVideo = styled.div<{ inView: boolean }>`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: ${(props) => (props.inView ? 1 : 0)};
+  transition: opacity 0.3s 1.5s ease-in-out;
+  position: absolute;
+  left: 0;
+  top: -0.2rem;
+`;
+const Video = styled.video`
+  width: 100%;
+`;
 const MusicTextBox = styled.div`
   width: 100%;
   height: 100%;
@@ -48,12 +64,22 @@ const MusicTextBox = styled.div`
   div {
     position: absolute;
     left: 5%;
-    bottom: 10%;
+    bottom: 0;
+  }
+  h2 {
+    font-weight: bold;
+    font-size: 2.5vw;
+    margin-bottom: 1vw;
   }
   p {
-    font-weight: bold;
-    font-size: 2vw;
-    margin-bottom: 1vw;
+    font-size: 1.2vw;
+  }
+  @media (max-width: 650px) {
+    & {
+      p {
+        font-size: 2vw;
+      }
+    }
   }
 `;
 
@@ -63,11 +89,15 @@ const AllMusicTextBox = styled(MusicTextBox)`
     rgba(0, 0, 0, 0.5) 50%,
     rgba(0, 0, 0, 1) 100%
   );
+  div {
+    bottom: 10%;
+  }
 `;
 
 function Music() {
+  const { ref, inView, entry } = useInView();
   return (
-    <Container id="music">
+    <Container id="music" ref={ref}>
       <Inner>
         <StickyTextBox>
           <TextBoxMiddle>Music List</TextBoxMiddle>
@@ -76,7 +106,7 @@ function Music() {
             사이트를 보시면서 음악을 감상할 수 있습니다.
             <br />
             <br />
-            최근에 제일 핫한 "뉴진스"와 제 취향의 노래들입니다.
+            최근에 제일 핫한 "롤챔스"와 크리스마스 노래들입니다.
             <br />
             <br />
             뮤직 리스트는 위에서 부터 차례대로 재생됩니다.
@@ -88,18 +118,28 @@ function Music() {
         <MusicContainer>
           <RelativeBox>
             <MusicImg
-              src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/ee6e50a8-17dd-458b-29e3-ad794eeca500/public"
+              src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/f5b351a9-0651-45a5-1941-6a03f1756100/public"
               alt="newjeans"
               loading="lazy"
               decoding="async"
             />
+            <MusicVideo inView={inView}>
+              <Video controls={false} autoPlay={true} loop={true} muted={true}>
+                <source src={t1video} type="video/mp4"></source>
+              </Video>
+            </MusicVideo>
             <MusicTextBox>
               <div>
-                <p>NewJeans</p>
+                <h2>T1</h2>
+                <p>
+                  FAKER 7년의 침묵 끝, 세계 최초 LOL World Championship 4번째
+                  우승
+                </p>
               </div>
             </MusicTextBox>
           </RelativeBox>
-          <NewJeans />
+          <LoLChampions />
+          {/* <NewJeans /> */}
           <RelativeBox>
             <MusicImg
               src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/cf6bc677-4cb6-4df4-1209-b5366f14c300/public"

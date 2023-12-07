@@ -9,7 +9,8 @@ import { useSelector } from "react-redux";
 import { IResize } from "./interface/iproject";
 import MusicPlayer from "./pages/main/music/MusicPlayer";
 import MusicPlayBox from "./components/music_player/MusicPlayBox";
-
+import Footer from "./components/footer/Footer";
+import Nav from "./components/nav/Nav";
 function App() {
   const getResizeWidth = useSelector(
     ({ resizeWidthSlice }: { resizeWidthSlice: IResize }) => {
@@ -24,9 +25,11 @@ function App() {
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path=":projectId" element={<Myapp />} />
-        <Route path="FAQs" element={<Faqs />} />
-        <Route path="Contact" element={<Contact />} />
+        <Route path="faqs" element={<Faqs />} />
+        <Route path="contact" element={<Contact />} />
       </Routes>
+      <Nav />
+      <Footer />
     </>
   );
 }

@@ -18,7 +18,7 @@ const Container = styled.footer`
   border-radius: 30px 30px 0 0;
   box-shadow: 0 0 3rem rgba(0, 0, 0, 0.3);
   font-size: 1vw;
-
+  clear: both;
   @media (max-width: 1024px) {
     & {
       padding: 6vw 2.7vw 9rem 2.7vw;

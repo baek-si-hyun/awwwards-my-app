@@ -185,12 +185,12 @@ function Finally() {
             <FinallyBoxFlex>
               <MiniText>Share your experience</MiniText>
               <FinallyBoxText>Go to developer job seeker advice</FinallyBoxText>
-              <ContactLink to="/Contact">Go Contact</ContactLink>
+              <ContactLink to="/contact">Go Contact</ContactLink>
             </FinallyBoxFlex>
             <Qna>
               <span>Got questions? Read me</span>
               <span>
-                <FAQsLink to="/Faqs">
+                <FAQsLink to="/faqs">
                   FAQs
                   <span />
                 </FAQsLink>
