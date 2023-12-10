@@ -13,6 +13,24 @@ import { useCoinTickersSocket } from "../../../services/coinApi";
 import useCoinNames from "../../../libs/useCoinNames";
 import useCoinListData from "../../../libs/useCoinListData";
 
+const GoDetail = styled.a`
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  &:hover {
+    background-color: #dadada;
+    border-radius: 5px;
+  }
+  div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  div span + span {
+    color: #808a9d;
+  }
+`;
+
 export const Td = styled.td`
   text-align: end;
   vertical-align: middle;
@@ -118,7 +136,10 @@ function TbodyTr({ count }: { count: number }) {
         ? mergeData.map((data, index) => (
             <Tr key={index}>
               <NameTd>
-                <Namediv>
+                <GoDetail
+                  href={`https://upbit.com/exchange?code=CRIX.UPBIT.${data.market}`}
+                  target="_blank"
+                >
                   <Img
                     src={`https://static.upbit.com/logos/${data.market.substring(
                       4
@@ -131,7 +152,7 @@ function TbodyTr({ count }: { count: number }) {
                     <span>{data.english_name}</span>
                     <span>{data.market.substring(4)}</span>
                   </div>
-                </Namediv>
+                </GoDetail>
               </NameTd>
               <Td>
                 <TradePrice
