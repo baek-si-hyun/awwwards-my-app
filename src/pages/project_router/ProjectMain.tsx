@@ -3,6 +3,7 @@ import ProjectPreview from "./ProjectPreview";
 import ProjectFont from "./ProjectFont";
 import ProjectColor from "./ProjectColor";
 import { useLocation } from "react-router-dom";
+import Nav from "../../components/nav/Nav";
 
 const Container = styled.div`
   width: 100%;
@@ -73,38 +74,41 @@ const DescriptionProjectContent = styled.div`
 function ProjectMain() {
   const { state } = useLocation();
   return (
-    <Container id="sotd">
-      <Inner>
-        <ProjectPreview projectData={state} />
-        <Description id="fontColor">
-          <DescriptionText>
-            <TextTop>
-              <h2>Description</h2>
-            </TextTop>
-            <TextBottom>
-              <h3>fonts, colors</h3>
-            </TextBottom>
-          </DescriptionText>
-          <DescriptionFont>
-            <ProjectFont fonts={state.fonts} />
-            <ProjectColor colors={state.colors} />
-          </DescriptionFont>
-          <DescriptionProject id="routerAbout">
-            <DescriptionProjectText>
-              <h3>About "{state.name}"</h3>
-            </DescriptionProjectText>
-            <DescriptionProjectContent>
-              <div>
-                <span>{state.ko}</span>
-              </div>
-              <div>
-                <span>{state.en}</span>
-              </div>
-            </DescriptionProjectContent>
-          </DescriptionProject>
-        </Description>
-      </Inner>
-    </Container>
+    <>
+      <Container id="sotd">
+        <Inner>
+          <ProjectPreview projectData={state} />
+          <Description id="fontColor">
+            <DescriptionText>
+              <TextTop>
+                <h2>Description</h2>
+              </TextTop>
+              <TextBottom>
+                <h3>fonts, colors</h3>
+              </TextBottom>
+            </DescriptionText>
+            <DescriptionFont>
+              <ProjectFont fonts={state.fonts} />
+              <ProjectColor colors={state.colors} />
+            </DescriptionFont>
+            <DescriptionProject id="routerAbout">
+              <DescriptionProjectText>
+                <h3>About "{state.name}"</h3>
+              </DescriptionProjectText>
+              <DescriptionProjectContent>
+                <div>
+                  <span>{state.ko}</span>
+                </div>
+                <div>
+                  <span>{state.en}</span>
+                </div>
+              </DescriptionProjectContent>
+            </DescriptionProject>
+          </Description>
+        </Inner>
+      </Container>
+      <Nav />
+    </>
   );
 }
 export default ProjectMain;
