@@ -133,52 +133,56 @@ function ProjectFont({ fonts }: { fonts: string[] }) {
   const selectedFont = fonts[toggle];
 
   return (
-    <Container>
-      <FontTop>
-        <Typography>
-          <span>Typography</span>
-        </Typography>
-        <ToggleDiv>
-          <ToggleFont>
-            {fonts.map((font, index) => (
-              <Font
-                key={index}
-                num={index}
-                toggle={toggle}
-                onClick={() => ToggleBtn(index)}
-              >
-                <span>{font}</span>
-              </Font>
-            ))}
-          </ToggleFont>
-        </ToggleDiv>
-      </FontTop>
-      <FontName toggle={toggle} fontsData={fonts}>
-        <span>{selectedFont}</span>
-      </FontName>
-      <FontStyle>
-        <FontDetail>
-          <FontTitle>
-            <h3>FONT DETAIL</h3>
-          </FontTitle>
-          <FontDetailContent toggle={toggle} fontsData={fonts}>
-            <span>AaBb</span>
-          </FontDetailContent>
-        </FontDetail>
-        <LettersNumbers>
-          <FontTitle>
-            <h3>LETTERS + NUMBERS</h3>
-          </FontTitle>
-          <ContentDiv toggle={toggle} fontsData={fonts}>
-            <span>
-              Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv
-              Ww Xx Yy Zz
-            </span>
-            <span>0 1 2 3 4 5 6 7 8 9</span>
-          </ContentDiv>
-        </LettersNumbers>
-      </FontStyle>
-    </Container>
+    <>
+      {fonts && (
+        <Container>
+          <FontTop>
+            <Typography>
+              <span>Typography</span>
+            </Typography>
+            <ToggleDiv>
+              <ToggleFont>
+                {fonts.map((font, index) => (
+                  <Font
+                    key={index}
+                    num={index}
+                    toggle={toggle}
+                    onClick={() => ToggleBtn(index)}
+                  >
+                    <span>{font}</span>
+                  </Font>
+                ))}
+              </ToggleFont>
+            </ToggleDiv>
+          </FontTop>
+          <FontName toggle={toggle} fontsData={fonts}>
+            <span>{selectedFont}</span>
+          </FontName>
+          <FontStyle>
+            <FontDetail>
+              <FontTitle>
+                <h3>FONT DETAIL</h3>
+              </FontTitle>
+              <FontDetailContent toggle={toggle} fontsData={fonts}>
+                <span>AaBb</span>
+              </FontDetailContent>
+            </FontDetail>
+            <LettersNumbers>
+              <FontTitle>
+                <h3>LETTERS + NUMBERS</h3>
+              </FontTitle>
+              <ContentDiv toggle={toggle} fontsData={fonts}>
+                <span>
+                  Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu
+                  Vv Ww Xx Yy Zz
+                </span>
+                <span>0 1 2 3 4 5 6 7 8 9</span>
+              </ContentDiv>
+            </LettersNumbers>
+          </FontStyle>
+        </Container>
+      )}
+    </>
   );
 }
 export default ProjectFont;

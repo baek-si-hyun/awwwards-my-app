@@ -123,7 +123,10 @@ function NavMode({
     <>
       {pathname === "/" ? (
         <NavMainMode navHandler={navHandler} mainPosition={mainPosition} />
-      ) : pathname === "/Netflix" ||
+      ) : pathname === "awwwards" ||
+        "carrot-market" ||
+        "/project-house" ||
+        "/Netflix" ||
         "/Kanban" ||
         "/Coin" ||
         "/Myapp" ||

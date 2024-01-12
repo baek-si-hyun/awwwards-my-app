@@ -1,10 +1,7 @@
 import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
-import { IProjectsData, IVisited } from "../../../interface/iproject";
-import { fetchProjects, fetchVistited } from "../../../services/listData";
-import { useEffect } from "react";
-import { useQuery } from "@tanstack/react-query";
-import VisitedBox from "./VisitedBox";
+import { projectData } from "../../../services/listData";
+
 const common = css`
   display: flex;
   flex-direction: column;
@@ -22,7 +19,9 @@ const Box = styled(Link)`
   box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.15);
   cursor: pointer;
 `;
-
+const ProjectTitle = styled.span`
+  font-size: 1.5vw;
+`
 const ImgBox = styled.div`
   display: flex;
   justify-content: center;
@@ -61,6 +60,7 @@ const HoverBox = styled.div`
 const IconBox = styled.div`
   display: flex;
   gap: 0.3rem;
+  margin-top: 2vh;
   @media (max-width: 440px) {
     & {
       display: grid;
@@ -116,30 +116,9 @@ const InnerSpan = styled.span`
 `;
 const Icon = styled.img``;
 function ProjectsLinkBox() {
-  const { data: projectData } = useQuery<IProjectsData[]>(
-    ["project"],
-    () => fetchProjects(),
-    {
-      refetchOnMount: false,
-      refetchOnWindowFocus: false,
-    }
-  );
-  const { data: visitedData, refetch } = useQuery<IVisited[]>(
-    ["visited"],
-    () => fetchVistited(),
-    {
-      refetchOnMount: false,
-      refetchOnWindowFocus: false,
-    }
-  );
-  useEffect(() => {
-    refetch();
-  }, [refetch]);
-
   return (
     <>
       {projectData &&
-        visitedData &&
         projectData.map((data, index) => (
           <Container key={index}>
             <Box
@@ -165,7 +144,7 @@ function ProjectsLinkBox() {
                 />
               </ImgBox>
               <HoverBox>
-                <span>{data.projects_name}</span>
+                <ProjectTitle>{data.projects_name}</ProjectTitle>
                 <span>{data.projects_date}</span>
                 <IconBox>
                   {data.projects_tools.map((iconData, iconIndex) => (
@@ -180,10 +159,6 @@ function ProjectsLinkBox() {
                     />
                   ))}
                 </IconBox>
-                <VisitedBox
-                  visitedData={visitedData}
-                  name={data.projects_code}
-                />
               </HoverBox>
             </Box>
             <TextBox>
