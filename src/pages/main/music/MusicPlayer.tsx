@@ -3,9 +3,9 @@ import { useEffect, useState } from "react";
 import ReactPlayer from "react-player";
 import { useDispatch } from "react-redux";
 import {
-  IFeaturedListData,
   IIndex,
   ILoLChampionsListData,
+  INewjeansListData,
   IPlayList,
   IVideoInfo,
 } from "../../../interface/imusic";
@@ -28,26 +28,14 @@ function MusicPlayer() {
     (state: { playingVideoInfoSlice: IVideoInfo }) =>
       state.playingVideoInfoSlice.videoInfo
   );
-  // const newList = useMySelector(
-  //   (state: {
-  //     newJeansListSlice: INewjeansListData;
-  //     featuredListSlice: IFeaturedListData;
-  //   }) => {
-  //     const newArr = [
-  //       ...state.newJeansListSlice.newjeansList,
-  //       ...state.featuredListSlice.featuredList,
-  //     ];
-  //     return newArr;
-  //   }
-  // );
   const newList = useMySelector(
     (state: {
       lolChampionsListSlice: ILoLChampionsListData;
-      featuredListSlice: IFeaturedListData;
+      newJeansListSlice: INewjeansListData;
     }) => {
       const newArr = [
         ...state.lolChampionsListSlice.lolChampionsList,
-        ...state.featuredListSlice.featuredList,
+        ...state.newJeansListSlice.newjeansList,
       ];
       return newArr;
     }

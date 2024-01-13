@@ -1,11 +1,10 @@
 import styled from "styled-components";
-import { useState, useEffect, useRef } from "react";
 import { useInView } from "react-intersection-observer";
-// import NewJeans from "./NewJeans";
-import FeaturedSong from "./FeaturedSong";
 import { TextBox, TextBoxMiddle, TextBoxbottom } from "../../common/mainCommon";
 import LoLChampions from "./LoLChampions";
 import t1video from "../../../assets/video/t1video.mp4";
+import newjeansmv from "../../../assets/video/newjeansmv.mp4";
+import NewJeans from "./NewJeans";
 const Container = styled.section`
   width: 100%;
   padding-top: 3vw;
@@ -139,22 +138,27 @@ function Music() {
             </MusicTextBox>
           </RelativeBox>
           <LoLChampions />
-          {/* <NewJeans /> */}
           <RelativeBox>
             <MusicImg
-              src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/cf6bc677-4cb6-4df4-1209-b5366f14c300/public"
+              src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/ee6e50a8-17dd-458b-29e3-ad794eeca500/public"
               alt="famous artist"
               loading="lazy"
               decoding="async"
-              style={{ height: "45rem" }}
+
             />
+            <MusicVideo inView={inView}>
+              <Video controls={false} autoPlay={true} loop={true} muted={true}>
+                <source src={newjeansmv} type="video/mp4"></source>
+              </Video>
+            </MusicVideo>
             <AllMusicTextBox>
               <div>
-                <p>너무 미리 메리 크리스마스</p>
+                <p>NewJeans</p>
               </div>
             </AllMusicTextBox>
           </RelativeBox>
-          <FeaturedSong />
+          <NewJeans />
+          {/* <FeaturedSong /> */}
         </MusicContainer>
       </Inner>
     </Container>

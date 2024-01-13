@@ -66,7 +66,7 @@ const newJeansListSlice = createSlice({
         title: "Super Shy",
         artist: "NewJeans",
         album: "NewJeans 'Super Shy'",
-        url: "https://www.youtube.com/embed/v8gMZJqdIzU",
+        url: "https://www.youtube.com/embed/cQY5brXxEig",
       },
       {
         id: 9,
@@ -74,7 +74,7 @@ const newJeansListSlice = createSlice({
         title: "New Jeans",
         artist: "NewJeans",
         album: "NewJeans 'Super Shy'",
-        url: "https://www.youtube.com/embed/QyDQbeMIxSk",
+        url: "https://www.youtube.com/embed/G8GEpK7YDl4",
       },
       {
         id: 10,
@@ -82,7 +82,7 @@ const newJeansListSlice = createSlice({
         title: "ETA",
         artist: "NewJeans",
         album: "NewJeans 'Get Up'",
-        url: "https://www.youtube.com/embed/jrbknDTFLog",
+        url: "https://www.youtube.com/embed/2u_kncwzJ5Y",
       },
     ],
   },

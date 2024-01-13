@@ -20,7 +20,7 @@ const Row = styled.div`
   position: relative;
   display: grid;
   grid-template-columns: 200px repeat(19, 161px);
-  grid-template-rows: clamp(60px, 5vw, 100px);
+  grid-template-rows: clamp(60px, 5vw, 70px);
   background-image: linear-gradient(
     to right,
     rgb(34, 34, 34) 0 10%,
@@ -44,6 +44,7 @@ const Row = styled.div`
     }
   }
 `;
+
 const Box = styled.div`
   display: flex;
   align-items: center;
@@ -77,6 +78,7 @@ const Box = styled.div`
     }
   }
 `;
+
 const AbsoluteBox = styled.div<{ indexNum: number }>`
   white-space: nowrap;
   padding: clamp(5px, 0.7vw, 15px);
