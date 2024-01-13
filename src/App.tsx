@@ -10,7 +10,6 @@ import { IResize } from "./interface/iproject";
 import MusicPlayer from "./pages/main/music/MusicPlayer";
 import MusicPlayBox from "./components/music_player/MusicPlayBox";
 import Footer from "./components/footer/Footer";
-import Nav from "./components/nav/Nav";
 function App() {
   const getResizeWidth = useSelector(
     ({ resizeWidthSlice }: { resizeWidthSlice: IResize }) => {
@@ -28,7 +27,6 @@ function App() {
         <Route path="faqs" element={<Faqs />} />
         <Route path="contact" element={<Contact />} />
       </Routes>
-      <Nav />
       <Footer />
     </>
   );

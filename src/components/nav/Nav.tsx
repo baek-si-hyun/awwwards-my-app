@@ -123,8 +123,8 @@ function NavMode({
     <>
       {pathname === "/" ? (
         <NavMainMode navHandler={navHandler} mainPosition={mainPosition} />
-      ) : pathname === "awwwards" ||
-        "carrot-market" ||
+      ) : pathname === "/awwwards" ||
+        "/carrot-market" ||
         "/project-house" ||
         "/Netflix" ||
         "/Kanban" ||
@@ -137,7 +137,7 @@ function NavMode({
           routerPosition={routerPosition}
         />
       ) : (
-        ""
+        <></>
       )}
     </>
   );
