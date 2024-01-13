@@ -50,7 +50,7 @@ const MusicVideo = styled.div<{ inView: boolean }>`
   top: -0.2rem;
 `;
 const Video = styled.video`
-  width: 100%;
+  width: 100vw;
 `;
 const MusicTextBox = styled.div`
   width: 100%;
