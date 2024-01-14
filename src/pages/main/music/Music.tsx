@@ -5,6 +5,7 @@ import LoLChampions from "./LoLChampions";
 import t1video from "../../../assets/video/t1video.mp4";
 import newjeansmv from "../../../assets/video/newjeansmv.mp4";
 import NewJeans from "./NewJeans";
+
 const Container = styled.section`
   width: 100%;
   padding-top: 3vw;
@@ -105,7 +106,7 @@ function Music() {
             사이트를 보시면서 음악을 감상할 수 있습니다.
             <br />
             <br />
-            최근에 제일 핫한 "롤챔스"와 크리스마스 노래들입니다.
+            한참 핫 했었던 롤챔스와 뉴진스 노래들입니다.
             <br />
             <br />
             뮤직 리스트는 위에서 부터 차례대로 재생됩니다.
@@ -144,7 +145,6 @@ function Music() {
               alt="famous artist"
               loading="lazy"
               decoding="async"
-
             />
             <MusicVideo inView={inView}>
               <Video controls={false} autoPlay={true} loop={true} muted={true}>

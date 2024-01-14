@@ -91,9 +91,6 @@ export const projectData: IProjectsData[] = [
       "react",
       "reactquery",
       "redux",
-      "nodedotjs",
-      "mysql",
-      "amazonrds",
     ],
     projects_thumbnail:
       "https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/f5ab0fb1-5c42-400c-c8a2-50ab4bd61800/public",
