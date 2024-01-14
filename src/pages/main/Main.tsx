@@ -5,7 +5,6 @@ import Schedule from "./schedule/Schedule";
 import Nav from "../../components/nav/Nav";
 const Projects = lazy(() => import("./project/Projects"));
 const Music = lazy(() => import("./music/Music"));
-const CoinList = lazy(() => import("./coin_list/CoinList"));
 
 function Main() {
   return (
@@ -15,7 +14,6 @@ function Main() {
         <Projects />
         <Site />
         <Music />
-        <CoinList />
         <Schedule />
       </main>
       <Nav />

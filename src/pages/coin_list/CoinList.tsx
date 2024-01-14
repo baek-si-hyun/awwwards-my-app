@@ -9,10 +9,10 @@ import {
   circulatingSupply,
   fetchCoinHistory,
   fetchCoins,
-} from "../../../services/coinApi";
-import { ICoinHistory, ICoinListMerge, ICoins } from "../../../interface/icoin";
-import { TextBox, TextBoxMiddle, TextBoxbottom } from "../../common/mainCommon";
-import useCoinNames from "../../../libs/useCoinNames";
+} from "../../services/coinApi";
+import { ICoinHistory, ICoinListMerge, ICoins } from "../../interface/icoin";
+import { TextBox, TextBoxMiddle, TextBoxbottom } from "../common/mainCommon";
+import useCoinNames from "../../libs/useCoinNames";
 const Container = styled.section`
   width: 100%;
   margin-top: -5rem;

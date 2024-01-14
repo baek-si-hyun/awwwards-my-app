@@ -10,6 +10,8 @@ import { IResize } from "./interface/iproject";
 import MusicPlayer from "./pages/main/music/MusicPlayer";
 import MusicPlayBox from "./components/music_player/MusicPlayBox";
 import Footer from "./components/footer/Footer";
+import CoinList from "./pages/coin_list/CoinList";
+
 function App() {
   const getResizeWidth = useSelector(
     ({ resizeWidthSlice }: { resizeWidthSlice: IResize }) => {
@@ -26,6 +28,7 @@ function App() {
         <Route path=":projectId" element={<Myapp />} />
         <Route path="faqs" element={<Faqs />} />
         <Route path="contact" element={<Contact />} />
+        <Route path="coin-list" element={<CoinList />} />
       </Routes>
       <Footer />
     </>
