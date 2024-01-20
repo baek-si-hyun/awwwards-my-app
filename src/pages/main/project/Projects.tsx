@@ -4,7 +4,7 @@ import {
   TextBox,
   TextBoxbottom,
   TextBoxMiddle,
-} from "../../common/mainCommon";
+} from "../common/mainCommon";
 import ProjectsLinkBox from "./ProjectsLinkBox";
 
 const Container = styled.section`

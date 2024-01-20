@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styled, { css } from "styled-components";
-import { UnderLine } from "../common/mainCommon";
+import { UnderLine } from "../main/common/mainCommon";
 
 const Container = styled.div`
   display: flex;

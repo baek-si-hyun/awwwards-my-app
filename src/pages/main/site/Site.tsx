@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { TextBox, TextBoxMiddle, TextBoxbottom } from "../../common/mainCommon";
+import { TextBox, TextBoxMiddle, TextBoxbottom } from "../common/mainCommon";
+import { siteList } from "../../../services/listData";
 
 const Container = styled.section`
   display: flex;
@@ -10,6 +11,7 @@ const Container = styled.section`
   background-color: rgba(255, 255, 255, 0.7);
   position: relative;
   z-index: 0;
+  height: 140vh;
   backdrop-filter: blur(10px);
   @media (max-width: 1050px) {
     & {
@@ -46,6 +48,10 @@ const SiteImgBox = styled.div`
 const FlexBox = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  position: relative;
+  top: 0;
+  left: 0;
+
   @media (max-width: 650px) {
     & {
       width: 100%;
@@ -181,135 +187,55 @@ function Site() {
   return (
     <Container>
       <TextBox>
-        <TextBoxMiddle>reference site</TextBoxMiddle>
+        <TextBoxMiddle  >reference site</TextBoxMiddle>
         <TextBoxbottom>
           프로젝트를 제작하며 참고한 사이트들 입니다.
         </TextBoxbottom>
       </TextBox>
       <FlexBox>
-        <Sitebox>
-          <SiteImgBox>
-            <SiteImg
-              src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/49cd31ba-6549-4f5c-823e-06ee522be100/public"
-              alt="awwwards"
-              loading="lazy"
-              decoding="async"
-            />
-            <HoverBox>
-              <SenterBox href="https://www.awwwards.com/" target="_blank">
-                <span className="material-symbols-outlined">
-                  arrow_right_alt
-                </span>
-                &nbsp;
-                <div>
-                  <span>Visit Site</span>
-                </div>
-              </SenterBox>
-              <BottomBox>
-                <BottomBoxTop>WEBSITE</BottomBoxTop>
-                <BottomBoxBottom>awwwards</BottomBoxBottom>
-              </BottomBox>
-            </HoverBox>
-          </SiteImgBox>
-          <SiteTextBox>
-            <div>
-              <small>by</small>
-            </div>
-            <InnerFigure>
-              <LogoImg
-                src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/e1f7fdb0-746c-4598-7dd0-c37a0b344d00/icon"
-                alt="awwwardicon"
+        {siteList.map((item) => (
+          <Sitebox>
+            <SiteImgBox>
+              <SiteImg
+                src={`https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/${item.img}/public`}
+                alt={item.alt}
                 loading="lazy"
                 decoding="async"
               />
-              <figcaption>
-                <span>awwwards</span>
-              </figcaption>
-            </InnerFigure>
-          </SiteTextBox>
-        </Sitebox>
-        <Sitebox>
-          <SiteImgBox>
-            <SiteImg
-              src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/089bbc9a-4241-44ab-90a2-5702bbe90d00/public"
-              alt="youtubeMusic"
-              loading="lazy"
-              decoding="async"
-            />
-            <HoverBox>
-              <SenterBox href="https://upbit.com/home" target="_blank">
-                <span className="material-symbols-outlined">
-                  arrow_right_alt
-                </span>
-                &nbsp;
-                <div>
-                  <span>Visit Site</span>
-                </div>
-              </SenterBox>
-              <BottomBox>
-                <BottomBoxTop>WEBSITE</BottomBoxTop>
-                <BottomBoxBottom>YoutubeMusic</BottomBoxBottom>
-              </BottomBox>
-            </HoverBox>
-          </SiteImgBox>
-          <SiteTextBox>
-            <div>
-              <small>by</small>
-            </div>
-            <InnerFigure>
-              <LogoImg
-                src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/7aa1d7a9-d1ec-478e-e06c-25204d9b0000/icon"
-                alt="youtubeMusicicon"
-                loading="lazy"
-                decoding="async"
-              />
-              <figcaption>
-                <span>YoutubeMusic</span>
-              </figcaption>
-            </InnerFigure>
-          </SiteTextBox>
-        </Sitebox>
-        <Sitebox>
-          <SiteImgBox>
-            <SiteImg
-              src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/b55e5689-87bc-4c9d-5ab6-f151077beb00/public"
-              alt="coinMarketCap"
-              loading="lazy"
-              decoding="async"
-            />
-            <HoverBox>
-              <SenterBox href="https://coinmarketcap.com/ko/" target="_blank">
-                <span className="material-symbols-outlined">
-                  arrow_right_alt
-                </span>
-                &nbsp;
-                <div>
-                  <span>Visit Site</span>
-                </div>
-              </SenterBox>
-              <BottomBox>
-                <BottomBoxTop>WEBSITE</BottomBoxTop>
-                <BottomBoxBottom>CoinMarketCap</BottomBoxBottom>
-              </BottomBox>
-            </HoverBox>
-          </SiteImgBox>
-          <SiteTextBox>
-            <div>
-              <small>by</small>
-            </div>
-            <InnerFigure>
-              <LogoImg
-                src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/00f10618-d1f1-42ce-0ede-651abcd38200/icon"
-                alt="coinMarketCapIcon"
-                loading="lazy"
-                decoding="async"
-              />
-              <figcaption>
-                <span>CoinMarketCap</span>
-              </figcaption>
-            </InnerFigure>
-          </SiteTextBox>
-        </Sitebox>
+              <HoverBox>
+                <SenterBox href={item.href} target="_blank">
+                  <span className="material-symbols-outlined">
+                    arrow_right_alt
+                  </span>
+                  &nbsp;
+                  <div>
+                    <span>Visit Site</span>
+                  </div>
+                </SenterBox>
+                <BottomBox>
+                  <BottomBoxTop>WEBSITE</BottomBoxTop>
+                  <BottomBoxBottom>{item.alt}</BottomBoxBottom>
+                </BottomBox>
+              </HoverBox>
+            </SiteImgBox>
+            <SiteTextBox>
+              <div>
+                <small>by</small>
+              </div>
+              <InnerFigure>
+                <LogoImg
+                  src={`https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/${item.icon}/icon`}
+                  alt={item.alt}
+                  loading="lazy"
+                  decoding="async"
+                />
+                <figcaption>
+                  <span>{item.alt}</span>
+                </figcaption>
+              </InnerFigure>
+            </SiteTextBox>
+          </Sitebox>
+        ))}
       </FlexBox>
     </Container>
   );

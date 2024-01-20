@@ -26,7 +26,7 @@ const newJeansListSlice = createSlice({
         title: "Zero",
         artist: "NewJeans",
         album: "Zero",
-        url: "https://www.youtube.com/embed/FWTG5wuVLuI",
+        url: "https://www.youtube.com/embed/zeOm8-t42aQ",
       },
       {
         id: 4,

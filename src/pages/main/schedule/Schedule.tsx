@@ -4,7 +4,7 @@ import {
   TextBox,
   TextBoxMiddle,
   TextBoxbottom,
-} from "../../common/mainCommon";
+} from "../common/mainCommon";
 import Finally from "./Finally";
 import PastSchedule from "./PastSchedule";
 

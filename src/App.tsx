@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import Contact from "./pages/contact/Contact";
 import Faqs from "./pages/faqs/Faqs";
 import Main from "./pages/main/Main";
@@ -10,12 +9,17 @@ import { IResize } from "./interface/iproject";
 import MusicPlayer from "./pages/main/music/MusicPlayer";
 import MusicPlayBox from "./components/music_player/MusicPlayBox";
 import Footer from "./components/footer/Footer";
+
+
+
 function App() {
   const getResizeWidth = useSelector(
     ({ resizeWidthSlice }: { resizeWidthSlice: IResize }) => {
       return resizeWidthSlice.resizeWidth;
     }
   );
+
+
   return (
     <>
       <MusicPlayer />

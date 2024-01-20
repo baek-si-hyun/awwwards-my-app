@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ICoinHttpTickers, ICoinSocketTickers } from "../../../interface/icoin";
+import { ICoinHttpTickers, ICoinSocketTickers } from "../../interface/icoin";
 import styled, { keyframes, css } from "styled-components";
 
 const TradePrice = ({

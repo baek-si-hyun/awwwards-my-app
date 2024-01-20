@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import ReactApexChart from "react-apexcharts";
-import { ICoinHistory } from "../../../interface/icoin";
+import { ICoinHistory } from "../../interface/icoin";
 
 const ApexChartDiv = styled.div`
   max-width: 100%;
@@ -73,7 +73,7 @@ function Chart({
             stroke: { curve: "smooth", width: 3 },
             colors: [
               change === "RISE"
-              ? "#c84a31"
+                ? "#c84a31"
                 : change === "EVEN"
                 ? "#222"
                 : "#1261c4",

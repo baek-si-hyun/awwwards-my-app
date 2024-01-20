@@ -4,7 +4,26 @@ import {
   IScheduleData,
 } from "../interface/iproject";
 
-
+export const siteList = [
+  {
+    img: "49cd31ba-6549-4f5c-823e-06ee522be100",
+    alt: "Awwwards",
+    href: "https://www.awwwards.com/",
+    icon: "e1f7fdb0-746c-4598-7dd0-c37a0b344d00",
+  },
+  {
+    img: "089bbc9a-4241-44ab-90a2-5702bbe90d00",
+    alt: "YoutubeMusic",
+    href: "https://music.youtube.com/",
+    icon: "7aa1d7a9-d1ec-478e-e06c-25204d9b0000",
+  },
+  {
+    img: "b55e5689-87bc-4c9d-5ab6-f151077beb00",
+    alt: "CoinMarketCap",
+    href: "https://coinmarketcap.com/ko/",
+    icon: "00f10618-d1f1-42ce-0ede-651abcd38200",
+  },
+];
 
 export const gameName: string[] = [
   "League of Legends",
@@ -91,9 +110,6 @@ export const projectData: IProjectsData[] = [
       "react",
       "reactquery",
       "redux",
-      "nodedotjs",
-      "mysql",
-      "amazonrds",
     ],
     projects_thumbnail:
       "https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/f5ab0fb1-5c42-400c-c8a2-50ab4bd61800/public",

@@ -8,10 +8,11 @@ import CirculatingSupply from "./CirculatingSupply";
 import AccTradePrice24h from "./AccTradePrice24h";
 import AccTradeVolume24h from "./AccTradeVolume24h";
 import Chart200Days from "./Chart200Days";
-import { ICoinHttpTickers } from "../../../interface/icoin";
-import { useCoinTickersSocket } from "../../../services/coinApi";
-import useCoinNames from "../../../libs/useCoinNames";
-import useCoinListData from "../../../libs/useCoinListData";
+import useCoinNames from "../../libs/useCoinNames";
+import useCoinListData from "../../libs/useCoinListData";
+import { useCoinTickersSocket } from "../../services/coinApi";
+import { ICoinHttpTickers } from "../../interface/icoin";
+
 
 const GoDetail = styled.a`
   display: flex;
