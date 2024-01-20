@@ -8,7 +8,7 @@ import NewJeans from "./NewJeans";
 
 const Container = styled.section`
   width: 100%;
-  /* padding-top: 3vw; */
+  padding-top: 3vw;
   background-color: #fff;
   border-radius: 5vw 5vw 0 0;
   margin-top: -6rem;
@@ -19,10 +19,10 @@ const Container = styled.section`
 const Inner = styled.div`
   width: 100%;
 `;
-// const StickyTextBox = styled(TextBox)`
-//   position: sticky;
-//   top: 0;
-// `;
+const StickyTextBox = styled(TextBox)`
+  position: sticky;
+  top: 0;
+`;
 
 const MusicContainer = styled.div`
   position: relative;
@@ -99,7 +99,7 @@ function Music() {
   return (
     <Container id="music" ref={ref}>
       <Inner>
-        {/* <StickyTextBox>
+        <StickyTextBox>
           <TextBoxMiddle>Music List</TextBoxMiddle>
           <TextBoxbottom>
             <br />
@@ -114,7 +114,7 @@ function Music() {
             <br />
             재생 순서를 바꾸실수 있습니다.
           </TextBoxbottom>
-        </StickyTextBox> */}
+        </StickyTextBox>
         <MusicContainer>
           <RelativeBox>
             <MusicImg
