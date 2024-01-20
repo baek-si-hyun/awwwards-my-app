@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import styled from "styled-components";
 
 const Container = styled.header`
@@ -152,8 +153,10 @@ const ColorShadowImg = styled(Img)`
   box-shadow: 0 0 3rem rgba(255, 255, 255, 1);
 `;
 function Header() {
+  const homeHeader = useRef(null);
+
   return (
-    <Container id="home">
+    <Container id="home" ref={homeHeader}>
       <Inner>
         <LeftBox>
           <Title>

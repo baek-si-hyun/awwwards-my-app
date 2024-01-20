@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 import { faqList } from "../../services/listData";
-import { UnderLine } from "../common/mainCommon";
+import { UnderLine } from "../main/common/mainCommon";
 
 const Container = styled.ul`
   ${UnderLine}

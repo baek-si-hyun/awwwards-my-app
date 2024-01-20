@@ -4,7 +4,7 @@ import {
   TextBox,
   TextBoxMiddle,
   TextBoxTop,
-} from "../common/mainCommon";
+} from "../main/common/mainCommon";
 import EmailJs from "./EmailJs";
 const Container = styled.div`
   width: 100%;

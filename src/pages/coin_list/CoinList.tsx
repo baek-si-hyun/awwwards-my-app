@@ -1,18 +1,15 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useQuery } from "@tanstack/react-query";
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Colgroup from "./ColGroup";
 import TheadTr from "./TheadTr";
 import TbodyTr from "./TbodyTr";
 import {
-  circulatingSupply,
-  fetchCoinHistory,
-  fetchCoins,
-} from "../../services/coinApi";
-import { ICoinHistory, ICoinListMerge, ICoins } from "../../interface/icoin";
-import { TextBox, TextBoxMiddle, TextBoxbottom } from "../common/mainCommon";
-import useCoinNames from "../../libs/useCoinNames";
+  TextBox,
+  TextBoxMiddle,
+  TextBoxbottom,
+} from "../main/common/mainCommon";
+
 const Container = styled.section`
   width: 100%;
   margin-top: -5rem;
