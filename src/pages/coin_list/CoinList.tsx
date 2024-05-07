@@ -9,6 +9,7 @@ import {
   TextBoxMiddle,
   TextBoxbottom,
 } from "../main/common/mainCommon";
+import useCoinNames from "../../libs/useCoinNames";
 
 const Container = styled.section`
   width: 100%;
@@ -87,18 +88,23 @@ function CoinList() {
   const updateCount = (page: number) => {
     setCount(() => page * 10);
   };
+  const { nameData } = useCoinNames(true);
   const makePageBtn = () => {
     const pageButtons = [];
-    for (let i = 1; i <= 12; i++) {
-      pageButtons.push(
-        <PageBtn onClick={() => pageNation(i)} key={i} selected={i === page}>
-          {i}
-        </PageBtn>
-      );
+    if (nameData) {
+      let pageLength = Math.ceil(nameData.length / 10);
+      for (let i = 1; i <= pageLength; i++) {
+        pageButtons.push(
+          <PageBtn onClick={() => pageNation(i)} key={i} selected={i === page}>
+            {i}
+          </PageBtn>
+        );
+      }
+      console.log(pageButtons)
+      return pageButtons;
     }
-    return pageButtons;
   };
-
+  console.log(makePageBtn());
   return (
     <Container>
       <Inner>

@@ -92,7 +92,8 @@ export const useCoinTickersSocket = (coinList: string[]) => {
 
 //무료 Supply api, market cap api 못찾겠다...
 export const circulatingSupply = [
-  { id: "IMX", supply: 1456815249 },
+  { id: "KRW-ZETA", supply: 265475000 },
+  { id: "KRW-IMX", supply: 1456815249 },
   { id: "KRW-EGLD", supply: 26853943 },
   { id: "KRW-MINA", supply: 1091547861 },
   {

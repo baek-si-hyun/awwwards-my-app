@@ -4,8 +4,8 @@ import { fetchCoins } from "../services/coinApi";
 
 const useCoinNames = (allList : boolean) => {
   const { data: nameData } = useQuery<ICoins[]>(["name"], () => fetchCoins(), {
-    select: (data) =>
-      data.filter((data) => {
+    select: (datas) =>
+      datas.filter((data) => {
         if (allList) {
           return !data.market.indexOf("KRW");
         } else {
