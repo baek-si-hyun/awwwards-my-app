@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import { useInView } from "react-intersection-observer";
 import { TextBox, TextBoxMiddle, TextBoxbottom } from "../common/mainCommon";
-import LoLChampions from "./LoLChampions";
-import t1video from "../../../assets/video/t1video.mp4";
+import musicvideo from "../../../assets/video/musicvideo.mp4";
 import newjeansmv from "../../../assets/video/newjeansmv.mp4";
 import NewJeans from "./NewJeans";
+import FavoriteSong from "./FavoriteSong";
 
 const Container = styled.section`
   width: 100%;
@@ -95,8 +95,8 @@ const AllMusicTextBox = styled(MusicTextBox)`
 `;
 
 function Music() {
-  const { ref, inView } = useInView();
-
+  const { ref: newjeansRef, inView: newjeansView } = useInView();
+  const { ref: favRef, inView: favView } = useInView();
   return (
     <Container id="music">
       <Inner>
@@ -117,14 +117,14 @@ function Music() {
           </TextBoxbottom>
         </StickyTextBox>
         <MusicContainer>
-          <RelativeBox ref={ref}>
+          <RelativeBox ref={newjeansRef}>
             <MusicImg
               src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/9729d7ac-0232-4eef-60ef-c3cb6db80b00/public"
               alt="famous artist"
               loading="lazy"
               decoding="async"
             />
-            <MusicVideo inView={inView}>
+            <MusicVideo inView={newjeansView}>
               <Video controls={false} autoPlay={true} loop={true} muted={true}>
                 <source src={newjeansmv} type="video/mp4"></source>
               </Video>
@@ -136,25 +136,25 @@ function Music() {
             </MusicTextBox>
           </RelativeBox>
           <NewJeans />
-          <RelativeBox>
+          <RelativeBox ref={favRef}>
             <MusicImg
-              src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/f5b351a9-0651-45a5-1941-6a03f1756100/public"
+              src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/e30f57f2-4254-460d-dfb3-7750dbb31000/public"
               alt="newjeans"
               loading="lazy"
               decoding="async"
             />
-            <MusicVideo inView={inView}>
+            <MusicVideo inView={favView}>
               <Video controls={false} autoPlay={true} loop={true} muted={true}>
-                <source src={t1video} type="video/mp4"></source>
+                <source src={musicvideo} type="video/mp4"></source>
               </Video>
             </MusicVideo>
             <AllMusicTextBox>
               <div>
-                <p>T1</p>
+                <h2>FavoriteSong</h2>
               </div>
             </AllMusicTextBox>
           </RelativeBox>
-          <LoLChampions />
+          <FavoriteSong />
         </MusicContainer>
       </Inner>
     </Container>

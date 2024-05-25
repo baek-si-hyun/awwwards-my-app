@@ -325,8 +325,8 @@ export const circulatingSupply = [
     supply: 10445528584,
   },
   {
-    id: "KRW-CRE",
-    supply: 10000000000,
+    id: "KRW-GAME2",
+    supply: 15616114935,
   },
   {
     id: "KRW-MBL",

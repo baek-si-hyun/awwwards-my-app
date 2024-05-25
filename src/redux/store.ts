@@ -5,7 +5,7 @@ import featuredListSlice from "./slices/featuredListSlice";
 import playingVideoInfoSlice from "./slices/playingVideoInfoSlice";
 import controlPlayListSlice from "./slices/controlPlayListSlice";
 import controllerVisibleSlice from "./slices/controllerVisibleSlice";
-import lolChampionsListSlice from "./slices/lolChampionsListSlice";
+import lolChampionsListSlice from "./slices/favoriteListSlice";
 
 const store = configureStore({
   reducer: {
