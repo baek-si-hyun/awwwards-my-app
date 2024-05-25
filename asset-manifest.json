@@ -1,10 +1,10 @@
 {
   "files": {
     "main.css": "/awwwards-my-app/static/css/main.3d011b7b.css",
-    "main.js": "/awwwards-my-app/static/js/main.75771fa3.js",
+    "main.js": "/awwwards-my-app/static/js/main.a8c8f29a.js",
     "static/js/674.86e32dea.chunk.js": "/awwwards-my-app/static/js/674.86e32dea.chunk.js",
-    "static/js/344.c46c4017.chunk.js": "/awwwards-my-app/static/js/344.c46c4017.chunk.js",
-    "static/js/422.f2e6189e.chunk.js": "/awwwards-my-app/static/js/422.f2e6189e.chunk.js",
+    "static/js/344.1946ecf9.chunk.js": "/awwwards-my-app/static/js/344.1946ecf9.chunk.js",
+    "static/js/422.b9d560d0.chunk.js": "/awwwards-my-app/static/js/422.b9d560d0.chunk.js",
     "reactPlayerYouTube.js": "/awwwards-my-app/static/js/reactPlayerYouTube.bbea0b7b.chunk.js",
     "reactPlayerSoundCloud.js": "/awwwards-my-app/static/js/reactPlayerSoundCloud.43a940ee.chunk.js",
     "reactPlayerVimeo.js": "/awwwards-my-app/static/js/reactPlayerVimeo.0ae35fb7.chunk.js",
@@ -19,10 +19,10 @@
     "reactPlayerKaltura.js": "/awwwards-my-app/static/js/reactPlayerKaltura.7ccd0185.chunk.js",
     "reactPlayerFilePlayer.js": "/awwwards-my-app/static/js/reactPlayerFilePlayer.e6d85e27.chunk.js",
     "reactPlayerPreview.js": "/awwwards-my-app/static/js/reactPlayerPreview.f0d80162.chunk.js",
-    "static/js/907.4bbef37a.chunk.js": "/awwwards-my-app/static/js/907.4bbef37a.chunk.js",
-    "static/js/884.ff6371a6.chunk.js": "/awwwards-my-app/static/js/884.ff6371a6.chunk.js",
+    "static/js/209.8eefeac3.chunk.js": "/awwwards-my-app/static/js/209.8eefeac3.chunk.js",
+    "static/js/884.5552307e.chunk.js": "/awwwards-my-app/static/js/884.5552307e.chunk.js",
+    "static/media/newjeansmv.mp4": "/awwwards-my-app/static/media/newjeansmv.24720a0f18d32a9f9ec1.mp4",
     "static/media/t1video.mp4": "/awwwards-my-app/static/media/t1video.8350f0421da1ece1b487.mp4",
-    "static/media/newjeansmv.mp4": "/awwwards-my-app/static/media/newjeansmv.d3716fded229a0b94ada.mp4",
     "static/media/Pretendard-Regular.otf": "/awwwards-my-app/static/media/Pretendard-Regular.de88013f2ea98a04dede.otf",
     "static/media/Pretendard-Regular.woff": "/awwwards-my-app/static/media/Pretendard-Regular.ab56c53f21ca6b32d15f.woff",
     "static/media/Pretendard-Regular.woff2": "/awwwards-my-app/static/media/Pretendard-Regular.6090e6b5524796768e78.woff2",
@@ -51,10 +51,10 @@
     "static/media/ApercuPro-Bold.woff2": "/awwwards-my-app/static/media/ApercuPro-Bold.7fbfd7d508c080196fbe.woff2",
     "index.html": "/awwwards-my-app/index.html",
     "main.3d011b7b.css.map": "/awwwards-my-app/static/css/main.3d011b7b.css.map",
-    "main.75771fa3.js.map": "/awwwards-my-app/static/js/main.75771fa3.js.map",
+    "main.a8c8f29a.js.map": "/awwwards-my-app/static/js/main.a8c8f29a.js.map",
     "674.86e32dea.chunk.js.map": "/awwwards-my-app/static/js/674.86e32dea.chunk.js.map",
-    "344.c46c4017.chunk.js.map": "/awwwards-my-app/static/js/344.c46c4017.chunk.js.map",
-    "422.f2e6189e.chunk.js.map": "/awwwards-my-app/static/js/422.f2e6189e.chunk.js.map",
+    "344.1946ecf9.chunk.js.map": "/awwwards-my-app/static/js/344.1946ecf9.chunk.js.map",
+    "422.b9d560d0.chunk.js.map": "/awwwards-my-app/static/js/422.b9d560d0.chunk.js.map",
     "reactPlayerYouTube.bbea0b7b.chunk.js.map": "/awwwards-my-app/static/js/reactPlayerYouTube.bbea0b7b.chunk.js.map",
     "reactPlayerSoundCloud.43a940ee.chunk.js.map": "/awwwards-my-app/static/js/reactPlayerSoundCloud.43a940ee.chunk.js.map",
     "reactPlayerVimeo.0ae35fb7.chunk.js.map": "/awwwards-my-app/static/js/reactPlayerVimeo.0ae35fb7.chunk.js.map",
@@ -69,11 +69,11 @@
     "reactPlayerKaltura.7ccd0185.chunk.js.map": "/awwwards-my-app/static/js/reactPlayerKaltura.7ccd0185.chunk.js.map",
     "reactPlayerFilePlayer.e6d85e27.chunk.js.map": "/awwwards-my-app/static/js/reactPlayerFilePlayer.e6d85e27.chunk.js.map",
     "reactPlayerPreview.f0d80162.chunk.js.map": "/awwwards-my-app/static/js/reactPlayerPreview.f0d80162.chunk.js.map",
-    "907.4bbef37a.chunk.js.map": "/awwwards-my-app/static/js/907.4bbef37a.chunk.js.map",
-    "884.ff6371a6.chunk.js.map": "/awwwards-my-app/static/js/884.ff6371a6.chunk.js.map"
+    "209.8eefeac3.chunk.js.map": "/awwwards-my-app/static/js/209.8eefeac3.chunk.js.map",
+    "884.5552307e.chunk.js.map": "/awwwards-my-app/static/js/884.5552307e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3d011b7b.css",
-    "static/js/main.75771fa3.js"
+    "static/js/main.a8c8f29a.js"
   ]
 }
