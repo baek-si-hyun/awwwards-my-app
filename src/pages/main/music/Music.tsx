@@ -45,7 +45,7 @@ const MusicVideo = styled.div<{ inView: boolean }>`
   justify-content: center;
   align-items: center;
   opacity: ${(props) => (props.inView ? 1 : 0)};
-  transition: opacity 0.3s 1.5s ease-in-out;
+  transition: opacity 0.3s 1s ease-in-out;
   position: absolute;
   left: 0;
   top: -0.2rem;
@@ -95,9 +95,10 @@ const AllMusicTextBox = styled(MusicTextBox)`
 `;
 
 function Music() {
-  const { ref, inView, entry } = useInView();
+  const { ref, inView } = useInView();
+
   return (
-    <Container id="music" ref={ref}>
+    <Container id="music">
       <Inner>
         <StickyTextBox>
           <TextBoxMiddle>Music List</TextBoxMiddle>
@@ -116,6 +117,25 @@ function Music() {
           </TextBoxbottom>
         </StickyTextBox>
         <MusicContainer>
+          <RelativeBox ref={ref}>
+            <MusicImg
+              src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/9729d7ac-0232-4eef-60ef-c3cb6db80b00/public"
+              alt="famous artist"
+              loading="lazy"
+              decoding="async"
+            />
+            <MusicVideo inView={inView}>
+              <Video controls={false} autoPlay={true} loop={true} muted={true}>
+                <source src={newjeansmv} type="video/mp4"></source>
+              </Video>
+            </MusicVideo>
+            <MusicTextBox>
+              <div>
+                <h2>NewJeans</h2>
+              </div>
+            </MusicTextBox>
+          </RelativeBox>
+          <NewJeans />
           <RelativeBox>
             <MusicImg
               src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/f5b351a9-0651-45a5-1941-6a03f1756100/public"
@@ -128,37 +148,13 @@ function Music() {
                 <source src={t1video} type="video/mp4"></source>
               </Video>
             </MusicVideo>
-            <MusicTextBox>
-              <div>
-                <h2>T1</h2>
-                <p>
-                  FAKER 7년의 침묵 끝, 세계 최초 LOL World Championship 4번째
-                  우승
-                </p>
-              </div>
-            </MusicTextBox>
-          </RelativeBox>
-          <LoLChampions />
-          <RelativeBox>
-            <MusicImg
-              src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/ee6e50a8-17dd-458b-29e3-ad794eeca500/public"
-              alt="famous artist"
-              loading="lazy"
-              decoding="async"
-            />
-            <MusicVideo inView={inView}>
-              <Video controls={false} autoPlay={true} loop={true} muted={true}>
-                <source src={newjeansmv} type="video/mp4"></source>
-              </Video>
-            </MusicVideo>
             <AllMusicTextBox>
               <div>
-                <p>NewJeans</p>
+                <p>T1</p>
               </div>
             </AllMusicTextBox>
           </RelativeBox>
-          <NewJeans />
-          {/* <FeaturedSong /> */}
+          <LoLChampions />
         </MusicContainer>
       </Inner>
     </Container>

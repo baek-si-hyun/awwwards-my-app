@@ -100,11 +100,9 @@ function CoinList() {
           </PageBtn>
         );
       }
-      console.log(pageButtons)
       return pageButtons;
     }
   };
-  console.log(makePageBtn());
   return (
     <Container>
       <Inner>

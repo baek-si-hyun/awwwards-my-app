@@ -5,7 +5,8 @@ import { videoInfoRedux } from "../../redux/slices/playingVideoInfoSlice";
 import { controlRedux } from "../../redux/slices/controlPlayListSlice";
 import { useMySelector } from "../../libs/useMySelector";
 
-const Container = styled.div<{ isVisible: boolean }>`
+const Container = styled.div<{ isVisible: boolean; backGroundImg: string }>`
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,7 +16,19 @@ const Container = styled.div<{ isVisible: boolean }>`
   bottom: 2rem;
   border-radius: 10px;
   padding: 0.3rem;
-  background-color: rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url(${(props) => props.backGroundImg}) no-repeat center/cover;
+    filter: blur(3px);
+    z-index: -1;
+  }
   color: #fff;
   z-index: 999;
   animation: fadeInUp 0.3s forwards;
@@ -82,10 +95,12 @@ function MusicPlayBox() {
     (state: { controllerVisibleSlice: IControllerVisible }) =>
       state.controllerVisibleSlice.visible
   );
+
   const videoInfo = useMySelector(
     (state: { playingVideoInfoSlice: IVideoInfo }) =>
       state.playingVideoInfoSlice.videoInfo
   );
+  console.log(videoInfo?.img);
   const dispatch = useDispatch();
   const toggle = () => {
     dispatch(
@@ -104,25 +119,25 @@ function MusicPlayBox() {
       const setIndex = index - 1;
       dispatch(controlRedux(setIndex));
     } else if (index <= 0) {
-      dispatch(controlRedux(16));
+      dispatch(controlRedux(18));
     }
   };
   const next = () => {
-    if (index < 16) {
+    if (index < 18) {
       const setIndex = index + 1;
       dispatch(controlRedux(setIndex));
-    } else if (index >= 16) {
+    } else if (index >= 18) {
       dispatch(controlRedux(0));
     }
   };
   return (
     <>
       {visible && (
-        <Container isVisible={visible}>
-          <Img src={videoInfo?.img} />
+        <Container isVisible={visible} backGroundImg={videoInfo.img}>
+          <Img src={videoInfo.img} />
           <InfoControlBox>
             <Info>
-              {videoInfo?.title} - {videoInfo.artist}
+              {videoInfo.title} - {videoInfo.artist}
             </Info>
             <Control>
               <Prev>
