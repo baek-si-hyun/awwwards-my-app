@@ -13,7 +13,6 @@ import useCoinListData from "../../libs/useCoinListData";
 import { useCoinTickersSocket } from "../../services/coinApi";
 import { ICoinHttpTickers } from "../../interface/icoin";
 
-
 const GoDetail = styled.a`
   display: flex;
   align-items: center;
@@ -105,25 +104,7 @@ function TbodyTr({ count }: { count: number }) {
     ?.map((data) => data.market)
     .slice(count - 10, count);
   const { data: mergeData } = useCoinListData(count, coinList, nameData);
-  const { data: tickerSocketData } = useCoinTickersSocket(coinList!);
-  const [tickerList, setTickerList] = useState<ICoinHttpTickers[]>(
-    mergeData || []
-  );
-  useEffect(() => {
-    if (tickerSocketData) {
-      setTickerList(
-        mergeData?.map((httpData) => {
-          const arr = tickerSocketData.find(
-            (socketData) => httpData.market === socketData.code
-          );
-          if (arr) {
-            return { ...httpData, ...arr };
-          }
-          return httpData;
-        }) || []
-      );
-    }
-  }, [mergeData, tickerSocketData]);
+
   const makeSkeleton = () => {
     const skeletons = [];
     for (let i = 1; i <= 10; i++) {
@@ -133,7 +114,7 @@ function TbodyTr({ count }: { count: number }) {
   };
   return (
     <>
-      {mergeData && tickerList && tickerSocketData
+      {mergeData
         ? mergeData.map((data, index) => (
             <Tr key={index}>
               <NameTd>
@@ -156,31 +137,21 @@ function TbodyTr({ count }: { count: number }) {
                 </GoDetail>
               </NameTd>
               <Td>
-                <TradePrice
-                  coinName={data.market}
-                  tickerList={tickerList}
-                  tickerSocketData={tickerSocketData}
-                />
+                <TradePrice coinName={data.market} tickerList={mergeData} />
               </Td>
               <Td>
-                <ChangePrice
-                  coinName={data.market}
-                  tickerList={tickerList}
-                  tickerSocketData={tickerSocketData}
-                />
+                <ChangePrice coinName={data.market} tickerList={mergeData} />
               </Td>
               <Td>
                 <AccTradeVolume24h
                   coinName={data.market}
-                  tickerList={tickerList}
-                  tickerSocketData={tickerSocketData}
+                  tickerList={mergeData}
                 />
               </Td>
               <Td>
                 <AccTradePrice24h
                   coinName={data.market}
-                  tickerList={tickerList}
-                  tickerSocketData={tickerSocketData}
+                  tickerList={mergeData}
                 />
               </Td>
               <Td>
@@ -193,8 +164,7 @@ function TbodyTr({ count }: { count: number }) {
                 <CirculatingSupply
                   coinName={data.market}
                   supply={data.supply}
-                  tickerList={tickerList}
-                  tickerSocketData={tickerSocketData}
+                  tickerList={mergeData}
                 />
               </Td>
               <Td>
@@ -202,8 +172,7 @@ function TbodyTr({ count }: { count: number }) {
                   <Chart200Days
                     coinName={data.market}
                     history={data.historyArr}
-                    tickerList={tickerList}
-                    tickerSocketData={tickerSocketData}
+                    tickerList={mergeData}
                   />
                 )}
               </Td>

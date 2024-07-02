@@ -207,7 +207,7 @@ export const circulatingSupply = [
   },
   {
     id: "KRW-SC",
-    supply: 57008346857 ,
+    supply: 57008346857,
   },
   {
     id: "KRW-ONT",
@@ -227,7 +227,7 @@ export const circulatingSupply = [
   },
   {
     id: "KRW-LOOM",
-    supply: 1224270898 ,
+    supply: 1224270898,
   },
   {
     id: "KRW-BCH",
@@ -355,7 +355,7 @@ export const circulatingSupply = [
   },
   {
     id: "KRW-STPT",
-    supply: 1942420283 ,
+    supply: 1942420283,
   },
   {
     id: "KRW-ORBS",
@@ -363,7 +363,7 @@ export const circulatingSupply = [
   },
   {
     id: "KRW-VET",
-    supply: 72714516834 ,
+    supply: 72714516834,
   },
   {
     id: "KRW-CHZ",
@@ -375,7 +375,7 @@ export const circulatingSupply = [
   },
   {
     id: "KRW-DKA",
-    supply: 3716250000 ,
+    supply: 3716250000,
   },
   {
     id: "KRW-HIVE",
@@ -387,7 +387,7 @@ export const circulatingSupply = [
   },
   {
     id: "KRW-AHT",
-    supply: 4502217832 ,
+    supply: 4502217832,
   },
   {
     id: "KRW-LINK",
@@ -407,7 +407,7 @@ export const circulatingSupply = [
   },
   {
     id: "KRW-JST",
-    supply: 8902080000 ,
+    supply: 8902080000,
   },
   {
     id: "KRW-CRO",
@@ -544,7 +544,7 @@ export const circulatingSupply = [
   },
   {
     id: "KRW-T",
-    supply: 9647764144 ,
+    supply: 9647764144,
   },
   {
     id: "KRW-CELO",
@@ -571,4 +571,11 @@ export const circulatingSupply = [
     supply: 2653939384,
   },
   { id: "KRW-MNT", supply: 3264441708 },
+  { id: "KRW-ZRO", supply: 110000000 },
+  { id: "KRW-TAIKO", supply: 65951595 },
+  { id: "KRW-BLAST", supply: 17000000000 },
+  { id: "KRW-BEAM", supply: 49466004168 },
+  { id: "KRW-USDT", supply: 112911493076 },
+  { id: "KRW-ONDO", supply: 1389759838 },
+  { id: "KRW-AUCTION", supply: 6500037 },
 ];

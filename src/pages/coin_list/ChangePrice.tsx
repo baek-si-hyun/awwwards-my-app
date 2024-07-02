@@ -3,14 +3,12 @@ import { Icons, TdChangeDiv } from "./TbodyTr";
 
 const ChangePrice = ({
   coinName,
-  tickerSocketData,
   tickerList,
 }: {
   coinName: string;
-  tickerSocketData: ICoinSocketTickers[];
   tickerList: ICoinHttpTickers[];
 }): JSX.Element => {
-  if (tickerSocketData) {
+  if (tickerList) {
     const changePrice: string = tickerList
       .find((ticker) => ticker.market === coinName && ticker, 0)
       ?.change_price.toString()
