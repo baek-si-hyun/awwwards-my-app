@@ -4,9 +4,9 @@ import {
   TextBox,
   TextBoxMiddle,
   TextBoxbottom,
-} from "../common/mainCommon";
-import Finally from "./Finally";
-import PastSchedule from "./PastSchedule";
+} from "../pages/main/common/mainCommon";
+import PastSchedule from "../components/Schedule/PastSchedule";
+import Finally from "../components/Schedule/Finally";
 
 const Container = styled.section`
   width: 100%;

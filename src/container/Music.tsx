@@ -1,10 +1,14 @@
 import styled from "styled-components";
 import { useInView } from "react-intersection-observer";
-import { TextBox, TextBoxMiddle, TextBoxbottom } from "../common/mainCommon";
-import musicvideo from "../../../assets/video/musicvideo.mp4";
-import newjeansmv from "../../../assets/video/newjeansmv.mp4";
-import NewJeans from "../../../components/Music/NewJeans";
-import FavoriteSong from "../../../components/Music/FavoriteSong";
+import {
+  TextBox,
+  TextBoxMiddle,
+  TextBoxbottom,
+} from "../pages/main/common/mainCommon";
+import NewJeans from "../components/Music/NewJeans";
+import FavoriteSong from "../components/Music/FavoriteSong";
+import newjeansmv from "../assets/video/newjeansmv.mp4";
+import musicvideo from "../assets/video/musicvideo.mp4";
 
 const Container = styled.section`
   width: 100%;

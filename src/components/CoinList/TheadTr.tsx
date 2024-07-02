@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Tr } from "../../pages/CoinList/CoinList";
+import { Tr } from "../../container/CoinList";
 const NameTh = styled.th`
   text-align: start;
   vertical-align: middle;

@@ -1,8 +1,8 @@
-import styled from "styled-components";
-import { schedule } from "../../../services/listData";
 import { useEffect, useState } from "react";
-import { IResize } from "../../../interface/iproject";
-import { useMySelector } from "../../../libs/useMySelector";
+import styled from "styled-components";
+import { useMySelector } from "../../libs/useMySelector";
+import { IResize } from "../../interface/iproject";
+import { schedule } from "../../services/listData";
 
 const Container = styled.div`
   padding: 1vw 0 6vw 0;

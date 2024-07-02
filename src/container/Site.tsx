@@ -1,6 +1,10 @@
 import styled from "styled-components";
-import { TextBox, TextBoxMiddle, TextBoxbottom } from "../common/mainCommon";
-import { siteList } from "../../../services/listData";
+import {
+  TextBox,
+  TextBoxMiddle,
+  TextBoxbottom,
+} from "../pages/main/common/mainCommon";
+import { siteList } from "../services/listData";
 
 const Container = styled.section`
   display: flex;
@@ -187,7 +191,7 @@ function Site() {
   return (
     <Container>
       <TextBox>
-        <TextBoxMiddle  >reference site</TextBoxMiddle>
+        <TextBoxMiddle>reference site</TextBoxMiddle>
         <TextBoxbottom>
           프로젝트를 제작하며 참고한 사이트들 입니다.
         </TextBoxbottom>

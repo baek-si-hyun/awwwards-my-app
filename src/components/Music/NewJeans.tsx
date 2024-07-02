@@ -17,7 +17,7 @@ import {
   Container,
   ImgDiv,
   Title,
-} from "../../pages/main/music/common/boardsCommon";
+} from "./common/boardsCommon";
 import { useMySelector } from "../../libs/useMySelector";
 
 const Img = styled.img`

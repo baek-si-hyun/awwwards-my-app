@@ -15,7 +15,7 @@ import {
   Container,
   ImgDiv,
   Title,
-} from "../../pages/main/music/common/boardsCommon";
+} from "./common/boardsCommon";
 import { useMySelector } from "../../libs/useMySelector";
 import { lolChampionsRedux } from "../../redux/favoriteListSlice";
 import MusicSet from "./MusicSet";

@@ -4,8 +4,8 @@ import {
   TextBox,
   TextBoxbottom,
   TextBoxMiddle,
-} from "../common/mainCommon";
-import ProjectsLinkBox from "./ProjectsLinkBox";
+} from "../pages/main/common/mainCommon";
+import ProjectsLinkBox from "../components/Project/ProjectsLinkBox";
 
 const Container = styled.section`
   width: 100%;

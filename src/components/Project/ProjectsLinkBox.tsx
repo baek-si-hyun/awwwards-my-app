@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
-import { projectData } from "../../../services/listData";
+import { projectData } from "../../services/listData";
 
 const common = css`
   display: flex;
@@ -21,7 +21,7 @@ const Box = styled(Link)`
 `;
 const ProjectTitle = styled.span`
   font-size: 1.5vw;
-`
+`;
 const ImgBox = styled.div`
   display: flex;
   justify-content: center;

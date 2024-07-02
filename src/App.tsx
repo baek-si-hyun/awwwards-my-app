@@ -1,4 +1,4 @@
-import Contact from "./pages/contact/Contact";
+import Contact from "./container/Contact";
 import Faqs from "./pages/faqs/Faqs";
 import Main from "./pages/main/Main";
 import Myapp from "./pages/ProjectRouter/ProjectMain";

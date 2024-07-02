@@ -1,15 +1,15 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import Colgroup from "../../components/CoinList/ColGroup";
-import TheadTr from "../../components/CoinList/TheadTr";
-import TbodyTr from "../../components/CoinList/TbodyTr";
 import {
   TextBox,
   TextBoxMiddle,
   TextBoxbottom,
-} from "../main/common/mainCommon";
-import useCoinNames from "../../libs/useCoinNames";
+} from "../pages/main/common/mainCommon";
+import Colgroup from "../components/CoinList/ColGroup";
+import TheadTr from "../components/CoinList/TheadTr";
+import TbodyTr from "../components/CoinList/TbodyTr";
+import useCoinNames from "../libs/useCoinNames";
 
 const Container = styled.section`
   width: 100%;

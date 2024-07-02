@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Tr } from "../../pages/CoinList/CoinList";
+import { Tr } from "../../container/CoinList";
 const Namediv = styled.div`
   display: flex;
   align-items: center;
