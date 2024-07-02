@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { IControllerVisible, IIndex, IVideoInfo } from "../../interface/imusic";
 import { useDispatch } from "react-redux";
-import { videoInfoRedux } from "../../redux/slices/playingVideoInfoSlice";
-import { controlRedux } from "../../redux/slices/controlPlayListSlice";
+import { videoInfoRedux } from "../../redux/playingVideoInfoSlice";
+import { controlRedux } from "../../redux/controlPlayListSlice";
 import { useMySelector } from "../../libs/useMySelector";
 
 const Container = styled.div<{ isVisible: boolean; backGroundImg: string }>`

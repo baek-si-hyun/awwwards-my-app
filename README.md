@@ -16,7 +16,7 @@ awwward 웹사이트를 구경하던중 <br/>
 
 1. 처음부터 설계와 디자인을 전부 하기보단 처음엔 클론코딩을 하고 직접 디자인하고 기획한 요소들을 업데이트 하고 있습니다.<br/>
    뿐만 아니라 성능적인 부분(코드, 이미지등)도 개선시켜 나가고 있습니다.<br/>
-2. 지금까지 코딩을 배우면서 '나도 저런거 한번 만들어보고 싶다'라고 생각 했던것들을 기억해 두었다가<br/>
+2. 웹서핑을 하며 '나도 저런거 한번 만들어보고 싶다'라고 생각 했던것들을 기억해 두었다가<br/>
    하나씩 만들어서 적용 시켜 보았습니다. 앞으로는 방향을 바꿔 일관성 있게 제 자신을 표현하는 웹사이트로 만들 계획입니다.<br/>
 
 ### 사용한 스킬들
@@ -34,8 +34,6 @@ awwward 웹사이트를 구경하던중 <br/>
 <span><img src="https://img.shields.io/badge/visualstudiocode-007ACC?style=flat-square&logo=visualstudiocode&logoColor=white"/></span>
 <span><img src="https://img.shields.io/badge/figma-F24E1E?style=flat-square&logo=figma&logoColor=white"/></span>
 <span><img src="https://img.shields.io/badge/windows-0078D6?style=flat-square&logo=windows&logoColor=white"/></span>
-<span><img src="https://img.shields.io/badge/nodejs-339933?style=flat-square&logo=nodedotjs&logoColor=white"/></span>
-<span><img src="https://img.shields.io/badge/mysql-4479A1?style=flat-square&logo=mysql&logoColor=white"/></span>
 
 ### 참고한 사이트들
 

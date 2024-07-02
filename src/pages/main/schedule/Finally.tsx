@@ -152,10 +152,9 @@ function Finally() {
           </FinallyH2>
           <FinallyTextKo>
             <p>
-              제가 준비한 awwward clone은 여기까지입니다. 아예 똑같이 클론
+              제가 준비한 awwward-my-app은 여기까지입니다. 아예 똑같이 클론
               코딩하는건 식상해서 제 창의력?을 조금 첨가해 보았습니다.
-              어떠셨나요? 코딩을 배운지는 곧 1년이 좀 넘었지만 프론트엔드
-              개발자로 성장하기로 마음먹고 공부한건 7개월이 좀 넘었네요. 혼자
+              어떠셨나요? 코딩을 배운지는 곧 2년이 다 되어가네요. 혼자
               공부하면서 느낀건 성장이 굉장히 더디다는 점입니다. 누군가가 제
               코드를 보고 피드백을 주는 사람도 없고, 함께 문제에 대한 이야기를
               하며 해결하는 것이 없다보니 그런거같네요. 그런 의미에서 이글을
@@ -166,17 +165,16 @@ function Finally() {
           </FinallyTextKo>
           <FinallyTextEn>
             <p>
-              This is the end of the awwward clone I prepared. 100% equally
-              cloned I'm tired of coding, so I added a little bit of my
-              creativity. How was it? It's been a little over a year since I
-              learned to code, but the frontend It's been a little over 6 months
-              since I decided to grow as a developer and studied. alone What I
-              noticed while studying was that growth was very slow. someone my
-              No one looking at the code and giving feedback, talking about
-              problems together. It seems that it is because there is nothing to
-              solve. In that sense, this article I would like to hear the advice
-              of the senior developers you will see. about employment Advice,
-              coding advice, whatever. via the link below Please advise.
+              This is the end of the awwward-my-app I prepared. 100% identical
+              clone Coding was boring, so I tried adding a little bit of my
+              creativity. How was it? It's been almost two years since I learned
+              coding. alone What I felt while studying was that growth was very
+              slow. someone is my There is no one to look at the code and give
+              feedback, and talk about problems together. I think it's because
+              there is no solution. In that sense, this article I'd like to hear
+              advice from senior developers you'll see. About employment Any
+              advice or advice on coding is fine. through the link next to
+              Please advise.
             </p>
           </FinallyTextEn>
         </FinallyText>

@@ -8,10 +8,10 @@ import {
   INewjeansListData,
   IPlayList,
   IVideoInfo,
-} from "../../../interface/imusic";
-import { controlRedux } from "../../../redux/slices/controlPlayListSlice";
-import { videoInfoRedux } from "../../../redux/slices/playingVideoInfoSlice";
-import { useMySelector } from "../../../libs/useMySelector";
+} from "../../interface/imusic";
+import { controlRedux } from "../../redux/controlPlayListSlice";
+import { videoInfoRedux } from "../../redux/playingVideoInfoSlice";
+import { useMySelector } from "../../libs/useMySelector";
 
 function MusicPlayer() {
   const [playList, setPlayList] = useState<IPlayList[]>([

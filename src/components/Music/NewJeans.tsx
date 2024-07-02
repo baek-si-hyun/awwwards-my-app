@@ -8,7 +8,8 @@ import styled from "styled-components";
 import React from "react";
 import MusicSet from "./MusicSet";
 import { useDispatch } from "react-redux";
-import { ILoLChampionsListData, IPlayList } from "../../../interface/imusic";
+import { INewjeansListData, IPlayList } from "../../interface/imusic";
+import { newJeansRedux } from "../../redux/newJeansListSlice";
 import {
   Board,
   Card,
@@ -16,31 +17,27 @@ import {
   Container,
   ImgDiv,
   Title,
-} from "./common/boardsCommon";
-import { useMySelector } from "../../../libs/useMySelector";
-import { lolChampionsRedux } from "../../../redux/slices/favoriteListSlice";
+} from "../../pages/main/music/common/boardsCommon";
+import { useMySelector } from "../../libs/useMySelector";
 
 const Img = styled.img`
   width: clamp(40px, 4vw, 128px);
 `;
 
-function LoLChampions() {
-  const lolChampionsList = useMySelector(
-    ({
-      lolChampionsListSlice,
-    }: {
-      lolChampionsListSlice: ILoLChampionsListData;
-    }) => lolChampionsListSlice.lolChampionsList
+function NewJeans() {
+  const newjeansList = useMySelector(
+    ({ newJeansListSlice }: { newJeansListSlice: INewjeansListData }) =>
+      newJeansListSlice.newjeansList
   );
   const dispatch = useDispatch();
   const onDragEnd = ({ destination, source }: DropResult) => {
     if (!destination) return;
     if (destination) {
-      const copyList = [...lolChampionsList];
+      const copyList = [...newjeansList];
       const taskObj = copyList[source.index];
       copyList.splice(source.index, 1);
       copyList.splice(destination?.index, 0, taskObj);
-      dispatch(lolChampionsRedux(copyList));
+      dispatch(newJeansRedux(copyList));
     }
   };
 
@@ -50,10 +47,10 @@ function LoLChampions() {
         <Droppable droppableId="one">
           {(magic) => (
             <Board ref={magic.innerRef} {...magic.droppableProps}>
-              {lolChampionsList.map((lol: IPlayList, index: number) => (
+              {newjeansList.map((newjeans: IPlayList, index: number) => (
                 <Draggable
-                  key={lol.title}
-                  draggableId={lol.title}
+                  key={newjeans.title}
+                  draggableId={newjeans.title}
                   index={index}
                 >
                   {(provided, snapshot) => (
@@ -66,22 +63,22 @@ function LoLChampions() {
                       <CardItem>
                         <ImgDiv>
                           <Img
-                            src={lol.img}
+                            src={newjeans.img}
                             alt="album_photo"
                             loading="lazy"
                             decoding="async"
                           />
-                          <MusicSet videoUrl={lol.url} />
+                          <MusicSet videoUrl={newjeans.url} />
                         </ImgDiv>
                         <Title>
-                          <span>{lol.title}</span>
+                          <span>{newjeans.title}</span>
                         </Title>
                       </CardItem>
                       <CardItem>
-                        <span>{lol.artist}</span>
+                        <span>{newjeans.artist}</span>
                       </CardItem>
                       <CardItem>
-                        <span>{lol.album}</span>
+                        <span>{newjeans.album}</span>
                       </CardItem>
                     </Card>
                   )}
@@ -96,4 +93,4 @@ function LoLChampions() {
   );
 }
 
-export default React.memo(LoLChampions);
+export default React.memo(NewJeans);

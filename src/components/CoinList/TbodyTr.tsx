@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Tr } from "./CoinList";
+import { Tr } from "../../pages/CoinList/CoinList";
 import React, { useEffect, useState } from "react";
 import SkeletonUI from "./SkeletonUI";
 import TradePrice from "./TradePrice";

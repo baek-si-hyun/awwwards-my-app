@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import ProjectPreview from "./ProjectPreview";
-import ProjectFont from "./ProjectFont";
-import ProjectColor from "./ProjectColor";
+import ProjectPreview from "../../components/ProjectRouter/ProjectPreview";
+import ProjectFont from "../../components/ProjectRouter/ProjectFont";
+import ProjectColor from "../../components/ProjectRouter/ProjectColor";
 import { useLocation } from "react-router-dom";
 import Nav from "../../components/nav/Nav";
 

@@ -1,11 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import resizeWidthSlice from "./slices/resizeWidthSlice";
-import newJeansListSlice from "./slices/newJeansListSlice";
-import featuredListSlice from "./slices/featuredListSlice";
-import playingVideoInfoSlice from "./slices/playingVideoInfoSlice";
-import controlPlayListSlice from "./slices/controlPlayListSlice";
-import controllerVisibleSlice from "./slices/controllerVisibleSlice";
-import lolChampionsListSlice from "./slices/favoriteListSlice";
+import resizeWidthSlice from "./resizeWidthSlice";
+import newJeansListSlice from "./newJeansListSlice";
+import featuredListSlice from "./featuredListSlice";
+import playingVideoInfoSlice from "./playingVideoInfoSlice";
+import controlPlayListSlice from "./controlPlayListSlice";
+import controllerVisibleSlice from "./controllerVisibleSlice";
+import lolChampionsListSlice from "./favoriteListSlice";
 
 const store = configureStore({
   reducer: {

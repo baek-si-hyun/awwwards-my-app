@@ -8,8 +8,8 @@ import styled from "styled-components";
 import React from "react";
 import MusicSet from "./MusicSet";
 import { useDispatch } from "react-redux";
-import { IFeaturedListData, IPlayList } from "../../../interface/imusic";
-import { featuredRedux } from "../../../redux/slices/featuredListSlice";
+import { IFeaturedListData, IPlayList } from "../../interface/imusic";
+import { featuredRedux } from "../../redux/featuredListSlice";
 import {
   Board,
   Card,
@@ -17,8 +17,8 @@ import {
   Container,
   ImgDiv,
   Title,
-} from "./common/boardsCommon";
-import { useMySelector } from "../../../libs/useMySelector";
+} from "../../pages/main/music/common/boardsCommon";
+import { useMySelector } from "../../libs/useMySelector";
 
 const FeaturedContainer = styled(Container)`
   @media (max-width: 1050px) {

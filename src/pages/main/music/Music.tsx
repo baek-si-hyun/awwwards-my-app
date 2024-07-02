@@ -3,8 +3,8 @@ import { useInView } from "react-intersection-observer";
 import { TextBox, TextBoxMiddle, TextBoxbottom } from "../common/mainCommon";
 import musicvideo from "../../../assets/video/musicvideo.mp4";
 import newjeansmv from "../../../assets/video/newjeansmv.mp4";
-import NewJeans from "./NewJeans";
-import FavoriteSong from "./FavoriteSong";
+import NewJeans from "../../../components/Music/NewJeans";
+import FavoriteSong from "../../../components/Music/FavoriteSong";
 
 const Container = styled.section`
   width: 100%;

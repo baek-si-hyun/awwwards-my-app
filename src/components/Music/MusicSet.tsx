@@ -1,11 +1,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import styled from "styled-components";
 import { useEffect, useState } from "react";
-import {  useDispatch } from "react-redux";
-import { IVideoInfo } from "../../../interface/imusic";
-import { videoInfoRedux } from "../../../redux/slices/playingVideoInfoSlice";
-import { controllerVisibleRedux } from "../../../redux/slices/controllerVisibleSlice";
-import { useMySelector } from "../../../libs/useMySelector";
+import { useDispatch } from "react-redux";
+import { IVideoInfo } from "../../interface/imusic";
+import { videoInfoRedux } from "../../redux/playingVideoInfoSlice";
+import { controllerVisibleRedux } from "../../redux/controllerVisibleSlice";
+import { useMySelector } from "../../libs/useMySelector";
 
 export const ButtonDiv = styled.div<{ isPlaying: boolean }>`
   position: absolute;

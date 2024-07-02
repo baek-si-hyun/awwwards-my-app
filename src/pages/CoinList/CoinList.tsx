@@ -1,9 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import Colgroup from "./ColGroup";
-import TheadTr from "./TheadTr";
-import TbodyTr from "./TbodyTr";
+import Colgroup from "../../components/CoinList/ColGroup";
+import TheadTr from "../../components/CoinList/TheadTr";
+import TbodyTr from "../../components/CoinList/TbodyTr";
 import {
   TextBox,
   TextBoxMiddle,

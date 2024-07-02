@@ -163,7 +163,7 @@ function Header() {
             I'm SH B<br /> Portfolio/23
           </Title>
           <SubTitle>
-            Fornt-end Developer
+            Web Developer
             <br />
             <Discription>
               Welcome! You can explore the projects
