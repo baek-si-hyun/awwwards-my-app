@@ -17,10 +17,10 @@ const Container = styled.div`
 
 const Row = styled.div`
   overflow: hidden;
-  min-width: 133rem;
+  min-width: 130rem;
   position: relative;
   display: grid;
-  grid-template-columns: 200px repeat(12, 161px);
+  grid-template-columns: 200px repeat(11, 161px);
   grid-template-rows: clamp(60px, 5vw, 70px);
   background-image: linear-gradient(
     to right,
@@ -94,24 +94,24 @@ const AbsoluteBox = styled.div<{ indexNum: number }>`
 
   ${(props) =>
     props.indexNum === 0 &&
-    "left:13rem;gap:18.5rem;background-color:#aaeec4;color:#000;"};
+    "left:13rem;gap:8rem;background-color:#aaeec4;color:#000;"};
   ${(props) =>
     props.indexNum === 1 &&
-    "left:33rem;gap:0.8rem;background-color:#502bd8;"};
-  ${(props) => props.indexNum === 2 && "left:43rem;gap:34rem;"};
-  ${(props) => props.indexNum === 3 && "left:43rem;gap:3rem;"};
-  ${(props) => props.indexNum === 4 && "left:53rem;gap:3rem;"};
-  ${(props) => props.indexNum === 5 && "left:53rem;gap:3rem;"};
-  ${(props) => props.indexNum === 6 && "left:63rem;gap:13.5rem;"};
-  ${(props) => props.indexNum === 7 && "left:65rem;gap:2rem;"};
-  ${(props) => props.indexNum === 8 && "left:78rem;gap:3rem;"};
+    "left:22.8rem;gap:0.5rem;background-color:#502bd8;"};
+  ${(props) => props.indexNum === 2 && "left:33rem;gap:34rem;"};
+  ${(props) => props.indexNum === 3 && "left:33rem;gap:3rem;"};
+  ${(props) => props.indexNum === 4 && "left:43rem;gap:3rem;"};
+  ${(props) => props.indexNum === 5 && "left:43rem;gap:3rem;"};
+  ${(props) => props.indexNum === 6 && "left:53rem;gap:13.5rem;"};
+  ${(props) => props.indexNum === 7 && "left:55rem;gap:2rem;"};
+  ${(props) => props.indexNum === 8 && "left:68rem;gap:3rem;"};
   ${(props) =>
-    props.indexNum === 9 && "left:83.5rem;gap:80rem;background-color:#ca0101;"};
-  ${(props) => props.indexNum === 10 && "left:83.5rem;gap:0.1rem;"};
+    props.indexNum === 9 && "left:73.5rem;gap:80rem;background-color:#ca0101;"};
+  ${(props) => props.indexNum === 10 && "left:73.5rem;gap:0.1rem;"};
   ${(props) =>
-    props.indexNum === 11 && "left:91rem;gap:15rem;background-color:#aaeec4;color:#000;"};
+    props.indexNum === 11 && "left:81rem;gap:15rem;background-color:#aaeec4;color:#000;"};
   ${(props) =>
-    props.indexNum === 12 && "left:97rem;gap:10.5rem;background-color:#502bd8;"};
+    props.indexNum === 12 && "left:87rem;gap:10.5rem;background-color:#502bd8;"};
   ${(props) => props.indexNum === 13 && "display: none;"};
 `;
 const Inner = styled.div`
