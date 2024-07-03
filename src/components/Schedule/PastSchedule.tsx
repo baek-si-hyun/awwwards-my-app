@@ -17,7 +17,7 @@ const Container = styled.div`
 
 const Row = styled.div`
   overflow: hidden;
-  min-width: 130rem;
+  min-width: 123rem;
   position: relative;
   display: grid;
   grid-template-columns: 200px repeat(11, 161px);

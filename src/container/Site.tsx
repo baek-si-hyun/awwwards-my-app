@@ -15,7 +15,7 @@ const Container = styled.section`
   background-color: rgba(255, 255, 255, 0.7);
   position: relative;
   z-index: 0;
-  height: 140vh;
+  height: 100%;
   backdrop-filter: blur(10px);
   @media (max-width: 1050px) {
     & {
