@@ -16,10 +16,11 @@ const Container = styled.div`
 `;
 
 const Row = styled.div`
-  width: 203.9rem;
+  overflow: hidden;
+  min-width: 133rem;
   position: relative;
   display: grid;
-  grid-template-columns: 200px repeat(19, 161px);
+  grid-template-columns: 200px repeat(12, 161px);
   grid-template-rows: clamp(60px, 5vw, 70px);
   background-image: linear-gradient(
     to right,
@@ -78,7 +79,7 @@ const Box = styled.div`
     }
   }
 `;
-
+// #
 const AbsoluteBox = styled.div<{ indexNum: number }>`
   white-space: nowrap;
   padding: clamp(5px, 0.7vw, 15px);
@@ -90,26 +91,27 @@ const AbsoluteBox = styled.div<{ indexNum: number }>`
   transform: translateY(-50%);
   display: flex;
   align-items: center;
+
   ${(props) =>
     props.indexNum === 0 &&
-    "left:210px;gap:270px;background-color:#aaeec4;color:#000;"};
+    "left:13rem;gap:18.5rem;background-color:#aaeec4;color:#000;"};
   ${(props) =>
-    props.indexNum === 1 && "left:760px;gap:300px;background-color:#502bd8;"};
-  ${(props) => props.indexNum === 2 && "left:1060px;gap:155px;"};
-  ${(props) => props.indexNum === 3 && "left:1200px;gap:35px;"};
-  ${(props) => props.indexNum === 4 && "left:1332px;gap:60px;"};
-  ${(props) => props.indexNum === 5 && "left:1495px;gap:420px;"};
-  ${(props) => props.indexNum === 6 && "left:1700px;gap:70px;"};
-  ${(props) => props.indexNum === 7 && "left:1860px;gap:150px;"};
-  ${(props) => props.indexNum === 8 && "left:1900px;gap:110px;"};
+    props.indexNum === 1 &&
+    "left:33rem;gap:0.8rem;background-color:#502bd8;"};
+  ${(props) => props.indexNum === 2 && "left:43rem;gap:34rem;"};
+  ${(props) => props.indexNum === 3 && "left:43rem;gap:3rem;"};
+  ${(props) => props.indexNum === 4 && "left:53rem;gap:3rem;"};
+  ${(props) => props.indexNum === 5 && "left:53rem;gap:3rem;"};
+  ${(props) => props.indexNum === 6 && "left:63rem;gap:13.5rem;"};
+  ${(props) => props.indexNum === 7 && "left:65rem;gap:2rem;"};
+  ${(props) => props.indexNum === 8 && "left:78rem;gap:3rem;"};
   ${(props) =>
-    props.indexNum === 9 && "left:2350px;gap:410px;background-color:#077e03;"};
+    props.indexNum === 9 && "left:83.5rem;gap:80rem;background-color:#ca0101;"};
+  ${(props) => props.indexNum === 10 && "left:83.5rem;gap:0.1rem;"};
   ${(props) =>
-    props.indexNum === 10 && "left:2200px;gap:140px;background-color:#ca0101;"};
+    props.indexNum === 11 && "left:91rem;gap:15rem;background-color:#aaeec4;color:#000;"};
   ${(props) =>
-    props.indexNum === 11 && "left:2620px;gap:150px;background-color:#077e03;"};
-  ${(props) =>
-    props.indexNum === 12 && "left:2620px;gap:300px;background-color:#077e03;"};
+    props.indexNum === 12 && "left:97rem;gap:10.5rem;background-color:#502bd8;"};
   ${(props) => props.indexNum === 13 && "display: none;"};
 `;
 const Inner = styled.div`
