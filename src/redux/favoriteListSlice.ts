@@ -20,7 +20,7 @@ const lolChampionsListSlice = createSlice({
         title: "In Your Eyes (Remix) (feat. Doja Cat)",
         artist: "The Weeknd",
         album: "In Your Eyes (Remix) • 2020",
-        url: "https://www.youtube.com/embed/jDlHD2rnPao",
+        url: "https://www.youtube.com/embed/ozMBCFd7fFM",
       },
       {
         id: 3,
@@ -29,7 +29,7 @@ const lolChampionsListSlice = createSlice({
         title: "yes, and?",
         artist: "Ariana Grande",
         album: "yes, and? • 2024",
-        url: "https://www.youtube.com/embed/NuB-1myGido",
+        url: "https://www.youtube.com/embed/A8jERSryeLc",
       },
       {
         id: 4,
@@ -38,7 +38,7 @@ const lolChampionsListSlice = createSlice({
         title: "You",
         artist: "Regard, Troye Sivan 및 Tate McRae",
         album: "You • 2021",
-        url: "https://www.youtube.com/embed/Zrly3QMUhoo",
+        url: "https://www.youtube.com/embed/C46zC8lebXY",
       },
       {
         id: 5,
@@ -47,7 +47,7 @@ const lolChampionsListSlice = createSlice({
         title: "Agora Hills",
         artist: "Doja Cat",
         album: "Scarlet • 2023",
-        url: "https://www.youtube.com/embed/XTKBYfyNMdQ",
+        url: "https://www.youtube.com/embed/7Vd6K6i51WQ",
       },
 
       {
@@ -57,7 +57,7 @@ const lolChampionsListSlice = createSlice({
         title: "bloodline",
         artist: "Ariana Grande",
         album: "thank u, next • 2019",
-        url: "https://www.youtube.com/embed/wllpa2JBEmA",
+        url: "https://www.youtube.com/embed/C2sYLRHqXHY",
       },
       {
         id: 7,

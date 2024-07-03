@@ -58,7 +58,7 @@ const newJeansListSlice = createSlice({
         title: "Ditto",
         artist: "NewJeans",
         album: "Ditto",
-        url: "https://www.youtube.com/embed/HtbnfBFIJls",
+        url: "https://www.youtube.com/embed/haCpjUXIhrI",
       },
       {
         id: 8,
