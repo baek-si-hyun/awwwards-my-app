@@ -60,7 +60,7 @@ awwward 웹사이트를 구경하던 중, <br/>
 하얀색 그림자가 있는 두번쨰 로고가 지금 현재 사용하고 있는 로고 라는 뜻입니다.
 ```
 
-![스크린샷 2024-07-02 174917](https://github.com/baek-si-hyun/awwwards-my-app/assets/107901109/f2635e48-8476-4eaa-acc6-5d37b80979ea)
+![image](https://github.com/baek-si-hyun/awwwards-my-app/assets/107901109/eae56bcb-cdbc-4cbf-ab16-26de5892d97a)
 <br/><br/>
 
 ### 2️⃣ 프로젝트 목록
