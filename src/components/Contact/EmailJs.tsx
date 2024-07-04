@@ -79,7 +79,6 @@ function EmailJs() {
       .then(
         (result) => {
           alert("전송 되었습니다");
-          console.log(result.text);
         },
         (error) => {
           alert("실패 하였습니다.");

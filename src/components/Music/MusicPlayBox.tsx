@@ -100,7 +100,6 @@ function MusicPlayBox() {
     (state: { playingVideoInfoSlice: IVideoInfo }) =>
       state.playingVideoInfoSlice.videoInfo
   );
-  console.log(videoInfo?.img);
   const dispatch = useDispatch();
   const toggle = () => {
     dispatch(
