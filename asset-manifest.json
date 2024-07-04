@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/awwwards-my-app/static/css/main.3d011b7b.css",
-    "main.js": "/awwwards-my-app/static/js/main.41001bc1.js",
+    "main.js": "/awwwards-my-app/static/js/main.4c147fef.js",
     "static/js/471.9ae35aa6.chunk.js": "/awwwards-my-app/static/js/471.9ae35aa6.chunk.js",
     "static/js/350.ff368cdd.chunk.js": "/awwwards-my-app/static/js/350.ff368cdd.chunk.js",
     "static/js/827.d6572156.chunk.js": "/awwwards-my-app/static/js/827.d6572156.chunk.js",
@@ -51,7 +51,7 @@
     "static/media/ApercuPro-Bold.woff2": "/awwwards-my-app/static/media/ApercuPro-Bold.7fbfd7d508c080196fbe.woff2",
     "index.html": "/awwwards-my-app/index.html",
     "main.3d011b7b.css.map": "/awwwards-my-app/static/css/main.3d011b7b.css.map",
-    "main.41001bc1.js.map": "/awwwards-my-app/static/js/main.41001bc1.js.map",
+    "main.4c147fef.js.map": "/awwwards-my-app/static/js/main.4c147fef.js.map",
     "471.9ae35aa6.chunk.js.map": "/awwwards-my-app/static/js/471.9ae35aa6.chunk.js.map",
     "350.ff368cdd.chunk.js.map": "/awwwards-my-app/static/js/350.ff368cdd.chunk.js.map",
     "827.d6572156.chunk.js.map": "/awwwards-my-app/static/js/827.d6572156.chunk.js.map",
@@ -74,6 +74,6 @@
   },
   "entrypoints": [
     "static/css/main.3d011b7b.css",
-    "static/js/main.41001bc1.js"
+    "static/js/main.4c147fef.js"
   ]
 }
