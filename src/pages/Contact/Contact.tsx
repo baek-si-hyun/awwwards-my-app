@@ -4,8 +4,8 @@ import {
   TextBox,
   TextBoxMiddle,
   TextBoxTop,
-} from "../pages/main/common/mainCommon";
-import EmailJs from "../components/Contact/EmailJs";
+} from "../main/common/mainCommon";
+import EmailJs from "../../components/Contact/EmailJs";
 const Container = styled.div`
   width: 100%;
   background-color: #fff;

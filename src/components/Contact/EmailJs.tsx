@@ -71,10 +71,10 @@ function EmailJs() {
     e.preventDefault();
     emailjs
       .sendForm(
-        `${process.env.REACT_APP_SERVICE_ID}`,
-        `${process.env.REACT_APP_TEMPLATE_ID}`,
+        `${process.env.REACT_APP_EMAILJS_SERVICE_ID}`,
+        `${process.env.REACT_APP_EMAILJS_TEMPLATE_ID}`,
         form.current,
-        `${process.env.REACT_APP_API_KEYS}`
+        `${process.env.REACT_APP_EMAILJS_API_KEYS}`
       )
       .then(
         (result) => {
