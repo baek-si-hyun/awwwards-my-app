@@ -137,7 +137,7 @@ emailjs가 사용 되었습니다.
 
 ### Github Pages 의 고질적인 문제 '새로고침'
 
-저는 awwwards-my-app 프로젝트를 gh-pages 라이브러리를 사용해 배포했습니다. 그러나 배포한 프로젝트에서 새로고침을 할 경우 404 페이지가 표시되며 문제가 발생했습니다. 이는 gh-pages가 history API를 지원하지 않기 때문에 발생한 문제였습니다.
+저는 awwwards-my-app 프로젝트를 gh-pages 라이브러리를 사용해 배포했습니다. 배포한 프로젝트에서 새로고침을 할 경우 404 페이지가 표시되며 문제가 발생했습니다. 이는 gh-pages가 history API를 지원하지 않기 때문에 발생한 문제였습니다.
 
 저는 리액트 프로젝트에서 react-router-dom의 BrowserRouter를 사용했는데, BrowserRouter는 history API를 통해 사용자의 페이지 이동을 관리합니다. 하지만 gh-pages는 이를 지원하지 않았습니다.
 

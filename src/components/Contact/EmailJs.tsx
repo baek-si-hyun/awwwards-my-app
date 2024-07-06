@@ -59,6 +59,7 @@ const Textarea = styled.textarea`
   border: none;
   transition: all 0.3s ease-in-out 0s;
   will-change: border;
+  resize: none;
   :focus {
     border-bottom: 2px solid #e9e9e9;
     outline: none;

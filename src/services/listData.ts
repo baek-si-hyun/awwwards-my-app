@@ -101,7 +101,7 @@ export const projectData: IProjectsData[] = [
   {
     projects_code: "awwwards",
     projects_name: "AWWWARDS MY APP",
-    projects_date: "2023. 06. 08",
+    projects_date: "2023. 08. 27",
     projects_tools: [
       "html5",
       "css3",
