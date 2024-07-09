@@ -578,4 +578,5 @@ export const circulatingSupply = [
   { id: "KRW-USDT", supply: 112911493076 },
   { id: "KRW-ONDO", supply: 1389759838 },
   { id: "KRW-AUCTION", supply: 6500037 },
+  { id: "KRW-JUP", supply: 1350000000 },
 ];
