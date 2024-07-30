@@ -3,18 +3,15 @@ import { useState, useEffect, useCallback } from "react";
 import { ICoinSocketTickers } from "../interface/icoin";
 
 export async function fetchCoins() {
-  const response = await fetch(`https://api.upbit.com/v1/market/all`);
+  const response = await fetch(`/v1/market/all`);
   return await response.json();
 }
 export async function fetchCoinTickers(coinList: string[]) {
   let results = [];
   for (let index = 0; index < coinList.length; index++) {
-    const response = await fetch(
-      `https://api.upbit.com/v1/ticker?markets=${coinList[index]}`,
-      {
-        method: "GET",
-      }
-    );
+    const response = await fetch(`/v1/ticker?markets=${coinList[index]}`, {
+      method: "GET",
+    });
     const [json] = await response.json();
     results.push(json);
   }
@@ -24,7 +21,7 @@ export async function fetchCoinHistory(coinList: string[]) {
   let results = [];
   for (let index = 0; index < coinList.length; index++) {
     const response = await fetch(
-      `https://api.upbit.com/v1/candles/days?market=${coinList[index]}&count=200&convertingPriceUnit=KRW`,
+      `/v1/candles/days?market=${coinList[index]}&count=200&convertingPriceUnit=KRW`,
       { method: "GET" }
     );
     const json = await response.json();
@@ -44,7 +41,7 @@ export const useCoinTickersSocket = (socketNameList: string[]) => {
       (socket.readyState === WebSocket.OPEN ||
         socket.readyState === WebSocket.CONNECTING)
     ) {
-      return; // Avoid creating a new WebSocket if one is already open or connecting
+      return;
     }
     const upbitSocket = new WebSocket("wss://api.upbit.com/websocket/v1");
     setSocket(upbitSocket);
@@ -52,12 +49,12 @@ export const useCoinTickersSocket = (socketNameList: string[]) => {
     upbitSocket.addEventListener("error", (error: any) => {
       console.error("WebSocket error:", error.name);
       setError("WebSocket error: " + error.name);
-      upbitSocket.close(); // Close the socket before attempting to reconnect
+      upbitSocket.close();
     });
 
     upbitSocket.addEventListener("close", () => {
-      setSocket(null); // Clear the socket when it is closed
-      connectWS(); // Attempt to reconnect
+      setSocket(null);
+      connectWS();
     });
 
     upbitSocket.addEventListener("message", (message) => {
@@ -77,7 +74,7 @@ export const useCoinTickersSocket = (socketNameList: string[]) => {
 
     return () => {
       if (socket) {
-        socket.close(); // Cleanup the socket connection when the component unmounts or dependencies change
+        socket.close();
       }
     };
   }, [connectWS]);
@@ -96,7 +93,7 @@ export const useCoinTickersSocket = (socketNameList: string[]) => {
     socket.addEventListener("open", handleOpen);
 
     return () => {
-      socket.removeEventListener("open", handleOpen); // Cleanup the event listener
+      socket.removeEventListener("open", handleOpen);
     };
   }, [socketNameList, socket]);
   console.log(coinTickers);
