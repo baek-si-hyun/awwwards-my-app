@@ -3,32 +3,31 @@ import { useState, useEffect, useCallback } from "react";
 import { ICoinSocketTickers } from "../interface/icoin";
 
 export async function fetchCoins() {
-  const response = await fetch(
-    `https://api.upbit.com/v1/market/all?isDetails=false`
-  );
+  const response = await fetch(`/v1/market/all`);
   return await response.json();
 }
 export async function fetchCoinTickers(coinList: string[]) {
   let results = [];
   for (let index = 0; index < coinList.length; index++) {
-    const response = await fetch(
-      `https://api.upbit.com/v1/ticker?markets=${coinList[index]}`
-    );
+    const response = await fetch(`/v1/ticker?markets=${coinList[index]}`, {
+      method: "GET",
+    });
     const [json] = await response.json();
     results.push(json);
   }
   return results;
 }
-
 export async function fetchCoinHistory(coinList: string[]) {
   let results = [];
   for (let index = 0; index < coinList.length; index++) {
     const response = await fetch(
-      `https://api.upbit.com/v1/candles/days?market=${coinList[index]}&count=200&convertingPriceUnit=KRW`
+      `/v1/candles/days?market=${coinList[index]}&count=200&convertingPriceUnit=KRW`,
+      { method: "GET" }
     );
     const json = await response.json();
     results.push(json);
   }
+
   return results;
 }
 export const useCoinTickersSocket = (coinList: string[]) => {
@@ -89,7 +88,6 @@ export const useCoinTickersSocket = (coinList: string[]) => {
     }
   );
 };
-
 //무료 Supply api, market cap api 못찾겠다...
 export const circulatingSupply = [
   { id: "KRW-ZETA", supply: 265475000 },
@@ -581,4 +579,6 @@ export const circulatingSupply = [
   { id: "KRW-JUP", supply: 1350000000 },
   { id: "KRW-STG", supply: 204338417 },
   { id: "KRW-GAL", supply: 118544998 },
+  { id: "KRW-G", supply: 7232700005 },
+  { id: "KRW-ENS", supply: 32839999 },
 ];

@@ -1,15 +1,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import {
-  TextBox,
-  TextBoxMiddle,
-  TextBoxbottom,
-} from "../pages/main/common/mainCommon";
+import useCoinNames from "../libs/useCoinNames";
+import { TextBox, TextBoxMiddle, TextBoxbottom } from "../pages/main/common/mainCommon";
 import Colgroup from "../components/CoinList/ColGroup";
 import TheadTr from "../components/CoinList/TheadTr";
 import TbodyTr from "../components/CoinList/TbodyTr";
-import useCoinNames from "../libs/useCoinNames";
 
 const Container = styled.section`
   width: 100%;
@@ -108,7 +104,9 @@ function CoinList() {
       <Inner>
         <TextBox>
           <TextBoxMiddle>CoinList</TextBoxMiddle>
-          <TextBoxbottom>Combination of UPBIT, React-Query</TextBoxbottom>
+          <TextBoxbottom>
+            Combination of UPBIT Websocket, React-Query
+          </TextBoxbottom>
         </TextBox>
         <TableBox>
           <ListTable>

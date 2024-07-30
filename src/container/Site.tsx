@@ -197,8 +197,8 @@ function Site() {
         </TextBoxbottom>
       </TextBox>
       <FlexBox>
-        {siteList.map((item) => (
-          <Sitebox>
+        {siteList.map((item, i) => (
+          <Sitebox key={i}>
             <SiteImgBox>
               <SiteImg
                 src={`https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/${item.img}/public`}
