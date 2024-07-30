@@ -15,7 +15,7 @@ function Main() {
         <Projects />
         <Site />
         <Music />
-        <CoinList />
+        {/* <CoinList /> */}
         <Schedule />
       </main>
       <Nav />
