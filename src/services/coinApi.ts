@@ -1,10 +1,11 @@
-import { useQuery } from "@tanstack/react-query";
 import { useState, useEffect, useCallback } from "react";
 import { ICoinSocketTickers } from "../interface/icoin";
 
 export async function fetchCoins() {
   console.log("fetchCoins");
-  const response = await fetch(`https://api.upbit.com/v1/market/all`);
+  const response = await fetch(
+    `https://api.upbit.com/v1/market/all?isDetails=false`
+  );
   return await response.json();
 }
 export async function fetchCoinTickers(coinList: string[]) {
@@ -38,7 +39,7 @@ export const useCoinTickersSocket = (socketNameList: string[]) => {
   const [coinTickers, setCoinTickers] = useState<ICoinSocketTickers[]>([]);
   const [error, setError] = useState<string | null>(null);
 
-  const connectWS = useCallback(async () => {
+  const connectWS = useCallback(() => {
     if (
       socket &&
       (socket.readyState === WebSocket.OPEN ||
