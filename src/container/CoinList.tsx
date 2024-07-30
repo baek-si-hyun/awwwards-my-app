@@ -115,7 +115,7 @@ function CoinList() {
               <TheadTr />
             </thead>
             <tbody>
-              <TbodyTr count={count} />
+              <TbodyTr count={count} nameData={nameData}/>
             </tbody>
           </ListTable>
         </TableBox>

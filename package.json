@@ -61,7 +61,6 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://api.upbit.com",
   "homepage": "https://baek-si-hyun.github.io/awwwards-my-app",
   "devDependencies": {
     "@babel/core": "^7.21.8",

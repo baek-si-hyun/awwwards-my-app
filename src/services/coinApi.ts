@@ -3,15 +3,15 @@ import { useState, useEffect, useCallback } from "react";
 import { ICoinSocketTickers } from "../interface/icoin";
 
 export async function fetchCoins() {
-  const response = await fetch(`/v1/market/all`);
+  const response = await fetch(`https://api.upbit.com/v1/market/all`);
   return await response.json();
 }
 export async function fetchCoinTickers(coinList: string[]) {
   let results = [];
   for (let index = 0; index < coinList.length; index++) {
-    const response = await fetch(`/v1/ticker?markets=${coinList[index]}`, {
-      method: "GET",
-    });
+    const response = await fetch(
+      `https://api.upbit.com/v1/ticker?markets=${coinList[index]}`
+    );
     const [json] = await response.json();
     results.push(json);
   }
@@ -21,8 +21,7 @@ export async function fetchCoinHistory(coinList: string[]) {
   let results = [];
   for (let index = 0; index < coinList.length; index++) {
     const response = await fetch(
-      `/v1/candles/days?market=${coinList[index]}&count=200&convertingPriceUnit=KRW`,
-      { method: "GET" }
+      `https://api.upbit.com/v1/candles/days?market=${coinList[index]}&count=200&convertingPriceUnit=KRW`
     );
     const json = await response.json();
     results.push(json);
@@ -30,12 +29,13 @@ export async function fetchCoinHistory(coinList: string[]) {
 
   return results;
 }
+
 export const useCoinTickersSocket = (socketNameList: string[]) => {
   const [socket, setSocket] = useState<WebSocket | null>(null);
   const [coinTickers, setCoinTickers] = useState<ICoinSocketTickers[]>([]);
   const [error, setError] = useState<string | null>(null);
 
-  const connectWS = useCallback(() => {
+  const connectWS = useCallback(async () => {
     if (
       socket &&
       (socket.readyState === WebSocket.OPEN ||
@@ -96,7 +96,6 @@ export const useCoinTickersSocket = (socketNameList: string[]) => {
       socket.removeEventListener("open", handleOpen);
     };
   }, [socketNameList, socket]);
-  console.log(coinTickers);
   return { coinTickers, error };
 };
 

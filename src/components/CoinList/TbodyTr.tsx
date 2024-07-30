@@ -10,8 +10,10 @@ import Chart200Days from "./Chart200Days";
 import useCoinNames from "../../libs/useCoinNames";
 import useCoinListData from "../../libs/useCoinListData";
 import { useCoinTickersSocket } from "../../services/coinApi";
-import { ICoinHttpTickers } from "../../interface/icoin";
+import { ICoinHttpTickers, ICoins } from "../../interface/icoin";
 import { Tr } from "../../container/CoinList";
+import useCoinTickers from "../../libs/useCoinTickers";
+import useCoinHistory from "../../libs/useCoinHistory";
 
 const GoDetail = styled.a`
   display: flex;
@@ -97,13 +99,24 @@ export const Img = styled.img`
   max-width: 20px;
 `;
 
-function TbodyTr({ count }: { count: number }) {
-  const { nameData } = useCoinNames(true);
+function TbodyTr({
+  count,
+  nameData,
+}: {
+  count: number;
+  nameData: ICoins[] | undefined;
+}) {
   const coinList = nameData
     ?.map((data) => data.market)
     .slice(count - 10, count);
   const socketNameList = nameData?.map((data) => data.market);
-  const { data: mergeData } = useCoinListData(count, coinList, nameData);
+  const { tickerHttpData } = useCoinTickers(count, coinList!);
+  const { historyData } = useCoinHistory(count, coinList!);
+  const { data: mergeData } = useCoinListData(
+    nameData,
+    tickerHttpData,
+    historyData
+  );
   const { coinTickers } = useCoinTickersSocket(socketNameList!);
   const [tickerList, setTickerList] = useState<ICoinHttpTickers[]>(
     mergeData || []
