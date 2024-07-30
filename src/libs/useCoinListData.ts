@@ -1,10 +1,5 @@
 import { useEffect, useState, useCallback } from "react";
-import { useQuery } from "@tanstack/react-query";
-import {
-  circulatingSupply,
-  fetchCoinHistory,
-  fetchCoinTickers,
-} from "../services/coinApi";
+import { circulatingSupply } from "../services/coinApi";
 import {
   ICoinHistory,
   ICoinHttpTickers,
@@ -12,8 +7,6 @@ import {
   ICoinListMerge,
   ICoins,
 } from "../interface/icoin";
-import useCoinTickers from "./useCoinTickers";
-import useCoinHistory from "./useCoinHistory";
 
 const useCoinListData = (
   nameData: ICoins[] | undefined,

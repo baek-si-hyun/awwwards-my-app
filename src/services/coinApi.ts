@@ -3,10 +3,12 @@ import { useState, useEffect, useCallback } from "react";
 import { ICoinSocketTickers } from "../interface/icoin";
 
 export async function fetchCoins() {
+  console.log("fetchCoins");
   const response = await fetch(`https://api.upbit.com/v1/market/all`);
   return await response.json();
 }
 export async function fetchCoinTickers(coinList: string[]) {
+  console.log("fetchCoinTickers");
   let results = [];
   for (let index = 0; index < coinList.length; index++) {
     const response = await fetch(
@@ -18,6 +20,7 @@ export async function fetchCoinTickers(coinList: string[]) {
   return results;
 }
 export async function fetchCoinHistory(coinList: string[]) {
+  console.log("fetchCoinHistory");
   let results = [];
   for (let index = 0; index < coinList.length; index++) {
     const response = await fetch(

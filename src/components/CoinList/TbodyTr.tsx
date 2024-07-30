@@ -122,20 +122,17 @@ function TbodyTr({
     mergeData || []
   );
   useEffect(() => {
-    if (coinTickers) {
-      setTickerList(
-        mergeData?.map((httpData) => {
-          const arr = coinTickers.find(
-            (socketData) => httpData.market === socketData.code
-          );
-          if (arr) {
-            return { ...httpData, ...arr };
-          }
-          return httpData;
-        }) || []
-      );
+    if (coinTickers && mergeData) {
+      const updatedTickerList = mergeData.map((httpData) => {
+        const arr = coinTickers.find(
+          (socketData) => httpData.market === socketData.code
+        );
+        return arr ? { ...httpData, ...arr } : httpData;
+      });
+      setTickerList(updatedTickerList);
     }
-  }, [mergeData, coinTickers]);
+  }, [coinTickers, mergeData]);
+
   const makeSkeleton = () => {
     const skeletons = [];
     for (let i = 1; i <= 10; i++) {

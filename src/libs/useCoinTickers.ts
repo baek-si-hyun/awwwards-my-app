@@ -4,10 +4,9 @@ import { ICoinHttpTickers } from "../interface/icoin";
 
 const useCoinTickers = (count: number, coinList: string[]) => {
   const { data: tickerHttpData } = useQuery<ICoinHttpTickers[]>(
-    ["ticker", count],
+    ["ticker", coinList],
     () => fetchCoinTickers(coinList!),
     {
-      enabled: !!coinList,
       refetchOnMount: false,
       refetchOnWindowFocus: false,
     }

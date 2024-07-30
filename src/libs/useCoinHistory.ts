@@ -4,10 +4,9 @@ import { ICoinHistory } from "../interface/icoin";
 
 const useCoinHistory = (count: number, coinList: string[]) => {
   const { data: historyData } = useQuery<ICoinHistory[][]>(
-    ["history", count],
+    ["history", coinList],
     () => fetchCoinHistory(coinList!),
     {
-      enabled: !!coinList,
       refetchOnMount: false,
       refetchOnWindowFocus: false,
     }
