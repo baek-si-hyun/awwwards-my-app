@@ -1,10 +1,5 @@
 import { useEffect, useState, useCallback } from "react";
-import { useQuery } from "@tanstack/react-query";
-import {
-  circulatingSupply,
-  fetchCoinHistory,
-  fetchCoinTickers,
-} from "../services/coinApi";
+import { circulatingSupply } from "../services/coinApi";
 import {
   ICoinHistory,
   ICoinHttpTickers,
@@ -13,33 +8,11 @@ import {
   ICoins,
 } from "../interface/icoin";
 
-
-
 const useCoinListData = (
-  count: number,
-  coinList: string[] | undefined,
-  nameData: ICoins[] | undefined
+  nameData: ICoins[] | undefined,
+  tickerHttpData: ICoinHttpTickers[] | undefined,
+  historyData: ICoinHistory[][] | undefined
 ): ICoinListDataResult => {
-  const { data: tickerHttpData } = useQuery<ICoinHttpTickers[]>(
-    ["ticker", count],
-    () => fetchCoinTickers(coinList!),
-    {
-      enabled: !!coinList,
-      refetchOnMount: false,
-      refetchOnWindowFocus: true,
-    }
-  );
-
-  const { data: historyData } = useQuery<ICoinHistory[][]>(
-    ["history", count],
-    () => fetchCoinHistory(coinList!),
-    {
-      enabled: !!coinList,
-      refetchOnMount: false,
-      refetchOnWindowFocus: true,
-    }
-  );
-
   const [mergeData, setMergeData] = useState<ICoinListMerge[]>([]);
 
   const mergeFn = useCallback(async () => {

@@ -6,8 +6,8 @@ import { domApi } from "../../services/domApi";
 import NavRouterMode from "./NavRouterMode";
 import NavMainMode from "./NavMainMode";
 import { useDispatch } from "react-redux";
-import { resizeRedux } from "../../redux/slices/resizeWidthSlice";
-import MusicPlayBox from "../music_player/MusicPlayBox";
+import { resizeRedux } from "../../redux/resizeWidthSlice";
+import MusicPlayBox from "../Music/MusicPlayBox";
 
 const common = css`
   display: flex;

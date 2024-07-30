@@ -5,7 +5,11 @@ import {
   TextBoxMiddle,
   TextBoxTop,
 } from "../main/common/mainCommon";
+<<<<<<< HEAD
 import EmailJs from "./EmailJs";
+=======
+import EmailJs from "../../components/Contact/EmailJs";
+>>>>>>> master
 const Container = styled.div`
   width: 100%;
   background-color: #fff;

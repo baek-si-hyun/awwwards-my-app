@@ -1,14 +1,15 @@
-import { useQuery } from "@tanstack/react-query";
 import { useState, useEffect, useCallback } from "react";
 import { ICoinSocketTickers } from "../interface/icoin";
 
 export async function fetchCoins() {
+  console.log("fetchCoins");
   const response = await fetch(
     `https://api.upbit.com/v1/market/all?isDetails=false`
   );
   return await response.json();
 }
 export async function fetchCoinTickers(coinList: string[]) {
+  console.log("fetchCoinTickers");
   let results = [];
   for (let index = 0; index < coinList.length; index++) {
     const response = await fetch(
@@ -19,8 +20,8 @@ export async function fetchCoinTickers(coinList: string[]) {
   }
   return results;
 }
-
 export async function fetchCoinHistory(coinList: string[]) {
+  console.log("fetchCoinHistory");
   let results = [];
   for (let index = 0; index < coinList.length; index++) {
     const response = await fetch(
@@ -29,65 +30,77 @@ export async function fetchCoinHistory(coinList: string[]) {
     const json = await response.json();
     results.push(json);
   }
+
   return results;
 }
-export const useCoinTickersSocket = (coinList: string[]) => {
+
+export const useCoinTickersSocket = (socketNameList: string[]) => {
   const [socket, setSocket] = useState<WebSocket | null>(null);
+  const [coinTickers, setCoinTickers] = useState<ICoinSocketTickers[]>([]);
+  const [error, setError] = useState<string | null>(null);
 
   const connectWS = useCallback(() => {
-    const upbitSocket = new WebSocket("wss://api.upbit.com/websocket/v1");
-    setSocket(() => upbitSocket);
-    upbitSocket.addEventListener("error", (error) => {
-      console.error("WebSocket error:", error);
-      connectWS();
-    });
-    upbitSocket.addEventListener("close", () => {
-      connectWS();
-    });
-  }, []);
-
-  useEffect(() => {
-    if (!socket) {
-      connectWS();
+    if (
+      socket &&
+      (socket.readyState === WebSocket.OPEN ||
+        socket.readyState === WebSocket.CONNECTING)
+    ) {
       return;
     }
-    socket.addEventListener("open", () => {
-      const subscribeMsg = [
-        { ticket: "UNIQUE_TICKET" },
-        { type: "ticker", codes: coinList },
-      ];
-      socket.send(JSON.stringify(subscribeMsg));
-    });
-  }, [coinList, socket, connectWS]);
+    const upbitSocket = new WebSocket("wss://api.upbit.com/websocket/v1");
+    setSocket(upbitSocket);
 
-  const fetchCoinTickersSocket = useCallback(async () => {
-    let newArr: ICoinSocketTickers[] = [];
-    await new Promise((resolve, reject) => {
-      if (!socket) {
-        reject("The websocket connection is experiencing some delay.");
-        return;
-      }
-      socket.addEventListener("message", (message) => {
-        message.data.text().then((text: string) => {
+    upbitSocket.addEventListener("error", (error: any) => {
+      console.error("WebSocket error:", error.name);
+      setError("WebSocket error: " + error.name);
+      upbitSocket.close();
+    });
+
+    upbitSocket.addEventListener("close", () => {
+      setSocket(null);
+      connectWS();
+    });
+
+    upbitSocket.addEventListener("message", (message) => {
+      message.data.text().then((text: string) => {
+        try {
           const jsonData = JSON.parse(text);
-          newArr = [jsonData];
-          resolve(newArr);
-        });
+          setCoinTickers(() => [jsonData]);
+        } catch (e) {
+          console.error("Error parsing message data:", e);
+        }
       });
     });
-    return newArr;
   }, [socket]);
 
-  return useQuery<ICoinSocketTickers[]>(
-    ["coinTickers", coinList],
-    fetchCoinTickersSocket,
-    {
-      enabled: !!coinList,
-      refetchInterval: 500,
-      cacheTime: 500,
-      refetchOnWindowFocus: false,
-    }
-  );
+  useEffect(() => {
+    connectWS();
+
+    return () => {
+      if (socket) {
+        socket.close();
+      }
+    };
+  }, [connectWS]);
+
+  useEffect(() => {
+    if (!socket || !socketNameList) return;
+
+    const handleOpen = () => {
+      const subscribeMsg = [
+        { ticket: "UNIQUE_TICKET" },
+        { type: "ticker", codes: socketNameList },
+      ];
+      socket.send(JSON.stringify(subscribeMsg));
+    };
+
+    socket.addEventListener("open", handleOpen);
+
+    return () => {
+      socket.removeEventListener("open", handleOpen);
+    };
+  }, [socketNameList, socket]);
+  return { coinTickers, error };
 };
 
 //무료 Supply api, market cap api 못찾겠다...
@@ -207,7 +220,7 @@ export const circulatingSupply = [
   },
   {
     id: "KRW-SC",
-    supply: 57008346857 ,
+    supply: 57008346857,
   },
   {
     id: "KRW-ONT",
@@ -227,7 +240,7 @@ export const circulatingSupply = [
   },
   {
     id: "KRW-LOOM",
-    supply: 1224270898 ,
+    supply: 1224270898,
   },
   {
     id: "KRW-BCH",
@@ -355,7 +368,7 @@ export const circulatingSupply = [
   },
   {
     id: "KRW-STPT",
-    supply: 1942420283 ,
+    supply: 1942420283,
   },
   {
     id: "KRW-ORBS",
@@ -363,7 +376,7 @@ export const circulatingSupply = [
   },
   {
     id: "KRW-VET",
-    supply: 72714516834 ,
+    supply: 72714516834,
   },
   {
     id: "KRW-CHZ",
@@ -375,7 +388,7 @@ export const circulatingSupply = [
   },
   {
     id: "KRW-DKA",
-    supply: 3716250000 ,
+    supply: 3716250000,
   },
   {
     id: "KRW-HIVE",
@@ -387,7 +400,7 @@ export const circulatingSupply = [
   },
   {
     id: "KRW-AHT",
-    supply: 4502217832 ,
+    supply: 4502217832,
   },
   {
     id: "KRW-LINK",
@@ -407,7 +420,7 @@ export const circulatingSupply = [
   },
   {
     id: "KRW-JST",
-    supply: 8902080000 ,
+    supply: 8902080000,
   },
   {
     id: "KRW-CRO",
@@ -544,7 +557,7 @@ export const circulatingSupply = [
   },
   {
     id: "KRW-T",
-    supply: 9647764144 ,
+    supply: 9647764144,
   },
   {
     id: "KRW-CELO",
@@ -571,4 +584,16 @@ export const circulatingSupply = [
     supply: 2653939384,
   },
   { id: "KRW-MNT", supply: 3264441708 },
+  { id: "KRW-ZRO", supply: 110000000 },
+  { id: "KRW-TAIKO", supply: 65951595 },
+  { id: "KRW-BLAST", supply: 17000000000 },
+  { id: "KRW-BEAM", supply: 49466004168 },
+  { id: "KRW-USDT", supply: 112911493076 },
+  { id: "KRW-ONDO", supply: 1389759838 },
+  { id: "KRW-AUCTION", supply: 6500037 },
+  { id: "KRW-JUP", supply: 1350000000 },
+  { id: "KRW-STG", supply: 204338417 },
+  { id: "KRW-GAL", supply: 118544998 },
+  { id: "KRW-G", supply: 7232700005 },
+  { id: "KRW-ENS", supply: 32839999 },
 ];
