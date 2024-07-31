@@ -32,6 +32,37 @@ export const gameName: string[] = [
 ];
 export const projectData: IProjectsData[] = [
   {
+    projects_code: "selleaf",
+    projects_name: "SELLEAF",
+    projects_date: "2024. 05. 25",
+    projects_tools: [
+      "html5",
+      "css3",
+      "javascript",
+      "django",
+      "mysql",
+      "amazonec2",
+      "amazonroute53",
+    ],
+    projects_thumbnail:
+      "https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/750557ee-1dce-482a-6348-5b5564b0f100/public",
+    projects_logo:
+      "https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/17d7fdf7-8207-4730-8c95-2f2588b78000/icon",
+    projects_by: "SiHyun Baek, 3 others",
+    projects_prev_img: [
+      "https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/fa19f9f8-5c22-488f-c7d4-bf77fc802f00/public",
+      "https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/04cd89fa-7fb0-49b6-c8ee-2a2564bd2700/public",
+      "https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/11980221-befc-42b9-aad4-ebd81abde200/public",
+      "https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/db8e4fa4-ec7c-457e-7288-7f58004d6a00/public",
+    ],
+    projects_fonts: ["Pretendard"],
+    projects_colors: ["#134F2C", "#c06888"],
+    projects_ko:
+      "셀리프는 홈 가드닝을 통한 내수 경제 활성화에 목표를 두고 있습니다. 식물 직거래, 홈 가드닝 관련 용품 거래 등의 개인 거래와 커뮤니티를 통한 소통을 제공하여 홈 가드닝을 취미로 둔 이용자를 타겟으로 하며, 식물과 관련한 다양한 정보를 제공하고, 일반인이 강사가 되어 식물에 대한 무엇이던 자신의 경험을 강의로 제공할 수 있도록 하는 강의 중개를 제공합니다. 이를 통하여 개인의 취미가 수익으로 이어질 수 있는 플랫폼을 제공하는 프로젝트입니다.",
+    projects_en:
+      "Selleaf aims to revitalize the domestic economy through home gardening. We target users who have home gardening as a hobby by providing personal transactions such as direct plant trading and home gardening related product trading and communication through the community. We also provide a variety of information related to plants, and allow the general public to become instructors and learn what to know about plants. We provide lecture brokerage that allows you to provide your own experience as a lecture. Through this, it is a project that provides a platform where individual hobbies can lead to profit.",
+  },
+  {
     projects_code: "project-house",
     projects_name: "PROJECT HOUSE",
     projects_date: "in progress",
@@ -50,7 +81,7 @@ export const projectData: IProjectsData[] = [
     projects_thumbnail:
       "https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/da43e839-59a5-4b31-0ba2-4b49618c7600/public",
     projects_logo:
-      "https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/09e9189a-ee66-4858-4e6a-b9da9e26e700/icon",
+      "https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/859f2cf1-1491-44bc-065d-dfca90cc7100/icon",
     projects_by: "SiHyun Baek, 1 others",
     projects_prev_img: [
       "https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/6fd47895-228d-40b4-fc97-51462e176f00/public",
