@@ -72,6 +72,7 @@ const PageBtn = styled.button<{ selected: boolean }>`
   color: ${(props) => (props.selected ? "#fff" : "#333")};
   will-change: background-color, color;
 `;
+
 function CoinList() {
   const [page, setPage] = useState(1);
   const [count, setCount] = useState(10);

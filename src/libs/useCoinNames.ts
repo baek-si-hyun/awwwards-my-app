@@ -15,6 +15,7 @@ const useCoinNames = (allList: boolean) => {
     refetchOnMount: false,
     refetchOnWindowFocus: false,
   });
+  console.log(nameData)
   return { nameData };
 };
 

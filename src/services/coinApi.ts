@@ -1,15 +1,14 @@
 import { useState, useEffect, useCallback } from "react";
 import { ICoinSocketTickers } from "../interface/icoin";
+import { json } from "stream/consumers";
 
 export async function fetchCoins() {
-  console.log("fetchCoins");
   const response = await fetch(
     `https://api.upbit.com/v1/market/all?isDetails=false`
   );
   return await response.json();
 }
 export async function fetchCoinTickers(coinList: string[]) {
-  console.log("fetchCoinTickers");
   let results = [];
   for (let index = 0; index < coinList.length; index++) {
     const response = await fetch(
@@ -21,7 +20,6 @@ export async function fetchCoinTickers(coinList: string[]) {
   return results;
 }
 export async function fetchCoinHistory(coinList: string[]) {
-  console.log("fetchCoinHistory");
   let results = [];
   for (let index = 0; index < coinList.length; index++) {
     const response = await fetch(
@@ -596,4 +594,20 @@ export const circulatingSupply = [
   { id: "KRW-GAL", supply: 118544998 },
   { id: "KRW-G", supply: 7232700005 },
   { id: "KRW-ENS", supply: 32839999 },
+  {id:"KRW-PENDLE", supply:164238878 },
+  {id:"KRW-ATH", supply: 5217818110},
+  {id:"KRW-USDC", supply: 38969827442},
+  {id:"KRW-UXLINK", supply: 170000000},
+  {id:"KRW-BIGTIME", supply: 1251351920},
+  {id:"KRW-CKB", supply: 45074801311},
+  {id:"KRW-W", supply:2744417704 },
+  {id:"KRW-CARV", supply: 150384083},
+  {id:"KRW-INJ", supply:98848020 },
+  {id:"KRW-MEW", supply:88888888888 },
+  {id:"KRW-UNI", supply: 600425074},
+  {id:"KRW-SAFE", supply: 463757969},
+    {id:"KRW-DRIFT", supply:257680379 },
+      {id:"KRW-AGLD", supply:77310001 },
+      {id:"KRW-PEPE", supply:420689899999995 },
+      {id:"KRW-BONK", supply: 75133675628346},
 ];
