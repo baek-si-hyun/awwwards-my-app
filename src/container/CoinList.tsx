@@ -106,7 +106,7 @@ function CoinList() {
         <TextBox>
           <TextBoxMiddle>CoinList</TextBoxMiddle>
           <TextBoxbottom>
-            Combination of UPBIT Websocket, React-Query
+            Combination of UPBIT, React-Query
           </TextBoxbottom>
         </TextBox>
         <TableBox>

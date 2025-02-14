@@ -103,34 +103,34 @@ export const useCoinTickersSocket = (socketNameList: string[]) => {
 
 //무료 Supply api, market cap api 못찾겠다...
 export const circulatingSupply = [
-  { id: "KRW-ZETA", supply: 265475000 },
-  { id: "KRW-IMX", supply: 1456815249 },
-  { id: "KRW-EGLD", supply: 26853943 },
-  { id: "KRW-MINA", supply: 1091547861 },
+  { id: "KRW-ZETA", supply: 683010417 },
+  { id: "KRW-IMX", supply: 1743800322 },
+  { id: "KRW-EGLD", supply: 27865314 },
+  { id: "KRW-MINA", supply: 1214515858 },
   {
     id: "KRW-BLUR",
-    supply: 1559340725,
+    supply: 2203803082,
   },
   {
     id: "KRW-ADA",
-    supply: 35631835365,
+    supply: 35201193526,
   },
-  { id: "KRW-STRIKE", supply: 4813974 },
+  { id: "KRW-STRIKE", supply: 5265785 },
   {
     id: "KRW-LSK",
-    supply: 128900445,
+    supply: 166894159,
   },
   {
     id: "KRW-SUI",
-    supply: 1295901469,
+    supply: 3089707195,
   },
   {
     id: "KRW-BTC",
-    supply: 19689303,
+    supply: 19823850,
   },
   {
     id: "KRW-ETH",
-    supply: 122044085,
+    supply: 120545398,
   },
   {
     id: "KRW-NEO",
@@ -138,15 +138,15 @@ export const circulatingSupply = [
   },
   {
     id: "KRW-MTL",
-    supply: 66588888,
+    supply: 83171865,
   },
   {
     id: "KRW-XRP",
-    supply: 55129144019,
+    supply: 57762545657,
   },
   {
     id: "KRW-ETC",
-    supply: 146702776,
+    supply: 150740793,
   },
   {
     id: "KRW-OMG",
@@ -154,11 +154,11 @@ export const circulatingSupply = [
   },
   {
     id: "KRW-SNT",
-    supply: 3877437479,
+    supply: 3996911204,
   },
   {
     id: "KRW-WAVES",
-    supply: 114411940,
+    supply: 116974126,
   },
   {
     id: "KRW-XEM",
@@ -166,39 +166,39 @@ export const circulatingSupply = [
   },
   {
     id: "KRW-QTUM",
-    supply: 104755842,
+    supply: 105521616,
   },
   {
     id: "KRW-STEEM",
-    supply: 460447618,
+    supply: 483263173,
   },
   {
     id: "KRW-XLM",
-    supply: 28918610779,
+    supply: 30603014104,
   },
   {
     id: "KRW-ARDR",
-    supply: 998999495,
+    supply: 998466231,
   },
   {
     id: "KRW-ARK",
-    supply: 180363380,
+    supply: 186706754,
   },
   {
     id: "KRW-STORJ",
-    supply: 414984351,
+    supply: 401361292,
   },
   {
     id: "KRW-GRS",
-    supply: 84912674,
+    supply: 86940619,
   },
   {
     id: "KRW-GRT",
-    supply: 9482594119,
+    supply: 9548531509,
   },
   {
     id: "KRW-POWR",
-    supply: 512375110,
+    supply: 560162329,
   },
   {
     id: "KRW-BTG",
@@ -206,47 +206,51 @@ export const circulatingSupply = [
   },
   {
     id: "KRW-ICX",
-    supply: 990775901,
+    supply: 1048487515,
   },
   {
     id: "KRW-EOS",
-    supply: 1123883481,
+    supply: 1546399988,
   },
   {
     id: "KRW-TRX",
-    supply: 87581059304,
+    supply: 86098744015,
   },
   {
     id: "KRW-SC",
-    supply: 57008346857,
+    supply: 56025636522,
   },
   {
     id: "KRW-ONT",
-    supply: 875249524,
+    supply: 912697857,
   },
   {
     id: "KRW-ZIL",
-    supply: 17372203179,
+    supply: 19527125342,
   },
   {
     id: "KRW-POLYX",
-    supply: 843897698,
+    supply: 925434676,
+  },
+  {
+    id: "KRW-POL",
+    supply: 8562688053,
   },
   {
     id: "KRW-ZRX",
-    supply: 847496055,
+    supply: 848396563,
   },
   {
     id: "KRW-LOOM",
-    supply: 1224270898,
+    supply: 1242920898,
   },
   {
     id: "KRW-BCH",
-    supply: 19695803,
+    supply: 19829019,
   },
   {
     id: "KRW-BAT",
-    supply: 1490413701,
+    supply: 1495668357,
   },
   {
     id: "KRW-IOST",
@@ -258,25 +262,25 @@ export const circulatingSupply = [
   },
   {
     id: "KRW-IQ",
-    supply: 18032726356,
+    supply: 20520426316,
   },
   {
     id: "KRW-IOTA",
-    supply: 3229505319,
+    supply: 3631397410,
   },
   {
     id: "KRW-HIFI",
-    supply: 123618290,
+    supply: 141753577,
   },
-  { id: "KRW-ID", supply: 533986987 },
+  { id: "KRW-ID", supply: 879627042 },
   {
     id: "KRW-ONG",
-    supply: 376722113,
+    supply: 404983864,
   },
-  { id: "KRW-ASTR", supply: 5633951458 },
+  { id: "KRW-ASTR", supply: 7597621696 },
   {
     id: "KRW-GAS",
-    supply: 67623878,
+    supply: 77508512,
   },
   {
     id: "KRW-UPP",
@@ -284,15 +288,15 @@ export const circulatingSupply = [
   },
   {
     id: "KRW-ELF",
-    supply: 726537296,
+    supply: 738908400,
   },
   {
     id: "KRW-KNC",
-    supply: 187996102,
+    supply: 186564360,
   },
   {
     id: "KRW-BSV",
-    supply: 19692013,
+    supply: 19824725,
   },
   {
     id: "KRW-THETA",
@@ -300,23 +304,23 @@ export const circulatingSupply = [
   },
   {
     id: "KRW-QKC",
-    supply: 6983119113,
+    supply: 7091115594,
   },
   {
     id: "KRW-BTT",
-    supply: 951421714286000,
+    supply: 986061142857000,
   },
   {
     id: "KRW-MOC",
-    supply: 412489688,
+    supply: 423489688,
   },
   {
     id: "KRW-TFUEL",
-    supply: 6523967285,
+    supply: 6843074105,
   },
   {
     id: "KRW-MANA",
-    supply: 1908319865,
+    supply: 1942255184,
   },
   {
     id: "KRW-ANKR",
@@ -324,41 +328,41 @@ export const circulatingSupply = [
   },
   {
     id: "KRW-AERGO",
-    supply: 445000000,
+    supply: 47249996,
   },
   {
     id: "KRW-ATOM",
-    supply: 390930671,
+    supply: 390934204,
   },
-  { id: "KRW-AKT", supply: 234465962 },
+  { id: "KRW-AKT", supply: 248285795 },
   {
     id: "KRW-TT",
-    supply: 10445528584,
+    supply: 11807804373,
   },
   {
     id: "KRW-GAME2",
-    supply: 15616114935,
+    supply: 16831694490,
   },
   {
     id: "KRW-MBL",
-    supply: 17535220550,
+    supply: 18269887214,
   },
   {
     id: "KRW-WAXP",
-    supply: 3436555622,
+    supply: 3648160776,
   },
   {
     id: "KRW-HBAR",
-    supply: 35742801273,
+    supply: 38269622458,
   },
-  { id: "KRW-PYTH", supply: 1499989003 },
+  { id: "KRW-PYTH", supply: 3624988002 },
   {
     id: "KRW-MED",
-    supply: 8285671092,
+    supply: 9543626701,
   },
   {
     id: "KRW-MLK",
-    supply: 353736562,
+    supply: 429666797,
   },
   {
     id: "KRW-SBD",
@@ -370,23 +374,23 @@ export const circulatingSupply = [
   },
   {
     id: "KRW-ORBS",
-    supply: 4301534998,
+    supply: 4535312901,
   },
   {
     id: "KRW-VET",
-    supply: 72714516834,
+    supply: 80985041177,
   },
   {
     id: "KRW-CHZ",
-    supply: 8888289967,
+    supply: 9404573039,
   },
   {
     id: "KRW-STMX",
-    supply: 10000000000,
+    supply: 12345659609,
   },
   {
     id: "KRW-DKA",
-    supply: 3716250000,
+    supply: 4686666667,
   },
   {
     id: "KRW-HIVE",
@@ -398,27 +402,27 @@ export const circulatingSupply = [
   },
   {
     id: "KRW-AHT",
-    supply: 4502217832,
+    supply: 6023268293,
   },
   {
     id: "KRW-LINK",
-    supply: 587099970,
+    supply: 638099970,
   },
   {
     id: "KRW-SEI",
-    supply: 2800000000,
+    supply: 4432638888,
   },
   {
     id: "KRW-XTZ",
-    supply: 979244499,
+    supply: 1030014723,
   },
   {
     id: "KRW-BORA",
-    supply: 1046750000,
+    supply: 1099750000,
   },
   {
     id: "KRW-JST",
-    supply: 8902080000,
+    supply: 9900000000,
   },
   {
     id: "KRW-CRO",
@@ -430,7 +434,7 @@ export const circulatingSupply = [
   },
   {
     id: "KRW-SXP",
-    supply: 601550328,
+    supply: 633436958,
   },
   {
     id: "KRW-HUNT",
@@ -442,7 +446,7 @@ export const circulatingSupply = [
   },
   {
     id: "KRW-DOT",
-    supply: 1436847160,
+    supply: 1548476818,
   },
   {
     id: "KRW-SRM",
@@ -450,11 +454,11 @@ export const circulatingSupply = [
   },
   {
     id: "KRW-MVL",
-    supply: 24652958863,
+    supply: 26152958863,
   },
   {
     id: "KRW-STRAX",
-    supply: 1908178499,
+    supply: 2007995699,
   },
   {
     id: "KRW-AQT",
@@ -470,24 +474,24 @@ export const circulatingSupply = [
   },
   {
     id: "KRW-META",
-    supply: 1703608720,
+    supply: 1705508722,
   },
   {
     id: "KRW-FCT2",
-    supply: 843825196,
+    supply: 958304370,
   },
-  { id: "KRW-CTC", supply: 331783609 },
+  { id: "KRW-CTC", supply: 422084779 },
   {
     id: "KRW-CBK",
-    supply: 82944777,
+    supply: 91066297,
   },
   {
     id: "KRW-SAND",
-    supply: 2251731926,
+    supply: 2464357126,
   },
   {
     id: "KRW-HPO",
-    supply: 993409273,
+    supply: 1034734273,
   },
   {
     id: "KRW-HUM",
@@ -495,7 +499,7 @@ export const circulatingSupply = [
   },
   {
     id: "KRW-DOGE",
-    supply: 144009276384,
+    supply: 148033876384,
   },
   {
     id: "KRW-STRK",
@@ -503,27 +507,27 @@ export const circulatingSupply = [
   },
   {
     id: "KRW-PUNDIX",
-    supply: 258491637,
+    supply: 258394551,
   },
   {
     id: "KRW-FLOW",
-    supply: 1501883814,
+    supply: 1563712953,
   },
   {
     id: "KRW-AXS",
-    supply: 143636573,
+    supply: 158603698,
   },
   {
     id: "KRW-STX",
-    supply: 1453976524,
+    supply: 1512986823,
   },
   {
     id: "KRW-XEC",
-    supply: 19539129673093,
+    supply: 19824739047583,
   },
   {
     id: "KRW-SOL",
-    supply: 447048737,
+    supply: 488170363,
   },
   {
     id: "KRW-MATIC",
@@ -535,79 +539,94 @@ export const circulatingSupply = [
   },
   {
     id: "KRW-AAVE",
-    supply: 14807466,
+    supply: 15071805,
   },
   {
     id: "KRW-1INCH",
-    supply: 1157267877,
+    supply: 1399453973,
   },
   {
     id: "KRW-ALGO",
-    supply: 8133112354,
+    supply: 8434070346,
   },
   {
     id: "KRW-NEAR",
-    supply: 1065164766,
+    supply: 1184141216,
   },
   {
     id: "KRW-AVAX",
-    supply: 378019462,
+    supply: 411949005,
   },
   {
     id: "KRW-T",
-    supply: 9647764144,
+    supply: 10108927223,
   },
   {
     id: "KRW-CELO",
-    supply: 533817831,
+    supply: 562409366,
   },
   {
     id: "KRW-GMT",
-    supply: 1930858058,
+    supply: 3157493622,
   },
   {
     id: "KRW-APT",
-    supply: 426017434,
+    supply: 586643426,
   },
   {
     id: "KRW-SHIB",
-    supply: 589346914631298,
+    supply: 589253884408118,
   },
   {
     id: "KRW-MASK",
-    supply: 96025000,
+    supply: 100000000,
   },
   {
     id: "KRW-ARB",
-    supply: 2653939384,
+    supply: 4343862574,
   },
-  { id: "KRW-MNT", supply: 3264441708 },
+  { id: "KRW-MNT", supply: 3364694383 },
   { id: "KRW-ZRO", supply: 110000000 },
-  { id: "KRW-TAIKO", supply: 65951595 },
-  { id: "KRW-BLAST", supply: 17000000000 },
+  { id: "KRW-TAIKO", supply: 115016756 },
+  { id: "KRW-BLAST", supply: 25443907166 },
   { id: "KRW-BEAM", supply: 49466004168 },
   { id: "KRW-USDT", supply: 112911493076 },
-  { id: "KRW-ONDO", supply: 1389759838 },
-  { id: "KRW-AUCTION", supply: 6500037 },
-  { id: "KRW-JUP", supply: 1350000000 },
+  { id: "KRW-ONDO", supply: 3159107529 },
+  { id: "KRW-AUCTION", supply: 6590076 },
+  { id: "KRW-JUP", supply: 2637438889 },
   { id: "KRW-STG", supply: 204338417 },
   { id: "KRW-GAL", supply: 118544998 },
-  { id: "KRW-G", supply: 7232700005 },
-  { id: "KRW-ENS", supply: 32839999 },
-  {id:"KRW-PENDLE", supply:164238878 },
-  {id:"KRW-ATH", supply: 5217818110},
-  {id:"KRW-USDC", supply: 38969827442},
-  {id:"KRW-UXLINK", supply: 170000000},
-  {id:"KRW-BIGTIME", supply: 1251351920},
-  {id:"KRW-CKB", supply: 45074801311},
-  {id:"KRW-W", supply:2744417704 },
-  {id:"KRW-CARV", supply: 150384083},
-  {id:"KRW-INJ", supply:98848020 },
-  {id:"KRW-MEW", supply:88888888888 },
-  {id:"KRW-UNI", supply: 600425074},
-  {id:"KRW-SAFE", supply: 463757969},
-    {id:"KRW-DRIFT", supply:257680379 },
-      {id:"KRW-AGLD", supply:77310001 },
-      {id:"KRW-PEPE", supply:420689899999995 },
-      {id:"KRW-BONK", supply: 75133675628346},
+  { id: "KRW-G", supply: 8768180000 },
+  { id: "KRW-ENS", supply: 35549160 },
+  { id: "KRW-PENDLE", supply: 164896088 },
+  { id: "KRW-ATH", supply: 6697646536 },
+  { id: "KRW-USDC", supply: 56098473904 },
+  { id: "KRW-UXLINK", supply: 338200000 },
+  { id: "KRW-BIGTIME", supply: 1666915441 },
+  { id: "KRW-CKB", supply: 45947644639 },
+  { id: "KRW-W", supply: 2862609176 },
+  { id: "KRW-CARV", supply: 185850382 },
+  { id: "KRW-INJ", supply: 98970935 },
+  { id: "KRW-MEW", supply: 88888888888 },
+  { id: "KRW-UNI", supply: 600518038 },
+  { id: "KRW-SAFE", supply: 527419089 },
+  { id: "KRW-DRIFT", supply: 286261798 },
+  { id: "KRW-AGLD", supply: 77280001 },
+  { id: "KRW-PEPE", supply: 420689899999995 },
+  { id: "KRW-BONK", supply: 77231169593284 },
+  { id: "KRW-TRUMP", supply: 199999617 },
+  { id: "KRW-USDT", supply: 141925329576 },
+  { id: "KRW-LAYER", supply: 210000000 },
+  { id: "KRW-ME", supply: 113873532 },
+  { id: "KRW-BERA", supply: 107480000 },
+  { id: "KRW-MOVE", supply: 2400000000 },
+  { id: "KRW-VIRTUAL", supply: 648018015 },
+  { id: "KRW-VANA", supply: 30084000 },
+  { id: "KRW-ANIME", supply: 5538604656 },
+  { id: "KRW-SONIC", supply: 360000000 },
+  { id: "KRW-VTHO", supply: 86193318511 },
+  { id: "KRW-MOCA", supply: 1783865250 },
+  { id: "KRW-BOUNTY", supply: 508749999 },
+  { id: "KRW-RENDER", supply: 517716590 },
+  { id: "KRW-TOKAMAK", supply: 43841454 },
 ];
