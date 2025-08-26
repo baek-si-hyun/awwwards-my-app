@@ -1,6 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
 import { ICoinSocketTickers } from "../interface/icoin";
-import { json } from "stream/consumers";
 
 export async function fetchCoins() {
   const response = await fetch(
@@ -12,7 +11,10 @@ export async function fetchCoinTickers(coinList: string[]) {
   let results = [];
   for (let index = 0; index < coinList.length; index++) {
     const response = await fetch(
-      `https://api.upbit.com/v1/ticker?markets=${coinList[index]}`
+      `https://api.upbit.com/v1/ticker?markets=${coinList[index]}`,
+      {
+        
+      }
     );
     const [json] = await response.json();
     results.push(json);
@@ -32,74 +34,74 @@ export async function fetchCoinHistory(coinList: string[]) {
   return results;
 }
 
-export const useCoinTickersSocket = (socketNameList: string[]) => {
-  const [socket, setSocket] = useState<WebSocket | null>(null);
-  const [coinTickers, setCoinTickers] = useState<ICoinSocketTickers[]>([]);
-  const [error, setError] = useState<string | null>(null);
+// export const useCoinTickersSocket = (socketNameList: string[]) => {
+//   const [socket, setSocket] = useState<WebSocket | null>(null);
+//   const [coinTickers, setCoinTickers] = useState<ICoinSocketTickers[]>([]);
+//   const [error, setError] = useState<string | null>(null);
 
-  const connectWS = useCallback(() => {
-    if (
-      socket &&
-      (socket.readyState === WebSocket.OPEN ||
-        socket.readyState === WebSocket.CONNECTING)
-    ) {
-      return;
-    }
-    const upbitSocket = new WebSocket("wss://api.upbit.com/websocket/v1");
-    setSocket(upbitSocket);
+//   const connectWS = useCallback(() => {
+//     if (
+//       socket &&
+//       (socket.readyState === WebSocket.OPEN ||
+//         socket.readyState === WebSocket.CONNECTING)
+//     ) {
+//       return;
+//     }
+//     const upbitSocket = new WebSocket("wss://api.upbit.com/websocket/v1");
+//     setSocket(upbitSocket);
 
-    upbitSocket.addEventListener("error", (error: any) => {
-      console.error("WebSocket error:", error.name);
-      setError("WebSocket error: " + error.name);
-      upbitSocket.close();
-    });
+//     upbitSocket.addEventListener("error", (error: any) => {
+//       console.error("WebSocket error:", error.name);
+//       setError("WebSocket error: " + error.name);
+//       upbitSocket.close();
+//     });
 
-    upbitSocket.addEventListener("close", () => {
-      setSocket(null);
-      connectWS();
-    });
+//     upbitSocket.addEventListener("close", () => {
+//       setSocket(null);
+//       connectWS();
+//     });
 
-    upbitSocket.addEventListener("message", (message) => {
-      message.data.text().then((text: string) => {
-        try {
-          const jsonData = JSON.parse(text);
-          setCoinTickers(() => [jsonData]);
-        } catch (e) {
-          console.error("Error parsing message data:", e);
-        }
-      });
-    });
-  }, [socket]);
+//     upbitSocket.addEventListener("message", (message) => {
+//       message.data.text().then((text: string) => {
+//         try {
+//           const jsonData = JSON.parse(text);
+//           setCoinTickers(() => [jsonData]);
+//         } catch (e) {
+//           console.error("Error parsing message data:", e);
+//         }
+//       });
+//     });
+//   }, [socket]);
 
-  useEffect(() => {
-    connectWS();
+//   useEffect(() => {
+//     connectWS();
 
-    return () => {
-      if (socket) {
-        socket.close();
-      }
-    };
-  }, [connectWS]);
+//     return () => {
+//       if (socket) {
+//         socket.close();
+//       }
+//     };
+//   }, [connectWS]);
 
-  useEffect(() => {
-    if (!socket || !socketNameList) return;
+//   useEffect(() => {
+//     if (!socket || !socketNameList) return;
 
-    const handleOpen = () => {
-      const subscribeMsg = [
-        { ticket: "UNIQUE_TICKET" },
-        { type: "ticker", codes: socketNameList },
-      ];
-      socket.send(JSON.stringify(subscribeMsg));
-    };
+//     const handleOpen = () => {
+//       const subscribeMsg = [
+//         { ticket: "UNIQUE_TICKET" },
+//         { type: "ticker", codes: socketNameList },
+//       ];
+//       socket.send(JSON.stringify(subscribeMsg));
+//     };
 
-    socket.addEventListener("open", handleOpen);
+//     socket.addEventListener("open", handleOpen);
 
-    return () => {
-      socket.removeEventListener("open", handleOpen);
-    };
-  }, [socketNameList, socket]);
-  return { coinTickers, error };
-};
+//     return () => {
+//       socket.removeEventListener("open", handleOpen);
+//     };
+//   }, [socketNameList, socket]);
+//   return { coinTickers, error };
+// };
 
 //무료 Supply api, market cap api 못찾겠다...
 export const circulatingSupply = [

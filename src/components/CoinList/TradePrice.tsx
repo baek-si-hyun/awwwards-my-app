@@ -4,15 +4,15 @@ import styled, { keyframes, css } from "styled-components";
 
 const TradePrice = ({
   coinName,
-  tickerSocketData,
+  // tickerSocketData,
   tickerList,
 }: {
   coinName: string;
 
-  tickerSocketData: ICoinSocketTickers[];
+  // tickerSocketData: ICoinSocketTickers[];
   tickerList: ICoinHttpTickers[];
 }): JSX.Element => {
-  if (tickerSocketData) {
+  if (tickerList) {
     const price: string = tickerList
       .find((ticker) => ticker.market === coinName && ticker, 0)
       ?.trade_price.toString()

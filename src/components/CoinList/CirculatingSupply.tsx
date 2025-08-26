@@ -2,15 +2,15 @@ import { ICoinHttpTickers, ICoinSocketTickers } from "../../interface/icoin";
 const CirculatingSupply = ({
   coinName,
   supply,
-  tickerSocketData,
+  // tickerSocketData,
   tickerList,
 }: {
   coinName: string;
   supply: number;
-  tickerSocketData: ICoinSocketTickers[];
+  // tickerSocketData: ICoinSocketTickers[];
   tickerList: ICoinHttpTickers[];
 }): JSX.Element => {
-  if (tickerSocketData) {
+  if (tickerList) {
     const price: number = tickerList.find(
       (ticker) => ticker.market === coinName && ticker,
       0

@@ -8,15 +8,15 @@ import Chart from "./Chart";
 const Chart200Days = ({
   coinName,
   history,
-  tickerSocketData,
+  // tickerSocketData,
   tickerList,
 }: {
   coinName: string;
   history: ICoinHistory[];
-  tickerSocketData: ICoinSocketTickers[];
+  // tickerSocketData: ICoinSocketTickers[];
   tickerList: ICoinHttpTickers[];
 }) => {
-  if (tickerSocketData) {
+  if (tickerList) {
     const change: string = tickerList.find(
       (ticker) => ticker.market === coinName && ticker,
       "EVEN"

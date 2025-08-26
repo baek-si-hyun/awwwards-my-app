@@ -2,14 +2,14 @@ import { ICoinHttpTickers, ICoinSocketTickers } from "../../interface/icoin";
 
 const AccTradeVolume24h = ({
   coinName,
-  tickerSocketData,
+  // tickerSocketData,
   tickerList,
 }: {
   coinName: string;
-  tickerSocketData: ICoinSocketTickers[];
+  // tickerSocketData: ICoinSocketTickers[];
   tickerList: ICoinHttpTickers[];
 }): JSX.Element => {
-  if (tickerSocketData) {
+  if (tickerList) {
     const accTradeVolume24h: string = tickerList
       .find((ticker) => ticker.market === coinName && ticker, 0)
       ?.acc_trade_volume_24h.toFixed(0)
