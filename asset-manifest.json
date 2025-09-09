@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/awwwards-my-app/static/css/main.3d011b7b.css",
-    "main.js": "/awwwards-my-app/static/js/main.18473c98.js",
+    "main.js": "/awwwards-my-app/static/js/main.abbf9771.js",
     "static/js/471.a54f7288.chunk.js": "/awwwards-my-app/static/js/471.a54f7288.chunk.js",
-    "static/js/258.f5a0a542.chunk.js": "/awwwards-my-app/static/js/258.f5a0a542.chunk.js",
+    "static/js/533.b9c301bd.chunk.js": "/awwwards-my-app/static/js/533.b9c301bd.chunk.js",
     "static/js/827.9f11eb8b.chunk.js": "/awwwards-my-app/static/js/827.9f11eb8b.chunk.js",
     "reactPlayerYouTube.js": "/awwwards-my-app/static/js/reactPlayerYouTube.bbea0b7b.chunk.js",
     "reactPlayerSoundCloud.js": "/awwwards-my-app/static/js/reactPlayerSoundCloud.6eea48a6.chunk.js",
@@ -19,8 +19,10 @@
     "reactPlayerKaltura.js": "/awwwards-my-app/static/js/reactPlayerKaltura.7ccd0185.chunk.js",
     "reactPlayerFilePlayer.js": "/awwwards-my-app/static/js/reactPlayerFilePlayer.e6d85e27.chunk.js",
     "reactPlayerPreview.js": "/awwwards-my-app/static/js/reactPlayerPreview.9579191c.chunk.js",
+    "static/js/815.dc6e3ada.chunk.js": "/awwwards-my-app/static/js/815.dc6e3ada.chunk.js",
     "static/js/908.6a12927f.chunk.js": "/awwwards-my-app/static/js/908.6a12927f.chunk.js",
-    "static/js/884.cfad5290.chunk.js": "/awwwards-my-app/static/js/884.cfad5290.chunk.js",
+    "static/js/974.681ee8ca.chunk.js": "/awwwards-my-app/static/js/974.681ee8ca.chunk.js",
+    "static/js/19.42985702.chunk.js": "/awwwards-my-app/static/js/19.42985702.chunk.js",
     "static/media/newjeansmv.mp4": "/awwwards-my-app/static/media/newjeansmv.24720a0f18d32a9f9ec1.mp4",
     "static/media/musicvideo.mp4": "/awwwards-my-app/static/media/musicvideo.b685b12c8ba7f862c4d0.mp4",
     "static/media/Pretendard-Regular.otf": "/awwwards-my-app/static/media/Pretendard-Regular.de88013f2ea98a04dede.otf",
@@ -51,9 +53,9 @@
     "static/media/ApercuPro-Bold.woff2": "/awwwards-my-app/static/media/ApercuPro-Bold.7fbfd7d508c080196fbe.woff2",
     "index.html": "/awwwards-my-app/index.html",
     "main.3d011b7b.css.map": "/awwwards-my-app/static/css/main.3d011b7b.css.map",
-    "main.18473c98.js.map": "/awwwards-my-app/static/js/main.18473c98.js.map",
+    "main.abbf9771.js.map": "/awwwards-my-app/static/js/main.abbf9771.js.map",
     "471.a54f7288.chunk.js.map": "/awwwards-my-app/static/js/471.a54f7288.chunk.js.map",
-    "258.f5a0a542.chunk.js.map": "/awwwards-my-app/static/js/258.f5a0a542.chunk.js.map",
+    "533.b9c301bd.chunk.js.map": "/awwwards-my-app/static/js/533.b9c301bd.chunk.js.map",
     "827.9f11eb8b.chunk.js.map": "/awwwards-my-app/static/js/827.9f11eb8b.chunk.js.map",
     "reactPlayerYouTube.bbea0b7b.chunk.js.map": "/awwwards-my-app/static/js/reactPlayerYouTube.bbea0b7b.chunk.js.map",
     "reactPlayerSoundCloud.6eea48a6.chunk.js.map": "/awwwards-my-app/static/js/reactPlayerSoundCloud.6eea48a6.chunk.js.map",
@@ -69,11 +71,13 @@
     "reactPlayerKaltura.7ccd0185.chunk.js.map": "/awwwards-my-app/static/js/reactPlayerKaltura.7ccd0185.chunk.js.map",
     "reactPlayerFilePlayer.e6d85e27.chunk.js.map": "/awwwards-my-app/static/js/reactPlayerFilePlayer.e6d85e27.chunk.js.map",
     "reactPlayerPreview.9579191c.chunk.js.map": "/awwwards-my-app/static/js/reactPlayerPreview.9579191c.chunk.js.map",
+    "815.dc6e3ada.chunk.js.map": "/awwwards-my-app/static/js/815.dc6e3ada.chunk.js.map",
     "908.6a12927f.chunk.js.map": "/awwwards-my-app/static/js/908.6a12927f.chunk.js.map",
-    "884.cfad5290.chunk.js.map": "/awwwards-my-app/static/js/884.cfad5290.chunk.js.map"
+    "974.681ee8ca.chunk.js.map": "/awwwards-my-app/static/js/974.681ee8ca.chunk.js.map",
+    "19.42985702.chunk.js.map": "/awwwards-my-app/static/js/19.42985702.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3d011b7b.css",
-    "static/js/main.18473c98.js"
+    "static/js/main.abbf9771.js"
   ]
 }
