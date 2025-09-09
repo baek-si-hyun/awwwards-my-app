@@ -26,13 +26,7 @@ export const domApi = ({
       schedule: scrollY >= schedlulePosition,
     });
   }
-  if (
-    pathname === "/Netflix" ||
-    "/Kanban" ||
-    "/Coin" ||
-    "/Myapp" ||
-    "/Airbnb"
-  ) {
+  if (["/Netflix", "/Kanban", "/Coin", "/Myapp", "/Airbnb"].includes(pathname)) {
     const sotd = document.getElementById("sotd") as HTMLDivElement;
     const fontColor = document.getElementById("fontColor") as HTMLDivElement;
     const routerAbout = document.getElementById(

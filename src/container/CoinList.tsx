@@ -1,8 +1,13 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import styled from "styled-components";
-import useCoinNames from "../libs/useCoinNames";
-import { TextBox, TextBoxMiddle, TextBoxbottom } from "../pages/main/common/mainCommon";
+import useBithumbNames from "../libs/useBithumbNames";
+import { ICoins } from "../interface/icoin";
+import {
+  TextBox,
+  TextBoxMiddle,
+  TextBoxbottom,
+} from "../pages/main/common/mainCommon";
 import Colgroup from "../components/CoinList/ColGroup";
 import TheadTr from "../components/CoinList/TheadTr";
 import TbodyTr from "../components/CoinList/TbodyTr";
@@ -24,6 +29,27 @@ const Container = styled.section`
 const Inner = styled.div`
   display: flex;
   flex-direction: column;
+`;
+const ControlsBar = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-bottom: 10px;
+`;
+const SearchInput = styled.input`
+  font-family: "Apercu", sans-serif;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 14px;
+  width: 240px;
+  max-width: 48vw;
+  background: #fff;
+  &:focus {
+    outline: none;
+    border-color: #333;
+  }
 `;
 const TableBox = styled.div`
   @media (max-width: 1279px) {
@@ -76,6 +102,13 @@ const PageBtn = styled.button<{ selected: boolean }>`
 function CoinList() {
   const [page, setPage] = useState(1);
   const [count, setCount] = useState(10);
+  const [query, setQuery] = useState("");
+  const [vw, setVw] = useState<number>(() => (typeof window !== "undefined" ? window.innerWidth : 1440));
+  useEffect(() => {
+    const onResize = () => setVw(typeof window !== "undefined" ? window.innerWidth : 1440);
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
   const pageNation = (pageNum: number) => {
     setPage(() => pageNum);
   };
@@ -85,20 +118,68 @@ function CoinList() {
   const updateCount = (page: number) => {
     setCount(() => page * 10);
   };
-  const { nameData } = useCoinNames(true);
+  const { nameData } = useBithumbNames(true);
+  const filtered = useMemo<ICoins[]>(() => {
+    if (!nameData) return [];
+    const q = query.trim().toLowerCase();
+    if (!q) return nameData;
+    return nameData.filter((d) => {
+      const sym = d.market.substring(4).toLowerCase();
+      return (
+        d.english_name.toLowerCase().includes(q) ||
+        sym.includes(q)
+      );
+    });
+  }, [nameData, query]);
+  useEffect(() => {
+    const total = Math.max(1, Math.ceil(filtered.length / 10));
+    if (page > total) setPage(total);
+  }, [filtered, page]);
   const makePageBtn = () => {
     const pageButtons = [];
-    if (nameData) {
-      let pageLength = Math.ceil(nameData.length / 10);
-      for (let i = 1; i <= pageLength; i++) {
+    const list = filtered;
+    const total = Math.max(1, Math.ceil(list.length / 10));
+    const maxButtons = vw >= 1280 ? 9 : vw >= 768 ? 7 : 5;
+    const makeRange = (start: number, end: number) => {
+      for (let i = start; i <= end; i++) {
         pageButtons.push(
           <PageBtn onClick={() => pageNation(i)} key={i} selected={i === page}>
             {i}
           </PageBtn>
         );
       }
-      return pageButtons;
+    };
+
+    // Ensure current page is within bounds
+    const curr = Math.min(page, total);
+    if (curr !== page) setPage(curr);
+
+    // Always show first and last; show neighbors around current
+    const siblings = Math.max(1, Math.floor((maxButtons - 3) / 2));
+    const left = Math.max(2, curr - siblings);
+    const right = Math.min(total - 1, curr + siblings);
+
+    // First page
+    pageButtons.push(
+      <PageBtn onClick={() => pageNation(1)} key={1} selected={curr === 1}>
+        1
+      </PageBtn>
+    );
+    // Left ellipsis
+    if (left > 2) pageButtons.push(<span key="left-ellipsis">...</span>);
+    // Middle range
+    makeRange(left, right);
+    // Right ellipsis
+    if (right < total - 1) pageButtons.push(<span key="right-ellipsis">...</span>);
+    // Last page
+    if (total > 1) {
+      pageButtons.push(
+        <PageBtn onClick={() => pageNation(total)} key={total} selected={curr === total}>
+          {total}
+        </PageBtn>
+      );
     }
+    return pageButtons;
   };
   return (
     <Container>
@@ -106,9 +187,20 @@ function CoinList() {
         <TextBox>
           <TextBoxMiddle>CoinList</TextBoxMiddle>
           <TextBoxbottom>
-            Combination of UPBIT, React-Query
+            Combination of <span style={{ color: "#ff8200" }}>bithumb</span>,
+            React-Query
           </TextBoxbottom>
         </TextBox>
+        <ControlsBar>
+          <SearchInput
+            placeholder="Search by name or symbol"
+            value={query}
+            onChange={(e) => {
+              setQuery(e.target.value);
+              setPage(1);
+            }}
+          />
+        </ControlsBar>
         <TableBox>
           <ListTable>
             <Colgroup />
@@ -116,7 +208,7 @@ function CoinList() {
               <TheadTr />
             </thead>
             <tbody>
-              <TbodyTr count={count} nameData={nameData}/>
+              <TbodyTr count={count} nameData={filtered} />
             </tbody>
           </ListTable>
         </TableBox>

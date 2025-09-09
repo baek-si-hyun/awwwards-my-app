@@ -1,19 +1,18 @@
 import styled from "styled-components";
-import React, { useEffect, useState } from "react";
+import React, { useMemo, Suspense, lazy } from "react";
 import SkeletonUI from "./SkeletonUI";
 import TradePrice from "./TradePrice";
 import ChangePrice from "./ChangePrice";
-import CirculatingSupply from "./CirculatingSupply";
 import AccTradePrice24h from "./AccTradePrice24h";
 import AccTradeVolume24h from "./AccTradeVolume24h";
-import Chart200Days from "./Chart200Days";
-import useCoinNames from "../../libs/useCoinNames";
-import useCoinListData from "../../libs/useCoinListData";
-// import { useCoinTickersSocket } from "../../services/coinApi";
-import { ICoinHttpTickers, ICoins } from "../../interface/icoin";
+import { ICoins, ICoinHttpTickers } from "../../interface/icoin";
+import CirculatingSupply from "./CirculatingSupply";
 import { Tr } from "../../container/CoinList";
-import useCoinTickers from "../../libs/useCoinTickers";
-import useCoinHistory from "../../libs/useCoinHistory";
+import useSupplyMap from "../../libs/useSupplyMap";
+import useBithumbTickers from "../../libs/useBithumbTickers";
+import useBithumbTickersSocket from "../../libs/useBithumbSocket";
+import useBithumbHistory from "../../libs/useBithumbHistory";
+const Chart200Days = lazy(() => import("./Chart200Days"));
 
 const GoDetail = styled.a`
   display: flex;
@@ -106,33 +105,23 @@ function TbodyTr({
   count: number;
   nameData: ICoins[] | undefined;
 }) {
-  const coinList = nameData
-    ?.map((data) => data.market)
-    .slice(count - 10, count);
-  const socketNameList = nameData?.map((data) => data.market);
-  const { tickerHttpData } = useCoinTickers(count, coinList!);
-  const { historyData } = useCoinHistory(count, coinList!);
-  const { data: mergeData } = useCoinListData(
-    nameData,
-    tickerHttpData,
-    historyData
+  const coinList = useMemo(
+    () => nameData?.map((d) => d.market).slice(count - 10, count) || [],
+    [nameData, count]
   );
-  // const { coinTickers } = useCoinTickersSocket(socketNameList!);
-  const [tickerList, setTickerList] = useState<ICoinHttpTickers[]>(
-    mergeData || []
-  );
-  useEffect(() => {
-    // if (coinTickers && mergeData) {
-    //   const updatedTickerList = mergeData.map((httpData) => {
-    //     const arr = coinTickers.find(
-    //       (socketData) => httpData.market === socketData.code
-    //     );
-    //     return arr ? { ...httpData, ...arr } : httpData;
-    //   });
-    //   setTickerList(updatedTickerList);
-    // }
-    setTickerList(tickerHttpData || []);
-  }, [tickerHttpData, mergeData]);
+  const { tickerHttpData } = useBithumbTickers(coinList);
+  const { liveMap } = useBithumbTickersSocket(coinList);
+  const { historyData } = useBithumbHistory(coinList);
+  // Merge HTTP baseline with live WS data per market
+  const tickerList: ICoinHttpTickers[] = useMemo(() => {
+    const base = tickerHttpData || [];
+    if (!base.length && liveMap.size === 0) return base;
+    const live = liveMap;
+    return base.map((t) => live.get(t.market) || t);
+  }, [tickerHttpData, liveMap]);
+
+  // Resolve supply from local mapping with CoinGecko fallback (cached)
+  const { supplyMap } = useSupplyMap(coinList);
 
   const makeSkeleton = () => {
     const skeletons = [];
@@ -143,83 +132,101 @@ function TbodyTr({
   };
   return (
     <>
-      {/* {mergeData && tickerList && coinTickers */}
-      {mergeData && tickerList
-        ? mergeData.map((data, index) => (
-            <Tr key={index}>
-              <NameTd>
-                <GoDetail
-                  href={`https://upbit.com/exchange?code=CRIX.UPBIT.${data.market}`}
-                  target="_blank"
-                >
-                  <Img
-                    src={`https://static.upbit.com/logos/${data.market.substring(
+      {nameData && tickerList
+        ? coinList.map((market) => {
+            const data = nameData.find((n) => n.market === market)!;
+            const supplyInfo = supplyMap.get(market);
+            const supply = supplyInfo?.supply ?? null;
+            const history = (historyData || []).find((h) => h?.[0]?.market === market);
+            return (
+              <Tr key={market}>
+                <NameTd>
+                  <GoDetail
+                    href={`https://www.bithumb.com/trade/order/${market.substring(
                       4
-                    )}.png`}
-                    alt="coin_icon"
+                    )}_KRW`}
+                    target="_blank"
+                  >
+                  <Img
+                    src={`https://static.upbit.com/logos/${market.substring(4)}.png`}
+                    alt={`${market.substring(4)} icon`}
                     loading="lazy"
                     decoding="async"
+                    onError={(e) => {
+                      const img = e.currentTarget as HTMLImageElement;
+                      const sym = `${market.substring(4).toLowerCase()}`;
+                      if (!img.dataset.fallbackTried) {
+                        img.dataset.fallbackTried = "1";
+                        img.src = `https://cryptoicons.org/api/icon/${sym}/200`;
+                      } else {
+                        img.style.display = "none";
+                      }
+                    }}
                   />
                   <div>
                     <span>{data.english_name}</span>
-                    <span>{data.market.substring(4)}</span>
+                    <span>{market.substring(4)}</span>
                   </div>
                 </GoDetail>
               </NameTd>
               <Td>
                 <TradePrice
-                  coinName={data.market}
+                  coinName={market}
                   tickerList={tickerList}
-                  // tickerSocketData={coinTickers}
                 />
               </Td>
               <Td>
                 <ChangePrice
-                  coinName={data.market}
+                  coinName={market}
                   tickerList={tickerList}
-                  // tickerSocketData={coinTickers}
                 />
               </Td>
               <Td>
                 <AccTradeVolume24h
-                  coinName={data.market}
+                  coinName={market}
                   tickerList={tickerList}
-                  // tickerSocketData={coinTickers}
                 />
               </Td>
               <Td>
                 <AccTradePrice24h
-                  coinName={data.market}
+                  coinName={market}
                   tickerList={tickerList}
-                  // tickerSocketData={coinTickers}
                 />
               </Td>
               <Td>
                 <span>
-                  {data.supply.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
-                  {data.market.substring(4)}
+                  {supply !== null
+                    ? `${supply.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} ${market.substring(4)}`
+                    : "-"}
                 </span>
               </Td>
               <Td>
-                <CirculatingSupply
-                  coinName={data.market}
-                  supply={data.supply}
-                  tickerList={tickerList}
-                  // tickerSocketData={coinTickers}
-                />
+                {supply !== null ? (
+                  <CirculatingSupply
+                    coinName={market}
+                    supply={supply}
+                    tickerList={tickerList}
+                  />
+                ) : (
+                  <span>-</span>
+                )}
               </Td>
               <Td>
-                {data.historyArr && (
-                  <Chart200Days
-                    coinName={data.market}
-                    history={data.historyArr}
-                    tickerList={tickerList}
-                    // tickerSocketData={coinTickers}
-                  />
+                {history ? (
+                  <Suspense fallback={<span>-</span>}>
+                    <Chart200Days
+                      coinName={market}
+                      history={history}
+                      tickerList={tickerList}
+                    />
+                  </Suspense>
+                ) : (
+                  <span>-</span>
                 )}
               </Td>
             </Tr>
-          ))
+            );
+          })
         : makeSkeleton()}
     </>
   );
