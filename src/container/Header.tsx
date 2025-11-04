@@ -1,10 +1,14 @@
 import { useRef } from "react";
 import styled from "styled-components";
+import logo1 from "../assets/img/logo1.png";
+import logo2 from "../assets/img/logo2.png";
+import logo3 from "../assets/img/logo3.png";
+import logo4 from "../assets/img/logo4.png";
+import headerBg from "../assets/img/headerbg.png";
 
 const Container = styled.header`
   width: 100%;
-  background: url("https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/1fe4bbdc-2b82-4598-e76f-53fd4d9a5400/avatar")
-    repeat;
+  background: url(${headerBg}) repeat;
   position: sticky;
   top: 0;
   z-index: -1;
@@ -174,36 +178,21 @@ function Header() {
         </LeftBox>
         <RightBox>
           <ItemBox>
-            <Img
-              src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/2806124f-ade6-41a9-98d7-d2b35b46c600/header"
-              alt="headerimg"
-              loading="lazy"
-              decoding="async"
-            />
+            <Img src={logo4} alt="headerimg" loading="lazy" decoding="async" />
           </ItemBox>
           <ItemBox>
             <ColorShadowImg
-              src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/b4554793-5094-4e3d-68b4-b470fc07f700/header"
+              src={logo3}
               alt="headerimg"
               loading="lazy"
               decoding="async"
             />
           </ItemBox>
           <ItemBox>
-            <Img
-              src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/16c32083-717f-4635-741a-538903476500/header"
-              alt="headerimg"
-              loading="lazy"
-              decoding="async"
-            />
+            <Img src={logo2} alt="headerimg" loading="lazy" decoding="async" />
           </ItemBox>
           <ItemBox>
-            <Img
-              src="https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/95b80677-9e42-4952-08da-009ff4ea9e00/header"
-              alt="headerimg"
-              loading="lazy"
-              decoding="async"
-            />
+            <Img src={logo1} alt="headerimg" loading="lazy" decoding="async" />
           </ItemBox>
         </RightBox>
       </Inner>

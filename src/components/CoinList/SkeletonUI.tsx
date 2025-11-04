@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { Tr } from "../../container/CoinList";
 const Namediv = styled.div`
   display: flex;
@@ -23,8 +23,14 @@ const TdNomalDivFixed = styled.div`
   align-items: flex-end;
 `;
 
+const shimmer = keyframes`
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+`;
 const Skeleton = styled.div`
-  background-color: #ececec;
+  background: linear-gradient(90deg, #ececec 25%, #f5f5f5 37%, #ececec 63%);
+  background-size: 400% 100%;
+  animation: ${shimmer} 1.2s ease-in-out infinite;
   border-radius: 5px;
   padding: 13px 10px;
 `;
@@ -55,6 +61,12 @@ const SkeletonMarketCap = styled(Skeleton)`
 const SkeletonChart = styled(Skeleton)`
   width: 100%;
   height: 50px;
+  @media (max-width: 768px) {
+    height: 44px;
+  }
+  @media (max-width: 480px) {
+    height: 40px;
+  }
 `;
 
 function SkeletonUI() {

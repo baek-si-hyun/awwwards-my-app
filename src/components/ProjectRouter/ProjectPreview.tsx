@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import { IProjectData } from "../../interface/iproject";
+ 
 
 const Contaier = styled.div`
   width: 100%;

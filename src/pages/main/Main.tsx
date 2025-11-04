@@ -4,7 +4,6 @@ import Header from "../../container/Header";
 import Schedule from "../../container/Schedule";
 import Nav from "../../components/nav/Nav";
 const Projects = lazy(() => import("../../container/Projects"));
-const CoinList = lazy(() => import("../../container/CoinList"));
 const Music = lazy(() => import("../../container/Music"));
 
 function Main() {
@@ -15,7 +14,6 @@ function Main() {
         <Projects />
         <Site />
         <Music />
-        <CoinList />
         <Schedule />
       </main>
       <Nav />

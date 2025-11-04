@@ -95,10 +95,25 @@ const useBithumbTickersSocket = (markets: string[]) => {
     };
   }, [connect]);
 
+  // If markets change while socket is open, send a fresh subscription
+  useEffect(() => {
+    const ws = wsRef.current;
+    if (!ws || ws.readyState !== WebSocket.OPEN) return;
+    const symbols = toBithumbSymbols(markets);
+    // Only resubscribe if the set actually changed
+    const prev = subsRef.current;
+    const equal = prev.length === symbols.length && prev.every((v, i) => v === symbols[i]);
+    if (equal) return;
+    subsRef.current = symbols;
+    if (symbols.length === 0) return;
+    ws.send(
+      JSON.stringify({ type: "ticker", symbols, tickTypes: ["24H"] })
+    );
+  }, [markets]);
+
   const liveList = useMemo(() => Array.from(liveMap.values()), [liveMap]);
 
   return { liveMap, liveList };
 };
 
 export default useBithumbTickersSocket;
-

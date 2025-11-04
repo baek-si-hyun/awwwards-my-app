@@ -1,20 +1,23 @@
 import styled from "styled-components";
 import React, { useMemo, Suspense, lazy } from "react";
-import SkeletonUI from "./SkeletonUI";
+import TableSkeleton from "./TableSkeleton";
 import TradePrice from "./TradePrice";
 import ChangePrice from "./ChangePrice";
 import AccTradePrice24h from "./AccTradePrice24h";
 import AccTradeVolume24h from "./AccTradeVolume24h";
 import { ICoins, ICoinHttpTickers } from "../../interface/icoin";
-import CirculatingSupply from "./CirculatingSupply";
+import MarketCap from "./MarketCap";
 import { Tr } from "../../container/CoinList";
 import useSupplyMap from "../../libs/useSupplyMap";
 import useBithumbTickers from "../../libs/useBithumbTickers";
 import useBithumbTickersSocket from "../../libs/useBithumbSocket";
 import useBithumbHistory from "../../libs/useBithumbHistory";
+import ChartSkeleton from "./ChartSkeleton";
+import ImageWithSkeleton from "../common/ImageWithSkeleton";
+import { useNavigate } from "react-router-dom";
 const Chart200Days = lazy(() => import("./Chart200Days"));
 
-const GoDetail = styled.a`
+const GoDetail = styled.div`
   display: flex;
   align-items: center;
   padding: 10px;
@@ -93,21 +96,16 @@ export const TdChangeDiv = styled.div<{ change: string }>`
 export const Icons = styled.span`
   vertical-align: middle;
 `;
-export const Img = styled.img`
+const Icon = styled.span`
+  display: inline-flex;
   margin-right: 5px;
-  max-width: 20px;
 `;
 
-function TbodyTr({
-  count,
-  nameData,
-}: {
-  count: number;
-  nameData: ICoins[] | undefined;
-}) {
+function TbodyTr({ nameData }: { nameData: ICoins[] | undefined }) {
+  const navigate = useNavigate();
   const coinList = useMemo(
-    () => nameData?.map((d) => d.market).slice(count - 10, count) || [],
-    [nameData, count]
+    () => nameData?.map((d) => d.market) || [],
+    [nameData]
   );
   const { tickerHttpData } = useBithumbTickers(coinList);
   const { liveMap } = useBithumbTickersSocket(coinList);
@@ -122,47 +120,44 @@ function TbodyTr({
 
   // Resolve supply from local mapping with CoinGecko fallback (cached)
   const { supplyMap } = useSupplyMap(coinList);
-
-  const makeSkeleton = () => {
-    const skeletons = [];
-    for (let i = 1; i <= 10; i++) {
-      skeletons.push(<SkeletonUI key={i} />);
+  const historyMap = useMemo(() => {
+    const entries: [string, any][] = [];
+    for (const h of historyData || []) {
+      const m = h?.[0]?.market;
+      if (m) entries.push([m, h]);
     }
-    return skeletons;
-  };
+    return new Map(entries);
+  }, [historyData]);
+
+  
   return (
     <>
       {nameData && tickerList
-        ? coinList.map((market) => {
-            const data = nameData.find((n) => n.market === market)!;
+        ? nameData.map((data) => {
+            const market = data.market;
             const supplyInfo = supplyMap.get(market);
             const supply = supplyInfo?.supply ?? null;
-            const history = (historyData || []).find((h) => h?.[0]?.market === market);
+            const history = historyMap.get(market);
             return (
-              <Tr key={market}>
+              <Tr
+                key={market}
+                onClick={() => navigate(`/coin/${market}`)}
+                style={{ cursor: "pointer" }}
+              >
                 <NameTd>
-                  <GoDetail
-                    href={`https://www.bithumb.com/trade/order/${market.substring(
-                      4
-                    )}_KRW`}
-                    target="_blank"
-                  >
-                  <Img
-                    src={`https://static.upbit.com/logos/${market.substring(4)}.png`}
-                    alt={`${market.substring(4)} icon`}
-                    loading="lazy"
-                    decoding="async"
-                    onError={(e) => {
-                      const img = e.currentTarget as HTMLImageElement;
-                      const sym = `${market.substring(4).toLowerCase()}`;
-                      if (!img.dataset.fallbackTried) {
-                        img.dataset.fallbackTried = "1";
-                        img.src = `https://cryptoicons.org/api/icon/${sym}/200`;
-                      } else {
-                        img.style.display = "none";
-                      }
-                    }}
-                  />
+                  <GoDetail>
+                  <Icon>
+                    <ImageWithSkeleton
+                      w={20}
+                      h={20}
+                      round
+                      alt={`${market.substring(4)} icon`}
+                      sources={[
+                        `https://static.upbit.com/logos/${market.substring(4)}.png`,
+                        `https://cryptoicons.org/api/icon/${market.substring(4).toLowerCase()}/200`,
+                      ]}
+                    />
+                  </Icon>
                   <div>
                     <span>{data.english_name}</span>
                     <span>{market.substring(4)}</span>
@@ -201,19 +196,16 @@ function TbodyTr({
                 </span>
               </Td>
               <Td>
-                {supply !== null ? (
-                  <CirculatingSupply
-                    coinName={market}
-                    supply={supply}
-                    tickerList={tickerList}
-                  />
-                ) : (
-                  <span>-</span>
-                )}
+                <MarketCap
+                  coinName={market}
+                  supply={supply}
+                  marketCapKRW={supplyInfo?.marketCapKRW}
+                  tickerList={tickerList}
+                />
               </Td>
               <Td>
                 {history ? (
-                  <Suspense fallback={<span>-</span>}>
+                  <Suspense fallback={<ChartSkeleton /> }>
                     <Chart200Days
                       coinName={market}
                       history={history}
@@ -221,13 +213,13 @@ function TbodyTr({
                     />
                   </Suspense>
                 ) : (
-                  <span>-</span>
+                  <ChartSkeleton />
                 )}
               </Td>
             </Tr>
             );
           })
-        : makeSkeleton()}
+        : <TableSkeleton rows={10} />}
     </>
   );
 }

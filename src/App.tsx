@@ -2,6 +2,8 @@ import Contact from "./pages/Contact/Contact";
 import Faqs from "./pages/faqs/Faqs";
 import Main from "./pages/main/Main";
 import Myapp from "./pages/ProjectRouter/ProjectMain";
+import CoinListPage from "./pages/coinlist/CoinListPage";
+import CoinDetailPage from "./pages/coinlist/CoinDetailPage";
 import ScrollToTop from "./ScrollToTop";
 import { Route, Routes } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -9,6 +11,7 @@ import { IResize } from "./interface/iproject";
 import MusicPlayer from "./components/Music/MusicPlayer";
 import MusicPlayBox from "./components/Music/MusicPlayBox";
 import Footer from "./components/Footer/Footer";
+import FloatingCoinListButton from "./components/FloatingCoinListButton";
 
 function App() {
   const getResizeWidth = useSelector(
@@ -25,9 +28,12 @@ function App() {
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path=":projectId" element={<Myapp />} />
+        <Route path="coinlist" element={<CoinListPage />} />
+        <Route path="coin/:market" element={<CoinDetailPage />} />
         <Route path="faqs" element={<Faqs />} />
         <Route path="contact" element={<Contact />} />
       </Routes>
+      <FloatingCoinListButton />
       <Footer />
     </>
   );

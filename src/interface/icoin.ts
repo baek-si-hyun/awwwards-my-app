@@ -13,6 +13,8 @@ export interface ICoinHttpTickers {
   signed_change_rate: number;
   acc_trade_price_24h: number;
   acc_trade_volume_24h: number;
+  high_price_24h?: number;
+  low_price_24h?: number;
 }
 export interface ICoinSocketTickers {
   code: string;
@@ -51,10 +53,11 @@ export interface ICoinHistory {
   opening_price: number;
   prev_closing_price: number;
   timestamp: number;
+  volume?: number;
 }
 declare global {
   interface Window {
-    TradingView: any;
+    TradingView?: any;
   }
 }
 export interface ICoinListDataResult {

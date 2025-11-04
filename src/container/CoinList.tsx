@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useDeferredValue, useEffect, useMemo, useState } from "react";
 import styled from "styled-components";
 import useBithumbNames from "../libs/useBithumbNames";
 import { ICoins } from "../interface/icoin";
@@ -11,6 +11,7 @@ import {
 import Colgroup from "../components/CoinList/ColGroup";
 import TheadTr from "../components/CoinList/TheadTr";
 import TbodyTr from "../components/CoinList/TbodyTr";
+import bithumbLogo from "../assets/img/new-logo-default.1a222f9b007db3fce4e0.webp";
 
 const Container = styled.section`
   width: 100%;
@@ -99,9 +100,16 @@ const PageBtn = styled.button<{ selected: boolean }>`
   will-change: background-color, color;
 `;
 
+const BithumbLogo = styled.img`
+  height: 2em;
+  display: inline-block;
+  vertical-align: -0.1em;
+  margin: 0 0.2em;
+`;
+
 function CoinList() {
   const [page, setPage] = useState(1);
-  const [count, setCount] = useState(10);
+  const pageSize = 10;
   const [query, setQuery] = useState("");
   const [vw, setVw] = useState<number>(() => (typeof window !== "undefined" ? window.innerWidth : 1440));
   useEffect(() => {
@@ -109,36 +117,32 @@ function CoinList() {
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
   }, []);
-  const pageNation = (pageNum: number) => {
-    setPage(() => pageNum);
-  };
-  useEffect(() => {
-    updateCount(page);
-  }, [page]);
-  const updateCount = (page: number) => {
-    setCount(() => page * 10);
-  };
+  const pageNation = (pageNum: number) => setPage(pageNum);
   const { nameData } = useBithumbNames(true);
+  const deferredQuery = useDeferredValue(query);
   const filtered = useMemo<ICoins[]>(() => {
     if (!nameData) return [];
-    const q = query.trim().toLowerCase();
+    const q = deferredQuery.trim().toLowerCase();
     if (!q) return nameData;
     return nameData.filter((d) => {
       const sym = d.market.substring(4).toLowerCase();
-      return (
-        d.english_name.toLowerCase().includes(q) ||
-        sym.includes(q)
-      );
+      const en = (d.english_name || "").toLowerCase();
+      const ko = (d.korean_name || "").toLowerCase();
+      return en.includes(q) || ko.includes(q) || sym.includes(q);
     });
-  }, [nameData, query]);
+  }, [nameData, deferredQuery]);
   useEffect(() => {
-    const total = Math.max(1, Math.ceil(filtered.length / 10));
+    const total = Math.max(1, Math.ceil(filtered.length / pageSize));
     if (page > total) setPage(total);
-  }, [filtered, page]);
+  }, [filtered, page, pageSize]);
+  const paged = useMemo(() => {
+    const start = (page - 1) * pageSize;
+    return filtered.slice(start, start + pageSize);
+  }, [filtered, page, pageSize]);
   const makePageBtn = () => {
     const pageButtons = [];
     const list = filtered;
-    const total = Math.max(1, Math.ceil(list.length / 10));
+    const total = Math.max(1, Math.ceil(list.length / pageSize));
     const maxButtons = vw >= 1280 ? 9 : vw >= 768 ? 7 : 5;
     const makeRange = (start: number, end: number) => {
       for (let i = start; i <= end; i++) {
@@ -152,7 +156,6 @@ function CoinList() {
 
     // Ensure current page is within bounds
     const curr = Math.min(page, total);
-    if (curr !== page) setPage(curr);
 
     // Always show first and last; show neighbors around current
     const siblings = Math.max(1, Math.floor((maxButtons - 3) / 2));
@@ -187,13 +190,14 @@ function CoinList() {
         <TextBox>
           <TextBoxMiddle>CoinList</TextBoxMiddle>
           <TextBoxbottom>
-            Combination of <span style={{ color: "#ff8200" }}>bithumb</span>,
+            Combination of{" "}
+            <BithumbLogo src={bithumbLogo} alt="Bithumb" />,
             React-Query
           </TextBoxbottom>
         </TextBox>
         <ControlsBar>
           <SearchInput
-            placeholder="Search by name or symbol"
+            placeholder="Search by name (EN/KR) or symbol"
             value={query}
             onChange={(e) => {
               setQuery(e.target.value);
@@ -208,7 +212,7 @@ function CoinList() {
               <TheadTr />
             </thead>
             <tbody>
-              <TbodyTr count={count} nameData={filtered} />
+              <TbodyTr nameData={paged} />
             </tbody>
           </ListTable>
         </TableBox>
