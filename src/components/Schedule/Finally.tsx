@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import lighthouseImg from "../../assets/img/lighthouse.webp";
+import { IMAGES } from "../../constants/images";
 
 const Container = styled.div`
   width: 100%;
@@ -62,7 +62,7 @@ const FinallyTextEn = styled.div`
 `;
 const FinallyBox = styled.div``;
 const FinallyImgBox = styled.div`
-  background-image: url(${lighthouseImg});
+  background-image: url(${IMAGES.COMMON.LIGHTHOUSE});
   height: 100%;
   background-size: cover;
   border-radius: 20px;

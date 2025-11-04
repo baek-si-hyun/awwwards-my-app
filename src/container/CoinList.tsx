@@ -11,7 +11,7 @@ import {
 import Colgroup from "../components/CoinList/ColGroup";
 import TheadTr from "../components/CoinList/TheadTr";
 import TbodyTr from "../components/CoinList/TbodyTr";
-import bithumbLogo from "../assets/img/new-logo-default.1a222f9b007db3fce4e0.webp";
+import { IMAGES } from "../constants/images";
 
 const Container = styled.section`
   width: 100%;
@@ -111,9 +111,12 @@ function CoinList() {
   const [page, setPage] = useState(1);
   const pageSize = 10;
   const [query, setQuery] = useState("");
-  const [vw, setVw] = useState<number>(() => (typeof window !== "undefined" ? window.innerWidth : 1440));
+  const [vw, setVw] = useState<number>(() =>
+    typeof window !== "undefined" ? window.innerWidth : 1440
+  );
   useEffect(() => {
-    const onResize = () => setVw(typeof window !== "undefined" ? window.innerWidth : 1440);
+    const onResize = () =>
+      setVw(typeof window !== "undefined" ? window.innerWidth : 1440);
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
   }, []);
@@ -173,11 +176,16 @@ function CoinList() {
     // Middle range
     makeRange(left, right);
     // Right ellipsis
-    if (right < total - 1) pageButtons.push(<span key="right-ellipsis">...</span>);
+    if (right < total - 1)
+      pageButtons.push(<span key="right-ellipsis">...</span>);
     // Last page
     if (total > 1) {
       pageButtons.push(
-        <PageBtn onClick={() => pageNation(total)} key={total} selected={curr === total}>
+        <PageBtn
+          onClick={() => pageNation(total)}
+          key={total}
+          selected={curr === total}
+        >
           {total}
         </PageBtn>
       );
@@ -191,7 +199,7 @@ function CoinList() {
           <TextBoxMiddle>CoinList</TextBoxMiddle>
           <TextBoxbottom>
             Combination of{" "}
-            <BithumbLogo src={bithumbLogo} alt="Bithumb" />,
+            <BithumbLogo src={IMAGES.COMMON.BITHUMB_LOGO} alt="Bithumb" />,
             React-Query
           </TextBoxbottom>
         </TextBox>

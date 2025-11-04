@@ -1,16 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import nj1 from "../assets/img/nj1.avif";
-import nj2 from "../assets/img/nj2.avif";
-import nj3 from "../assets/img/nj3.avif";
-import nj4 from "../assets/img/nj4.avif";
-import nj5 from "../assets/img/nj5.avif";
-import nj6 from "../assets/img/nj6.avif";
-import nj7 from "../assets/img/nj7.avif";
-import nj8 from "../assets/img/nj8.avif";
-import nj9 from "../assets/img/nj9.avif";
-import nj10 from "../assets/img/nj10.avif";
-import nj11 from "../assets/img/nj11.avif";
-import nj12 from "../assets/img/nj12.avif";
+import { IMAGES } from "../constants/images";
 
 const newJeansListSlice = createSlice({
   name: "newJeansListSlice",
@@ -18,7 +7,7 @@ const newJeansListSlice = createSlice({
     newjeansList: [
       {
         id: 1,
-        img: nj1,
+        img: IMAGES.MUSIC.NEWJEANS.NJ1,
         title: "Bubble Gum",
         artist: "NewJeans",
         album: "How Sweet • 2024",
@@ -26,7 +15,7 @@ const newJeansListSlice = createSlice({
       },
       {
         id: 2,
-        img: nj2,
+        img: IMAGES.MUSIC.NEWJEANS.NJ2,
         title: "How Sweet",
         artist: "NewJeans",
         album: "How Sweet • 2024",
@@ -34,7 +23,7 @@ const newJeansListSlice = createSlice({
       },
       {
         id: 3,
-        img: nj3,
+        img: IMAGES.MUSIC.NEWJEANS.NJ3,
         title: "Super Shy",
         artist: "NewJeans",
         album: "NewJeans 'Super Shy'",
@@ -42,7 +31,7 @@ const newJeansListSlice = createSlice({
       },
       {
         id: 4,
-        img: nj4,
+        img: IMAGES.MUSIC.NEWJEANS.NJ4,
         title: "New Jeans",
         artist: "NewJeans",
         album: "NewJeans 'Super Shy'",
@@ -50,7 +39,7 @@ const newJeansListSlice = createSlice({
       },
       {
         id: 5,
-        img: nj5,
+        img: IMAGES.MUSIC.NEWJEANS.NJ5,
         title: "ETA",
         artist: "NewJeans",
         album: "NewJeans 'Get Up'",
@@ -58,7 +47,7 @@ const newJeansListSlice = createSlice({
       },
       {
         id: 6,
-        img: nj6,
+        img: IMAGES.MUSIC.NEWJEANS.NJ6,
         title: "OMG",
         artist: "NewJeans",
         album: "NewJeans'OMG'",
@@ -66,7 +55,7 @@ const newJeansListSlice = createSlice({
       },
       {
         id: 7,
-        img: nj7,
+        img: IMAGES.MUSIC.NEWJEANS.NJ7,
         title: "Ditto",
         artist: "NewJeans",
         album: "Ditto",
@@ -74,7 +63,7 @@ const newJeansListSlice = createSlice({
       },
       {
         id: 8,
-        img: nj8,
+        img: IMAGES.MUSIC.NEWJEANS.NJ8,
         title: "Zero",
         artist: "NewJeans",
         album: "Zero",
@@ -82,7 +71,7 @@ const newJeansListSlice = createSlice({
       },
       {
         id: 9,
-        img: nj9,
+        img: IMAGES.MUSIC.NEWJEANS.NJ9,
         title: "Hype Boy",
         artist: "NewJeans",
         album: "NewJeans 1st EP 'New Jeans'",
@@ -90,7 +79,7 @@ const newJeansListSlice = createSlice({
       },
       {
         id: 10,
-        img: nj10,
+        img: IMAGES.MUSIC.NEWJEANS.NJ10,
         title: "Attention",
         artist: "NewJeans",
         album: "NewJeans 1st EP 'New Jeans'",
@@ -98,7 +87,7 @@ const newJeansListSlice = createSlice({
       },
       {
         id: 11,
-        img: nj11,
+        img: IMAGES.MUSIC.NEWJEANS.NJ11,
         title: "Cookie",
         artist: "NewJeans",
         album: "NewJeans 1st EP 'New Jeans'",
@@ -106,7 +95,7 @@ const newJeansListSlice = createSlice({
       },
       {
         id: 12,
-        img: nj12,
+        img: IMAGES.MUSIC.NEWJEANS.NJ12,
         title: "Hurt",
         artist: "NewJeans",
         album: "NewJeans 1st EP 'New Jeans'",

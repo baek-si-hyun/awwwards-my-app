@@ -1,11 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import fav1 from "../assets/img/fav1.avif";
-import fav2 from "../assets/img/fav2.avif";
-import fav3 from "../assets/img/fav3.avif";
-import fav4 from "../assets/img/fav4.avif";
-import fav5 from "../assets/img/fav5.avif";
-import fav6 from "../assets/img/fav6.avif";
-import fav7 from "../assets/img/fav7.avif";
+import { IMAGES } from "../constants/images";
 
 const lolChampionsListSlice = createSlice({
   name: "lolChampionsListSlice",
@@ -13,7 +7,7 @@ const lolChampionsListSlice = createSlice({
     lolChampionsList: [
       {
         id: 1,
-        img: fav1,
+        img: IMAGES.MUSIC.FAVORITE.FAV1,
         title: "LA Girls",
         artist: "Charlie Puth",
         album: "Voicenotes • 2018",
@@ -21,7 +15,7 @@ const lolChampionsListSlice = createSlice({
       },
       {
         id: 2,
-        img: fav2,
+        img: IMAGES.MUSIC.FAVORITE.FAV2,
         title: "In Your Eyes (Remix) (feat. Doja Cat)",
         artist: "The Weeknd",
         album: "In Your Eyes (Remix) • 2020",
@@ -29,7 +23,7 @@ const lolChampionsListSlice = createSlice({
       },
       {
         id: 3,
-        img: fav3,
+        img: IMAGES.MUSIC.FAVORITE.FAV3,
         title: "yes, and?",
         artist: "Ariana Grande",
         album: "yes, and? • 2024",
@@ -37,7 +31,7 @@ const lolChampionsListSlice = createSlice({
       },
       {
         id: 4,
-        img: fav4,
+        img: IMAGES.MUSIC.FAVORITE.FAV4,
         title: "You",
         artist: "Regard, Troye Sivan 및 Tate McRae",
         album: "You • 2021",
@@ -45,7 +39,7 @@ const lolChampionsListSlice = createSlice({
       },
       {
         id: 5,
-        img: fav5,
+        img: IMAGES.MUSIC.FAVORITE.FAV5,
         title: "Agora Hills",
         artist: "Doja Cat",
         album: "Scarlet • 2023",
@@ -54,7 +48,7 @@ const lolChampionsListSlice = createSlice({
 
       {
         id: 6,
-        img: fav6,
+        img: IMAGES.MUSIC.FAVORITE.FAV6,
         title: "bloodline",
         artist: "Ariana Grande",
         album: "thank u, next • 2019",
@@ -62,7 +56,7 @@ const lolChampionsListSlice = createSlice({
       },
       {
         id: 7,
-        img: fav7,
+        img: IMAGES.MUSIC.FAVORITE.FAV7,
         title: "Heartless",
         artist: "The Weeknd",
         album: "After Hours • 2020",

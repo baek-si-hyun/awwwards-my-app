@@ -9,8 +9,7 @@ import NewJeans from "../components/Music/NewJeans";
 import FavoriteSong from "../components/Music/FavoriteSong";
 import newjeansmv from "../assets/video/newjeansmv.mp4";
 import musicvideo from "../assets/video/musicvideo.mp4";
-import newjeansBg from "../assets/img/newjeans_bg.avif";
-import musicBg from "../assets/img/music_bg.avif";
+import { IMAGES } from "../constants/images";
 
 const Container = styled.section`
   width: 100%;
@@ -125,7 +124,7 @@ function Music() {
         <MusicContainer>
           <RelativeBox ref={newjeansRef}>
             <MusicImg
-              src={newjeansBg}
+              src={IMAGES.MUSIC.BACKGROUND.NEWJEANS}
               alt="famous artist"
               loading="lazy"
               decoding="async"
@@ -144,7 +143,7 @@ function Music() {
           <NewJeans />
           <RelativeBox ref={favRef}>
             <MusicImg
-              src={musicBg}
+              src={IMAGES.MUSIC.BACKGROUND.MUSIC}
               alt="newjeans"
               loading="lazy"
               decoding="async"

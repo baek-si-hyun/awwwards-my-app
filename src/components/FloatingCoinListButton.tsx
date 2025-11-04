@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import styled, { keyframes } from "styled-components";
 import { useLocation, useNavigate } from "react-router-dom";
-import bithumbLogo from "../assets/img/new-logo-default.1a222f9b007db3fce4e0.webp";
+import { IMAGES } from "../constants/images";
 
 const popIn = keyframes`
   from { transform: translateY(20px); opacity: 0; }
@@ -68,7 +68,7 @@ function FloatingCoinListButton() {
       }}
       title="Open Coin List"
     >
-      <Logo src={bithumbLogo} alt="Bithumb" />
+      <Logo src={IMAGES.COMMON.BITHUMB_LOGO} alt="Bithumb" />
       Coin List
       <Close
         role="button"

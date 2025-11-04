@@ -1,14 +1,10 @@
 import { useRef } from "react";
 import styled from "styled-components";
-import logo1 from "../assets/img/logo1.png";
-import logo2 from "../assets/img/logo2.png";
-import logo3 from "../assets/img/logo3.png";
-import logo4 from "../assets/img/logo4.png";
-import headerBg from "../assets/img/headerbg.png";
+import { IMAGES } from "../constants/images";
 
 const Container = styled.header`
   width: 100%;
-  background: url(${headerBg}) repeat;
+  background: url(${IMAGES.HEADER.BACKGROUND}) repeat;
   position: sticky;
   top: 0;
   z-index: -1;
@@ -178,21 +174,36 @@ function Header() {
         </LeftBox>
         <RightBox>
           <ItemBox>
-            <Img src={logo4} alt="headerimg" loading="lazy" decoding="async" />
-          </ItemBox>
-          <ItemBox>
-            <ColorShadowImg
-              src={logo3}
+            <Img
+              src={IMAGES.HEADER.LOGO.LOGO4}
               alt="headerimg"
               loading="lazy"
               decoding="async"
             />
           </ItemBox>
           <ItemBox>
-            <Img src={logo2} alt="headerimg" loading="lazy" decoding="async" />
+            <ColorShadowImg
+              src={IMAGES.HEADER.LOGO.LOGO3}
+              alt="headerimg"
+              loading="lazy"
+              decoding="async"
+            />
           </ItemBox>
           <ItemBox>
-            <Img src={logo1} alt="headerimg" loading="lazy" decoding="async" />
+            <Img
+              src={IMAGES.HEADER.LOGO.LOGO2}
+              alt="headerimg"
+              loading="lazy"
+              decoding="async"
+            />
+          </ItemBox>
+          <ItemBox>
+            <Img
+              src={IMAGES.HEADER.LOGO.LOGO1}
+              alt="headerimg"
+              loading="lazy"
+              decoding="async"
+            />
           </ItemBox>
         </RightBox>
       </Inner>
