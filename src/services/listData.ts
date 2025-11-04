@@ -3,25 +3,31 @@ import {
   IProjectsData,
   IScheduleData,
 } from "../interface/iproject";
+import site1 from "../assets/img/site1.avif";
+import site2 from "../assets/img/site2.avif";
+import site3 from "../assets/img/site3.avif";
+import icon1 from "../assets/img/icon1.avif";
+import icon2 from "../assets/img/icon2.avif";
+import icon3 from "../assets/img/icon3.avif";
 
 export const siteList = [
   {
-    img: "49cd31ba-6549-4f5c-823e-06ee522be100",
+    img: site1,
     alt: "Awwwards",
     href: "https://www.awwwards.com/",
-    icon: "e1f7fdb0-746c-4598-7dd0-c37a0b344d00",
+    icon: icon1,
   },
   {
-    img: "089bbc9a-4241-44ab-90a2-5702bbe90d00",
+    img: site2,
     alt: "YoutubeMusic",
     href: "https://music.youtube.com/",
-    icon: "7aa1d7a9-d1ec-478e-e06c-25204d9b0000",
+    icon: icon2,
   },
   {
-    img: "b55e5689-87bc-4c9d-5ab6-f151077beb00",
+    img: site3,
     alt: "CoinMarketCap",
     href: "https://coinmarketcap.com/ko/",
-    icon: "00f10618-d1f1-42ce-0ede-651abcd38200",
+    icon: icon3,
   },
 ];
 

@@ -201,7 +201,7 @@ function Site() {
           <Sitebox key={i}>
             <SiteImgBox>
               <SiteImg
-                src={`https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/${item.img}/public`}
+                src={item.img}
                 alt={item.alt}
                 loading="lazy"
                 decoding="async"
@@ -228,7 +228,7 @@ function Site() {
               </div>
               <InnerFigure>
                 <LogoImg
-                  src={`https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/${item.icon}/icon`}
+                  src={item.icon}
                   alt={item.alt}
                   loading="lazy"
                   decoding="async"
