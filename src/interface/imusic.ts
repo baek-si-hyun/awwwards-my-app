@@ -12,9 +12,6 @@ export interface INewjeansListData {
 export interface ILoLChampionsListData {
   lolChampionsList: IPlayList[];
 }
-export interface IFeaturedListData {
-  featuredList: IPlayList[];
-}
 export interface IVideoInfoRedux {
   playing: boolean;
   videoUrl: string;
