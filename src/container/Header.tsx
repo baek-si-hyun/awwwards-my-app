@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import styled from "styled-components";
 import { IMAGES } from "../constants/images";
+import ImageWithSkeleton from "../components/common/ImageWithSkeleton";
 
 const Container = styled.header`
   width: 100%;
@@ -107,7 +108,7 @@ const ItemBox = styled.div`
   }
 `;
 
-const Img = styled.img`
+const Img = styled(ImageWithSkeleton)`
   width: 12vw;
   height: 12vw;
   max-width: 218px;
@@ -175,34 +176,34 @@ function Header() {
         <RightBox>
           <ItemBox>
             <Img
-              src={IMAGES.HEADER.LOGO.LOGO4}
+              sources={IMAGES.HEADER.LOGO.LOGO4}
               alt="headerimg"
-              loading="lazy"
-              decoding="async"
+              fullWidth
+              fullHeight
             />
           </ItemBox>
           <ItemBox>
             <ColorShadowImg
-              src={IMAGES.HEADER.LOGO.LOGO3}
+              sources={IMAGES.HEADER.LOGO.LOGO3}
               alt="headerimg"
-              loading="lazy"
-              decoding="async"
+              fullWidth
+              fullHeight
             />
           </ItemBox>
           <ItemBox>
             <Img
-              src={IMAGES.HEADER.LOGO.LOGO2}
+              sources={IMAGES.HEADER.LOGO.LOGO2}
               alt="headerimg"
-              loading="lazy"
-              decoding="async"
+              fullWidth
+              fullHeight
             />
           </ItemBox>
           <ItemBox>
             <Img
-              src={IMAGES.HEADER.LOGO.LOGO1}
+              sources={IMAGES.HEADER.LOGO.LOGO1}
               alt="headerimg"
-              loading="lazy"
-              decoding="async"
+              fullWidth
+              fullHeight
             />
           </ItemBox>
         </RightBox>

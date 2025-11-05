@@ -10,6 +10,7 @@ import FavoriteSong from "../components/Music/FavoriteSong";
 import newjeansmv from "../assets/video/newjeansmv.mp4";
 import musicvideo from "../assets/video/musicvideo.mp4";
 import { IMAGES } from "../constants/images";
+import ImageWithSkeleton from "../components/common/ImageWithSkeleton";
 
 const Container = styled.section`
   width: 100%;
@@ -41,9 +42,8 @@ const MusicContainer = styled.div`
 const RelativeBox = styled.div`
   position: relative;
 `;
-const MusicImg = styled.img`
+const MusicImg = styled(ImageWithSkeleton)`
   width: 100%;
-  object-fit: cover;
 `;
 const MusicVideo = styled.div<{ inView: boolean }>`
   display: flex;
@@ -124,10 +124,11 @@ function Music() {
         <MusicContainer>
           <RelativeBox ref={newjeansRef}>
             <MusicImg
-              src={IMAGES.MUSIC.BACKGROUND.NEWJEANS}
+              sources={IMAGES.MUSIC.BACKGROUND.NEWJEANS}
               alt="famous artist"
-              loading="lazy"
-              decoding="async"
+              fullWidth
+              fullHeight
+              objectFit="cover"
             />
             <MusicVideo inView={newjeansView}>
               <Video controls={false} autoPlay={true} loop={true} muted={true}>
@@ -143,10 +144,11 @@ function Music() {
           <NewJeans />
           <RelativeBox ref={favRef}>
             <MusicImg
-              src={IMAGES.MUSIC.BACKGROUND.MUSIC}
+              sources={IMAGES.MUSIC.BACKGROUND.MUSIC}
               alt="newjeans"
-              loading="lazy"
-              decoding="async"
+              fullWidth
+              fullHeight
+              objectFit="cover"
             />
             <MusicVideo inView={favView}>
               <Video controls={false} autoPlay={true} loop={true} muted={true}>

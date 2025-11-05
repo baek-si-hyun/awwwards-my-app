@@ -19,8 +19,9 @@ import {
   Title,
 } from "./common/boardsCommon";
 import { useMySelector } from "../../libs/useMySelector";
+import ImageWithSkeleton from "../common/ImageWithSkeleton";
 
-const Img = styled.img`
+const Img = styled(ImageWithSkeleton)`
   width: clamp(40px, 4vw, 128px);
 `;
 
@@ -63,10 +64,11 @@ function NewJeans() {
                       <CardItem>
                         <ImgDiv>
                           <Img
-                            src={newjeans.img}
+                            sources={newjeans.img}
                             alt="album_photo"
-                            loading="lazy"
-                            decoding="async"
+                            fullWidth
+                            fullHeight
+                            objectFit="cover"
                           />
                           <MusicSet videoUrl={newjeans.url} />
                         </ImgDiv>

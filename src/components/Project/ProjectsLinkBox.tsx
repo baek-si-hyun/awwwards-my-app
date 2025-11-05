@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
 import { projectData } from "../../services/listData";
+import ImageWithSkeleton from "../common/ImageWithSkeleton";
 
 const common = css`
   display: flex;
@@ -26,7 +27,7 @@ const ImgBox = styled.div`
   display: flex;
   justify-content: center;
 `;
-const Img = styled.img`
+const Img = styled(ImageWithSkeleton)`
   aspect-ratio: 4/3;
   width: 100%;
   border-radius: 15px;
@@ -96,25 +97,22 @@ const By = styled.div`
 const InnerSpan = styled.span`
   display: flex;
   align-items: center;
-  img {
-    margin: 0 0.3rem;
-    object-fit: fill;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 100%;
-    @media (max-width: 480px) {
-      & {
-        width: 32px;
-        height: 32px;
-      }
-    }
-  }
   span {
     font-weight: bold;
     border-bottom: 2px solid #b7b7b7;
   }
 `;
-const Icon = styled.img``;
+const MakerLogo = styled(ImageWithSkeleton)`
+  margin: 0 0.3rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100%;
+  @media (max-width: 480px) {
+    width: 32px;
+    height: 32px;
+  }
+`;
+const Icon = styled(ImageWithSkeleton)``;
 function ProjectsLinkBox() {
   return (
     <>
@@ -137,10 +135,11 @@ function ProjectsLinkBox() {
             >
               <ImgBox>
                 <Img
-                  src={data.projects_thumbnail}
+                  sources={data.projects_thumbnail}
                   alt="thumbnail"
-                  loading="lazy"
-                  decoding="async"
+                  fullWidth
+                  fullHeight
+                  objectFit="cover"
                 />
               </ImgBox>
               <HoverBox>
@@ -150,12 +149,10 @@ function ProjectsLinkBox() {
                   {data.projects_tools.map((iconData, iconIndex) => (
                     <Icon
                       key={iconIndex}
-                      height="35"
-                      width="35"
-                      src={`https://cdn.simpleicons.org/${iconData}/white/false`}
+                      sources={`https://cdn.simpleicons.org/${iconData}/white/false`}
+                      w={35}
+                      h={35}
                       alt={iconData}
-                      loading="lazy"
-                      decoding="async"
                     />
                   ))}
                 </IconBox>
@@ -167,11 +164,12 @@ function ProjectsLinkBox() {
                   <small>by</small>
                 </div>
                 <InnerSpan>
-                  <img
-                    src={data.projects_logo}
+                  <MakerLogo
+                    sources={data.projects_logo}
                     alt="maker_logo"
-                    loading="lazy"
-                    decoding="async"
+                    fullWidth
+                    fullHeight
+                    objectFit="cover"
                   />
                   <span>{data.projects_by}</span>
                 </InnerSpan>

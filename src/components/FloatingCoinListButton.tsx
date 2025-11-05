@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import styled, { keyframes } from "styled-components";
 import { useLocation, useNavigate } from "react-router-dom";
 import { IMAGES } from "../constants/images";
+import ImageWithSkeleton from "./common/ImageWithSkeleton";
 
 const popIn = keyframes`
   from { transform: translateY(20px); opacity: 0; }
@@ -28,7 +29,7 @@ const Fab = styled.button`
   color: #222;
 `;
 
-const Logo = styled.img`
+const Logo = styled(ImageWithSkeleton)`
   height: 18px;
   width: auto;
   display: block;
@@ -68,7 +69,7 @@ function FloatingCoinListButton() {
       }}
       title="Open Coin List"
     >
-      <Logo src={IMAGES.COMMON.BITHUMB_LOGO} alt="Bithumb" />
+      <Logo sources={IMAGES.COMMON.BITHUMB_LOGO} alt="Bithumb" fullHeight />
       Coin List
       <Close
         role="button"

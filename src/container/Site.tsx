@@ -5,6 +5,7 @@ import {
   TextBoxbottom,
 } from "../pages/main/common/mainCommon";
 import { siteList } from "../services/listData";
+import ImageWithSkeleton from "../components/common/ImageWithSkeleton";
 
 const Container = styled.section`
   display: flex;
@@ -65,7 +66,10 @@ const FlexBox = styled.div`
   }
 `;
 
-const SiteImg = styled.img``;
+const SiteImg = styled(ImageWithSkeleton)`
+  width: 100%;
+  height: 100%;
+`;
 
 const SiteTextBox = styled.div`
   display: flex;
@@ -182,7 +186,7 @@ const BottomBoxBottom = styled.div`
     }
   }
 `;
-const LogoImg = styled.img`
+const LogoImg = styled(ImageWithSkeleton)`
   width: 30px;
   height: 30px;
   border-radius: 20px;
@@ -201,10 +205,11 @@ function Site() {
           <Sitebox key={i}>
             <SiteImgBox>
               <SiteImg
-                src={item.img}
+                sources={item.img}
                 alt={item.alt}
-                loading="lazy"
-                decoding="async"
+                fullWidth
+                fullHeight
+                objectFit="fill"
               />
               <HoverBox>
                 <SenterBox href={item.href} target="_blank">
@@ -227,12 +232,7 @@ function Site() {
                 <small>by</small>
               </div>
               <InnerFigure>
-                <LogoImg
-                  src={item.icon}
-                  alt={item.alt}
-                  loading="lazy"
-                  decoding="async"
-                />
+                <LogoImg sources={item.icon} alt={item.alt} fullWidth fullHeight />
                 <figcaption>
                   <span>{item.alt}</span>
                 </figcaption>

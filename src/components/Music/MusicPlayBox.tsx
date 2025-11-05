@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { videoInfoRedux } from "../../redux/playingVideoInfoSlice";
 import { controlRedux } from "../../redux/controlPlayListSlice";
 import { useMySelector } from "../../libs/useMySelector";
+import ImageWithSkeleton from "../common/ImageWithSkeleton";
 
 const Container = styled.div<{ isVisible: boolean; backGroundImg: string }>`
   position: relative;
@@ -56,7 +57,7 @@ const Container = styled.div<{ isVisible: boolean; backGroundImg: string }>`
   }
 `;
 
-const Img = styled.img`
+const Img = styled(ImageWithSkeleton)`
   width: 60px;
   height: 60px;
   border-radius: 10px;
@@ -133,7 +134,13 @@ function MusicPlayBox() {
     <>
       {visible && (
         <Container isVisible={visible} backGroundImg={videoInfo.img}>
-          <Img src={videoInfo.img} />
+          <Img
+            sources={videoInfo.img}
+            alt={`${videoInfo.title} cover`}
+            fullWidth
+            fullHeight
+            objectFit="cover"
+          />
           <InfoControlBox>
             <Info>
               {videoInfo.title} - {videoInfo.artist}

@@ -12,6 +12,7 @@ import Colgroup from "../components/CoinList/ColGroup";
 import TheadTr from "../components/CoinList/TheadTr";
 import TbodyTr from "../components/CoinList/TbodyTr";
 import { IMAGES } from "../constants/images";
+import ImageWithSkeleton from "../components/common/ImageWithSkeleton";
 
 const Container = styled.section`
   width: 100%;
@@ -100,7 +101,7 @@ const PageBtn = styled.button<{ selected: boolean }>`
   will-change: background-color, color;
 `;
 
-const BithumbLogo = styled.img`
+const BithumbLogo = styled(ImageWithSkeleton)`
   height: 2em;
   display: inline-block;
   vertical-align: -0.1em;
@@ -199,7 +200,11 @@ function CoinList() {
           <TextBoxMiddle>CoinList</TextBoxMiddle>
           <TextBoxbottom>
             Combination of{" "}
-            <BithumbLogo src={IMAGES.COMMON.BITHUMB_LOGO} alt="Bithumb" />,
+            <BithumbLogo
+              sources={IMAGES.COMMON.BITHUMB_LOGO}
+              alt="Bithumb"
+              fullHeight
+            />,
             React-Query
           </TextBoxbottom>
         </TextBox>

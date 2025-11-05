@@ -19,8 +19,9 @@ import {
 import { useMySelector } from "../../libs/useMySelector";
 import { lolChampionsRedux } from "../../redux/favoriteListSlice";
 import MusicSet from "./MusicSet";
+import ImageWithSkeleton from "../common/ImageWithSkeleton";
 
-const Img = styled.img`
+const Img = styled(ImageWithSkeleton)`
   width: clamp(40px, 4vw, 128px);
 `;
 
@@ -66,10 +67,11 @@ function LoLChampions() {
                       <CardItem>
                         <ImgDiv>
                           <Img
-                            src={lol.img}
+                            sources={lol.img}
                             alt="album_photo"
-                            loading="lazy"
-                            decoding="async"
+                            fullWidth
+                            fullHeight
+                            objectFit="cover"
                           />
                           <MusicSet videoUrl={lol.url} />
                         </ImgDiv>
