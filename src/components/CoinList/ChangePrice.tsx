@@ -1,20 +1,38 @@
-import { ICoinHttpTickers, ICoinSocketTickers } from "../../interface/icoin";
-import { Icons, TdChangeDiv } from "./TbodyTr";
+import styled from "styled-components";
+import { ICoinHttpTickers } from "../../interface/icoin";
+
+const TdChangeDiv = styled.div<{ change: string }>`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 3px;
+  color: ${(props) =>
+    props.change === "RISE"
+      ? "#c84a31"
+      : props.change === "FALL"
+      ? "#1261c4"
+      : "#222222"};
+`;
+
+const Icons = styled.span`
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+`;
 
 const ChangePrice = ({
   coinName,
-  // tickerSocketData,
   tickerList,
 }: {
   coinName: string;
-  // tickerSocketData: ICoinSocketTickers[];
   tickerList: ICoinHttpTickers[];
 }): JSX.Element => {
   if (tickerList) {
     const changePrice: string = tickerList
       .find((ticker) => ticker.market === coinName && ticker, 0)
       ?.change_price.toString()
-      .replace(/\B(?=(\d{3})+(!\d))/g, ",")!;
+      .replace(/\B(?=(\d{3})+(?!\d))/g, ",")!;
     const change: string = tickerList.find(
       (ticker) => ticker.market === coinName && ticker,
       "EVEN"

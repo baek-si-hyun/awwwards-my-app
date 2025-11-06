@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { memo, useMemo } from "react";
 
 function Sparkline({ data, width = 140, height = 40, color = "#0062DF" }: { data: number[]; width?: number; height?: number; color?: string }) {
   const points = useMemo(() => {
@@ -24,5 +24,5 @@ function Sparkline({ data, width = 140, height = 40, color = "#0062DF" }: { data
   );
 }
 
-export default Sparkline;
+export default memo(Sparkline);
 

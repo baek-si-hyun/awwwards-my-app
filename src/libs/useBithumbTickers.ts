@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { ICoinHttpTickers } from "../interface/icoin";
 import {
@@ -6,13 +7,14 @@ import {
 } from "../services/bithumbApi";
 
 const useBithumbTickers = (coinList: string[]) => {
-  const { data: tickerHttpData } = useQuery<ICoinHttpTickers[]>(
-    ["bithumb", "tickers", coinList],
-    async () => {
+  const stableKey = useMemo(() => [...coinList].sort().join(","), [coinList]);
+  
+  const queryFn = useMemo(
+    () => async () => {
       const data = await fetchBithumbAllKrwTickers();
+      const wanted = new Set(coinList);
       const list: ICoinHttpTickers[] = [];
       // Map to quick lookup for selected codes
-      const wanted = new Set(coinList);
       for (const [code, entry] of Object.entries<any>(data)) {
         if (code === "date") continue;
         const market = `KRW-${code}`;
@@ -20,6 +22,12 @@ const useBithumbTickers = (coinList: string[]) => {
       }
       return list;
     },
+    [coinList]
+  );
+
+  const { data: tickerHttpData } = useQuery<ICoinHttpTickers[]>(
+    ["bithumb", "tickers", stableKey],
+    queryFn,
     {
       refetchOnMount: false,
       refetchOnWindowFocus: false,

@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import styled, { keyframes } from "styled-components";
 import { useLocation, useNavigate } from "react-router-dom";
 import { IMAGES } from "../constants/images";
@@ -46,11 +46,6 @@ function FloatingCoinListButton() {
   const { pathname } = useLocation();
   const [hidden, setHidden] = useState(false);
 
-  useEffect(() => {
-    const stored = window.localStorage.getItem("coinListFabHidden");
-    if (stored === "1") setHidden(true);
-  }, []);
-
   const shouldShow = useMemo(() => {
     if (hidden) return false;
     // Hide on coin list and coin detail pages
@@ -77,7 +72,6 @@ function FloatingCoinListButton() {
         onClick={(e) => {
           e.stopPropagation();
           setHidden(true);
-          window.localStorage.setItem("coinListFabHidden", "1");
         }}
       >
         ×

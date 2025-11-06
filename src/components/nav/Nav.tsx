@@ -123,22 +123,22 @@ function NavMode({
     <>
       {pathname === "/" ? (
         <NavMainMode navHandler={navHandler} mainPosition={mainPosition} />
-      ) : pathname === "/awwwards" ||
-        "/carrot-market" ||
-        "/project-house" ||
-        "/Netflix" ||
-        "/Kanban" ||
-        "/Coin" ||
-        "/Myapp" ||
-        "/Airbnb" ? (
+      ) : [
+        "/awwwards",
+        "/carrot-market",
+        "/project-house",
+        "/Netflix",
+        "/Kanban",
+        "/Coin",
+        "/Myapp",
+        "/Airbnb",
+      ].includes(pathname) ? (
         <NavRouterMode
           pathname={pathname}
           navHandler={navHandler}
           routerPosition={routerPosition}
         />
-      ) : (
-        <></>
-      )}
+      ) : null}
     </>
   );
 }
@@ -151,25 +151,31 @@ function Nav() {
 
   const bugerNavToggle = useCallback(() => {
     const currentResize = window.innerWidth;
-    setResize(currentResize);
-    setMenuSwitch(!menuSwitch);
+    setResize((prev) => {
+      if (prev === currentResize) return prev;
+      return currentResize;
+    });
+    setMenuSwitch((prev) => !prev);
     dispatch(resizeRedux(currentResize));
-  }, [menuSwitch, dispatch]);
+  }, [dispatch]);
 
   useEffect(() => {
     window.addEventListener("resize", bugerNavToggle);
     return () => {
       window.removeEventListener("resize", bugerNavToggle);
     };
-  }, [bugerNavToggle, resize]);
+  }, [bugerNavToggle]);
 
-  const navHandler = (e: any) => {
+  const navHandler = useCallback((e: any) => {
     e.preventDefault();
     if (e.target.classList.contains("nav-item")) {
       const id = e.target.getAttribute("href");
-      document.querySelector(id).scrollIntoView();
+      const element = document.querySelector(id);
+      if (element) {
+        element.scrollIntoView();
+      }
     }
-  };
+  }, []);
 
   const [mainPosition, setMainPosition] = useState({
     home: true,
@@ -184,13 +190,14 @@ function Nav() {
     routerAbout: false,
   });
 
+  const getElementPostion = useCallback(() => {
+    domApi({ pathname, setMainPosition, setRouterPosition });
+  }, [pathname, setMainPosition, setRouterPosition]);
+
   useEffect(() => {
-    const getElementPostion = () => {
-      domApi({ pathname, setMainPosition, setRouterPosition });
-    };
     window.addEventListener("scroll", getElementPostion);
     return () => window.removeEventListener("scroll", getElementPostion);
-  }, [mainPosition, pathname, routerPosition]);
+  }, [getElementPostion]);
 
   return (
     <>

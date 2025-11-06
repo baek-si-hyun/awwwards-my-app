@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { memo, useEffect, useMemo, useRef, useState } from "react";
 import styled from "styled-components";
 
 const Container = styled.div<{ heightPx?: number }>`
@@ -87,6 +87,21 @@ const TradingViewChart = ({
       allow_symbol_change: false,
       studies: [],
       details: false,
+      overrides: {
+        "mainSeriesProperties.candleStyle.upColor": "#c84a31",
+        "mainSeriesProperties.candleStyle.downColor": "#1261c4",
+        "mainSeriesProperties.candleStyle.borderUpColor": "#c84a31",
+        "mainSeriesProperties.candleStyle.borderDownColor": "#1261c4",
+        "mainSeriesProperties.candleStyle.wickUpColor": "#c84a31",
+        "mainSeriesProperties.candleStyle.wickDownColor": "#1261c4",
+        "volumePaneSize": "medium",
+        "paneProperties.background": "#ffffff",
+        "paneProperties.backgroundType": "solid",
+      },
+      studies_overrides: {
+        "volume.volume.color.0": "#1261c4",
+        "volume.volume.color.1": "#c84a31",
+      },
     });
     return () => {
       // Charting library disposes automatically when container removed, but make safe
@@ -100,4 +115,4 @@ const TradingViewChart = ({
   return <Container ref={ref} heightPx={heightPx} />;
 };
 
-export default TradingViewChart;
+export default memo(TradingViewChart);

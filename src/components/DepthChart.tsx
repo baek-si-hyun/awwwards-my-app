@@ -1,19 +1,21 @@
-import { useEffect, useMemo, useState } from "react";
+import { memo, useMemo } from "react";
 import styled from "styled-components";
-import { fetchBithumbOrderbook, BithumbOrderbookResult } from "../services/bithumbApi";
+import { useMySelector } from "../libs/useMySelector";
 
 const Wrap = styled.div`
-  border: 1px solid rgba(0,0,0,0.06);
-  border-radius: 14px;
-  background: rgba(255,255,255,0.85);
-  backdrop-filter: saturate(180%) blur(10px);
-  padding: 10px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  padding: 0;
 `;
 
 const Title = styled.div`
-  font-weight: 800;
-  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #8c8d9a;
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #1e2329;
 `;
 
 const Svg = styled.svg`
@@ -22,29 +24,18 @@ const Svg = styled.svg`
   display: block;
 `;
 
-function DepthChart({ market }: { market: string }) {
-  const [data, setData] = useState<BithumbOrderbookResult>({ bids: [], asks: [] });
+function DepthChart() {
+  const { data: orderbookData, error } = useMySelector((state) => ({
+    data: state.orderbookSlice.data,
+    error: state.orderbookSlice.error,
+  }));
 
-  useEffect(() => {
-    let active = true;
-    let timer: any;
-    const load = async () => {
-      try {
-        const ob = await fetchBithumbOrderbook(market);
-        if (!active) return;
-        setData({
-          bids: ob.bids.slice(0, 30).sort((a, b) => b.price - a.price),
-          asks: ob.asks.slice(0, 30).sort((a, b) => a.price - b.price),
-        });
-      } catch {}
-      timer = setTimeout(load, 2000);
+  const data = useMemo(() => {
+    return {
+      bids: orderbookData.bids.slice(0, 30).sort((a, b) => b.price - a.price),
+      asks: orderbookData.asks.slice(0, 30).sort((a, b) => a.price - b.price),
     };
-    load();
-    return () => {
-      active = false;
-      if (timer) clearTimeout(timer);
-    };
-  }, [market]);
+  }, [orderbookData]);
 
   const view = useMemo(() => {
     const bids = data.bids;
@@ -85,6 +76,17 @@ function DepthChart({ market }: { market: string }) {
     };
   }, [data]);
 
+  if (error) {
+    return (
+      <Wrap>
+        <Title>Market Depth</Title>
+        <div style={{ padding: "40px", textAlign: "center", color: "#8c8d9a" }}>
+          데이터를 불러올 수 없습니다.
+        </div>
+      </Wrap>
+    );
+  }
+
   return (
     <Wrap>
       <Title>Market Depth</Title>
@@ -96,4 +98,4 @@ function DepthChart({ market }: { market: string }) {
   );
 }
 
-export default DepthChart;
+export default memo(DepthChart);

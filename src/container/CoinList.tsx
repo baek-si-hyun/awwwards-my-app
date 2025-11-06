@@ -1,8 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useDeferredValue, useEffect, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import styled from "styled-components";
 import useBithumbNames from "../libs/useBithumbNames";
-import { ICoins } from "../interface/icoin";
+import { useCoinSearch } from "../hooks/useCoinSearch";
 import {
   TextBox,
   TextBoxMiddle,
@@ -115,26 +115,30 @@ function CoinList() {
   const [vw, setVw] = useState<number>(() =>
     typeof window !== "undefined" ? window.innerWidth : 1440
   );
-  useEffect(() => {
-    const onResize = () =>
-      setVw(typeof window !== "undefined" ? window.innerWidth : 1440);
-    window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
+  const handleResize = useCallback(() => {
+    setVw(typeof window !== "undefined" ? window.innerWidth : 1440);
   }, []);
-  const pageNation = (pageNum: number) => setPage(pageNum);
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [handleResize]);
+
+  const pageNation = useCallback((pageNum: number) => {
+    setPage(pageNum);
+  }, []);
+
   const { nameData } = useBithumbNames(true);
-  const deferredQuery = useDeferredValue(query);
-  const filtered = useMemo<ICoins[]>(() => {
-    if (!nameData) return [];
-    const q = deferredQuery.trim().toLowerCase();
-    if (!q) return nameData;
-    return nameData.filter((d) => {
-      const sym = d.market.substring(4).toLowerCase();
-      const en = (d.english_name || "").toLowerCase();
-      const ko = (d.korean_name || "").toLowerCase();
-      return en.includes(q) || ko.includes(q) || sym.includes(q);
-    });
-  }, [nameData, deferredQuery]);
+  const { filtered } = useCoinSearch(nameData, query, false);
+
+  const handleSearchChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      setQuery(e.target.value);
+      setPage(1);
+    },
+    []
+  );
+
   useEffect(() => {
     const total = Math.max(1, Math.ceil(filtered.length / pageSize));
     if (page > total) setPage(total);
@@ -143,20 +147,11 @@ function CoinList() {
     const start = (page - 1) * pageSize;
     return filtered.slice(start, start + pageSize);
   }, [filtered, page, pageSize]);
-  const makePageBtn = () => {
-    const pageButtons = [];
+  const pageButtons = useMemo(() => {
+    const buttons = [];
     const list = filtered;
     const total = Math.max(1, Math.ceil(list.length / pageSize));
     const maxButtons = vw >= 1280 ? 9 : vw >= 768 ? 7 : 5;
-    const makeRange = (start: number, end: number) => {
-      for (let i = start; i <= end; i++) {
-        pageButtons.push(
-          <PageBtn onClick={() => pageNation(i)} key={i} selected={i === page}>
-            {i}
-          </PageBtn>
-        );
-      }
-    };
 
     // Ensure current page is within bounds
     const curr = Math.min(page, total);
@@ -167,21 +162,26 @@ function CoinList() {
     const right = Math.min(total - 1, curr + siblings);
 
     // First page
-    pageButtons.push(
+    buttons.push(
       <PageBtn onClick={() => pageNation(1)} key={1} selected={curr === 1}>
         1
       </PageBtn>
     );
     // Left ellipsis
-    if (left > 2) pageButtons.push(<span key="left-ellipsis">...</span>);
+    if (left > 2) buttons.push(<span key="left-ellipsis">...</span>);
     // Middle range
-    makeRange(left, right);
+    for (let i = left; i <= right; i++) {
+      buttons.push(
+        <PageBtn onClick={() => pageNation(i)} key={i} selected={i === curr}>
+          {i}
+        </PageBtn>
+      );
+    }
     // Right ellipsis
-    if (right < total - 1)
-      pageButtons.push(<span key="right-ellipsis">...</span>);
+    if (right < total - 1) buttons.push(<span key="right-ellipsis">...</span>);
     // Last page
     if (total > 1) {
-      pageButtons.push(
+      buttons.push(
         <PageBtn
           onClick={() => pageNation(total)}
           key={total}
@@ -191,8 +191,8 @@ function CoinList() {
         </PageBtn>
       );
     }
-    return pageButtons;
-  };
+    return buttons;
+  }, [filtered, page, pageSize, vw, pageNation]);
   return (
     <Container>
       <Inner>
@@ -204,18 +204,15 @@ function CoinList() {
               sources={IMAGES.COMMON.BITHUMB_LOGO}
               alt="Bithumb"
               fullHeight
-            />,
-            React-Query
+            />
+            , React-Query
           </TextBoxbottom>
         </TextBox>
         <ControlsBar>
           <SearchInput
             placeholder="Search by name (EN/KR) or symbol"
             value={query}
-            onChange={(e) => {
-              setQuery(e.target.value);
-              setPage(1);
-            }}
+            onChange={handleSearchChange}
           />
         </ControlsBar>
         <TableBox>
@@ -229,7 +226,7 @@ function CoinList() {
             </tbody>
           </ListTable>
         </TableBox>
-        <BtnBox>{makePageBtn()}</BtnBox>
+        <BtnBox>{pageButtons}</BtnBox>
       </Inner>
     </Container>
   );

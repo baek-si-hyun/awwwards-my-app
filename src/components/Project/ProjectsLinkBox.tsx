@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
 import { projectData } from "../../services/listData";
 import ImageWithSkeleton from "../common/ImageWithSkeleton";
+import ProjectToolIcon from "./ProjectToolIcon";
 
 const common = css`
   display: flex;
@@ -60,14 +61,10 @@ const HoverBox = styled.div`
 
 const IconBox = styled.div`
   display: flex;
-  gap: 0.3rem;
+  flex-wrap: wrap;
+  gap: 0.4rem;
   margin-top: 2vh;
-  @media (max-width: 440px) {
-    & {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-    }
-  }
+  justify-content: center;
 `;
 const TextBox = styled.div`
   display: flex;
@@ -112,7 +109,6 @@ const MakerLogo = styled(ImageWithSkeleton)`
     height: 32px;
   }
 `;
-const Icon = styled(ImageWithSkeleton)``;
 function ProjectsLinkBox() {
   return (
     <>
@@ -146,14 +142,8 @@ function ProjectsLinkBox() {
                 <ProjectTitle>{data.projects_name}</ProjectTitle>
                 <span>{data.projects_date}</span>
                 <IconBox>
-                  {data.projects_tools.map((iconData, iconIndex) => (
-                    <Icon
-                      key={iconIndex}
-                      sources={`https://cdn.simpleicons.org/${iconData}/white/false`}
-                      w={35}
-                      h={35}
-                      alt={iconData}
-                    />
+                  {data.projects_tools.map((tool, toolIndex) => (
+                    <ProjectToolIcon key={`${tool}-${toolIndex}`} tool={tool} />
                   ))}
                 </IconBox>
               </HoverBox>

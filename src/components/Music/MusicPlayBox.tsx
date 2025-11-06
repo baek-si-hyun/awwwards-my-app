@@ -1,10 +1,8 @@
-import styled from "styled-components";
-import { IControllerVisible, IIndex, IVideoInfo } from "../../interface/imusic";
-import { useDispatch } from "react-redux";
-import { videoInfoRedux } from "../../redux/playingVideoInfoSlice";
-import { controlRedux } from "../../redux/controlPlayListSlice";
+import { memo, useMemo } from "react";
 import { useMySelector } from "../../libs/useMySelector";
 import ImageWithSkeleton from "../common/ImageWithSkeleton";
+import styled from "styled-components";
+import { useMusicPlayerControls } from "../../hooks/useMusicPlayerControls";
 
 const Container = styled.div<{ isVisible: boolean; backGroundImg: string }>`
   position: relative;
@@ -93,69 +91,57 @@ const ControllBtn = styled.div`
 
 function MusicPlayBox() {
   const visible = useMySelector(
-    (state: { controllerVisibleSlice: IControllerVisible }) =>
-      state.controllerVisibleSlice.visible
+    (state) => state.controllerVisibleSlice.visible
   );
 
-  const videoInfo = useMySelector(
-    (state: { playingVideoInfoSlice: IVideoInfo }) =>
-      state.playingVideoInfoSlice.videoInfo
+  const {
+    currentSong,
+    isPlaying,
+    togglePlay,
+    playPrev,
+    playNext,
+    videoInfo,
+  } = useMusicPlayerControls();
+
+  const displayInfo = useMemo(
+    () =>
+      currentSong ?? {
+        img: videoInfo.img,
+        title: videoInfo.title,
+        artist: videoInfo.artist,
+      },
+    [currentSong, videoInfo.img, videoInfo.title, videoInfo.artist]
   );
-  const dispatch = useDispatch();
-  const toggle = () => {
-    dispatch(
-      videoInfoRedux({
-        ...videoInfo,
-        playing: !videoInfo.playing,
-      })
-    );
-  };
-  const index = useMySelector(
-    ({ controlPlayListSlice }: { controlPlayListSlice: IIndex }) =>
-      controlPlayListSlice?.index
-  );
-  const prev = () => {
-    if (index > 0) {
-      const setIndex = index - 1;
-      dispatch(controlRedux(setIndex));
-    } else if (index <= 0) {
-      dispatch(controlRedux(18));
-    }
-  };
-  const next = () => {
-    if (index < 18) {
-      const setIndex = index + 1;
-      dispatch(controlRedux(setIndex));
-    } else if (index >= 18) {
-      dispatch(controlRedux(0));
-    }
-  };
+
   return (
     <>
       {visible && (
-        <Container isVisible={visible} backGroundImg={videoInfo.img}>
+        <Container
+          isVisible={visible}
+          backGroundImg={displayInfo?.img ?? ""}
+        >
           <Img
-            sources={videoInfo.img}
-            alt={`${videoInfo.title} cover`}
+            sources={displayInfo?.img}
+            alt={`${displayInfo?.title} cover`}
             fullWidth
             fullHeight
             objectFit="cover"
           />
           <InfoControlBox>
             <Info>
-              {videoInfo.title} - {videoInfo.artist}
+              {displayInfo?.title} - {displayInfo?.artist}
             </Info>
             <Control>
               <Prev>
-                <ControllBtn onClick={() => prev()}>
+                <ControllBtn onClick={() => playPrev()}>
                   <span className="material-symbols-outlined">
                     skip_previous
                   </span>
                 </ControllBtn>
               </Prev>
               <PlayAndStop>
-                <ControllBtn onClick={() => toggle()}>
-                  {videoInfo.playing ? (
+                <ControllBtn onClick={() => togglePlay()}>
+                  {isPlaying ? (
                     <span className="material-symbols-rounded">pause</span>
                   ) : (
                     <span className="material-symbols-rounded">play_arrow</span>
@@ -163,7 +149,7 @@ function MusicPlayBox() {
                 </ControllBtn>
               </PlayAndStop>
               <Next>
-                <ControllBtn onClick={() => next()}>
+                <ControllBtn onClick={() => playNext()}>
                   <span className="material-symbols-outlined">skip_next</span>
                 </ControllBtn>
               </Next>
@@ -174,4 +160,4 @@ function MusicPlayBox() {
     </>
   );
 }
-export default MusicPlayBox;
+export default memo(MusicPlayBox);

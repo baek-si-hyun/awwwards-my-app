@@ -1,23 +1,22 @@
-import Contact from "./pages/Contact/Contact";
-import Faqs from "./pages/faqs/Faqs";
+import { Suspense, lazy } from "react";
 import Main from "./pages/main/Main";
-import Myapp from "./pages/ProjectRouter/ProjectMain";
-import CoinListPage from "./pages/coinlist/CoinListPage";
-import CoinDetailPage from "./pages/coinlist/CoinDetailPage";
 import ScrollToTop from "./ScrollToTop";
 import { Route, Routes } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { IResize } from "./interface/iproject";
+import { useMySelector } from "./libs/useMySelector";
 import MusicPlayer from "./components/Music/MusicPlayer";
 import MusicPlayBox from "./components/Music/MusicPlayBox";
 import Footer from "./components/Footer/Footer";
 import FloatingCoinListButton from "./components/FloatingCoinListButton";
 
+const Contact = lazy(() => import("./pages/Contact/Contact"));
+const Faqs = lazy(() => import("./pages/faqs/Faqs"));
+const Myapp = lazy(() => import("./pages/ProjectRouter/ProjectMain"));
+const CoinListPage = lazy(() => import("./pages/coinlist/CoinListPage"));
+const CoinDetailPage = lazy(() => import("./pages/coinlist/CoinDetailPage"));
+
 function App() {
-  const getResizeWidth = useSelector(
-    ({ resizeWidthSlice }: { resizeWidthSlice: IResize }) => {
-      return resizeWidthSlice.resizeWidth;
-    }
+  const getResizeWidth = useMySelector(
+    (state) => state.resizeWidthSlice.resizeWidth
   );
 
   return (
@@ -27,11 +26,46 @@ function App() {
       {getResizeWidth >= 1000 ? <MusicPlayBox /> : null}
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path=":projectId" element={<Myapp />} />
-        <Route path="coinlist" element={<CoinListPage />} />
-        <Route path="coin/:market" element={<CoinDetailPage />} />
-        <Route path="faqs" element={<Faqs />} />
-        <Route path="contact" element={<Contact />} />
+        <Route
+          path=":projectId"
+          element={
+            <Suspense fallback={<></>}>
+              <Myapp />
+            </Suspense>
+          }
+        />
+        <Route
+          path="coinlist"
+          element={
+            <Suspense fallback={<></>}>
+              <CoinListPage />
+            </Suspense>
+          }
+        />
+        <Route
+          path="coin/:market"
+          element={
+            <Suspense fallback={<></>}>
+              <CoinDetailPage />
+            </Suspense>
+          }
+        />
+        <Route
+          path="faqs"
+          element={
+            <Suspense fallback={<></>}>
+              <Faqs />
+            </Suspense>
+          }
+        />
+        <Route
+          path="contact"
+          element={
+            <Suspense fallback={<></>}>
+              <Contact />
+            </Suspense>
+          }
+        />
       </Routes>
       <FloatingCoinListButton />
       <Footer />

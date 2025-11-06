@@ -44,17 +44,33 @@ const useBithumbTickersSocket = (markets: string[]) => {
   const [liveMap, setLiveMap] = useState<LiveMap>(new Map());
   const wsRef = useRef<WebSocket | null>(null);
   const subsRef = useRef<string[]>([]);
+  const marketsRef = useRef<string[]>([]);
+  const retryTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const stableMarkets = useMemo(() => {
+    const sorted = [...markets].sort();
+    const key = sorted.join(",");
+    if (marketsRef.current.join(",") !== key) {
+      marketsRef.current = sorted;
+    }
+    return marketsRef.current;
+  }, [markets]);
 
   const connect = useCallback(() => {
     if (wsRef.current &&
       (wsRef.current.readyState === WebSocket.OPEN || wsRef.current.readyState === WebSocket.CONNECTING)
     ) return;
 
+    if (retryTimeoutRef.current) {
+      clearTimeout(retryTimeoutRef.current);
+      retryTimeoutRef.current = null;
+    }
+
     const ws = new WebSocket("wss://pubwss.bithumb.com/pub/ws");
     wsRef.current = ws;
 
     ws.addEventListener("open", () => {
-      const symbols = toBithumbSymbols(markets);
+      const symbols = toBithumbSymbols(stableMarkets);
       subsRef.current = symbols;
       if (symbols.length === 0) return;
       const subMsg = {
@@ -81,14 +97,23 @@ const useBithumbTickersSocket = (markets: string[]) => {
 
     ws.addEventListener("close", () => {
       wsRef.current = null;
-      // simple retry
-      setTimeout(connect, 1000);
+      if (!retryTimeoutRef.current) {
+        retryTimeoutRef.current = setTimeout(connect, 1000);
+      }
     });
-  }, [markets]);
+
+    ws.addEventListener("error", () => {
+      wsRef.current = null;
+    });
+  }, [stableMarkets]);
 
   useEffect(() => {
     connect();
     return () => {
+      if (retryTimeoutRef.current) {
+        clearTimeout(retryTimeoutRef.current);
+        retryTimeoutRef.current = null;
+      }
       wsRef.current?.close();
       wsRef.current = null;
       subsRef.current = [];
@@ -99,7 +124,7 @@ const useBithumbTickersSocket = (markets: string[]) => {
   useEffect(() => {
     const ws = wsRef.current;
     if (!ws || ws.readyState !== WebSocket.OPEN) return;
-    const symbols = toBithumbSymbols(markets);
+    const symbols = toBithumbSymbols(stableMarkets);
     // Only resubscribe if the set actually changed
     const prev = subsRef.current;
     const equal = prev.length === symbols.length && prev.every((v, i) => v === symbols[i]);
@@ -109,7 +134,7 @@ const useBithumbTickersSocket = (markets: string[]) => {
     ws.send(
       JSON.stringify({ type: "ticker", symbols, tickTypes: ["24H"] })
     );
-  }, [markets]);
+  }, [stableMarkets]);
 
   const liveList = useMemo(() => Array.from(liveMap.values()), [liveMap]);
 
