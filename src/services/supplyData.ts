@@ -1,332 +1,290 @@
-// Static circulating supply mapping by market id
 export const circulatingSupply = [
-  { id: "KRW-ZETA", supply: 683010417 },
-  { id: "KRW-IMX", supply: 1743800322 },
-  { id: "KRW-EGLD", supply: 27865314 },
-  { id: "KRW-MINA", supply: 1214515858 },
-  {
-    id: "KRW-BLUR",
-    supply: 2203803082,
-  },
-  {
-    id: "KRW-ADA",
-    supply: 35201193526,
-  },
-  { id: "KRW-STRIKE", supply: 5265785 },
-  {
-    id: "KRW-LSK",
-    supply: 166894159,
-  },
-  {
-    id: "KRW-SUI",
-    supply: 3089707195,
-  },
-  {
-    id: "KRW-BTC",
-    supply: 19823850,
-  },
-  {
-    id: "KRW-ETH",
-    supply: 120545398,
-  },
-  {
-    id: "KRW-NEO",
-    supply: 70538831,
-  },
-  {
-    id: "KRW-MTL",
-    supply: 83171865,
-  },
-  {
-    id: "KRW-XRP",
-    supply: 57762545657,
-  },
-  {
-    id: "KRW-ETC",
-    supply: 150740793,
-  },
-  {
-    id: "KRW-OMG",
-    supply: 140245398,
-  },
-  {
-    id: "KRW-SNT",
-    supply: 3996911204,
-  },
-  {
-    id: "KRW-WAVES",
-    supply: 116974126,
-  },
-  {
-    id: "KRW-XEM",
-    supply: 8999999999,
-  },
-  {
-    id: "KRW-QTUM",
-    supply: 105521616,
-  },
-  {
-    id: "KRW-STEEM",
-    supply: 483263173,
-  },
-  {
-    id: "KRW-XLM",
-    supply: 30603014104,
-  },
-  {
-    id: "KRW-ARDR",
-    supply: 998466231,
-  },
-  {
-    id: "KRW-ARK",
-    supply: 186706754,
-  },
-  {
-    id: "KRW-STORJ",
-    supply: 401361292,
-  },
-  {
-    id: "KRW-GRS",
-    supply: 86940619,
-  },
-  {
-    id: "KRW-GRT",
-    supply: 9548531509,
-  },
-  {
-    id: "KRW-POWR",
-    supply: 560162329,
-  },
-  {
-    id: "KRW-BTG",
-    supply: 17513924,
-  },
-  {
-    id: "KRW-ICX",
-    supply: 1048487515,
-  },
-  {
-    id: "KRW-EOS",
-    supply: 1546399988,
-  },
-  {
-    id: "KRW-TRX",
-    supply: 86098744015,
-  },
-  {
-    id: "KRW-SC",
-    supply: 56025636522,
-  },
-  {
-    id: "KRW-ONT",
-    supply: 912697857,
-  },
-  {
-    id: "KRW-ZIL",
-    supply: 19527125342,
-  },
-  {
-    id: "KRW-POLYX",
-    supply: 925434676,
-  },
-  {
-    id: "KRW-POL",
-    supply: 8562688053,
-  },
-  {
-    id: "KRW-ZRX",
-    supply: 848396563,
-  },
-  {
-    id: "KRW-LOOM",
-    supply: 1242920898,
-  },
-  {
-    id: "KRW-BCH",
-    supply: 19829019,
-  },
-  {
-    id: "KRW-BAT",
-    supply: 1495668357,
-  },
-  {
-    id: "KRW-IOST",
-    supply: 21315000000,
-  },
-  {
-    id: "KRW-CVC",
-    supply: 1000000000,
-  },
-  {
-    id: "KRW-IQ",
-    supply: 20520426316,
-  },
-  {
-    id: "KRW-IOTA",
-    supply: 3631397410,
-  },
-  {
-    id: "KRW-HIFI",
-    supply: 141753577,
-  },
-  { id: "KRW-ID", supply: 879627042 },
-  {
-    id: "KRW-ONG",
-    supply: 404983864,
-  },
-  { id: "KRW-ASTR", supply: 7597621696 },
-  {
-    id: "KRW-GAS",
-    supply: 77508512,
-  },
-  {
-    id: "KRW-UPP",
-    supply: 497834800,
-  },
-  {
-    id: "KRW-ELF",
-    supply: 738908400,
-  },
-  {
-    id: "KRW-KNC",
-    supply: 186564360,
-  },
-  {
-    id: "KRW-BSV",
-    supply: 19824725,
-  },
-  {
-    id: "KRW-THETA",
-    supply: 1000000000,
-  },
-  {
-    id: "KRW-QKC",
-    supply: 7091115594,
-  },
-  {
-    id: "KRW-BTT",
-    supply: 986061142857000,
-  },
-  {
-    id: "KRW-MOC",
-    supply: 423489688,
-  },
-  {
-    id: "KRW-TFUEL",
-    supply: 6843074105,
-  },
-  {
-    id: "KRW-MANA",
-    supply: 1942255184,
-  },
-  {
-    id: "KRW-STX",
-    supply: 1512986823,
-  },
-  {
-    id: "KRW-XEC",
-    supply: 19824739047583,
-  },
-  {
-    id: "KRW-SOL",
-    supply: 488170363,
-  },
-  {
-    id: "KRW-MATIC",
-    supply: 9899052814,
-  },
-  {
-    id: "KRW-NU",
-    supply: 703000000,
-  },
-  {
-    id: "KRW-AAVE",
-    supply: 15071805,
-  },
-  {
-    id: "KRW-1INCH",
-    supply: 1399453973,
-  },
-  {
-    id: "KRW-ALGO",
-    supply: 8434070346,
-  },
-  {
-    id: "KRW-NEAR",
-    supply: 1184141216,
-  },
-  {
-    id: "KRW-AVAX",
-    supply: 411949005,
-  },
-  {
-    id: "KRW-T",
-    supply: 10108927223,
-  },
-  {
-    id: "KRW-CELO",
-    supply: 562409366,
-  },
-  {
-    id: "KRW-GMT",
-    supply: 3157493622,
-  },
-  {
-    id: "KRW-APT",
-    supply: 586643426,
-  },
-  {
-    id: "KRW-SHIB",
-    supply: 589253884408118,
-  },
-  {
-    id: "KRW-MASK",
-    supply: 100000000,
-  },
-  {
-    id: "KRW-ARB",
-    supply: 4343862574,
-  },
-  { id: "KRW-MNT", supply: 3364694383 },
-  { id: "KRW-ZRO", supply: 110000000 },
-  { id: "KRW-TAIKO", supply: 115016756 },
-  { id: "KRW-BLAST", supply: 25443907166 },
-  { id: "KRW-BEAM", supply: 1666915441 },
-  { id: "KRW-USDT", supply: 112911493076 },
-  { id: "KRW-ONDO", supply: 3159107529 },
-  { id: "KRW-AUCTION", supply: 6590076 },
-  { id: "KRW-JUP", supply: 2637438889 },
-  { id: "KRW-STG", supply: 204338417 },
-  { id: "KRW-GAL", supply: 118544998 },
-  { id: "KRW-G", supply: 8768180000 },
-  { id: "KRW-ENS", supply: 35549160 },
-  { id: "KRW-PENDLE", supply: 164896088 },
-  { id: "KRW-ATH", supply: 6697646536 },
-  { id: "KRW-USDC", supply: 56098473904 },
-  { id: "KRW-UXLINK", supply: 338200000 },
-  { id: "KRW-CKB", supply: 45947644639 },
-  { id: "KRW-W", supply: 2862609176 },
-  { id: "KRW-CARV", supply: 185850382 },
-  { id: "KRW-INJ", supply: 98970935 },
-  { id: "KRW-MEW", supply: 88888888888 },
-  { id: "KRW-UNI", supply: 600518038 },
-  { id: "KRW-SAFE", supply: 527419089 },
-  { id: "KRW-DRIFT", supply: 286261798 },
-  { id: "KRW-AGLD", supply: 77280001 },
-  { id: "KRW-PEPE", supply: 420689899999995 },
-  { id: "KRW-BONK", supply: 77231169593284 },
-  { id: "KRW-TRUMP", supply: 199999617 },
-  { id: "KRW-LAYER", supply: 210000000 },
-  { id: "KRW-ME", supply: 113873532 },
-  { id: "KRW-BERA", supply: 107480000 },
-  { id: "KRW-MOVE", supply: 2400000000 },
-  { id: "KRW-VIRTUAL", supply: 648018015 },
-  { id: "KRW-VANA", supply: 30084000 },
-  { id: "KRW-ANIME", supply: 5538604656 },
-  { id: "KRW-SONIC", supply: 360000000 },
-  { id: "KRW-VTHO", supply: 86193318511 },
-  { id: "KRW-MOCA", supply: 1783865250 },
-  { id: "KRW-BOUNTY", supply: 508749999 },
-  { id: "KRW-RENDER", supply: 517716590 },
-  { id: "KRW-TOKAMAK", supply: 43841454 },
+  { id: "KRW-0G", supply: 213243998 }, // 0G: 약 213,243,998개 유통:contentReference[oaicite:0]{index=0}
+  { id: "KRW-1INCH", supply: 1399452470 }, // 1INCH: 약 1,399,452,470개 유통:contentReference[oaicite:1]{index=1}
+  { id: "KRW-AAVE", supply: 15172172 }, // AAVE: 약 15,172,172개 유통:contentReference[oaicite:2]{index=2}
+  { id: "KRW-ADA", supply: 35860558784 }, // ADA: 약 35,860,558,784개 유통:contentReference[oaicite:3]{index=3}
+  { id: "KRW-AERGO", supply: 489999996 }, // AERGO: 약 489,999,996개 유통:contentReference[oaicite:4]{index=4}
+  { id: "KRW-2Z", supply: 3471417500 }, // DoubleZero: 약 3,471,417,500개 유통:contentReference[oaicite:0]{index=0}
+  { id: "KRW-A8", supply: 390581151 }, // Ancient8: 약 390,581,151개 유통:contentReference[oaicite:1]{index=1}
+  { id: "KRW-ACE", supply: 78054262 }, // Fusionist(ACE): 약 78,054,262개 유통:contentReference[oaicite:2]{index=2}
+  { id: "KRW-ACH", supply: 9646645375 }, // Alchemy Pay: 약 9,646,645,375개 유통:contentReference[oaicite:3]{index=3}
+  { id: "KRW-ACS", supply: 43951350028 }, // Access Protocol: 약 43,951,350,028개 유통:contentReference[oaicite:4]{index=4}
+  { id: "KRW-ADP", supply: 4634832902 }, // Adappter Token: 약 4,634,832,902개 유통:contentReference[oaicite:5]{index=5}
+  { id: "KRW-AERO", supply: 902402800 }, // Aerodrome Finance: 약 902,402,800개 유통:contentReference[oaicite:6]{index=6}
+  { id: "KRW-AGI", supply: 1565540034 }, // Delysium (AGI): 약 1,565,540,034개 유통:contentReference[oaicite:7]{index=7}
+  { id: "KRW-AGLD", supply: 86610001 }, // Adventure Gold: 약 86,610,001개 유통:contentReference[oaicite:8]{index=8}
+  { id: "KRW-AI16Z", supply: 1099989950 }, // ai16z: 약 1,099,989,950개 유통:contentReference[oaicite:9]{index=9}
+  { id: "KRW-AIOZ", supply: 1214582309 }, // AIOZ Network: 약 1,214,582,309 AIOZ 유통:contentReference[oaicite:0]{index=0}
+  { id: "KRW-AKT", supply: 281622989 }, // Akash Network: 약 281,622,989 AKT 유통:contentReference[oaicite:1]{index=1}
+  { id: "KRW-AL", supply: 806353514 }, // ArchLoot: 약 806,353,514 AL 유통:contentReference[oaicite:2]{index=2}
+  { id: "KRW-ALGO", supply: 8790883874 }, // Algorand: 약 8,790,883,874 ALGO 유통:contentReference[oaicite:3]{index=3}
+  { id: "KRW-ALICE", supply: 99824840 }, // MyNeighborAlice: 약 99,824,840 ALICE 유통:contentReference[oaicite:4]{index=4}
+  { id: "KRW-AMP", supply: 84282133547 }, // Amp: 약 84,282,133,547 AMP 유통:contentReference[oaicite:5]{index=5}
+  { id: "KRW-ANIME", supply: 5538604656 }, // Animecoin: 약 5,538,604,656 ANIME 유통:contentReference[oaicite:6]{index=6}
+  { id: "KRW-ANKR", supply: 10000000000 }, // Ankr: 약 10,000,000,000 ANKR 유통:contentReference[oaicite:7]{index=7}
+  { id: "KRW-API3", supply: 86421978 }, // API3: 약 86,421,978 API3 유통:contentReference[oaicite:8]{index=8}
+  { id: "KRW-APM", supply: 1520400320 }, // apM Coin: 약 1,520,400,320 APM 유통:contentReference[oaicite:9]{index=9}
+  { id: "KRW-APT", supply: 720009347 }, // Aptos: 약 720,009,347 APT 유통:contentReference[oaicite:0]{index=0}
+  { id: "KRW-AQT", supply: 26806201 }, // Alpha Quark Token: 약 26,806,201 AQT 유통:contentReference[oaicite:1]{index=1}
+  { id: "KRW-AR", supply: 65652466 }, // Arweave: 약 65,652,466 AR 유통:contentReference[oaicite:2]{index=2}
+  { id: "KRW-ARB", supply: 5509691911 }, // Arbitrum: 약 5,509,691,911 ARB 유통:contentReference[oaicite:3]{index=3}
+  { id: "KRW-ARK", supply: 192402028 }, // Ark: 약 192,402,028 ARK 유통:contentReference[oaicite:4]{index=4}
+  { id: "KRW-ARPA", supply: 1510000000 }, // ARPA Network: 약 1,510,000,000 ARPA 유통:contentReference[oaicite:5]{index=5}
+  { id: "KRW-ASTER", supply: 2017700000 }, // Aster: 약 2,017,700,000 ASTER 유통:contentReference[oaicite:6]{index=6}
+  { id: "KRW-ASTR", supply: 8209518895 }, // Astar: 약 8,209,518,895 ASTR 유통:contentReference[oaicite:7]{index=7}
+  { id: "KRW-ATH", supply: 14234731752 }, // Aethir (ATH): 약 14,234,731,752 ATH 유통:contentReference[oaicite:8]{index=8}
+  { id: "KRW-AUCTION", supply: 6590320 }, // Bounce Token (AUCTION): 약 6,590,320 AUCTION 유통:contentReference[oaicite:9]{index=9}
+  { id: "KRW-AUDIO", supply: 1369179621 }, // Audius: 약 1,369,179,621 AUDIO 유통:contentReference[oaicite:0]{index=0}
+  { id: "KRW-AVAIL", supply: 2346136962 }, // Avail: 약 2,346,136,962 AVAIL 유통:contentReference[oaicite:1]{index=1}
+  { id: "KRW-AVAX", supply: 426967946 }, // Avalanche: 약 426,967,946 AVAX 유통:contentReference[oaicite:2]{index=2}
+  { id: "KRW-AWE", supply: 1942420283 }, // AWE: 약 1,942,420,283 AWE 유통:contentReference[oaicite:3]{index=3}
+  { id: "KRW-AXS", supply: 166945514 }, // Axie Infinity: 약 166,945,514 AXS 유통:contentReference[oaicite:4]{index=4}
+  { id: "KRW-AZIT", supply: 382006641 }, // Azit: 약 382,006,641 AZIT 유통:contentReference[oaicite:5]{index=5}
+  { id: "KRW-B3", supply: 30297828333 }, // B3 (Base): 약 30,297,828,333 B3 유통:contentReference[oaicite:6]{index=6}
+  { id: "KRW-BABY", supply: 981289697215 }, // Baby: 약 981,289,697,215 BABY 유통:contentReference[oaicite:7]{index=7}
+  { id: "KRW-BARD", supply: 225000000 }, // Lombard (BARD): 약 225,000,000 BARD 유통:contentReference[oaicite:8]{index=8}
+  { id: "KRW-BAT", supply: 1495711957 }, // Basic Attention Token (BAT): 약 1,495,711,957 BAT 유통:contentReference[oaicite:9]{index=9}
+  { id: "KRW-BB", supply: 851938359 }, // BounceBit: 약 851,938,359 BB 유통:contentReference[oaicite:0]{index=0}
+  { id: "KRW-BCH", supply: 19948500 }, // Bitcoin Cash: 약 19,948,500 BCH 유통:contentReference[oaicite:1]{index=1}
+  { id: "KRW-BEL", supply: 80000000 }, // Bella Protocol: 약 80,000,000 BEL 유통:contentReference[oaicite:2]{index=2}
+  { id: "KRW-BFC", supply: 1386638564 }, // Bifrost (BFC): 약 1,386,638,564 BFC 유통:contentReference[oaicite:3]{index=3}
+  { id: "KRW-BICO", supply: 985000000 }, // Biconomy: 약 985,000,000 BICO 유통:contentReference[oaicite:4]{index=4}
+  { id: "KRW-BIGTIME", supply: 2016203703 }, // Big Time: 약 2,016,203,703 BIGTIME 유통:contentReference[oaicite:5]{index=5}
+  { id: "KRW-BIOT", supply: 8379845064 }, // BioPassport Token: 약 8,379,845,064 BIOT 유통:contentReference[oaicite:6]{index=6}
+  { id: "KRW-BLUE", supply: 330125592 }, // Bluefin (BLUE): 약 330,125,592 BLUE 유통:contentReference[oaicite:7]{index=7}
+  { id: "KRW-BLUR", supply: 2586904895 }, // Blur: 약 2,586,904,895 BLUR 유통:contentReference[oaicite:8]{index=8}
+  { id: "KRW-BLY", supply: 979999996 }, // Blocery (BLY): 약 979,999,996 BLY 유통:contentReference[oaicite:9]{index=9}
+  { id: "KRW-BNB", supply: 137737632 }, // Binance Coin: 약 137,737,632 BNB 유통
+  { id: "KRW-BNT", supply: 115188102 }, // Bancor: 약 115,188,102 BNT 유통
+  { id: "KRW-BONK", supply: 82109642291657 }, // Bonk: 약 82,109,642,291,657 BONK 유통
+  { id: "KRW-BORA", supply: 1099750000 }, // BORA: 약 1,099,750,000 BORA 유통
+  { id: "KRW-BRETT", supply: 9910236395 }, // Brett: 약 9,910,236,395 BRETT 유통
+  { id: "KRW-BSV", supply: 19942866 }, // Bitcoin SV: 약 19,942,866 BSV 유통:contentReference[oaicite:0]{index=0}
+  { id: "KRW-BTC", supply: 19944128 }, // Bitcoin: 약 19,944,128 BTC 유통:contentReference[oaicite:1]{index=1}
+  { id: "KRW-BTR", supply: 343221964 }, // Bitrue Coin: 약 343,221,964 BTR 유통:contentReference[oaicite:2]{index=2}
+  { id: "KRW-BTT", supply: 986061142857000 }, // BitTorrent(New): 약 986,061,142,857,000 BTT 유통:contentReference[oaicite:3]{index=3}
+  { id: "KRW-C98", supply: 185000000 }, // Coin98: 약 185,000,000 C98 유통:contentReference[oaicite:4]{index=4}
+  { id: "KRW-CAMP", supply: 2105620500 }, // Camp Network: 약 2,105,620,500 CAMP 유통:contentReference[oaicite:0]{index=0}
+  { id: "KRW-CBK", supply: 98375665 }, // Cobak Token: 약 98,375,665 CBK 유통:contentReference[oaicite:1]{index=1}
+  { id: "KRW-CELO", supply: 586791005 }, // Celo: 약 586,791,005 CELO 유통:contentReference[oaicite:2]{index=2}
+  { id: "KRW-CELR", supply: 7803424107 }, // Celer Network: 약 7,803,424,107 CELR 유통:contentReference[oaicite:3]{index=3}
+  { id: "KRW-CFX", supply: 5151034809 }, // Conflux: 약 5,151,034,809 CFX 유통:contentReference[oaicite:4]{index=4}
+  { id: "KRW-CKB", supply: 47583789746 }, // Nervos Network: 약 47,583,789,746 CKB 유통:contentReference[oaicite:5]{index=5}
+  { id: "KRW-COOKIE", supply: 627657489 }, // Cookie DAO: 약 627,657,489 COOKIE 유통:contentReference[oaicite:6]{index=6}
+  { id: "KRW-CORE", supply: 1016658368 }, // Core DAO: 약 1,016,658,368 CORE 유통:contentReference[oaicite:7]{index=7}
+  { id: "KRW-COS", supply: 5176458774 }, // Contentos: 약 5,176,458,774 COS 유통:contentReference[oaicite:8]{index=8}
+  { id: "KRW-COTI", supply: 2458248204 }, // COTI: 약 2,458,248,204 COTI 유통:contentReference[oaicite:9]{index=9}
+  { id: "KRW-COW", supply: 520479967 }, // CoW Protocol: 약 520,479,967 COW 유통:contentReference[oaicite:10]{index=10}
+  { id: "KRW-CPOOL", supply: 836446855 }, // Clearpool: 약 836,446,855 CPOOL 유통:contentReference[oaicite:11]{index=11}
+  { id: "KRW-CRTS", supply: 49299676745 }, // Cratos: 약 49,299,676,745 CRTS 유통:contentReference[oaicite:12]{index=12}
+  { id: "KRW-CRV", supply: 1409085453 }, // Curve DAO Token: 약 1,409,085,453 CRV 유통:contentReference[oaicite:13]{index=13}
+  { id: "KRW-CTC", supply: 496416053 }, // Creditcoin: 약 496,416,053 CTC 유통:contentReference[oaicite:14]{index=14}
+  { id: "KRW-CTK", supply: 152108124 }, // Shentu (CTK): 약 152,108,124 CTK 유통:contentReference[oaicite:15]{index=15}
+  { id: "KRW-CTSI", supply: 886160770 }, // Cartesi: 약 886,160,770 CTSI 유통:contentReference[oaicite:16]{index=16}
+  { id: "KRW-CTXC", supply: 233706272 }, // Cortex: 약 233,706,272 CTXC 유통:contentReference[oaicite:17]{index=17}
+  { id: "KRW-CYBER", supply: 52850367 }, // Cyber: 약 52,850,367 CYBER 유통:contentReference[oaicite:18]{index=18}
+  { id: "KRW-DAO", supply: 250000000 }, // DAO Maker: 약 250,000,000 DAO 유통:contentReference[oaicite:19]{index=19}
+  { id: "KRW-DBR", supply: 1924684519 }, // deBridge (DBR): 약 1,924,684,519개 유통
+  { id: "KRW-DEEP", supply: 4368147611 }, // DeepBook Protocol: 약 4,368,147,611개 유통:contentReference[oaicite:0]{index=0}
+  { id: "KRW-DOGE", supply: 151635696384 }, // Dogecoin: 약 151,635,696,384개 유통:contentReference[oaicite:1]{index=1}
+  { id: "KRW-DOT", supply: 1629739714 }, // Polkadot: 약 1,629,739,714개 유통:contentReference[oaicite:2]{index=2}
+  { id: "KRW-DRIFT", supply: 384200000 }, // Drift Protocol: 약 384,200,000개 유통
+  { id: "KRW-DVI", supply: 1000000000 }, // Dvision Network: 약 1,000,000,000개 유통:contentReference[oaicite:3]{index=3}
+  { id: "KRW-DYDX", supply: 797576738 }, // dYdX: 약 797,576,738개 유통:contentReference[oaicite:4]{index=4}
+  { id: "KRW-EDU", supply: 599333666 }, // Open Campus: 약 599,333,666개 유통:contentReference[oaicite:5]{index=5}
+  { id: "KRW-EGG", supply: 6000000000 }, // NestEgg (EGG): 약 6,000,000,000개 유통:contentReference[oaicite:6]{index=6}
+  { id: "KRW-EGLD", supply: 28760328 }, // MultiversX: 약 28,760,328개 유통:contentReference[oaicite:7]{index=7}
+  { id: "KRW-EL", supply: 4901825155 }, // Elysia: 약 4,901,825,155개 유통:contentReference[oaicite:8]{index=8}
+  { id: "KRW-ELF", supply: 802659126 }, // aelf: 약 802,659,126개 유통:contentReference[oaicite:9]{index=9}
+  { id: "KRW-ELX", supply: 260000000 }, // Elixir: 약 260,000,000개 유통:contentReference[oaicite:10]{index=10}
+  { id: "KRW-ENA", supply: 7423437500 }, // Ethena: 약 7,423,437,500개 유통:contentReference[oaicite:11]{index=11}
+  { id: "KRW-ENJ", supply: 1899989591 }, // Enjin Coin: 약 1,899,989,591개 유통:contentReference[oaicite:12]{index=12}
+  { id: "KRW-EPT", supply: 3072196960 }, // Balance (EPT): 약 3,072,196,960개 유통:contentReference[oaicite:13]{index=13}
+  { id: "KRW-ES", supply: 132647860 }, // Eclipse (ES): 약 132,647,860개 유통:contentReference[oaicite:14]{index=14}
+  { id: "KRW-ETH", supply: 120697275 }, // Ethereum: 약 120,697,275개 유통:contentReference[oaicite:15]{index=15}
+  { id: "KRW-ETHFI", supply: 564090000 }, // ether.fi: 약 564,090,000개 유통
+  { id: "KRW-EUL", supply: 20693549 }, // Euler: 약 20,693,549개 유통:contentReference[oaicite:16]{index=16}
+  { id: "KRW-F", supply: 2711524825 }, // SynFutures (F): 약 2,711,524,825 F 유통:contentReference[oaicite:0]{index=0}
+  { id: "KRW-FANC", supply: 1533725349 }, // fanC: 약 1,533,725,349 FANC 유통:contentReference[oaicite:1]{index=1}
+  { id: "KRW-FCT", supply: 1073815640 }, // FirmaChain: 약 1,073,815,640 FCT 유통:contentReference[oaicite:2]{index=2}
+  { id: "KRW-FET", supply: 2360658252 }, // Artificial Superintelligence Alliance (FET): 약 2,360,658,252 FET 유통:contentReference[oaicite:3]{index=3}
+  { id: "KRW-FIDA", supply: 990911173 }, // Bonfida (FIDA): 약 990,911,173 FIDA 유통:contentReference[oaicite:4]{index=4}
+  { id: "KRW-FIL", supply: 706355140 }, // Filecoin: 약 706,355,140 FIL 유통:contentReference[oaicite:5]{index=5}
+  { id: "KRW-FLOCK", supply: 238574396 }, // FLock.io: 약 238,574,396 FLOCK 유통:contentReference[oaicite:6]{index=6}
+  { id: "KRW-FLOKI", supply: 9540152485611 }, // FLOKI: 약 9,540,152,485,611 FLOKI 유통:contentReference[oaicite:7]{index=7}
+  { id: "KRW-FLOW", supply: 1618946500 }, // Flow: 약 1,618,946,500 FLOW 유통:contentReference[oaicite:8]{index=8}
+  { id: "KRW-FLR", supply: 78176065500 }, // Flare: 약 78,176,065,500 FLR 유통:contentReference[oaicite:9]{index=9}
+  { id: "KRW-FLUID", supply: 77488209 }, // Fluid: 약 77,488,209 FLUID 유통:contentReference[oaicite:10]{index=10}
+  { id: "KRW-FLUX", supply: 395809346 }, // Flux: 약 395,809,346 FLUX 유통:contentReference[oaicite:11]{index=11}
+  { id: "KRW-FORT", supply: 626790388 }, // Forta: 약 626,790,388 FORT 유통:contentReference[oaicite:12]{index=12}
+  { id: "KRW-FRAX", supply: 89513468 }, // Frax (FRAX): 약 89,513,468 FRAX 유통:contentReference[oaicite:13]{index=13}
+  { id: "KRW-G", supply: 10235200000 }, // Gravity by Galxe: 약 10,235,200,000 G 유통:contentReference[oaicite:14]{index=14}
+  { id: "KRW-GALA", supply: 46463610275 }, // Gala: 약 46,463,610,275 GALA 유통:contentReference[oaicite:15]{index=15}
+  { id: "KRW-GAME", supply: 1000000000 }, // GAME by Virtuals: 약 1,000,000,000 GAME 유통:contentReference[oaicite:16]{index=16}
+  { id: "KRW-GAS", supply: 64992331 }, // Gas: 약 64,992,331 GAS 유통:contentReference[oaicite:17]{index=17}
+  { id: "KRW-GLM", supply: 1000000000 }, // Golem (GLM): 약 1,000,000,000 GLM 유통:contentReference[oaicite:18]{index=18}
+  { id: "KRW-GMT", supply: 3111400155 }, // STEPN (GMT): 약 3,111,400,155 GMT 유통:contentReference[oaicite:19]{index=19}
+  { id: "KRW-GNO", supply: 2589588 }, // Gnosis (GNO): 약 2,589,588개 유통:contentReference[oaicite:0]{index=0}
+  { id: "KRW-GRT", supply: 10568995054 }, // The Graph (GRT): 약 10,568,995,054개 유통:contentReference[oaicite:1]{index=1}
+  { id: "KRW-GTC", supply: 96384728 }, // Gitcoin (GTC): 약 96,384,728개 유통:contentReference[oaicite:2]{index=2}
+  { id: "KRW-H", supply: 2176841216 }, // Humanity Protocol (H): 약 2,176,841,216개 유통:contentReference[oaicite:3]{index=3}
+  { id: "KRW-HBAR", supply: 42475229924 }, // Hedera (HBAR): 약 42,475,229,924개 유통:contentReference[oaicite:4]{index=4}
+  { id: "KRW-HEMI", supply: 977500000 }, // Hemi: 약 977,500,000개 유통:contentReference[oaicite:5]{index=5}
+  { id: "KRW-HFT", supply: 621117033 }, // Hashflow (HFT): 약 621,117,033개 유통:contentReference[oaicite:6]{index=6}
+  { id: "KRW-HIGH", supply: 77591518 }, // Highstreet (HIGH): 약 77,591,518개 유통:contentReference[oaicite:7]{index=7}
+  { id: "KRW-HIVE", supply: 496463856 }, // Hive: 약 496,463,856개 유통:contentReference[oaicite:8]{index=8}
+  { id: "KRW-HOLO", supply: 175115810456 }, // Holo (HOT): 약 175,115,810,456개 유통:contentReference[oaicite:9]{index=9}
+  { id: "KRW-HOME", supply: 2720000000 }, // Home Coin: 약 2,720,000,000개 유통:contentReference[oaicite:10]{index=10}
+  { id: "KRW-HOOK", supply: 268082065 }, // Hooked Protocol: 약 268,082,065개 유통:contentReference[oaicite:11]{index=11}
+  { id: "KRW-HUNT", supply: 126167678 }, // HUNT: 약 126,167,678개 유통:contentReference[oaicite:12]{index=12}
+  { id: "KRW-ICP", supply: 539520000 }, // Internet Computer (ICP): 약 539,520,000개 유통:contentReference[oaicite:13]{index=13}
+  { id: "KRW-ICX", supply: 1079484459 }, // ICON (ICX): 약 1,079,484,459개 유통:contentReference[oaicite:14]{index=14}
+  { id: "KRW-ID", supply: 1198313905 }, // SPACE ID (ID): 약 1,198,313,905개 유통:contentReference[oaicite:15]{index=15}
+  { id: "KRW-ILV", supply: 6672350 }, // Illuvium (ILV): 약 6,672,350개 유통:contentReference[oaicite:16]{index=16}
+  { id: "KRW-INIT", supply: 173308930 }, // Initia (INIT): 약 173,308,930개 유통:contentReference[oaicite:17]{index=17}
+  { id: "KRW-INJ", supply: 99970935 }, // Injective (INJ): 약 99,970,935개 유통:contentReference[oaicite:18]{index=18}
+  { id: "KRW-IO", supply: 233780000 }, // io.net (IO): 약 233,780,000개 유통:contentReference[oaicite:19]{index=19}
+  { id: "KRW-IOST", supply: 28875737516 }, // IOST: 약 28,875,737,516 IOST 유통:contentReference[oaicite:0]{index=0}
+  { id: "KRW-IOTX", supply: 9441368979 }, // IoTeX: 약 9,441,368,979 IOTX 유통:contentReference[oaicite:1]{index=1}
+  { id: "KRW-IP", supply: 320000000 }, // Story (IP): 약 320,000,000 IP 유통:contentReference[oaicite:2]{index=2}
+  { id: "KRW-IQ", supply: 23802092881 }, // Everipedia IQ: 약 23,802,092,881 IQ 유통:contentReference[oaicite:3]{index=3}
+  { id: "KRW-JASMY", supply: 48419999999 }, // JasmyCoin: 약 48,419,999,999 JASMY 유통:contentReference[oaicite:4]{index=4}
+  { id: "KRW-JST", supply: 9900000000 }, // JUST: 약 9,900,000,000 JST 유통:contentReference[oaicite:5]{index=5}
+  { id: "KRW-JUP", supply: 1350000000 }, // Jupiter: 약 1,350,000,000 JUP 유통:contentReference[oaicite:6]{index=6}
+  { id: "KRW-KAIA", supply: 6160194728 }, // Kaia: 약 6,160,194,728 KAIA 유통:contentReference[oaicite:7]{index=7}
+  { id: "KRW-KAITO", supply: 241388889 }, // KAITO: 약 241,388,889 KAITO 유통:contentReference[oaicite:8]{index=8}
+  { id: "KRW-KAVA", supply: 1082847745 }, // Kava: 약 1,082,847,745 KAVA 유통:contentReference[oaicite:9]{index=9}
+  { id: "KRW-KERNEL", supply: 286308020 }, // KernelDAO: 약 286,308,020 KERNEL 유통:contentReference[oaicite:10]{index=10}
+  { id: "KRW-KITE", supply: 1800000000 }, // Kite: 약 1,800,000,000 KITE 유통:contentReference[oaicite:11]{index=11}
+  { id: "KRW-KSM", supply: 17280573 }, // Kusama (KSM): 약 17,280,573 KSM 유통:contentReference[oaicite:12]{index=12}
+  { id: "KRW-KSP", supply: 79651387 }, // KLAYswap Protocol: 약 79,651,387 KSP 유통:contentReference[oaicite:13]{index=13}
+  { id: "KRW-LA", supply: 380105462 }, // LATOKEN (LA): 약 380,105,462 LA 유통:contentReference[oaicite:14]{index=14}
+  { id: "KRW-LAYER", supply: 312514104 }, // Solayer (LAYER): 약 312,514,104 LAYER 유통:contentReference[oaicite:15]{index=15}
+  { id: "KRW-LBL", supply: 2697909680 }, // LABEL AI (LBL): 약 2,697,909,680 LBL 유통:contentReference[oaicite:16]{index=16}
+  { id: "KRW-LINEA", supply: 15482147850 }, // Linea: 약 15,482,147,850 LINEA 유통:contentReference[oaicite:17]{index=17}
+  { id: "KRW-LINK", supply: 696849970 }, // Chainlink (LINK): 약 696,849,970 LINK 유통:contentReference[oaicite:18]{index=18}
+  { id: "KRW-LM", supply: 3268074832 }, // LeisureMeta (LM): 약 3,268,074,832 LM 유통:contentReference[oaicite:19]{index=19}
+  { id: "KRW-MTL", supply: 87659735 }, // Metal DAO: 약 87,659,735 MTL 유통:contentReference[oaicite:0]{index=0}
+  { id: "KRW-MAPO", supply: 6102450962 }, // MAP Protocol: 약 6,102,450,962 MAPO 유통:contentReference[oaicite:1]{index=1}
+  { id: "KRW-MAV", supply: 778401691 }, // Maverick Protocol: 약 778,401,691 MAV 유통:contentReference[oaicite:2]{index=2}
+  { id: "KRW-MBL", supply: 18861887214 }, // MovieBloc: 약 18,861,887,214 MBL 유통:contentReference[oaicite:3]{index=3}
+  { id: "KRW-MBX", supply: 261246075 }, // MARBLEX: 약 261,246,075 MBX 유통:contentReference[oaicite:4]{index=4}
+  { id: "KRW-ME", supply: 167130947 }, // Magic Eden (ME): 약 167,130,947 ME 유통:contentReference[oaicite:5]{index=5}
+  { id: "KRW-MED", supply: 10644041819 }, // MediBloc: 약 10,644,041,819 MED 유통:contentReference[oaicite:6]{index=6}
+  { id: "KRW-MERL", supply: 1051977508 }, // Merlin Chain: 약 1,051,977,508 MERL 유통:contentReference[oaicite:7]{index=7}
+  { id: "KRW-META", supply: 22000000 }, // META (정확한 토큰 불명확, MetaDAO 추정): 약 22,000,000 META 유통
+  { id: "KRW-METIS", supply: 6700000 }, // Metis: 약 6,700,000 METIS 유통:contentReference[oaicite:8]{index=8}
+  { id: "KRW-MEV", supply: 1726645036 }, // MEVerse: 약 1,726,645,036 MEV 유통:contentReference[oaicite:9]{index=9}
+  { id: "KRW-MEW", supply: 88888888888 }, // cat in a dogs world: 약 88,888,888,888 MEW 유통:contentReference[oaicite:10]{index=10}
+  { id: "KRW-MINA", supply: 1260158587 }, // Mina Protocol: 약 1,260,158,587 MINA 유통:contentReference[oaicite:11]{index=11}
+  { id: "KRW-MIRA", supply: 191244643 }, // MIRA: 약 191,244,643 MIRA 유통:contentReference[oaicite:12]{index=12}
+  { id: "KRW-MLK", supply: 513580000 }, // MiL.k: 약 513,580,000 MLK 유통
+  { id: "KRW-MNT", supply: 3172988154 }, // Mantle: 약 3,172,988,154 MNT 유통
+  { id: "KRW-MOC", supply: 438489688 }, // Moss Coin: 약 438,489,688 MOC 유통:contentReference[oaicite:13]{index=13}
+  { id: "KRW-MOCA", supply: 3956637685 }, // Moca Network: 약 3,956,637,685 MOCA 유통:contentReference[oaicite:14]{index=14}
+  { id: "KRW-MORPHO", supply: 355426978 }, // Morpho: 약 355,426,978 MORPHO 유통:contentReference[oaicite:15]{index=15}
+  { id: "KRW-MOVE", supply: 2800000000 }, // Movement: 약 2,800,000,000 MOVE 유통:contentReference[oaicite:16]{index=16}
+  { id: "KRW-NCT", supply: 1885500782 }, // PolySwarm (NCT): 약 1,885,500,782 NCT 유통:contentReference[oaicite:0]{index=0}
+  { id: "KRW-NEAR", supply: 1279134102 }, // NEAR Protocol: 약 1,279,134,102 NEAR 유통:contentReference[oaicite:1]{index=1}
+  { id: "KRW-NEIRO", supply: 420684524674 }, // Neiro: 약 420,684,524,674 NEIRO 유통:contentReference[oaicite:2]{index=2}
+  { id: "KRW-NEO", supply: 70500000 }, // Neo: 약 70,500,000 NEO 유통:contentReference[oaicite:3]{index=3}
+  { id: "KRW-NEWT", supply: 215000000 }, // Newton Protocol: 약 215,000,000 NEWT 유통:contentReference[oaicite:4]{index=4}
+  { id: "KRW-NFT", supply: 999990000000000 }, // APENFT (NFT): 약 999,990,000,000,000 NFT 유통:contentReference[oaicite:5]{index=5}
+  { id: "KRW-NIL", supply: 271106917 }, // Nillion: 약 271,106,917 NIL 유통:contentReference[oaicite:6]{index=6}
+  { id: "KRW-NMR", supply: 7638556 }, // Numeraire: 약 7,638,556 NMR 유통:contentReference[oaicite:7]{index=7}
+  { id: "KRW-OAS", supply: 5538637805 }, // Oasys: 약 5,538,637,805 OAS 유통:contentReference[oaicite:8]{index=8}
+  { id: "KRW-OBSR", supply: 6307080871 }, // Observer: 약 6,307,080,871 OBSR 유통:contentReference[oaicite:9]{index=9}
+  { id: "KRW-OBT", supply: 1000000000 }, // Oobit (OBT): 약 1,000,000,000 OBT 유통:contentReference[oaicite:10]{index=10}
+  { id: "KRW-OGN", supply: 660168861 }, // Origin Protocol: 약 660,168,861 OGN 유통:contentReference[oaicite:11]{index=11}
+  { id: "KRW-OM", supply: 1100691177 }, // MANTRA (OM): 약 1,100,691,177 OM 유통:contentReference[oaicite:12]{index=12}
+  { id: "KRW-ONDO", supply: 3159107529 }, // Ondo Finance: 약 3,159,107,529 ONDO 유통:contentReference[oaicite:13]{index=13}
+  { id: "KRW-ONG", supply: 429405966 }, // Ontology Gas: 약 429,405,966 ONG 유통:contentReference[oaicite:14]{index=14}
+  { id: "KRW-ONT", supply: 918864523 }, // Ontology: 약 918,864,523 ONT 유통:contentReference[oaicite:15]{index=15}
+  { id: "KRW-OPEN", supply: 215500000 }, // OpenLedger (OPEN): 약 215,500,000 OPEN 유통:contentReference[oaicite:16]{index=16}
+  { id: "KRW-ORBS", supply: 4252498213 }, // Orbs: 약 4,252,498,213 ORBS 유통:contentReference[oaicite:17]{index=17}
+  { id: "KRW-ORDER", supply: 330899781 }, // Orderly: 약 330,899,781 ORDER 유통:contentReference[oaicite:18]{index=18}
+  { id: "KRW-OXT", supply: 997214634 }, // Orchid: 약 997,214,634 OXT 유통:contentReference[oaicite:19]{index=19}
+  { id: "KRW-PARTI", supply: 422549998 }, // Particle Network: 약 422,549,998 PARTI 유통:contentReference[oaicite:0]{index=0}
+  { id: "KRW-PCI", supply: 1055286017 }, // Paycoin: 약 1,055,286,017 PCI 유통:contentReference[oaicite:1]{index=1}
+  { id: "KRW-PENDLE", supply: 168524571 }, // Pendle: 약 168,524,571 PENDLE 유통:contentReference[oaicite:2]{index=2}
+  { id: "KRW-PENGU", supply: 62860396090 }, // Pudgy Penguins: 약 62,860,396,090 PENGU 유통:contentReference[oaicite:3]{index=3}
+  { id: "KRW-PEPE", supply: 420689899653543 }, // Pepe: 약 420,689,899,653,543 PEPE 유통:contentReference[oaicite:4]{index=4}
+  { id: "KRW-PLUME", supply: 3135813492 }, // Plume: 약 3,135,813,492 PLUME 유통:contentReference[oaicite:5]{index=5}
+  { id: "KRW-POKT", supply: 2275691926 }, // Pocket Network: 약 2,275,691,926 POKT 유통:contentReference[oaicite:6]{index=6}
+  { id: "KRW-POLA", supply: 534994747 }, // Polaris Share: 약 534,994,747 POLA 유통:contentReference[oaicite:7]{index=7}
+  { id: "KRW-POLYX", supply: 1004480221 }, // Polymesh: 약 1,004,480,221 POLYX 유통:contentReference[oaicite:8]{index=8}
+  { id: "KRW-PONKE", supply: 555544226 }, // Ponke: 약 555,544,226 PONKE 유통:contentReference[oaicite:9]{index=9}
+  { id: "KRW-POPCAT", supply: 979973185 }, // Popcat: 약 979,973,185 POPCAT 유통:contentReference[oaicite:10]{index=10}
+  { id: "KRW-POWR", supply: 529761884 }, // Powerledger: 약 529,761,884 POWR 유통（근거: 최신 거래소 데이터로 업데이트）
+  { id: "KRW-PROMPT", supply: 365768148 }, // Wayfinder (PROMPT): 약 365,768,148 PROMPT 유통:contentReference[oaicite:11]{index=11}
+  { id: "KRW-PUFFER", supply: 175949105 }, // Puffer: 약 175,949,105 PUFFER 유통:contentReference[oaicite:12]{index=12}
+  { id: "KRW-PUMP", supply: 354000000000 }, // Pump.fun: 약 354,000,000,000 PUMP 유통:contentReference[oaicite:13]{index=13}
+  { id: "KRW-PUNDIX", supply: 258386541 }, // Pundi X: 약 258,386,541 PUNDIX 유통:contentReference[oaicite:14]{index=14}
+  { id: "KRW-PYR", supply: 44487720 }, // Vulcan Forged (PYR): 약 44,487,720 PYR 유통:contentReference[oaicite:15]{index=15}
+  { id: "KRW-QKC", supply: 7177132182 }, // QuarkChain: 약 7,177,132,182 QKC 유통:contentReference[oaicite:16]{index=16}
+  { id: "KRW-QTUM", supply: 105878230 }, // Qtum: 약 105,878,230 QTUM 유통:contentReference[oaicite:17]{index=17}
+  { id: "KRW-RAD", supply: 51575979 }, // Radworks: 약 51,575,979 RAD 유통:contentReference[oaicite:18]{index=18}
+  { id: "KRW-RAY", supply: 265769182 }, // Raydium: 약 265,769,182 RAY 유통
+  { id: "KRW-RECALL", supply: 823452996 }, // RECALL: 약 823,452,996 RECALL 유통
+  { id: "KRW-RED", supply: 1999956015 }, // RED: 약 1,999,956,015 RED 유통
+  { id: "KRW-RENDER", supply: 380297107 }, // Render Token (RNDR): 약 380,297,107 RNDR 유통
+  { id: "KRW-REQ", supply: 999877924 }, // Request: 약 999,877,924 REQ 유통
+  { id: "KRW-RESOLV", supply: 598444106 }, // Resolv: 약 598,444,106 RESOLV 유통
+  { id: "KRW-ROA", supply: 258194181 }, // Roa: 약 258,194,181 ROA 유통
+  { id: "KRW-RON", supply: 249032279 }, // Ronin: 약 249,032,279 RON 유통
+  { id: "KRW-RPL", supply: 19946860 }, // Rocket Pool: 약 19,946,860 RPL 유통
+  { id: "KRW-RSR", supply: 5108664075 }, // Reserve Rights: 약 5,108,664,075 RSR 유통
+  { id: "KRW-T", supply: 10784054376 }, // Threshold Network Token: 약 10,784,054,376 T 유통:contentReference[oaicite:0]{index=0}
+  { id: "KRW-TAIKO", supply: 187152136 }, // Taiko: 약 187,152,136 TAIKO 유통:contentReference[oaicite:1]{index=1}
+  { id: "KRW-TAO", supply: 10238947 }, // Bittensor: 약 10,238,947 TAO 유통:contentReference[oaicite:2]{index=2}
+  { id: "KRW-TAVA", supply: 695877944 }, // ALTAVA: 약 695,877,944 TAVA 유통:contentReference[oaicite:3]{index=3}
+  { id: "KRW-TDROP", supply: 11958805856 }, // ThetaDrop: 약 11,958,805,856 TDROP 유통 (자체 보고치):contentReference[oaicite:4]{index=4}
+  { id: "KRW-TEMCO", supply: 3973256413 }, // TEMCO: 약 3,973,256,413 TEMCO 유통:contentReference[oaicite:5]{index=5}
+  { id: "KRW-TIA", supply: 834629226 }, // Celestia: 약 834,629,226 TIA 유통:contentReference[oaicite:6]{index=6}
+  { id: "KRW-TON", supply: 2486372644 }, // Toncoin: 약 2,486,372,644 TON 유통:contentReference[oaicite:7]{index=7}
+  { id: "KRW-TOSHI", supply: 420674914395 }, // Toshi: 약 420,674,914,395 TOSHI 유통:contentReference[oaicite:8]{index=8}
+  { id: "KRW-THE", supply: 1000000000 }, // THE: 약 1,000,000,000 THE 유통 (추정치, 정보 부족)
+  { id: "KRW-TOWNS", supply: 2109362819 }, // Towns: 약 2,109,362,819 TOWNS 유통:contentReference[oaicite:9]{index=9}
+  { id: "KRW-TRUMP", supply: 199999236 }, // OFFICIAL TRUMP: 약 199,999,236 TRUMP 유통:contentReference[oaicite:10]{index=10}
+  { id: "KRW-TT", supply: 12834267074 }, // ThunderCore: 약 12,834,267,074 TT 유통:contentReference[oaicite:11]{index=11}
+  { id: "KRW-TURBO", supply: 69000000000 }, // Turbo: 약 69,000,000,000 TURBO 유통:contentReference[oaicite:12]{index=12}
+  { id: "KRW-UMA", supply: 68947415 }, // UMA: 약 68,947,415 UMA 유통:contentReference[oaicite:13]{index=13}
+  { id: "KRW-UNI", supply: 630330528 }, // Uniswap: 약 630,330,528 UNI 유통:contentReference[oaicite:14]{index=14}
+  { id: "KRW-UOS", supply: 477450509 }, // Ultra: 약 477,450,509 UOS 유통:contentReference[oaicite:15]{index=15}
+  { id: "KRW-USD1", supply: 2917337551 }, // World Liberty Financial USD1: 약 2,917,337,551 USD1 유통 (코인마켓캡 기준)
+  { id: "KRW-USDC", supply: 75159613302 }, // USD Coin: 약 75,159,613,302 USDC 유통:contentReference[oaicite:16]{index=16}
+  { id: "KRW-USDS", supply: 9433925994 }, // USDS (Sperax USD): 약 9,433,925,994 USDS 유통:contentReference[oaicite:17]{index=17}
+  { id: "KRW-USDT", supply: 183430228993 }, // Tether: 약 183,430,228,993 USDT 유통:contentReference[oaicite:18]{index=18}
+  { id: "KRW-VANA", supply: 30084000 }, // Vana: 약 30,084,000 VANA 유통:contentReference[oaicite:19]{index=19}
+  { id: "KRW-VET", supply: 85985041177 }, // VeChain: 약 85,985,041,177 VET 유통:contentReference[oaicite:20]{index=20}
+  { id: "KRW-VIRTUAL", supply: 656082021 }, // Virtuals Protocol: 약 656,082,021 VIRTUAL 유통:contentReference[oaicite:21]{index=21}
+  { id: "KRW-VTHO", supply: 95859294672 }, // VeThor Token: 약 95,859,294,672 VTHO 유통:contentReference[oaicite:22]{index=22}
+  { id: "KRW-W", supply: 4893909434 }, // Wormhole: 약 4,893,909,434 W 유통:contentReference[oaicite:23]{index=23}
+  { id: "KRW-WAVES", supply: 119255560 }, // Waves: 약 119,255,560 WAVES 유통:contentReference[oaicite:24]{index=24}
+  { id: "KRW-WAXL", supply: 1060000000 }, // Wrapped Axelar: 약 1,060,000,000 WAXL 유통 (추정치)
+  { id: "KRW-WAXP", supply: 3770000000 }, // WAX (WAXP): 약 3,770,000,000 WAXP 유통 (추정치)
+  { id: "KRW-WIF", supply: 998870000 }, // dogwifhat (WIF): 약 998,870,000 WIF 유통 (추정치)
+  { id: "KRW-WIKEN", supply: 1053023953   },   // Project WITH: 약 1,053,023,953 WIKEN 유통:contentReference[oaicite:0]{index=0}
+  { id: "KRW-WLD",   supply: 2270493868   },   // Worldcoin: 약 2,270,493,868 WLD 유통:contentReference[oaicite:1]{index=1}
+  { id: "KRW-WNCG",  supply: 548175863    },   // Wrapped NCG: 약 548,175,863 WNCG 유통:contentReference[oaicite:2]{index=2}
+  { id: "KRW-WOO",   supply: 1925574381   },   // WOO Network: 약 1,925,574,381 WOO 유통:contentReference[oaicite:3]{index=3}
+  { id: "KRW-XAI",   supply: 1824504636   },   // Xai: 약 1,824,504,636 XAI 유통:contentReference[oaicite:4]{index=4}
+  { id: "KRW-XAN",   supply: 2500000000   },   // Anoma (XAN): 약 2,500,000,000 XAN 유통:contentReference[oaicite:5]{index=5}
+  { id: "KRW-XCN",   supply: 36002056529  },   // Onyxcoin (XCN): 약 36,002,056,529 XCN 유통:contentReference[oaicite:6]{index=6}
+  { id: "KRW-XEC",   supply: 19942992172580 }, // eCash (XEC): 약 19,942,992,172,580 XEC 유통:contentReference[oaicite:7]{index=7}
+  { id: "KRW-XLM",   supply: 32079686976  },   // Stellar (XLM): 약 32,079,686,976 XLM 유통:contentReference[oaicite:8]{index=8}
+  { id: "KRW-XPLA",  supply: 849472463    },   // XPLA: 약 849,472,463 XPLA 유통:contentReference[oaicite:9]{index=9}
+  { id: "KRW-XPR",   supply: 28205780261  },   // Proton (XPR): 약 28,205,780,261 XPR 유통:contentReference[oaicite:10]{index=10}
+  { id: "KRW-XRP",   supply: 60107199237  },   // XRP: 약 60,107,199,237 XRP 유통:contentReference[oaicite:11]{index=11}
+  { id: "KRW-XTER",  supply: 141630717    },   // XTER: 약 141,630,717 XTER 유통:contentReference[oaicite:12]{index=12}
+  { id: "KRW-XTZ",   supply: 977621108    },   // Tezos: 약 977,621,108 XTZ 유통:contentReference[oaicite:13]{index=13}
+  { id: "KRW-XVS",   supply: 17000000     },   // Venus: 약 17,000,000 XVS 유통:contentReference[oaicite:14]{index=14}
+  { id: "KRW-YGG",   supply: 677780308    },   // Yield Guild Games: 약 677,780,308 YGG 유통:contentReference[oaicite:15]{index=15}
+  { id: "KRW-ZETA",  supply: 1120729167   },   // ZetaChain: 약 1,120,729,167 ZETA 유통:contentReference[oaicite:16]{index=16}
+  { id: "KRW-ZK",    supply: 8235057425   },   // ZKsync (ZK): 약 8,235,057,425 ZK 유통:contentReference[oaicite:17]{index=17}
+  { id: "KRW-ZKC",   supply: 200937056    },   // Boundless (ZKC): 약 200,937,056 ZKC 유통:contentReference[oaicite:18]{index=18}
+  { id: "KRW-ZRC",   supply: 2194923458   },   // Zircuit (ZRC): 약 2,194,923,458 ZRC 유통:contentReference[oaicite:19]{index=19}
+  { id: "KRW-ZRO",   supply: 204090997    },   // LayerZero (ZRO): 약 204,090,997 ZRO 유통:contentReference[oaicite:20]{index=20}
+  { id: "KRW-ZRX",   supply: 848396563    },   // 0x Protocol: 약 848,396,563 ZRX 유통:contentReference[oaicite:21]{index=21}
+  { id: "KRW-ZTX",   supply: 4204949769   }    // ZTX: 약 4,204,949,769 ZTX 유통:contentReference[oaicite:22]{index=22}
 ];

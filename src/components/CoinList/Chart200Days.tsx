@@ -1,19 +1,16 @@
 import {
   ICoinHistory,
   ICoinHttpTickers,
-  ICoinSocketTickers,
 } from "../../interface/icoin";
 import Chart from "./Chart";
 
 const Chart200Days = ({
   coinName,
   history,
-  // tickerSocketData,
   tickerList,
 }: {
   coinName: string;
   history: ICoinHistory[];
-  // tickerSocketData: ICoinSocketTickers[];
   tickerList: ICoinHttpTickers[];
 }) => {
   if (tickerList) {

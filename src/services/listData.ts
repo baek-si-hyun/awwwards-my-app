@@ -3,25 +3,26 @@ import {
   IProjectsData,
   IScheduleData,
 } from "../interface/iproject";
+import { IMAGES } from "../constants/images";
 
 export const siteList = [
   {
-    img: "49cd31ba-6549-4f5c-823e-06ee522be100",
+    img: IMAGES.SITES.SITE.SITE1,
     alt: "Awwwards",
     href: "https://www.awwwards.com/",
-    icon: "e1f7fdb0-746c-4598-7dd0-c37a0b344d00",
+    icon: IMAGES.SITES.ICON.ICON1,
   },
   {
-    img: "089bbc9a-4241-44ab-90a2-5702bbe90d00",
+    img: IMAGES.SITES.SITE.SITE2,
     alt: "YoutubeMusic",
     href: "https://music.youtube.com/",
-    icon: "7aa1d7a9-d1ec-478e-e06c-25204d9b0000",
+    icon: IMAGES.SITES.ICON.ICON2,
   },
   {
-    img: "b55e5689-87bc-4c9d-5ab6-f151077beb00",
+    img: IMAGES.SITES.SITE.SITE3,
     alt: "CoinMarketCap",
     href: "https://coinmarketcap.com/ko/",
-    icon: "00f10618-d1f1-42ce-0ede-651abcd38200",
+    icon: IMAGES.SITES.ICON.ICON3,
   },
 ];
 
@@ -44,17 +45,10 @@ export const projectData: IProjectsData[] = [
       "amazonec2",
       "amazonroute53",
     ],
-    projects_thumbnail:
-      "https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/750557ee-1dce-482a-6348-5b5564b0f100/public",
-    projects_logo:
-      "https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/17d7fdf7-8207-4730-8c95-2f2588b78000/icon",
+    projects_thumbnail: IMAGES.PROJECTS.SELLEAF.THUMBNAIL,
+    projects_logo: IMAGES.PROJECTS.SELLEAF.ICON,
     projects_by: "SiHyun Baek, 3 others",
-    projects_prev_img: [
-      "https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/fa19f9f8-5c22-488f-c7d4-bf77fc802f00/public",
-      "https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/04cd89fa-7fb0-49b6-c8ee-2a2564bd2700/public",
-      "https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/11980221-befc-42b9-aad4-ebd81abde200/public",
-      "https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/db8e4fa4-ec7c-457e-7288-7f58004d6a00/public",
-    ],
+    projects_prev_img: IMAGES.PROJECTS.SELLEAF.IMAGES,
     projects_fonts: ["Pretendard"],
     projects_colors: ["#134F2C", "#c06888"],
     projects_ko:
@@ -78,17 +72,10 @@ export const projectData: IProjectsData[] = [
       "planetscale",
       "nodedotjs",
     ],
-    projects_thumbnail:
-      "https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/da43e839-59a5-4b31-0ba2-4b49618c7600/public",
-    projects_logo:
-      "https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/859f2cf1-1491-44bc-065d-dfca90cc7100/icon",
+    projects_thumbnail: IMAGES.PROJECTS.PROJECT_HOUSE.THUMBNAIL,
+    projects_logo: IMAGES.PROJECTS.PROJECT_HOUSE.ICON,
     projects_by: "SiHyun Baek, 1 others",
-    projects_prev_img: [
-      "https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/6fd47895-228d-40b4-fc97-51462e176f00/public",
-      "https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/0ca145e3-7001-4ed6-63fe-ffcedb7e4800/public",
-      "https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/570d30d3-9860-4325-da9c-3449d6a88200/public",
-      "",
-    ],
+    projects_prev_img: [...IMAGES.PROJECTS.PROJECT_HOUSE.IMAGES, ""],
     projects_fonts: ["Pretendard"],
     projects_colors: ["#1c64f2", "#f3f4f6"],
     projects_ko:
@@ -111,17 +98,10 @@ export const projectData: IProjectsData[] = [
       "planetscale",
       "cloudflare",
     ],
-    projects_thumbnail:
-      "https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/fec1b1e6-86f9-41e4-7f75-2b8427ac4d00/public",
-    projects_logo:
-      "https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/133c48bb-0759-46c9-442a-91cb852e5b00/icon",
+    projects_thumbnail: IMAGES.PROJECTS.CARROT_MARKET.THUMBNAIL,
+    projects_logo: IMAGES.PROJECTS.CARROT_MARKET.ICON,
     projects_by: "Nomad Coders, SiHyun Baek",
-    projects_prev_img: [
-      "https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/0392332a-d04e-47ed-8ced-52bc1e42f400/public",
-      "https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/05b5afee-0d55-4f23-43f8-96e1dddc7b00/public",
-      "https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/f16275f8-db74-4bfd-8a07-60326b9e4500/public",
-      "https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/916d8825-ad6b-4967-92f3-84e01a6f7100/public",
-    ],
+    projects_prev_img: IMAGES.PROJECTS.CARROT_MARKET.IMAGES,
     projects_fonts: ["ui-sans-serif", "system-ui"],
     projects_colors: ["#f97316"],
     projects_ko:
@@ -142,17 +122,10 @@ export const projectData: IProjectsData[] = [
       "reactquery",
       "redux",
     ],
-    projects_thumbnail:
-      "https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/f5ab0fb1-5c42-400c-c8a2-50ab4bd61800/public",
-    projects_logo:
-      "https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/09e9189a-ee66-4858-4e6a-b9da9e26e700/icon",
+    projects_thumbnail: IMAGES.PROJECTS.AWWWARDS.THUMBNAIL,
+    projects_logo: IMAGES.PROJECTS.AWWWARDS.ICON,
     projects_by: "SiHyun Baek",
-    projects_prev_img: [
-      "https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/9a3c9ee7-1f22-43ad-e386-35d840d5e700/public",
-      "https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/79e41cb5-4331-4c4f-e5e4-a020d9792e00/public",
-      "https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/e1420fd4-c745-473f-e405-d97976b69000/public",
-      "https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/c3898e1e-6ef4-413e-1d76-71a560b39a00/public",
-    ],
+    projects_prev_img: IMAGES.PROJECTS.AWWWARDS.IMAGES,
     projects_fonts: ["Apercu", "Pretendard"],
     projects_colors: ["#d7d7d7", "#3e3e3e"],
     projects_ko:
@@ -173,17 +146,10 @@ export const projectData: IProjectsData[] = [
       "react",
       "recoil",
     ],
-    projects_thumbnail:
-      "https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/54315859-5a93-4c3e-6fdb-98bf43011100/public",
-    projects_logo:
-      "https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/133c48bb-0759-46c9-442a-91cb852e5b00/icon",
+    projects_thumbnail: IMAGES.PROJECTS.KANBAN.THUMBNAIL,
+    projects_logo: IMAGES.PROJECTS.KANBAN.ICON,
     projects_by: "Nomad Coders, SiHyun Baek",
-    projects_prev_img: [
-      "https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/37239698-4c13-4cf2-f28f-bc58aa85c200/public",
-      "https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/3d3d1ae9-2c80-4968-8e95-efb1b92a9b00/public",
-      "https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/8647f462-2de5-4c79-098a-ae5f7651b600/public",
-      "https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/58528ccc-6ee2-4387-08e1-9fa58b34f500/public",
-    ],
+    projects_prev_img: IMAGES.PROJECTS.KANBAN.IMAGES,
     projects_fonts: ["Pretendard"],
     projects_colors: ["#efefef", "#626262"],
     projects_ko:
@@ -204,17 +170,10 @@ export const projectData: IProjectsData[] = [
       "react",
       "recoil",
     ],
-    projects_thumbnail:
-      "https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/5c752596-2cd7-416c-5361-563f864c8300/public",
-    projects_logo:
-      "https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/133c48bb-0759-46c9-442a-91cb852e5b00/icon",
+    projects_thumbnail: IMAGES.PROJECTS.CRYPTO.THUMBNAIL,
+    projects_logo: IMAGES.PROJECTS.CRYPTO.ICON,
     projects_by: "Nomad Coders, SiHyun Baek",
-    projects_prev_img: [
-      "https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/4b52eb81-55ec-40ad-ae8c-96454a403c00/public",
-      "https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/9d5ba73e-f972-409b-313d-11ae62d1d400/public",
-      "https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/ef19e8c3-209e-4d3f-74e9-f438f2d71b00/public",
-      "https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/22c60983-660e-4f69-32a6-b7ad657a4400/public",
-    ],
+    projects_prev_img: IMAGES.PROJECTS.CRYPTO.IMAGES,
     projects_fonts: ["Pretendard"],
     projects_colors: ["#3b3b3b", "#222222"],
     projects_ko:
@@ -227,17 +186,10 @@ export const projectData: IProjectsData[] = [
     projects_name: "MY APP",
     projects_date: "2022. 12. 25",
     projects_tools: ["html5", "css3", "cssmodules", "javascript", "react"],
-    projects_thumbnail:
-      "https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/bbc21380-cd4b-4fcb-0c5d-6272a4d20600/public",
-    projects_logo:
-      "https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/09e9189a-ee66-4858-4e6a-b9da9e26e700/icon",
+    projects_thumbnail: IMAGES.PROJECTS.MYAPP.THUMBNAIL,
+    projects_logo: IMAGES.PROJECTS.MYAPP.ICON,
     projects_by: "SiHyun Baek",
-    projects_prev_img: [
-      "https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/782af772-bca9-407b-c5ec-fd02980f4000/public",
-      "https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/e4ba8107-b1e4-4f98-7616-8755de1e3100/public",
-      "https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/13e0649a-61b1-4d00-67ae-1f07d8783d00/public",
-      "https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/5a18aaac-83d3-4489-5993-3fd9e09a5100/public",
-    ],
+    projects_prev_img: IMAGES.PROJECTS.MYAPP.IMAGES,
     projects_fonts: ["Yasashii", "Exo2", "NanumSquareRound"],
     projects_colors: ["#3e9d89", "#1e3d5c"],
     projects_ko:
@@ -257,17 +209,10 @@ export const projectData: IProjectsData[] = [
       "spring",
       "oracle",
     ],
-    projects_thumbnail:
-      "https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/1a7004f4-b14f-4ffc-2ca7-bfa7ff694700/public",
-    projects_logo:
-      "https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/09e9189a-ee66-4858-4e6a-b9da9e26e700/icon",
+    projects_thumbnail: IMAGES.PROJECTS.AIRBNB.THUMBNAIL,
+    projects_logo: IMAGES.PROJECTS.AIRBNB.ICON,
     projects_by: "SiHyun Baek, 4 others",
-    projects_prev_img: [
-      "https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/00d3b975-1962-4945-23f7-c7e9002d2a00/public",
-      "https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/085f21dc-4a38-4e05-90a3-9695a4ff3b00/public",
-      "https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/3e076449-cb3c-4530-fc3a-c3f165946600/public",
-      "https://imagedelivery.net/4aEUbX05h6IovGOQjgkfSw/d5fb0909-2136-4010-4401-4c654e4cb200/public",
-    ],
+    projects_prev_img: IMAGES.PROJECTS.AIRBNB.IMAGES,
     projects_fonts: ["GothamMedium", "Helvetica", "ProductSans", "Roboto"],
     projects_colors: ["#ff385c"],
     projects_ko:

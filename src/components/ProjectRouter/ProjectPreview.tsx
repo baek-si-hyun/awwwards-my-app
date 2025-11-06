@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import { IProjectData } from "../../interface/iproject";
+import ImageWithSkeleton from "../common/ImageWithSkeleton";
 
 const Contaier = styled.div`
   width: 100%;
@@ -42,9 +43,10 @@ const TextBoxbottom = styled.div`
 const ImgBox = styled.div`
   position: relative;
 `;
-const Img = styled.img`
+const Img = styled(ImageWithSkeleton)`
   width: 1.7vw;
   border-radius: 20px;
+  aspect-ratio: 1 / 1;
   @media (max-width: 640px) {
     & {
       width: 4.7vw;
@@ -88,7 +90,7 @@ const PrevInner = styled.div`
   overflow: hidden;
   ${common}
 `;
-const PreviewImg = styled.img`
+const PreviewImg = styled(ImageWithSkeleton)`
   width: 100%;
 `;
 
@@ -105,10 +107,11 @@ function ProjectPreview({ projectData }: { projectData: IProjectData }) {
         <TextBoxbottom>
           <ImgBox>
             <Img
-              src={projectData.logo}
+              sources={projectData.logo}
               alt="maker_logo"
-              loading="lazy"
-              decoding="async"
+              fullWidth
+              fullHeight
+              objectFit="cover"
             />
           </ImgBox>
           <ImgText>
@@ -123,10 +126,11 @@ function ProjectPreview({ projectData }: { projectData: IProjectData }) {
             <Preview cardBgColorData={projectData.name} key={index}>
               <PrevInner>
                 <PreviewImg
-                  src={data}
+                  sources={data}
                   alt="preview"
-                  loading="lazy"
-                  decoding="async"
+                  fullWidth
+                  objectFit="cover"
+                  placeholderAspectRatio="16 / 9"
                 />
               </PrevInner>
             </Preview>

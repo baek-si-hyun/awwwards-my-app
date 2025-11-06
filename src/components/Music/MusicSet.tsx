@@ -1,11 +1,6 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import styled from "styled-components";
-import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-import { IVideoInfo } from "../../interface/imusic";
-import { videoInfoRedux } from "../../redux/playingVideoInfoSlice";
-import { controllerVisibleRedux } from "../../redux/controllerVisibleSlice";
-import { useMySelector } from "../../libs/useMySelector";
+import { IPlayList } from "../../interface/imusic";
+import { useMusicPlayerControls } from "../../hooks/useMusicPlayerControls";
 
 export const ButtonDiv = styled.div<{ isPlaying: boolean }>`
   position: absolute;
@@ -38,38 +33,15 @@ export const ControllBtn = styled.button<{ isPlaying: boolean }>`
   }
 `;
 
-function MusicSet({ videoUrl }: { videoUrl: string }) {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const dispatch = useDispatch();
-  const videoInfo = useMySelector(
-    (state: { playingVideoInfoSlice: IVideoInfo }) =>
-      state.playingVideoInfoSlice.videoInfo
-  );
-  const toggle = () => {
-    const playing = !isPlaying;
-    setIsPlaying(playing);
-    dispatch(
-      videoInfoRedux({
-        ...videoInfo,
-        playing: playing,
-        videoUrl: videoUrl,
-      })
-    );
-    dispatch(controllerVisibleRedux(true));
-  };
-  useEffect(() => {
-    if (videoInfo.videoUrl === videoUrl) {
-      setIsPlaying(videoInfo.playing);
-    }
-    if (videoInfo.videoUrl !== videoUrl) {
-      setIsPlaying(false);
-    }
-  }, [videoInfo, videoUrl]);
+function MusicSet({ song }: { song: IPlayList }) {
+  const { isPlaying, selectSong, isCurrentSong } = useMusicPlayerControls();
+  const isCurrent = isCurrentSong(song);
+  const isSongPlaying = isCurrent && isPlaying;
 
   return (
-    <ButtonDiv isPlaying={isPlaying}>
-      <ControllBtn onClick={() => toggle()} isPlaying={isPlaying}>
-        {isPlaying ? (
+    <ButtonDiv isPlaying={isSongPlaying}>
+      <ControllBtn onClick={() => selectSong(song)} isPlaying={isSongPlaying}>
+        {isSongPlaying ? (
           <span className="material-symbols-rounded">pause</span>
         ) : (
           <span className="material-symbols-rounded">play_arrow</span>

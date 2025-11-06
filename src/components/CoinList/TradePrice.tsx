@@ -1,15 +1,10 @@
-import { useEffect, useState } from "react";
-import { ICoinHttpTickers, ICoinSocketTickers } from "../../interface/icoin";
-import styled, { keyframes, css } from "styled-components";
+import { ICoinHttpTickers } from "../../interface/icoin";
 
 const TradePrice = ({
   coinName,
-  // tickerSocketData,
   tickerList,
 }: {
   coinName: string;
-
-  // tickerSocketData: ICoinSocketTickers[];
   tickerList: ICoinHttpTickers[];
 }): JSX.Element => {
   if (tickerList) {

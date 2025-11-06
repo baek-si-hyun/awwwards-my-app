@@ -71,10 +71,19 @@ a {
   -webkit-font-smoothing: antialiased;
 }
 `;
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+      retry: 1,
+      staleTime: 30 * 1000,
+    },
+  },
+});
+
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
-const queryClient = new QueryClient();
 root.render(
   <BrowserRouter basename={process.env.PUBLIC_URL}>
     <QueryClientProvider client={queryClient}>

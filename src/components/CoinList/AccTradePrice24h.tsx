@@ -1,12 +1,10 @@
-import { ICoinHttpTickers, ICoinSocketTickers } from "../../interface/icoin";
+import { ICoinHttpTickers } from "../../interface/icoin";
 
 const AccTradePrice24h = ({
   coinName,
-  // tickerSocketData,
   tickerList,
 }: {
   coinName: string;
-  // tickerSocketData: ICoinSocketTickers[];
   tickerList: ICoinHttpTickers[];
 }): JSX.Element => {
   if (tickerList) {

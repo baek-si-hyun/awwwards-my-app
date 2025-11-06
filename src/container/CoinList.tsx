@@ -1,8 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import styled from "styled-components";
 import useBithumbNames from "../libs/useBithumbNames";
-import { ICoins } from "../interface/icoin";
+import { useCoinSearch } from "../hooks/useCoinSearch";
 import {
   TextBox,
   TextBoxMiddle,
@@ -11,6 +11,8 @@ import {
 import Colgroup from "../components/CoinList/ColGroup";
 import TheadTr from "../components/CoinList/TheadTr";
 import TbodyTr from "../components/CoinList/TbodyTr";
+import { IMAGES } from "../constants/images";
+import ImageWithSkeleton from "../components/common/ImageWithSkeleton";
 
 const Container = styled.section`
   width: 100%;
@@ -99,60 +101,60 @@ const PageBtn = styled.button<{ selected: boolean }>`
   will-change: background-color, color;
 `;
 
+const BithumbLogo = styled(ImageWithSkeleton)`
+  height: 2em;
+  display: inline-block;
+  vertical-align: -0.1em;
+  margin: 0 0.2em;
+`;
+
 function CoinList() {
   const [page, setPage] = useState(1);
-  const [count, setCount] = useState(10);
+  const pageSize = 10;
   const [query, setQuery] = useState("");
-  const [vw, setVw] = useState<number>(() => (typeof window !== "undefined" ? window.innerWidth : 1440));
-  useEffect(() => {
-    const onResize = () => setVw(typeof window !== "undefined" ? window.innerWidth : 1440);
-    window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
+  const [vw, setVw] = useState<number>(() =>
+    typeof window !== "undefined" ? window.innerWidth : 1440
+  );
+  const handleResize = useCallback(() => {
+    setVw(typeof window !== "undefined" ? window.innerWidth : 1440);
   }, []);
-  const pageNation = (pageNum: number) => {
-    setPage(() => pageNum);
-  };
+
   useEffect(() => {
-    updateCount(page);
-  }, [page]);
-  const updateCount = (page: number) => {
-    setCount(() => page * 10);
-  };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [handleResize]);
+
+  const pageNation = useCallback((pageNum: number) => {
+    setPage(pageNum);
+  }, []);
+
   const { nameData } = useBithumbNames(true);
-  const filtered = useMemo<ICoins[]>(() => {
-    if (!nameData) return [];
-    const q = query.trim().toLowerCase();
-    if (!q) return nameData;
-    return nameData.filter((d) => {
-      const sym = d.market.substring(4).toLowerCase();
-      return (
-        d.english_name.toLowerCase().includes(q) ||
-        sym.includes(q)
-      );
-    });
-  }, [nameData, query]);
+  const { filtered } = useCoinSearch(nameData, query, false);
+
+  const handleSearchChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      setQuery(e.target.value);
+      setPage(1);
+    },
+    []
+  );
+
   useEffect(() => {
-    const total = Math.max(1, Math.ceil(filtered.length / 10));
+    const total = Math.max(1, Math.ceil(filtered.length / pageSize));
     if (page > total) setPage(total);
-  }, [filtered, page]);
-  const makePageBtn = () => {
-    const pageButtons = [];
+  }, [filtered, page, pageSize]);
+  const paged = useMemo(() => {
+    const start = (page - 1) * pageSize;
+    return filtered.slice(start, start + pageSize);
+  }, [filtered, page, pageSize]);
+  const pageButtons = useMemo(() => {
+    const buttons = [];
     const list = filtered;
-    const total = Math.max(1, Math.ceil(list.length / 10));
+    const total = Math.max(1, Math.ceil(list.length / pageSize));
     const maxButtons = vw >= 1280 ? 9 : vw >= 768 ? 7 : 5;
-    const makeRange = (start: number, end: number) => {
-      for (let i = start; i <= end; i++) {
-        pageButtons.push(
-          <PageBtn onClick={() => pageNation(i)} key={i} selected={i === page}>
-            {i}
-          </PageBtn>
-        );
-      }
-    };
 
     // Ensure current page is within bounds
     const curr = Math.min(page, total);
-    if (curr !== page) setPage(curr);
 
     // Always show first and last; show neighbors around current
     const siblings = Math.max(1, Math.floor((maxButtons - 3) / 2));
@@ -160,45 +162,57 @@ function CoinList() {
     const right = Math.min(total - 1, curr + siblings);
 
     // First page
-    pageButtons.push(
+    buttons.push(
       <PageBtn onClick={() => pageNation(1)} key={1} selected={curr === 1}>
         1
       </PageBtn>
     );
     // Left ellipsis
-    if (left > 2) pageButtons.push(<span key="left-ellipsis">...</span>);
+    if (left > 2) buttons.push(<span key="left-ellipsis">...</span>);
     // Middle range
-    makeRange(left, right);
+    for (let i = left; i <= right; i++) {
+      buttons.push(
+        <PageBtn onClick={() => pageNation(i)} key={i} selected={i === curr}>
+          {i}
+        </PageBtn>
+      );
+    }
     // Right ellipsis
-    if (right < total - 1) pageButtons.push(<span key="right-ellipsis">...</span>);
+    if (right < total - 1) buttons.push(<span key="right-ellipsis">...</span>);
     // Last page
     if (total > 1) {
-      pageButtons.push(
-        <PageBtn onClick={() => pageNation(total)} key={total} selected={curr === total}>
+      buttons.push(
+        <PageBtn
+          onClick={() => pageNation(total)}
+          key={total}
+          selected={curr === total}
+        >
           {total}
         </PageBtn>
       );
     }
-    return pageButtons;
-  };
+    return buttons;
+  }, [filtered, page, pageSize, vw, pageNation]);
   return (
     <Container>
       <Inner>
         <TextBox>
           <TextBoxMiddle>CoinList</TextBoxMiddle>
           <TextBoxbottom>
-            Combination of <span style={{ color: "#ff8200" }}>bithumb</span>,
-            React-Query
+            Combination of{" "}
+            <BithumbLogo
+              sources={IMAGES.COMMON.BITHUMB_LOGO}
+              alt="Bithumb"
+              fullHeight
+            />
+            , React-Query
           </TextBoxbottom>
         </TextBox>
         <ControlsBar>
           <SearchInput
-            placeholder="Search by name or symbol"
+            placeholder="Search by name (EN/KR) or symbol"
             value={query}
-            onChange={(e) => {
-              setQuery(e.target.value);
-              setPage(1);
-            }}
+            onChange={handleSearchChange}
           />
         </ControlsBar>
         <TableBox>
@@ -208,11 +222,11 @@ function CoinList() {
               <TheadTr />
             </thead>
             <tbody>
-              <TbodyTr count={count} nameData={filtered} />
+              <TbodyTr nameData={paged} />
             </tbody>
           </ListTable>
         </TableBox>
-        <BtnBox>{makePageBtn()}</BtnBox>
+        <BtnBox>{pageButtons}</BtnBox>
       </Inner>
     </Container>
   );
