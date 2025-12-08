@@ -17,7 +17,6 @@ function TbodyTr({ nameData }: { nameData: ICoins[] | undefined }) {
   const { liveMap } = useBithumbTickersSocket(coinList);
   const { historyData } = useBithumbHistory(coinList);
   
-  // Merge HTTP baseline with live WS data per market
   const tickerList: ICoinHttpTickers[] = useMemo(() => {
     const base = tickerHttpData || [];
     if (!base.length && liveMap.size === 0) return base;
@@ -25,7 +24,6 @@ function TbodyTr({ nameData }: { nameData: ICoins[] | undefined }) {
     return base.map((t) => live.get(t.market) || t);
   }, [tickerHttpData, liveMap]);
 
-  // Resolve supply from local mapping with CoinGecko fallback (cached)
   const { supplyMap } = useSupplyMap(coinList);
   const historyMap = useMemo(() => {
     const entries: [string, any][] = [];

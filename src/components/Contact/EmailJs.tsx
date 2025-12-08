@@ -67,9 +67,10 @@ const Textarea = styled.textarea`
 `;
 
 function EmailJs() {
-  const form = useRef() as any;
+  const form = useRef<HTMLFormElement>(null);
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (!form.current) return;
     emailjs
       .sendForm(
         `${process.env.REACT_APP_EMAILJS_SERVICE_ID}`,
