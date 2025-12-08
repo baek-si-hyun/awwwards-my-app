@@ -1,25 +1,17 @@
 import styled from "styled-components";
-import ReactApexChart from "react-apexcharts";
+import { LineChart, Line, ResponsiveContainer } from "recharts";
 import { ICoinHistory } from "../../interface/icoin";
 
-const ApexChartDiv = styled.div`
+const ChartDiv = styled.div`
   max-width: 100%;
   max-height: 61px;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-`;
-const ApexChart = styled(ReactApexChart)`
   width: 164px;
-  color: ${(props) =>
-    props.change === "RISE"
-      ? "#089981"
-      : props.change === "FALL"
-      ? " #F23645"
-      : "#222"};
-  will-change: color;
 `;
+
 function Chart({
   history,
   change,
@@ -27,68 +19,33 @@ function Chart({
   history: ICoinHistory[];
   change: string;
 }) {
+  if (!history || history.length === 0) {
+    return <ChartDiv />;
+  }
+
+  const chartData = history.map((price) => ({
+    timestamp: price.timestamp,
+    value: price.prev_closing_price,
+  }));
+
+  const strokeColor =
+    change === "RISE" ? "#c84a31" : change === "EVEN" ? "#222" : "#1261c4";
+
   return (
-    <>
-      <ApexChartDiv>
-        <ApexChart
-          change={change}
-          type="line"
-          series={[
-            {
-              data:
-                history.map((price) => ({
-                  x: price.timestamp,
-                  y: price.prev_closing_price,
-                })) ?? [],
-            },
-          ]}
-          options={{
-            chart: {
-              type: "line",
-              background: "transparent",
-              zoom: { enabled: false },
-              toolbar: {
-                show: false,
-              },
-              animations: {
-                enabled: false,
-              },
-            },
-            grid: {
-              show: false,
-            },
-            legend: {
-              show: false,
-            },
-            dataLabels: {
-              enabled: false,
-            },
-            labels: {
-              show: false,
-            },
-            tooltip: {
-              enabled: false,
-            },
-            markers: { size: 0 },
-            stroke: { curve: "smooth", width: 3 },
-            colors: [
-              change === "RISE"
-                ? "#c84a31"
-                : change === "EVEN"
-                ? "#222"
-                : "#1261c4",
-            ],
-            xaxis: {
-              axisBorder: { show: false },
-              axisTicks: { show: false },
-              labels: { show: false },
-              type: "datetime",
-            },
-            yaxis: { show: false },
-          }}
-        />
-      </ApexChartDiv>
-    </>
+    <ChartDiv>
+      <ResponsiveContainer width="100%" height={61}>
+        <LineChart data={chartData}>
+          <Line
+            type="monotone"
+            dataKey="value"
+            stroke={strokeColor}
+            strokeWidth={3}
+            dot={false}
+            isAnimationActive={false}
+          />
+        </LineChart>
+      </ResponsiveContainer>
+    </ChartDiv>
   );
 }
 export default Chart;

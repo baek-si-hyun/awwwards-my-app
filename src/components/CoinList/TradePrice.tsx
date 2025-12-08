@@ -1,3 +1,4 @@
+import { ReactElement } from "react";
 import { ICoinHttpTickers } from "../../interface/icoin";
 
 const TradePrice = ({
@@ -6,7 +7,7 @@ const TradePrice = ({
 }: {
   coinName: string;
   tickerList: ICoinHttpTickers[];
-}): JSX.Element => {
+}): ReactElement => {
   if (tickerList) {
     const price: string = tickerList
       .find((ticker) => ticker.market === coinName && ticker, 0)
