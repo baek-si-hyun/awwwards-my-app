@@ -127,7 +127,7 @@ function ProjectsLinkBox() {
                 opacity: 1, 
                 x: 0 
               }}
-              viewport={{ once: true, amount: 0.3 }}
+              viewport={{ once: true, margin: "0px 0px -100px 0px" }}
               transition={{ 
                 duration: 0.6, 
                 delay: index * 0.1,
