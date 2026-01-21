@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import styled, { css } from "styled-components";
 import { projectData } from "../../services/listData";
 import ImageWithSkeleton from "../common/ImageWithSkeleton";
@@ -113,22 +114,41 @@ function ProjectsLinkBox() {
   return (
     <>
       {projectData &&
-        projectData.map((data, index) => (
-          <Container key={index}>
-            <Box
-              to={`/${data.projects_code}`}
-              state={{
-                date: data.projects_date,
-                name: data.projects_name,
-                logo: data.projects_logo,
-                by: data.projects_by,
-                imgs: data.projects_prev_img,
-                fonts: data.projects_fonts,
-                colors: data.projects_colors,
-                ko: data.projects_ko,
-                en: data.projects_en,
+        projectData.map((data, index) => {
+          const isLeft = index % 2 === 0;
+          return (
+            <motion.div
+              key={index}
+              initial={{ 
+                opacity: 0, 
+                x: isLeft ? -100 : 100 
+              }}
+              whileInView={{ 
+                opacity: 1, 
+                x: 0 
+              }}
+              viewport={{ once: true, margin: "0px 0px -100px 0px" }}
+              transition={{ 
+                duration: 0.6, 
+                delay: index * 0.1,
+                ease: [0.1, 0, 0, 1]
               }}
             >
+              <Container>
+                <Box
+                  to={`/${data.projects_code}`}
+                  state={{
+                    date: data.projects_date,
+                    name: data.projects_name,
+                    logo: data.projects_logo,
+                    by: data.projects_by,
+                    imgs: data.projects_prev_img,
+                    fonts: data.projects_fonts,
+                    colors: data.projects_colors,
+                    ko: data.projects_ko,
+                    en: data.projects_en,
+                  }}
+                >
               <ImgBox>
                 <Img
                   sources={data.projects_thumbnail}
@@ -166,7 +186,9 @@ function ProjectsLinkBox() {
               </By>
             </TextBox>
           </Container>
-        ))}
+            </motion.div>
+          );
+        })}
     </>
   );
 }

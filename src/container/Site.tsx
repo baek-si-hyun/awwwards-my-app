@@ -84,10 +84,7 @@ const SiteTextBox = styled.div`
 const InnerFigure = styled.figure`
   display: flex;
   align-items: center;
-  img {
-    margin: 0 0.5vw;
-    object-fit: cover;
-  }
+  gap: 0.5vw;
   figcaption {
     span {
       font-weight: bold;
@@ -190,6 +187,7 @@ const LogoImg = styled(ImageWithSkeleton)`
   width: 30px;
   height: 30px;
   border-radius: 20px;
+  flex-shrink: 0;
 `;
 function Site() {
   return (

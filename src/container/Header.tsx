@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { motion } from "framer-motion";
 import styled from "styled-components";
 import { IMAGES } from "../constants/images";
 import ImageWithSkeleton from "../components/common/ImageWithSkeleton";
@@ -151,8 +152,31 @@ const Img = styled(ImageWithSkeleton)`
   }
 `;
 const ColorShadowImg = styled(Img)`
-  box-shadow: 0 0 3rem rgba(255, 255, 255, 1);
+  box-shadow: none;
 `;
+
+const AnimatedShadowWrapper = styled(motion.div)`
+  display: inline-block;
+  border-radius: clamp(5px, 20vw, 40px);
+  overflow: visible;
+  
+  @media (max-width: 1920px) {
+    border-radius: 45.42px;
+  }
+  @media (max-width: 1550px) {
+    border-radius: 30px;
+  }
+  @media (max-width: 1280px) {
+    border-radius: 30px;
+  }
+  @media (max-width: 1050px) {
+    border-radius: 30px;
+  }
+  @media (max-width: 430px) {
+    border-radius: 10px;
+  }
+`;
+
 function Header() {
   const homeHeader = useRef(null);
 
@@ -175,36 +199,81 @@ function Header() {
         </LeftBox>
         <RightBox>
           <ItemBox>
-            <Img
-              sources={IMAGES.HEADER.LOGO.LOGO4}
-              alt="headerimg"
-              fullWidth
-              fullHeight
-            />
+            <motion.div
+              initial={{ x: "100vw" }}
+              animate={{ x: 0 }}
+              transition={{ duration: 0.5, delay: 0.2, ease: [0.1, 0, 0, 1] }}
+            >
+              <Img
+                sources={IMAGES.HEADER.LOGO.LOGO4}
+                alt="headerimg"
+                fullWidth
+                fullHeight
+              />
+            </motion.div>
           </ItemBox>
           <ItemBox>
-            <ColorShadowImg
-              sources={IMAGES.HEADER.LOGO.LOGO3}
-              alt="headerimg"
-              fullWidth
-              fullHeight
-            />
+            <motion.div
+              initial={{ x: "100vw" }}
+              animate={{ x: 0 }}
+              transition={{ duration: 0.8, delay: 0.3, ease: [0.1, 0, 0, 1] }}
+            >
+              <AnimatedShadowWrapper
+                animate={{
+                  boxShadow: [
+                    "0 0 2rem rgba(255, 255, 255, 0.6), 0 0 4rem rgba(255, 255, 255, 0.3)",
+                    "0 0 5rem rgba(255, 255, 255, 0.8), 0 0 8rem rgba(255, 255, 255, 0.5)",
+                    "0 0 2.5rem rgba(255, 255, 255, 0.55), 0 0 4.5rem rgba(255, 255, 255, 0.25)",
+                    "0 0 4rem rgba(255, 255, 255, 0.75), 0 0 7rem rgba(255, 255, 255, 0.45)",
+                    "0 0 3rem rgba(255, 255, 255, 0.7), 0 0 5.5rem rgba(255, 255, 255, 0.4)",
+                    "0 0 2rem rgba(255, 255, 255, 0.6), 0 0 4rem rgba(255, 255, 255, 0.3)",
+                    "0 0 4.5rem rgba(255, 255, 255, 0.85), 0 0 9rem rgba(255, 255, 255, 0.55)",
+                    "0 0 2rem rgba(255, 255, 255, 0.6), 0 0 4rem rgba(255, 255, 255, 0.3)",
+                  ],
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  times: [0, 0.15, 0.3, 0.5, 0.65, 0.8, 0.95, 1],
+                  ease: "easeInOut",
+                }}
+              >
+                <ColorShadowImg
+                  sources={IMAGES.HEADER.LOGO.LOGO3}
+                  alt="headerimg"
+                  fullWidth
+                  fullHeight
+                />
+              </AnimatedShadowWrapper>
+            </motion.div>
           </ItemBox>
           <ItemBox>
-            <Img
-              sources={IMAGES.HEADER.LOGO.LOGO2}
-              alt="headerimg"
-              fullWidth
-              fullHeight
-            />
+            <motion.div
+              initial={{ x: "100vw" }}
+              animate={{ x: 0 }}
+              transition={{ duration: 0.8, delay: 0.4, ease: [0.1, 0, 0, 1] }}
+            >
+              <Img
+                sources={IMAGES.HEADER.LOGO.LOGO2}
+                alt="headerimg"
+                fullWidth
+                fullHeight
+              />
+            </motion.div>
           </ItemBox>
           <ItemBox>
-            <Img
-              sources={IMAGES.HEADER.LOGO.LOGO1}
-              alt="headerimg"
-              fullWidth
-              fullHeight
-            />
+            <motion.div
+              initial={{ x: "100vw" }}
+              animate={{ x: 0 }}
+              transition={{ duration: 0.8, delay: 0.5, ease: [0.1, 0, 0, 1] }}
+            >
+              <Img
+                sources={IMAGES.HEADER.LOGO.LOGO1}
+                alt="headerimg"
+                fullWidth
+                fullHeight
+              />
+            </motion.div>
           </ItemBox>
         </RightBox>
       </Inner>

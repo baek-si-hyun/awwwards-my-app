@@ -119,20 +119,24 @@ function NavMode({
   routerPosition: IRouterPosition;
   pathname: string;
 }) {
+  // pathname 정규화 (대소문자 무시, 경로 prefix 제거)
+  const normalizedPath = pathname.toLowerCase().replace(/^\/awwwards-my-app/, "").split("/").filter(Boolean).pop() || "";
+  const projectRoutes = [
+    "awwwards",
+    "carrot-market",
+    "project-house",
+    "netflix",
+    "kanban",
+    "coin",
+    "myapp",
+    "airbnb",
+  ];
+
   return (
     <>
-      {pathname === "/" ? (
+      {pathname === "/" || pathname === "/awwwards-my-app/" || normalizedPath === "" ? (
         <NavMainMode navHandler={navHandler} mainPosition={mainPosition} />
-      ) : [
-        "/awwwards",
-        "/carrot-market",
-        "/project-house",
-        "/Netflix",
-        "/Kanban",
-        "/Coin",
-        "/Myapp",
-        "/Airbnb",
-      ].includes(pathname) ? (
+      ) : projectRoutes.includes(normalizedPath) ? (
         <NavRouterMode
           pathname={pathname}
           navHandler={navHandler}
