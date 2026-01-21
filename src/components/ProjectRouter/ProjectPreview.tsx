@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import styled, { css } from "styled-components";
 import { IProjectData } from "../../interface/iproject";
 import ImageWithSkeleton from "../common/ImageWithSkeleton";
@@ -79,11 +80,12 @@ const common = css`
     border-radius: 7px;
   }
 `;
-const Preview = styled.div<{ cardBgColorData: string }>`
+const Preview = styled(motion.div)<{ cardBgColorData: string }>`
   padding: 4vw;
   background-color: ${(props) =>
     props.cardBgColorData === "CRYPTO TRACKER" ? "#3e3e3e" : "#222"};
   ${common}
+  overflow: hidden;
 `;
 const PrevInner = styled.div`
   object-fit: cover;
@@ -123,7 +125,18 @@ function ProjectPreview({ projectData }: { projectData: IProjectData }) {
       <PreviewContainer>
         {projectData.imgs.map((data: string, index: number) =>
           data ? (
-            <Preview cardBgColorData={projectData.name} key={index}>
+            <Preview
+              cardBgColorData={projectData.name}
+              key={index}
+              layout
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{
+                duration: 0.4,
+                delay: index * 0.1,
+                ease: "easeOut",
+              }}
+            >
               <PrevInner>
                 <PreviewImg
                   sources={data}
