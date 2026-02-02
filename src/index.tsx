@@ -46,6 +46,7 @@ body {
   padding: 0;
 	color: #222222;
   width: 100%;
+  min-height: 100vh;
 }
 ol, ul {
   list-style: none;
