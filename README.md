@@ -21,7 +21,7 @@ awwwards 웹사이트를 구경하다가, <br/>
     <br/><br/>
     <br/><br/>
 
-## 👤 맴버 구성
+## 👤 멤버 구성
 
 - 백시현: 기획, 디자인, 개발
   <br/><br/>
@@ -42,14 +42,51 @@ awwwards 웹사이트를 구경하다가, <br/>
 <span><img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black"/></span>
 <span><img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white"/></span><br/>
 <span><img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black"/></span>
-<span><img src="https://img.shields.io/badge/ReactQuery-FF4154?style=flat-square&logo=reactquery&logoColor=white"/></span>
 <span><img src="https://img.shields.io/badge/Redux_Toolkit-764ABC?style=flat-square&logo=redux&logoColor=white"/></span><br/>
+<span><img src="https://img.shields.io/badge/GSAP-88CE02?style=flat-square&logo=greensock&logoColor=black"/></span>
+<span><img src="https://img.shields.io/badge/Framer_Motion-0055FF?style=flat-square&logo=framer&logoColor=white"/></span><br/>
 <span><img src="https://img.shields.io/badge/git-F05032?style=flat-square&logo=git&logoColor=white"/></span>
 <span><img src="https://img.shields.io/badge/Github-181717?style=flat-square&logo=github&logoColor=white"/></span><br/>
 <span><img src="https://img.shields.io/badge/VisualStudioCode-007ACC?style=flat-square&logo=visualstudiocode&logoColor=white"/></span>
 <span><img src="https://img.shields.io/badge/figma-F24E1E?style=flat-square&logo=figma&logoColor=white"/></span>
 <span><img src="https://img.shields.io/badge/Windows-0078D6?style=flat-square&logo=windows&logoColor=white"/></span>
 <br/><br/>
+<br/><br/>
+
+## 🚀 실행 및 배포
+
+Create React App 기반입니다.
+
+```bash
+npm install
+npm start      # http://localhost:3000
+npm run build  # build/ 로 프로덕션 빌드
+npm test       # react-scripts test
+npm run deploy # predeploy(build) → gh-pages 로 배포
+```
+
+배포 주소: <https://baek-si-hyun.github.io/awwwards-my-app>
+
+<br/><br/>
+
+## 📂 폴더 구조
+
+아토믹 디자인 패턴을 적용해 아래처럼 나눴습니다.
+
+```
+src/
+├── pages/        # 페이지 단위
+├── container/    # 페이지와 컴포넌트 사이 조립 계층
+├── components/   # 화면 조각
+├── redux/        # Redux Toolkit 스토어 (뮤직 플레이어 상태 등)
+├── services/     # 데이터 상수(전시 목록 · FAQ · 일정표)
+├── hooks/ libs/  # 커스텀 훅·유틸
+├── interface/    # 타입 선언
+├── constants/    # 상수
+├── assets/       # 폰트·이미지
+└── utils/
+```
+
 <br/><br/>
 
 ## 📄 프로젝트 설명
@@ -92,7 +129,7 @@ awwwards 웹사이트를 구경하다가, <br/>
 제 웹사이트를 구경하실때 보다 즐거운 시간이 되시길 바라는 마음으로 제 취향 노래들을 들으실수 있는
 뮤직 플레이어를 만들어 보았습니다.
 해당 뮤직 리스트는 드래그를 통해 순서를 변경 가능합니다.
-react-beautiful-dnd, react-player, redux-toolkit 라이브러리들이 사용되었습니다.
+@hello-pangea/dnd(react-beautiful-dnd 의 유지보수 후속), react-player, redux-toolkit 라이브러리들이 사용되었습니다.
 ```
 
 ![스크린샷 2024-07-02 175219](https://github.com/baek-si-hyun/awwwards-my-app/assets/107901109/bb89db1f-9bae-4306-a432-e8ccb80f9009)
