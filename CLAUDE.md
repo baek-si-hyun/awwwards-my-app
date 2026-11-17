@@ -9,7 +9,7 @@
 - Vite 8.3 + TypeScript 5.9 + React 19.3. Create React App(react-scripts)은 11-17 에 걷어냈다 — 다시 넣지 않는다.
 - 스타일: styled-components 6.6 — `StyleSheetManager` 에 `isPropValid` + `enableVendorPrefixes`. 중첩 가상 선택자는 `&:hover` 꼴로 쓴다.
 - 라우팅: react-router 7.18(`import … from 'react-router'`), `/` 메인 · `/:projectId` 프로젝트 상세 · `/faqs` · 그 밖(`*`)은 `/` 로(메인 외 `lazy`).
-- 애니메이션: motion 14 — `LazyMotion strict` 이라 `m.div` 를 쓴다(`motion.div` 금지), 기능 묶음은 `src/motionFeatures.ts`(domMax). gsap 도 함께 쓴다.
+- 애니메이션: motion 14 — `LazyMotion strict` 이라 `m.div` 를 쓴다(`motion.div` 금지), 기능 묶음은 `src/motionFeatures.ts`(domMax). gsap 은 11-17 `b4717d2` 에서 의존성째 뺐다 — 다시 넣지 않는다.
 - 상태: Redux Toolkit 2.14(`src/redux/store.ts` — 즐겨찾기 키는 `favoriteListSlice`). 영상: react-player 2.16.
 - react-query · 차트(apexcharts · recharts) · @emailjs/browser · ws 는 11-17 에 뺐다 — 다시 넣지 않는다. `.npmrc`(legacy-peer-deps)도 없앴다 — `npm ci` 가 그대로 통과해야 한다.
 - ⚠️ package.json 에 `"type": "module"` 을 넣지 않는다(react-player 가 React 오류 #130 으로 깨진다).
@@ -42,9 +42,10 @@ npm run deploy          # predeploy(build → scripts/keep-prev-assets.mjs) 뒤 
 
 - 데이터 API 호출 없음. 남은 외부 주소는 링크(awwwards.com 등)와 react-player 임베드뿐.
 
-## 폴더 (아토믹 디자인, README "폴더 구조")
+## 폴더 (아토믹 디자인)
 
-`pages/` 페이지 → `container/` 조립 → `components/` 조각. 데이터 상수는 `src/services/listData.ts`(사이트 목록 · 프로젝트 `projectData` · FAQ · 일정표), 타입은 `src/interface/`, 훅은 `src/hooks/`·`src/libs/`. 정의처는 하나, 순환 import 0. 상세 화면 내비 대상(`src/constants/navData.ts`)은 `projectData` 에서 파생한다 — 전시 목록에 넣으면 내비도 붙는다.
+`pages/` 페이지 → `container/` 조립 → `components/` 조각. 데이터 상수는 `src/constants/` — `listData.ts`(소셜 링크 · 사이트 목록 · 프로젝트 `projectData` · FAQ · 일정표) · `musicData.ts`(재생 목록) · `navData.ts` · `images.ts`. 타입은 `src/interface/`, 훅은 `src/hooks/`, DOM 유틸 · 경로 정규화는 `src/utils/`(`domApi.ts` · `path.ts`). 정의처는 하나, 순환 import 0. 상세 화면 내비 대상(`navData.ts`)은 `projectData` 에서 파생한다 — 전시 목록에 넣으면 내비도 붙는다.
+README 의 '폴더 구조' 그림(services · libs)은 11-17 정리 전 것이다 — 이 절이 맞다.
 
 ## 영상
 
@@ -54,7 +55,7 @@ npm run deploy          # predeploy(build → scripts/keep-prev-assets.mjs) 뒤 
 
 ## 주의
 
-- 푸터 표시는 `App.tsx` 의 `ResizeObserver`(main 높이가 300px 를 넘으면 표시, 최대 4초 대기)로 판단한다. 건드릴 땐 관찰자 정리(cleanup) 유지.
+- 푸터 표시는 `src/hooks/useContentReady.ts` 의 `ResizeObserver`(본문 높이가 300px 를 넘으면 표시, 최대 4초 대기)로 판단하고 `App.tsx` 는 호출만 한다. 건드릴 땐 관찰자 · 타이머 정리(cleanup) 유지.
 - 배포 전 기능 목록(진입 애니메이션 · whileInView · 목록 → 상세 · 상세 내비 · 딥링크 새로고침 · FAQ 열고 닫기 · 드래그 앤 드롭 순서 바꾸기 · 음악 재생/정지 · react-player · 배경 영상 · 푸터 · 옛 주소 → 홈 · 가로 넘침 0 · 콘솔 오류 0 · 375 · 768 · 1440 레이아웃)을 배포 전후로 대조한다. 배포 뒤 확인은 운영 주소에서 한다.
 - 이 PC 는 다른 서비스 운영 서버를 겸한다 — 평일 14:45~15:15 · 19:25~19:55 에는 `npm run build` · `deploy` · 영상 인코딩 금지(조직 규칙 org-rules 6장).
 - 배포: 사용자 11-17 "어워드는 끝나면 바로 배포" — 일이 끝나고 `npm run check` 가 통과하면 `npm run deploy` 까지 한다(직원 세션이 막히면 커밋 sha 로 총괄에게).
