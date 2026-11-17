@@ -102,6 +102,15 @@ const AllMusicTextBox = styled(MusicTextBox)`
 function Music() {
   const { ref: newjeansRef, inView: newjeansView } = useInView();
   const { ref: favRef, inView: favView } = useInView();
+  // 배경 영상(각 50MB 안팎)은 섹션 상자가 화면 두 장 거리 안에 들어올 때 처음 붙인다(한 번 붙이면 유지).
+  const { ref: newjeansVideoRef, inView: newjeansNear } = useInView({
+    triggerOnce: true,
+    rootMargin: "200% 0px",
+  });
+  const { ref: favVideoRef, inView: favNear } = useInView({
+    triggerOnce: true,
+    rootMargin: "200% 0px",
+  });
   return (
     <Container id="music">
       <Inner>
@@ -122,7 +131,12 @@ function Music() {
           </TextBoxbottom>
         </StickyTextBox>
         <MusicContainer>
-          <RelativeBox ref={newjeansRef}>
+          <RelativeBox
+            ref={(el) => {
+              newjeansRef(el);
+              newjeansVideoRef(el);
+            }}
+          >
             <MusicImg
               sources={IMAGES.MUSIC.BACKGROUND.NEWJEANS}
               alt="famous artist"
@@ -131,9 +145,11 @@ function Music() {
               objectFit="cover"
             />
             <MusicVideo inView={newjeansView}>
-              <Video controls={false} autoPlay={true} loop={true} muted={true}>
-                <source src={newjeansmv} type="video/mp4"></source>
-              </Video>
+              {newjeansNear && (
+                <Video controls={false} autoPlay={true} loop={true} muted={true}>
+                  <source src={newjeansmv} type="video/mp4"></source>
+                </Video>
+              )}
             </MusicVideo>
             <MusicTextBox>
               <div>
@@ -142,7 +158,12 @@ function Music() {
             </MusicTextBox>
           </RelativeBox>
           <NewJeans />
-          <RelativeBox ref={favRef}>
+          <RelativeBox
+            ref={(el) => {
+              favRef(el);
+              favVideoRef(el);
+            }}
+          >
             <MusicImg
               sources={IMAGES.MUSIC.BACKGROUND.MUSIC}
               alt="newjeans"
@@ -151,9 +172,11 @@ function Music() {
               objectFit="cover"
             />
             <MusicVideo inView={favView}>
-              <Video controls={false} autoPlay={true} loop={true} muted={true}>
-                <source src={musicvideo} type="video/mp4"></source>
-              </Video>
+              {favNear && (
+                <Video controls={false} autoPlay={true} loop={true} muted={true}>
+                  <source src={musicvideo} type="video/mp4"></source>
+                </Video>
+              )}
             </MusicVideo>
             <AllMusicTextBox>
               <div>
