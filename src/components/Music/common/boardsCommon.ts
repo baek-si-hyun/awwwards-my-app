@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ButtonDiv, ControllBtn } from "../MusicSet";
+import { ButtonDiv, ControllBtn } from "./musicSetStyles";
 
 export const Container = styled.div`
   width: 100%;

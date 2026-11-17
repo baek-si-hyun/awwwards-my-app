@@ -70,7 +70,7 @@ const Answer = styled.div`
 function FaqList() {
   const [listNum, setListNum] = useState(-1);
   const makeFaqList = () => {
-    let newFaqList: ReactElement[] = [];
+    const newFaqList: ReactElement[] = [];
     faqList.forEach((data, i) => {
       newFaqList.push(
         <Faq key={i}>

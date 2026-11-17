@@ -7,6 +7,9 @@
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
+    "lint": "eslint . --max-warnings=0",
+    "check:cycles": "madge --circular --extensions ts,tsx --ts-config tsconfig.json src",
+    "check": "npm run typecheck && npm run lint && npm run check:cycles",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
@@ -25,12 +28,19 @@
     "styled-components": "^6.6.0"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
     "@types/node": "^24.19.2",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "@vitejs/plugin-react": "^6.3.0",
+    "eslint": "^10.15.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.8",
     "gh-pages": "^6.3.0",
+    "globals": "^17.14.0",
+    "madge": "^8.0.0",
     "typescript": "^5.9.3",
+    "typescript-eslint": "^8.73.0",
     "vite": "^8.3.8"
   }
 }
