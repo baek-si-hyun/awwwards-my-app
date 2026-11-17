@@ -1,18 +1,16 @@
 # awwwards-my-app
 
 개인 포트폴리오 사이트(만든 프로젝트를 웹 전시장처럼 보여 줌). 백엔드 없음 — 정적 SPA 를 GitHub Pages 에 올린다.
-마지막 코드 커밋: 2026-02-02 (`f0e92f3`).
+마지막 배포: 2026-11-17 22:44 gh-pages `0cb577d`(master `fff6457`). 11-17 사용자 지시로 코인 기능 전부(`3d76676`)와 Contact 페이지 · EmailJS(`fff6457`)를 지웠다 — 옛 `/coinlist` · `/coin/:market` · `/contact` 는 홈으로 간다.
 
 ## 스택 (근거: package.json)
 
 - React 19.0.3 (`package.json:26`) + Create React App `react-scripts` 5.0.1 (`package.json:32`), TypeScript 4.9 (`package.json:37`)
 - 스타일: styled-components 5 (`package.json:36`) — 전역 리셋은 `src/index.tsx:11` `createGlobalStyle`
-- 라우팅: react-router-dom 6 `BrowserRouter basename={process.env.PUBLIC_URL}` (`src/index.tsx:89`), 라우트 표는 `src/App.tsx:164-206`
-  - `/` 메인 · `/:projectId` 프로젝트 상세 · `/coinlist` · `/coin/:market` · `/faqs` · `/contact` (메인 외 전부 `lazy`)
-- 상태: Redux Toolkit (`src/redux/store.ts`), 서버 상태: @tanstack/react-query v4 (`src/index.tsx:75`)
-- 애니메이션: framer-motion · gsap (`package.json:22,24`, 유틸 `src/utils/animations.ts`)
-- 차트: apexcharts · recharts (`package.json:21,33`)
-- 메일: @emailjs/browser (`src/components/Contact/EmailJs.tsx:74`)
+- 라우팅: react-router-dom 6 `BrowserRouter basename={process.env.PUBLIC_URL}` (`src/index.tsx:77`), 라우트 표는 `src/App.tsx:199-210`
+  - `/` 메인 · `/:projectId` 프로젝트 상세 · `/faqs` · 그 밖(`*`)은 `/` 로 (메인 외 `lazy`)
+- 상태: Redux Toolkit (`src/redux/store.ts`). react-query · 차트(apexcharts · recharts) · @emailjs/browser · ws 는 11-17 에 의존성에서 뺐다 — 다시 넣지 않는다.
+- 애니메이션: framer-motion · gsap (유틸 `src/utils/animations.ts`)
 - `.npmrc` 에 `legacy-peer-deps=true` — `npm install` 이 이걸 전제로 한다.
 
 ## 실행 · 빌드 · 배포 (근거: package.json:43-48, 68)
@@ -30,13 +28,11 @@ npm run deploy   # predeploy 로 build 후 gh-pages -d build
 
 ## 환경 변수
 
-- `REACT_APP_EMAILJS_SERVICE_ID` · `REACT_APP_EMAILJS_TEMPLATE_ID` · `REACT_APP_EMAILJS_API_KEYS` (`src/components/Contact/EmailJs.tsx:76-79`). `.env` 는 gitignore — 값은 문서·커밋에 쓰지 않는다. 없으면 Contact 메일 전송만 실패하고 나머지는 동작.
+- 없다(11-17 EmailJS 제거 뒤). `npm run deploy` 에 `.env` 가 필요 없다. `.env` 를 만들게 되면 gitignore 유지 · 값은 문서 · 커밋에 쓰지 않는다.
 
-## 외부 호출 (전부 브라우저에서 직접)
+## 외부 호출
 
-- Bithumb 공개 REST `https://api.bithumb.com/public` (`src/services/bithumbApi.ts:10`), WebSocket `wss://pubwss.bithumb.com/pub/ws` (`src/libs/useBithumbSocket.ts:69`)
-- CoinGecko 시가총액 (`src/libs/useSupplyMap.ts:77`)
-- 코인 화면(`/coinlist`, `/coin/:market`)은 README 에 아직 설명이 없다.
+- 데이터 API 호출 없음(Bithumb · CoinGecko 는 11-17 에 코인 기능과 함께 지웠다). 남은 외부 주소는 링크(awwwards.com 등)와 react-player 임베드뿐.
 
 ## 폴더 (아토믹 디자인, README "폴더 구조")
 
@@ -47,4 +43,5 @@ npm run deploy   # predeploy 로 build 후 gh-pages -d build
 - `src/App.tsx:47-156` Footer 표시 로직은 DOM 폴링(interval · rAF · MutationObserver, 최대 4초)으로 콘텐츠 준비를 판단한다. 건드릴 땐 타이머 정리(cleanup) 유지.
 - redux 키 `lolChampionsListSlice` 는 실제로 `favoriteListSlice` 를 가리킨다(`src/redux/store.ts:7,14`) — 이름만 옛것.
 - `src/babel.config.js` 는 CRA 가 쓰지 않는 별도 babel 설정(jest 용 흔적).
-- 이 PC 는 다른 서비스 운영 서버를 겸한다 — 평일 14:45~15:15 · 19:30~19:50 에는 `npm run build`·`deploy` 금지.
+- 이 PC 는 다른 서비스 운영 서버를 겸한다 — 평일 14:45~15:15 · 19:25~19:55 에는 `npm run build`·`deploy` 금지(조직 규칙 org-rules 6장).
+- 배포: 사용자 11-17 "어워드는 끝나면 바로 배포" — 일이 끝나고 검사가 통과하면 `npm run deploy` 까지 한다.
