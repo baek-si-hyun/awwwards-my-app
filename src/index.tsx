@@ -80,6 +80,21 @@ const shouldForwardProp = (prop: string, target: unknown) =>
 // 애니메이션 기능(domMax)은 첫 화면 번들에서 빼고 따로 받는다. 컴포넌트는 motion 대신 m 을 쓴다.
 const loadMotionFeatures = () => import("./motionFeatures").then((mod) => mod.default);
 
+// 배포 뒤 지워진 옛 청크를 불러오다 실패하면(캐시된 옛 HTML 등) 새 판을 받도록 한 번만 새로고침한다.
+// 1분 안에 또 실패하면 다시 새로고침하지 않는다(무한 반복 방지).
+const RELOAD_KEY = "aw-preload-reload-at";
+window.addEventListener("vite:preloadError", (event) => {
+  try {
+    const last = Number(sessionStorage.getItem(RELOAD_KEY) || 0);
+    if (Date.now() - last < 60_000) return;
+    sessionStorage.setItem(RELOAD_KEY, String(Date.now()));
+  } catch {
+    return;
+  }
+  event.preventDefault();
+  window.location.reload();
+});
+
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );

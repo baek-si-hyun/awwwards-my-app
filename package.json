@@ -10,8 +10,9 @@
     "lint": "eslint . --max-warnings=0",
     "check:cycles": "madge --circular --extensions ts,tsx --ts-config tsconfig.json src",
     "check": "npm run typecheck && npm run lint && npm run check:cycles",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "predeploy": "npm run build && node scripts/keep-prev-assets.mjs",
+    "deploy": "gh-pages -d dist",
+    "deploy:dry-run": "npm run build && node scripts/keep-prev-assets.mjs --dry-run"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "^1.4.0",
