@@ -79,12 +79,11 @@ src/
 ├── container/    # 페이지와 컴포넌트 사이 조립 계층
 ├── components/   # 화면 조각
 ├── redux/        # Redux Toolkit 스토어 (뮤직 플레이어 상태 등)
-├── services/     # 데이터 상수(전시 목록 · FAQ · 일정표)
-├── hooks/ libs/  # 커스텀 훅·유틸
+├── constants/    # 데이터 상수(전시 목록 · FAQ · 일정표 · 노래 목록 · 내비 · 이미지)
+├── hooks/        # 커스텀 훅
+├── utils/        # DOM 위치 계산 · 경로 정규화
 ├── interface/    # 타입 선언
-├── constants/    # 상수
-├── assets/       # 폰트·이미지
-└── utils/
+└── assets/       # 폰트·이미지·배경 영상
 ```
 
 <br/><br/>
