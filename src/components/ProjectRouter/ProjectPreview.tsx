@@ -80,10 +80,9 @@ const common = css`
     border-radius: 7px;
   }
 `;
-const Preview = styled(motion.div)<{ cardBgColorData: string }>`
+const Preview = styled(motion.div)`
   padding: 4vw;
-  background-color: ${(props) =>
-    props.cardBgColorData === "CRYPTO TRACKER" ? "#3e3e3e" : "#222"};
+  background-color: #222;
   ${common}
   overflow: hidden;
 `;
@@ -126,7 +125,6 @@ function ProjectPreview({ projectData }: { projectData: IProjectData }) {
         {projectData.imgs.map((data: string, index: number) =>
           data ? (
             <Preview
-              cardBgColorData={projectData.name}
               key={index}
               layout
               initial={{ opacity: 0 }}

@@ -127,7 +127,6 @@ function NavMode({
     "project-house",
     "netflix",
     "kanban",
-    "coin",
     "myapp",
     "airbnb",
   ];

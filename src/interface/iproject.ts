@@ -12,8 +12,6 @@ export interface IVisited {
   visited_awwwards_total: number;
   visited_airbnb_today: number;
   visited_airbnb_total: number;
-  visited_coin_today: number;
-  visited_coin_total: number;
   visited_kanban_today: number;
   visited_kanban_total: number;
   visited_myapp_today: number;

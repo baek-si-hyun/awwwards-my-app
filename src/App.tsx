@@ -2,18 +2,54 @@ import { Suspense, lazy, useEffect, useState, useRef } from "react";
 import styled from "styled-components";
 import Main from "./pages/main/Main";
 import ScrollToTop from "./ScrollToTop";
-import { Route, Routes, useLocation } from "react-router-dom";
+import { Navigate, Route, Routes, useLocation, useParams } from "react-router-dom";
 import { useMySelector } from "./libs/useMySelector";
 import MusicPlayer from "./components/Music/MusicPlayer";
 import MusicPlayBox from "./components/Music/MusicPlayBox";
 import Footer from "./components/Footer/Footer";
-import FloatingCoinListButton from "./components/FloatingCoinListButton";
+import { projectData } from "./services/listData";
 
 const Contact = lazy(() => import("./pages/Contact/Contact"));
 const Faqs = lazy(() => import("./pages/faqs/Faqs"));
 const Myapp = lazy(() => import("./pages/ProjectRouter/ProjectMain"));
-const CoinListPage = lazy(() => import("./pages/coinlist/CoinListPage"));
-const CoinDetailPage = lazy(() => import("./pages/coinlist/CoinDetailPage"));
+
+// 전시 목록에 없는 경로(지운 옛 화면 주소 등)는 홈으로 돌린다.
+// 상세 화면은 목록 클릭 때 넘기는 location.state 를 읽으므로,
+// 주소로 바로 들어오거나 새로고침해 state 가 없으면 같은 모양으로 채워 준다.
+function ProjectRoute() {
+  const { projectId = "" } = useParams();
+  const location = useLocation();
+  const project = projectData.find(
+    (p) => p.projects_code === projectId.toLowerCase()
+  );
+  if (!project) {
+    return <Navigate to="/" replace />;
+  }
+  if (!location.state) {
+    return (
+      <Navigate
+        to={location.pathname}
+        replace
+        state={{
+          date: project.projects_date,
+          name: project.projects_name,
+          logo: project.projects_logo,
+          by: project.projects_by,
+          imgs: project.projects_prev_img,
+          fonts: project.projects_fonts,
+          colors: project.projects_colors,
+          ko: project.projects_ko,
+          en: project.projects_en,
+        }}
+      />
+    );
+  }
+  return (
+    <Suspense fallback={<></>}>
+      <Myapp />
+    </Suspense>
+  );
+}
 
 const AppContainer = styled.div`
   display: flex;
@@ -163,30 +199,7 @@ function App() {
       <MainContent ref={mainContentRef}>
         <Routes>
           <Route path="/" element={<Main />} />
-          <Route
-            path=":projectId"
-            element={
-              <Suspense fallback={<></>}>
-                <Myapp />
-              </Suspense>
-            }
-          />
-          <Route
-            path="coinlist"
-            element={
-              <Suspense fallback={<></>}>
-                <CoinListPage />
-              </Suspense>
-            }
-          />
-          <Route
-            path="coin/:market"
-            element={
-              <Suspense fallback={<></>}>
-                <CoinDetailPage />
-              </Suspense>
-            }
-          />
+          <Route path=":projectId" element={<ProjectRoute />} />
           <Route
             path="faqs"
             element={
@@ -203,9 +216,9 @@ function App() {
               </Suspense>
             }
           />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </MainContent>
-      <FloatingCoinListButton />
       <FooterWrapper $isVisible={isContentReady}>
         <Footer />
       </FooterWrapper>

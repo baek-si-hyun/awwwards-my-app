@@ -86,7 +86,6 @@ const AbsoluteBox = styled.div<{ indexNum: number }>`
     "left:22.8rem;gap:0.5rem;background-color:#502bd8;"};
   ${(props) => props.indexNum === 2 && "left:33rem;gap:34rem;"};
   ${(props) => props.indexNum === 3 && "left:33rem;gap:3rem;"};
-  ${(props) => props.indexNum === 4 && "left:43rem;gap:3rem;"};
   ${(props) => props.indexNum === 5 && "left:43rem;gap:3rem;"};
   ${(props) => props.indexNum === 6 && "left:53rem;gap:13.5rem;"};
   ${(props) => props.indexNum === 7 && "left:55rem;gap:2rem;"};

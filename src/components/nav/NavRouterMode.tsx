@@ -65,14 +65,6 @@ function NavRouterMode({
           >
             Visited Site
           </a>
-        ) : normalizedPath === "coin" ? (
-          <a
-            href="https://baek-si-hyun.github.io/coin-chart-app/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Visited Site
-          </a>
         ) : normalizedPath === "myapp" ? (
           <a
             href="https://baek-si-hyun.github.io/my-app/"

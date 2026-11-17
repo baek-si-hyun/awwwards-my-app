@@ -5,7 +5,6 @@ import playingVideoInfoSlice from "./playingVideoInfoSlice";
 import controlPlayListSlice from "./controlPlayListSlice";
 import controllerVisibleSlice from "./controllerVisibleSlice";
 import lolChampionsListSlice from "./favoriteListSlice";
-import orderbookSlice from "./orderbookSlice";
 
 const store = configureStore({
   reducer: {
@@ -15,7 +14,6 @@ const store = configureStore({
     playingVideoInfoSlice: playingVideoInfoSlice.reducer,
     controlPlayListSlice: controlPlayListSlice.reducer,
     controllerVisibleSlice: controllerVisibleSlice.reducer,
-    orderbookSlice: orderbookSlice.reducer,
   },
 });
 export default store;

@@ -35,10 +35,8 @@ import nj12 from "../assets/img/music/newjeans/nj12.avif";
 // Sites Images
 import site1 from "../assets/img/sites/site1.avif";
 import site2 from "../assets/img/sites/site2.avif";
-import site3 from "../assets/img/sites/site3.avif";
 import icon1 from "../assets/img/sites/icon1.avif";
 import icon2 from "../assets/img/sites/icon2.avif";
-import icon3 from "../assets/img/sites/icon3.avif";
 
 // Projects Images - Selleaf
 import selleafThumbnail from "../assets/img/projects/selleaf/selleaf_thumbnail.avif";
@@ -79,14 +77,6 @@ import kanban2 from "../assets/img/projects/kanban/kanban2.avif";
 import kanban3 from "../assets/img/projects/kanban/kanban3.avif";
 import kanban4 from "../assets/img/projects/kanban/kanban4.avif";
 
-// Projects Images - Crypto
-import cryptoThumbnail from "../assets/img/projects/crypto/crypto_thumbnail.avif";
-import cryptoIcon from "../assets/img/projects/crypto/crypto_icon.avif";
-import crypto1 from "../assets/img/projects/crypto/crypto1.avif";
-import crypto2 from "../assets/img/projects/crypto/crypto2.avif";
-import crypto3 from "../assets/img/projects/crypto/crypto3.avif";
-import crypto4 from "../assets/img/projects/crypto/crypto4.avif";
-
 // Projects Images - Myapp
 import myappThumbnail from "../assets/img/projects/myapp/myapp_thumbnail.avif";
 import myappIcon from "../assets/img/projects/myapp/myapp_icon.avif";
@@ -105,7 +95,6 @@ import airbnb4 from "../assets/img/projects/airbnb/airbnb4.avif";
 
 // Common Images
 import lighthouse from "../assets/img/common/lighthouse.webp";
-import bithumbLogo from "../assets/img/common/new-logo-default.1a222f9b007db3fce4e0.webp";
 
 export const IMAGES = {
   HEADER: {
@@ -150,12 +139,10 @@ export const IMAGES = {
     SITE: {
       SITE1: site1,
       SITE2: site2,
-      SITE3: site3,
     },
     ICON: {
       ICON1: icon1,
       ICON2: icon2,
-      ICON3: icon3,
     },
   },
   PROJECTS: {
@@ -184,11 +171,6 @@ export const IMAGES = {
       ICON: kanbanIcon,
       IMAGES: [kanban1, kanban2, kanban3, kanban4],
     },
-    CRYPTO: {
-      THUMBNAIL: cryptoThumbnail,
-      ICON: cryptoIcon,
-      IMAGES: [crypto1, crypto2, crypto3, crypto4],
-    },
     MYAPP: {
       THUMBNAIL: myappThumbnail,
       ICON: myappIcon,
@@ -202,6 +184,5 @@ export const IMAGES = {
   },
   COMMON: {
     LIGHTHOUSE: lighthouse,
-    BITHUMB_LOGO: bithumbLogo,
   },
 };

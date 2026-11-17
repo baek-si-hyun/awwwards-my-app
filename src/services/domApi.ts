@@ -13,7 +13,6 @@ export const domApi = ({
     "project-house",
     "netflix",
     "kanban",
-    "coin",
     "myapp",
     "airbnb",
   ];

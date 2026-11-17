@@ -5,8 +5,6 @@ import "./assets/font/css/font.css";
 import App from "./App";
 import { Provider } from "react-redux";
 import store from "./redux/store";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 const GlobalStyle = createGlobalStyle`
 html, body, div, span, applet, object, iframe,
@@ -72,27 +70,14 @@ a {
   -webkit-font-smoothing: antialiased;
 }
 `;
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      refetchOnWindowFocus: false,
-      retry: 1,
-      staleTime: 30 * 1000,
-    },
-  },
-});
-
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <BrowserRouter basename={process.env.PUBLIC_URL}>
-    <QueryClientProvider client={queryClient}>
-      <Provider store={store}>
-        <GlobalStyle />
-        <App />
-      </Provider>
-      <ReactQueryDevtools />
-    </QueryClientProvider>
+    <Provider store={store}>
+      <GlobalStyle />
+      <App />
+    </Provider>
   </BrowserRouter>
 );

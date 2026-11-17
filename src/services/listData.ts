@@ -18,12 +18,6 @@ export const siteList = [
     href: "https://music.youtube.com/",
     icon: IMAGES.SITES.ICON.ICON2,
   },
-  {
-    img: IMAGES.SITES.SITE.SITE3,
-    alt: "CoinMarketCap",
-    href: "https://coinmarketcap.com/ko/",
-    icon: IMAGES.SITES.ICON.ICON3,
-  },
 ];
 
 export const gameName: string[] = [
@@ -159,29 +153,6 @@ export const projectData: IProjectsData[] = [
   },
 
   {
-    projects_code: "coin",
-    projects_name: "CRYPTO TRACKER",
-    projects_date: "2023. 1. 11",
-    projects_tools: [
-      "html5",
-      "css3",
-      "styledcomponents",
-      "typescript",
-      "react",
-      "recoil",
-    ],
-    projects_thumbnail: IMAGES.PROJECTS.CRYPTO.THUMBNAIL,
-    projects_logo: IMAGES.PROJECTS.CRYPTO.ICON,
-    projects_by: "Nomad Coders, SiHyun Baek",
-    projects_prev_img: IMAGES.PROJECTS.CRYPTO.IMAGES,
-    projects_fonts: ["Pretendard"],
-    projects_colors: ["#3b3b3b", "#222222"],
-    projects_ko:
-      '"nomadcoders"라는 강의 사이트에서 진행하는 코드 챌린지로 인해 제작되었습니다.React와 typescript를 조합하였고 그외에 Styled Components, Recoil, React Query, apexcharts를 사용하였습니다.',
-    projects_en:
-      'Due to a code challenge conducted on a lecture site called "nomadcoders" it was created React and typescript combined and different styled Components, Recoil, React Query and apexcharts were used.',
-  },
-  {
     projects_code: "myapp",
     projects_name: "MY APP",
     projects_date: "2022. 12. 25",
@@ -281,12 +252,6 @@ export const schedule: IScheduleData[] = [
     text: ["MY APP", "", "", "", "", "", "", "", "", "", "", "", ""],
     absoluteBox: "Project",
     date: "2022. 11 ~ 2022. 12",
-  },
-  {
-    id: 4,
-    text: ["CRYPTO Tracker", "", "", "", "", "", "", "", "", "", "", "", ""],
-    absoluteBox: "Project",
-    date: "2022. 12 ~ 2023. 01",
   },
   {
     id: 5,
