@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import styled, { css, keyframes } from "styled-components";
 
 const filteredContainerProps = [
@@ -126,10 +126,15 @@ function ImageWithSkeleton({
     [sources]
   );
   const src = useMemo(() => sourceList[idx] || "", [sourceList, idx]);
-  const [loaded, setLoaded] = useState(false);
+  // 로드가 끝난 src 를 기억한다. 마운트 뒤 effect 에서 false 로 되돌리면
+  // 캐시된 이미지의 onLoad 가 effect 보다 먼저 와서 영영 투명(opacity 0)으로 남는다.
+  const [loadedSrc, setLoadedSrc] = useState<string | null>(null);
+  const loaded = loadedSrc === src;
+  const imgRef = useRef<HTMLImageElement>(null);
 
   useEffect(() => {
-    setLoaded(false);
+    const img = imgRef.current;
+    if (img && img.complete && img.naturalWidth > 0) setLoadedSrc(src);
   }, [src]);
 
   if (!src) {
@@ -157,6 +162,7 @@ function ImageWithSkeleton({
         round={round}
         fullWidth={fullWidth}
         fullHeight={fullHeight}
+        ref={imgRef}
         src={src}
         alt={alt}
         loading="lazy"
@@ -166,11 +172,11 @@ function ImageWithSkeleton({
           if (idx < sourceList.length - 1) {
             setIdx((i) => i + 1);
           } else {
-            setLoaded(true);
+            setLoadedSrc(src);
           }
         }}
         onLoad={() => {
-          setLoaded(true);
+          setLoadedSrc(src);
         }}
       />
     </ImgContainer>
