@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 import { m } from "motion/react";
 import styled, { css } from "styled-components";
-import { projectData } from "../../services/listData";
+import { projectData } from "../../constants/listData";
 import ImageWithSkeleton from "../common/ImageWithSkeleton";
 import ProjectToolIcon from "./ProjectToolIcon";
 

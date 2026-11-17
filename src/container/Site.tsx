@@ -4,7 +4,7 @@ import {
   TextBoxMiddle,
   TextBoxbottom,
 } from "../pages/main/common/mainCommon";
-import { siteList } from "../services/listData";
+import { siteList } from "../constants/listData";
 import ImageWithSkeleton from "../components/common/ImageWithSkeleton";
 
 const Container = styled.section`

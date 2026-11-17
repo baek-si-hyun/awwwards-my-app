@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo } from "react";
 import { useDispatch } from "react-redux";
 import { IPlayList, IVideoInfoRedux } from "../interface/imusic";
-import { useMySelector } from "../libs/useMySelector";
+import { useMySelector } from "./useMySelector";
 import { controlRedux } from "../redux/controlPlayListSlice";
 import { controllerVisibleRedux } from "../redux/controllerVisibleSlice";
 import { videoInfoRedux } from "../redux/playingVideoInfoSlice";

@@ -1,30 +1,5 @@
 import { Dispatch, SetStateAction } from "react";
 
-export interface IGetVisitedObject {
-  visited: IVisited;
-}
-export interface IVisited {
-  visited_projecthouse_today: number;
-  visited_projecthouse_total: number;
-  visited_carrotmarket_today: number;
-  visited_carrotmarket_total: number;
-  visited_awwwards_today: number;
-  visited_awwwards_total: number;
-  visited_airbnb_today: number;
-  visited_airbnb_total: number;
-  visited_kanban_today: number;
-  visited_kanban_total: number;
-  visited_myapp_today: number;
-  visited_myapp_total: number;
-  visited_netflix_today: number;
-  visited_netflix_total: number;
-}
-export interface IResize {
-  resizeWidth: number;
-}
-export interface IPathname {
-  pathname: string;
-}
 export interface IMainPosition {
   home: boolean;
   projects: boolean;
@@ -40,10 +15,6 @@ export interface IDomApi {
   pathname: string;
   setMainPosition: Dispatch<SetStateAction<IMainPosition>>;
   setRouterPosition: Dispatch<SetStateAction<IRouterPosition>>;
-}
-export interface IFaqs {
-  id: string;
-  value: boolean;
 }
 export interface IScheduleData {
   id: number;

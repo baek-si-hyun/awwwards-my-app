@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 import React, { useCallback } from "react";
 import { newJeansRedux } from "../../redux/newJeansListSlice";
-import { useMySelector } from "../../libs/useMySelector";
+import { useMySelector } from "../../hooks/useMySelector";
 import MusicDragDropList from "./MusicDragDropList";
 
 function NewJeans() {

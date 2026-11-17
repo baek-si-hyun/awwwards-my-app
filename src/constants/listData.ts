@@ -3,7 +3,7 @@ import {
   IProjectsData,
   IScheduleData,
 } from "../interface/iproject";
-import { IMAGES } from "../constants/images";
+import { IMAGES } from "./images";
 
 export const siteList = [
   {
@@ -20,11 +20,6 @@ export const siteList = [
   },
 ];
 
-export const gameName: string[] = [
-  "League of Legends",
-  "War Thunder",
-  "Black Desert",
-];
 export const projectData: IProjectsData[] = [
   {
     projects_code: "selleaf",

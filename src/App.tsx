@@ -3,10 +3,10 @@ import styled from "styled-components";
 import Main from "./pages/main/Main";
 import ScrollToTop from "./ScrollToTop";
 import { Navigate, Route, Routes, useLocation, useParams } from "react-router";
-import { useMySelector } from "./libs/useMySelector";
+import { useMySelector } from "./hooks/useMySelector";
 import MusicPlayBox from "./components/Music/MusicPlayBox";
 import Footer from "./components/Footer/Footer";
-import { projectData } from "./services/listData";
+import { projectData } from "./constants/listData";
 
 const Faqs = lazy(() => import("./pages/faqs/Faqs"));
 const Myapp = lazy(() => import("./pages/ProjectRouter/ProjectMain"));

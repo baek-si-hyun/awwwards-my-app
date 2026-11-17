@@ -1,6 +1,6 @@
 import { ReactElement, useState } from "react";
 import styled from "styled-components";
-import { faqList } from "../../services/listData";
+import { faqList } from "../../constants/listData";
 import { UnderLine } from "../main/common/mainCommon";
 
 const Container = styled.ul`

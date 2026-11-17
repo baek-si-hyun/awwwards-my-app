@@ -1,5 +1,5 @@
 import { memo, useMemo } from "react";
-import { useMySelector } from "../../libs/useMySelector";
+import { useMySelector } from "../../hooks/useMySelector";
 import ImageWithSkeleton from "../common/ImageWithSkeleton";
 import styled from "styled-components";
 import { useMusicPlayerControls } from "../../hooks/useMusicPlayerControls";

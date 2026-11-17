@@ -1,7 +1,7 @@
 import { memo, useMemo } from "react";
 import styled from "styled-components";
-import { useMySelector } from "../../libs/useMySelector";
-import { schedule } from "../../services/listData";
+import { useMySelector } from "../../hooks/useMySelector";
+import { schedule } from "../../constants/listData";
 import ScheduleRow from "./ScheduleRow";
 
 const Container = styled.div`
