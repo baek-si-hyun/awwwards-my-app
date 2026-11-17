@@ -74,7 +74,7 @@ const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
-  <BrowserRouter basename={process.env.PUBLIC_URL}>
+  <BrowserRouter basename={import.meta.env.BASE_URL.replace(/\/$/, "")}>
     <Provider store={store}>
       <GlobalStyle />
       <App />
