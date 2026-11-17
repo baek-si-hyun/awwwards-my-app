@@ -9,8 +9,14 @@ import NewJeans from "../components/Music/NewJeans";
 import FavoriteSong from "../components/Music/FavoriteSong";
 import newjeansmv from "../assets/video/newjeansmv.mp4";
 import musicvideo from "../assets/video/musicvideo.mp4";
+import newjeansmvAv1 from "../assets/video/newjeansmv.av1.mp4";
+import musicvideoAv1 from "../assets/video/musicvideo.av1.mp4";
 import { IMAGES } from "../constants/images";
 import ImageWithSkeleton from "../components/common/ImageWithSkeleton";
+
+// 배경 영상은 소리 없이 깐다(muted). AV1 을 읽는 브라우저는 더 작은 AV1 판을, 아니면 H.264 판을 받는다.
+const AV1_TYPE = 'video/mp4; codecs="av01.0.08M.08"';
+const H264_TYPE = 'video/mp4; codecs="avc1.64002A"';
 
 const Container = styled.section`
   width: 100%;
@@ -146,8 +152,15 @@ function Music() {
             />
             <MusicVideo inView={newjeansView}>
               {newjeansNear && (
-                <Video controls={false} autoPlay={true} loop={true} muted={true}>
-                  <source src={newjeansmv} type="video/mp4"></source>
+                <Video
+                  controls={false}
+                  autoPlay={true}
+                  loop={true}
+                  muted={true}
+                  playsInline
+                >
+                  <source src={newjeansmvAv1} type={AV1_TYPE} />
+                  <source src={newjeansmv} type={H264_TYPE} />
                 </Video>
               )}
             </MusicVideo>
@@ -173,8 +186,15 @@ function Music() {
             />
             <MusicVideo inView={favView}>
               {favNear && (
-                <Video controls={false} autoPlay={true} loop={true} muted={true}>
-                  <source src={musicvideo} type="video/mp4"></source>
+                <Video
+                  controls={false}
+                  autoPlay={true}
+                  loop={true}
+                  muted={true}
+                  playsInline
+                >
+                  <source src={musicvideoAv1} type={AV1_TYPE} />
+                  <source src={musicvideo} type={H264_TYPE} />
                 </Video>
               )}
             </MusicVideo>
