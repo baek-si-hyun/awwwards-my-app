@@ -116,7 +116,7 @@ const HoverBox = styled.div`
   left: 0;
   opacity: 0;
   z-index: 99;
-  :hover {
+  &:hover {
     opacity: 1;
   }
   @media (max-width: 1024px) {
@@ -141,7 +141,7 @@ const SenterBox = styled.a`
   transition: all 0.2s ease-in-out;
   will-change: background-color, color;
   font-size: 0.8vw;
-  :hover {
+  &:hover {
     background-color: #3e3e3e;
     color: #fff;
   }

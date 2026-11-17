@@ -18,7 +18,7 @@ const Row = styled.div`
   background-size: 8px 1px;
   background-repeat: repeat-x;
   font-weight: 100;
-  :last-child {
+  &:last-child {
     div {
       background-image: none;
     }
@@ -59,7 +59,7 @@ const Box = styled.div`
       padding: 2vw;
       white-space: wrap;
       font-size: 2vw;
-      :last-child {
+      &:last-child {
         background-image: none;
       }
     }

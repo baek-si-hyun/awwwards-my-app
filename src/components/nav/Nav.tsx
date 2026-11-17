@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 import { useState, useEffect, useCallback } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation } from "react-router";
 import { IMainPosition, IRouterPosition } from "../../interface/iproject";
 import { domApi } from "../../services/domApi";
 import NavRouterMode from "./NavRouterMode";

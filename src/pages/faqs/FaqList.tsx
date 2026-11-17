@@ -51,7 +51,7 @@ const Btn = styled.span`
   cursor: pointer;
   transition: all 0.3s ease-in-out 0s;
   will-change: background-color, border-color, color;
-  :hover {
+  &:hover {
     background-color: #222222;
     border-color: #222222;
     color: #fff;

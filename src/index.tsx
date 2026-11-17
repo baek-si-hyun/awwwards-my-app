@@ -1,6 +1,7 @@
 import ReactDOM from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
-import { createGlobalStyle } from "styled-components";
+import { BrowserRouter } from "react-router";
+import { createGlobalStyle, StyleSheetManager } from "styled-components";
+import isPropValid from "@emotion/is-prop-valid";
 import "./assets/font/css/font.css";
 import App from "./App";
 import { Provider } from "react-redux";
@@ -70,14 +71,21 @@ a {
   -webkit-font-smoothing: antialiased;
 }
 `;
+// styled-components 6 는 스타일용 prop(toggle · indexNum 등)을 DOM 까지 넘긴다.
+// v5 처럼 HTML 요소에는 유효한 속성만 넘기고, 벤더 접두사도 v5 처럼 붙인다.
+const shouldForwardProp = (prop: string, target: unknown) =>
+  typeof target === "string" ? isPropValid(prop) : true;
+
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <BrowserRouter basename={import.meta.env.BASE_URL.replace(/\/$/, "")}>
-    <Provider store={store}>
-      <GlobalStyle />
-      <App />
-    </Provider>
+    <StyleSheetManager shouldForwardProp={shouldForwardProp} enableVendorPrefixes>
+      <Provider store={store}>
+        <GlobalStyle />
+        <App />
+      </Provider>
+    </StyleSheetManager>
   </BrowserRouter>
 );

@@ -85,7 +85,7 @@ const Card = styled(Cards)<{
   colorData: string;
   colorDataLength: number;
 }>`
-  :first-child {
+  &:first-child {
     background-color: ${(props) => props.colorData};
     border-radius: 15px 0px 0px 15px;
     color: #fff;
@@ -112,7 +112,7 @@ const Card = styled(Cards)<{
       }
     }
   }
-  :last-child {
+  &:last-child {
     background-color: ${(props) => props.colorData};
     border-radius: 15px;
     color: #fff;

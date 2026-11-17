@@ -62,7 +62,7 @@ export const Link = styled.a`
   white-space: nowrap;
   transition: background-color 0.2s ease-in-out;
   will-change: background-color;
-  :hover {
+  &:hover {
     background-color: rgba(255, 255, 255, 0.1);
   }
   @media (max-width: 800px) {
@@ -78,22 +78,22 @@ export const Link = styled.a`
 `;
 export const NavItem = styled(NavItemCommon)<{ mainPosition: IMainPosition }>`
   will-change: background-color, color;
-  :nth-child(1) {
+  &:nth-child(1) {
     background-color: ${(props) =>
       props.mainPosition.home ? "#d3d3d3" : "#3e3e3e"};
     color: ${(props) => (props.mainPosition.home ? "#000" : "inherit")};
   }
-  :nth-child(2) {
+  &:nth-child(2) {
     background-color: ${(props) =>
       props.mainPosition.projects ? "#d3d3d3" : "#3e3e3e"};
     color: ${(props) => (props.mainPosition.projects ? "#000" : "inherit")};
   }
-  :nth-child(3) {
+  &:nth-child(3) {
     background-color: ${(props) =>
       props.mainPosition.music ? "#d3d3d3" : "#3e3e3e"};
     color: ${(props) => (props.mainPosition.music ? "#000" : "inherit")};
   }
-  :nth-child(4) {
+  &:nth-child(4) {
     background-color: ${(props) =>
       props.mainPosition.schedule ? "#d3d3d3" : "#3e3e3e"};
     color: ${(props) => (props.mainPosition.schedule ? "#000" : "inherit")};
@@ -104,18 +104,18 @@ export const RouterNavItem = styled(NavItemCommon)<{
   routerPosition: IRouterPosition;
 }>`
   will-change: background-color, color;
-  :nth-child(1) {
+  &:nth-child(1) {
     font-weight: 600;
     background-color: ${(props) =>
       props.routerPosition.sotd ? "#d3d3d3" : "#3e3e3e"};
     color: ${(props) => (props.routerPosition.sotd ? "#000" : "inherit")};
   }
-  :nth-child(2) {
+  &:nth-child(2) {
     background-color: ${(props) =>
       props.routerPosition.fontColor ? "#d3d3d3" : "#3e3e3e"};
     color: ${(props) => (props.routerPosition.fontColor ? "#000" : "inherit")};
   }
-  :nth-child(3) {
+  &:nth-child(3) {
     background-color: ${(props) =>
       props.routerPosition.routerAbout ? "#d3d3d3" : "#3e3e3e"};
     color: ${(props) =>

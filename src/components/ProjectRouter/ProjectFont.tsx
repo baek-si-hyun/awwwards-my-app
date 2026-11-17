@@ -82,21 +82,21 @@ const Font = styled.div<{ toggle: number; num: number }>`
   cursor: pointer;
   color: #a7a7a7;
   font-weight: 100;
-  :nth-child(1) {
+  &:nth-child(1) {
     ${(props) => (props.toggle === 0 ? choiceFont : "")}
   }
-  :nth-child(2) {
+  &:nth-child(2) {
     ${(props) => (props.toggle === 1 ? choiceFont : "")}
   }
-  :nth-child(3) {
+  &:nth-child(3) {
     ${(props) => (props.toggle === 2 ? choiceFont : "")}
   }
-  :nth-child(4) {
+  &:nth-child(4) {
     ${(props) => (props.toggle === 3 ? choiceFont : "")}
   }
 `;
 
-const FontName = styled.div`
+const FontName = styled.div<{ toggle: number; fontsData: string[] }>`
   font-size: 10vw;
   display: flex;
   align-items: center;
@@ -106,13 +106,13 @@ const FontName = styled.div`
   ${common}
 `;
 
-const FontDetailContent = styled.div`
+const FontDetailContent = styled.div<{ toggle: number; fontsData: string[] }>`
   font-size: 15vw;
   text-align: center;
   ${common}
 `;
 
-const ContentDiv = styled.div`
+const ContentDiv = styled.div<{ toggle: number; fontsData: string[] }>`
   font-size: 4vw;
   display: flex;
   flex-direction: column;

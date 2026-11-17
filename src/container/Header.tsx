@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import styled from "styled-components";
 import { IMAGES } from "../constants/images";
 import ImageWithSkeleton from "../components/common/ImageWithSkeleton";

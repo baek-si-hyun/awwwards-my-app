@@ -2,7 +2,7 @@ import styled from "styled-components";
 import ProjectPreview from "../../components/ProjectRouter/ProjectPreview";
 import ProjectFont from "../../components/ProjectRouter/ProjectFont";
 import ProjectColor from "../../components/ProjectRouter/ProjectColor";
-import { useLocation } from "react-router-dom";
+import { useLocation } from "react-router";
 import Nav from "../../components/nav/Nav";
 
 const Container = styled.div`
@@ -55,7 +55,7 @@ const DescriptionProjectContent = styled.div`
   display: flex;
   gap: 4rem;
   word-break: keep-all;
-  :first-child {
+  &:first-child {
   }
   div {
     width: 50%;

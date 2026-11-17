@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 
 const Container = styled.footer`
   display: flex;
@@ -70,14 +70,14 @@ const Nav = styled.div`
 const Resume = styled.div`
   a {
     color: inherit;
-    :hover {
+    &:hover {
       color: #757575;
     }
   }
 `;
 const NavLink = styled(Link)`
   color: inherit;
-  :hover {
+  &:hover {
     color: #757575;
   }
 `;
@@ -104,7 +104,7 @@ const LinkBarUl = styled.ul`
 const LinkItem = styled.a`
   font-weight: 100;
   color: inherit;
-  :hover {
+  &:hover {
     color: #757575;
   }
 `;

@@ -2,7 +2,7 @@ import { Suspense, lazy, useEffect, useState, useRef } from "react";
 import styled from "styled-components";
 import Main from "./pages/main/Main";
 import ScrollToTop from "./ScrollToTop";
-import { Navigate, Route, Routes, useLocation, useParams } from "react-router-dom";
+import { Navigate, Route, Routes, useLocation, useParams } from "react-router";
 import { useMySelector } from "./libs/useMySelector";
 import MusicPlayer from "./components/Music/MusicPlayer";
 import MusicPlayBox from "./components/Music/MusicPlayBox";

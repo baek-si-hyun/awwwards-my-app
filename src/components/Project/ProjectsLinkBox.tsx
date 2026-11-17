@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { Link } from "react-router";
+import { motion } from "motion/react";
 import styled, { css } from "styled-components";
 import { projectData } from "../../services/listData";
 import ImageWithSkeleton from "../common/ImageWithSkeleton";
@@ -50,7 +50,7 @@ const HoverBox = styled.div`
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 1));
   will-change: opacity, background;
   transition: opacity 0.2s ease-in-out;
-  :hover {
+  &:hover {
     opacity: 1;
   }
   @media (max-width: 1024px) {

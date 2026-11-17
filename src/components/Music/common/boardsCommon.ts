@@ -33,10 +33,10 @@ export const Card = styled.div<{ isDragging: boolean }>`
   border-radius: ${(props) => (props.isDragging ? "10px" : "none")};
   transition: background-color 0.2s ease-in-out, border-radius 0.2s ease-in-out;
   will-change: background-color, border-radius;
-  :last-child {
+  &:last-child {
     border-bottom: none;
   }
-  :hover {
+  &:hover {
     background-color: #1d1d1d;
     ${ButtonDiv} {
       opacity: 0.9;
@@ -61,10 +61,10 @@ export const CardItem = styled.div`
   display: flex;
   align-items: center;
   gap: 7%;
-  :nth-child(2) {
+  &:nth-child(2) {
     padding-left: 20%;
   }
-  :nth-child(3) {
+  &:nth-child(3) {
     padding-left: 20%;
   }
   @media (max-width: 768px) {
@@ -73,7 +73,7 @@ export const CardItem = styled.div`
   }
   @media (max-width: 650px) {
     & {
-      :last-child {
+      &:last-child {
         display: none;
       }
     }
