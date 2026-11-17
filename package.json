@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "@emailjs/browser": "^3.10.0",
     "@hello-pangea/dnd": "^18.0.1",
     "@reduxjs/toolkit": "^2.2.5",
     "@testing-library/jest-dom": "^5.16.5",

@@ -119,18 +119,6 @@ react-beautiful-dnd, react-player, redux-toolkit 라이브러리들이 사용되
 ![스크린샷 2024-07-04 173439](https://github.com/baek-si-hyun/awwwards-my-app/assets/107901109/cbcbe4e7-b773-4539-9b8f-9bec64fb4ca1)
 ![스크린샷 2024-07-04 173459](https://github.com/baek-si-hyun/awwwards-my-app/assets/107901109/c6c205e2-febe-4da9-b838-196556e3ea56)
 <br/><br/>
-
-### 7️⃣ 소통 페이지
-
-```
-저에게 이메일을 남길수 있습니다.
-이 프로젝트를 보시고 개선했으면 좋을거같은 부분, 저에게 해주시고 싶은 조언 있으실 수도 있을거 같아
-제작하게 되었습니다.
-emailjs가 사용 되었습니다.
-```
-
-![image](https://github.com/baek-si-hyun/awwwards-my-app/assets/107901109/c812d1e2-36e1-4daf-bacf-f66c43360875)
-<br/><br/>
 <br/><br/>
 
 ## ✨ 프로젝트에서 만난 문제들

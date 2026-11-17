@@ -74,48 +74,6 @@ const FinallyImgBox = styled.div`
     }
   }
 `;
-const FinallyBoxFlex = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-`;
-const FinallyBoxText = styled.h3`
-  font-size: 3vw;
-  font-weight: bold;
-  line-height: 1.2;
-  margin-bottom: 3vw;
-  width: 50%;
-  @media (max-width: 480px) {
-    & {
-      font-size: 6vw;
-    }
-  }
-`;
-const MiniText = styled.h2`
-  font-weight: 100;
-  margin-bottom: 1.5vw;
-`;
-
-const ContactLink = styled(Link)`
-  border: 1px solid #fff;
-  border-radius: 10px;
-  padding: 2rem;
-  width: 11rem;
-  font-size: 1.3rem;
-  transition: background-color 0.2s;
-  :hover {
-    background-color: #f8f8f8;
-    color: #000;
-  }
-  @media (max-width: 650px) {
-    & {
-      width: 6rem;
-      padding: 0.8rem;
-      font-size: 0.7rem;
-      border-radius: 7px;
-    }
-  }
-`;
 const Qna = styled.div`
   display: flex;
   justify-content: flex-end;
@@ -160,8 +118,7 @@ function Finally() {
               코드를 보고 피드백을 주는 사람도 없고, 함께 문제에 대한 이야기를
               하며 해결하는 것이 없다보니 그런거같네요. 그런 의미에서 이글을
               보시게 될 선배 개발자분들의 조언을 듣고 싶습니다. 취직에 관한
-              조언이나, 코딩에 관한 조언 무엇이든 상관없습니다. 옆의 링크를 통해
-              조언해 주세요.
+              조언이나, 코딩에 관한 조언 무엇이든 상관없습니다.
             </p>
           </FinallyTextKo>
           <FinallyTextEn>
@@ -174,18 +131,12 @@ function Finally() {
               feedback, and talk about problems together. I think it's because
               there is no solution. In that sense, this article I'd like to hear
               advice from senior developers you'll see. About employment Any
-              advice or advice on coding is fine. through the link next to
-              Please advise.
+              advice or advice on coding is fine.
             </p>
           </FinallyTextEn>
         </FinallyText>
         <FinallyBox>
           <FinallyImgBox>
-            <FinallyBoxFlex>
-              <MiniText>Share your experience</MiniText>
-              <FinallyBoxText>Go to developer job seeker advice</FinallyBoxText>
-              <ContactLink to="/contact">Go Contact</ContactLink>
-            </FinallyBoxFlex>
             <Qna>
               <span>Got questions? Read me</span>
               <span>

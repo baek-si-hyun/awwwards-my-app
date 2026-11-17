@@ -9,7 +9,6 @@ import MusicPlayBox from "./components/Music/MusicPlayBox";
 import Footer from "./components/Footer/Footer";
 import { projectData } from "./services/listData";
 
-const Contact = lazy(() => import("./pages/Contact/Contact"));
 const Faqs = lazy(() => import("./pages/faqs/Faqs"));
 const Myapp = lazy(() => import("./pages/ProjectRouter/ProjectMain"));
 
@@ -205,14 +204,6 @@ function App() {
             element={
               <Suspense fallback={<></>}>
                 <Faqs />
-              </Suspense>
-            }
-          />
-          <Route
-            path="contact"
-            element={
-              <Suspense fallback={<></>}>
-                <Contact />
               </Suspense>
             }
           />

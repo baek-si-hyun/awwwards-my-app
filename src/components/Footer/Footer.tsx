@@ -81,7 +81,6 @@ const NavLink = styled(Link)`
     color: #757575;
   }
 `;
-const Contact = styled.div``;
 const LinkBar = styled.div`
   display: flex;
   justify-content: flex-end;
@@ -144,11 +143,6 @@ function Footer() {
               FAQs
             </NavLink>
           </div>
-          <Contact>
-            <NavLink to="/Contact">
-              Contact Me
-            </NavLink>
-          </Contact>
           <Resume>
             <a
               href="https://drive.google.com/file/d/1k3z0Juk50mcl7OIIrfIktsi8PiC15FMO/view?usp=drive_link"
