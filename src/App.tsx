@@ -79,114 +79,23 @@ function App() {
   const [isContentReady, setIsContentReady] = useState(false);
   const mainContentRef = useRef<HTMLElement>(null);
 
+  // 경로가 바뀌면 푸터를 숨겼다가, 본문이 실제 높이(300px 초과)를 갖는 순간 보여 준다.
+  // lazy 화면은 Suspense 빈 fallback 동안 높이가 0 이라 푸터가 위로 튀지 않는다. 최대 4초 뒤엔 무조건 보인다.
   useEffect(() => {
     setIsContentReady(false);
-    
-    let isReady = false;
-    let checkCount = 0;
-    const maxChecks = 300;
-    
-    const showFooter = () => {
-      if (!isReady) {
-        isReady = true;
+    const main = mainContentRef.current;
+    if (!main) return;
+    const observer = new ResizeObserver(() => {
+      if (main.offsetHeight > 300) {
         setIsContentReady(true);
-      }
-    };
-
-    const checkHeaderRendered = () => {
-      const header = document.getElementById('home');
-      return header !== null && header.offsetHeight > 0;
-    };
-
-    const checkContentReadyImproved = () => {
-      if (!mainContentRef.current) return false;
-      
-      const headerRendered = checkHeaderRendered();
-      
-      const height = mainContentRef.current.offsetHeight;
-      const scrollHeight = mainContentRef.current.scrollHeight;
-      const hasChildren = mainContentRef.current.children.length > 0;
-      
-      return headerRendered && (height > 300 || scrollHeight > 300 || hasChildren);
-    };
-
-    const handleLoad = () => {
-      let frameCount = 0;
-      const checkFrames = () => {
-        frameCount++;
-        if (checkContentReadyImproved() || frameCount > 100) {
-          showFooter();
-        } else {
-          requestAnimationFrame(checkFrames);
-        }
-      };
-      setTimeout(() => {
-        requestAnimationFrame(checkFrames);
-      }, 800);
-    };
-
-    if (document.readyState === 'complete') {
-      handleLoad();
-    } else {
-      window.addEventListener('load', handleLoad, { once: true });
-    }
-
-    const initialDelay = setTimeout(() => {
-      if (checkContentReadyImproved()) {
-        showFooter();
-      }
-    }, 800);
-
-    const checkInterval = setInterval(() => {
-      checkCount++;
-      if (checkContentReadyImproved()) {
-        showFooter();
-        clearInterval(checkInterval);
-      } else if (checkCount >= maxChecks) {
-        showFooter();
-        clearInterval(checkInterval);
-      }
-    }, 50);
-
-    const observer = new MutationObserver(() => {
-      if (checkContentReadyImproved()) {
-        showFooter();
         observer.disconnect();
       }
     });
-
-    const startObserving = () => {
-      if (mainContentRef.current) {
-        observer.observe(mainContentRef.current, {
-          childList: true,
-          subtree: true,
-          attributes: true,
-          attributeFilter: ['style', 'class'],
-        });
-        observer.observe(document.body, {
-          childList: true,
-          subtree: true,
-        });
-      }
-    };
-
-    const observeTimer = setTimeout(() => {
-      startObserving();
-    }, 100);
-
-    const maxTimer = setTimeout(() => {
-      showFooter();
-      clearInterval(checkInterval);
-      observer.disconnect();
-    }, 4000);
-
+    observer.observe(main);
+    const maxTimer = setTimeout(() => setIsContentReady(true), 4000);
     return () => {
-      clearTimeout(initialDelay);
-      clearInterval(checkInterval);
-      clearTimeout(observeTimer);
-      clearTimeout(maxTimer);
       observer.disconnect();
-      window.removeEventListener('load', handleLoad);
+      clearTimeout(maxTimer);
     };
   }, [location.pathname]);
 
