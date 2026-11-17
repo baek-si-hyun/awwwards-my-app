@@ -1,14 +1,8 @@
-// 상세 화면 내비(SOTD · Font & Color · About)를 보여 줄 프로젝트 경로.
-// Nav 와 utils/domApi 가 같이 쓴다. (selleaf 는 원래 목록에 없어 상세에서 내비가 안 뜬다 — 그대로 둠)
-export const NAV_PROJECT_ROUTES = [
-  "awwwards",
-  "carrot-market",
-  "project-house",
-  "netflix",
-  "kanban",
-  "myapp",
-  "airbnb",
-];
+import { projectData } from "./listData";
+
+// 상세 화면 내비(SOTD · Font & Color · About)를 보여 줄 프로젝트 경로 = 전시 목록의 코드 전부.
+// Nav 와 utils/domApi 가 같이 쓴다. 전시 목록에 넣으면 내비도 자동으로 붙는다.
+export const NAV_PROJECT_ROUTES = projectData.map((p) => p.projects_code);
 
 // 상세 내비의 'Visited Site' 링크. 목록에 없는 프로젝트는 링크를 그리지 않는다.
 export const PROJECT_SITE_LINKS: Record<string, string> = {
