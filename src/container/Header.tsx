@@ -10,6 +10,9 @@ const Container = styled.header`
   position: sticky;
   top: 0;
   z-index: -1;
+  /* 로고가 x:100vw 에서 들어오는 동안 생기는 가로 넘침을 자른다(clip 은 sticky 를 깨지 않는다) */
+  overflow-x: hidden;
+  overflow-x: clip;
 `;
 
 const Inner = styled.div`

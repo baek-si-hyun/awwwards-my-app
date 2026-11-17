@@ -16,6 +16,9 @@ const Container = styled.section`
   z-index: 1;
   box-shadow: 0 0 3rem rgba(0, 0, 0, 0.5);
   margin-top: -1rem;
+  /* 아직 화면에 안 들어온 카드는 x:±100 에서 대기하므로 가로 넘침을 자른다 */
+  overflow-x: hidden;
+  overflow-x: clip;
 `;
 
 const GridBox = styled.div`
