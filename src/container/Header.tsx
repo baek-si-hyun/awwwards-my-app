@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { motion } from "motion/react";
+import { m } from "motion/react";
 import styled from "styled-components";
 import { IMAGES } from "../constants/images";
 import ImageWithSkeleton from "../components/common/ImageWithSkeleton";
@@ -158,7 +158,7 @@ const ColorShadowImg = styled(Img)`
   box-shadow: none;
 `;
 
-const AnimatedShadowWrapper = styled(motion.div)`
+const AnimatedShadowWrapper = styled(m.div)`
   display: inline-block;
   border-radius: clamp(5px, 20vw, 40px);
   overflow: visible;
@@ -202,7 +202,7 @@ function Header() {
         </LeftBox>
         <RightBox>
           <ItemBox>
-            <motion.div
+            <m.div
               initial={{ x: "100vw" }}
               animate={{ x: 0 }}
               transition={{ duration: 0.5, delay: 0.2, ease: [0.1, 0, 0, 1] }}
@@ -213,10 +213,10 @@ function Header() {
                 fullWidth
                 fullHeight
               />
-            </motion.div>
+            </m.div>
           </ItemBox>
           <ItemBox>
-            <motion.div
+            <m.div
               initial={{ x: "100vw" }}
               animate={{ x: 0 }}
               transition={{ duration: 0.8, delay: 0.3, ease: [0.1, 0, 0, 1] }}
@@ -248,10 +248,10 @@ function Header() {
                   fullHeight
                 />
               </AnimatedShadowWrapper>
-            </motion.div>
+            </m.div>
           </ItemBox>
           <ItemBox>
-            <motion.div
+            <m.div
               initial={{ x: "100vw" }}
               animate={{ x: 0 }}
               transition={{ duration: 0.8, delay: 0.4, ease: [0.1, 0, 0, 1] }}
@@ -262,10 +262,10 @@ function Header() {
                 fullWidth
                 fullHeight
               />
-            </motion.div>
+            </m.div>
           </ItemBox>
           <ItemBox>
-            <motion.div
+            <m.div
               initial={{ x: "100vw" }}
               animate={{ x: 0 }}
               transition={{ duration: 0.8, delay: 0.5, ease: [0.1, 0, 0, 1] }}
@@ -276,7 +276,7 @@ function Header() {
                 fullWidth
                 fullHeight
               />
-            </motion.div>
+            </m.div>
           </ItemBox>
         </RightBox>
       </Inner>

@@ -6,4 +6,7 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   base: "/awwwards-my-app/",
   plugins: [react()],
+  // 작은 이미지(아이콘 · 썸네일 28개, 약 60KB)를 base64 로 JS 에 넣지 않는다 —
+  // 첫 화면 JS 가 그만큼 무거워지고, 이미지는 어차피 loading="lazy" 로 필요할 때 받는다.
+  build: { assetsInlineLimit: 0 },
 });

@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+import { m } from "motion/react";
 import styled, { css } from "styled-components";
 import { IProjectData } from "../../interface/iproject";
 import ImageWithSkeleton from "../common/ImageWithSkeleton";
@@ -80,7 +80,7 @@ const common = css`
     border-radius: 7px;
   }
 `;
-const Preview = styled(motion.div)`
+const Preview = styled(m.div)`
   padding: 4vw;
   background-color: #222;
   ${common}

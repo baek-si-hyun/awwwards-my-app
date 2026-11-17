@@ -2,6 +2,7 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router";
 import { createGlobalStyle, StyleSheetManager } from "styled-components";
 import isPropValid from "@emotion/is-prop-valid";
+import { LazyMotion } from "motion/react";
 import "./assets/font/css/font.css";
 import App from "./App";
 import { Provider } from "react-redux";
@@ -76,16 +77,21 @@ a {
 const shouldForwardProp = (prop: string, target: unknown) =>
   typeof target === "string" ? isPropValid(prop) : true;
 
+// 애니메이션 기능(domMax)은 첫 화면 번들에서 빼고 따로 받는다. 컴포넌트는 motion 대신 m 을 쓴다.
+const loadMotionFeatures = () => import("./motionFeatures").then((mod) => mod.default);
+
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <BrowserRouter basename={import.meta.env.BASE_URL.replace(/\/$/, "")}>
     <StyleSheetManager shouldForwardProp={shouldForwardProp} enableVendorPrefixes>
-      <Provider store={store}>
-        <GlobalStyle />
-        <App />
-      </Provider>
+      <LazyMotion features={loadMotionFeatures} strict>
+        <Provider store={store}>
+          <GlobalStyle />
+          <App />
+        </Provider>
+      </LazyMotion>
     </StyleSheetManager>
   </BrowserRouter>
 );

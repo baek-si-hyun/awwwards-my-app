@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { motion } from "motion/react";
+import { m } from "motion/react";
 import styled, { css } from "styled-components";
 import { projectData } from "../../services/listData";
 import ImageWithSkeleton from "../common/ImageWithSkeleton";
@@ -117,7 +117,7 @@ function ProjectsLinkBox() {
         projectData.map((data, index) => {
           const isLeft = index % 2 === 0;
           return (
-            <motion.div
+            <m.div
               key={index}
               initial={{ 
                 opacity: 0, 
@@ -186,7 +186,7 @@ function ProjectsLinkBox() {
               </By>
             </TextBox>
           </Container>
-            </motion.div>
+            </m.div>
           );
         })}
     </>

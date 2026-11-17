@@ -4,13 +4,14 @@ import Main from "./pages/main/Main";
 import ScrollToTop from "./ScrollToTop";
 import { Navigate, Route, Routes, useLocation, useParams } from "react-router";
 import { useMySelector } from "./libs/useMySelector";
-import MusicPlayer from "./components/Music/MusicPlayer";
 import MusicPlayBox from "./components/Music/MusicPlayBox";
 import Footer from "./components/Footer/Footer";
 import { projectData } from "./services/listData";
 
 const Faqs = lazy(() => import("./pages/faqs/Faqs"));
 const Myapp = lazy(() => import("./pages/ProjectRouter/ProjectMain"));
+// 화면이 없는 숨은 재생기(react-player)라 첫 화면 번들에서 뺀다.
+const MusicPlayer = lazy(() => import("./components/Music/MusicPlayer"));
 
 // 전시 목록에 없는 경로(지운 옛 화면 주소 등)는 홈으로 돌린다.
 // 상세 화면은 목록 클릭 때 넘기는 location.state 를 읽으므로,
@@ -101,7 +102,9 @@ function App() {
 
   return (
     <AppContainer>
-      <MusicPlayer />
+      <Suspense fallback={null}>
+        <MusicPlayer />
+      </Suspense>
       <ScrollToTop />
       {getResizeWidth >= 1000 ? <MusicPlayBox /> : null}
       <MainContent ref={mainContentRef}>
