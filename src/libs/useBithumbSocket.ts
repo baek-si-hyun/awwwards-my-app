@@ -22,6 +22,8 @@ function mapBithumbWsToTicker(content: any): ICoinHttpTickers | null {
     const chgRatePct = Number(content?.chgRate || 0);
     const accValue = Number(content?.value || 0);
     const accVol = Number(content?.volume || 0);
+    const high24 = Number(content?.highPrice || 0);
+    const low24 = Number(content?.lowPrice || 0);
     const change = chgAmt > 0 ? "RISE" : chgAmt < 0 ? "FALL" : "EVEN";
 
     return {
@@ -34,6 +36,8 @@ function mapBithumbWsToTicker(content: any): ICoinHttpTickers | null {
       signed_change_rate: chgRatePct / 100,
       acc_trade_price_24h: accValue,
       acc_trade_volume_24h: accVol,
+      high_price_24h: high24,
+      low_price_24h: low24,
     };
   } catch {
     return null;

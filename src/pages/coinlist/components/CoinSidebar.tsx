@@ -1,7 +1,7 @@
 import { memo, useMemo, useCallback } from "react";
 import { Link } from "react-router-dom";
 import styled, { keyframes, css } from "styled-components";
-import { useDeferredValue, useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import useBithumbNames from "../../../libs/useBithumbNames";
 import useBithumbTickers from "../../../libs/useBithumbTickers";
 import useBithumbTickersSocket from "../../../libs/useBithumbSocket";

@@ -40,7 +40,7 @@ export function mapBithumbRestToTicker(code: string, entry: any) {
   const chgRatePct = Number(entry?.fluctate_rate_24H || 0);
   const change = chgAmt > 0 ? "RISE" : chgAmt < 0 ? "FALL" : "EVEN";
   const accValue = Number(entry?.acc_trade_value_24H || 0);
-  const accVolume = Number(entry?.acc_trade_volume_24H || 0);
+  const accVolume = Number(entry?.units_traded_24H || 0);
   const high24 = Number(entry?.max_price || 0);
   const low24 = Number(entry?.min_price || 0);
   return {

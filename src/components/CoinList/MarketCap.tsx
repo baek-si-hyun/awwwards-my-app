@@ -1,4 +1,5 @@
 import { ICoinHttpTickers } from "../../interface/icoin";
+import { formatWithCommas } from "../../utils/formatNumber";
 
 function MarketCap({
   coinName,
@@ -14,7 +15,7 @@ function MarketCap({
   if (typeof marketCapKRW === "number" && marketCapKRW > 0) {
     return (
       <span>
-        ₩{marketCapKRW.toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+        ₩{formatWithCommas(marketCapKRW.toFixed(0))}
       </span>
     );
   }
@@ -24,7 +25,7 @@ function MarketCap({
     if (value > 0)
       return (
         <span>
-          ₩{value.toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+          ₩{formatWithCommas(value.toFixed(0))}
         </span>
       );
   }

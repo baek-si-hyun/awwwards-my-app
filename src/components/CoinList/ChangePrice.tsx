@@ -1,6 +1,7 @@
 import { ReactElement } from "react";
 import styled from "styled-components";
 import { ICoinHttpTickers } from "../../interface/icoin";
+import { formatWithCommas } from "../../utils/formatNumber";
 
 const TdChangeDiv = styled.div<{ change: string }>`
   display: flex;
@@ -30,10 +31,11 @@ const ChangePrice = ({
   tickerList: ICoinHttpTickers[];
 }): ReactElement => {
   if (tickerList) {
-    const changePrice: string = tickerList
-      .find((ticker) => ticker.market === coinName && ticker, 0)
-      ?.change_price.toString()
-      .replace(/\B(?=(\d{3})+(?!\d))/g, ",")!;
+    const value = tickerList.find(
+      (ticker) => ticker.market === coinName && ticker,
+      0
+    )?.change_price;
+    const changePrice = value !== undefined ? formatWithCommas(value) : "";
     const change: string = tickerList.find(
       (ticker) => ticker.market === coinName && ticker,
       "EVEN"

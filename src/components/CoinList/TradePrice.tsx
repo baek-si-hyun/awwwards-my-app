@@ -1,5 +1,6 @@
 import { ReactElement } from "react";
 import { ICoinHttpTickers } from "../../interface/icoin";
+import { formatWithCommas } from "../../utils/formatNumber";
 
 const TradePrice = ({
   coinName,
@@ -9,10 +10,11 @@ const TradePrice = ({
   tickerList: ICoinHttpTickers[];
 }): ReactElement => {
   if (tickerList) {
-    const price: string = tickerList
-      .find((ticker) => ticker.market === coinName && ticker, 0)
-      ?.trade_price.toString()
-      .replace(/\B(?=(\d{3})+(?!\d))/g, ",")!;
+    const value = tickerList.find(
+      (ticker) => ticker.market === coinName && ticker,
+      0
+    )?.trade_price;
+    const price = value !== undefined ? formatWithCommas(value) : "";
     return <span>₩{price || 0}</span>;
   }
   return <></>;

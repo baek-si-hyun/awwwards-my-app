@@ -1,6 +1,7 @@
 import { memo, useMemo, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import { formatWithCommas } from "../../utils/formatNumber";
 import { ICoins, ICoinHttpTickers } from "../../interface/icoin";
 import TradePrice from "./TradePrice";
 import ChangePrice from "./ChangePrice";
@@ -95,7 +96,7 @@ function CoinListRow({
 
   const formattedSupply = useMemo(() => {
     if (supply === null) return "-";
-    return `${supply.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} ${symbol}`;
+    return `${formatWithCommas(supply)} ${symbol}`;
   }, [supply, symbol]);
 
   const handleClick = useCallback(() => {
