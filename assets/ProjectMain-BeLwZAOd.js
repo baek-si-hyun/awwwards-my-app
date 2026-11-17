@@ -1,4 +1,4 @@
-import{a as e}from"./rolldown-runtime-BWaJ3C7D.js";import{a as t,c as n,l as r}from"./mainCommon-C5VKSBGK.js";import{l as i,t as a}from"./react-CprOFjTI.js";import{t as o}from"./ImageWithSkeleton-DUSCyz6l.js";import{t as s}from"./jsx-runtime-lTuChwRC.js";import{t as c}from"./react-CaKr0epQ.js";import{a as l}from"./index-ByV83wGK.js";var u=s(),ee=r.div`
+import{a as e}from"./rolldown-runtime-BWaJ3C7D.js";import{l as t,o as n,u as r}from"./images-DpySvLh1.js";import{l as i,t as a}from"./react-CprOFjTI.js";import{t as o}from"./ImageWithSkeleton-F1af-2W9.js";import{t as s}from"./jsx-runtime-lTuChwRC.js";import{t as c}from"./react-CaKr0epQ.js";import{a as l}from"./index-DcqJvUqH.js";var u=s(),ee=r.div`
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -55,7 +55,7 @@ import{a as e}from"./rolldown-runtime-BWaJ3C7D.js";import{a as t,c as n,l as r}f
   display: flex;
   flex-direction: column;
   gap: max(10px, 3vw);
-`,y=n`
+`,y=t`
   border-radius: 15px;
   @media (max-width: 768px) {
     border-radius: 10px;
@@ -80,7 +80,7 @@ import{a as e}from"./rolldown-runtime-BWaJ3C7D.js";import{a as t,c as n,l as r}f
 `,E=r.div`
   display: flex;
   gap: 4vw;
-  ${t}
+  ${n}
   @media (max-width: 480px) {
     & {
       font-size: 1vw;
@@ -102,7 +102,7 @@ import{a as e}from"./rolldown-runtime-BWaJ3C7D.js";import{a as t,c as n,l as r}f
   justify-content: center;
   gap: 20px;
   padding-bottom: 2vw;
-  ${t}
+  ${n}
 `,M=r.div`
   font-weight: 100;
   font-size: 13px;
@@ -114,13 +114,13 @@ import{a as e}from"./rolldown-runtime-BWaJ3C7D.js";import{a as t,c as n,l as r}f
   }
 `,N=r.div`
   padding-bottom: 2vw;
-  ${t}
-`,P=n`
+  ${n}
+`,P=t`
   border-bottom: 2px solid black;
   color: black;
   font-family: "Apercu", sans-serif;
   font-weight: 900;
-`,F=n`
+`,F=t`
   font-family: ${e=>e.toggle===0?e.fontsData[0]:e.toggle===1?e.fontsData[1]:e.toggle===2?e.fontsData[2]:e.toggle===3?e.fontsData[3]:``},
     sans-serif;
 `,I=r.div`
@@ -146,7 +146,7 @@ import{a as e}from"./rolldown-runtime-BWaJ3C7D.js";import{a as t,c as n,l as r}f
   align-items: center;
   justify-content: center;
   padding: max(20px, 5vw) 0;
-  ${t}
+  ${n}
   ${F}
 `,R=r.div`
   font-size: 15vw;
@@ -164,7 +164,7 @@ import{a as e}from"./rolldown-runtime-BWaJ3C7D.js";import{a as t,c as n,l as r}f
 `;function B({fonts:e}){let[t,n]=(0,w.useState)(0),r=e=>{n(()=>e)},i=e[t];return(0,u.jsx)(u.Fragment,{children:e&&(0,u.jsxs)(T,{children:[(0,u.jsxs)(E,{children:[(0,u.jsx)(D,{children:(0,u.jsx)(`span`,{children:`Typography`})}),(0,u.jsx)(O,{children:(0,u.jsx)(k,{children:e.map((e,n)=>(0,u.jsx)(I,{num:n,toggle:t,onClick:()=>r(n),children:(0,u.jsx)(`span`,{children:e})},n))})})]}),(0,u.jsx)(L,{toggle:t,fontsData:e,children:(0,u.jsx)(`span`,{children:i})}),(0,u.jsxs)(A,{children:[(0,u.jsxs)(j,{children:[(0,u.jsx)(M,{children:(0,u.jsx)(`h3`,{children:`FONT DETAIL`})}),(0,u.jsx)(R,{toggle:t,fontsData:e,children:(0,u.jsx)(`span`,{children:`AaBb`})})]}),(0,u.jsxs)(N,{children:[(0,u.jsx)(M,{children:(0,u.jsx)(`h3`,{children:`LETTERS + NUMBERS`})}),(0,u.jsxs)(z,{toggle:t,fontsData:e,children:[(0,u.jsx)(`span`,{children:`Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz`}),(0,u.jsx)(`span`,{children:`0 1 2 3 4 5 6 7 8 9`})]})]})]})]})})}var V=r.div``,H=r.div`
   display: flex;
   flex-direction: column;
-  ${t}
+  ${n}
 `,U=r.div`
   width: 15%;
   font-weight: lighter;

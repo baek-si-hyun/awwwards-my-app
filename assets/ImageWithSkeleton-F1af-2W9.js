@@ -1,4 +1,4 @@
-import{a as e}from"./rolldown-runtime-BWaJ3C7D.js";import{t}from"./react-CaKr0epQ.js";import{c as n,l as r,o as i}from"./mainCommon-C5VKSBGK.js";import{t as a}from"./jsx-runtime-lTuChwRC.js";var o=e(t()),s=a(),c=[`w`,`h`,`aspectRatio`,`round`,`fullWidth`,`fullHeight`,`isLoaded`,`placeholderAspectRatio`],l=r.div.withConfig({shouldForwardProp:e=>!c.includes(e)})`
+import{a as e}from"./rolldown-runtime-BWaJ3C7D.js";import{t}from"./react-CaKr0epQ.js";import{l as n,s as r,u as i}from"./images-DpySvLh1.js";import{t as a}from"./jsx-runtime-lTuChwRC.js";var o=e(t()),s=a(),c=[`w`,`h`,`aspectRatio`,`round`,`fullWidth`,`fullHeight`,`isLoaded`,`placeholderAspectRatio`],l=i.div.withConfig({shouldForwardProp:e=>!c.includes(e)})`
   position: relative;
   ${e=>{let t=e.aspectRatio||(e.isLoaded?void 0:e.placeholderAspectRatio);return t?n`
         aspect-ratio: ${t};
@@ -10,7 +10,7 @@ import{a as e}from"./rolldown-runtime-BWaJ3C7D.js";import{t}from"./react-CaKr0ep
   ${e=>e.fullHeight&&`height: 100%;`}
   ${e=>e.round&&`border-radius: 50%;`}
   overflow: hidden;
-`,u=r.img.withConfig({shouldForwardProp:e=>![`isLoaded`,`w`,`h`,`objectFit`,`round`,`fullWidth`,`fullHeight`].includes(e)})`
+`,u=i.img.withConfig({shouldForwardProp:e=>![`isLoaded`,`w`,`h`,`objectFit`,`round`,`fullWidth`,`fullHeight`].includes(e)})`
   display: block;
   ${e=>e.objectFit&&`object-fit: ${e.objectFit};`}
   ${e=>e.w&&`width: ${typeof e.w==`number`?`${e.w}px`:e.w};`}
@@ -20,14 +20,14 @@ import{a as e}from"./rolldown-runtime-BWaJ3C7D.js";import{t}from"./react-CaKr0ep
   ${e=>e.round&&`border-radius: 50%;`}
   opacity: ${e=>+!!e.isLoaded};
   transition: opacity 0.3s ease;
-`,d=i`
+`,d=r`
   0% {
     transform: translateX(-100%);
   }
   100% {
     transform: translateX(100%);
   }
-`,f=r.div`
+`,f=i.div`
   position: absolute;
   inset: 0;
   background: linear-gradient(
