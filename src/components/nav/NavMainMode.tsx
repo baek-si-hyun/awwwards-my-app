@@ -1,11 +1,11 @@
-import { IMainPosition } from "../../interface/iproject";
+import { IMainPosition, NavHandler } from "../../interface/iproject";
 import { NavBox, NavItem, Link } from "./common/navCommon";
 
 function NavMainMode({
   navHandler,
   mainPosition,
 }: {
-  navHandler: any;
+  navHandler: NavHandler;
   mainPosition: IMainPosition;
 }) {
   const scrollToTop = () => {

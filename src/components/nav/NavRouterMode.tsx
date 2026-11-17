@@ -1,4 +1,6 @@
-import { IRouterPosition } from "../../interface/iproject";
+import { IRouterPosition, NavHandler } from "../../interface/iproject";
+import { PROJECT_SITE_LINKS } from "../../constants/navData";
+import { normalizePath } from "../../utils/path";
 import { NavBox, RouterNavItem, Link, VisitedSite } from "./common/navCommon";
 
 function NavRouterMode({
@@ -7,11 +9,10 @@ function NavRouterMode({
   pathname,
 }: {
   pathname: string;
-  navHandler: any;
+  navHandler: NavHandler;
   routerPosition: IRouterPosition;
 }) {
-  // pathname 정규화 (대소문자 무시, 경로 prefix 제거)
-  const normalizedPath = pathname.toLowerCase().replace(/^\/awwwards-my-app/, "").split("/").filter(Boolean).pop() || "";
+  const siteLink = PROJECT_SITE_LINKS[normalizePath(pathname)];
 
   return (
     <>
@@ -33,52 +34,8 @@ function NavRouterMode({
         </RouterNavItem>
       </NavBox>
       <VisitedSite>
-        {normalizedPath === "project-house" ? (
-          <a
-            href="https://baek-si-hyun.github.io/project-house"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Visited Site
-          </a>
-        ) : normalizedPath === "carrot-market" ? (
-          <a
-            href="https://carrot-market-sooty.vercel.app/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Visited Site
-          </a>
-        ) : normalizedPath === "awwwards" ? (
-          <a
-            href="https://drive.google.com/file/d/1JCT2iSVsRXvQD6mQYQDc-bEAjf2I85HV/view?usp=sharing"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Visited Site
-          </a>
-        ) : normalizedPath === "kanban" ? (
-          <a
-            href="https://baek-si-hyun.github.io/todo-list/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Visited Site
-          </a>
-        ) : normalizedPath === "myapp" ? (
-          <a
-            href="https://baek-si-hyun.github.io/my-app/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Visited Site
-          </a>
-        ) : normalizedPath === "airbnb" ? (
-          <a
-            href="https://drive.google.com/file/d/1I445jnO3_rn8myR253FWO54psB6kRiuO/view?usp=sharing"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+        {siteLink ? (
+          <a href={siteLink} target="_blank" rel="noopener noreferrer">
             Visited Site
           </a>
         ) : null}

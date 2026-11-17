@@ -1,23 +1,14 @@
 import { IDomApi } from "../interface/iproject";
+import { NAV_PROJECT_ROUTES } from "../constants/navData";
+import { isHomePath, normalizePath } from "./path";
 
 export const domApi = ({
   pathname,
   setMainPosition,
   setRouterPosition,
 }: IDomApi) => {
-  // pathname 정규화 (대소문자 무시, 경로 prefix 제거)
-  const normalizedPath = pathname.toLowerCase().replace(/^\/awwwards-my-app/, "").split("/").filter(Boolean).pop() || "";
-  const projectRoutes = [
-    "awwwards",
-    "carrot-market",
-    "project-house",
-    "netflix",
-    "kanban",
-    "myapp",
-    "airbnb",
-  ];
 
-  if (pathname === "/" || pathname === "/awwwards-my-app/" || normalizedPath === "") {
+  if (isHomePath(pathname)) {
     const projects = document.getElementById("projects") as HTMLDivElement;
     const music = document.getElementById("music") as HTMLDivElement;
     const schedule = document.getElementById("schedule") as HTMLDivElement;
@@ -38,7 +29,7 @@ export const domApi = ({
       schedule: scrollY >= schedlulePosition,
     });
   }
-  if (projectRoutes.includes(normalizedPath)) {
+  if (NAV_PROJECT_ROUTES.includes(normalizePath(pathname))) {
     const sotd = document.getElementById("sotd") as HTMLDivElement;
     const fontColor = document.getElementById("fontColor") as HTMLDivElement;
     const routerAbout = document.getElementById(

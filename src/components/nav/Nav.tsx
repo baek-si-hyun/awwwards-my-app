@@ -1,150 +1,19 @@
-import styled, { css } from "styled-components";
 import { useState, useEffect, useCallback } from "react";
 import { useLocation } from "react-router";
-import { IMainPosition, IRouterPosition } from "../../interface/iproject";
+import { NavHandler } from "../../interface/iproject";
 import { domApi } from "../../utils/domApi";
-import NavRouterMode from "./NavRouterMode";
-import NavMainMode from "./NavMainMode";
+import NavMode from "./NavMode";
 import { useDispatch } from "react-redux";
 import { resizeRedux } from "../../redux/resizeWidthSlice";
 import MusicPlayBox from "../Music/MusicPlayBox";
-
-const common = css`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.3rem;
-  padding: 0.3rem;
-  font-size: 0.9rem;
-  z-index: 999;
-`;
-
-const Navi = styled.nav`
-  border-radius: 10px;
-  position: fixed;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  color: #a7a79d;
-  background-color: rgba(0, 0, 0, 0.7);
-  ${common}
-  @media (max-width: 800px) {
-    & {
-      font-size: 0.7rem;
-      padding: 0.3rem;
-    }
-  }
-`;
-const NavBoxLeft = styled.div`
-  padding: 1.5rem 1rem;
-  border-radius: 10px;
-  background-color: #222222;
-  color: #fff;
-  white-space: nowrap;
-  display: flex;
-  align-items: center;
-  @media (max-width: 768px) {
-    & {
-      width: 100%;
-      justify-content: center;
-    }
-  }
-`;
-
-const NavBoxInner = styled.div`
-  display: flex;
-`;
-const BugerNav = styled.div`
-  border-radius: 10px;
-  position: fixed;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  ${common}
-  color: #a7a79d;
-  background-color: rgba(0, 0, 0, 0.7);
-  @media (max-width: 768px) {
-    & {
-      flex-direction: column;
-      gap: 0;
-    }
-  }
-  @media (max-width: 320px) {
-    & {
-      width: 100%;
-    }
-  }
-`;
-const BugerInner = styled.div<{ menuSwitch: boolean }>`
-  display: ${(props) => (props.menuSwitch ? "flex" : "none")};
-  will-change: display;
-  @media (max-width: 768px) {
-    & {
-      flex-direction: column-reverse;
-    }
-  }
-  @media (max-width: 320px) {
-    & {
-      width: 100%;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 5px;
-    }
-  }
-`;
-const BugerLabel = styled.div`
-  margin-left: 5px;
-  display: flex;
-  flex-direction: column;
-  cursor: pointer;
-  span {
-    display: block;
-    width: 0.65rem;
-    height: 1px;
-    background: #fff;
-    border-radius: 5px;
-    margin: 1.5px 0;
-  }
-`;
-
-function NavMode({
-  navHandler,
-  mainPosition,
-  routerPosition,
-  pathname,
-}: {
-  navHandler: any;
-  mainPosition: IMainPosition;
-  routerPosition: IRouterPosition;
-  pathname: string;
-}) {
-  // pathname 정규화 (대소문자 무시, 경로 prefix 제거)
-  const normalizedPath = pathname.toLowerCase().replace(/^\/awwwards-my-app/, "").split("/").filter(Boolean).pop() || "";
-  const projectRoutes = [
-    "awwwards",
-    "carrot-market",
-    "project-house",
-    "netflix",
-    "kanban",
-    "myapp",
-    "airbnb",
-  ];
-
-  return (
-    <>
-      {pathname === "/" || pathname === "/awwwards-my-app/" || normalizedPath === "" ? (
-        <NavMainMode navHandler={navHandler} mainPosition={mainPosition} />
-      ) : projectRoutes.includes(normalizedPath) ? (
-        <NavRouterMode
-          pathname={pathname}
-          navHandler={navHandler}
-          routerPosition={routerPosition}
-        />
-      ) : null}
-    </>
-  );
-}
+import {
+  Navi,
+  NavBoxLeft,
+  NavBoxInner,
+  BugerNav,
+  BugerInner,
+  BugerLabel,
+} from "./Nav.styles";
 
 function Nav() {
   const { pathname } = useLocation();
@@ -169,11 +38,12 @@ function Nav() {
     };
   }, [bugerNavToggle]);
 
-  const navHandler = useCallback((e: any) => {
+  const navHandler = useCallback<NavHandler>((e) => {
     e.preventDefault();
-    if (e.target.classList.contains("nav-item")) {
-      const id = e.target.getAttribute("href");
-      const element = document.querySelector(id);
+    const target = e.target as HTMLElement;
+    if (target.classList.contains("nav-item")) {
+      const id = target.getAttribute("href");
+      const element = id ? document.querySelector(id) : null;
       if (element) {
         element.scrollIntoView();
       }

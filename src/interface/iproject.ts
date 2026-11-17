@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, MouseEvent, SetStateAction } from "react";
 
 export interface IMainPosition {
   home: boolean;
@@ -54,3 +54,4 @@ export interface IProjectData {
   ko: string;
   en: string;
 }
+export type NavHandler = (e: MouseEvent<HTMLElement>) => void;
