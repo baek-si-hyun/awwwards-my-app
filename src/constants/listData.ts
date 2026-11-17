@@ -5,6 +5,26 @@ import {
 } from "../interface/iproject";
 import { IMAGES } from "./images";
 
+// 푸터 Contact 줄의 외부 링크
+export const socialLinks = [
+  {
+    label: "github",
+    href: "https://github.com/baek-si-hyun",
+  },
+  {
+    label: "careerly",
+    href: "https://careerly.co.kr/profiles/569272?utm_campaign=user-share",
+  },
+  {
+    label: "instagram",
+    href: "https://www.instagram.com/b_2.19/",
+  },
+  {
+    label: "facebook",
+    href: "https://www.facebook.com/profile.php?id=100007773606487",
+  },
+];
+
 export const siteList = [
   {
     img: IMAGES.SITES.SITE.SITE1,

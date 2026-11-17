@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router";
+import { socialLinks } from "../../constants/listData";
 
 const Container = styled.footer`
   display: flex;
@@ -157,42 +158,13 @@ function Footer() {
       <LinkBar>
         <div>Contact: </div>
         <LinkBarUl>
-          <li>
-            <LinkItem
-              href="https://github.com/baek-si-hyun"
-              target="_blank"
-             
-            >
-              github
-            </LinkItem>
-          </li>
-          <li>
-            <LinkItem
-              href="https://careerly.co.kr/profiles/569272?utm_campaign=user-share"
-              target="_blank"
-             
-            >
-              careerly
-            </LinkItem>
-          </li>
-          <li>
-            <LinkItem
-              href="https://www.instagram.com/b_2.19/"
-              target="_blank"
-             
-            >
-              instagram
-            </LinkItem>
-          </li>
-          <li>
-            <LinkItem
-              href="https://www.facebook.com/profile.php?id=100007773606487"
-              target="_blank"
-             
-            >
-              facebook
-            </LinkItem>
-          </li>
+          {socialLinks.map(({ label, href }) => (
+            <li key={label}>
+              <LinkItem href={href} target="_blank">
+                {label}
+              </LinkItem>
+            </li>
+          ))}
         </LinkBarUl>
       </LinkBar>
     </Container>
