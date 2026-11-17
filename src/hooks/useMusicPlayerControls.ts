@@ -30,16 +30,16 @@ export function useMusicPlayerControls(
   const { syncMetadata = false } = options;
   const dispatch = useDispatch();
 
-  const lolChampionsList = useMySelector(
-    (state) => state.lolChampionsListSlice.lolChampionsList
+  const favoriteList = useMySelector(
+    (state) => state.favoriteListSlice.favoriteList
   );
   const newJeansList = useMySelector(
     (state) => state.newJeansListSlice.newjeansList
   );
 
   const playList = useMemo(
-    () => [...lolChampionsList, ...newJeansList],
-    [lolChampionsList, newJeansList]
+    () => [...favoriteList, ...newJeansList],
+    [favoriteList, newJeansList]
   );
 
   const index = useMySelector((state) => state.controlPlayListSlice.index ?? 0);

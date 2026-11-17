@@ -4,13 +4,13 @@ import newJeansListSlice from "./newJeansListSlice";
 import playingVideoInfoSlice from "./playingVideoInfoSlice";
 import controlPlayListSlice from "./controlPlayListSlice";
 import controllerVisibleSlice from "./controllerVisibleSlice";
-import lolChampionsListSlice from "./favoriteListSlice";
+import favoriteListSlice from "./favoriteListSlice";
 
 const store = configureStore({
   reducer: {
     resizeWidthSlice: resizeWidthSlice.reducer,
     newJeansListSlice: newJeansListSlice.reducer,
-    lolChampionsListSlice: lolChampionsListSlice.reducer,
+    favoriteListSlice: favoriteListSlice.reducer,
     playingVideoInfoSlice: playingVideoInfoSlice.reducer,
     controlPlayListSlice: controlPlayListSlice.reducer,
     controllerVisibleSlice: controllerVisibleSlice.reducer,

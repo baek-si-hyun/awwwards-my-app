@@ -1,18 +1,18 @@
 import { useDispatch } from "react-redux";
 import React, { useCallback } from "react";
 import { useMySelector } from "../../libs/useMySelector";
-import { lolChampionsRedux } from "../../redux/favoriteListSlice";
+import { setFavoriteList } from "../../redux/favoriteListSlice";
 import MusicDragDropList from "./MusicDragDropList";
 
 function LoLChampions() {
-  const lolChampionsList = useMySelector(
-    (state) => state.lolChampionsListSlice.lolChampionsList
+  const favoriteList = useMySelector(
+    (state) => state.favoriteListSlice.favoriteList
   );
   const dispatch = useDispatch();
 
   const handleReorder = useCallback(
-    (nextList: typeof lolChampionsList) => {
-      dispatch(lolChampionsRedux(nextList));
+    (nextList: typeof favoriteList) => {
+      dispatch(setFavoriteList(nextList));
     },
     [dispatch]
   );
@@ -20,7 +20,7 @@ function LoLChampions() {
   return (
     <MusicDragDropList
       droppableId="favoriteSongs"
-      items={lolChampionsList}
+      items={favoriteList}
       onReorder={handleReorder}
     />
   );

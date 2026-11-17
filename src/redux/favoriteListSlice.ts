@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { IMAGES } from "../constants/images";
 
-const lolChampionsListSlice = createSlice({
-  name: "lolChampionsListSlice",
+const favoriteListSlice = createSlice({
+  name: "favoriteListSlice",
   initialState: {
-    lolChampionsList: [
+    favoriteList: [
       {
         id: 1,
         img: IMAGES.MUSIC.FAVORITE.FAV1,
@@ -65,11 +65,11 @@ const lolChampionsListSlice = createSlice({
     ],
   },
   reducers: {
-    lolChampionsRedux: (state, action) => {
-      state.lolChampionsList = action.payload;
+    setFavoriteList: (state, action) => {
+      state.favoriteList = action.payload;
     },
   },
 });
 
-export default lolChampionsListSlice;
-export const { lolChampionsRedux } = lolChampionsListSlice.actions;
+export default favoriteListSlice;
+export const { setFavoriteList } = favoriteListSlice.actions;
